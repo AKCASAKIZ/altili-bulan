@@ -295,6 +295,7 @@
       const idman = await fetch(`data/${AB.state.day}/idman-${AB.state.city}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
       const jokeyYilJson = await fetch(`data/istatistik/jokey-${new Date().getFullYear()}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
       const jokeyYil = jokeyYilJson ? Object.keys(jokeyYilJson).map((s) => s.toUpperCase()) : null;
+      const gecmis = await fetch(`data/${AB.state.day}/gecmis-${AB.state.city}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
       // jokey sınıfları: kazanma yüzdesine göre çeyrekler (en az 3 koşusu olanlar)
       const jList = Object.entries(H.jokey).filter(([, s]) => s.kosu >= 3)
         .map(([k, s]) => [k, s.win / s.kosu]).sort((a, b) => b[1] - a[1]);
@@ -348,6 +349,53 @@
             }
           }
           // B5 (gerçek kazanma yüzdesi) ve B14 (kısa farkla geçilen koşular)
+          // Geçmiş koşulardan B2, B3, B4, B10 (+B1 yedeği)
+          const gm = gecmis && gecmis[temizle(h.ad)];
+          if (gm && gm.length) {
+            const cur = parseInt(leg.mesafe) || 0;
+            const pistH = (leg.pist || "").charAt(0).toUpperCase();
+            const poz = (r) => parseInt(r.poz) || 10;
+            const yakin = gm.filter((r) => Math.abs((parseInt(r.mesafe) || 0) - cur) <= 100);
+            const uzak = gm.filter((r) => Math.abs((parseInt(r.mesafe) || 0) - cur) > 100);
+            if (yakin.length && uzak.length) {
+              const oy = yakin.reduce((s, r) => s + poz(r), 0) / yakin.length;
+              const ou = uzak.reduce((s, r) => s + poz(r), 0) / uzak.length;
+              yaz(h, "B2", oy < ou - 0.5 ? 100 : oy <= ou + 0.5 ? 60 : 20);
+            }
+            const ayni = gm.filter((r) => (r.pist || "").charAt(0).toUpperCase() === pistH);
+            const diger = gm.filter((r) => (r.pist || "").charAt(0).toUpperCase() !== pistH);
+            if (ayni.length && diger.length) {
+              const oa = ayni.reduce((s, r) => s + poz(r), 0) / ayni.length;
+              const od = diger.reduce((s, r) => s + poz(r), 0) / diger.length;
+              yaz(h, "B3", oa < od - 0.5 ? 100 : oa <= od + 0.5 ? 60 : 20);
+            }
+            const trh = (s) => { const pp = (s || "").split("."); return new Date(pp[2] + "-" + pp[1] + "-" + pp[0]); };
+            const gunler = [new Date(bugun)].concat(gm.slice(0, 6).map((r) => trh(r.t)));
+            let araIx = -1, araGun = 0;
+            for (let gi = 1; gi < gunler.length; gi++) {
+              const f = Math.round((gunler[gi - 1] - gunler[gi]) / GUN);
+              if (f >= 20) { araIx = gi; araGun = f; break; }
+            }
+            if (araIx > 0) {
+              const sonra = araIx;
+              const ok = araGun >= 45 ? (sonra >= 3 && sonra <= 6) : araGun >= 30 ? (sonra >= 2 && sonra <= 5) : (sonra >= 2 && sonra <= 4);
+              if (ok) yaz(h, "B4", 100);
+            } else {
+              const winIx = gm.slice(0, 6).findIndex((r) => poz(r) === 1);
+              if (winIx >= 0) yaz(h, "B4", winIx < 2 ? 100 : winIx < 4 ? 60 : 20);
+            }
+            const bugunEk = h.ad.toUpperCase().replace(temizle(h.ad), "").replace(/[^A-Z]/g, "");
+            const sonEk = (gm[0].ekipman || "").toUpperCase().replace(/[^A-Z]/g, "");
+            if (bugunEk !== sonEk) yaz(h, "B10", 100);
+            if (curIkr) {
+              const sonIkr = parseFloat((gm[0].ikr || "").replace(/\./g, "").replace(",", ".")) || null;
+              if (sonIkr) {
+                if (sonIkr > curIkr * 1.3) yaz(h, "B1", 100);
+                else if (sonIkr > curIkr) yaz(h, "B1", 60);
+                else if (Math.abs(sonIkr - curIkr) < 1) yaz(h, "B1", 20);
+              }
+            }
+          }
           const idm = idman && idman[temizle(h.ad)];
           if (idm) {
             for (const w of idm) {
@@ -374,6 +422,15 @@
           if (sn) yaz(h, "C1", sn === 1 ? 100 : sn === 2 ? 60 : sn === 3 ? 20 : 0);
           const b = binis[j] || 0;
           if (sn && b) yaz(h, "C3", b <= 2 ? (sn === 1 ? 100 : sn === 2 ? 80 : null) : b <= 4 ? (sn === 1 ? 60 : sn === 2 ? 30 : null) : null);
+          // C2: jokey değişimi (geçmişteki kısaltmayı yıllık listeyle eşle)
+          if (gm && gm.length && sn && sn < 4 && jokeyYil) {
+            const km = (gm[0].jokey || "").trim().toUpperCase().match(/^([A-ZÇĞİÖŞÜ])[A-ZÇĞİÖŞÜ]*\.\s*([A-ZÇĞİÖŞÜ]+)$/);
+            let eski = 4;
+            if (km) { const ix2 = jokeyYil.findIndex((n) => n.startsWith(km[1]) && n.endsWith(" " + km[2])); eski = ix2 < 0 ? 4 : ix2 < 15 ? 1 : ix2 < 35 ? 2 : 3; }
+            if (eski >= 3 && sn === 1) yaz(h, "C2", 100);
+            else if (eski === 2 && sn === 1) yaz(h, "C2", 60);
+            else if (eski === 3 && sn === 2) yaz(h, "C2", 20);
+          }
         }
         rank5(b5, "B5", false);
         rank5(b14, "B14", false);
