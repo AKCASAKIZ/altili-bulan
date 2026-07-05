@@ -290,6 +290,8 @@
     try {
       const H = await loadHistory();
       const bugun = AB.state.day;
+      const kariyer = await fetch(`data/${AB.state.day}/atistatistik-${AB.state.city}.json`, { cache: "no-store" })
+        .then((r) => r.ok ? r.json() : null).catch(() => null);
       // jokey sınıfları: kazanma yüzdesine göre çeyrekler (en az 3 koşusu olanlar)
       const jList = Object.entries(H.jokey).filter(([, s]) => s.kosu >= 3)
         .map(([k, s]) => [k, s.win / s.kosu]).sort((a, b) => b[1] - a[1]);
@@ -343,8 +345,10 @@
             }
           }
           // B5 (gerçek kazanma yüzdesi) ve B14 (kısa farkla geçilen koşular)
+          const ki = kariyer && kariyer[temizle(h.ad)];
+          if (ki && ki.kosu) b5.push({ h, v: ki.p1 / ki.kosu });
+          else if (hist.length) b5.push({ h, v: hist.filter((x) => x.pos === 1).length / hist.length });
           if (hist.length) {
-            b5.push({ h, v: hist.filter((x) => x.pos === 1).length / hist.length });
             const kf = hist.filter((x) => x.pos <= 3 && /(BURUN|BAŞ|BOYUN|YARIM)/i.test(x.fark)).length;
             b14.push({ h, v: kf || null });
           }
