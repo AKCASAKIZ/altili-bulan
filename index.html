@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altılı Bulan — At Yarışı Puanlama Sistemi</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏇</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-icon">🏇</span>
+    <div>
+      <h1>Altılı Bulan <span class="ver">v2</span></h1>
+      <p class="subtitle">25 kriterli ağırlıklı puanlama sistemi</p>
+    </div>
+  </div>
+  <div class="topbar-controls">
+    <select id="daySelect" title="Gün seç"></select>
+    <select id="citySelect" title="Hipodrom seç"></select>
+    <button id="themeToggle" class="icon-btn" title="Tema değiştir">🌓</button>
+  </div>
+</header>
+
+<nav class="tabs" id="mainTabs">
+  <button class="tab active" data-tab="puanlama">📝 Puanlama</button>
+  <button class="tab" data-tab="program">📋 Program</button>
+  <button class="tab" data-tab="sonuclar">🏁 Sonuçlar</button>
+  <button class="tab" data-tab="kupon">🎫 Kupon</button>
+  <button class="tab" data-tab="ayarlar">⚙️ Katsayılar</button>
+  <button class="tab" data-tab="veri">💾 Veri</button>
+</nav>
+
+<main>
+  <!-- PUANLAMA -->
+  <section id="tab-puanlama" class="tab-pane active">
+    <div class="toolbar">
+      <div class="leg-chips" id="legChips"></div>
+      <div class="toolbar-right">
+        <button id="btnLoadProgram" class="btn">📥 Programdan yükle</button>
+        <button id="btnAutoScore" class="btn btn-accent">⚡ Otomatik puanla</button>
+        <button id="btnAddHorse" class="btn btn-ghost">+ At ekle</button>
+      </div>
+    </div>
+    <div class="race-meta" id="raceMeta"></div>
+    <div class="table-wrap">
+      <table id="scoreTable" class="score-table"></table>
+    </div>
+    <p class="hint">💡 Hücrelere 0–100 arası puan girin (kılavuz: genelde 100 / 60 / 20). Otomatik puanlama <b>B5, B6, B8, B13</b> kriterlerini program verisinden (Son 6, En İyi Derece, KGS) doldurur — üzerine yazabilirsiniz. Hangi kriterlerin aktif olduğunu <b>Katsayılar</b> sekmesinden seçebilirsiniz.</p>
+  </section>
+
+  <!-- PROGRAM -->
+  <section id="tab-program" class="tab-pane">
+    <div id="programView"></div>
+  </section>
+
+  <!-- SONUCLAR -->
+  <section id="tab-sonuclar" class="tab-pane">
+    <div id="resultsView"></div>
+  </section>
+
+  <!-- KUPON -->
+  <section id="tab-kupon" class="tab-pane">
+    <div class="toolbar">
+      <label>Birim fiyat (TL): <input type="number" id="unitPrice" value="1" min="0.01" step="0.01" style="width:90px"></label>
+      <button id="btnAutoKupon" class="btn btn-accent">⚡ Puanlara göre öner</button>
+    </div>
+    <div id="kuponView"></div>
+    <div class="kupon-summary" id="kuponSummary"></div>
+  </section>
+
+  <!-- KATSAYILAR -->
+  <section id="tab-ayarlar" class="tab-pane">
+    <div class="toolbar">
+      <button id="btnPresetAll" class="btn">Varsayılan (25 kriter)</button>
+      <button id="btnPreset6" class="btn">Tavsiye modu (6 kriter: A3 B1 B2 B3 B6 B13)</button>
+      <span class="hint" id="coefSum"></span>
+    </div>
+    <div class="table-wrap">
+      <table id="coefTable" class="coef-table"></table>
+    </div>
+    <p class="hint">💡 Orijinal kılavuzdaki katsayı tablosunda B16–B18 satırlarında kayma vardı (ör. B16 %3.41 yazıp katsayısı 0.0124 girilmişti). Burada katsayılar yüzdelerle tutarlı olacak şekilde <b>düzeltildi</b> — toplam tam %100. "Tavsiye modu", tavsiyeler.doc'ta yazarın fiilen kullandığı 6 kriteri açar.</p>
+  </section>
+
+  <!-- VERI -->
+  <section id="tab-veri" class="tab-pane">
+    <div class="cards">
+      <div class="card">
+        <h3>📤 Dışa / İçe aktar</h3>
+        <p>Puanlamalarınız tarayıcıda otomatik saklanır. Yedek almak veya başka cihaza taşımak için:</p>
+        <button id="btnExport" class="btn">Puanlamaları indir (JSON)</button>
+        <label class="btn btn-ghost file-btn">JSON yükle<input type="file" id="importFile" accept=".json" hidden></label>
+      </div>
+      <div class="card">
+        <h3>📄 TJK CSV yükle</h3>
+        <p>GitHub verisi yoksa, TJK sitesindeki "CSV Program / CSV Sonuçlar" dosyasını buraya sürükleyin veya seçin:</p>
+        <label class="btn btn-ghost file-btn">CSV dosyası seç<input type="file" id="csvFile" accept=".csv" hidden></label>
+        <p class="hint" id="csvInfo"></p>
+      </div>
+      <div class="card">
+        <h3>🔄 Veri durumu</h3>
+        <p id="dataStatus">Veri yükleniyor…</p>
+        <button id="btnReload" class="btn btn-ghost">Yeniden dene</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Altılı Bulan v2 — kişisel kullanım için puanlama aracı. Veriler <a href="https://www.tjk.org" target="_blank" rel="noopener">TJK</a>'nın açık CSV raporlarından alınır. Sorumlu oynayın.</p>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
