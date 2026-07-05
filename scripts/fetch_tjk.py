@@ -271,11 +271,11 @@ def fetch_day(date: datetime) -> int:
                         ist_dosya.write_text(json.dumps(stats, ensure_ascii=False), encoding="utf-8")
                         print(f"  + atistatistik ({len(stats)} at)")
                         written += 1
-                    idman_dosya = out_dir / f"idman-{slugify(city)}.json"
-                    if not idman_dosya.exists():
-                        names2 = [at_adi_temizle(h.get("ad", ""))
-                                  for r in data["races"] for h in r["horses"]]
-                        fetch_idman_son800(names2, out_dir, slugify(city))
+                idman_dosya = out_dir / f"idman-{slugify(city)}.json"
+                if not idman_dosya.exists():
+                    names2 = [at_adi_temizle(h.get("ad", ""))
+                              for r in data["races"] for r_h in [r["horses"]] for h in r_h]
+                    fetch_idman_son800(names2, out_dir, slugify(city))
     return written
 
 
