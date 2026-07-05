@@ -15,6 +15,7 @@ Sadece standart kütüphane kullanır.
 import json
 import re
 import sys
+import time
 import urllib.request
 import urllib.parse
 from datetime import datetime, timedelta, timezone
@@ -134,6 +135,39 @@ def parse_csv(text: str) -> dict:
     return {"date": date, "city": city, "isResult": is_result, "races": races}
 
 
+EKIPMAN = re.compile(r"(\s+(KG|SKG|GDSK|DSGK|GKDSK|GKD|DSK|GSK|SGK|GDS|DSG|GKR|DB|SK|GD|GK|DS|KD|GM|KGD|G|K|D|M|S))+$")
+
+
+def at_adi_temizle(ad: str) -> str:
+    ad = re.sub(r"\s*\(.*?\)\s*", " ", ad or "")
+    return EKIPMAN.sub("", ad).strip().upper()
+
+
+def fetch_at_istatistik(names: list[str]) -> dict:
+    """TJK At Istatistikleri sorgusundan kariyer verilerini ceker."""
+    out = {}
+    for name in sorted(set(n for n in names if n)):
+        url = ("https://www.tjk.org/TR/YarisSever/Query/Data/AtIstatistikleri"
+               "?QueryParameter_AtAdi=" + urllib.parse.quote(name))
+        body = http_get(url)
+        time.sleep(0.25)
+        if not body:
+            continue
+        html = body.decode("utf-8", "replace")
+        for row in re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S):
+            cells = [re.sub(r"<[^>]+>", "", c).replace("&nbsp;", " ").strip()
+                     for c in re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)]
+            if len(cells) >= 18 and at_adi_temizle(cells[0]) == name:
+                try:
+                    out[name] = {"kosu": int(cells[6]), "p1": int(cells[7]),
+                                 "p2": int(cells[8]), "p3": int(cells[9]),
+                                 "kazanc": cells[17]}
+                except (ValueError, IndexError):
+                    pass
+                break
+    return out
+
+
 def fetch_day(date: datetime) -> int:
     """Bir günün tüm hipodrom program+sonuçlarını indirir. Yazılan dosya sayısını döndürür."""
     written = 0
@@ -165,6 +199,16 @@ def fetch_day(date: datetime) -> int:
             out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
             print(f"  ✓ {out.relative_to(BASE)} ({len(data['races'])} koşu)")
             written += 1
+            if tip == "program":
+                ist_dosya = out_dir / f"atistatistik-{slugify(city)}.json"
+                if not ist_dosya.exists():
+                    names = [at_adi_temizle(h.get("ad", ""))
+                             for r in data["races"] for h in r["horses"]]
+                    stats = fetch_at_istatistik(names)
+                    if stats:
+                        ist_dosya.write_text(json.dumps(stats, ensure_ascii=False), encoding="utf-8")
+                        print(f"  + atistatistik ({len(stats)} at)")
+                        written += 1
     return written
 
 
