@@ -92,12 +92,15 @@
 
     let raceNo = 0;
     for (const line of lines) {
-      const mr = line.match(/(\d{1,2})\.KOŞU/);
-      // koşu başlığı (tahmin bölümündeki "N.KOŞU : ..." satırlarıyla karışmasın)
-      if (mr && !line.includes(":")) { raceNo = +mr[1]; if (!d.races[raceNo]) d.races[raceNo] = { horses: {} }; continue; }
-
-      // tahmin satırı: "1.KOŞU : 6-7 10-4-1-8 5-2-9-3"
+      // tahmin satırı: "1.KOŞU : 6-7 10-4-1-8 5-2-9-3" (önce denenir)
       const mt = line.match(/(\d{1,2})\.KOŞU\s*:\s*([\d()\- ]+)/);
+      // koşu başlığı: "8.KOŞU" tek başına VEYA "SAAT:" ile aynı satır grubunda
+      const mr = line.match(/(\d{1,2})\.KOŞU/);
+      if (!mt && mr && (/SAAT\s*:/.test(line) || !line.includes(":"))) {
+        raceNo = +mr[1];
+        if (!d.races[raceNo]) d.races[raceNo] = { horses: {} };
+        continue;
+      }
       if (mt) {
         const grup = mt[2].trim().split(/\s+/).map((g) => g.replace(/\(\d+\)/g, "").split("-").map(Number).filter(Boolean));
         d.tahmin[+mt[1]] = { favori: grup[0] || [], plase: grup[1] || [], surpriz: grup[2] || [] };
@@ -152,6 +155,10 @@
   function apply() {
     if (!current) return alert("Önce PDF'i okuyun.");
     if (!AB.state.legs.length) return alert("Önce Puanlama sekmesinde programı yükleyin.");
+    if (current.city && AB.state.city && AB.slugify(current.city) !== AB.state.city) {
+      document.getElementById("dergiInfo").textContent = `⚠️ Uygulanmadı: dergi ${current.city} (${current.date}) için, ama üstte seçili program farklı. Üst bardan doğru gün/hipodromu seçip programı yükleyin.`;
+      return;
+    }
     let dokunulan = 0;
     for (const leg of AB.state.legs) {
       const race = current.races[leg.raceNo];
