@@ -231,9 +231,6 @@
     for (const day of days) {
       for (const c of idx.days[day]) {
         const s = await fetch(`data/${day}/sonuclar-${c.slug}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
-      const idman = await fetch(`data/${AB.state.day}/idman-${AB.state.city}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
-      const jokeyYilJson = await fetch(`data/istatistik/jokey-${new Date().getFullYear()}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
-      const jokeyYil = jokeyYilJson ? Object.keys(jokeyYilJson).map((s) => s.toUpperCase()) : null;
         if (!s) continue;
         for (const race of s.races) {
           const ikr = parseFloat((race.ikramiye || "").replace(/\./g, "").replace(",", ".")) || null;
@@ -295,6 +292,9 @@
       const bugun = AB.state.day;
       const kariyer = await fetch(`data/${AB.state.day}/atistatistik-${AB.state.city}.json`, { cache: "no-store" })
         .then((r) => r.ok ? r.json() : null).catch(() => null);
+      const idman = await fetch(`data/${AB.state.day}/idman-${AB.state.city}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
+      const jokeyYilJson = await fetch(`data/istatistik/jokey-${new Date().getFullYear()}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
+      const jokeyYil = jokeyYilJson ? Object.keys(jokeyYilJson).map((s) => s.toUpperCase()) : null;
       // jokey sınıfları: kazanma yüzdesine göre çeyrekler (en az 3 koşusu olanlar)
       const jList = Object.entries(H.jokey).filter(([, s]) => s.kosu >= 3)
         .map(([k, s]) => [k, s.win / s.kosu]).sort((a, b) => b[1] - a[1]);
