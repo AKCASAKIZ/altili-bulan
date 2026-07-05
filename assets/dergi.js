@@ -231,6 +231,9 @@
     for (const day of days) {
       for (const c of idx.days[day]) {
         const s = await fetch(`data/${day}/sonuclar-${c.slug}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
+      const idman = await fetch(`data/${AB.state.day}/idman-${AB.state.city}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
+      const jokeyYilJson = await fetch(`data/istatistik/jokey-${new Date().getFullYear()}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
+      const jokeyYil = jokeyYilJson ? Object.keys(jokeyYilJson).map((s) => s.toUpperCase()) : null;
         if (!s) continue;
         for (const race of s.races) {
           const ikr = parseFloat((race.ikramiye || "").replace(/\./g, "").replace(",", ".")) || null;
@@ -345,6 +348,18 @@
             }
           }
           // B5 (gerçek kazanma yüzdesi) ve B14 (kısa farkla geçilen koşular)
+          const idm = idman && idman[temizle(h.ad)];
+          if (idm) {
+            for (const w of idm) {
+              const p = (w.t || "").split(".");
+              if (p.length !== 3) continue;
+              const g = Math.round((new Date(bugun) - new Date(p[2] + "-" + p[1] + "-" + p[0])) / GUN);
+              const uzun = ((w.m1000 || "") + (w.m1200 || "") + (w.m1400 || "")).trim();
+              if (uzun && /galop/i.test(w.tur || "") && g >= 3 && g <= 7) {
+                if (g > 3 || /R/.test(w.durum || "")) { yaz(h, "B7", 100); break; }
+              }
+            }
+          }
           const ki = kariyer && kariyer[temizle(h.ad)];
           if (ki && ki.kosu) b5.push({ h, v: ki.p1 / ki.kosu });
           else if (hist.length) b5.push({ h, v: hist.filter((x) => x.pos === 1).length / hist.length });
@@ -354,7 +369,8 @@
           }
           // jokey: C1, C3
           const j = (m.jokey || "").trim().toUpperCase();
-          const sn = sinif[j];
+          let sn = sinif[j];
+          if (jokeyYil) { const ix = jokeyYil.indexOf(j); sn = ix < 0 ? 4 : ix < 15 ? 1 : ix < 35 ? 2 : 3; }
           if (sn) yaz(h, "C1", sn === 1 ? 100 : sn === 2 ? 60 : sn === 3 ? 20 : 0);
           const b = binis[j] || 0;
           if (sn && b) yaz(h, "C3", b <= 2 ? (sn === 1 ? 100 : sn === 2 ? 80 : null) : b <= 4 ? (sn === 1 ? 60 : sn === 2 ? 30 : null) : null);
