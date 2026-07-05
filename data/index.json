@@ -1,29 +1,29 @@
 {
-    "updated":  "2026-07-05 12:35 UTC",
-    "days":  {
-                 "2026-07-04":  [
-                                    {
-                                        "slug":  "ankara",
-                                        "name":  "Ankara"
-                                    },
-                                    {
-                                        "slug":  "diyarbakir",
-                                        "name":  "Diyarbakır"
-                                    },
-                                    {
-                                        "slug":  "izmir",
-                                        "name":  "İzmir"
-                                    }
-                                ],
-                 "2026-07-05":  [
-                                    {
-                                        "slug":  "istanbul",
-                                        "name":  "İstanbul"
-                                    },
-                                    {
-                                        "slug":  "izmir",
-                                        "name":  "İzmir"
-                                    }
-                                ]
-             }
+ "updated": "2026-07-05 19:29 UTC",
+ "days": {
+  "2026-07-04": [
+   {
+    "slug": "ankara",
+    "name": "Ankara"
+   },
+   {
+    "slug": "diyarbakir",
+    "name": "Diyarbakır"
+   },
+   {
+    "slug": "izmir",
+    "name": "İzmir"
+   }
+  ],
+  "2026-07-05": [
+   {
+    "slug": "istanbul",
+    "name": "İstanbul"
+   },
+   {
+    "slug": "izmir",
+    "name": "İzmir"
+   }
+  ]
+ }
 }
