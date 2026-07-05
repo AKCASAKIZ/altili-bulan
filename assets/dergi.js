@@ -201,3 +201,171 @@
   listPdfs();
   render();
 })();
+
+
+
+/* ===== İstatistik motoru: birikmiş sonuç verisinden otomatik puanlama =====
+ * data/ klasöründeki geçmiş sonuçlardan sahip/antrenör/jokey istatistikleri
+ * ve at geçmişleri çıkarır; A1-A3, B1, B5, B12, B14, B15, B16-B18, C1, C3 doldurur. */
+(function () {
+  const AB = window.AB;
+  if (!AB) return;
+  const GUN = 24 * 60 * 60 * 1000;
+
+  // Puanlama sekmesine düğme
+  const btn = document.createElement("button");
+  btn.id = "btnFullAuto";
+  btn.className = "btn btn-accent";
+  btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
+  document.getElementById("btnAutoScore").after(btn);
+
+  const temizle = (ad) => (ad || "")
+    .replace(/\s*\(.*?\)\s*/g, " ")
+    .replace(/(\s+(KG|SKG|GDSK|DSGK|GKDSK|GKD|DSK|GSK|SGK|GDS|DSG|GKR|DB|SK|GD|GK|DS|KD|GM|KGD|G|K|D|M|S))+$/g, "")
+    .trim().toUpperCase();
+
+  async function loadHistory() {
+    const idx = await fetch("data/index.json", { cache: "no-store" }).then((r) => r.json());
+    const days = Object.keys(idx.days || {}).sort().slice(-30);
+    const horse = {}, sahip = {}, antrenor = {}, jokey = {};
+    for (const day of days) {
+      for (const c of idx.days[day]) {
+        const s = await fetch(`data/${day}/sonuclar-${c.slug}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
+        if (!s) continue;
+        for (const race of s.races) {
+          const ikr = parseFloat((race.ikramiye || "").replace(/\./g, "").replace(",", ".")) || null;
+          let pos = 0;
+          for (const h of race.horses) {
+            if (/koşmaz/i.test(h.derece || "") || /koşmaz/i.test(h.ad)) continue;
+            pos++;
+            const ad = temizle(h.ad);
+            (horse[ad] = horse[ad] || []).push({
+              date: day, pos, mesafe: parseInt(race.mesafe) || null, pist: race.pist || "",
+              kilo: parseFloat((h.kilo || "").replace(",", ".")) || null, ikr,
+              fark: h.fark || "",
+            });
+            for (const [map, key] of [[sahip, h.sahip], [antrenor, h.antrenor], [jokey, h.jokey]]) {
+              const k = (key || "").trim().toUpperCase();
+              if (!k) continue;
+              const st = (map[k] = map[k] || { puan: 0, kosu: 0, win: 0, lastDate: null, lastPos: null });
+              st.kosu++;
+              if (pos === 1) { st.puan += 4; st.win++; }
+              else if (pos === 2) st.puan += 2;
+              else if (pos === 3) st.puan += 1;
+              if (!st.lastDate || day >= st.lastDate) { st.lastDate = day; st.lastPos = pos; }
+            }
+          }
+        }
+      }
+    }
+    return { horse, sahip, antrenor, jokey, gunSayisi: days.length };
+  }
+
+  function kisiPuani(st, bugun, gunESIK) {
+    // A2/A3 ve B17/B18 tarzı: son koşan atın derecesi + kaç gün önce
+    const out = {};
+    if (st) {
+      if (st.lastPos === 1) out.derece = 100; else if (st.lastPos === 2) out.derece = 60; else if (st.lastPos === 3) out.derece = 20;
+      if (st.lastDate) {
+        const g = Math.round((new Date(bugun) - new Date(st.lastDate)) / GUN);
+        const [e1, e2, e3] = gunESIK;
+        out.gun = g <= e1 ? 100 : g <= e2 ? 60 : g <= e3 ? 20 : 0;
+      }
+    }
+    return out;
+  }
+
+  function listePuani(map, key) {
+    // A1/B16: puan listesinde üst üçtelik 100, orta 60
+    const st = map[(key || "").trim().toUpperCase()];
+    if (!st || !st.puan) return null;
+    const puanlar = Object.values(map).map((x) => x.puan).filter((p) => p > 0).sort((a, b) => b - a);
+    const oran = puanlar.indexOf(st.puan) / Math.max(1, puanlar.length);
+    return oran <= 0.34 ? 100 : oran <= 0.67 ? 60 : null;
+  }
+
+  async function tamOtomatik() {
+    if (!AB.state.legs.length) return alert("Önce Puanlama sekmesinden programı yükleyin.");
+    btn.textContent = "⏳ İstatistikler yükleniyor…";
+    try {
+      const H = await loadHistory();
+      const bugun = AB.state.day;
+      // jokey sınıfları: kazanma yüzdesine göre çeyrekler (en az 3 koşusu olanlar)
+      const jList = Object.entries(H.jokey).filter(([, s]) => s.kosu >= 3)
+        .map(([k, s]) => [k, s.win / s.kosu]).sort((a, b) => b[1] - a[1]);
+      const sinif = {};
+      jList.forEach(([k], i) => { const q = i / Math.max(1, jList.length); sinif[k] = q <= 0.25 ? 1 : q <= 0.5 ? 2 : q <= 0.75 ? 3 : 4; });
+      // bugünkü programda jokey başına koşu sayısı (C3)
+      const binis = {};
+      for (const leg of AB.state.legs) for (const h of leg.horses) {
+        const j = (h.meta?.jokey || "").trim().toUpperCase();
+        if (j) binis[j] = (binis[j] || 0) + 1;
+      }
+
+      let dolu = 0;
+      const yaz = (h, k, v) => { if (v != null && h.scores[k] == null) { h.scores[k] = v; dolu++; } };
+      const rank5 = (list, key, asc) => {
+        list.filter((x) => x.v != null).sort((a, b) => asc ? a.v - b.v : b.v - a.v)
+          .slice(0, 5).forEach((x, i) => yaz(x.h, key, AB.RANK5[i]));
+      };
+
+      for (const leg of AB.state.legs) {
+        const curIkr = parseFloat((AB.state.program?.races.find((r) => r.no === leg.raceNo)?.ikramiye || "").replace(/\./g, "").replace(",", ".")) || null;
+        const b5 = [], b14 = [];
+        for (const h of leg.horses) {
+          const m = h.meta || {};
+          const hist = (H.horse[temizle(h.ad)] || []).sort((a, b) => a.date < b.date ? 1 : -1);
+          const son = hist[0];
+          // sahip: A1, A2, A3
+          yaz(h, "A1", listePuani(H.sahip, m.sahip));
+          const sp = kisiPuani(H.sahip[(m.sahip || "").trim().toUpperCase()], bugun, [10, 20, 30]);
+          yaz(h, "A2", sp.derece); yaz(h, "A3", sp.gun);
+          // antrenör: B16, B17, B18
+          yaz(h, "B16", listePuani(H.antrenor, m.antrenor));
+          const ap = kisiPuani(H.antrenor[(m.antrenor || "").trim().toUpperCase()], bugun, [7, 14, 21]);
+          yaz(h, "B17", ap.derece); yaz(h, "B18", ap.gun);
+          // at geçmişi: B1, B12, B15
+          if (son) {
+            if (son.ikr && curIkr) {
+              if (son.ikr > curIkr * 1.3) yaz(h, "B1", 100);
+              else if (son.ikr > curIkr) yaz(h, "B1", 60);
+              else if (Math.abs(son.ikr - curIkr) < 1) yaz(h, "B1", 20);
+            }
+            const curM = parseInt(leg.mesafe) || null;
+            if (son.mesafe && curM && son.mesafe > curM) {
+              const f = son.mesafe - curM;
+              yaz(h, "B12", f >= 300 && f <= 600 ? 100 : f === 200 ? 80 : f === 100 ? 60 : null);
+            }
+            const curK = parseFloat((m.kilo || "").replace(",", ".")) || null;
+            if (son.kilo && curK) {
+              const f = Math.abs(curK - son.kilo);
+              yaz(h, "B15", f <= 2.5 ? 100 : f <= 4 ? 60 : f <= 5 ? 30 : null);
+            }
+          }
+          // B5 (gerçek kazanma yüzdesi) ve B14 (kısa farkla geçilen koşular)
+          if (hist.length) {
+            b5.push({ h, v: hist.filter((x) => x.pos === 1).length / hist.length });
+            const kf = hist.filter((x) => x.pos <= 3 && /(BURUN|BAŞ|BOYUN|YARIM)/i.test(x.fark)).length;
+            b14.push({ h, v: kf || null });
+          }
+          // jokey: C1, C3
+          const j = (m.jokey || "").trim().toUpperCase();
+          const sn = sinif[j];
+          if (sn) yaz(h, "C1", sn === 1 ? 100 : sn === 2 ? 60 : sn === 3 ? 20 : 0);
+          const b = binis[j] || 0;
+          if (sn && b) yaz(h, "C3", b <= 2 ? (sn === 1 ? 100 : sn === 2 ? 80 : null) : b <= 4 ? (sn === 1 ? 60 : sn === 2 ? 30 : null) : null);
+        }
+        rank5(b5, "B5", false);
+        rank5(b14, "B14", false);
+      }
+      AB.saveSession();
+      AB.renderAll();
+      btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
+      alert(`✅ ${dolu} puan hücresi ${H.gunSayisi} günlük sonuç arşivinden dolduruldu.\n(A1-A3 sahip, B16-B18 antrenör, C1/C3 jokey, B1 ikramiye, B5, B12, B14, B15)\nElle girdiğiniz puanların ÜZERİNE YAZILMADI. Arşiv büyüdükçe isabet artar.`);
+    } catch (e) {
+      btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
+      alert("Hata: " + e.message);
+    }
+  }
+  btn.onclick = tamOtomatik;
+})();
