@@ -168,6 +168,68 @@ def fetch_at_istatistik(names: list[str]) -> dict:
     return out
 
 
+def _tablo_satirlari(html: str) -> list:
+    out = []
+    for row in re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S):
+        cells = [re.sub(r"<[^>]+>", "", c).replace("&nbsp;", " ").strip()
+                 for c in re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)]
+        if cells:
+            out.append(cells)
+    return out
+
+
+def fetch_kisi_listeleri() -> None:
+    """Jokey/antrenor/sahip/yetistirici yillik siralamalari (ilk 50)."""
+    yil = (datetime.now(timezone.utc) + timedelta(hours=3)).year
+    tipler = {"jokey": "JokeyIstatistikleri", "antrenor": "AntrenorIstatistikleri",
+              "sahip": "SahipIstatistikleri", "yetistirici": "YetistiriciIstatistikleri"}
+    kdir = DATA / "istatistik"
+    kdir.mkdir(parents=True, exist_ok=True)
+    for tip, page in tipler.items():
+        body = http_get(f"https://www.tjk.org/TR/YarisSever/Query/Data/{page}?QueryParameter_YIL={yil}")
+        time.sleep(0.3)
+        if not body:
+            continue
+        out = {}
+        for cells in _tablo_satirlari(body.decode("utf-8", "replace")):
+            if len(cells) >= 7 and cells[1].isdigit():
+                try:
+                    out[cells[0].upper()] = {"kosu": int(cells[1]), "p1": int(cells[2]),
+                                             "p2": int(cells[3]), "p3": int(cells[4])}
+                except ValueError:
+                    pass
+        if out:
+            (kdir / f"{tip}-{yil}.json").write_text(json.dumps(out, ensure_ascii=False), encoding="utf-8")
+            print(f"  + istatistik/{tip}-{yil}.json ({len(out)})")
+
+
+def fetch_idman_son800(names: list, out_dir, slug: str) -> None:
+    """Program atlarinin idman galoplarini ve son 800 derecelerini ceker."""
+    idman, son8 = {}, {}
+    for name in sorted(set(n for n in names if n)):
+        b = http_get("https://www.tjk.org/TR/YarisSever/Query/Data/IdmanIstatistikleri?QueryParameter_ATADI=" + urllib.parse.quote(name))
+        time.sleep(0.2)
+        if b:
+            rows = [c for c in _tablo_satirlari(b.decode("utf-8", "replace"))
+                    if len(c) >= 17 and at_adi_temizle(c[0]) == name]
+            if rows:
+                idman[name] = [{"t": r[12], "m1400": r[4], "m1200": r[5], "m1000": r[6],
+                                "m800": r[7], "durum": r[11], "tur": r[16]} for r in rows[:6]]
+        b = http_get("https://www.tjk.org/TR/YarisSever/Query/Data/Son800Ist?QueryParameter_AtAdi=" + urllib.parse.quote(name))
+        time.sleep(0.2)
+        if b:
+            rows = [c for c in _tablo_satirlari(b.decode("utf-8", "replace"))
+                    if c and at_adi_temizle(c[0]) == name]
+            if rows:
+                son8[name] = rows[:6]
+    if idman:
+        (out_dir / f"idman-{slug}.json").write_text(json.dumps(idman, ensure_ascii=False), encoding="utf-8")
+        print(f"  + idman-{slug}.json ({len(idman)} at)")
+    if son8:
+        (out_dir / f"son800-{slug}.json").write_text(json.dumps(son8, ensure_ascii=False), encoding="utf-8")
+        print(f"  + son800-{slug}.json ({len(son8)} at)")
+
+
 def fetch_day(date: datetime) -> int:
     """Bir günün tüm hipodrom program+sonuçlarını indirir. Yazılan dosya sayısını döndürür."""
     written = 0
@@ -209,6 +271,11 @@ def fetch_day(date: datetime) -> int:
                         ist_dosya.write_text(json.dumps(stats, ensure_ascii=False), encoding="utf-8")
                         print(f"  + atistatistik ({len(stats)} at)")
                         written += 1
+                    idman_dosya = out_dir / f"idman-{slugify(city)}.json"
+                    if not idman_dosya.exists():
+                        names2 = [at_adi_temizle(h.get("ad", ""))
+                                  for r in data["races"] for h in r["horses"]]
+                        fetch_idman_son800(names2, out_dir, slugify(city))
     return written
 
 
@@ -247,6 +314,7 @@ def main() -> None:
         # TR saati (UTC+3) baz alınır: bugün + dün
         now_tr = datetime.now(timezone.utc) + timedelta(hours=3)
         dates = [now_tr, now_tr - timedelta(days=1)]
+    fetch_kisi_listeleri()
     total = 0
     for d in dates:
         print(f"[{d:%Y-%m-%d}] çekiliyor…")
