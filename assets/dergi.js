@@ -2,6 +2,15 @@
  * Repodaki PDF'leri (kök ve dergi/ klasörü) GitHub API'den listeler,
  * pdf.js ile tarayıcıda ayrıştırır, tahminleri puanlamaya uygular. */
 "use strict";
+
+/* at adını ekipman soneklerinden arındırıp normalize eder — dergi.js'in tüm bölümleri ortak kullanır */
+function temizle(ad) {
+  return (ad || "")
+    .replace(/\s*\(.*?\)\s*/g, " ")
+    .replace(/(\s+(KG|SKG|GDSK|DSGK|GKDSK|GKD|DSK|GSK|SGK|GDS|DSG|GKR|DB|SK|GD|GK|DS|KD|GM|KGD|G|K|D|M|S))+\s*$/g, "")
+    .trim().toUpperCase();
+}
+
 (function () {
   const AB = window.AB;
   if (!AB) { console.error("dergi.js: app.js kancaları yok"); return; }
@@ -24,9 +33,10 @@
       <div class="toolbar-right">
         <button id="btnDergiParse" class="btn">📖 PDF'i oku</button>
         <button id="btnDergiApply" class="btn btn-accent">⚡ Puanlamaya uygula (B6+B11)</button>
+        <button id="btnDergiGecmis" class="btn btn-accent">📊 Geçmişi uygula (B1+B2+B3+B12+B15)</button>
       </div>
     </div>
-    <p class="hint" id="dergiInfo">Yarış Gazetesi PDF'ini GitHub reposuna yükleyin (kök veya <b>dergi/</b> klasörü) — burada otomatik listelenir. "PDF'i oku" gazetenin puanlarını, FAVORİ/PLASE/SÜRPRİZ tahminlerini ve banko atları çıkarır. "Puanlamaya uygula": gazete puanı en yüksek 5 ata <b>B6</b> (100,70,50,30,10), favorilere <b>B11</b>=100, plaselere 60, sürprizlere 30 yazar.</p>
+    <p class="hint" id="dergiInfo">Yarış Gazetesi PDF'ini GitHub reposuna yükleyin (kök veya <b>dergi/</b> klasörü) — burada otomatik listelenir. "PDF'i oku" gazetenin puanlarını, FAVORİ/PLASE/SÜRPRİZ tahminlerini, banko atları ve sayfa 2+'deki geçmiş performans tablolarını çıkarır. "Puanlamaya uygula": gazete puanı en yüksek 5 ata <b>B6</b> (100,70,50,30,10), favorilere <b>B11</b>=100, plaselere 60, sürprizlere 30 yazar. "Geçmişi uygula": her atın gazetede basılı geçmiş koşularından <b>B1</b> (ikramiye düşüşü), <b>B2/B3</b> (mesafe/pist uygunluğu — ortalama dereceye göre tahmini), <b>B12</b> (mesafe ayarı), <b>B15</b> (kilo farkı) doldurur.</p>
     <div id="dergiView"></div>`;
   document.querySelector("main").appendChild(pane);
 
@@ -55,11 +65,15 @@
       : `<option value="">PDF bulunamadı — repoya yükleyin</option>`;
   }
 
-  /* ---- pdf.js ile metin çıkarma (sayfa 1, iki sütunlu düzen) ---- */
-  async function extractColumns(url) {
+  /* ---- pdf.js ile açma ---- */
+  async function openPdf(url) {
     const pdfjs = window.pdfjsLib;
     pdfjs.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-    const doc = await pdfjs.getDocument({ url }).promise;
+    return pdfjs.getDocument({ url }).promise;
+  }
+
+  /* ---- sayfa 1: iki sütunlu düzen ---- */
+  async function extractColumns(doc) {
     const page = await doc.getPage(1);
     const vp = page.getViewport({ scale: 1 });
     const mid = vp.width / 2;
@@ -75,6 +89,58 @@
     const lines = (m) => [...m.entries()].sort((a, b) => b[0] - a[0])
       .map(([, items]) => items.sort((a, b) => a.x - b.x).map((i) => i.s).join(" ").replace(/\s+/g, " ").trim());
     return lines(cols.L).concat(lines(cols.R));
+  }
+
+  /* ---- sayfa 2..N: "PERFORMANSLAR" — tek sütun akışı halinde satır çıkarma ---- */
+  async function extractPageLines(doc, pageNo) {
+    const page = await doc.getPage(pageNo);
+    const tc = await page.getTextContent();
+    const rows = new Map();
+    for (const it of tc.items) {
+      if (!it.str.trim()) continue;
+      const x = it.transform[4], y = Math.round(it.transform[5] / 3) * 3;
+      if (!rows.has(y)) rows.set(y, []);
+      rows.get(y).push({ x, s: it.str });
+    }
+    return [...rows.entries()].sort((a, b) => b[0] - a[0])
+      .map(([, items]) => items.sort((a, b) => a.x - b.x).map((i) => i.s).join(" ").replace(/\s+/g, " ").trim());
+  }
+
+  /* at başlığı: "1. BİLGÜCÜ (KÇ-OU) 2y d.d (...)..."
+   * geçmiş koşu satırı: "06.01.26 Ad.1400K 58 E.Çankaya 1(1.30.22)(1.30.22 Lupelıus58)yr(...) (11/3-545)(M)9GD"
+   * en altta en son koşu (satırlar eskiden yeniye sıralı basılıyor). */
+  function parseGecmis(lines) {
+    const horses = {}; // temizle(ad) -> [{tarih,hipodrom,mesafe,pist,kilo,pos,derece,ikr}] eskiden yeniye
+    const headerRe = /^(\d{1,2})\.\s+([A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ'\-\s]{2,40}?)\s+\(/;
+    const histRe = /^(\d{2})\.(\d{2})\.(\d{2})\s+([A-Za-zÇĞİÖŞÜçğıöşü]{1,3})\.(\d{3,4})(K|Ç)/;
+    let currentKey = null;
+    for (const line of lines) {
+      const mHist = line.match(histRe);
+      if (mHist) {
+        if (!currentKey) continue;
+        const rest = line.slice(mHist[0].length);
+        const mk = rest.match(/^\s*(?:[A-Za-zÇĞİÖŞÜçğıöşü]{1,4}\.?\s+)?(\d{1,3}(?:[.,]\d)?)\s+/);
+        const kilo = mk ? parseFloat(mk[1].replace(",", ".")) : null;
+        const mp = rest.match(/(\d{1,2})\((\d+(?:\.\d+){1,2})\)/);
+        let derece = null;
+        if (mp) {
+          const parts = mp[2].split(".").map(Number);
+          derece = parts.length >= 3 ? parts[0] * 60 + parts[1] + parts[2] / 100 : parts[0] + (parts[1] || 0) / 100;
+        }
+        const purseMatches = [...rest.matchAll(/\((\d{1,2})\/(\d{1,2})-(\d{2,4})\)/g)];
+        const ikr = purseMatches.length ? +purseMatches[purseMatches.length - 1][3] * 1000 : null;
+        const yil = 2000 + (+mHist[3]);
+        (horses[currentKey] = horses[currentKey] || []).push({
+          tarih: `${yil}-${mHist[2]}-${mHist[1]}`,
+          hipodrom: mHist[4], mesafe: +mHist[5], pist: mHist[6],
+          kilo, pos: mp ? +mp[1] : null, derece, ikr,
+        });
+        continue;
+      }
+      const mHeader = line.match(headerRe);
+      if (mHeader) currentKey = temizle(mHeader[2]);
+    }
+    return horses;
   }
 
   /* ---- ayrıştırıcı ---- */
@@ -181,27 +247,106 @@
     document.getElementById("dergiInfo").textContent = `✅ ${dokunulan} puan hücresi dergi verisiyle dolduruldu (B6 + B11). Puanlama sekmesinden kontrol edebilirsiniz.`;
   }
 
+  /* ---- puanlamaya uygulama: gazetenin geçmiş performans tablolarından B1/B2/B3/B12/B15 ---- */
+  function ortalamaPos(hist, key, val) {
+    const arr = hist.filter((r) => r.pos && r[key] === val).map((r) => r.pos);
+    return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null;
+  }
+
+  function applyGecmis() {
+    if (!current || !current.gecmis) return alert("Önce PDF'i okuyun (geçmiş performans verisi bulunamadı — sayfa 2+ okunamamış olabilir).");
+    if (!AB.state.legs.length) return alert("Önce Puanlama sekmesinde programı yükleyin.");
+    let dokunulan = 0;
+    const yaz = (h, k, v) => { if (v != null && h.scores[k] == null) { h.scores[k] = v; dokunulan++; } };
+    for (const leg of AB.state.legs) {
+      const curIkr = parseFloat((AB.state.program?.races.find((r) => r.no === leg.raceNo)?.ikramiye || "").replace(/\./g, "").replace(",", ".")) || null;
+      const curMesafe = parseInt(leg.mesafe) || null;
+      const curPist = /çim|cim/i.test(leg.pist || "") ? "Ç" : /kum/i.test(leg.pist || "") ? "K" : null;
+      const curMesafeBucket = curMesafe ? Math.round(curMesafe / 200) * 200 : null;
+      for (const h of leg.horses) {
+        const hist = current.gecmis[temizle(h.ad)];
+        if (!hist || !hist.length) continue;
+        const son = hist[hist.length - 1]; // en son koşu (satırlar eskiden yeniye basılı)
+
+        // B1: ikramiye düşüşü
+        if (son.ikr && curIkr) {
+          if (son.ikr > curIkr * 1.3) yaz(h, "B1", 100);
+          else if (son.ikr > curIkr) yaz(h, "B1", 60);
+          else if (Math.abs(son.ikr - curIkr) < 1) yaz(h, "B1", 20);
+        }
+        // B12: mesafe ayarı (son koşusu bugünkünden uzunsa)
+        if (son.mesafe && curMesafe && son.mesafe > curMesafe) {
+          const f = son.mesafe - curMesafe;
+          yaz(h, "B12", f >= 300 && f <= 600 ? 100 : f === 200 ? 80 : f === 100 ? 60 : null);
+        }
+        // B15: kilo farkı
+        const curK = parseFloat((h.meta?.kilo || "").replace(",", ".")) || null;
+        if (son.kilo && curK) {
+          const f = Math.abs(curK - son.kilo);
+          yaz(h, "B15", f <= 2.5 ? 100 : f <= 4 ? 60 : f <= 5 ? 30 : null);
+        }
+        // B2: mesafe uygunluğu — bugünkü mesafe bucket'ındaki ort. derece, son koşunun bucket'ından iyiyse
+        if (curMesafeBucket && son.mesafe) {
+          const aToday = ortalamaPos(hist, "mesafe", curMesafeBucket);
+          const aSon = ortalamaPos(hist, "mesafe", Math.round(son.mesafe / 200) * 200);
+          if (aToday != null && aSon != null) {
+            if (aToday < aSon - 0.3) yaz(h, "B2", 100);
+            else if (Math.abs(aToday - aSon) <= 0.3) yaz(h, "B2", 60);
+            else yaz(h, "B2", 20);
+          }
+        }
+        // B3: pist uygunluğu — aynı mantık, pist tipine göre
+        if (curPist && son.pist && curPist !== son.pist) {
+          const aToday = ortalamaPos(hist, "pist", curPist);
+          const aSon = ortalamaPos(hist, "pist", son.pist);
+          if (aToday != null && aSon != null) {
+            if (aToday < aSon - 0.3) yaz(h, "B3", 100);
+            else if (Math.abs(aToday - aSon) <= 0.3) yaz(h, "B3", 60);
+            else yaz(h, "B3", 20);
+          }
+        }
+      }
+    }
+    AB.saveSession();
+    AB.renderAll();
+    document.getElementById("dergiInfo").textContent = `✅ ${dokunulan} puan hücresi gazetenin geçmiş performans tablolarından dolduruldu (B1,B2,B3,B12,B15). B2/B3 ortalama dereceye dayalı tahmindir — Puanlama sekmesinden kontrol edin.`;
+  }
+
   /* ---- olaylar ---- */
   document.getElementById("btnDergiParse").onclick = async () => {
     const url = document.getElementById("dergiSelect").value;
     if (!url) return alert("Önce repoya PDF yükleyin.");
     document.getElementById("dergiInfo").textContent = "PDF okunuyor…";
     try {
-      const lines = await extractColumns(url);
+      const doc = await openPdf(url);
+      const lines = await extractColumns(doc);
       current = parseDergi(lines);
+      current.gecmis = {};
+      for (let p = 2; p <= doc.numPages; p++) {
+        const pLines = await extractPageLines(doc, p);
+        const pGecmis = parseGecmis(pLines);
+        for (const key of Object.keys(pGecmis)) {
+          current.gecmis[key] = (current.gecmis[key] || []).concat(pGecmis[key]);
+        }
+      }
+      // birden fazla bölümde geçen aynı ada ait satırlar birleşince tarih sırası bozulabilir — garantiye al
+      for (const key of Object.keys(current.gecmis)) {
+        current.gecmis[key].sort((a, b) => (a.tarih < b.tarih ? -1 : a.tarih > b.tarih ? 1 : 0));
+      }
+      const atSayisi = Object.keys(current.gecmis).length;
       AB.LS.set(`ab2:dergi:${current.date}:${AB.slugify(current.city || "")}`, current);
-      document.getElementById("dergiInfo").textContent = `✅ Okundu: ${current.city} ${current.date} — ${Object.keys(current.races).length} koşu, ${Object.keys(current.tahmin).length} tahmin satırı, ${current.banko.length} banko.`;
+      document.getElementById("dergiInfo").textContent = `✅ Okundu: ${current.city} ${current.date} — ${Object.keys(current.races).length} koşu, ${Object.keys(current.tahmin).length} tahmin satırı, ${current.banko.length} banko, ${atSayisi} at için geçmiş performans.`;
       render();
     } catch (e) {
       document.getElementById("dergiInfo").textContent = "❌ PDF okunamadı: " + e.message;
     }
   };
   document.getElementById("btnDergiApply").onclick = apply;
+  document.getElementById("btnDergiGecmis").onclick = applyGecmis;
 
   listPdfs();
   render();
 })();
-
 
 
 /* ===== İstatistik motoru: birikmiş sonuç verisinden otomatik puanlama =====
@@ -218,11 +363,6 @@
   btn.className = "btn btn-accent";
   btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
   document.getElementById("btnAutoScore").after(btn);
-
-  const temizle = (ad) => (ad || "")
-    .replace(/\s*\(.*?\)\s*/g, " ")
-    .replace(/(\s+(KG|SKG|GDSK|DSGK|GKDSK|GKD|DSK|GSK|SGK|GDS|DSG|GKR|DB|SK|GD|GK|DS|KD|GM|KGD|G|K|D|M|S))+$/g, "")
-    .trim().toUpperCase();
 
   async function loadHistory() {
     const idx = await fetch("data/index.json", { cache: "no-store" }).then((r) => r.json());
@@ -290,12 +430,9 @@
     try {
       const H = await loadHistory();
       const bugun = AB.state.day;
+      // kariyer istatistikleri (TJK At İstatistikleri'nden, günlük çekilir)
       const kariyer = await fetch(`data/${AB.state.day}/atistatistik-${AB.state.city}.json`, { cache: "no-store" })
         .then((r) => r.ok ? r.json() : null).catch(() => null);
-      const idman = await fetch(`data/${AB.state.day}/idman-${AB.state.city}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
-      const jokeyYilJson = await fetch(`data/istatistik/jokey-${new Date().getFullYear()}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
-      const jokeyYil = jokeyYilJson ? Object.keys(jokeyYilJson).map((s) => s.toUpperCase()) : null;
-      const gecmis = await fetch(`data/${AB.state.day}/gecmis-${AB.state.city}.json`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null);
       // jokey sınıfları: kazanma yüzdesine göre çeyrekler (en az 3 koşusu olanlar)
       const jList = Object.entries(H.jokey).filter(([, s]) => s.kosu >= 3)
         .map(([k, s]) => [k, s.win / s.kosu]).sort((a, b) => b[1] - a[1]);
@@ -348,89 +485,24 @@
               yaz(h, "B15", f <= 2.5 ? 100 : f <= 4 ? 60 : f <= 5 ? 30 : null);
             }
           }
-          // B5 (gerçek kazanma yüzdesi) ve B14 (kısa farkla geçilen koşular)
-          // Geçmiş koşulardan B2, B3, B4, B10 (+B1 yedeği)
-          const gm = gecmis && gecmis[temizle(h.ad)];
-          if (gm && gm.length) {
-            const cur = parseInt(leg.mesafe) || 0;
-            const pistH = (leg.pist || "").charAt(0).toUpperCase();
-            const poz = (r) => parseInt(r.poz) || 10;
-            const yakin = gm.filter((r) => Math.abs((parseInt(r.mesafe) || 0) - cur) <= 100);
-            const uzak = gm.filter((r) => Math.abs((parseInt(r.mesafe) || 0) - cur) > 100);
-            if (yakin.length && uzak.length) {
-              const oy = yakin.reduce((s, r) => s + poz(r), 0) / yakin.length;
-              const ou = uzak.reduce((s, r) => s + poz(r), 0) / uzak.length;
-              yaz(h, "B2", oy < ou - 0.5 ? 100 : oy <= ou + 0.5 ? 60 : 20);
-            }
-            const ayni = gm.filter((r) => (r.pist || "").charAt(0).toUpperCase() === pistH);
-            const diger = gm.filter((r) => (r.pist || "").charAt(0).toUpperCase() !== pistH);
-            if (ayni.length && diger.length) {
-              const oa = ayni.reduce((s, r) => s + poz(r), 0) / ayni.length;
-              const od = diger.reduce((s, r) => s + poz(r), 0) / diger.length;
-              yaz(h, "B3", oa < od - 0.5 ? 100 : oa <= od + 0.5 ? 60 : 20);
-            }
-            const trh = (s) => { const pp = (s || "").split("."); return new Date(pp[2] + "-" + pp[1] + "-" + pp[0]); };
-            const gunler = [new Date(bugun)].concat(gm.slice(0, 6).map((r) => trh(r.t)));
-            let araIx = -1, araGun = 0;
-            for (let gi = 1; gi < gunler.length; gi++) {
-              const f = Math.round((gunler[gi - 1] - gunler[gi]) / GUN);
-              if (f >= 20) { araIx = gi; araGun = f; break; }
-            }
-            if (araIx > 0) {
-              const sonra = araIx;
-              const ok = araGun >= 45 ? (sonra >= 3 && sonra <= 6) : araGun >= 30 ? (sonra >= 2 && sonra <= 5) : (sonra >= 2 && sonra <= 4);
-              if (ok) yaz(h, "B4", 100);
-            } else {
-              const winIx = gm.slice(0, 6).findIndex((r) => poz(r) === 1);
-              if (winIx >= 0) yaz(h, "B4", winIx < 2 ? 100 : winIx < 4 ? 60 : 20);
-            }
-            const bugunEk = h.ad.toUpperCase().replace(temizle(h.ad), "").replace(/[^A-Z]/g, "");
-            const sonEk = (gm[0].ekipman || "").toUpperCase().replace(/[^A-Z]/g, "");
-            if (bugunEk !== sonEk) yaz(h, "B10", 100);
-            if (curIkr) {
-              const sonIkr = parseFloat((gm[0].ikr || "").replace(/\./g, "").replace(",", ".")) || null;
-              if (sonIkr) {
-                if (sonIkr > curIkr * 1.3) yaz(h, "B1", 100);
-                else if (sonIkr > curIkr) yaz(h, "B1", 60);
-                else if (Math.abs(sonIkr - curIkr) < 1) yaz(h, "B1", 20);
-              }
-            }
+          // B5: önce kariyer istatistiği (TJK At İstatistikleri), yoksa arşivden yaklaşık
+          const ki = kariyer?.[temizle(h.ad)];
+          if (ki && ki.kosu) {
+            b5.push({ h, v: ki.p1 / ki.kosu });
+          } else if (hist.length) {
+            b5.push({ h, v: hist.filter((x) => x.pos === 1).length / hist.length });
           }
-          const idm = idman && idman[temizle(h.ad)];
-          if (idm) {
-            for (const w of idm) {
-              const p = (w.t || "").split(".");
-              if (p.length !== 3) continue;
-              const g = Math.round((new Date(bugun) - new Date(p[2] + "-" + p[1] + "-" + p[0])) / GUN);
-              const uzun = ((w.m1000 || "") + (w.m1200 || "") + (w.m1400 || "")).trim();
-              if (uzun && /galop/i.test(w.tur || "") && g >= 3 && g <= 7) {
-                if (g > 3 || /R/.test(w.durum || "")) { yaz(h, "B7", 100); break; }
-              }
-            }
-          }
-          const ki = kariyer && kariyer[temizle(h.ad)];
-          if (ki && ki.kosu) b5.push({ h, v: ki.p1 / ki.kosu });
-          else if (hist.length) b5.push({ h, v: hist.filter((x) => x.pos === 1).length / hist.length });
+          // B14 (kısa farkla geçilen koşular)
           if (hist.length) {
             const kf = hist.filter((x) => x.pos <= 3 && /(BURUN|BAŞ|BOYUN|YARIM)/i.test(x.fark)).length;
             b14.push({ h, v: kf || null });
           }
           // jokey: C1, C3
           const j = (m.jokey || "").trim().toUpperCase();
-          let sn = sinif[j];
-          if (jokeyYil) { const ix = jokeyYil.indexOf(j); sn = ix < 0 ? 4 : ix < 15 ? 1 : ix < 35 ? 2 : 3; }
+          const sn = sinif[j];
           if (sn) yaz(h, "C1", sn === 1 ? 100 : sn === 2 ? 60 : sn === 3 ? 20 : 0);
           const b = binis[j] || 0;
           if (sn && b) yaz(h, "C3", b <= 2 ? (sn === 1 ? 100 : sn === 2 ? 80 : null) : b <= 4 ? (sn === 1 ? 60 : sn === 2 ? 30 : null) : null);
-          // C2: jokey değişimi (geçmişteki kısaltmayı yıllık listeyle eşle)
-          if (gm && gm.length && sn && sn < 4 && jokeyYil) {
-            const km = (gm[0].jokey || "").trim().toUpperCase().match(/^([A-ZÇĞİÖŞÜ])[A-ZÇĞİÖŞÜ]*\.\s*([A-ZÇĞİÖŞÜ]+)$/);
-            let eski = 4;
-            if (km) { const ix2 = jokeyYil.findIndex((n) => n.startsWith(km[1]) && n.endsWith(" " + km[2])); eski = ix2 < 0 ? 4 : ix2 < 15 ? 1 : ix2 < 35 ? 2 : 3; }
-            if (eski >= 3 && sn === 1) yaz(h, "C2", 100);
-            else if (eski === 2 && sn === 1) yaz(h, "C2", 60);
-            else if (eski === 3 && sn === 2) yaz(h, "C2", 20);
-          }
         }
         rank5(b5, "B5", false);
         rank5(b14, "B14", false);
