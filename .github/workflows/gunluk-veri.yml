@@ -21,6 +21,9 @@ jobs:
       - name: TJK verilerini çek
         run: python3 scripts/fetch_tjk.py
 
+      - name: Accurace koşu karakteri profillerini güncelle
+        run: python3 scripts/fetch_accurace.py
+
       - name: Değişiklikleri işle
         run: |
           git config user.name "altili-bulan-bot"

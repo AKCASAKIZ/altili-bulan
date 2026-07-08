@@ -135,7 +135,7 @@ def parse_csv(text: str) -> dict:
     return {"date": date, "city": city, "isResult": is_result, "races": races}
 
 
-EKIPMAN = re.compile(r"(\s+(KG|SKG|GDSK|DSGK|GKDSK|GKD|DSK|GSK|SGK|GDS|DSG|GKR|DB|SK|GD|GK|DS|KD|GM|KGD|G|K|D|M|S))+$")
+EKIPMAN = re.compile(r"(\s+(SGKR|GDSK|DSGK|GKDSK|SKG|KGD|GKD|DSK|GSK|SGK|GDS|DSG|GKR|KG|DB|SK|GD|GK|DS|KD|GM|BB|ÖG|YP|G|K|D|M|S))+$")
 
 
 def at_adi_temizle(ad: str) -> str:

@@ -28,6 +28,8 @@ const ANGLES = [
   { k: "C2", name: "Jockey switch", pct: 7.50, desc: "3–4. sınıftan 1. sınıfa geçiş 100, 2.→1. 60, 3.→2. 20." },
   { k: "C3", name: "Jokeyin o günkü koşu sayısı", pct: 7.50, desc: "≤2 koşuya binen 1. sınıf jokey 100, 2. sınıf 80; 3–4 koşu binen 1. sınıf 60, 2. sınıf 30." },
   { k: "C4", name: "En yüksek ödüllü jokey", pct: 3.00, desc: "Katıldığı koşuların ikramiye toplamı en yüksek 5 jokey: 100,70,50,30,10." },
+  { k: "D1", name: "Koşu karakteri: kapanış gücü", pct: 2.50, desc: "Accurace checkpoint verisinden türetilen son_atak_delta_ema (1600m→bitiş sıra kazancı) en yüksek 5 at: 100,70,50,30,10." },
+  { k: "D2", name: "Koşu karakteri: erken tempo", pct: 2.50, desc: "Accurace checkpoint verisinden türetilen erken_gec_delta_ema (öncü/kaçak eğilimi) en yüksek 5 at: 100,70,50,30,10." },
 ];
 const PRESET6 = ["A3", "B1", "B2", "B3", "B6", "B13"];
 const RANK5 = [100, 70, 50, 30, 10];
@@ -281,8 +283,8 @@ function renderScoreTable() {
   });
 }
 
-/* --- otomatik puanlama: program verisinden B5, B6, B8, B13 --- */
-function autoScoreLeg() {
+/* --- otomatik puanlama: program verisinden B5, B6, B8, B13, D1, D2 --- */
+async function autoScoreLeg() {
   const leg = state.legs[state.activeLeg];
   if (!leg) return alert("Önce programdan yükleyin.");
   const hs = leg.horses;
@@ -335,12 +337,19 @@ function autoScoreLeg() {
     });
   }
 
+  // D1/D2: accurace'den türetilmiş koşu-karakteri profilleri (data/atlar/*.json, her at ayrı dosya)
+  const atlar = await Promise.all(hs.map((h) => tryFetch(`data/atlar/${slugify(temizle(h.ad))}.json`)));
+  const sonAtak = hs.map((_, i) => atlar[i]?.son_atak_delta_ema ?? null);
+  assignRank5(hs, sonAtak, "D1", false);
+  const erkenGec = hs.map((_, i) => atlar[i]?.erken_gec_delta_ema ?? null);
+  assignRank5(hs, erkenGec, "D2", false);
+
   saveSession();
   renderScoreTable();
 }
 function assignRank5(hs, values, key, asc) {
   const idx = values.map((v, i) => ({ v, i }))
-    .filter((x) => x.v !== Infinity && x.v !== -1)
+    .filter((x) => x.v !== Infinity && x.v !== -1 && x.v !== null)
     .sort((a, b) => (asc ? a.v - b.v : b.v - a.v));
   idx.slice(0, 5).forEach((x, r) => { hs[x.i].scores[key] = RANK5[r]; });
 }
@@ -598,7 +607,7 @@ function slugify(s) {
 function temizle(ad) {
   return (ad || "")
     .replace(/\s*\(.*?\)\s*/g, " ")
-    .replace(/(\s+(KG|SKG|GDSK|DSGK|GKDSK|GKD|DSK|GSK|SGK|GDS|DSG|GKR|DB|SK|GD|GK|DS|KD|GM|KGD|G|K|D|M|S))+\s*$/g, "")
+    .replace(/(\s+(SGKR|GDSK|DSGK|GKDSK|SKG|KGD|GKD|DSK|GSK|SGK|GDS|DSG|GKR|KG|DB|SK|GD|GK|DS|KD|GM|BB|ÖG|YP|G|K|D|M|S))+\s*$/g, "")
     .trim().toUpperCase();
 }
 function ddmmyyyyToIso(s) {
