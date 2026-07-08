@@ -28,6 +28,8 @@
   <button class="tab" data-tab="program">📋 Program</button>
   <button class="tab" data-tab="sonuclar">🏁 Sonuçlar</button>
   <button class="tab" data-tab="kupon">🎫 Kupon</button>
+  <button class="tab" data-tab="tagm">🗞️ TAGM</button>
+  <button class="tab" data-tab="karsilastir">📊 Karşılaştır</button>
   <button class="tab" data-tab="ayarlar">⚙️ Katsayılar</button>
   <button class="tab" data-tab="veri">💾 Veri</button>
 </nav>
@@ -65,9 +67,23 @@
     <div class="toolbar">
       <label>Birim fiyat (TL): <input type="number" id="unitPrice" value="1" min="0.01" step="0.01" style="width:90px"></label>
       <button id="btnAutoKupon" class="btn btn-accent">⚡ Puanlara göre öner</button>
+      <button id="btnKarmaKupon" class="btn btn-ghost">🧬 Karma öner (TAGM + Dergi)</button>
     </div>
     <div id="kuponView"></div>
     <div class="kupon-summary" id="kuponSummary"></div>
+    <p class="hint" id="kuponInfo"></p>
+  </section>
+
+  <!-- TAGM -->
+  <section id="tab-tagm" class="tab-pane">
+    <p class="hint">🗞️ <b>TAGM</b> — TJK'nın Yarış Gazetesi'nden bağımsız, kendi programımız+puanlama motorumuz+Accurace koşu-karakteri verimizden otomatik üretilen kendi yarış dergimiz. Her koşuda atlar hesaplanan puana göre sıralanır.</p>
+    <div id="tagmView"></div>
+  </section>
+
+  <!-- KARSILASTIR -->
+  <section id="tab-karsilastir" class="tab-pane">
+    <p class="hint">📊 TAGM'ın ve TJK Yarış Gazetesi'nin (Dergi sekmesi) galibiyet tahmin isabetlerini karşılaştırır. Sadece her iki kaynağın da tahmin bıraktığı ve sonucu yayınlanmış gün/koşular sayılır.</p>
+    <div id="karsilastirView"></div>
   </section>
 
   <!-- KATSAYILAR -->

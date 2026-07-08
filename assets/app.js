@@ -73,6 +73,8 @@ async function init() {
       document.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", x === b));
       document.querySelectorAll(".tab-pane").forEach((p) => p.classList.toggle("active", p.id === "tab-" + b.dataset.tab));
       if (b.dataset.tab === "kupon") renderKupon();
+      if (b.dataset.tab === "tagm") renderTagm();
+      if (b.dataset.tab === "karsilastir") renderKarsilastir();
     };
   });
 
@@ -105,6 +107,7 @@ function bindUI() {
   $("#csvFile").onchange = importCsv;
   $("#btnReload").onclick = loadIndex;
   $("#btnAutoKupon").onclick = autoKupon;
+  $("#btnKarmaKupon").onclick = karmaKupon;
   $("#unitPrice").onchange = renderKuponSummary;
 }
 
@@ -287,6 +290,11 @@ function renderScoreTable() {
 async function autoScoreLeg() {
   const leg = state.legs[state.activeLeg];
   if (!leg) return alert("Önce programdan yükleyin.");
+  await scoreLeg(leg);
+  saveSession();
+  renderScoreTable();
+}
+async function scoreLeg(leg) {
   const hs = leg.horses;
 
   // B8: KGS (son koşusundan bu yana geçen gün)
@@ -339,13 +347,20 @@ async function autoScoreLeg() {
 
   // D1/D2: accurace'den türetilmiş koşu-karakteri profilleri (data/atlar/*.json, her at ayrı dosya)
   const atlar = await Promise.all(hs.map((h) => tryFetch(`data/atlar/${slugify(temizle(h.ad))}.json`)));
+  hs.forEach((h, i) => { h.meta.karakter = karakterEtiketi(atlar[i]); });
   const sonAtak = hs.map((_, i) => atlar[i]?.son_atak_delta_ema ?? null);
   assignRank5(hs, sonAtak, "D1", false);
   const erkenGec = hs.map((_, i) => atlar[i]?.erken_gec_delta_ema ?? null);
   assignRank5(hs, erkenGec, "D2", false);
-
-  saveSession();
-  renderScoreTable();
+}
+function karakterEtiketi(profil) {
+  if (!profil) return "";
+  const eg = profil.erken_gec_delta_ema, sa = profil.son_atak_delta_ema;
+  if (eg == null && sa == null) return "";
+  if (eg != null && eg <= -2) return "Kaçak/Öncü";
+  if (eg != null && eg >= 2) return "Kapanışçı";
+  if (sa != null && sa >= 2) return "Tempocu";
+  return "Dengeli";
 }
 function assignRank5(hs, values, key, asc) {
   const idx = values.map((v, i) => ({ v, i }))
@@ -398,11 +413,18 @@ function renderResults() {
 function raceCard(r, isResult) {
   const legIx = state.legs.findIndex((l) => l.raceNo === r.no);
   const picks = legIx >= 0 ? state.picks[legIx] || [] : [];
+  // Not: TJK'nın sonuç verisinde "At No" gerçek at numarası değil, bitiş sırasıdır — bu yüzden
+  // sonuç görünümünde kupon eşleşmesini isimle yapıyoruz (programdaki gerçek at no üzerinden), "no" ile değil.
+  let pickedNames = null;
+  if (isResult) {
+    const programRace = state.program?.races?.find((x) => x.no === r.no);
+    pickedNames = new Set(picks.map((no) => temizle(programRace?.horses?.find((h) => h.no === no)?.ad || "")).filter(Boolean));
+  }
   let rows = "";
   r.horses.forEach((h, ix) => {
     const kosmaz = /koşmaz/i.test(h.derece || "") || /koşmaz/i.test(h.ad);
     const pos = isResult && !kosmaz ? ix + 1 : null;
-    const picked = picks.includes(h.no);
+    const picked = isResult ? pickedNames.has(temizle(h.ad)) : picks.includes(h.no);
     let posCell = "";
     if (isResult) {
       const mark = pos === 1 && picked ? " ✓" : "";
@@ -425,6 +447,116 @@ function raceCard(r, isResult) {
     <span class="race-tags">${esc(r.grup || "")} · ${esc(r.mesafe || "")} ${esc(r.pist || "")} · ${esc(r.tur || "")} ${r.ikramiye ? "· 1.lik: " + esc(r.ikramiye) : ""}</span></header>
     <div class="table-wrap"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>
     ${r.odemeler ? `<div class="payout">💰 ${esc(r.odemeler)}</div>` : ""}
+  </div>`;
+}
+
+/* ==================== TAGM (kendi yarış dergimiz) ==================== */
+async function renderTagm() {
+  const el = $("#tagmView");
+  if (!state.program) { el.innerHTML = `<div class="empty-note">Bu gün/hipodrom için program verisi yok.</div>`; return; }
+  el.innerHTML = `<div class="empty-note">TAGM hazırlanıyor…</div>`;
+  const cards = [];
+  for (const r of state.program.races) {
+    const leg = {
+      horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
+        no: h.no, ad: h.ad, scores: {},
+        meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, jokey: h.jokey, kilo: h.kilo, baba: h.baba, anne: h.anne },
+      })),
+    };
+    await scoreLeg(leg);
+    const top = rankedHorses(leg)[0];
+    if (top && top.score > 0) logTagmTahmin(state.day, state.city, r.no, top.h);
+    cards.push(tagmRaceCard(r, leg));
+  }
+  el.innerHTML = cards.join("");
+}
+
+/* ==================== TAGM vs Dergi tahmin kaydı & karşılaştırma ==================== */
+function logTagmTahmin(day, city, raceNo, horse) {
+  const log = LS.get("ab2:tagm-log", {});
+  log[`${day}:${city}:${raceNo}`] = { no: horse.no, ad: horse.ad, ts: Date.now() };
+  LS.set("ab2:tagm-log", log);
+}
+function dergiTahminOku(day, city) {
+  return LS.get(`ab2:dergi:${day}:${city}`, null);
+}
+async function renderKarsilastir() {
+  const el = $("#karsilastirView");
+  el.innerHTML = `<div class="empty-note">Hesaplanıyor…</div>`;
+  const tagmLog = LS.get("ab2:tagm-log", {});
+  const gunSehirler = new Set(Object.keys(tagmLog).map((k) => k.split(":").slice(0, 2).join(":")));
+  let tagmDogru = 0, tagmToplam = 0, dergiDogru = 0, dergiToplam = 0;
+  const detay = [];
+  for (const gs of gunSehirler) {
+    const [day, city] = gs.split(":");
+    const dergi = dergiTahminOku(day, city);
+    const [sonuclar, program] = await Promise.all([
+      tryFetch(`data/${day}/sonuclar-${city}.json`),
+      tryFetch(`data/${day}/program-${city}.json`),
+    ]);
+    if (!sonuclar) continue;
+    for (const r of sonuclar.races) {
+      // Not: TJK'nın sonuç CSV'sinde "At No" sütunu gerçek at numarası değil, bitiş sırasıdır (1=1.gelen) —
+      // bu yüzden kazananı isimle (program verisindeki gerçek at no üzerinden) eşleştiriyoruz, "no" ile değil.
+      const kosmaz = (h) => /koşmaz/i.test(h.derece || "") || /koşmaz/i.test(h.ad);
+      const kazanan = r.horses.find((h) => !kosmaz(h));
+      if (!kazanan) continue;
+      const kazananAd = temizle(kazanan.ad);
+      const tagmPick = tagmLog[`${day}:${city}:${r.no}`];
+      const dergiFavNo = dergi?.tahmin?.[r.no]?.favori?.[0];
+      const programRace = program?.races?.find((x) => x.no === r.no);
+      const dergiFavAd = dergiFavNo != null ? temizle(programRace?.horses?.find((h) => h.no === dergiFavNo)?.ad || "") || null : null;
+      if (!tagmPick && dergiFavAd == null) continue;
+      const tagmHit = tagmPick ? temizle(tagmPick.ad) === kazananAd : null;
+      const dergiHit = dergiFavAd != null ? dergiFavAd === kazananAd : null;
+      if (tagmHit !== null) { tagmToplam++; if (tagmHit) tagmDogru++; }
+      if (dergiHit !== null) { dergiToplam++; if (dergiHit) dergiDogru++; }
+      detay.push({ day, city, raceNo: r.no, kazanan, tagmPick, dergiFavNo, dergiFavAd, tagmHit, dergiHit });
+    }
+  }
+  const pct = (a, b) => (b ? ((100 * a) / b).toFixed(1) : "–");
+  let html = `<div class="cards">
+    <div class="card"><h3>🗞️ TAGM</h3><p><b>${tagmDogru}/${tagmToplam}</b> galibiyet isabeti (%${pct(tagmDogru, tagmToplam)})</p></div>
+    <div class="card"><h3>📖 Dergi (TJK)</h3><p><b>${dergiDogru}/${dergiToplam}</b> galibiyet isabeti (%${pct(dergiDogru, dergiToplam)})</p></div>
+  </div>`;
+  if (!detay.length) {
+    html += `<div class="empty-note">Henüz karşılaştırılacak veri yok — TAGM sekmesini birkaç gün/hipodrom için açıp gazete PDF'lerini de okuduktan sonra buraya sonuç birikecek.</div>`;
+  } else {
+    html += `<div class="table-wrap"><table><thead><tr><th>Gün</th><th>Şehir</th><th>Koşu</th><th>Kazanan</th><th>TAGM</th><th>Dergi</th></tr></thead><tbody>`;
+    detay.sort((a, b) => (a.day + a.city + a.raceNo < b.day + b.city + b.raceNo ? 1 : -1));
+    for (const d of detay) {
+      html += `<tr>
+        <td>${d.day}</td><td>${esc(d.city)}</td><td>${d.raceNo}</td>
+        <td>${esc(d.kazanan.ad)}</td>
+        <td>${d.tagmPick ? `${d.tagmPick.no}. ${esc(d.tagmPick.ad)} ${d.tagmHit ? "✅" : "❌"}` : "–"}</td>
+        <td>${d.dergiFavAd != null ? `${d.dergiFavNo}. ${esc(d.dergiFavAd)} ${d.dergiHit ? "✅" : "❌"}` : "–"}</td>
+      </tr>`;
+    }
+    html += `</tbody></table></div>`;
+  }
+  el.innerHTML = html;
+}
+function tagmRaceCard(r, leg) {
+  const ranked = rankedHorses(leg);
+  let rows = "";
+  ranked.forEach(({ h, score }, ix) => {
+    const rank = ix + 1;
+    const soy = [h.meta.baba, h.meta.anne].filter(Boolean).join(" — ");
+    const karakter = h.meta.karakter ? `<span class="chip" style="cursor:default">${esc(h.meta.karakter)}</span>` : "";
+    rows += `<tr class="${rank <= 4 && score > 0 ? "top-row" : ""}">
+      <td><span class="rank-badge rank-${rank}">${score > 0 ? rank : "–"}</span></td>
+      <td>${h.no}</td>
+      <td>${esc(h.ad)}${soy ? `<br><span class="hint" style="font-size:11px">${esc(soy)}</span>` : ""}</td>
+      <td>${esc(h.meta.jokey || "")}</td><td>${esc(h.meta.kilo || "")}</td>
+      <td>${esc(formatIdmanSon(state.idman?.[temizle(h.ad)]))}</td>
+      <td>${karakter}</td>
+      <td class="total">${score.toFixed(1)}</td>
+    </tr>`;
+  });
+  return `<div class="race-card">
+    <header><h3>${r.no}. Koşu — ${r.saat || ""}</h3>
+    <span class="race-tags">${esc(r.grup || "")} · ${esc(r.mesafe || "")} ${esc(r.pist || "")} · ${esc(r.tur || "")} ${r.ikramiye ? "· 1.lik: " + esc(r.ikramiye) : ""}</span></header>
+    <div class="table-wrap"><table><thead><tr><th>Sıra</th><th>No</th><th>At</th><th>Jokey</th><th>Kilo</th><th>Son Galop</th><th>Karakter</th><th style="text-align:right">Puan</th></tr></thead><tbody>${rows}</tbody></table></div>
   </div>`;
 }
 
@@ -481,6 +613,33 @@ function autoKupon() {
   });
   saveSession();
   renderKupon();
+}
+/* TAGM'ın bağımsız puanı (Puanlama sekmesindeki elle girilen puanlara dokunmadan) + Dergi favori/plase'ini birleştirir */
+async function karmaKupon() {
+  if (!state.legs.length) return alert("Önce programı yükleyip Puanlama sekmesinden ayakları getirin.");
+  if (!state.program) return alert("Program verisi yok.");
+  const dergi = dergiTahminOku(state.day, state.city);
+  const picks = [];
+  for (const leg of state.legs) {
+    const r = state.program.races.find((x) => x.no === leg.raceNo);
+    const set = new Set();
+    if (r) {
+      const tempLeg = {
+        horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({ no: h.no, ad: h.ad, scores: {}, meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi } })),
+      };
+      await scoreLeg(tempLeg);
+      const top = rankedHorses(tempLeg).filter((x) => x.score > 0)[0];
+      if (top) set.add(top.h.no);
+    }
+    const t = dergi?.tahmin?.[leg.raceNo];
+    (t?.favori || []).forEach((no) => set.add(no));
+    (t?.plase || []).slice(0, 1).forEach((no) => set.add(no));
+    picks.push([...set]);
+  }
+  state.picks = picks;
+  saveSession();
+  renderKupon();
+  $("#kuponInfo").textContent = "✅ Karma kupon hazır: her ayakta TAGM'ın favorisi + Dergi'nin favori/plase atları birleştirildi.";
 }
 
 /* ==================== CSV / JSON İÇE-DIŞA AKTARMA ==================== */
