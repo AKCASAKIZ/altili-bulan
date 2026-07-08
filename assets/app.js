@@ -399,8 +399,9 @@ function raceCard(r, isResult) {
       const mark = pos === 1 && picked ? " ✓" : "";
       posCell = `<td class="pos-cell">${kosmaz ? "—" : pos}${mark}</td>`;
     }
+    const soy = [h.baba, h.anne].filter(Boolean).join(" — ");
     rows += `<tr class="${pos === 1 ? "pos-1" : ""}">${posCell}
-      <td>${h.no}</td><td>${esc(h.ad)} ${picked ? '<span class="hit">kuponda</span>' : ""}</td>
+      <td>${h.no}</td><td>${esc(h.ad)} ${picked ? '<span class="hit">kuponda</span>' : ""}${soy ? `<br><span class="hint" style="font-size:11px">${esc(soy)}</span>` : ""}</td>
       <td>${esc(h.jokey || "")}</td><td>${esc(h.kilo || "")}</td>
       ${isResult
         ? `<td>${esc(h.derece || "")}</td><td>${esc(h.ganyan || "")}</td><td>${esc(h.fark || "")}</td>`

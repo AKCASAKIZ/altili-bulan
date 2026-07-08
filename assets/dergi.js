@@ -168,6 +168,39 @@ function temizle(ad) {
     return { altili1: altiliStarts[0] || null, altili2: altiliStarts[1] || null, plaseStart };
   }
 
+  /* iç içe parantezleri sayarak dengeli grup çıkarır: "(Papa Clem(Usa)-Kıll Bıll/T.Valleys)" gibi
+   * soy kütüğü gruplarında babanın ülke kodu da parantezli olduğundan basit regex yetmez. */
+  function dengeliParantezGrubu(text, acilisIdx) {
+    if (text[acilisIdx] !== "(") return null;
+    let derinlik = 0;
+    for (let i = acilisIdx; i < text.length; i++) {
+      if (text[i] === "(") derinlik++;
+      else if (text[i] === ")") { derinlik--; if (derinlik === 0) return text.slice(acilisIdx + 1, i); }
+    }
+    return null;
+  }
+
+  /* ---- soy kütüğü: "N. AD (KOD) yaş cins.cins (BABA-ANNE/ANNENİN BABASI)(...)" başlığından çıkarır ---- */
+  function parseSoyKutugu(rawText) {
+    const headerRe = /(\d{1,2})\.\s+([A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ'\- ]{2,40}?)\s+\([^()]*\)\s*\d+y\s+[a-zçğıöşü]\.[a-zçğıöşü]\s*/g;
+    const out = {};
+    let m;
+    while ((m = headerRe.exec(rawText))) {
+      const afterIdx = headerRe.lastIndex;
+      const grp = dengeliParantezGrubu(rawText, afterIdx);
+      if (!grp) continue;
+      const tire = grp.indexOf("-");
+      if (tire < 0) continue;
+      const baba = grp.slice(0, tire).trim();
+      const rest = grp.slice(tire + 1).trim();
+      const slash = rest.indexOf("/");
+      const anne = (slash >= 0 ? rest.slice(0, slash) : rest).trim();
+      const anneBaba = slash >= 0 ? rest.slice(slash + 1).trim() : null;
+      out[temizle(m[2])] = { baba, anne, anneBaba };
+    }
+    return out;
+  }
+
   /* ---- BAHİSLER dip tablosu: bahis tipi -> at/koşu kombinasyonu (İkililer, Plase İkili, vb.) ---- */
   function parseBahisler(rawP1) {
     const labels = [
@@ -318,13 +351,17 @@ function temizle(ad) {
         const t = d.tahmin[rn] || {};
         const horses = Object.values(d.races[rn].horses).sort((a, b) => a.no - b.no);
         html += `<div class="table-wrap"><table><thead>
-          <tr><th colspan="3">${rn}. Koşu — Favori <span class="hit">${(t.favori || []).join("-") || "·"}</span>
+          <tr><th colspan="4">${rn}. Koşu — Favori <span class="hit">${(t.favori || []).join("-") || "·"}</span>
             &nbsp;Plase ${(t.plase || []).join("-") || "·"}
             &nbsp;Sürpriz <span class="miss">${(t.surpriz || []).join("-") || "·"}</span></th></tr>
-          <tr><th>No</th><th>At</th><th>Uzman yorumu</th></tr></thead><tbody>`;
+          <tr><th>No</th><th>At</th><th>Soy kütüğü (baba - anne / annenin babası)</th><th>Uzman yorumu</th></tr></thead><tbody>`;
         for (const h of horses) {
           const yorum = d.yorumlar?.[temizle(h.ad)] || "";
-          html += `<tr><td>${h.no}</td><td>${AB.esc(h.ad)}${h.gp != null ? ` <span class="hint">(GP ${h.gp})</span>` : ""}</td><td>${AB.esc(yorum) || '<span class="hint">—</span>'}</td></tr>`;
+          const s = d.soy?.[temizle(h.ad)];
+          const soyTxt = s ? `${s.baba} - ${s.anne}${s.anneBaba ? " / " + s.anneBaba : ""}` : "";
+          html += `<tr><td>${h.no}</td><td>${AB.esc(h.ad)}${h.gp != null ? ` <span class="hint">(GP ${h.gp})</span>` : ""}</td>
+            <td>${AB.esc(soyTxt) || '<span class="hint">—</span>'}</td>
+            <td>${AB.esc(yorum) || '<span class="hint">—</span>'}</td></tr>`;
         }
         html += `</tbody></table></div>`;
       }
@@ -466,6 +503,7 @@ function temizle(ad) {
       }
       const p1Raw = await extractPageRaw(doc, 1);
       current.yorumlar = parseYorumlar(restRaw);
+      current.soy = parseSoyKutugu(restRaw);
       current.bolumler = parseBolumler(p1Raw);
       current.bahisler = parseBahisler(p1Raw);
       const atSayisi = Object.keys(current.gecmis).length;
