@@ -168,16 +168,16 @@ function temizle(ad) {
     return { altili1: altiliStarts[0] || null, altili2: altiliStarts[1] || null, plaseStart };
   }
 
-  /* iç içe parantezleri sayarak dengeli grup çıkarır: "(Papa Clem(Usa)-Kıll Bıll/T.Valleys)" gibi
-   * soy kütüğü gruplarında babanın ülke kodu da parantezli olduğundan basit regex yetmez. */
-  function dengeliParantezGrubu(text, acilisIdx) {
+  /* soy kütüğü grubunu çıkarır: "(BABA(Ülke)-ANNE/ANNENİN BABASI)" her zaman hemen ardından gelen
+   * "(Antrenör-Sahip)" grubuyla bitişik basılıyor — yani ilk ")(" gazetede grubun gerçek sonu.
+   * (Dengeli parantez sayımı kullanılmıyor: annesi yabancı orijinli atlarda gazete ülke kodunu
+   * "(Ülke/AnnesininBabası)" şeklinde annenin babasıyla aynı paranteze basıp kapanışı atlıyor —
+   * ör. "Elea(Ger/L.O.England)" — bu da dengeli sayımı bozardı.) */
+  function soyGrubuCikar(text, acilisIdx) {
     if (text[acilisIdx] !== "(") return null;
-    let derinlik = 0;
-    for (let i = acilisIdx; i < text.length; i++) {
-      if (text[i] === "(") derinlik++;
-      else if (text[i] === ")") { derinlik--; if (derinlik === 0) return text.slice(acilisIdx + 1, i); }
-    }
-    return null;
+    const kapaAc = text.indexOf(")(", acilisIdx);
+    if (kapaAc < 0) return null;
+    return text.slice(acilisIdx + 1, kapaAc);
   }
 
   /* ---- soy kütüğü: "N. AD (KOD) yaş cins.cins (BABA-ANNE/ANNENİN BABASI)(...)" başlığından çıkarır ---- */
@@ -187,15 +187,26 @@ function temizle(ad) {
     let m;
     while ((m = headerRe.exec(rawText))) {
       const afterIdx = headerRe.lastIndex;
-      const grp = dengeliParantezGrubu(rawText, afterIdx);
+      const grp = soyGrubuCikar(rawText, afterIdx);
       if (!grp) continue;
       const tire = grp.indexOf("-");
       if (tire < 0) continue;
       const baba = grp.slice(0, tire).trim();
       const rest = grp.slice(tire + 1).trim();
-      const slash = rest.indexOf("/");
-      const anne = (slash >= 0 ? rest.slice(0, slash) : rest).trim();
-      const anneBaba = slash >= 0 ? rest.slice(slash + 1).trim() : null;
+      // anne isminden sonra ülke kodu parantezi varsa ("Elea(Ger/L.O.England"), annenin babası o
+      // parantezin içindeki "/"den sonraki kısımdır; yoksa doğrudan "Anne/AnnesininBabası" biçimindedir.
+      const parenIdx = rest.indexOf("(");
+      let anne, anneBaba;
+      if (parenIdx >= 0) {
+        anne = rest.slice(0, parenIdx).trim();
+        const icerik = rest.slice(parenIdx + 1).trim();
+        const slash = icerik.indexOf("/");
+        anneBaba = slash >= 0 ? icerik.slice(slash + 1).trim() : null;
+      } else {
+        const slash = rest.indexOf("/");
+        anne = (slash >= 0 ? rest.slice(0, slash) : rest).trim();
+        anneBaba = slash >= 0 ? rest.slice(slash + 1).trim() : null;
+      }
       out[temizle(m[2])] = { baba, anne, anneBaba };
     }
     return out;
