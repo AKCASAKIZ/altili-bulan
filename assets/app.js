@@ -35,7 +35,7 @@ const RANK5 = [100, 70, 50, 30, 10];
 /* --- durum --- */
 const state = {
   index: null, day: null, city: null,
-  program: null, results: null,
+  program: null, results: null, idman: null,
   legs: [], activeLeg: 0, picks: [],
   coefs: {}, enabled: {},
 };
@@ -143,7 +143,7 @@ function fillCitySelect() {
 }
 
 async function loadDayData() {
-  state.program = null; state.results = null;
+  state.program = null; state.results = null; state.idman = null;
   // önce localStorage'daki CSV yüklemeleri
   const upKeyP = `ab2:csv:${state.day}:${state.city}:program`;
   const upKeyS = `ab2:csv:${state.day}:${state.city}:sonuclar`;
@@ -152,6 +152,8 @@ async function loadDayData() {
   // sonra repo verisi
   if (!state.program) state.program = await tryFetch(`data/${state.day}/program-${state.city}.json`);
   if (!state.results) state.results = await tryFetch(`data/${state.day}/sonuclar-${state.city}.json`);
+  // TJK'nın günlük idman/galop sorgusundan çekilen veri (GitHub Actions ile her sabah güncellenir)
+  state.idman = await tryFetch(`data/${state.day}/idman-${state.city}.json`);
   restoreSession();
   renderAll();
 }
@@ -316,6 +318,23 @@ function autoScoreLeg() {
   });
   assignRank5(hs, times, "B6", true);
 
+  // B7: TJK idman sorgusundan son galop — son 7 günde ≥1000 m yapmışsa 100, son 2 günde yapılmışsa puan yok
+  if (state.idman) {
+    hs.forEach((h) => {
+      const rows = state.idman[temizle(h.ad)];
+      if (!rows || !rows.length) return;
+      for (const row of rows) {
+        if (!(row.m1400 || row.m1200 || row.m1000)) continue;
+        const iso = ddmmyyyyToIso(row.t);
+        if (!iso) continue;
+        const gun = Math.round((new Date(state.day) - new Date(iso)) / 86400000);
+        if (gun < 0) continue;
+        if (gun > 2) h.scores.B7 = gun <= 7 ? 100 : 0;
+        break;
+      }
+    });
+  }
+
   saveSession();
   renderScoreTable();
 }
@@ -385,12 +404,12 @@ function raceCard(r, isResult) {
       <td>${esc(h.jokey || "")}</td><td>${esc(h.kilo || "")}</td>
       ${isResult
         ? `<td>${esc(h.derece || "")}</td><td>${esc(h.ganyan || "")}</td><td>${esc(h.fark || "")}</td>`
-        : `<td>${esc(h.son6 || "")}</td><td>${esc(h.kgs || "")}</td><td>${esc(h.agf || "")}</td><td>${esc(h.eniyi || "")}</td>`}
+        : `<td>${esc(h.son6 || "")}</td><td>${esc(h.kgs || "")}</td><td>${esc(h.agf || "")}</td><td>${esc(h.eniyi || "")}</td><td>${esc(formatIdmanSon(state.idman?.[temizle(h.ad)]))}</td>`}
     </tr>`;
   });
   const head = isResult
     ? `<th>Sıra</th><th>No</th><th>At</th><th>Jokey</th><th>Kilo</th><th>Derece</th><th>Ganyan</th><th>Fark</th>`
-    : `<th>No</th><th>At</th><th>Jokey</th><th>Kilo</th><th>Son 6</th><th>KGS</th><th>AGF</th><th>En iyi</th>`;
+    : `<th>No</th><th>At</th><th>Jokey</th><th>Kilo</th><th>Son 6</th><th>KGS</th><th>AGF</th><th>En iyi</th><th>Son Galop</th>`;
   return `<div class="race-card">
     <header><h3>${r.no}. Koşu — ${r.saat || ""}</h3>
     <span class="race-tags">${esc(r.grup || "")} · ${esc(r.mesafe || "")} ${esc(r.pist || "")} · ${esc(r.tur || "")} ${r.ikramiye ? "· 1.lik: " + esc(r.ikramiye) : ""}</span></header>
@@ -573,6 +592,24 @@ function trDate(iso) {
 function slugify(s) {
   const map = { ç: "c", ğ: "g", ı: "i", ö: "o", ş: "s", ü: "u", Ç: "c", Ğ: "g", İ: "i", I: "i", Ö: "o", Ş: "s", Ü: "u" };
   return s.replace(/[çğıöşüÇĞİIÖŞÜ]/g, (c) => map[c]).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+/* at adını ekipman soneklerinden arındırıp normalize eder — idman-*.json verisiyle eşleştirmek için (fetch_tjk.py'deki at_adi_temizle ile aynı) */
+function temizle(ad) {
+  return (ad || "")
+    .replace(/\s*\(.*?\)\s*/g, " ")
+    .replace(/(\s+(KG|SKG|GDSK|DSGK|GKDSK|GKD|DSK|GSK|SGK|GDS|DSG|GKR|DB|SK|GD|GK|DS|KD|GM|KGD|G|K|D|M|S))+\s*$/g, "")
+    .trim().toUpperCase();
+}
+function ddmmyyyyToIso(s) {
+  const m = (s || "").match(/(\d{2})\.(\d{2})\.(\d{4})/);
+  return m ? `${m[3]}-${m[2]}-${m[1]}` : null;
+}
+/* idman-*.json içindeki en son (ilk) satırı okunur biçimde özetler: "05.07 · 1000m 1.02.50 · Galop" */
+function formatIdmanSon(rows) {
+  if (!rows || !rows.length) return "";
+  const r = rows[0];
+  const mesafe = r.m1400 ? "1400m " + r.m1400 : r.m1200 ? "1200m " + r.m1200 : r.m1000 ? "1000m " + r.m1000 : r.m800 ? "800m " + r.m800 : "";
+  return [r.t?.slice(0, 5), mesafe, r.tur].filter(Boolean).join(" · ");
 }
 
 

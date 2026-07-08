@@ -36,7 +36,7 @@ function temizle(ad) {
         <button id="btnDergiGecmis" class="btn btn-accent">📊 Geçmişi uygula (B1+B2+B3+B12+B15)</button>
       </div>
     </div>
-    <p class="hint" id="dergiInfo">Yarış Gazetesi PDF'ini GitHub reposuna yükleyin (kök veya <b>dergi/</b> klasörü) — burada otomatik listelenir. "PDF'i oku" gazetenin puanlarını, FAVORİ/PLASE/SÜRPRİZ tahminlerini, banko atları ve sayfa 2+'deki geçmiş performans tablolarını çıkarır. "Puanlamaya uygula": gazete puanı en yüksek 5 ata <b>B6</b> (100,70,50,30,10), favorilere <b>B11</b>=100, plaselere 60, sürprizlere 30 yazar. "Geçmişi uygula": her atın gazetede basılı geçmiş koşularından <b>B1</b> (ikramiye düşüşü), <b>B2/B3</b> (mesafe/pist uygunluğu — ortalama dereceye göre tahmini), <b>B12</b> (mesafe ayarı), <b>B15</b> (kilo farkı) doldurur.</p>
+    <p class="hint" id="dergiInfo">Yarış Gazetesi PDF'ini GitHub reposuna yükleyin (kök veya <b>dergi/</b> klasörü) — burada otomatik listelenir. "PDF'i oku": gazetenin puanlarını, FAVORİ/PLASE/SÜRPRİZ tahminlerini, banko atları, <b>1./2. Altılı Ganyan</b> bölümlerini, <b>Plase &amp; İkili</b> bahis kombinasyonlarını, her at için tek cümlelik <b>uzman yorumunu</b> ve sayfa 2+'deki geçmiş performans tablolarını çıkarır. "Puanlamaya uygula": gazete puanı en yüksek 5 ata <b>B6</b> (100,70,50,30,10), favorilere <b>B11</b>=100, plaselere 60, sürprizlere 30 yazar. "Geçmişi uygula": her atın gazetede basılı geçmiş koşularından <b>B1</b> (ikramiye düşüşü), <b>B2/B3</b> (mesafe/pist uygunluğu — ortalama dereceye göre tahmini), <b>B12</b> (mesafe ayarı), <b>B15</b> (kilo farkı) doldurur. Atların <b>son galop</b> verisi (TJK'nın canlı sorgusundan) Program sekmesinde her atın yanında görünür ve B7'yi otomatik doldurur.</p>
     <div id="dergiView"></div>`;
   document.querySelector("main").appendChild(pane);
 
@@ -104,6 +104,89 @@ function temizle(ad) {
     }
     return [...rows.entries()].sort((a, b) => b[0] - a[0])
       .map(([, items]) => items.sort((a, b) => a.x - b.x).map((i) => i.s).join(" ").replace(/\s+/g, " ").trim());
+  }
+
+  /* ---- ham metin akışı: PDF içerik akışındaki asıl sıra (sütun konumundan bağımsız) —
+   * yorum/bölüm/bahis ayrıştırması için kullanılır; galop ve performans metinleri sayfada
+   * görsel olarak iç içe geçmiş iki sütunda basıldığından, x/y konumuna göre satır kurmak
+   * bunları birbirine karıştırır. PDF'in kendi metin akışı sırası her zaman mantıksal sırayı korur. */
+  async function extractPageRaw(doc, pageNo) {
+    const page = await doc.getPage(pageNo);
+    const tc = await page.getTextContent();
+    return tc.items.filter((it) => it.str.trim()).map((it) => it.str).join(" ").replace(/\s+/g, " ");
+  }
+
+  /* ---- yorum: "N.KOŞU: (KOD) ..." performans bölümlerinde at başlığından hemen sonraki
+   * tek cümlelik uzman değerlendirmesini çıkarır (örn. "İdmanlarında toparlanma çabasında...").
+   * Koşu koşu ayırıp o bölüm içindeki at başlıklarıyla yorumları sırayla eşleştirir —
+   * bir atın yorumu her zaman bir sonraki atın başlığından hemen önce basılıdır. */
+  function parseYorumlar(rawText) {
+    const raceMarkerRe = /(\d{1,2})\.KOŞU:\s*\(/g;
+    const positions = [];
+    let m;
+    while ((m = raceMarkerRe.exec(rawText))) positions.push(m.index);
+    const headerRe = /(\d{1,2})\.\s+([A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ'\- ]{2,40}?)\s+\(/g;
+    const commentRe = /([A-ZÇĞİÖŞÜ][^[\]0-9]{10,140}?)\s*\[[KÇ][^\]]*\]/g;
+    const ekipmanRe = /^(KG|SKG|GDSK|DSGK|GKDSK|GKD|DSK|GSK|SGK|GDS|DSG|GKR|DB|SK|GD|GK|DS|KD|GM|KGD|G|K|D|M|S)\s+/;
+    const out = {};
+    for (let i = 0; i < positions.length; i++) {
+      const chunk = rawText.slice(positions[i], i + 1 < positions.length ? positions[i + 1] : rawText.length);
+      headerRe.lastIndex = 0;
+      const names = [];
+      let hm;
+      while ((hm = headerRe.exec(chunk))) names.push(hm[2].trim());
+      commentRe.lastIndex = 0;
+      const comments = [...chunk.matchAll(commentRe)].map((cm) => cm[1].trim().replace(ekipmanRe, ""));
+      names.forEach((name, j) => { if (comments[j]) out[temizle(name)] = comments[j]; });
+    }
+    return out;
+  }
+
+  /* ---- 1./2. Altılı ve Plase'nin başladığı koşu numaralarını sayfa 1 ham metninden bulur:
+   * "BİRİNCİ 6'LI GANYAN 1. KOŞUDAN İTİBAREN BAŞLAR", "7'Lİ GANYAN ve 7'Lİ PLASE BU KOŞUDAN..." */
+  function parseBolumler(rawP1) {
+    const raceHdrRe = /(\d{1,2})\.KOŞU\b/g;
+    const raceHeaders = [];
+    let rm;
+    while ((rm = raceHdrRe.exec(rawP1))) raceHeaders.push({ no: +rm[1], idx: rm.index });
+    const resolveStart = (matchIndex, explicitNo) => {
+      if (explicitNo) return +explicitNo;
+      const nxt = raceHeaders.find((r) => r.idx > matchIndex);
+      return nxt ? nxt.no : null;
+    };
+    const markerRe = /([0-9]+)['’]?L[İI]\s+(GANYAN|PLASE)(?:\s+ve\s+[0-9]+['’]?L[İI]\s+(GANYAN|PLASE))?\s+(?:(\d{1,2})\.\s*KOŞUDAN|BU\s+KOŞUDAN)\s+[İI]T[İI]BAREN\s+BAŞLAR/gi;
+    const altiliStarts = [];
+    let plaseStart = null;
+    let m;
+    while ((m = markerRe.exec(rawP1))) {
+      const start = resolveStart(m.index, m[4]);
+      if (!start) continue;
+      if (/6['’]?L[İI]/i.test(m[0]) && /GANYAN/i.test(m[0])) altiliStarts.push(start);
+      if (/PLASE/i.test(m[0]) && plaseStart == null) plaseStart = start;
+    }
+    altiliStarts.sort((a, b) => a - b);
+    return { altili1: altiliStarts[0] || null, altili2: altiliStarts[1] || null, plaseStart };
+  }
+
+  /* ---- BAHİSLER dip tablosu: bahis tipi -> at/koşu kombinasyonu (İkililer, Plase İkili, vb.) ---- */
+  function parseBahisler(rawP1) {
+    const labels = [
+      "ALTILI GANYAN", "BEŞLİ GANYAN", "DÖRTLÜ GANYAN", "ÜÇLÜ GANYAN",
+      "SIRALI İKİLİLER", "İKİLİLER", "PLASE İKİLİ", "YEDİLİ PLASE ve GANYAN", "YEDİLİ PLASE",
+      "ÜÇLÜ BAHİS", "TABELA BAHİS", "SIRALI BEŞLİ BAHİS", "ÇİFTE BAHİS",
+    ];
+    const idx = rawP1.indexOf("BAHİSLER");
+    if (idx < 0) return [];
+    const section = rawP1.slice(idx, idx + 1200);
+    const out = [];
+    for (const label of labels) {
+      const pos = section.indexOf(label);
+      if (pos < 0) continue;
+      const after = section.slice(pos + label.length);
+      const mm = after.match(/^\s*:?\s*([0-9](?:[0-9\-/.\s]*[0-9])?)/);
+      if (mm) out.push({ ad: label, deger: mm[1].replace(/\s+/g, "") });
+    }
+    return out;
   }
 
   /* at başlığı: "1. BİLGÜCÜ (KÇ-OU) 2y d.d (...)..."
@@ -199,13 +282,15 @@ function temizle(ad) {
     const el = document.getElementById("dergiView");
     if (!current) { el.innerHTML = `<div class="empty-note">Henüz PDF okunmadı.</div>`; return; }
     const d = current;
+    const raceNos = Object.keys(d.races).map(Number).sort((a, b) => a - b);
+    const bol = d.bolumler || {};
+
     let html = `<div class="race-card"><header><h3>📖 ${AB.esc(d.city || "?")} — ${AB.esc(d.date || "?")}</h3>
-      <span class="race-tags">${Object.keys(d.races).length} koşu bulundu</span></header>`;
+      <span class="race-tags">${raceNos.length} koşu bulundu</span></header>`;
     if (d.banko.length) {
       html += `<div class="payout">⭐ GÜNÜN BANKOLARI: ${d.banko.map((b) => `${b.race}.Koşu ${AB.esc(b.ad)} (${b.no})`).join(" · ")}</div>`;
     }
     html += `<div class="table-wrap"><table><thead><tr><th>Koşu</th><th>Favori</th><th>Plase</th><th>Sürpriz</th><th>Gazete puanı ilk 3 (GP)</th></tr></thead><tbody>`;
-    const raceNos = Object.keys(d.races).map(Number).sort((a, b) => a - b);
     for (const rn of raceNos) {
       const t = d.tahmin[rn] || {};
       const top = Object.values(d.races[rn].horses)
@@ -214,7 +299,51 @@ function temizle(ad) {
       html += `<tr><td><b>${rn}</b></td><td class="hit">${(t.favori || []).join("-") || "·"}</td>
         <td>${(t.plase || []).join("-") || "·"}</td><td class="miss">${(t.surpriz || []).join("-") || "·"}</td><td>${top || "·"}</td></tr>`;
     }
-    el.innerHTML = html + `</tbody></table></div></div>`;
+    html += `</tbody></table></div></div>`;
+
+    // 1./2. Altılı ayrımı bulunduysa ayrı bölümler, yoksa tek grupta tüm koşular
+    const gruplar = [];
+    if (bol.altili1) {
+      gruplar.push({ ad: "1. Altılı Ganyan", nos: raceNos.filter((r) => r >= bol.altili1 && r < bol.altili1 + 6) });
+      if (bol.altili2) gruplar.push({ ad: "2. Altılı Ganyan", nos: raceNos.filter((r) => r >= bol.altili2 && r < bol.altili2 + 6) });
+    } else {
+      gruplar.push({ ad: "Koşular ve uzman yorumları", nos: raceNos });
+    }
+
+    for (const grup of gruplar) {
+      if (!grup.nos.length) continue;
+      html += `<div class="race-card"><header><h3>${AB.esc(grup.ad)}</h3>
+        <span class="race-tags">${grup.nos[0]}.–${grup.nos[grup.nos.length - 1]}. Koşu</span></header>`;
+      for (const rn of grup.nos) {
+        const t = d.tahmin[rn] || {};
+        const horses = Object.values(d.races[rn].horses).sort((a, b) => a.no - b.no);
+        html += `<div class="table-wrap"><table><thead>
+          <tr><th colspan="3">${rn}. Koşu — Favori <span class="hit">${(t.favori || []).join("-") || "·"}</span>
+            &nbsp;Plase ${(t.plase || []).join("-") || "·"}
+            &nbsp;Sürpriz <span class="miss">${(t.surpriz || []).join("-") || "·"}</span></th></tr>
+          <tr><th>No</th><th>At</th><th>Uzman yorumu</th></tr></thead><tbody>`;
+        for (const h of horses) {
+          const yorum = d.yorumlar?.[temizle(h.ad)] || "";
+          html += `<tr><td>${h.no}</td><td>${AB.esc(h.ad)}${h.gp != null ? ` <span class="hint">(GP ${h.gp})</span>` : ""}</td><td>${AB.esc(yorum) || '<span class="hint">—</span>'}</td></tr>`;
+        }
+        html += `</tbody></table></div>`;
+      }
+      html += `</div>`;
+    }
+
+    // Plase & İkili
+    if ((d.bahisler && d.bahisler.length) || bol.plaseStart) {
+      html += `<div class="race-card"><header><h3>🎯 Plase &amp; İkili Tahminleri</h3>
+        ${bol.plaseStart ? `<span class="race-tags">7'li Plase/Ganyan ${bol.plaseStart}. koşudan itibaren geçerli</span>` : ""}</header>`;
+      if (d.bahisler && d.bahisler.length) {
+        html += `<div class="table-wrap"><table><thead><tr><th>Bahis türü</th><th>Kombinasyon</th></tr></thead><tbody>`;
+        d.bahisler.forEach((b) => { html += `<tr><td><b>${AB.esc(b.ad)}</b></td><td>${AB.esc(b.deger)}</td></tr>`; });
+        html += `</tbody></table></div>`;
+      }
+      html += `</div>`;
+    }
+
+    el.innerHTML = html;
   }
 
   /* ---- puanlamaya uygulama: B6 (GP sırası) + B11 (favori/plase/sürpriz) ---- */
@@ -322,20 +451,26 @@ function temizle(ad) {
       const lines = await extractColumns(doc);
       current = parseDergi(lines);
       current.gecmis = {};
+      let restRaw = "";
       for (let p = 2; p <= doc.numPages; p++) {
         const pLines = await extractPageLines(doc, p);
         const pGecmis = parseGecmis(pLines);
         for (const key of Object.keys(pGecmis)) {
           current.gecmis[key] = (current.gecmis[key] || []).concat(pGecmis[key]);
         }
+        restRaw += (await extractPageRaw(doc, p)) + " ";
       }
       // birden fazla bölümde geçen aynı ada ait satırlar birleşince tarih sırası bozulabilir — garantiye al
       for (const key of Object.keys(current.gecmis)) {
         current.gecmis[key].sort((a, b) => (a.tarih < b.tarih ? -1 : a.tarih > b.tarih ? 1 : 0));
       }
+      const p1Raw = await extractPageRaw(doc, 1);
+      current.yorumlar = parseYorumlar(restRaw);
+      current.bolumler = parseBolumler(p1Raw);
+      current.bahisler = parseBahisler(p1Raw);
       const atSayisi = Object.keys(current.gecmis).length;
       AB.LS.set(`ab2:dergi:${current.date}:${AB.slugify(current.city || "")}`, current);
-      document.getElementById("dergiInfo").textContent = `✅ Okundu: ${current.city} ${current.date} — ${Object.keys(current.races).length} koşu, ${Object.keys(current.tahmin).length} tahmin satırı, ${current.banko.length} banko, ${atSayisi} at için geçmiş performans.`;
+      document.getElementById("dergiInfo").textContent = `✅ Okundu: ${current.city} ${current.date} — ${Object.keys(current.races).length} koşu, ${Object.keys(current.tahmin).length} tahmin satırı, ${current.banko.length} banko, ${atSayisi} at için geçmiş performans, ${Object.keys(current.yorumlar).length} at için uzman yorumu.`;
       render();
     } catch (e) {
       document.getElementById("dergiInfo").textContent = "❌ PDF okunamadı: " + e.message;
