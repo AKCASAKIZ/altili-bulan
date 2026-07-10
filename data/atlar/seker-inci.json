@@ -1,0 +1,11 @@
+{
+ "ad": "ŞEKER İNCİ",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-06-02-kocaeli-1-backfill",
+  "2026-07-09-kocaeli-1"
+ ],
+ "erken_gec_delta_ema": 5.85,
+ "son_guncelleme": "2026-07-09-kocaeli-1",
+ "gecmis_dolduruldu": true
+}

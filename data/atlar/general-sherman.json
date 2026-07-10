@@ -1,0 +1,18 @@
+{
+ "ad": "GENERAL SHERMAN",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-03-22-adana-8-backfill",
+  "2025-04-08-adana-8-backfill",
+  "2025-05-23-istanbul-8-backfill",
+  "2025-07-22-kocaeli-9-backfill",
+  "2025-08-23-ankara-10-backfill",
+  "2025-09-07-adana-10-backfill",
+  "2025-09-18-ankara-5-backfill",
+  "2025-11-25-adana-1-backfill",
+  "2026-07-09-ankara-7"
+ ],
+ "erken_gec_delta_ema": -0.881,
+ "son_guncelleme": "2026-07-09-ankara-7",
+ "gecmis_dolduruldu": true
+}

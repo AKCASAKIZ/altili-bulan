@@ -1,0 +1,13 @@
+{
+ "ad": "ALASER",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-01-25-istanbul-8-backfill",
+  "2026-01-13-antalya-6-backfill",
+  "2026-07-09-kocaeli-9"
+ ],
+ "erken_gec_delta_ema": 1.28,
+ "son_guncelleme": "2026-07-09-kocaeli-9",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

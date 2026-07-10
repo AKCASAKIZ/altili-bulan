@@ -1,0 +1,12 @@
+{
+ "ad": "ROSAS DEL ROSEDAL",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-03-22-adana-2-backfill",
+  "2026-07-09-ankara-1"
+ ],
+ "erken_gec_delta_ema": 0.4,
+ "son_guncelleme": "2026-07-09-ankara-1",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": -3
+}

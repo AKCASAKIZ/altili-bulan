@@ -1,0 +1,15 @@
+{
+ "ad": "DEMİR BARBAR",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-07-12-ankara-10-backfill",
+  "2025-10-16-ankara-9-backfill",
+  "2025-10-24-istanbul-9-backfill",
+  "2025-11-08-ankara-4-backfill",
+  "2025-12-23-antalya-5-backfill",
+  "2026-07-09-ankara-3"
+ ],
+ "erken_gec_delta_ema": -1.464,
+ "son_guncelleme": "2026-07-09-ankara-3",
+ "gecmis_dolduruldu": true
+}

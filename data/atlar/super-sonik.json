@@ -1,0 +1,26 @@
+{
+ "ad": "SÜPER SONİK",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-07-08-ankara-7-backfill",
+  "2025-09-09-kocaeli-6-backfill",
+  "2025-10-03-bursa-6-backfill",
+  "2025-10-27-bursa-7-backfill",
+  "2025-12-12-antalya-2-backfill",
+  "2026-01-02-antalya-5-backfill",
+  "2026-02-19-antalya-4-backfill",
+  "2026-04-18-ankara-5-backfill",
+  "2026-04-23-ankara-1-backfill",
+  "2026-05-19-ankara-9-backfill",
+  "2026-05-30-ankara-9-backfill",
+  "2026-06-07-izmir-2-backfill",
+  "2026-06-20-ankara-7-backfill",
+  "2026-06-30-ankara-8-backfill",
+  "2026-07-09-ankara-6-backfill",
+  "2026-07-09-ankara-6"
+ ],
+ "erken_gec_delta_ema": 0.422,
+ "son_guncelleme": "2026-07-09-ankara-6",
+ "son_atak_delta_ema": -0.02,
+ "gecmis_dolduruldu": true
+}

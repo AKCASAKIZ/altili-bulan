@@ -1,0 +1,23 @@
+{
+ "ad": "ATAMANBEY",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-04-16-istanbul-1-backfill",
+  "2025-04-30-istanbul-1-backfill",
+  "2025-05-14-istanbul-1-backfill",
+  "2025-10-01-istanbul-2-backfill",
+  "2025-10-28-kocaeli-3-backfill",
+  "2025-12-01-bursa-4-backfill",
+  "2026-01-07-istanbul-8-backfill",
+  "2026-01-17-istanbul-7-backfill",
+  "2026-02-18-istanbul-6-backfill",
+  "2026-05-30-ankara-9-backfill",
+  "2026-06-20-ankara-7-backfill",
+  "2026-07-09-ankara-6-backfill",
+  "2026-07-09-ankara-6"
+ ],
+ "erken_gec_delta_ema": 3.983,
+ "son_guncelleme": "2026-07-09-ankara-6",
+ "son_atak_delta_ema": 2.063,
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,21 @@
+{
+ "ad": "GENÇAY NALAN",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-02-03-bursa-1-backfill",
+  "2025-02-24-bursa-4-backfill",
+  "2025-02-28-bursa-3-backfill",
+  "2025-10-10-bursa-1-backfill",
+  "2025-11-24-bursa-8-backfill",
+  "2026-04-13-bursa-8-backfill",
+  "2026-04-20-bursa-9-backfill",
+  "2026-05-08-bursa-1-backfill",
+  "2026-05-25-bursa-4-backfill",
+  "2026-06-25-bursa-8-backfill",
+  "2026-07-10-bursa-1"
+ ],
+ "erken_gec_delta_ema": 0.313,
+ "son_guncelleme": "2026-07-10-bursa-1",
+ "son_atak_delta_ema": -1.5,
+ "gecmis_dolduruldu": true
+}

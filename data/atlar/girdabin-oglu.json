@@ -1,0 +1,26 @@
+{
+ "ad": "GİRDABIN OĞLU",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-08-08-istanbul-9-backfill",
+  "2025-08-17-istanbul-9-backfill",
+  "2025-08-27-istanbul-5-backfill",
+  "2025-09-06-istanbul-4-backfill",
+  "2025-12-09-adana-4-backfill",
+  "2025-12-24-sanliurfa-6-backfill",
+  "2026-01-28-sanliurfa-5-backfill",
+  "2026-02-16-sanliurfa-4-backfill",
+  "2026-03-04-sanliurfa-6-backfill",
+  "2026-03-11-sanliurfa-4-backfill",
+  "2026-03-25-sanliurfa-5-backfill",
+  "2026-04-06-sanliurfa-5-backfill",
+  "2026-05-24-istanbul-7-backfill",
+  "2026-06-05-istanbul-4-backfill",
+  "2026-06-17-istanbul-5-backfill",
+  "2026-07-09-kocaeli-7"
+ ],
+ "erken_gec_delta_ema": 0.512,
+ "son_guncelleme": "2026-07-09-kocaeli-7",
+ "son_atak_delta_ema": 0.017,
+ "gecmis_dolduruldu": true
+}

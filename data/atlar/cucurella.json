@@ -1,0 +1,25 @@
+{
+ "ad": "CUCURELLA",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-06-22-istanbul-9-backfill",
+  "2025-08-13-istanbul-7-backfill",
+  "2025-08-24-istanbul-9-backfill",
+  "2025-09-06-istanbul-9-backfill",
+  "2025-09-19-istanbul-3-backfill",
+  "2025-10-08-istanbul-3-backfill",
+  "2025-12-10-istanbul-2-backfill",
+  "2025-12-17-istanbul-4-backfill",
+  "2026-01-14-istanbul-5-backfill",
+  "2026-02-07-istanbul-6-backfill",
+  "2026-03-11-istanbul-7-backfill",
+  "2026-03-30-bursa-3-backfill",
+  "2026-05-29-bursa-6-backfill",
+  "2026-06-23-kocaeli-6-backfill",
+  "2026-07-09-kocaeli-9"
+ ],
+ "erken_gec_delta_ema": -2.318,
+ "son_atak_delta_ema": -0.49,
+ "son_guncelleme": "2026-07-09-kocaeli-9",
+ "gecmis_dolduruldu": true
+}

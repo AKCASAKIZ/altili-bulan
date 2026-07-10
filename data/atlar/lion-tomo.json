@@ -1,0 +1,26 @@
+{
+ "ad": "LION TOMO",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-12-13-istanbul-4-backfill",
+  "2025-12-21-izmir-7-backfill",
+  "2025-12-30-antalya-7-backfill",
+  "2026-01-11-izmir-6-backfill",
+  "2026-01-30-izmir-6-backfill",
+  "2026-02-15-izmir-5-backfill",
+  "2026-03-05-izmir-6-backfill",
+  "2026-03-19-izmir-5-backfill",
+  "2026-03-30-bursa-6-backfill",
+  "2026-04-08-istanbul-6-backfill",
+  "2026-04-30-ankara-6-backfill",
+  "2026-05-11-bursa-8-backfill",
+  "2026-05-21-ankara-6-backfill",
+  "2026-06-06-izmir-6-backfill",
+  "2026-07-09-kocaeli-6-backfill",
+  "2026-07-09-kocaeli-6"
+ ],
+ "erken_gec_delta_ema": 1.32,
+ "son_guncelleme": "2026-07-09-kocaeli-6",
+ "son_atak_delta_ema": -0.072,
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,26 @@
+{
+ "ad": "RAYMOND REDDINGTON",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-05-13-ankara-4-backfill",
+  "2025-05-27-ankara-4-backfill",
+  "2025-06-12-ankara-5-backfill",
+  "2025-06-22-istanbul-8-backfill",
+  "2025-07-10-ankara-7-backfill",
+  "2025-07-31-ankara-7-backfill",
+  "2025-08-16-ankara-3-backfill",
+  "2025-08-30-ankara-3-backfill",
+  "2025-09-18-ankara-9-backfill",
+  "2025-10-02-ankara-8-backfill",
+  "2025-10-23-ankara-6-backfill",
+  "2025-11-13-ankara-6-backfill",
+  "2026-06-11-ankara-9-backfill",
+  "2026-06-30-ankara-7-backfill",
+  "2026-07-09-ankara-5-backfill",
+  "2026-07-09-ankara-5"
+ ],
+ "erken_gec_delta_ema": 0.466,
+ "son_guncelleme": "2026-07-09-ankara-5",
+ "son_atak_delta_ema": -0.542,
+ "gecmis_dolduruldu": true
+}

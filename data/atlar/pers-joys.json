@@ -1,0 +1,17 @@
+{
+ "ad": "PERS JOYS",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-11-21-izmir-4-backfill",
+  "2025-12-07-izmir-7-backfill",
+  "2026-05-14-izmir-9-backfill",
+  "2026-05-28-izmir-7-backfill",
+  "2026-06-14-izmir-6-backfill",
+  "2026-07-09-kocaeli-6-backfill",
+  "2026-07-09-kocaeli-6"
+ ],
+ "erken_gec_delta_ema": 2.254,
+ "son_guncelleme": "2026-07-09-kocaeli-6",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

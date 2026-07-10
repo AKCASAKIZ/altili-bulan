@@ -1,0 +1,23 @@
+{
+ "ad": "VICTORY STAR",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-07-16-elazig-3-backfill",
+  "2025-07-24-ankara-3-backfill",
+  "2025-08-14-kocaeli-4-backfill",
+  "2025-08-24-istanbul-4-backfill",
+  "2025-09-13-ankara-8-backfill",
+  "2025-09-30-kocaeli-5-backfill",
+  "2025-10-18-ankara-8-backfill",
+  "2026-01-26-sanliurfa-4-backfill",
+  "2026-02-04-sanliurfa-4-backfill",
+  "2026-03-18-sanliurfa-2-backfill",
+  "2026-05-12-kocaeli-6-backfill",
+  "2026-06-23-kocaeli-1-backfill",
+  "2026-07-09-kocaeli-3"
+ ],
+ "erken_gec_delta_ema": 1.432,
+ "son_guncelleme": "2026-07-09-kocaeli-3",
+ "son_atak_delta_ema": -0.006,
+ "gecmis_dolduruldu": true
+}

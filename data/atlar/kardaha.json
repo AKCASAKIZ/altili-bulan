@@ -1,0 +1,23 @@
+{
+ "ad": "KARDAHA",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-09-15-sanliurfa-2-backfill",
+  "2025-10-06-sanliurfa-1-backfill",
+  "2025-10-27-sanliurfa-7-backfill",
+  "2025-11-10-sanliurfa-4-backfill",
+  "2025-11-23-adana-4-backfill",
+  "2025-12-09-adana-3-backfill",
+  "2026-01-20-adana-2-backfill",
+  "2026-02-25-sanliurfa-3-backfill",
+  "2026-04-04-adana-1-backfill",
+  "2026-05-02-ankara-6-backfill",
+  "2026-05-26-ankara-3-backfill",
+  "2026-07-02-ankara-5-backfill",
+  "2026-07-09-ankara-1"
+ ],
+ "erken_gec_delta_ema": 0.337,
+ "son_guncelleme": "2026-07-09-ankara-1",
+ "son_atak_delta_ema": 0.3,
+ "gecmis_dolduruldu": true
+}

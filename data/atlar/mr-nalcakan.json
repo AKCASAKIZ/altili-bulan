@@ -1,0 +1,25 @@
+{
+ "ad": "MR NALÇAKAN",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-07-22-ankara-7-backfill",
+  "2025-08-01-istanbul-9-backfill",
+  "2025-08-21-ankara-4-backfill",
+  "2025-09-06-istanbul-9-backfill",
+  "2025-09-24-istanbul-3-backfill",
+  "2025-10-09-ankara-9-backfill",
+  "2025-10-18-ankara-1-backfill",
+  "2025-10-26-istanbul-3-backfill",
+  "2025-11-15-ankara-7-backfill",
+  "2025-11-28-antalya-3-backfill",
+  "2026-01-13-antalya-1-backfill",
+  "2026-04-10-antalya-6-backfill",
+  "2026-05-05-ankara-7-backfill",
+  "2026-06-07-istanbul-7-backfill",
+  "2026-07-09-ankara-5"
+ ],
+ "erken_gec_delta_ema": -0.509,
+ "son_guncelleme": "2026-07-09-ankara-5",
+ "son_atak_delta_ema": -0.111,
+ "gecmis_dolduruldu": true
+}

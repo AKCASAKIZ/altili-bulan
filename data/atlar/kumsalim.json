@@ -1,0 +1,23 @@
+{
+ "ad": "KUMSALIM",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-01-23-antalya-3-backfill",
+  "2025-02-25-antalya-3-backfill",
+  "2025-04-14-bursa-2-backfill",
+  "2025-11-28-antalya-2-backfill",
+  "2026-01-02-antalya-2-backfill",
+  "2026-03-10-antalya-4-backfill",
+  "2026-04-07-antalya-2-backfill",
+  "2026-04-20-bursa-9-backfill",
+  "2026-05-08-bursa-1-backfill",
+  "2026-05-25-bursa-4-backfill",
+  "2026-06-25-bursa-1-backfill",
+  "2026-07-10-bursa-1-backfill",
+  "2026-07-10-bursa-1"
+ ],
+ "erken_gec_delta_ema": -1.21,
+ "son_atak_delta_ema": -3.3,
+ "son_guncelleme": "2026-07-10-bursa-1",
+ "gecmis_dolduruldu": true
+}

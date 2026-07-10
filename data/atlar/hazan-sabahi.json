@@ -1,0 +1,15 @@
+{
+ "ad": "HAZAN SABAHI",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2026-05-12-ankara-8-backfill",
+  "2026-05-21-ankara-3-backfill",
+  "2026-06-05-istanbul-7-backfill",
+  "2026-06-26-ankara-3-backfill",
+  "2026-07-09-kocaeli-1-backfill",
+  "2026-07-09-kocaeli-1"
+ ],
+ "erken_gec_delta_ema": 1.383,
+ "son_guncelleme": "2026-07-09-kocaeli-1",
+ "gecmis_dolduruldu": true
+}

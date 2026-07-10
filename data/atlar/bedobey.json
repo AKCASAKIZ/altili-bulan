@@ -1,0 +1,15 @@
+{
+ "ad": "BEDOBEY",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-04-28-bursa-4-backfill",
+  "2025-06-10-kocaeli-8-backfill",
+  "2025-06-17-kocaeli-8-backfill",
+  "2025-07-03-kocaeli-6-backfill",
+  "2026-07-09-kocaeli-4"
+ ],
+ "erken_gec_delta_ema": 2.402,
+ "son_atak_delta_ema": -0.27,
+ "son_guncelleme": "2026-07-09-kocaeli-4",
+ "gecmis_dolduruldu": true
+}

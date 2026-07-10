@@ -1,0 +1,14 @@
+{
+ "ad": "KAZDAĞI EFESİ",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2025-09-16-kocaeli-1-backfill",
+  "2026-06-26-kocaeli-4-backfill",
+  "2026-07-02-kocaeli-8-backfill",
+  "2026-07-09-kocaeli-7"
+ ],
+ "erken_gec_delta_ema": 2.055,
+ "son_guncelleme": "2026-07-09-kocaeli-7",
+ "son_atak_delta_ema": 1.4,
+ "gecmis_dolduruldu": true
+}

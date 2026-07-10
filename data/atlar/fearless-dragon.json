@@ -1,0 +1,21 @@
+{
+ "ad": "FEARLESS DRAGON",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2026-01-05-bursa-3-backfill",
+  "2026-01-26-bursa-6-backfill",
+  "2026-02-09-bursa-7-backfill",
+  "2026-03-02-bursa-4-backfill",
+  "2026-03-23-bursa-1-backfill",
+  "2026-04-13-bursa-7-backfill",
+  "2026-04-20-bursa-3-backfill",
+  "2026-05-01-bursa-7-backfill",
+  "2026-06-05-bursa-3-backfill",
+  "2026-07-10-bursa-1-backfill",
+  "2026-07-10-bursa-1"
+ ],
+ "erken_gec_delta_ema": 0.626,
+ "son_guncelleme": "2026-07-10-bursa-1",
+ "son_atak_delta_ema": -1.32,
+ "gecmis_dolduruldu": true
+}

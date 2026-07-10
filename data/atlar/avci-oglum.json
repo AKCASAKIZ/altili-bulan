@@ -1,0 +1,13 @@
+{
+ "ad": "AVCI OĞLUM",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-07-10-kocaeli-8-backfill",
+  "2026-05-19-kocaeli-9-backfill",
+  "2026-07-09-kocaeli-4"
+ ],
+ "erken_gec_delta_ema": 7.06,
+ "son_atak_delta_ema": 2.86,
+ "son_guncelleme": "2026-07-09-kocaeli-4",
+ "gecmis_dolduruldu": true
+}

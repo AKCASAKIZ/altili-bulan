@@ -1,0 +1,20 @@
+{
+ "ad": "ÇİKOK AĞA",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-02-03-bursa-2-backfill",
+  "2025-02-17-bursa-5-backfill",
+  "2025-06-09-bursa-10-backfill",
+  "2025-08-08-bursa-1-backfill",
+  "2026-04-14-kocaeli-6-backfill",
+  "2026-04-27-bursa-1-backfill",
+  "2026-05-04-bursa-7-backfill",
+  "2026-05-29-bursa-6-backfill",
+  "2026-06-08-bursa-5-backfill",
+  "2026-07-09-kocaeli-9-backfill",
+  "2026-07-09-kocaeli-9"
+ ],
+ "erken_gec_delta_ema": -0.339,
+ "son_guncelleme": "2026-07-09-kocaeli-9",
+ "gecmis_dolduruldu": true
+}

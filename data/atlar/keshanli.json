@@ -1,0 +1,19 @@
+{
+ "ad": "KEŞHANLI",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-11-01-ankara-1-backfill",
+  "2025-11-15-ankara-1-backfill",
+  "2025-12-04-antalya-4-backfill",
+  "2026-05-05-ankara-4-backfill",
+  "2026-05-19-ankara-5-backfill",
+  "2026-06-20-ankara-8-backfill",
+  "2026-06-30-ankara-4-backfill",
+  "2026-07-09-ankara-3-backfill",
+  "2026-07-09-ankara-3"
+ ],
+ "erken_gec_delta_ema": 2.377,
+ "son_guncelleme": "2026-07-09-ankara-3",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

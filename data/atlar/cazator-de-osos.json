@@ -1,0 +1,18 @@
+{
+ "ad": "CAZATOR DE OSOS",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-02-22-istanbul-6-backfill",
+  "2025-12-30-antalya-4-backfill",
+  "2026-02-13-antalya-6-backfill",
+  "2026-02-24-antalya-3-backfill",
+  "2026-03-24-antalya-5-backfill",
+  "2026-04-07-antalya-6-backfill",
+  "2026-05-22-istanbul-5-backfill",
+  "2026-07-09-ankara-5"
+ ],
+ "erken_gec_delta_ema": 0.605,
+ "son_atak_delta_ema": -0.49,
+ "son_guncelleme": "2026-07-09-ankara-5",
+ "gecmis_dolduruldu": true
+}

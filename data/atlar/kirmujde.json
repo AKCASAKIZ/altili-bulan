@@ -1,0 +1,19 @@
+{
+ "ad": "KIRMÜJDE",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-03-12-istanbul-5-backfill",
+  "2025-05-09-istanbul-3-backfill",
+  "2025-07-03-kocaeli-9-backfill",
+  "2025-07-22-kocaeli-3-backfill",
+  "2025-08-14-kocaeli-5-backfill",
+  "2025-09-09-kocaeli-1-backfill",
+  "2025-09-30-kocaeli-3-backfill",
+  "2026-04-21-kocaeli-8-backfill",
+  "2026-07-09-kocaeli-4"
+ ],
+ "erken_gec_delta_ema": 5.671,
+ "son_atak_delta_ema": 1.757,
+ "son_guncelleme": "2026-07-09-kocaeli-4",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,19 @@
+{
+ "ad": "YETİM AMCA",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-05-11-adana-9-backfill",
+  "2025-10-06-sanliurfa-6-backfill",
+  "2025-10-27-sanliurfa-1-backfill",
+  "2026-03-11-sanliurfa-5-backfill",
+  "2026-03-18-sanliurfa-6-backfill",
+  "2026-03-25-sanliurfa-6-backfill",
+  "2026-06-01-sanliurfa-7-backfill",
+  "2026-07-01-istanbul-1-backfill",
+  "2026-07-09-kocaeli-4"
+ ],
+ "erken_gec_delta_ema": -1.782,
+ "son_guncelleme": "2026-07-09-kocaeli-4",
+ "son_atak_delta_ema": 0.159,
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,16 @@
+{
+ "ad": "YAĞIZ TURBO",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-06-07-ankara-9-backfill",
+  "2025-06-26-ankara-8-backfill",
+  "2025-07-12-ankara-10-backfill",
+  "2025-08-08-istanbul-6-backfill",
+  "2025-08-24-istanbul-1-backfill",
+  "2025-09-19-bursa-6-backfill",
+  "2026-07-09-ankara-3"
+ ],
+ "erken_gec_delta_ema": 0.81,
+ "son_guncelleme": "2026-07-09-ankara-3",
+ "gecmis_dolduruldu": true
+}
