@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Accurace.net'in checkpoint (100m aralıklı sıralama) verisinden atların koşu
@@ -36,6 +36,13 @@ TR_MAP = str.maketrans("çğıöşüÇĞİIÖŞÜ", "cgiosuCGIIOSU")
 EKIPMAN = re.compile(r"(\s+(SGKR|GDSK|DSGK|GKDSK|SKG|KGD|GKD|DSK|GSK|SGK|GDS|DSG|GKR|KG|DB|SK|GD|GK|DS|KD|GM|BB|ÖG|YP|G|K|D|M|S))+$")
 
 EMA_ALPHA = 0.3
+
+
+def _to_int(x):
+    try:
+        return int(str(x).strip())
+    except (TypeError, ValueError):
+        return None
 
 
 def slugify(s: str) -> str:
@@ -109,7 +116,17 @@ def fetch_network_race(date: datetime, city_ascii: str, race_no: int) -> dict | 
 def pozisyon_deltalari(horse_table: dict) -> dict | None:
     """Bir atın checkpoint listesinden erken/orta/geç pozisyon deltalarını çıkarır."""
     cps = horse_table.get("checkpoint") or []
-    by_dist = {c["checkpoint"]: c["place"] for c in cps if c.get("place") is not None}
+    by_dist = {}
+    for c in cps:
+        if not isinstance(c, dict):
+            continue
+        dist, place = c.get("checkpoint"), c.get("place")
+        if dist is None or place is None:
+            continue
+        try:
+            by_dist[int(float(dist))] = int(float(place))
+        except (TypeError, ValueError):
+            continue
     if len(by_dist) < 4:
         return None
     finish = max(by_dist)
@@ -216,7 +233,11 @@ def backfill_at_gecmisi(canonical_name: str) -> None:
         return
 
     at_id = tjk_at_id(canonical_name)
-    gecmis = tjk_gecmis_kisa(at_id, BACKFILL_MAX_YARIS) if at_id else []
+    if not at_id:
+        # TJK geçici olarak cevap vermedi/atı bulamadı: "dolduruldu" işaretleme,
+        # bir sonraki çalışmada yeniden dene (aksi halde tek hicci kalıcı olur).
+        return
+    gecmis = tjk_gecmis_kisa(at_id, BACKFILL_MAX_YARIS)
     for row in sorted(gecmis, key=lambda r: datetime.strptime(r["t"], "%d.%m.%Y")):
         tarih = datetime.strptime(row["t"], "%d.%m.%Y")
         city_ascii = slugify(row["sehir"]).replace("-", "").upper()
@@ -270,9 +291,13 @@ def fetch_day(date: datetime) -> int:
             time.sleep(0.5)
             if not table:
                 continue
-            horse_by_no = {h["no"]: h for h in race.get("horses", [])}
+            horse_by_no = {}
+            for h in race.get("horses", []):
+                hn = _to_int(h.get("no"))
+                if hn is not None:
+                    horse_by_no[hn] = h
             for h_table in table.get("horse", []):
-                no = h_table.get("horse_number")
+                no = _to_int(h_table.get("horse_number"))
                 program_horse = horse_by_no.get(no)
                 if not program_horse:
                     continue
@@ -305,3 +330,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
