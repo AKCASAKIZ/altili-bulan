@@ -216,6 +216,21 @@ function rankedHorses(leg) {
     .sort((x, y) => y.score - x.score);
 }
 
+/* --- Isı skalası: model kazanma olasılığı → turuncu ton ---
+   Olasılık = atın puanı / ayaktaki toplam puan. Ayağın favorisi tam turuncu,
+   düşük ihtimalliler yüzey rengine (açık temada beyaza) doğru solar. */
+function legProbs(leg) {
+  const scores = leg.horses.map((h) => Math.max(0, computeScore(h)));
+  const tot = scores.reduce((a, b) => a + b, 0);
+  return { probOf: (s) => (tot > 0 ? Math.max(0, s) / tot : 0), max: Math.max(0, ...scores) };
+}
+function heatBg(score, max, surface = "--surface") {
+  if (!(score > 0) || !(max > 0)) return "";
+  const t = Math.pow(score / max, 1.5); // favori belirgin kalsın, alt sıralar hızla soluklaşsın
+  const pct = Math.round(t * 60);       // en koyu ton %60 karışım — üzerindeki metin okunur kalır
+  return pct < 4 ? "" : `background:color-mix(in srgb, var(--heat) ${pct}%, var(${surface}));`;
+}
+
 function renderLegChips() {
   const el = $("#legChips");
   el.innerHTML = "";
@@ -256,16 +271,18 @@ function renderScoreTable() {
   html += active.map((a) => `<th class="angle-h" title="${esc(a.name)} — ${esc(a.desc)} (katsayı ${state.coefs[a.k].toFixed(4)})">${a.k}</th>`).join("");
   html += `<th style="text-align:right">Puan</th><th>Sıra</th><th></th></tr></thead><tbody>`;
 
+  const { probOf, max } = legProbs(leg);
   leg.horses.forEach((h, i) => {
     const rank = rankOf.get(i);
     const score = computeScore(h);
-    html += `<tr class="${rank <= 4 && score > 0 ? "top-row" : ""}">`;
-    html += `<td class="sticky-col" title="${esc(h.meta?.jokey || "")}">${h.no}. ${esc(h.ad)}</td>`;
+    const heat = heatBg(score, max);
+    html += `<tr class="${rank <= 4 && score > 0 ? "top-row" : ""}" style="${heat}">`;
+    html += `<td class="sticky-col" style="${heat}" title="${esc(h.meta?.jokey || "")}">${h.no}. ${esc(h.ad)}</td>`;
     active.forEach((a) => {
       const v = h.scores[a.k];
       html += `<td class="angle-c"><input class="score-in ${v ? "filled" : ""}" type="number" min="0" max="100" step="5" data-h="${i}" data-a="${a.k}" value="${v ?? ""}" placeholder="·"></td>`;
     });
-    html += `<td class="total">${score.toFixed(1)}</td>`;
+    html += `<td class="total">${score.toFixed(1)}${score > 0 ? `<span class="win-pct">%${(probOf(score) * 100).toFixed(0)}</span>` : ""}</td>`;
     html += `<td><span class="rank-badge rank-${rank}">${score > 0 ? rank : "–"}</span></td>`;
     html += `<td><button class="del-horse" title="Atı çıkar" data-del="${i}">✕</button></td></tr>`;
   });
@@ -760,6 +777,7 @@ async function renderKarsilastir() {
 function tagmRaceCard(r, leg) {
   const ranked = rankedHorses(leg);
   const vm = valueMap(leg);
+  const { probOf, max } = legProbs(leg);
   let rows = "";
   ranked.forEach(({ h, score }, ix) => {
     const rank = ix + 1;
@@ -769,7 +787,7 @@ function tagmRaceCard(r, leg) {
     const vCell = v && v.agf != null
       ? `%${(v.agf * 100).toFixed(1)}${v.value ? ' <span title="Model olasılığı AGF\'nin en az 1.5 katı — piyasanın küçümsediği at">💎</span>' : ""}`
       : "";
-    rows += `<tr class="${rank <= 4 && score > 0 ? "top-row" : ""}">
+    rows += `<tr class="${rank <= 4 && score > 0 ? "top-row" : ""}" style="${heatBg(score, max)}">
       <td><span class="rank-badge rank-${rank}">${score > 0 ? rank : "–"}</span></td>
       <td>${h.no}</td>
       <td>${esc(h.ad)}${soy ? `<br><span class="hint" style="font-size:11px">${esc(soy)}</span>` : ""}</td>
@@ -777,7 +795,7 @@ function tagmRaceCard(r, leg) {
       <td>${esc(formatIdmanSon(state.idman?.[temizle(h.ad)]))}</td>
       <td>${karakter}</td>
       <td>${vCell}</td>
-      <td class="total">${score.toFixed(1)}</td>
+      <td class="total">${score.toFixed(1)}${score > 0 ? `<span class="win-pct">%${(probOf(score) * 100).toFixed(0)}</span>` : ""}</td>
     </tr>`;
   });
   return `<div class="race-card">
@@ -795,6 +813,7 @@ function renderKupon() {
   state.legs.forEach((leg, li) => {
     const ranked = rankedHorses(leg);
     const vm = valueMap(leg);
+    const { probOf, max } = legProbs(leg);
     const div = document.createElement("div");
     div.className = "kupon-leg";
     div.innerHTML = `<h4>${leg.raceNo}. Koşu <span class="hint">(${leg.saat || ""} · ${leg.mesafe || ""})</span></h4>`;
@@ -804,9 +823,10 @@ function renderKupon() {
       const b = document.createElement("button");
       const picked = (state.picks[li] || []).includes(h.no);
       b.className = "horse-pick" + (picked ? " picked" : "");
+      if (!picked) b.style.cssText = heatBg(score, max, "--surface2");
       const elmas = vm.get(h.no)?.value ? " 💎" : "";
       b.title = elmas ? "Value: model olasılığı AGF'nin en az 1.5 katı" : "";
-      b.innerHTML = `${h.no} ${esc(h.ad)}${elmas} <span class="sc">${score.toFixed(1)}</span>`;
+      b.innerHTML = `${h.no} ${esc(h.ad)}${elmas} <span class="sc">${score.toFixed(1)}${score > 0 ? ` · %${(probOf(score) * 100).toFixed(0)}` : ""}</span>`;
       b.onclick = () => {
         state.picks[li] = state.picks[li] || [];
         const ix = state.picks[li].indexOf(h.no);
