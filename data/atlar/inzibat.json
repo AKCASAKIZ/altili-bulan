@@ -1,0 +1,16 @@
+{
+ "ad": "İNZİBAT",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-10-10-istanbul-2-backfill",
+  "2025-10-31-istanbul-3-backfill",
+  "2025-11-12-istanbul-5-backfill",
+  "2026-05-24-istanbul-4-backfill",
+  "2026-07-10-istanbul-4-backfill",
+  "2026-07-10-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 3.194,
+ "son_guncelleme": "2026-07-10-istanbul-4",
+ "son_atak_delta_ema": 1.029,
+ "gecmis_dolduruldu": true
+}

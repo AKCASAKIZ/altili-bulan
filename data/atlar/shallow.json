@@ -1,0 +1,12 @@
+{
+ "ad": "SHALLOW",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-04-26-adana-8-backfill",
+  "2026-05-14-ankara-2-backfill",
+  "2026-07-10-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 0.21,
+ "son_guncelleme": "2026-07-10-istanbul-2",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,12 @@
+{
+ "ad": "CLARISSA",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-05-20-istanbul-8-backfill",
+  "2026-07-10-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 0.8,
+ "son_atak_delta_ema": 0.1,
+ "son_guncelleme": "2026-07-10-istanbul-7",
+ "gecmis_dolduruldu": true
+}

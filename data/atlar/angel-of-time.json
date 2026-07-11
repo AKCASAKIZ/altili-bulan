@@ -1,0 +1,18 @@
+{
+ "ad": "ANGEL OF TIME",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-11-09-istanbul-4-backfill",
+  "2025-12-10-istanbul-4-backfill",
+  "2025-12-31-istanbul-7-backfill",
+  "2026-01-17-istanbul-1-backfill",
+  "2026-01-31-istanbul-1-backfill",
+  "2026-06-14-istanbul-4-backfill",
+  "2026-07-01-istanbul-5-backfill",
+  "2026-07-10-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 1.006,
+ "son_guncelleme": "2026-07-10-istanbul-7",
+ "son_atak_delta_ema": 0.3,
+ "gecmis_dolduruldu": true
+}

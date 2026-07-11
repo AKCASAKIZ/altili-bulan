@@ -1,0 +1,16 @@
+{
+ "ad": "GİDEROS",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-07-11-bursa-6-backfill",
+  "2025-07-22-kocaeli-5-backfill",
+  "2025-08-04-bursa-4-backfill",
+  "2025-08-08-bursa-8-backfill",
+  "2025-11-10-bursa-5-backfill",
+  "2026-07-10-bursa-7"
+ ],
+ "erken_gec_delta_ema": 2.573,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-10-bursa-7",
+ "gecmis_dolduruldu": true
+}

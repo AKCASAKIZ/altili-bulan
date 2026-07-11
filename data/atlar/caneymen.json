@@ -1,0 +1,15 @@
+{
+ "ad": "CANEYMEN",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-06-22-istanbul-2-backfill",
+  "2025-08-20-istanbul-3-backfill",
+  "2025-09-12-istanbul-2-backfill",
+  "2026-06-17-istanbul-3-backfill",
+  "2026-07-10-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 3.931,
+ "son_guncelleme": "2026-07-10-istanbul-4",
+ "son_atak_delta_ema": 1.86,
+ "gecmis_dolduruldu": true
+}

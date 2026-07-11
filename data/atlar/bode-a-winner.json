@@ -1,0 +1,16 @@
+{
+ "ad": "BODE A WINNER",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-06-10-kocaeli-7-backfill",
+  "2025-12-10-istanbul-2-backfill",
+  "2026-01-07-istanbul-5-backfill",
+  "2026-01-19-bursa-6-backfill",
+  "2026-07-10-bursa-3-backfill",
+  "2026-07-10-bursa-3"
+ ],
+ "erken_gec_delta_ema": 0.466,
+ "son_atak_delta_ema": 0,
+ "son_guncelleme": "2026-07-10-bursa-3",
+ "gecmis_dolduruldu": true
+}

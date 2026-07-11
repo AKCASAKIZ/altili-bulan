@@ -1,0 +1,14 @@
+{
+ "ad": "FELAKET",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-04-20-sanliurfa-1-backfill",
+  "2026-05-25-sanliurfa-2-backfill",
+  "2026-06-15-sanliurfa-2-backfill",
+  "2026-07-10-istanbul-2-backfill",
+  "2026-07-10-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 0.471,
+ "son_guncelleme": "2026-07-10-istanbul-2",
+ "gecmis_dolduruldu": true
+}

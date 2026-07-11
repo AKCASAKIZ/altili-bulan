@@ -1,0 +1,13 @@
+{
+ "ad": "CHARLIE THE FIRST",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-01-28-istanbul-4-backfill",
+  "2026-07-10-istanbul-7-backfill",
+  "2026-07-10-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 6.55,
+ "son_guncelleme": "2026-07-10-istanbul-7",
+ "son_atak_delta_ema": 10.0,
+ "gecmis_dolduruldu": true
+}

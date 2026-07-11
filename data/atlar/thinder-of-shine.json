@@ -1,0 +1,19 @@
+{
+ "ad": "THINDER OF SHINE",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-06-09-bursa-4-backfill",
+  "2025-06-23-bursa-8-backfill",
+  "2025-07-13-istanbul-6-backfill",
+  "2025-08-03-istanbul-2-backfill",
+  "2025-09-15-bursa-7-backfill",
+  "2025-10-17-istanbul-5-backfill",
+  "2026-05-01-bursa-3-backfill",
+  "2026-06-19-bursa-8-backfill",
+  "2026-07-10-bursa-9"
+ ],
+ "erken_gec_delta_ema": 0.325,
+ "son_atak_delta_ema": -1.27,
+ "son_guncelleme": "2026-07-10-bursa-9",
+ "gecmis_dolduruldu": true
+}

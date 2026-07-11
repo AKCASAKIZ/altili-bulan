@@ -1,0 +1,23 @@
+{
+ "ad": "ULU BEDEN",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-06-17-kocaeli-2-backfill",
+  "2025-07-08-kocaeli-9-backfill",
+  "2025-08-14-kocaeli-2-backfill",
+  "2025-08-21-kocaeli-2-backfill",
+  "2025-10-10-istanbul-10-backfill",
+  "2025-10-29-istanbul-3-backfill",
+  "2025-11-22-istanbul-9-backfill",
+  "2026-03-07-istanbul-1-backfill",
+  "2026-04-19-istanbul-2-backfill",
+  "2026-05-20-istanbul-1-backfill",
+  "2026-05-29-istanbul-4-backfill",
+  "2026-06-21-istanbul-7-backfill",
+  "2026-07-10-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 2.489,
+ "son_guncelleme": "2026-07-10-istanbul-4",
+ "son_atak_delta_ema": 0.773,
+ "gecmis_dolduruldu": true
+}

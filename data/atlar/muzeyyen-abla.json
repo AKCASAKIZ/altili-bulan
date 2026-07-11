@@ -1,0 +1,16 @@
+{
+ "ad": "MÜZEYYEN ABLA",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-04-25-bursa-2-backfill",
+  "2025-05-09-bursa-1-backfill",
+  "2025-05-21-istanbul-2-backfill",
+  "2025-06-12-izmir-4-backfill",
+  "2025-06-27-istanbul-1-backfill",
+  "2026-07-10-bursa-7"
+ ],
+ "erken_gec_delta_ema": 0.162,
+ "son_guncelleme": "2026-07-10-bursa-7",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

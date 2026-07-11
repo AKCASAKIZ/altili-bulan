@@ -1,0 +1,12 @@
+{
+ "ad": "KARANİMO",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2025-04-09-istanbul-7-backfill",
+  "2026-07-10-bursa-5"
+ ],
+ "erken_gec_delta_ema": 2.3,
+ "son_atak_delta_ema": 1.3,
+ "son_guncelleme": "2026-07-10-bursa-5",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,13 @@
+{
+ "ad": "ZIMBA GİBİ",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-07-13-izmir-6-backfill",
+  "2025-12-30-antalya-8-backfill",
+  "2026-07-10-bursa-5"
+ ],
+ "erken_gec_delta_ema": 0.42,
+ "son_guncelleme": "2026-07-10-bursa-5",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

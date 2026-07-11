@@ -1,0 +1,13 @@
+{
+ "ad": "TATLIÇAĞ",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-01-29-istanbul-5-backfill",
+  "2025-11-15-izmir-6-backfill",
+  "2026-07-10-bursa-7"
+ ],
+ "erken_gec_delta_ema": 5.025,
+ "son_atak_delta_ema": 6.5,
+ "son_guncelleme": "2026-07-10-bursa-7",
+ "gecmis_dolduruldu": true
+}

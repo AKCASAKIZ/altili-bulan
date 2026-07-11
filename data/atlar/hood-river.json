@@ -1,0 +1,26 @@
+{
+ "ad": "HOOD RIVER",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-08-16-ankara-5-backfill",
+  "2025-08-28-ankara-5-backfill",
+  "2025-10-21-adana-4-backfill",
+  "2025-10-30-ankara-8-backfill",
+  "2025-11-08-ankara-3-backfill",
+  "2025-12-07-adana-9-backfill",
+  "2026-01-03-adana-3-backfill",
+  "2026-01-13-adana-4-backfill",
+  "2026-01-27-adana-6-backfill",
+  "2026-02-14-adana-7-backfill",
+  "2026-02-24-adana-2-backfill",
+  "2026-03-08-adana-6-backfill",
+  "2026-04-16-ankara-6-backfill",
+  "2026-06-04-ankara-8-backfill",
+  "2026-07-10-istanbul-5-backfill",
+  "2026-07-10-istanbul-5"
+ ],
+ "erken_gec_delta_ema": 1.549,
+ "son_guncelleme": "2026-07-10-istanbul-5",
+ "son_atak_delta_ema": 1.775,
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,17 @@
+{
+ "ad": "ARNO RABEL",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2026-04-16-ankara-2-backfill",
+  "2026-04-23-ankara-4-backfill",
+  "2026-05-12-ankara-2-backfill",
+  "2026-05-21-ankara-9-backfill",
+  "2026-06-24-istanbul-2-backfill",
+  "2026-07-10-istanbul-1-backfill",
+  "2026-07-10-istanbul-1"
+ ],
+ "erken_gec_delta_ema": 3.743,
+ "son_atak_delta_ema": 3.094,
+ "son_guncelleme": "2026-07-10-istanbul-1",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,11 @@
+{
+ "ad": "KEREMNUR",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-07-10-istanbul-3-backfill",
+  "2026-07-10-istanbul-3"
+ ],
+ "erken_gec_delta_ema": 3.0,
+ "son_guncelleme": "2026-07-10-istanbul-3",
+ "gecmis_dolduruldu": true
+}

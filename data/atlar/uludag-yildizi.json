@@ -6,5 +6,6 @@
  ],
  "erken_gec_delta_ema": -2.0,
  "son_atak_delta_ema": 0,
- "son_guncelleme": "2026-07-10-bursa-2"
+ "son_guncelleme": "2026-07-10-bursa-2",
+ "gecmis_dolduruldu": true
 }

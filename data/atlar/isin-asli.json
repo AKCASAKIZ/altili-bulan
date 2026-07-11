@@ -1,0 +1,22 @@
+{
+ "ad": "İŞİN ASLI",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-02-28-bursa-3-backfill",
+  "2025-07-04-bursa-2-backfill",
+  "2025-09-26-bursa-2-backfill",
+  "2025-12-19-bursa-1-backfill",
+  "2025-12-29-bursa-5-backfill",
+  "2026-01-05-bursa-7-backfill",
+  "2026-01-23-bursa-1-backfill",
+  "2026-02-20-bursa-2-backfill",
+  "2026-06-16-kocaeli-3-backfill",
+  "2026-06-26-kocaeli-5-backfill",
+  "2026-07-10-bursa-3-backfill",
+  "2026-07-10-bursa-3"
+ ],
+ "erken_gec_delta_ema": 2.499,
+ "son_atak_delta_ema": 3.967,
+ "son_guncelleme": "2026-07-10-bursa-3",
+ "gecmis_dolduruldu": true
+}

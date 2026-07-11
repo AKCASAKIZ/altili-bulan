@@ -1,0 +1,17 @@
+{
+ "ad": "NEZENGÜL",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-05-29-izmir-4-backfill",
+  "2025-06-19-izmir-9-backfill",
+  "2025-07-06-izmir-10-backfill",
+  "2025-07-26-izmir-7-backfill",
+  "2025-10-11-izmir-2-backfill",
+  "2026-07-10-bursa-7-backfill",
+  "2026-07-10-bursa-7"
+ ],
+ "erken_gec_delta_ema": 4.971,
+ "son_guncelleme": "2026-07-10-bursa-7",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

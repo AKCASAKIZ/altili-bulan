@@ -1,0 +1,20 @@
+{
+ "ad": "DRAGONS SON",
+ "kosu_sayisi": 10,
+ "islenen_yarislar": [
+  "2025-02-19-istanbul-4-backfill",
+  "2025-03-22-istanbul-4-backfill",
+  "2025-04-09-istanbul-5-backfill",
+  "2025-05-02-istanbul-7-backfill",
+  "2025-05-09-istanbul-6-backfill",
+  "2025-05-28-istanbul-8-backfill",
+  "2025-06-13-istanbul-3-backfill",
+  "2025-08-13-istanbul-6-backfill",
+  "2025-09-14-istanbul-6-backfill",
+  "2026-07-10-istanbul-6"
+ ],
+ "erken_gec_delta_ema": 2.762,
+ "son_atak_delta_ema": 1.539,
+ "son_guncelleme": "2026-07-10-istanbul-6",
+ "gecmis_dolduruldu": true
+}
