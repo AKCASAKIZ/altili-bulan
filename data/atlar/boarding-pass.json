@@ -1,0 +1,12 @@
+{
+ "ad": "BOARDING PASS",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-02-12-izmir-1-backfill",
+  "2026-07-11-izmir-1"
+ ],
+ "erken_gec_delta_ema": 4.35,
+ "son_atak_delta_ema": 2.1,
+ "son_guncelleme": "2026-07-11-izmir-1",
+ "gecmis_dolduruldu": true
+}

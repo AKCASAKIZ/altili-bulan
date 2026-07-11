@@ -1,0 +1,13 @@
+{
+ "ad": "BARİ",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-04-09-izmir-1-backfill",
+  "2026-05-16-izmir-9-backfill",
+  "2026-07-11-izmir-1"
+ ],
+ "erken_gec_delta_ema": 2.05,
+ "son_atak_delta_ema": -0.7,
+ "son_guncelleme": "2026-07-11-izmir-1",
+ "gecmis_dolduruldu": true
+}

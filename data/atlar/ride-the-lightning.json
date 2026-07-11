@@ -1,0 +1,26 @@
+{
+ "ad": "RIDE THE LIGHTNING",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-06-13-istanbul-5-backfill",
+  "2025-07-06-istanbul-7-backfill",
+  "2025-07-20-istanbul-9-backfill",
+  "2025-07-27-istanbul-8-backfill",
+  "2025-08-15-istanbul-6-backfill",
+  "2025-09-07-istanbul-8-backfill",
+  "2025-10-10-istanbul-7-backfill",
+  "2026-03-28-istanbul-6-backfill",
+  "2026-04-11-istanbul-5-backfill",
+  "2026-04-24-istanbul-3-backfill",
+  "2026-05-07-ankara-6-backfill",
+  "2026-05-26-ankara-6-backfill",
+  "2026-06-12-istanbul-6-backfill",
+  "2026-07-05-istanbul-8-backfill",
+  "2026-07-11-ankara-7-backfill",
+  "2026-07-11-ankara-7"
+ ],
+ "erken_gec_delta_ema": 1.213,
+ "son_atak_delta_ema": 0.782,
+ "son_guncelleme": "2026-07-11-ankara-7",
+ "gecmis_dolduruldu": true
+}

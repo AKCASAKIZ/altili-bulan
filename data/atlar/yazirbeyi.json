@@ -1,0 +1,11 @@
+{
+ "ad": "YAZIRBEYİ",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-05-19-kocaeli-7-backfill",
+  "2026-07-11-izmir-5"
+ ],
+ "erken_gec_delta_ema": 1.6,
+ "son_guncelleme": "2026-07-11-izmir-5",
+ "gecmis_dolduruldu": true
+}

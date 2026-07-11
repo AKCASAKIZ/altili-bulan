@@ -1,0 +1,14 @@
+{
+ "ad": "GUREGH",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-05-14-izmir-2-backfill",
+  "2026-06-13-izmir-4-backfill",
+  "2026-07-02-kocaeli-6-backfill",
+  "2026-07-11-izmir-5-backfill",
+  "2026-07-11-izmir-5"
+ ],
+ "erken_gec_delta_ema": 3.619,
+ "son_guncelleme": "2026-07-11-izmir-5",
+ "gecmis_dolduruldu": true
+}

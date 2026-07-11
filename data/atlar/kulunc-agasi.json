@@ -1,0 +1,12 @@
+{
+ "ad": "KÜLÜNÇ AĞASI",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-06-14-izmir-5-backfill",
+  "2026-07-11-izmir-7"
+ ],
+ "erken_gec_delta_ema": 2.35,
+ "son_atak_delta_ema": -0.3,
+ "son_guncelleme": "2026-07-11-izmir-7",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,16 @@
+{
+ "ad": "YOL GEZER",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-05-19-bursa-1-backfill",
+  "2025-06-09-bursa-3-backfill",
+  "2025-06-25-bursa-1-backfill",
+  "2025-07-28-bursa-7-backfill",
+  "2026-07-11-izmir-7-backfill",
+  "2026-07-11-izmir-7"
+ ],
+ "erken_gec_delta_ema": 5.615,
+ "son_guncelleme": "2026-07-11-izmir-7",
+ "son_atak_delta_ema": 5.0,
+ "gecmis_dolduruldu": true
+}

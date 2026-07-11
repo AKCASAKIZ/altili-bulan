@@ -1,0 +1,11 @@
+{
+ "ad": "NAKIŞ HAN",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-04-16-izmir-1-backfill",
+  "2026-07-11-izmir-5"
+ ],
+ "erken_gec_delta_ema": 0.05,
+ "son_guncelleme": "2026-07-11-izmir-5",
+ "gecmis_dolduruldu": true
+}

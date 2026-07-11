@@ -1,0 +1,12 @@
+{
+ "ad": "GÖZÜDELİ",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-07-01-istanbul-8-backfill",
+  "2026-07-11-ankara-9-backfill",
+  "2026-07-11-ankara-9"
+ ],
+ "erken_gec_delta_ema": 1.735,
+ "son_guncelleme": "2026-07-11-ankara-9",
+ "gecmis_dolduruldu": true
+}

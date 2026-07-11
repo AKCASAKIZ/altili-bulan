@@ -1,0 +1,16 @@
+{
+ "ad": "SALGUR",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2026-04-28-kocaeli-9-backfill",
+  "2026-05-12-kocaeli-2-backfill",
+  "2026-05-30-izmir-5-backfill",
+  "2026-06-09-kocaeli-7-backfill",
+  "2026-06-29-bursa-7-backfill",
+  "2026-07-11-izmir-5-backfill",
+  "2026-07-11-izmir-5"
+ ],
+ "erken_gec_delta_ema": 0.786,
+ "son_guncelleme": "2026-07-11-izmir-5",
+ "gecmis_dolduruldu": true
+}
