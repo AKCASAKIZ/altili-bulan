@@ -109,6 +109,8 @@ function bindUI() {
   $("#btnAutoKupon").onclick = autoKupon;
   $("#btnKarmaKupon").onclick = karmaKupon;
   $("#unitPrice").onchange = renderKuponSummary;
+  $("#btnRunBacktest").onclick = runBacktest;
+  $("#btnSuggestCoefs").onclick = suggestCoefs;
 }
 
 /* ==================== VERİ YÜKLEME ==================== */
@@ -294,7 +296,9 @@ async function autoScoreLeg() {
   saveSession();
   renderScoreTable();
 }
-async function scoreLeg(leg) {
+async function scoreLeg(leg, ctx) {
+  const idman = ctx?.idman !== undefined ? ctx.idman : state.idman;
+  const day = ctx?.day || state.day;
   const hs = leg.horses;
 
   // B8: KGS (son koşusundan bu yana geçen gün)
@@ -329,15 +333,15 @@ async function scoreLeg(leg) {
   assignRank5(hs, times, "B6", true);
 
   // B7: TJK idman sorgusundan son galop — son 7 günde ≥1000 m yapmışsa 100, son 2 günde yapılmışsa puan yok
-  if (state.idman) {
+  if (idman) {
     hs.forEach((h) => {
-      const rows = state.idman[temizle(h.ad)];
+      const rows = idman[temizle(h.ad)];
       if (!rows || !rows.length) return;
       for (const row of rows) {
         if (!(row.m1400 || row.m1200 || row.m1000)) continue;
         const iso = ddmmyyyyToIso(row.t);
         if (!iso) continue;
-        const gun = Math.round((new Date(state.day) - new Date(iso)) / 86400000);
+        const gun = Math.round((new Date(day) - new Date(iso)) / 86400000);
         if (gun < 0) continue;
         if (gun > 2) h.scores.B7 = gun <= 7 ? 100 : 0;
         break;
@@ -346,12 +350,19 @@ async function scoreLeg(leg) {
   }
 
   // D1/D2: accurace'den türetilmiş koşu-karakteri profilleri (data/atlar/*.json, her at ayrı dosya)
-  const atlar = await Promise.all(hs.map((h) => tryFetch(`data/atlar/${slugify(temizle(h.ad))}.json`)));
+  const atlar = await Promise.all(hs.map((h) => atProfil(h.ad)));
   hs.forEach((h, i) => { h.meta.karakter = karakterEtiketi(atlar[i]); });
   const sonAtak = hs.map((_, i) => atlar[i]?.son_atak_delta_ema ?? null);
   assignRank5(hs, sonAtak, "D1", false);
   const erkenGec = hs.map((_, i) => atlar[i]?.erken_gec_delta_ema ?? null);
   assignRank5(hs, erkenGec, "D2", false);
+}
+/* at profili önbelleği — backtest yüzlerce kez aynı atları puanlarken tekrar tekrar fetch etmesin */
+const atProfilCache = new Map();
+function atProfil(ad) {
+  const key = slugify(temizle(ad));
+  if (!atProfilCache.has(key)) atProfilCache.set(key, tryFetch(`data/atlar/${key}.json`));
+  return atProfilCache.get(key);
 }
 function karakterEtiketi(profil) {
   if (!profil) return "";
@@ -538,11 +549,16 @@ async function renderKarsilastir() {
 }
 function tagmRaceCard(r, leg) {
   const ranked = rankedHorses(leg);
+  const vm = valueMap(leg);
   let rows = "";
   ranked.forEach(({ h, score }, ix) => {
     const rank = ix + 1;
     const soy = [h.meta.baba, h.meta.anne].filter(Boolean).join(" — ");
     const karakter = h.meta.karakter ? `<span class="chip" style="cursor:default">${esc(h.meta.karakter)}</span>` : "";
+    const v = vm.get(h.no);
+    const vCell = v && v.agf != null
+      ? `%${(v.agf * 100).toFixed(1)}${v.value ? ' <span title="Model olasılığı AGF\'nin en az 1.5 katı — piyasanın küçümsediği at">💎</span>' : ""}`
+      : "";
     rows += `<tr class="${rank <= 4 && score > 0 ? "top-row" : ""}">
       <td><span class="rank-badge rank-${rank}">${score > 0 ? rank : "–"}</span></td>
       <td>${h.no}</td>
@@ -550,13 +566,14 @@ function tagmRaceCard(r, leg) {
       <td>${esc(h.meta.jokey || "")}</td><td>${esc(h.meta.kilo || "")}</td>
       <td>${esc(formatIdmanSon(state.idman?.[temizle(h.ad)]))}</td>
       <td>${karakter}</td>
+      <td>${vCell}</td>
       <td class="total">${score.toFixed(1)}</td>
     </tr>`;
   });
   return `<div class="race-card">
     <header><h3>${r.no}. Koşu — ${r.saat || ""}</h3>
     <span class="race-tags">${esc(r.grup || "")} · ${esc(r.mesafe || "")} ${esc(r.pist || "")} · ${esc(r.tur || "")} ${r.ikramiye ? "· 1.lik: " + esc(r.ikramiye) : ""}</span></header>
-    <div class="table-wrap"><table><thead><tr><th>Sıra</th><th>No</th><th>At</th><th>Jokey</th><th>Kilo</th><th>Son Galop</th><th>Karakter</th><th style="text-align:right">Puan</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <div class="table-wrap"><table><thead><tr><th>Sıra</th><th>No</th><th>At</th><th>Jokey</th><th>Kilo</th><th>Son Galop</th><th>Karakter</th><th>AGF</th><th style="text-align:right">Puan</th></tr></thead><tbody>${rows}</tbody></table></div>
   </div>`;
 }
 
@@ -567,6 +584,7 @@ function renderKupon() {
   el.innerHTML = "";
   state.legs.forEach((leg, li) => {
     const ranked = rankedHorses(leg);
+    const vm = valueMap(leg);
     const div = document.createElement("div");
     div.className = "kupon-leg";
     div.innerHTML = `<h4>${leg.raceNo}. Koşu <span class="hint">(${leg.saat || ""} · ${leg.mesafe || ""})</span></h4>`;
@@ -576,7 +594,9 @@ function renderKupon() {
       const b = document.createElement("button");
       const picked = (state.picks[li] || []).includes(h.no);
       b.className = "horse-pick" + (picked ? " picked" : "");
-      b.innerHTML = `${h.no} ${esc(h.ad)} <span class="sc">${score.toFixed(1)}</span>`;
+      const elmas = vm.get(h.no)?.value ? " 💎" : "";
+      b.title = elmas ? "Value: model olasılığı AGF'nin en az 1.5 katı" : "";
+      b.innerHTML = `${h.no} ${esc(h.ad)}${elmas} <span class="sc">${score.toFixed(1)}</span>`;
       b.onclick = () => {
         state.picks[li] = state.picks[li] || [];
         const ix = state.picks[li].indexOf(h.no);
@@ -640,6 +660,194 @@ async function karmaKupon() {
   saveSession();
   renderKupon();
   $("#kuponInfo").textContent = "✅ Karma kupon hazır: her ayakta TAGM'ın favorisi + Dergi'nin favori/plase atları birleştirildi.";
+}
+
+/* ==================== VALUE BET (model olasılığı vs AGF) ==================== */
+/* AGF = halkın altılı ganyan bahis dağılımı — piyasanın örtük kazanma olasılığı olarak kullanılır.
+   Model olasılığı = atın puanının, ayaktaki toplam puana oranı. Model, halktan belirgin şekilde
+   daha iyimserse (oran ≥ VALUE_ESIK ve taban olasılığın üstündeyse) at 💎 value işareti alır. */
+const VALUE_ESIK = 1.5, VALUE_TABAN = 0.12;
+function parseAgf(s) {
+  const m = (s || "").match(/%\s*([\d.,]+)/);
+  return m ? parseFloat(m[1].replace(",", ".")) / 100 : null;
+}
+function parseGanyan(s) {
+  const v = parseFloat((s || "").replace(",", "."));
+  return isFinite(v) && v > 0 ? v : null;
+}
+/* leg için at-no → {p: model olasılığı, agf, value} haritası */
+function valueMap(leg) {
+  const ranked = rankedHorses(leg);
+  const tot = ranked.reduce((t, x) => t + Math.max(0, x.score), 0);
+  const m = new Map();
+  if (!tot) return m;
+  for (const x of ranked) {
+    const p = Math.max(0, x.score) / tot;
+    const agf = parseAgf(x.h.meta?.agf);
+    m.set(x.h.no, { p, agf, value: agf != null && agf > 0 && p >= VALUE_TABAN && p / agf >= VALUE_ESIK });
+  }
+  return m;
+}
+
+/* ==================== BACKTEST ==================== */
+let backtestRows = null; // son çalıştırmanın verisi (katsayı önerisi de bunu kullanır)
+const kosmazMi = (h) => /koşmaz/i.test(h.derece || "") || /koşmaz/i.test(h.ad);
+
+async function collectBacktest(onProgress) {
+  const rows = [];
+  const days = Object.entries(state.index?.days || {}).sort();
+  for (const [day, cities] of days) {
+    for (const c of cities) {
+      const [program, sonuclar, idman] = await Promise.all([
+        tryFetch(`data/${day}/program-${c.slug}.json`),
+        tryFetch(`data/${day}/sonuclar-${c.slug}.json`),
+        tryFetch(`data/${day}/idman-${c.slug}.json`),
+      ]);
+      if (!program || !sonuclar) continue;
+      onProgress?.(`${trDate(day)} ${c.name}…`);
+      for (const r of program.races) {
+        const res = sonuclar.races.find((x) => x.no === r.no);
+        if (!res) continue;
+        // Not: sonuç verisinde sıra = bitiş sırasıdır; kazanan/tabela isimle eşleştirilir
+        const gelenler = res.horses.filter((h) => !kosmazMi(h));
+        if (!gelenler.length) continue;
+        const kazananAd = temizle(gelenler[0].ad);
+        const tabela = new Set(gelenler.slice(0, 3).map((h) => temizle(h.ad)));
+        const ganyan = parseGanyan(gelenler[0].ganyan);
+        const leg = {
+          horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
+            no: h.no, ad: h.ad, scores: {},
+            meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf },
+          })),
+        };
+        await scoreLeg(leg, { idman, day });
+        const ranked = rankedHorses(leg).filter((x) => x.score > 0);
+        if (ranked.length < 2) continue;
+        if (!leg.horses.some((h) => temizle(h.ad) === kazananAd)) continue; // kazanan programda bulunamadıysa atla
+        // AGF favorisi (halkın 1 numarası) — kıyas çizgisi
+        let agfFav = null, best = -1;
+        for (const h of leg.horses) {
+          const a = parseAgf(h.meta.agf);
+          if (a != null && a > best) { best = a; agfFav = h; }
+        }
+        rows.push({ day, city: c.name, raceNo: r.no, leg, ranked, kazananAd, tabela, ganyan, agfFav });
+      }
+    }
+  }
+  return rows;
+}
+
+async function runBacktest() {
+  const st = $("#backtestStatus"), el = $("#backtestView");
+  st.textContent = "Hesaplanıyor…";
+  el.innerHTML = "";
+  backtestRows = await collectBacktest((t) => (st.textContent = "Hesaplanıyor… " + t));
+  st.textContent = "";
+  if (!backtestRows.length) { el.innerHTML = `<div class="empty-note">Karşılaştırılacak program+sonuç çifti bulunamadı.</div>`; return; }
+
+  let n = 0, win1 = 0, top3 = 0, roiDonus = 0;
+  let favN = 0, favWin = 0, favDonus = 0;
+  let valN = 0, valWin = 0, valDonus = 0;
+  const detay = [];
+  for (const r of backtestRows) {
+    n++;
+    const pick = r.ranked[0];
+    const pickAd = temizle(pick.h.ad);
+    const hit = pickAd === r.kazananAd;
+    const plase = r.tabela.has(pickAd);
+    if (hit) { win1++; if (r.ganyan) roiDonus += r.ganyan; }
+    if (plase) top3++;
+    if (r.agfFav) {
+      favN++;
+      if (temizle(r.agfFav.ad) === r.kazananAd) { favWin++; if (r.ganyan) favDonus += r.ganyan; }
+    }
+    const vm = valueMap(r.leg);
+    const valuePicks = r.ranked.filter((x) => vm.get(x.h.no)?.value);
+    for (const v of valuePicks) {
+      valN++;
+      if (temizle(v.h.ad) === r.kazananAd) { valWin++; if (r.ganyan) valDonus += r.ganyan; }
+    }
+    detay.push({ ...r, pick, hit, plase, valuePicks });
+  }
+  const pct = (a, b) => (b ? ((100 * a) / b).toFixed(1) : "–");
+  const roi = (donus, adet) => (adet ? (((donus - adet) / adet) * 100).toFixed(1) : "–");
+  let html = `<div class="cards">
+    <div class="card"><h3>🥇 1. tercih</h3><p><b>${win1}/${n}</b> kazandı (%${pct(win1, n)})<br><b>${top3}/${n}</b> tabelada (%${pct(top3, n)})</p></div>
+    <div class="card"><h3>💰 ROI (1. tercihe 1'er birim ganyan)</h3><p>Yatan: <b>${n}</b> · Dönen: <b>${roiDonus.toFixed(2)}</b><br>ROI: <b>%${roi(roiDonus, n)}</b></p></div>
+    <div class="card"><h3>👥 AGF favorisi (kıyas)</h3><p><b>${favWin}/${favN}</b> kazandı (%${pct(favWin, favN)})<br>ROI: <b>%${roi(favDonus, favN)}</b></p></div>
+    <div class="card"><h3>💎 Value bahisleri</h3><p><b>${valWin}/${valN}</b> kazandı (%${pct(valWin, valN)})<br>ROI: <b>%${roi(valDonus, valN)}</b></p></div>
+  </div>`;
+  html += `<div class="table-wrap"><table><thead><tr><th>Gün</th><th>Şehir</th><th>Koşu</th><th>1. tercih</th><th>Sonuç</th><th>Kazanan</th><th>Ganyan</th><th>💎</th></tr></thead><tbody>`;
+  for (const d of detay) {
+    html += `<tr>
+      <td>${trDate(d.day)}</td><td>${esc(d.city)}</td><td>${d.raceNo}</td>
+      <td>${d.pick.h.no}. ${esc(d.pick.h.ad)}</td>
+      <td>${d.hit ? "✅ kazandı" : d.plase ? "🟡 tabela" : "❌"}</td>
+      <td>${esc(d.kazananAd)}</td><td>${d.ganyan ?? ""}</td>
+      <td>${d.valuePicks.map((v) => `${v.h.no}. ${esc(v.h.ad)}${temizle(v.h.ad) === d.kazananAd ? " ✅" : ""}`).join("<br>")}</td>
+    </tr>`;
+  }
+  el.innerHTML = html + `</tbody></table></div>`;
+}
+
+/* ==================== KATSAYI ÖNERİSİ (conditional logit) ==================== */
+/* Backtest verisiyle koşu-içi lojistik model eğitir: P(at kazanır) = exp(w·x) / Σ exp(w·x).
+   Sadece otomatik puanlanan kriterler öğrenilebilir (diğerlerinin geçmiş puanı yok). */
+const TUNABLE = ["B5", "B6", "B7", "B8", "B13", "D1", "D2"];
+async function suggestCoefs() {
+  const el = $("#coefSuggestView"), st = $("#backtestStatus");
+  if (!backtestRows) { st.textContent = "Önce veri toplanıyor…"; backtestRows = await collectBacktest((t) => (st.textContent = "Veri toplanıyor… " + t)); st.textContent = ""; }
+  const races = [];
+  for (const r of backtestRows) {
+    const winIx = r.leg.horses.findIndex((h) => temizle(h.ad) === r.kazananAd);
+    if (winIx < 0) continue;
+    races.push({ X: r.leg.horses.map((h) => TUNABLE.map((k) => (+h.scores[k] || 0) / 100)), winIx });
+  }
+  if (races.length < 20) {
+    el.innerHTML = `<div class="empty-note">Katsayı önerisi için en az 20 sonuçlanmış koşu gerekir (şu an ${races.length}). Birkaç gün daha veri biriksin.</div>`;
+    return;
+  }
+  // w başlangıcı: mevcut katsayılar (özellik /100 ölçeklendiği için ×100)
+  const w = TUNABLE.map((k) => state.coefs[k] * 100);
+  const lr = 0.1, l2 = 0.001, iters = 400;
+  for (let it = 0; it < iters; it++) {
+    const grad = new Array(TUNABLE.length).fill(0);
+    for (const { X, winIx } of races) {
+      const z = X.map((x) => x.reduce((t, v, j) => t + v * w[j], 0));
+      const mx = Math.max(...z);
+      const ex = z.map((v) => Math.exp(v - mx));
+      const S = ex.reduce((a, b) => a + b, 0);
+      X.forEach((x, i) => {
+        const p = ex[i] / S;
+        x.forEach((v, j) => { grad[j] += ((i === winIx ? 1 : 0) - p) * v; });
+      });
+    }
+    w.forEach((v, j) => { w[j] = v + lr * (grad[j] / races.length - l2 * v); });
+  }
+  // negatifleri sıfırla, toplamı mevcut TUNABLE katsayı toplamına ölçekle (genel denge bozulmasın)
+  const pos = w.map((v) => Math.max(0, v));
+  const hedefToplam = TUNABLE.reduce((t, k) => t + state.coefs[k], 0);
+  const posToplam = pos.reduce((a, b) => a + b, 0) || 1;
+  const oneri = {};
+  TUNABLE.forEach((k, j) => { oneri[k] = +((pos[j] / posToplam) * hedefToplam).toFixed(4); });
+
+  let html = `<h3 style="margin-top:24px">🧮 Önerilen katsayılar <span class="hint">(${races.length} koşudan öğrenildi — yalnız otomatik puanlanan kriterler)</span></h3>
+  <div class="table-wrap"><table><thead><tr><th>Kod</th><th>Kriter</th><th>Mevcut</th><th>Önerilen</th><th>Değişim</th></tr></thead><tbody>`;
+  for (const k of TUNABLE) {
+    const a = ANGLES.find((x) => x.k === k);
+    const cur = state.coefs[k], yeni = oneri[k];
+    const yon = yeni > cur * 1.05 ? "🔼" : yeni < cur * 0.95 ? "🔽" : "≈";
+    html += `<tr><td><b>${k}</b></td><td>${esc(a.name)}</td><td>${cur.toFixed(4)}</td><td><b>${yeni.toFixed(4)}</b></td><td>${yon}</td></tr>`;
+  }
+  html += `</tbody></table></div>
+  <p><button id="btnApplyCoefs" class="btn btn-accent">✔ Önerilen katsayıları uygula</button>
+  <span class="hint">Toplam ölçek korunur: önerilenlerin toplamı, bu kriterlerin mevcut katsayı toplamına (${hedefToplam.toFixed(4)}) eşittir. Katsayılar sekmesinden her zaman varsayılana dönebilirsiniz.</span></p>`;
+  el.innerHTML = html;
+  $("#btnApplyCoefs").onclick = () => {
+    Object.assign(state.coefs, oneri);
+    persistCoefs(); renderCoefTable(); renderScoreTable();
+    $("#btnApplyCoefs").textContent = "✅ Uygulandı";
+  };
 }
 
 /* ==================== CSV / JSON İÇE-DIŞA AKTARMA ==================== */

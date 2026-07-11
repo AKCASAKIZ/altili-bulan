@@ -11,6 +11,11 @@ on:
 permissions:
   contents: write
 
+# Sabah ve akşam koşuları (ya da elle tetikleme) üst üste binmesin — biri bitmeden diğeri başlamasın
+concurrency:
+  group: gunluk-veri
+  cancel-in-progress: false
+
 jobs:
   veri-cek:
     runs-on: ubuntu-latest
@@ -36,5 +41,11 @@ jobs:
             echo "Yeni veri yok."
           else
             git commit -m "Günlük veri: $(date -u +%Y-%m-%d' '%H:%M) UTC"
-            git push
+            # Veri çekimi saatler sürebiliyor; bu sırada repoya başka push gelmiş olabilir.
+            # Push reddedilirse rebase edip birkaç kez yeniden dene — günün verisi kaybolmasın.
+            for i in 1 2 3; do
+              if git push; then break; fi
+              echo "Push reddedildi, rebase edip yeniden deneniyor ($i/3)…"
+              git pull --rebase origin main
+            done
           fi

@@ -30,6 +30,7 @@
   <button class="tab" data-tab="kupon">🎫 Kupon</button>
   <button class="tab" data-tab="tagm">🗞️ TAGM</button>
   <button class="tab" data-tab="karsilastir">📊 Karşılaştır</button>
+  <button class="tab" data-tab="backtest">📈 Backtest</button>
   <button class="tab" data-tab="ayarlar">⚙️ Katsayılar</button>
   <button class="tab" data-tab="veri">💾 Veri</button>
 </nav>
@@ -84,6 +85,18 @@
   <section id="tab-karsilastir" class="tab-pane">
     <p class="hint">📊 TAGM'ın ve TJK Yarış Gazetesi'nin (Dergi sekmesi) galibiyet tahmin isabetlerini karşılaştırır. Sadece her iki kaynağın da tahmin bıraktığı ve sonucu yayınlanmış gün/koşular sayılır.</p>
     <div id="karsilastirView"></div>
+  </section>
+
+  <!-- BACKTEST -->
+  <section id="tab-backtest" class="tab-pane">
+    <p class="hint">📈 <b>Backtest</b> — depodaki tüm gün/hipodromlar için otomatik puanlama (B5, B6, B7, B8, B13, D1, D2) geriye dönük çalıştırılır ve yayınlanmış sonuçlarla karşılaştırılır: 1. tercihin kazanma/tabela isabeti, ganyan üzerinden ROI, AGF favorisi kıyası ve 💎 value bahis performansı. "Katsayı öner" düğmesi aynı veriyle koşu-içi lojistik model (conditional logit) eğitip otomatik puanlanan kriterler için katsayı önerir.</p>
+    <div class="toolbar">
+      <button id="btnRunBacktest" class="btn btn-accent">▶ Backtest çalıştır</button>
+      <button id="btnSuggestCoefs" class="btn">🧮 Katsayı öner</button>
+      <span class="hint" id="backtestStatus"></span>
+    </div>
+    <div id="backtestView"></div>
+    <div id="coefSuggestView"></div>
   </section>
 
   <!-- KATSAYILAR -->
