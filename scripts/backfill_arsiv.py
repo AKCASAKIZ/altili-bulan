@@ -34,7 +34,7 @@ spec.loader.exec_module(fetch_tjk)
 CITIES = ["İstanbul", "Ankara", "İzmir", "Adana", "Bursa",
           "Kocaeli", "Şanlıurfa", "Elazığ", "Diyarbakır", "Antalya"]
 
-KEEP_HORSE = ("no", "ad", "yas", "kilo", "jokey", "antrenor",
+KEEP_HORSE = ("no", "ad", "yas", "kilo", "jokey", "sahip", "antrenor",
               "st", "h", "derece", "ganyan", "fark")
 
 
@@ -67,7 +67,8 @@ def slim(parsed: dict, city: str, iso: str) -> dict:
         races.append({
             "no": r.get("no"), "saat": r.get("saat"), "tur": r.get("tur"),
             "grup": r.get("grup"), "mesafe": r.get("mesafe"),
-            "pist": r.get("pist"), "atlar": horses,
+            "pist": r.get("pist"), "ikramiye": r.get("ikramiye"),
+            "atlar": horses,
         })
     return {"tarih": iso, "sehir": city, "kosular": races}
 

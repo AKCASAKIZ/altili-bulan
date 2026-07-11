@@ -189,7 +189,7 @@ function loadLegsFromProgram() {
   if (!state.program) return alert("Bu gün/hipodrom için program verisi yok. 'Veri' sekmesinden CSV yükleyebilirsiniz.");
   if (state.legs.length && !confirm("Mevcut puanlama silinip program yeniden yüklensin mi?")) return;
   state.legs = state.program.races.map((r) => ({
-    raceNo: r.no, saat: r.saat, tur: r.tur, grup: r.grup, mesafe: r.mesafe, pist: r.pist,
+    raceNo: r.no, saat: r.saat, tur: r.tur, grup: r.grup, mesafe: r.mesafe, pist: r.pist, ikramiye: r.ikramiye,
     horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
       no: h.no, ad: h.ad, scores: {},
       meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, jokey: h.jokey, kilo: h.kilo, sahip: h.sahip, antrenor: h.antrenor, st: h.st },
@@ -346,7 +346,9 @@ async function scoreLeg(leg, ctx) {
         if (!iso) continue;
         const gun = Math.round((new Date(day) - new Date(iso)) / 86400000);
         if (gun < 0) continue;
-        if (gun > 2) h.scores.B7 = gun <= 7 ? 100 : 0;
+        // kılavuz: son 2 günde yapılan galoba puan yok; 3. gün yapılmışsa ancak ÇR/R/HÇ ile bitmişse 100 (Ç ise yok)
+        if (gun === 3) h.scores.B7 = /^(ÇR|R|HÇ)$/.test((row.durum || "").trim()) ? 100 : 0;
+        else if (gun > 3) h.scores.B7 = gun <= 7 ? 100 : 0;
         break;
       }
     });
@@ -382,7 +384,178 @@ async function scoreLeg(leg, ctx) {
       });
       assignRank5(hs, gw, "E3", false);
     }
+
+    /* --- AGM kılavuzu kriterleri, arşiv istatistikleriyle otomatik --- */
+    const dayInt = +String(day).replace(/-/g, "");
+    const gunFarki = (gi) => Math.round((new Date(day) - new Date(String(gi).replace(/(\d{4})(\d{2})(\d{2})/, "$1-$2-$3"))) / 86400000);
+    // arşivin puanlanan günden ÖNCEKİ kayıtları geçerli (backtest'te gelecek bilgisi sızmasın)
+    const gecerliSon = (tbl, ad) => {
+      const rec = tbl?.[(ad || "").trim()];
+      return rec && rec[0] < dayInt ? rec : null;
+    };
+
+    // A1 / B16: son 90 günün başarılı sahip/antrenör listesi (1.→4p, 2.→2p, 3.→1p)
+    const listePuan = (grup, ad) => {
+      const g = stats[grup];
+      const p = g?.puan?.[(ad || "").trim()];
+      if (p == null) return;
+      return p >= g.esik[0] ? 100 : p >= g.esik[1] ? 60 : undefined;
+    };
+    hs.forEach((h) => {
+      const a1 = listePuan("sahip90", h.meta?.sahip);
+      if (a1 !== undefined) h.scores.A1 = a1;
+      const b16 = listePuan("antrenor90", h.meta?.antrenor);
+      if (b16 !== undefined) h.scores.B16 = b16;
+    });
+
+    // A2/A3 (sahibin son koşan atı) ve B17/B18 (antrenörün son koşan atı)
+    hs.forEach((h) => {
+      const s = gecerliSon(stats.sahip_son, h.meta?.sahip);
+      if (s) {
+        h.scores.A2 = s[1] === 1 ? 100 : s[1] === 2 ? 60 : s[1] === 3 ? 20 : 0;
+        const g = gunFarki(s[0]);
+        h.scores.A3 = g <= 10 ? 100 : g <= 20 ? 60 : g <= 30 ? 20 : 0;
+      }
+      const a = gecerliSon(stats.antrenor_son, h.meta?.antrenor);
+      if (a) {
+        h.scores.B17 = a[1] === 1 ? 100 : a[1] === 2 ? 60 : a[1] === 3 ? 20 : 0;
+        const g = gunFarki(a[0]);
+        h.scores.B18 = g <= 7 ? 100 : g <= 14 ? 60 : g <= 21 ? 20 : 0;
+      }
+    });
+
+    // at bazlı kriterler: B1, B4, B5, B10, B11, B12, B14, B15
+    const atRecs = hs.map((h) => {
+      const rec = stats.at?.[temizle(h.ad)];
+      if (!rec) return null;
+      // puanlanan günden önceki koşuları al (backtest güvenliği)
+      const son6 = (rec.son6 || []).filter((x) => x[0] < dayInt);
+      return son6.length === (rec.son6 || []).length ? rec : null; // gelecek verisi karışmışsa atla
+    });
+    const simdikiIkr = sayiTR(leg.ikramiye);
+    const simdikiMes = sayiTR(leg.mesafe);
+    const agfSirali = hs.map((h, i) => ({ a: parseAgf(h.meta?.agf), i }))
+      .filter((x) => x.a != null).sort((x, y) => y.a - x.a);
+    const agfIlk4 = new Set(agfSirali.slice(0, 4).map((x) => x.i));
+
+    hs.forEach((h, i) => {
+      const rec = atRecs[i];
+      if (!rec || !rec.son6?.length) return;
+
+      // B1 Purse drop: son koşusunun ikramiyesi şimdikinden yüksekse (kılavuzun güncel paraya uyarlaması: ≥%25 fark → 100)
+      if (rec.ikr && simdikiIkr) {
+        if (rec.ikr >= simdikiIkr * 1.25) h.scores.B1 = 100;
+        else if (rec.ikr > simdikiIkr * 1.02) h.scores.B1 = 60;
+        else if (Math.abs(rec.ikr - simdikiIkr) <= simdikiIkr * 0.02) h.scores.B1 = 20;
+      }
+
+      // B4 Racing cycle: son 6 koşu tarihlerindeki ara (layoff) düzeni
+      const tarihler = rec.son6.map((x) => x[0]);
+      const gunler = tarihler.map((t) => gunFarki(t)); // bugünden geriye gün sayısı (artan sırada azalır)
+      let layoff = 0, donusSonrasi = 0; // en son ≥20 günlük ara ve ondan sonra koşulan koşu sayısı
+      for (let k = rec.son6.length - 1; k >= 1; k--) {
+        const ara = gunler[k - 1] - gunler[k];
+        if (ara >= 20) { layoff = ara; donusSonrasi = rec.son6.length - k; break; }
+      }
+      const buKosuSirasi = donusSonrasi + 1; // bugünkü koşu, dönüşten sonraki kaçıncı koşu
+      if (layoff >= 45) h.scores.B4 = buKosuSirasi >= 3 && buKosuSirasi <= 6 ? 100 : 0;
+      else if (layoff >= 30) h.scores.B4 = buKosuSirasi >= 2 && buKosuSirasi <= 5 ? 100 : 0;
+      else if (layoff >= 20) h.scores.B4 = buKosuSirasi >= 2 && buKosuSirasi <= 4 ? 100 : 0;
+      else {
+        // arasız: son 6'daki en yakın 1.lik kaç koşu önce
+        let kacKosuOnce = 0;
+        for (let k = rec.son6.length - 1; k >= 0; k--) {
+          if (rec.son6[k][1] === 1) { kacKosuOnce = rec.son6.length - k; break; }
+        }
+        if (kacKosuOnce) h.scores.B4 = kacKosuOnce <= 2 ? 100 : kacKosuOnce <= 4 ? 60 : 20;
+      }
+
+      // B10 Ekipman değişikliği: bugünkü ekipman eki son koşudakinden farklıysa
+      const buEkip = ekipmanEki(h.ad);
+      if (buEkip !== (rec.ekip || "")) h.scores.B10 = 100;
+
+      // B11 Bombalar / İstikrar (bülten ilk-4 yerine AGF ilk-4 kullanılır)
+      if (agfIlk4.size && !agfIlk4.has(i)) {
+        if (rec.bomba >= 2) h.scores.B11 = 100;
+        else if (rec.bomba === 1) h.scores.B11 = 60;
+      } else if (agfIlk4.has(i)) {
+        let seri = 0;
+        for (let k = rec.son6.length - 1; k >= 0; k--) {
+          if (rec.son6[k][1] <= 3) seri++; else break;
+        }
+        if (seri >= 4) h.scores.B11 = 100;
+        else if (seri === 3) h.scores.B11 = 60;
+        else if (seri === 2) h.scores.B11 = 10;
+      }
+
+      // B12 Mesafe ayarı: son koşusu şimdikinden uzunsa
+      if (rec.mes && simdikiMes) {
+        const fark = rec.mes - simdikiMes;
+        if (fark >= 300 && fark <= 600) h.scores.B12 = 100;
+        else if (fark >= 200) h.scores.B12 = 80;
+        else if (fark >= 100) h.scores.B12 = 60;
+      }
+
+      // B15 Kilo farkı: son koşusuna göre
+      const buKilo = kiloSayi(h.meta?.kilo);
+      if (buKilo != null && rec.kilo != null) {
+        const kf = Math.abs(buKilo - rec.kilo);
+        h.scores.B15 = kf <= 2.5 ? 100 : kf <= 4 ? 60 : kf <= 5 ? 30 : 0;
+      }
+    });
+
+    // B5: arşivden gerçek kazanma yüzdesi (yeterli koşusu yoksa son6 yaklaşımı korunur)
+    const gercekWin = hs.map((h, i) => {
+      const rec = atRecs[i];
+      return rec && rec.n >= 3 ? rec.w / rec.n : null;
+    });
+    if (gercekWin.some((v) => v !== null)) assignRank5(hs, gercekWin, "B5", false);
+
+    // B14 Yarış karakteri: kafa farkıyla (baş/burun/boyun/yarım boy) kazandığı koşu sayısı
+    const kafalar = hs.map((_, i) => (atRecs[i]?.kafa > 0 ? atRecs[i].kafa : null));
+    assignRank5(hs, kafalar, "B14", false);
+
+    // C4: o günkü jokeylerin katıldıkları koşuların ikramiye toplamı — en yüksek 5 jokey
+    const c4 = await c4JokeyToplam(day);
+    if (c4) assignRank5(hs, hs.map((h) => c4[(h.meta?.jokey || "").trim()] ?? null), "C4", false);
   }
+}
+/* C4 için: günün tüm hipodrom programlarından jokey → ikramiye toplamı (gün başına önbellekli) */
+const c4Cache = new Map();
+function c4JokeyToplam(day) {
+  if (!c4Cache.has(day)) {
+    c4Cache.set(day, (async () => {
+      const cities = state.index?.days?.[day] || [];
+      if (!cities.length) return null;
+      const toplam = {};
+      for (const c of cities) {
+        const p = await tryFetch(`data/${day}/program-${c.slug}.json`);
+        for (const r of p?.races || []) {
+          const ikr = sayiTR(r.ikramiye);
+          if (!ikr) continue;
+          for (const h of r.horses || []) {
+            const j = (h.jokey || "").trim();
+            if (j) toplam[j] = (toplam[j] || 0) + ikr;
+          }
+        }
+      }
+      return Object.keys(toplam).length ? toplam : null;
+    })());
+  }
+  return c4Cache.get(day);
+}
+function ekipmanEki(ad) {
+  const s = (ad || "").replace(/\s*\(.*?\)\s*/g, " ");
+  const m = s.match(/(\s+(SGKR|GDSK|DSGK|GKDSK|SKG|KGD|GKD|DSK|GSK|SGK|GDS|DSG|GKR|KG|DB|SK|GD|GK|DS|KD|GM|BB|ÖG|YP|G|K|D|M|S))+\s*$/);
+  return m ? m[0].trim() : "";
+}
+function sayiTR(s) {
+  const m = /\d[\d.]*(?:,\d+)?/.exec(s || "");
+  return m ? parseFloat(m[0].replace(/\./g, "").replace(",", ".")) : null;
+}
+function kiloSayi(s) {
+  const m = /^\s*(\d+)(?:[.,](\d+))?/.exec(s || "");
+  return m ? parseFloat(`${m[1]}.${m[2] || 0}`) : null;
 }
 function aktifSehirAdi() {
   const c = (state.index?.days?.[state.day] || []).find((x) => x.slug === state.city);
@@ -752,10 +925,10 @@ async function collectBacktest(onProgress) {
         const tabela = new Set(gelenler.slice(0, 3).map((h) => temizle(h.ad)));
         const ganyan = parseGanyan(gelenler[0].ganyan);
         const leg = {
-          pist: r.pist, mesafe: r.mesafe,
+          pist: r.pist, mesafe: r.mesafe, ikramiye: r.ikramiye,
           horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
             no: h.no, ad: h.ad, scores: {},
-            meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, jokey: h.jokey, antrenor: h.antrenor, st: h.st },
+            meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, jokey: h.jokey, antrenor: h.antrenor, sahip: h.sahip, kilo: h.kilo, st: h.st },
           })),
         };
         await scoreLeg(leg, { idman, day, city: c.name });
@@ -831,7 +1004,7 @@ async function runBacktest() {
 /* ==================== KATSAYI ÖNERİSİ (conditional logit) ==================== */
 /* Backtest verisiyle koşu-içi lojistik model eğitir: P(at kazanır) = exp(w·x) / Σ exp(w·x).
    Sadece otomatik puanlanan kriterler öğrenilebilir (diğerlerinin geçmiş puanı yok). */
-const TUNABLE = ["B5", "B6", "B7", "B8", "B13", "D1", "D2", "E1", "E2", "E3"];
+const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3"];
 async function suggestCoefs() {
   const el = $("#coefSuggestView"), st = $("#backtestStatus");
   if (!backtestRows) { st.textContent = "Önce veri toplanıyor…"; backtestRows = await collectBacktest((t) => (st.textContent = "Veri toplanıyor… " + t)); st.textContent = ""; }
