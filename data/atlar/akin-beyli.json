@@ -1,0 +1,19 @@
+{
+ "ad": "AKIN BEYLİ",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-10-07-kocaeli-2-backfill",
+  "2025-11-02-adana-6-backfill",
+  "2025-11-16-adana-2-backfill",
+  "2026-03-08-adana-2-backfill",
+  "2026-03-28-adana-2-backfill",
+  "2026-04-26-adana-2-backfill",
+  "2026-06-18-ankara-7-backfill",
+  "2026-07-11-ankara-1-backfill",
+  "2026-07-11-ankara-1"
+ ],
+ "erken_gec_delta_ema": 2.302,
+ "son_guncelleme": "2026-07-11-ankara-1",
+ "son_atak_delta_ema": 0.48,
+ "gecmis_dolduruldu": true
+}

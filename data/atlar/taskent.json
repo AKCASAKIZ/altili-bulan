@@ -1,0 +1,25 @@
+{
+ "ad": "TAŞKENT",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-01-26-adana-6-backfill",
+  "2025-02-09-adana-5-backfill",
+  "2025-03-01-adana-6-backfill",
+  "2025-03-25-adana-6-backfill",
+  "2025-05-10-ankara-7-backfill",
+  "2025-07-12-ankara-6-backfill",
+  "2025-12-23-adana-5-backfill",
+  "2026-01-06-adana-6-backfill",
+  "2026-02-14-adana-6-backfill",
+  "2026-02-28-adana-5-backfill",
+  "2026-03-22-adana-6-backfill",
+  "2026-05-31-istanbul-7-backfill",
+  "2026-06-14-istanbul-6-backfill",
+  "2026-07-11-ankara-6-backfill",
+  "2026-07-11-ankara-6"
+ ],
+ "erken_gec_delta_ema": 3.056,
+ "son_atak_delta_ema": 1.024,
+ "son_guncelleme": "2026-07-11-ankara-6",
+ "gecmis_dolduruldu": true
+}

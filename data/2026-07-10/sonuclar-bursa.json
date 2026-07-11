@@ -426,8 +426,8 @@
    "tur": "ŞARTLI 5/Dişi",
    "grup": "3 ve Yukarı İngilizler",
    "kilo": "55.00kg",
-   "mesafe": "60.00 kg",
-   "pist": "60.00 kg",
+   "mesafe": "1400m",
+   "pist": "Kum",
    "horses": [
     {
      "no": 1,
@@ -1124,8 +1124,8 @@
    "tur": "ŞARTLI 4/DHÖW/Dişi",
    "grup": "4 ve Yukarı Araplar",
    "kilo": "58.00kg",
-   "mesafe": "59.00 kg",
-   "pist": "1300m",
+   "mesafe": "1300m",
+   "pist": "Çim",
    "horses": [
     {
      "no": 1,
@@ -1524,8 +1524,8 @@
    "tur": "ŞARTLI 4/Y1",
    "grup": "3 ve Yukarı İngilizler",
    "kilo": "54.00kg",
-   "mesafe": "60.00 kg",
-   "pist": "60.50 kg",
+   "mesafe": "2200m",
+   "pist": "Çim",
    "horses": [
     {
      "no": 1,

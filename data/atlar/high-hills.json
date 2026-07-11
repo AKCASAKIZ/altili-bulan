@@ -1,0 +1,21 @@
+{
+ "ad": "HIGH HILLS",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-08-07-ankara-4-backfill",
+  "2025-08-28-ankara-9-backfill",
+  "2025-09-18-ankara-1-backfill",
+  "2025-10-12-istanbul-2-backfill",
+  "2025-11-06-ankara-7-backfill",
+  "2026-04-04-adana-1-backfill",
+  "2026-05-28-ankara-1-backfill",
+  "2026-06-18-ankara-6-backfill",
+  "2026-07-02-ankara-5-backfill",
+  "2026-07-11-ankara-4-backfill",
+  "2026-07-11-ankara-4"
+ ],
+ "erken_gec_delta_ema": 2.656,
+ "son_guncelleme": "2026-07-11-ankara-4",
+ "son_atak_delta_ema": -0.206,
+ "gecmis_dolduruldu": true
+}

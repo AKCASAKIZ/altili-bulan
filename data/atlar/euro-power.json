@@ -1,0 +1,26 @@
+{
+ "ad": "EURO POWER",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-10-19-adana-2-backfill",
+  "2025-11-09-adana-4-backfill",
+  "2025-11-16-adana-9-backfill",
+  "2025-11-29-adana-4-backfill",
+  "2025-12-09-adana-7-backfill",
+  "2025-12-14-adana-1-backfill",
+  "2026-02-01-adana-3-backfill",
+  "2026-02-14-adana-4-backfill",
+  "2026-02-21-adana-2-backfill",
+  "2026-03-03-adana-3-backfill",
+  "2026-03-17-adana-4-backfill",
+  "2026-04-19-adana-2-backfill",
+  "2026-05-31-adana-7-backfill",
+  "2026-06-06-ankara-1-backfill",
+  "2026-06-26-ankara-2-backfill",
+  "2026-07-11-ankara-1"
+ ],
+ "erken_gec_delta_ema": 2.391,
+ "son_atak_delta_ema": 0.645,
+ "son_guncelleme": "2026-07-11-ankara-1",
+ "gecmis_dolduruldu": true
+}

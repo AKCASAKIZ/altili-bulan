@@ -1,0 +1,22 @@
+{
+ "ad": "GRENTLY WINS",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-07-22-ankara-5-backfill",
+  "2025-08-14-ankara-9-backfill",
+  "2025-08-21-ankara-3-backfill",
+  "2025-09-09-ankara-8-backfill",
+  "2025-09-16-ankara-4-backfill",
+  "2025-09-25-ankara-2-backfill",
+  "2025-10-16-ankara-8-backfill",
+  "2026-01-14-istanbul-2-backfill",
+  "2026-03-19-antalya-2-backfill",
+  "2026-04-08-istanbul-1-backfill",
+  "2026-06-04-ankara-2-backfill",
+  "2026-07-11-ankara-1"
+ ],
+ "erken_gec_delta_ema": -1.494,
+ "son_guncelleme": "2026-07-11-ankara-1",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

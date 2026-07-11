@@ -622,8 +622,8 @@
    "tur": "SATIŞ 3",
    "grup": "3 ve Yukarı İngilizler",
    "kilo": "54.00kg",
-   "mesafe": "60.00 kg",
-   "pist": "60.50 kg",
+   "mesafe": "2000m",
+   "pist": "Sentetik",
    "horses": [
     {
      "no": 1,
@@ -771,8 +771,8 @@
    "tur": "ŞARTLI 5/Y3",
    "grup": "3 ve Yukarı İngilizler",
    "kilo": "55.00kg",
-   "mesafe": "60.00 kg",
-   "pist": "60.00 kg",
+   "mesafe": "1500m",
+   "pist": "Sentetik",
    "horses": [
     {
      "no": 1,

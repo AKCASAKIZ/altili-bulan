@@ -1,0 +1,26 @@
+{
+ "ad": "KALBİMDESİN",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-05-01-ankara-7-backfill",
+  "2025-06-05-ankara-6-backfill",
+  "2025-06-28-ankara-6-backfill",
+  "2025-07-12-ankara-6-backfill",
+  "2025-07-24-kocaeli-6-backfill",
+  "2025-08-09-ankara-8-backfill",
+  "2025-08-28-ankara-4-backfill",
+  "2025-10-04-ankara-6-backfill",
+  "2025-10-15-istanbul-6-backfill",
+  "2025-12-23-adana-5-backfill",
+  "2026-01-06-adana-6-backfill",
+  "2026-01-31-adana-8-backfill",
+  "2026-02-14-adana-6-backfill",
+  "2026-02-28-adana-5-backfill",
+  "2026-07-11-ankara-6-backfill",
+  "2026-07-11-ankara-6"
+ ],
+ "erken_gec_delta_ema": 5.044,
+ "son_atak_delta_ema": 2.793,
+ "son_guncelleme": "2026-07-11-ankara-6",
+ "gecmis_dolduruldu": true
+}

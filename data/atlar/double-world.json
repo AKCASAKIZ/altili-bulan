@@ -1,0 +1,26 @@
+{
+ "ad": "DOUBLE WORLD",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-09-18-ankara-7-backfill",
+  "2025-10-12-adana-1-backfill",
+  "2025-12-14-adana-7-backfill",
+  "2025-12-21-adana-9-backfill",
+  "2026-01-03-adana-1-backfill",
+  "2026-01-18-adana-7-backfill",
+  "2026-01-25-adana-1-backfill",
+  "2026-02-03-adana-6-backfill",
+  "2026-02-21-adana-1-backfill",
+  "2026-03-03-adana-2-backfill",
+  "2026-03-22-adana-2-backfill",
+  "2026-03-31-adana-1-backfill",
+  "2026-04-07-adana-3-backfill",
+  "2026-04-25-ankara-1-backfill",
+  "2026-06-02-ankara-7-backfill",
+  "2026-07-11-ankara-4"
+ ],
+ "erken_gec_delta_ema": -0.378,
+ "son_guncelleme": "2026-07-11-ankara-4",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}
