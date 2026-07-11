@@ -97,13 +97,17 @@ def parse_csv(text: str) -> dict:
         cells = line.split(";")
         mr = re.match(r"^(\d+)\.\s*Kosu\s*:\s*(.+)", cells[0], re.I)
         if mr:
+            # TJK bazı satırlara fazladan kilo kolonu ekliyor ("...; 57.50kg; 60.00 kg; 2000m; Kum")
+            # ve mesafe/pist sağa kayıyor; bu yüzden pozisyon yerine desene göre ayrıştır.
+            rest = [c.strip() for c in cells[1:] if c.strip()]
+            mesafe = next((c for c in rest if re.fullmatch(r"\d{3,4}\s*m", c)), "")
+            pist = next((c for c in rest if re.match(r"^(Çim|Kum|Sentetik)", c)), "")
+            kilo = next((c for c in rest if re.search(r"\d\s*kg", c, re.I) or c == "kg"), "")
             race = {
                 "no": int(mr.group(1)), "saat": mr.group(2).strip(),
-                "tur": cells[1].strip() if len(cells) > 1 else "",
-                "grup": cells[2].strip() if len(cells) > 2 else "",
-                "kilo": cells[3].strip() if len(cells) > 3 else "",
-                "mesafe": cells[4].strip() if len(cells) > 4 else "",
-                "pist": cells[5].strip() if len(cells) > 5 else "",
+                "tur": rest[0] if rest else "",
+                "grup": rest[1] if len(rest) > 1 else "",
+                "kilo": kilo, "mesafe": mesafe, "pist": pist,
                 "horses": [],
             }
             races.append(race)

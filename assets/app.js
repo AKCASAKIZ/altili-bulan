@@ -30,6 +30,9 @@ const ANGLES = [
   { k: "C4", name: "En yüksek ödüllü jokey", pct: 3.00, desc: "Katıldığı koşuların ikramiye toplamı en yüksek 5 jokey: 100,70,50,30,10." },
   { k: "D1", name: "Koşu karakteri: kapanış gücü", pct: 2.50, desc: "Accurace checkpoint verisinden türetilen son_atak_delta_ema (1600m→bitiş sıra kazancı) en yüksek 5 at: 100,70,50,30,10." },
   { k: "D2", name: "Koşu karakteri: erken tempo", pct: 2.50, desc: "Accurace checkpoint verisinden türetilen erken_gec_delta_ema (öncü/kaçak eğilimi) en yüksek 5 at: 100,70,50,30,10." },
+  { k: "E1", name: "Jokey kazanma % (arşiv)", pct: 3.00, desc: "2 yıllık sonuç arşivinden jokeyin gerçek kazanma yüzdesi. Koşudaki en yüksek 5 jokey: 100,70,50,30,10." },
+  { k: "E2", name: "Antrenör kazanma % (arşiv)", pct: 2.00, desc: "2 yıllık sonuç arşivinden antrenörün gerçek kazanma yüzdesi. Koşudaki en yüksek 5: 100,70,50,30,10." },
+  { k: "E3", name: "Kulvar avantajı (arşiv)", pct: 3.00, desc: "Hipodrom + pist + mesafe kırılımında start kulvarının 2 yıllık gerçek kazanma oranı. En avantajlı 5 kulvardaki atlar: 100,70,50,30,10." },
 ];
 const PRESET6 = ["A3", "B1", "B2", "B3", "B6", "B13"];
 const RANK5 = [100, 70, 50, 30, 10];
@@ -189,7 +192,7 @@ function loadLegsFromProgram() {
     raceNo: r.no, saat: r.saat, tur: r.tur, grup: r.grup, mesafe: r.mesafe, pist: r.pist,
     horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
       no: h.no, ad: h.ad, scores: {},
-      meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, jokey: h.jokey, kilo: h.kilo, sahip: h.sahip, antrenor: h.antrenor },
+      meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, jokey: h.jokey, kilo: h.kilo, sahip: h.sahip, antrenor: h.antrenor, st: h.st },
     })),
   }));
   state.picks = state.legs.map(() => []);
@@ -288,7 +291,7 @@ function renderScoreTable() {
   });
 }
 
-/* --- otomatik puanlama: program verisinden B5, B6, B8, B13, D1, D2 --- */
+/* --- otomatik puanlama: program verisinden B5, B6, B8, B13, D1, D2 + arşiv istatistiklerinden E1, E2, E3 --- */
 async function autoScoreLeg() {
   const leg = state.legs[state.activeLeg];
   if (!leg) return alert("Önce programdan yükleyin.");
@@ -356,6 +359,40 @@ async function scoreLeg(leg, ctx) {
   assignRank5(hs, sonAtak, "D1", false);
   const erkenGec = hs.map((_, i) => atlar[i]?.erken_gec_delta_ema ?? null);
   assignRank5(hs, erkenGec, "D2", false);
+
+  // E1/E2/E3: 2 yıllık sonuç arşivinden jokey/antrenör kazanma yüzdesi ve kulvar avantajı
+  if (state.stats === undefined) state.stats = await tryFetch("data/arsiv/stats.json");
+  const stats = state.stats;
+  if (stats) {
+    const oran = (tbl, ad) => {
+      const rec = tbl?.[(ad || "").trim()];
+      return rec ? rec[1] / rec[0] : null;
+    };
+    assignRank5(hs, hs.map((h) => oran(stats.jokey, h.meta?.jokey)), "E1", false);
+    assignRank5(hs, hs.map((h) => oran(stats.antrenor, h.meta?.antrenor)), "E2", false);
+
+    const sehir = ctx?.city || aktifSehirAdi();
+    const pist = (leg.pist || "").trim().split(/\s+/)[0];
+    const cell = stats.kulvar?.[`${sehir}|${pist}|${mesafeGrubu(leg.mesafe)}`];
+    if (cell) {
+      const gw = hs.map((h) => {
+        const g = parseInt(h.meta?.st);
+        const v = isNaN(g) ? null : cell[String(g)];
+        return v ? v[1] / v[0] : null;
+      });
+      assignRank5(hs, gw, "E3", false);
+    }
+  }
+}
+function aktifSehirAdi() {
+  const c = (state.index?.days?.[state.day] || []).find((x) => x.slug === state.city);
+  return c?.name || "";
+}
+function mesafeGrubu(m) {
+  const mm = /(\d+)/.exec(m || "");
+  if (!mm) return "?";
+  const v = +mm[1];
+  return v <= 1400 ? "kisa" : v <= 1900 ? "orta" : "uzun";
 }
 /* at profili önbelleği — backtest yüzlerce kez aynı atları puanlarken tekrar tekrar fetch etmesin */
 const atProfilCache = new Map();
@@ -715,12 +752,13 @@ async function collectBacktest(onProgress) {
         const tabela = new Set(gelenler.slice(0, 3).map((h) => temizle(h.ad)));
         const ganyan = parseGanyan(gelenler[0].ganyan);
         const leg = {
+          pist: r.pist, mesafe: r.mesafe,
           horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
             no: h.no, ad: h.ad, scores: {},
-            meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf },
+            meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, jokey: h.jokey, antrenor: h.antrenor, st: h.st },
           })),
         };
-        await scoreLeg(leg, { idman, day });
+        await scoreLeg(leg, { idman, day, city: c.name });
         const ranked = rankedHorses(leg).filter((x) => x.score > 0);
         if (ranked.length < 2) continue;
         if (!leg.horses.some((h) => temizle(h.ad) === kazananAd)) continue; // kazanan programda bulunamadıysa atla
@@ -793,7 +831,7 @@ async function runBacktest() {
 /* ==================== KATSAYI ÖNERİSİ (conditional logit) ==================== */
 /* Backtest verisiyle koşu-içi lojistik model eğitir: P(at kazanır) = exp(w·x) / Σ exp(w·x).
    Sadece otomatik puanlanan kriterler öğrenilebilir (diğerlerinin geçmiş puanı yok). */
-const TUNABLE = ["B5", "B6", "B7", "B8", "B13", "D1", "D2"];
+const TUNABLE = ["B5", "B6", "B7", "B8", "B13", "D1", "D2", "E1", "E2", "E3"];
 async function suggestCoefs() {
   const el = $("#coefSuggestView"), st = $("#backtestStatus");
   if (!backtestRows) { st.textContent = "Önce veri toplanıyor…"; backtestRows = await collectBacktest((t) => (st.textContent = "Veri toplanıyor… " + t)); st.textContent = ""; }
