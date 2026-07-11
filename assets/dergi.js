@@ -11,6 +11,18 @@ function temizle(ad) {
     .trim().toUpperCase();
 }
 
+// data/atlar/{slug}.json dosya adını üretir — Python tarafındaki
+// slugify(at_adi_temizle(ad)) ile birebir eşleşmeli (fetch_accurace.py).
+const TR_ASCII = { "ç": "c", "ğ": "g", "ı": "i", "ö": "o", "ş": "s", "ü": "u",
+  "Ç": "c", "Ğ": "g", "İ": "i", "I": "i", "Ö": "o", "Ş": "s", "Ü": "u" };
+function slugAt(ad) {
+  return temizle(ad)
+    .replace(/[çğıöşüÇĞİIÖŞÜ]/g, (c) => TR_ASCII[c])
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 (function () {
   const AB = window.AB;
   if (!AB) { console.error("dergi.js: app.js kancaları yok"); return; }
@@ -36,7 +48,7 @@ function temizle(ad) {
         <button id="btnDergiGecmis" class="btn btn-accent">📊 Geçmişi uygula (B1+B2+B3+B12+B15)</button>
       </div>
     </div>
-    <p class="hint" id="dergiInfo">Yarış Gazetesi PDF'ini GitHub reposuna yükleyin (kök veya <b>dergi/</b> klasörü) — burada otomatik listelenir. "PDF'i oku": gazetenin puanlarını, FAVORİ/PLASE/SÜRPRİZ tahminlerini, banko atları, <b>1./2. Altılı Ganyan</b> bölümlerini, <b>Plase &amp; İkili</b> bahis kombinasyonlarını, her at için tek cümlelik <b>uzman yorumunu</b> ve sayfa 2+'deki geçmiş performans tablolarını çıkarır. "Puanlamaya uygula": gazete puanı en yüksek 5 ata <b>B6</b> (100,70,50,30,10), favorilere <b>B11</b>=100, plaselere 60, sürprizlere 30 yazar. "Geçmişi uygula": her atın gazetede basılı geçmiş koşularından <b>B1</b> (ikramiye düşüşü), <b>B2/B3</b> (mesafe/pist uygunluğu — ortalama dereceye göre tahmini), <b>B12</b> (mesafe ayarı), <b>B15</b> (kilo farkı) doldurur. Atların <b>son galop</b> verisi (TJK'nın canlı sorgusundan) Program sekmesinde her atın yanında görünür ve B7'yi otomatik doldurur.</p>
+    <p class="hint" id="dergiInfo">Yarış Gazetesi PDF'ini GitHub reposuna yükleyin (kök veya <b>dergi/</b> klasörü) — burada otomatik listelenir. "PDF'i oku" gazetenin puanlarını, FAVORİ/PLASE/SÜRPRİZ tahminlerini, banko atları ve sayfa 2+'deki geçmiş performans tablolarını çıkarır. "Puanlamaya uygula": gazete puanı en yüksek 5 ata <b>B6</b> (100,70,50,30,10), favorilere <b>B11</b>=100, plaselere 60, sürprizlere 30 yazar. "Geçmişi uygula": her atın gazetede basılı geçmiş koşularından <b>B1</b> (ikramiye düşüşü), <b>B2/B3</b> (mesafe/pist uygunluğu — ortalama dereceye göre tahmini), <b>B12</b> (mesafe ayarı), <b>B15</b> (kilo farkı) doldurur.</p>
     <div id="dergiView"></div>`;
   document.querySelector("main").appendChild(pane);
 
@@ -104,133 +116,6 @@ function temizle(ad) {
     }
     return [...rows.entries()].sort((a, b) => b[0] - a[0])
       .map(([, items]) => items.sort((a, b) => a.x - b.x).map((i) => i.s).join(" ").replace(/\s+/g, " ").trim());
-  }
-
-  /* ---- ham metin akışı: PDF içerik akışındaki asıl sıra (sütun konumundan bağımsız) —
-   * yorum/bölüm/bahis ayrıştırması için kullanılır; galop ve performans metinleri sayfada
-   * görsel olarak iç içe geçmiş iki sütunda basıldığından, x/y konumuna göre satır kurmak
-   * bunları birbirine karıştırır. PDF'in kendi metin akışı sırası her zaman mantıksal sırayı korur. */
-  async function extractPageRaw(doc, pageNo) {
-    const page = await doc.getPage(pageNo);
-    const tc = await page.getTextContent();
-    return tc.items.filter((it) => it.str.trim()).map((it) => it.str).join(" ").replace(/\s+/g, " ");
-  }
-
-  /* ---- yorum: "N.KOŞU: (KOD) ..." performans bölümlerinde at başlığından hemen sonraki
-   * tek cümlelik uzman değerlendirmesini çıkarır (örn. "İdmanlarında toparlanma çabasında...").
-   * Koşu koşu ayırıp o bölüm içindeki at başlıklarıyla yorumları sırayla eşleştirir —
-   * bir atın yorumu her zaman bir sonraki atın başlığından hemen önce basılıdır. */
-  function parseYorumlar(rawText) {
-    const raceMarkerRe = /(\d{1,2})\.KOŞU:\s*\(/g;
-    const positions = [];
-    let m;
-    while ((m = raceMarkerRe.exec(rawText))) positions.push(m.index);
-    const headerRe = /(\d{1,2})\.\s+([A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ'\- ]{2,40}?)\s+\(/g;
-    const commentRe = /([A-ZÇĞİÖŞÜ][^[\]0-9]{10,140}?)\s*\[[KÇ][^\]]*\]/g;
-    const ekipmanRe = /^(KG|SKG|GDSK|DSGK|GKDSK|GKD|DSK|GSK|SGK|GDS|DSG|GKR|DB|SK|GD|GK|DS|KD|GM|KGD|G|K|D|M|S)\s+/;
-    const out = {};
-    for (let i = 0; i < positions.length; i++) {
-      const chunk = rawText.slice(positions[i], i + 1 < positions.length ? positions[i + 1] : rawText.length);
-      headerRe.lastIndex = 0;
-      const names = [];
-      let hm;
-      while ((hm = headerRe.exec(chunk))) names.push(hm[2].trim());
-      commentRe.lastIndex = 0;
-      const comments = [...chunk.matchAll(commentRe)].map((cm) => cm[1].trim().replace(ekipmanRe, ""));
-      names.forEach((name, j) => { if (comments[j]) out[temizle(name)] = comments[j]; });
-    }
-    return out;
-  }
-
-  /* ---- 1./2. Altılı ve Plase'nin başladığı koşu numaralarını sayfa 1 ham metninden bulur:
-   * "BİRİNCİ 6'LI GANYAN 1. KOŞUDAN İTİBAREN BAŞLAR", "7'Lİ GANYAN ve 7'Lİ PLASE BU KOŞUDAN..." */
-  function parseBolumler(rawP1) {
-    const raceHdrRe = /(\d{1,2})\.KOŞU\b/g;
-    const raceHeaders = [];
-    let rm;
-    while ((rm = raceHdrRe.exec(rawP1))) raceHeaders.push({ no: +rm[1], idx: rm.index });
-    const resolveStart = (matchIndex, explicitNo) => {
-      if (explicitNo) return +explicitNo;
-      const nxt = raceHeaders.find((r) => r.idx > matchIndex);
-      return nxt ? nxt.no : null;
-    };
-    const markerRe = /([0-9]+)['’]?L[İI]\s+(GANYAN|PLASE)(?:\s+ve\s+[0-9]+['’]?L[İI]\s+(GANYAN|PLASE))?\s+(?:(\d{1,2})\.\s*KOŞUDAN|BU\s+KOŞUDAN)\s+[İI]T[İI]BAREN\s+BAŞLAR/gi;
-    const altiliStarts = [];
-    let plaseStart = null;
-    let m;
-    while ((m = markerRe.exec(rawP1))) {
-      const start = resolveStart(m.index, m[4]);
-      if (!start) continue;
-      if (/6['’]?L[İI]/i.test(m[0]) && /GANYAN/i.test(m[0])) altiliStarts.push(start);
-      if (/PLASE/i.test(m[0]) && plaseStart == null) plaseStart = start;
-    }
-    altiliStarts.sort((a, b) => a - b);
-    return { altili1: altiliStarts[0] || null, altili2: altiliStarts[1] || null, plaseStart };
-  }
-
-  /* soy kütüğü grubunu çıkarır: "(BABA(Ülke)-ANNE/ANNENİN BABASI)" her zaman hemen ardından gelen
-   * "(Antrenör-Sahip)" grubuyla bitişik basılıyor — yani ilk ")(" gazetede grubun gerçek sonu.
-   * (Dengeli parantez sayımı kullanılmıyor: annesi yabancı orijinli atlarda gazete ülke kodunu
-   * "(Ülke/AnnesininBabası)" şeklinde annenin babasıyla aynı paranteze basıp kapanışı atlıyor —
-   * ör. "Elea(Ger/L.O.England)" — bu da dengeli sayımı bozardı.) */
-  function soyGrubuCikar(text, acilisIdx) {
-    if (text[acilisIdx] !== "(") return null;
-    const kapaAc = text.indexOf(")(", acilisIdx);
-    if (kapaAc < 0) return null;
-    return text.slice(acilisIdx + 1, kapaAc);
-  }
-
-  /* ---- soy kütüğü: "N. AD (KOD) yaş cins.cins (BABA-ANNE/ANNENİN BABASI)(...)" başlığından çıkarır ---- */
-  function parseSoyKutugu(rawText) {
-    const headerRe = /(\d{1,2})\.\s+([A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ'\- ]{2,40}?)\s+\([^()]*\)\s*\d+y\s+[a-zçğıöşü]\.[a-zçğıöşü]\s*/g;
-    const out = {};
-    let m;
-    while ((m = headerRe.exec(rawText))) {
-      const afterIdx = headerRe.lastIndex;
-      const grp = soyGrubuCikar(rawText, afterIdx);
-      if (!grp) continue;
-      const tire = grp.indexOf("-");
-      if (tire < 0) continue;
-      const baba = grp.slice(0, tire).trim();
-      const rest = grp.slice(tire + 1).trim();
-      // anne isminden sonra ülke kodu parantezi varsa ("Elea(Ger/L.O.England"), annenin babası o
-      // parantezin içindeki "/"den sonraki kısımdır; yoksa doğrudan "Anne/AnnesininBabası" biçimindedir.
-      const parenIdx = rest.indexOf("(");
-      let anne, anneBaba;
-      if (parenIdx >= 0) {
-        anne = rest.slice(0, parenIdx).trim();
-        const icerik = rest.slice(parenIdx + 1).trim();
-        const slash = icerik.indexOf("/");
-        anneBaba = slash >= 0 ? icerik.slice(slash + 1).trim() : null;
-      } else {
-        const slash = rest.indexOf("/");
-        anne = (slash >= 0 ? rest.slice(0, slash) : rest).trim();
-        anneBaba = slash >= 0 ? rest.slice(slash + 1).trim() : null;
-      }
-      out[temizle(m[2])] = { baba, anne, anneBaba };
-    }
-    return out;
-  }
-
-  /* ---- BAHİSLER dip tablosu: bahis tipi -> at/koşu kombinasyonu (İkililer, Plase İkili, vb.) ---- */
-  function parseBahisler(rawP1) {
-    const labels = [
-      "ALTILI GANYAN", "BEŞLİ GANYAN", "DÖRTLÜ GANYAN", "ÜÇLÜ GANYAN",
-      "SIRALI İKİLİLER", "İKİLİLER", "PLASE İKİLİ", "YEDİLİ PLASE ve GANYAN", "YEDİLİ PLASE",
-      "ÜÇLÜ BAHİS", "TABELA BAHİS", "SIRALI BEŞLİ BAHİS", "ÇİFTE BAHİS",
-    ];
-    const idx = rawP1.indexOf("BAHİSLER");
-    if (idx < 0) return [];
-    const section = rawP1.slice(idx, idx + 1200);
-    const out = [];
-    for (const label of labels) {
-      const pos = section.indexOf(label);
-      if (pos < 0) continue;
-      const after = section.slice(pos + label.length);
-      const mm = after.match(/^\s*:?\s*([0-9](?:[0-9\-/.\s]*[0-9])?)/);
-      if (mm) out.push({ ad: label, deger: mm[1].replace(/\s+/g, "") });
-    }
-    return out;
   }
 
   /* at başlığı: "1. BİLGÜCÜ (KÇ-OU) 2y d.d (...)..."
@@ -326,15 +211,13 @@ function temizle(ad) {
     const el = document.getElementById("dergiView");
     if (!current) { el.innerHTML = `<div class="empty-note">Henüz PDF okunmadı.</div>`; return; }
     const d = current;
-    const raceNos = Object.keys(d.races).map(Number).sort((a, b) => a - b);
-    const bol = d.bolumler || {};
-
     let html = `<div class="race-card"><header><h3>📖 ${AB.esc(d.city || "?")} — ${AB.esc(d.date || "?")}</h3>
-      <span class="race-tags">${raceNos.length} koşu bulundu</span></header>`;
+      <span class="race-tags">${Object.keys(d.races).length} koşu bulundu</span></header>`;
     if (d.banko.length) {
       html += `<div class="payout">⭐ GÜNÜN BANKOLARI: ${d.banko.map((b) => `${b.race}.Koşu ${AB.esc(b.ad)} (${b.no})`).join(" · ")}</div>`;
     }
     html += `<div class="table-wrap"><table><thead><tr><th>Koşu</th><th>Favori</th><th>Plase</th><th>Sürpriz</th><th>Gazete puanı ilk 3 (GP)</th></tr></thead><tbody>`;
+    const raceNos = Object.keys(d.races).map(Number).sort((a, b) => a - b);
     for (const rn of raceNos) {
       const t = d.tahmin[rn] || {};
       const top = Object.values(d.races[rn].horses)
@@ -343,55 +226,7 @@ function temizle(ad) {
       html += `<tr><td><b>${rn}</b></td><td class="hit">${(t.favori || []).join("-") || "·"}</td>
         <td>${(t.plase || []).join("-") || "·"}</td><td class="miss">${(t.surpriz || []).join("-") || "·"}</td><td>${top || "·"}</td></tr>`;
     }
-    html += `</tbody></table></div></div>`;
-
-    // 1./2. Altılı ayrımı bulunduysa ayrı bölümler, yoksa tek grupta tüm koşular
-    const gruplar = [];
-    if (bol.altili1) {
-      gruplar.push({ ad: "1. Altılı Ganyan", nos: raceNos.filter((r) => r >= bol.altili1 && r < bol.altili1 + 6) });
-      if (bol.altili2) gruplar.push({ ad: "2. Altılı Ganyan", nos: raceNos.filter((r) => r >= bol.altili2 && r < bol.altili2 + 6) });
-    } else {
-      gruplar.push({ ad: "Koşular ve uzman yorumları", nos: raceNos });
-    }
-
-    for (const grup of gruplar) {
-      if (!grup.nos.length) continue;
-      html += `<div class="race-card"><header><h3>${AB.esc(grup.ad)}</h3>
-        <span class="race-tags">${grup.nos[0]}.–${grup.nos[grup.nos.length - 1]}. Koşu</span></header>`;
-      for (const rn of grup.nos) {
-        const t = d.tahmin[rn] || {};
-        const horses = Object.values(d.races[rn].horses).sort((a, b) => a.no - b.no);
-        html += `<div class="table-wrap"><table><thead>
-          <tr><th colspan="4">${rn}. Koşu — Favori <span class="hit">${(t.favori || []).join("-") || "·"}</span>
-            &nbsp;Plase ${(t.plase || []).join("-") || "·"}
-            &nbsp;Sürpriz <span class="miss">${(t.surpriz || []).join("-") || "·"}</span></th></tr>
-          <tr><th>No</th><th>At</th><th>Soy kütüğü (baba - anne / annenin babası)</th><th>Uzman yorumu</th></tr></thead><tbody>`;
-        for (const h of horses) {
-          const yorum = d.yorumlar?.[temizle(h.ad)] || "";
-          const s = d.soy?.[temizle(h.ad)];
-          const soyTxt = s ? `${s.baba} - ${s.anne}${s.anneBaba ? " / " + s.anneBaba : ""}` : "";
-          html += `<tr><td>${h.no}</td><td>${AB.esc(h.ad)}${h.gp != null ? ` <span class="hint">(GP ${h.gp})</span>` : ""}</td>
-            <td>${AB.esc(soyTxt) || '<span class="hint">—</span>'}</td>
-            <td>${AB.esc(yorum) || '<span class="hint">—</span>'}</td></tr>`;
-        }
-        html += `</tbody></table></div>`;
-      }
-      html += `</div>`;
-    }
-
-    // Plase & İkili
-    if ((d.bahisler && d.bahisler.length) || bol.plaseStart) {
-      html += `<div class="race-card"><header><h3>🎯 Plase &amp; İkili Tahminleri</h3>
-        ${bol.plaseStart ? `<span class="race-tags">7'li Plase/Ganyan ${bol.plaseStart}. koşudan itibaren geçerli</span>` : ""}</header>`;
-      if (d.bahisler && d.bahisler.length) {
-        html += `<div class="table-wrap"><table><thead><tr><th>Bahis türü</th><th>Kombinasyon</th></tr></thead><tbody>`;
-        d.bahisler.forEach((b) => { html += `<tr><td><b>${AB.esc(b.ad)}</b></td><td>${AB.esc(b.deger)}</td></tr>`; });
-        html += `</tbody></table></div>`;
-      }
-      html += `</div>`;
-    }
-
-    el.innerHTML = html;
+    el.innerHTML = html + `</tbody></table></div></div>`;
   }
 
   /* ---- puanlamaya uygulama: B6 (GP sırası) + B11 (favori/plase/sürpriz) ---- */
@@ -499,27 +334,20 @@ function temizle(ad) {
       const lines = await extractColumns(doc);
       current = parseDergi(lines);
       current.gecmis = {};
-      let restRaw = "";
       for (let p = 2; p <= doc.numPages; p++) {
         const pLines = await extractPageLines(doc, p);
         const pGecmis = parseGecmis(pLines);
         for (const key of Object.keys(pGecmis)) {
           current.gecmis[key] = (current.gecmis[key] || []).concat(pGecmis[key]);
         }
-        restRaw += (await extractPageRaw(doc, p)) + " ";
       }
       // birden fazla bölümde geçen aynı ada ait satırlar birleşince tarih sırası bozulabilir — garantiye al
       for (const key of Object.keys(current.gecmis)) {
         current.gecmis[key].sort((a, b) => (a.tarih < b.tarih ? -1 : a.tarih > b.tarih ? 1 : 0));
       }
-      const p1Raw = await extractPageRaw(doc, 1);
-      current.yorumlar = parseYorumlar(restRaw);
-      current.soy = parseSoyKutugu(restRaw);
-      current.bolumler = parseBolumler(p1Raw);
-      current.bahisler = parseBahisler(p1Raw);
       const atSayisi = Object.keys(current.gecmis).length;
       AB.LS.set(`ab2:dergi:${current.date}:${AB.slugify(current.city || "")}`, current);
-      document.getElementById("dergiInfo").textContent = `✅ Okundu: ${current.city} ${current.date} — ${Object.keys(current.races).length} koşu, ${Object.keys(current.tahmin).length} tahmin satırı, ${current.banko.length} banko, ${atSayisi} at için geçmiş performans, ${Object.keys(current.yorumlar).length} at için uzman yorumu.`;
+      document.getElementById("dergiInfo").textContent = `✅ Okundu: ${current.city} ${current.date} — ${Object.keys(current.races).length} koşu, ${Object.keys(current.tahmin).length} tahmin satırı, ${current.banko.length} banko, ${atSayisi} at için geçmiş performans.`;
       render();
     } catch (e) {
       document.getElementById("dergiInfo").textContent = "❌ PDF okunamadı: " + e.message;
@@ -535,7 +363,9 @@ function temizle(ad) {
 
 /* ===== İstatistik motoru: birikmiş sonuç verisinden otomatik puanlama =====
  * data/ klasöründeki geçmiş sonuçlardan sahip/antrenör/jokey istatistikleri
- * ve at geçmişleri çıkarır; A1-A3, B1, B5, B12, B14, B15, B16-B18, C1, C3 doldurur. */
+ * ve at geçmişleri çıkarır; A1-A3, B1, B5, B6, B9, B12, B14, B15, B16-B18, C1, C3 doldurur.
+ * B6 (tahmini derece) gecmis sürelerinden par-süre modeliyle, B9 (pace senaryosu)
+ * accurace koşu-karakter profillerinden (data/atlar/) gelir. */
 (function () {
   const AB = window.AB;
   if (!AB) return;
@@ -585,6 +415,79 @@ function temizle(ad) {
     return { horse, sahip, antrenor, jokey, gunSayisi: days.length };
   }
 
+  // B9 için: programdaki her atın accurace koşu-karakter profilini (data/atlar/) çeker.
+  async function loadAtProfilleri(legs) {
+    const slugs = new Set();
+    for (const leg of legs) for (const h of leg.horses) { const s = slugAt(h.ad); if (s) slugs.add(s); }
+    const prof = {};
+    await Promise.all([...slugs].map(async (sl) => {
+      const p = await fetch(`data/atlar/${sl}.json`, { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null)).catch(() => null);
+      if (p) prof[sl] = p;
+    }));
+    return prof;
+  }
+
+  // B6 tahmini derece: gecmis-{city}.json'daki bitiriş sürelerinden (derece)
+  // mesafe+pist bazlı "par süre" çıkarır, her atın par'a göre reytingini bulur,
+  // bugünkü mesafe/pist için tahmini süreyi hesaplar (düşük = hızlı = iyi).
+  async function loadTahminiDerece() {
+    const g = await fetch(`data/${AB.state.day}/gecmis-${AB.state.city}.json`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    if (!g) return null;
+    const median = (a) => {
+      if (!a.length) return null;
+      const s = [...a].sort((x, y) => x - y); const m = s.length >> 1;
+      return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+    };
+    const pnorm = (p) => (p || "").trim().charAt(0).toUpperCase();
+    // Tüm koşuları düz liste + (mesafe|pist) medyan par
+    const tumu = [], parGrup = {};
+    for (const kosular of Object.values(g)) {
+      for (const k of kosular) {
+        if (k.derece == null || !k.mesafe) continue;
+        const p = pnorm(k.pist);
+        tumu.push({ mes: k.mesafe, p, d: k.derece });
+        const key = `${k.mesafe}|${p}`;
+        (parGrup[key] = parGrup[key] || []).push(k.derece);
+      }
+    }
+    const parMed = {};
+    for (const key in parGrup) parMed[key] = median(parGrup[key]);
+    const parLookup = (mes, p) => {
+      if (!mes) return null;
+      const key = `${mes}|${p}`;
+      if (parMed[key] != null && parGrup[key].length >= 3) return parMed[key];
+      let pool = tumu.filter((r) => r.p === p && Math.abs(r.mes - mes) <= 150);
+      if (pool.length < 3) pool = tumu.filter((r) => Math.abs(r.mes - mes) <= 150);
+      if (pool.length >= 3) return median(pool.map((r) => r.d));
+      return parMed[key] != null ? parMed[key] : null;
+    };
+    // At reytingleri: temizle(ad) -> tüm deltalar + pist bazlı deltalar
+    const reyting = {};
+    for (const [ad, kosular] of Object.entries(g)) {
+      const tum = [], byP = {};
+      for (const k of kosular) {
+        if (k.derece == null || !k.mesafe) continue;
+        const p = pnorm(k.pist);
+        const par = parLookup(k.mesafe, p);
+        if (par == null) continue;
+        const delta = k.derece - par;
+        tum.push(delta);
+        (byP[p] = byP[p] || []).push(delta);
+      }
+      if (tum.length) reyting[temizle(ad)] = { tum, byP };
+    }
+    const pred = (adKey, mes, p) => {
+      const r = reyting[adKey], par = parLookup(mes, p);
+      if (!r || par == null) return null;
+      const same = r.byP[p];
+      const rt = median(same && same.length >= 2 ? same : r.tum); // pist yatkınlığı: o piste ≥2 koşu varsa onu kullan
+      return rt == null ? null : par + rt;
+    };
+    return { pred, pnorm };
+  }
+
   function kisiPuani(st, bugun, gunESIK) {
     // A2/A3 ve B17/B18 tarzı: son koşan atın derecesi + kaç gün önce
     const out = {};
@@ -613,6 +516,8 @@ function temizle(ad) {
     btn.textContent = "⏳ İstatistikler yükleniyor…";
     try {
       const H = await loadHistory();
+      const atProf = await loadAtProfilleri(AB.state.legs);
+      const tahmin = await loadTahminiDerece();
       const bugun = AB.state.day;
       // kariyer istatistikleri (TJK At İstatistikleri'nden, günlük çekilir)
       const kariyer = await fetch(`data/${AB.state.day}/atistatistik-${AB.state.city}.json`, { cache: "no-store" })
@@ -688,13 +593,42 @@ function temizle(ad) {
           const b = binis[j] || 0;
           if (sn && b) yaz(h, "C3", b <= 2 ? (sn === 1 ? 100 : sn === 2 ? 80 : null) : b <= 4 ? (sn === 1 ? 60 : sn === 2 ? 30 : null) : null);
         }
+        // B9: pace senaryosu ("koşturalım") — accurace koşu-karakter profillerinden.
+        // erken_gec_delta_ema: negatif = önde koşan (öncü/kaçak), pozitif = kapanışçı.
+        const stiller = leg.horses.map((h) => {
+          const p = atProf[slugAt(h.ad)];
+          const d = p && (p.kosu_sayisi || 0) >= 3 ? p.erken_gec_delta_ema : null;
+          return { h, stil: d == null ? null : d <= -0.8 ? "oncu" : d >= 0.8 ? "kapanis" : "tempo" };
+        });
+        const oncuSayisi = stiller.filter((x) => x.stil === "oncu").length;
+        for (const x of stiller) {
+          if (x.stil === "oncu") {
+            // Önü boş kaçak avantajlı; başka öncü rakip arttıkça tempo kızışır.
+            const diger = oncuSayisi - 1;
+            yaz(x.h, "B9", diger === 0 ? 100 : diger === 1 ? 60 : null);
+          } else if (x.stil === "kapanis") {
+            // Kızışan tempo (çok öncü) kapanışçının lehine çöker.
+            yaz(x.h, "B9", oncuSayisi >= 3 ? 100 : oncuSayisi >= 2 ? 60 : null);
+          }
+        }
+        // B6: tahmini derece — dergiden gelmişse (bir at bile doluysa) dokunma, yoksa hesapla.
+        if (tahmin && !leg.horses.some((h) => h.scores.B6 != null)) {
+          const tM = parseInt(leg.mesafe) || null;
+          const tP = tahmin.pnorm(leg.pist);
+          const b6 = [];
+          for (const h of leg.horses) {
+            const pred = tahmin.pred(temizle(h.ad), tM, tP);
+            if (pred != null) b6.push({ h, v: pred });
+          }
+          rank5(b6, "B6", true); // düşük süre = hızlı = 100
+        }
         rank5(b5, "B5", false);
         rank5(b14, "B14", false);
       }
       AB.saveSession();
       AB.renderAll();
       btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
-      alert(`✅ ${dolu} puan hücresi ${H.gunSayisi} günlük sonuç arşivinden dolduruldu.\n(A1-A3 sahip, B16-B18 antrenör, C1/C3 jokey, B1 ikramiye, B5, B12, B14, B15)\nElle girdiğiniz puanların ÜZERİNE YAZILMADI. Arşiv büyüdükçe isabet artar.`);
+      alert(`✅ ${dolu} puan hücresi ${H.gunSayisi} günlük sonuç arşivinden dolduruldu.\n(A1-A3 sahip, B16-B18 antrenör, C1/C3 jokey, B1 ikramiye, B5, B6 tahmini derece, B9 pace, B12, B14, B15)\nElle girdiğiniz puanların ÜZERİNE YAZILMADI. Arşiv büyüdükçe isabet artar.`);
     } catch (e) {
       btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
       alert("Hata: " + e.message);
