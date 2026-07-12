@@ -1,0 +1,12 @@
+{
+ "ad": "ZİNAMIN",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2025-06-18-istanbul-6-backfill",
+  "2026-07-12-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 4.9,
+ "son_guncelleme": "2026-07-12-istanbul-2",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 1
+}

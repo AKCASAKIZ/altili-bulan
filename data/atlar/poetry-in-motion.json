@@ -1,0 +1,18 @@
+{
+ "ad": "POETRY IN MOTION",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-02-04-adana-6-backfill",
+  "2025-06-04-istanbul-6-backfill",
+  "2025-08-22-istanbul-7-backfill",
+  "2025-09-21-istanbul-8-backfill",
+  "2025-10-10-istanbul-7-backfill",
+  "2026-04-19-istanbul-7-backfill",
+  "2026-05-15-istanbul-6-backfill",
+  "2026-07-12-istanbul-6"
+ ],
+ "erken_gec_delta_ema": 2.339,
+ "son_atak_delta_ema": 0.531,
+ "son_guncelleme": "2026-07-12-istanbul-6",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,19 @@
+{
+ "ad": "KIZGIN YÜREK",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-02-22-istanbul-5-backfill",
+  "2025-03-08-istanbul-9-backfill",
+  "2025-06-18-istanbul-1-backfill",
+  "2025-07-06-istanbul-4-backfill",
+  "2026-01-07-istanbul-8-backfill",
+  "2026-04-14-kocaeli-10-backfill",
+  "2026-04-22-istanbul-4-backfill",
+  "2026-05-03-istanbul-8-backfill",
+  "2026-07-12-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 1.32,
+ "son_atak_delta_ema": 0.707,
+ "son_guncelleme": "2026-07-12-istanbul-7",
+ "gecmis_dolduruldu": true
+}

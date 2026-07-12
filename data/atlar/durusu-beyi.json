@@ -1,0 +1,19 @@
+{
+ "ad": "DURUSU BEYİ",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-01-23-antalya-4-backfill",
+  "2025-03-25-antalya-4-backfill",
+  "2025-05-28-istanbul-6-backfill",
+  "2025-06-11-istanbul-5-backfill",
+  "2025-07-16-istanbul-2-backfill",
+  "2026-05-08-istanbul-4-backfill",
+  "2026-05-24-istanbul-1-backfill",
+  "2026-07-12-istanbul-7-backfill",
+  "2026-07-12-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 6.11,
+ "son_guncelleme": "2026-07-12-istanbul-7",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

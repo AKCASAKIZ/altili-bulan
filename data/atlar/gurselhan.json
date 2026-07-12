@@ -1,0 +1,21 @@
+{
+ "ad": "GÜRSELHAN",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-02-27-izmir-1-backfill",
+  "2025-03-14-bursa-7-backfill",
+  "2025-03-27-izmir-4-backfill",
+  "2025-10-18-izmir-5-backfill",
+  "2025-11-28-izmir-6-backfill",
+  "2026-01-16-antalya-4-backfill",
+  "2026-02-15-izmir-6-backfill",
+  "2026-04-02-izmir-4-backfill",
+  "2026-05-21-izmir-2-backfill",
+  "2026-05-30-izmir-8-backfill",
+  "2026-07-12-izmir-3"
+ ],
+ "erken_gec_delta_ema": 0.383,
+ "son_atak_delta_ema": 0.45,
+ "son_guncelleme": "2026-07-12-izmir-3",
+ "gecmis_dolduruldu": true
+}

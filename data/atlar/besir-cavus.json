@@ -1,0 +1,25 @@
+{
+ "ad": "BEŞİR ÇAVUŞ",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-12-06-adana-7-backfill",
+  "2026-01-03-adana-7-backfill",
+  "2026-01-17-adana-6-backfill",
+  "2026-02-07-adana-2-backfill",
+  "2026-02-17-adana-5-backfill",
+  "2026-03-08-adana-3-backfill",
+  "2026-03-15-adana-2-backfill",
+  "2026-03-23-adana-2-backfill",
+  "2026-03-31-adana-5-backfill",
+  "2026-04-07-adana-6-backfill",
+  "2026-04-14-kocaeli-3-backfill",
+  "2026-05-30-ankara-9-backfill",
+  "2026-06-18-kocaeli-2-backfill",
+  "2026-07-12-izmir-5-backfill",
+  "2026-07-12-izmir-5"
+ ],
+ "erken_gec_delta_ema": 3.016,
+ "son_guncelleme": "2026-07-12-izmir-5",
+ "son_atak_delta_ema": 0.294,
+ "gecmis_dolduruldu": true
+}

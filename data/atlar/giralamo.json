@@ -1,0 +1,19 @@
+{
+ "ad": "GIRALAMO",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2026-02-03-adana-1-backfill",
+  "2026-03-23-adana-4-backfill",
+  "2026-04-18-ankara-6-backfill",
+  "2026-05-05-ankara-5-backfill",
+  "2026-06-06-ankara-3-backfill",
+  "2026-06-14-istanbul-1-backfill",
+  "2026-06-24-istanbul-7-backfill",
+  "2026-07-12-istanbul-3-backfill",
+  "2026-07-12-istanbul-3"
+ ],
+ "erken_gec_delta_ema": 2.499,
+ "son_guncelleme": "2026-07-12-istanbul-3",
+ "son_atak_delta_ema": 1,
+ "gecmis_dolduruldu": true
+}

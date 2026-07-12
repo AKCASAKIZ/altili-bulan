@@ -1,0 +1,23 @@
+{
+ "ad": "KING OF TIME",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-10-18-ankara-9-backfill",
+  "2025-11-04-kocaeli-1-backfill",
+  "2025-11-13-ankara-5-backfill",
+  "2025-11-25-antalya-6-backfill",
+  "2026-04-30-ankara-3-backfill",
+  "2026-05-12-ankara-9-backfill",
+  "2026-05-21-ankara-1-backfill",
+  "2026-05-31-istanbul-2-backfill",
+  "2026-06-13-ankara-4-backfill",
+  "2026-06-21-istanbul-2-backfill",
+  "2026-07-01-istanbul-3-backfill",
+  "2026-07-12-istanbul-1-backfill",
+  "2026-07-12-istanbul-1"
+ ],
+ "erken_gec_delta_ema": 0.739,
+ "son_atak_delta_ema": -0.675,
+ "son_guncelleme": "2026-07-12-istanbul-1",
+ "gecmis_dolduruldu": true
+}

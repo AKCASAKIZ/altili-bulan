@@ -1,0 +1,25 @@
+{
+ "ad": "SERİNTEPE",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-08-05-ankara-5-backfill",
+  "2025-08-30-izmir-1-backfill",
+  "2025-09-13-izmir-9-backfill",
+  "2025-09-25-ankara-5-backfill",
+  "2025-10-24-istanbul-8-backfill",
+  "2025-11-01-izmir-2-backfill",
+  "2026-01-17-istanbul-3-backfill",
+  "2026-02-12-izmir-6-backfill",
+  "2026-02-21-istanbul-1-backfill",
+  "2026-05-02-izmir-2-backfill",
+  "2026-05-09-izmir-1-backfill",
+  "2026-05-21-izmir-9-backfill",
+  "2026-06-05-bursa-5-backfill",
+  "2026-07-12-izmir-3-backfill",
+  "2026-07-12-izmir-3"
+ ],
+ "erken_gec_delta_ema": -0.6,
+ "son_guncelleme": "2026-07-12-izmir-3",
+ "son_atak_delta_ema": -1.17,
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,19 @@
+{
+ "ad": "LION ICARDI",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-12-02-adana-7-backfill",
+  "2026-01-17-adana-3-backfill",
+  "2026-02-01-adana-5-backfill",
+  "2026-02-22-adana-1-backfill",
+  "2026-03-31-adana-7-backfill",
+  "2026-04-30-ankara-3-backfill",
+  "2026-06-07-istanbul-1-backfill",
+  "2026-07-03-istanbul-8-backfill",
+  "2026-07-12-istanbul-1"
+ ],
+ "erken_gec_delta_ema": 1.145,
+ "son_guncelleme": "2026-07-12-istanbul-1",
+ "son_atak_delta_ema": 0.882,
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,15 @@
+{
+ "ad": "ESENYIL",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-08-16-izmir-7-backfill",
+  "2025-10-02-izmir-3-backfill",
+  "2025-10-21-adana-7-backfill",
+  "2026-05-25-bursa-5-backfill",
+  "2026-07-12-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 4.177,
+ "son_guncelleme": "2026-07-12-istanbul-2",
+ "son_atak_delta_ema": 7.7,
+ "gecmis_dolduruldu": true
+}

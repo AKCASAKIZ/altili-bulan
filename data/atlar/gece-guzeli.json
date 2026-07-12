@@ -1,0 +1,16 @@
+{
+ "ad": "GECE GÜZELİ",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-06-03-kocaeli-1-backfill",
+  "2025-08-21-kocaeli-2-backfill",
+  "2025-11-10-bursa-4-backfill",
+  "2026-06-11-kocaeli-9-backfill",
+  "2026-06-26-kocaeli-8-backfill",
+  "2026-07-12-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 1.049,
+ "son_guncelleme": "2026-07-12-istanbul-2",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

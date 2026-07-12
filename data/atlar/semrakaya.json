@@ -1,0 +1,26 @@
+{
+ "ad": "SEMRAKAYA",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-05-04-istanbul-1-backfill",
+  "2025-05-14-istanbul-3-backfill",
+  "2025-06-06-istanbul-4-backfill",
+  "2025-06-18-istanbul-6-backfill",
+  "2025-08-01-istanbul-4-backfill",
+  "2025-08-08-istanbul-7-backfill",
+  "2025-09-25-izmir-8-backfill",
+  "2025-10-12-istanbul-5-backfill",
+  "2025-11-07-istanbul-8-backfill",
+  "2025-11-14-istanbul-8-backfill",
+  "2026-05-29-istanbul-4-backfill",
+  "2026-06-05-istanbul-8-backfill",
+  "2026-06-16-ankara-7-backfill",
+  "2026-07-03-istanbul-4-backfill",
+  "2026-07-12-istanbul-2-backfill",
+  "2026-07-12-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 4.474,
+ "son_guncelleme": "2026-07-12-istanbul-2",
+ "son_atak_delta_ema": 2.211,
+ "gecmis_dolduruldu": true
+}

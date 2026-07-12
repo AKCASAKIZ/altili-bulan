@@ -1,0 +1,13 @@
+{
+ "ad": "MILLENNIUM FALCON",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-11-04-kocaeli-1-backfill",
+  "2025-12-06-istanbul-7-backfill",
+  "2026-07-12-istanbul-9"
+ ],
+ "erken_gec_delta_ema": 4.095,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-12-istanbul-9",
+ "gecmis_dolduruldu": true
+}

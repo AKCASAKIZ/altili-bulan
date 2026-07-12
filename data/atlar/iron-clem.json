@@ -1,0 +1,13 @@
+{
+ "ad": "IRON CLEM",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-05-25-istanbul-2-backfill",
+  "2025-09-10-istanbul-3-backfill",
+  "2026-07-12-istanbul-9"
+ ],
+ "erken_gec_delta_ema": 0.81,
+ "son_guncelleme": "2026-07-12-istanbul-9",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
+}

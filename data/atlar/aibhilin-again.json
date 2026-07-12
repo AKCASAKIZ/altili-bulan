@@ -1,0 +1,17 @@
+{
+ "ad": "AIBHILIN AGAIN",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-04-23-istanbul-5-backfill",
+  "2025-05-11-istanbul-9-backfill",
+  "2025-07-25-bursa-9-backfill",
+  "2025-08-29-istanbul-10-backfill",
+  "2025-10-03-bursa-9-backfill",
+  "2026-07-12-istanbul-4-backfill",
+  "2026-07-12-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 1.699,
+ "son_guncelleme": "2026-07-12-istanbul-4",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

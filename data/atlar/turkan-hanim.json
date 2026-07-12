@@ -1,0 +1,26 @@
+{
+ "ad": "TÜRKAN HANIM",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-11-20-izmir-3-backfill",
+  "2025-12-21-izmir-1-backfill",
+  "2025-12-28-izmir-5-backfill",
+  "2026-01-11-izmir-4-backfill",
+  "2026-02-15-izmir-7-backfill",
+  "2026-03-08-izmir-5-backfill",
+  "2026-03-19-izmir-7-backfill",
+  "2026-03-27-izmir-3-backfill",
+  "2026-04-16-izmir-5-backfill",
+  "2026-05-14-izmir-7-backfill",
+  "2026-05-23-izmir-7-backfill",
+  "2026-05-30-izmir-8-backfill",
+  "2026-06-20-izmir-1-backfill",
+  "2026-06-27-izmir-1-backfill",
+  "2026-07-12-izmir-3-backfill",
+  "2026-07-12-izmir-3"
+ ],
+ "erken_gec_delta_ema": 2.665,
+ "son_atak_delta_ema": 1.63,
+ "son_guncelleme": "2026-07-12-izmir-3",
+ "gecmis_dolduruldu": true
+}

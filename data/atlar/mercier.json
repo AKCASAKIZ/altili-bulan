@@ -1,0 +1,13 @@
+{
+ "ad": "MERCIER",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-02-14-istanbul-3-backfill",
+  "2026-03-11-istanbul-3-backfill",
+  "2026-07-12-istanbul-3"
+ ],
+ "erken_gec_delta_ema": -0.155,
+ "son_atak_delta_ema": 0,
+ "son_guncelleme": "2026-07-12-istanbul-3",
+ "gecmis_dolduruldu": true
+}

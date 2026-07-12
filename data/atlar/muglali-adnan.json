@@ -1,0 +1,17 @@
+{
+ "ad": "MUĞLALI ADNAN",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-01-23-izmir-5-backfill",
+  "2025-10-09-izmir-9-backfill",
+  "2025-10-30-izmir-7-backfill",
+  "2025-11-13-izmir-2-backfill",
+  "2026-06-07-izmir-1-backfill",
+  "2026-07-12-izmir-7-backfill",
+  "2026-07-12-izmir-7"
+ ],
+ "erken_gec_delta_ema": 1.148,
+ "son_guncelleme": "2026-07-12-izmir-7",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

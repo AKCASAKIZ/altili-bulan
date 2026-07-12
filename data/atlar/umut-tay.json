@@ -1,0 +1,17 @@
+{
+ "ad": "UMUT TAY",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-06-28-izmir-6-backfill",
+  "2025-07-06-izmir-7-backfill",
+  "2025-12-25-izmir-2-backfill",
+  "2026-02-13-izmir-1-backfill",
+  "2026-05-21-izmir-2-backfill",
+  "2026-06-06-izmir-1-backfill",
+  "2026-07-12-izmir-6"
+ ],
+ "erken_gec_delta_ema": -2.975,
+ "son_atak_delta_ema": -2.7,
+ "son_guncelleme": "2026-07-12-izmir-6",
+ "gecmis_dolduruldu": true
+}

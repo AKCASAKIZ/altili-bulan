@@ -1,0 +1,19 @@
+{
+ "ad": "CALEDONIE",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-02-27-antalya-6-backfill",
+  "2025-06-09-bursa-4-backfill",
+  "2025-06-23-bursa-8-backfill",
+  "2025-07-25-bursa-2-backfill",
+  "2025-08-22-bursa-2-backfill",
+  "2025-09-15-bursa-7-backfill",
+  "2025-10-19-istanbul-8-backfill",
+  "2026-05-11-bursa-10-backfill",
+  "2026-07-12-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 2.512,
+ "son_atak_delta_ema": 0.878,
+ "son_guncelleme": "2026-07-12-istanbul-4",
+ "gecmis_dolduruldu": true
+}

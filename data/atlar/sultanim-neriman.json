@@ -1,0 +1,12 @@
+{
+ "ad": "SULTANIM NERİMAN",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-03-20-izmir-1-backfill",
+  "2026-07-12-istanbul-9"
+ ],
+ "erken_gec_delta_ema": 2.85,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-12-istanbul-9",
+ "gecmis_dolduruldu": true
+}

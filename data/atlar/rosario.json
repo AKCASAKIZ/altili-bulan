@@ -1,0 +1,12 @@
+{
+ "ad": "ROSARIO",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-07-12-istanbul-1-backfill",
+  "2026-07-12-istanbul-1"
+ ],
+ "erken_gec_delta_ema": 2.0,
+ "son_atak_delta_ema": 7.0,
+ "son_guncelleme": "2026-07-12-istanbul-1",
+ "gecmis_dolduruldu": true
+}

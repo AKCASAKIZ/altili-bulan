@@ -1,0 +1,23 @@
+{
+ "ad": "DAYWATCH",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-06-11-istanbul-4-backfill",
+  "2025-07-02-istanbul-4-backfill",
+  "2025-07-16-istanbul-9-backfill",
+  "2025-07-30-istanbul-5-backfill",
+  "2025-08-31-istanbul-2-backfill",
+  "2025-09-17-istanbul-5-backfill",
+  "2025-10-22-istanbul-10-backfill",
+  "2025-11-16-istanbul-9-backfill",
+  "2026-05-29-istanbul-1-backfill",
+  "2026-06-05-istanbul-3-backfill",
+  "2026-07-03-istanbul-7-backfill",
+  "2026-07-12-istanbul-4-backfill",
+  "2026-07-12-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 3.664,
+ "son_guncelleme": "2026-07-12-istanbul-4",
+ "son_atak_delta_ema": 0.617,
+ "gecmis_dolduruldu": true
+}

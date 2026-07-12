@@ -1,0 +1,18 @@
+{
+ "ad": "EL GLADIADOR",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-06-11-istanbul-1-backfill",
+  "2025-07-11-istanbul-3-backfill",
+  "2025-08-03-istanbul-6-backfill",
+  "2025-09-26-istanbul-6-backfill",
+  "2026-05-01-istanbul-6-backfill",
+  "2026-05-22-istanbul-2-backfill",
+  "2026-07-12-istanbul-3-backfill",
+  "2026-07-12-istanbul-3"
+ ],
+ "erken_gec_delta_ema": 0.095,
+ "son_guncelleme": "2026-07-12-istanbul-3",
+ "son_atak_delta_ema": -0.3,
+ "gecmis_dolduruldu": true
+}

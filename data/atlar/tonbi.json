@@ -1,0 +1,21 @@
+{
+ "ad": "TONBİ",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-01-23-antalya-5-backfill",
+  "2025-02-13-antalya-5-backfill",
+  "2025-03-13-antalya-6-backfill",
+  "2025-05-18-istanbul-6-backfill",
+  "2025-07-25-istanbul-8-backfill",
+  "2026-03-14-istanbul-4-backfill",
+  "2026-04-19-istanbul-6-backfill",
+  "2026-06-10-istanbul-9-backfill",
+  "2026-06-28-istanbul-7-backfill",
+  "2026-07-12-istanbul-6-backfill",
+  "2026-07-12-istanbul-6"
+ ],
+ "erken_gec_delta_ema": 0.918,
+ "son_guncelleme": "2026-07-12-istanbul-6",
+ "son_atak_delta_ema": 0.118,
+ "gecmis_dolduruldu": true
+}

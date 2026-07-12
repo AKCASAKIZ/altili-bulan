@@ -1,0 +1,12 @@
+{
+ "ad": "İLKUTHAN",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-04-01-istanbul-8-backfill",
+  "2026-07-12-istanbul-7"
+ ],
+ "erken_gec_delta_ema": -1.4,
+ "son_atak_delta_ema": -0.7,
+ "son_guncelleme": "2026-07-12-istanbul-7",
+ "gecmis_dolduruldu": true
+}
