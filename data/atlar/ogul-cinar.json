@@ -1,0 +1,26 @@
+{
+ "ad": "OĞUL ÇINAR",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-08-28-kocaeli-10-backfill",
+  "2025-09-08-bursa-2-backfill",
+  "2025-09-15-bursa-6-backfill",
+  "2025-10-13-bursa-8-backfill",
+  "2025-10-27-bursa-7-backfill",
+  "2025-11-17-bursa-1-backfill",
+  "2025-12-19-bursa-5-backfill",
+  "2026-01-05-bursa-4-backfill",
+  "2026-01-19-bursa-2-backfill",
+  "2026-02-03-antalya-7-backfill",
+  "2026-02-27-antalya-6-backfill",
+  "2026-03-26-antalya-4-backfill",
+  "2026-04-20-bursa-7-backfill",
+  "2026-06-14-izmir-1-backfill",
+  "2026-07-14-kocaeli-8-backfill",
+  "2026-07-14-kocaeli-8"
+ ],
+ "erken_gec_delta_ema": -0.12,
+ "son_guncelleme": "2026-07-14-kocaeli-8",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

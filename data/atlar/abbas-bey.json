@@ -1,0 +1,25 @@
+{
+ "ad": "ABBAS BEY",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-05-31-ankara-6-backfill",
+  "2025-06-14-ankara-4-backfill",
+  "2025-06-20-istanbul-5-backfill",
+  "2025-06-27-istanbul-4-backfill",
+  "2025-07-16-istanbul-5-backfill",
+  "2025-07-22-ankara-6-backfill",
+  "2025-08-01-istanbul-5-backfill",
+  "2025-08-17-istanbul-5-backfill",
+  "2025-08-30-ankara-6-backfill",
+  "2026-03-24-adana-7-backfill",
+  "2026-04-05-adana-7-backfill",
+  "2026-04-12-adana-5-backfill",
+  "2026-04-23-ankara-3-backfill",
+  "2026-07-14-ankara-7-backfill",
+  "2026-07-14-ankara-7"
+ ],
+ "erken_gec_delta_ema": 0.694,
+ "son_atak_delta_ema": 0.091,
+ "son_guncelleme": "2026-07-14-ankara-7",
+ "gecmis_dolduruldu": true
+}

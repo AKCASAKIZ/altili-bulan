@@ -1,0 +1,24 @@
+{
+ "ad": "TUNCER",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-03-23-izmir-4-backfill",
+  "2025-04-26-ankara-2-backfill",
+  "2025-06-03-kocaeli-9-backfill",
+  "2025-06-13-bursa-7-backfill",
+  "2025-07-31-kocaeli-9-backfill",
+  "2025-08-24-izmir-6-backfill",
+  "2025-09-18-izmir-7-backfill",
+  "2025-10-23-izmir-6-backfill",
+  "2026-02-16-bursa-4-backfill",
+  "2026-05-18-bursa-2-backfill",
+  "2026-06-02-kocaeli-6-backfill",
+  "2026-06-15-bursa-7-backfill",
+  "2026-07-04-ankara-6-backfill",
+  "2026-07-14-ankara-7-backfill",
+  "2026-07-14-ankara-7"
+ ],
+ "erken_gec_delta_ema": -1.308,
+ "son_guncelleme": "2026-07-14-ankara-7",
+ "gecmis_dolduruldu": true
+}

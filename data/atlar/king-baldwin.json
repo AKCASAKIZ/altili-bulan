@@ -1,0 +1,11 @@
+{
+ "ad": "KING BALDWIN",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-06-08-sanliurfa-7-backfill",
+  "2026-07-14-kocaeli-2"
+ ],
+ "erken_gec_delta_ema": 1.6,
+ "son_guncelleme": "2026-07-14-kocaeli-2",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,22 @@
+{
+ "ad": "SKYDIVE",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-06-08-adana-8-backfill",
+  "2025-12-06-istanbul-4-backfill",
+  "2026-02-02-bursa-5-backfill",
+  "2026-02-20-bursa-2-backfill",
+  "2026-03-11-istanbul-2-backfill",
+  "2026-04-15-elazig-1-backfill",
+  "2026-04-29-elazig-6-backfill",
+  "2026-05-25-sanliurfa-3-backfill",
+  "2026-06-10-elazig-4-backfill",
+  "2026-06-22-elazig-3-backfill",
+  "2026-07-14-ankara-4-backfill",
+  "2026-07-14-ankara-4"
+ ],
+ "erken_gec_delta_ema": -0.653,
+ "son_guncelleme": "2026-07-14-ankara-4",
+ "son_atak_delta_ema": -0.058,
+ "gecmis_dolduruldu": true
+}

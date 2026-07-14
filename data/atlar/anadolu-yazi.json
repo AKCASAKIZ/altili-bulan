@@ -1,0 +1,12 @@
+{
+ "ad": "ANADOLU YAZI",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2025-12-23-adana-7-backfill",
+  "2026-07-14-kocaeli-5"
+ ],
+ "erken_gec_delta_ema": 7.45,
+ "son_guncelleme": "2026-07-14-kocaeli-5",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
+}

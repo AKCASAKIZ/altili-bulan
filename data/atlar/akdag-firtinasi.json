@@ -1,0 +1,16 @@
+{
+ "ad": "AKDAĞ FIRTINASI",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-07-09-elazig-6-backfill",
+  "2025-07-19-ankara-4-backfill",
+  "2025-10-22-elazig-7-backfill",
+  "2025-11-22-adana-4-backfill",
+  "2026-01-28-sanliurfa-5-backfill",
+  "2026-07-14-ankara-7"
+ ],
+ "erken_gec_delta_ema": -2.251,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-14-ankara-7",
+ "gecmis_dolduruldu": true
+}

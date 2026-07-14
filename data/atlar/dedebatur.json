@@ -1,0 +1,13 @@
+{
+ "ad": "DEDEBATUR",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-03-07-adana-7-backfill",
+  "2026-06-23-ankara-4-backfill",
+  "2026-07-14-ankara-9"
+ ],
+ "erken_gec_delta_ema": 7.21,
+ "son_guncelleme": "2026-07-14-ankara-9",
+ "son_atak_delta_ema": 7,
+ "gecmis_dolduruldu": true
+}

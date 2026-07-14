@@ -1,0 +1,26 @@
+{
+ "ad": "FIRE AT WILL",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-05-13-antalya-3-backfill",
+  "2025-07-01-kocaeli-1-backfill",
+  "2025-07-09-istanbul-8-backfill",
+  "2025-07-30-istanbul-2-backfill",
+  "2025-09-16-kocaeli-5-backfill",
+  "2025-09-23-kocaeli-4-backfill",
+  "2025-10-28-kocaeli-4-backfill",
+  "2026-01-09-bursa-1-backfill",
+  "2026-02-02-bursa-2-backfill",
+  "2026-03-02-bursa-4-backfill",
+  "2026-04-14-kocaeli-2-backfill",
+  "2026-05-05-kocaeli-3-backfill",
+  "2026-05-12-kocaeli-5-backfill",
+  "2026-06-02-kocaeli-5-backfill",
+  "2026-06-12-bursa-7-backfill",
+  "2026-07-14-kocaeli-3"
+ ],
+ "erken_gec_delta_ema": 1.045,
+ "son_guncelleme": "2026-07-14-kocaeli-3",
+ "son_atak_delta_ema": -0.354,
+ "gecmis_dolduruldu": true
+}

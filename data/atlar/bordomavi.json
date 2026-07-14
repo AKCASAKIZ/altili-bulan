@@ -1,0 +1,14 @@
+{
+ "ad": "BORDOMAVİ",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-02-16-adana-1-backfill",
+  "2025-04-24-ankara-1-backfill",
+  "2025-11-26-istanbul-2-backfill",
+  "2025-12-28-adana-4-backfill",
+  "2026-07-14-ankara-7"
+ ],
+ "erken_gec_delta_ema": 0.429,
+ "son_guncelleme": "2026-07-14-ankara-7",
+ "gecmis_dolduruldu": true
+}

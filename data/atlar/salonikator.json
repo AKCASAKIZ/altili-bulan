@@ -1,0 +1,16 @@
+{
+ "ad": "SALONIKATOR",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-05-30-bursa-8-backfill",
+  "2026-02-12-antalya-3-backfill",
+  "2026-03-05-antalya-1-backfill",
+  "2026-03-17-antalya-5-backfill",
+  "2026-04-09-antalya-1-backfill",
+  "2026-07-14-kocaeli-3"
+ ],
+ "erken_gec_delta_ema": 1.913,
+ "son_guncelleme": "2026-07-14-kocaeli-3",
+ "son_atak_delta_ema": 2.052,
+ "gecmis_dolduruldu": true
+}

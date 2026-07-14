@@ -1,0 +1,15 @@
+{
+ "ad": "TANER ABİ",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-05-26-kocaeli-7-backfill",
+  "2026-06-09-kocaeli-1-backfill",
+  "2026-06-30-kocaeli-3-backfill",
+  "2026-07-14-kocaeli-3-backfill",
+  "2026-07-14-kocaeli-3"
+ ],
+ "erken_gec_delta_ema": 0.644,
+ "son_guncelleme": "2026-07-14-kocaeli-3",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

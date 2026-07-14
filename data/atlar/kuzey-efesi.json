@@ -1,0 +1,12 @@
+{
+ "ad": "KUZEY EFESİ",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-03-09-bursa-4-backfill",
+  "2026-04-09-izmir-3-backfill",
+  "2026-07-14-kocaeli-7"
+ ],
+ "erken_gec_delta_ema": 1.005,
+ "son_guncelleme": "2026-07-14-kocaeli-7",
+ "gecmis_dolduruldu": true
+}

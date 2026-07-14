@@ -1,0 +1,23 @@
+{
+ "ad": "DİNAMİT KIZ",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-06-03-ankara-5-backfill",
+  "2025-09-07-adana-9-backfill",
+  "2025-09-28-adana-2-backfill",
+  "2025-10-12-adana-4-backfill",
+  "2025-11-23-adana-4-backfill",
+  "2026-02-05-antalya-3-backfill",
+  "2026-02-17-antalya-5-backfill",
+  "2026-02-27-antalya-3-backfill",
+  "2026-04-07-antalya-3-backfill",
+  "2026-05-09-ankara-9-backfill",
+  "2026-06-20-ankara-10-backfill",
+  "2026-07-14-ankara-5-backfill",
+  "2026-07-14-ankara-5"
+ ],
+ "erken_gec_delta_ema": -0.83,
+ "son_guncelleme": "2026-07-14-ankara-5",
+ "son_atak_delta_ema": -0.602,
+ "gecmis_dolduruldu": true
+}

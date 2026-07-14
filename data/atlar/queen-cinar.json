@@ -1,0 +1,11 @@
+{
+ "ad": "QUEEN ÇINAR",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-07-14-ankara-3-backfill",
+  "2026-07-14-ankara-3"
+ ],
+ "erken_gec_delta_ema": 5.0,
+ "son_guncelleme": "2026-07-14-ankara-3",
+ "gecmis_dolduruldu": true
+}

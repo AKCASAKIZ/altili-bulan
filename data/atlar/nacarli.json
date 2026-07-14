@@ -1,0 +1,21 @@
+{
+ "ad": "NACARLI",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-04-17-ankara-1-backfill",
+  "2025-05-06-ankara-9-backfill",
+  "2025-06-01-adana-9-backfill",
+  "2025-06-12-ankara-7-backfill",
+  "2025-06-29-istanbul-1-backfill",
+  "2025-07-08-ankara-7-backfill",
+  "2025-07-29-ankara-8-backfill",
+  "2026-05-28-ankara-3-backfill",
+  "2026-06-18-kocaeli-2-backfill",
+  "2026-07-14-ankara-7-backfill",
+  "2026-07-14-ankara-7"
+ ],
+ "erken_gec_delta_ema": 1.236,
+ "son_guncelleme": "2026-07-14-ankara-7",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

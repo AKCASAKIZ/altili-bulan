@@ -1,0 +1,12 @@
+{
+ "ad": "TAŞPINAR",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-09-13-ankara-3-backfill",
+  "2026-06-04-ankara-10-backfill",
+  "2026-07-14-ankara-9"
+ ],
+ "erken_gec_delta_ema": 0.175,
+ "son_guncelleme": "2026-07-14-ankara-9",
+ "gecmis_dolduruldu": true
+}

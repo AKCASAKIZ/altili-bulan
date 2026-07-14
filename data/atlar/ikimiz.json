@@ -1,0 +1,14 @@
+{
+ "ad": "İKİMİZ",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2025-07-05-ankara-1-backfill",
+  "2025-09-04-ankara-2-backfill",
+  "2026-05-21-ankara-4-backfill",
+  "2026-07-14-ankara-9"
+ ],
+ "erken_gec_delta_ema": -1.331,
+ "son_guncelleme": "2026-07-14-ankara-9",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

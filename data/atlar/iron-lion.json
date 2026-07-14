@@ -1,0 +1,25 @@
+{
+ "ad": "IRON LION",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-10-30-izmir-4-backfill",
+  "2025-12-21-izmir-9-backfill",
+  "2026-01-09-bursa-4-backfill",
+  "2026-01-16-izmir-6-backfill",
+  "2026-01-29-izmir-8-backfill",
+  "2026-02-06-izmir-6-backfill",
+  "2026-03-05-izmir-9-backfill",
+  "2026-03-19-izmir-3-backfill",
+  "2026-04-15-elazig-1-backfill",
+  "2026-05-06-elazig-1-backfill",
+  "2026-05-13-elazig-3-backfill",
+  "2026-06-03-elazig-3-backfill",
+  "2026-06-17-elazig-6-backfill",
+  "2026-07-14-kocaeli-7-backfill",
+  "2026-07-14-kocaeli-7"
+ ],
+ "erken_gec_delta_ema": -0.26,
+ "son_guncelleme": "2026-07-14-kocaeli-7",
+ "son_atak_delta_ema": -0.701,
+ "gecmis_dolduruldu": true
+}

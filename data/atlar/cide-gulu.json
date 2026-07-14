@@ -1,0 +1,12 @@
+{
+ "ad": "CİDE GÜLÜ",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-01-19-bursa-4-backfill",
+  "2026-07-14-kocaeli-5"
+ ],
+ "erken_gec_delta_ema": 1.85,
+ "son_guncelleme": "2026-07-14-kocaeli-5",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": -1
+}
