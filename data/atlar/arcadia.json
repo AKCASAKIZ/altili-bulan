@@ -1,0 +1,12 @@
+{
+ "ad": "ARCADİA",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-05-18-bursa-9-backfill",
+  "2026-07-13-bursa-6"
+ ],
+ "erken_gec_delta_ema": 1.55,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-13-bursa-6",
+ "gecmis_dolduruldu": true
+}

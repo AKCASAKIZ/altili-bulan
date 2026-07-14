@@ -1,0 +1,11 @@
+{
+ "ad": "VOODOO PEOPLE",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-04-25-izmir-8-backfill",
+  "2026-07-13-bursa-10"
+ ],
+ "erken_gec_delta_ema": -3.15,
+ "son_guncelleme": "2026-07-13-bursa-10",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,15 @@
+{
+ "ad": "ZEKİ REİS",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-12-30-adana-8-backfill",
+  "2026-05-15-bursa-6-backfill",
+  "2026-06-15-bursa-5-backfill",
+  "2026-06-25-bursa-3-backfill",
+  "2026-07-13-bursa-1"
+ ],
+ "erken_gec_delta_ema": 3.113,
+ "son_guncelleme": "2026-07-13-bursa-1",
+ "son_atak_delta_ema": 0.3,
+ "gecmis_dolduruldu": true
+}

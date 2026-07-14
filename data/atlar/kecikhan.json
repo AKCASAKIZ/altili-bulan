@@ -1,0 +1,16 @@
+{
+ "ad": "KEÇİKHAN",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-03-17-bursa-4-backfill",
+  "2025-09-24-elazig-8-backfill",
+  "2025-10-22-elazig-3-backfill",
+  "2026-02-05-antalya-8-backfill",
+  "2026-03-10-antalya-4-backfill",
+  "2026-07-13-elazig-6"
+ ],
+ "erken_gec_delta_ema": -2.055,
+ "son_guncelleme": "2026-07-13-elazig-6",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 1
+}

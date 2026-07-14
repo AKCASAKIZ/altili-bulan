@@ -1,0 +1,14 @@
+{
+ "ad": "MOĞOLOĞLU",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-05-19-bursa-2-backfill",
+  "2025-06-12-izmir-6-backfill",
+  "2025-07-12-izmir-8-backfill",
+  "2025-08-09-izmir-6-backfill",
+  "2026-07-13-bursa-3"
+ ],
+ "erken_gec_delta_ema": 0.373,
+ "son_guncelleme": "2026-07-13-bursa-3",
+ "gecmis_dolduruldu": true
+}

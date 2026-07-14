@@ -1,0 +1,25 @@
+{
+ "ad": "HIZLI EREN",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-10-08-istanbul-4-backfill",
+  "2025-10-24-bursa-6-backfill",
+  "2025-10-31-istanbul-2-backfill",
+  "2025-11-14-bursa-4-backfill",
+  "2025-11-24-bursa-4-backfill",
+  "2025-12-01-bursa-4-backfill",
+  "2025-12-15-bursa-7-backfill",
+  "2025-12-24-istanbul-8-backfill",
+  "2026-01-05-bursa-4-backfill",
+  "2026-01-12-bursa-2-backfill",
+  "2026-06-14-izmir-1-backfill",
+  "2026-06-25-bursa-10-backfill",
+  "2026-07-03-bursa-10-backfill",
+  "2026-07-13-bursa-3-backfill",
+  "2026-07-13-bursa-3"
+ ],
+ "erken_gec_delta_ema": 6.646,
+ "son_guncelleme": "2026-07-13-bursa-3",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

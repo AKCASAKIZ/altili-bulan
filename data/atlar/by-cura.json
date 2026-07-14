@@ -1,0 +1,25 @@
+{
+ "ad": "BY CURA",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-01-26-adana-4-backfill",
+  "2025-02-08-adana-9-backfill",
+  "2025-03-15-adana-5-backfill",
+  "2025-05-15-ankara-4-backfill",
+  "2025-06-07-ankara-1-backfill",
+  "2025-12-17-sanliurfa-9-backfill",
+  "2026-01-05-sanliurfa-2-backfill",
+  "2026-02-18-sanliurfa-8-backfill",
+  "2026-03-23-sanliurfa-2-backfill",
+  "2026-03-31-adana-2-backfill",
+  "2026-04-08-elazig-5-backfill",
+  "2026-05-06-elazig-1-backfill",
+  "2026-05-13-elazig-3-backfill",
+  "2026-07-13-elazig-4-backfill",
+  "2026-07-13-elazig-4"
+ ],
+ "erken_gec_delta_ema": 2.812,
+ "son_guncelleme": "2026-07-13-elazig-4",
+ "son_atak_delta_ema": -0.463,
+ "gecmis_dolduruldu": true
+}

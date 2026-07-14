@@ -1,0 +1,15 @@
+{
+ "ad": "GAYECAN",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-10-15-elazig-1-backfill",
+  "2025-11-05-elazig-3-backfill",
+  "2025-11-30-adana-2-backfill",
+  "2025-12-20-adana-3-backfill",
+  "2026-07-13-elazig-8"
+ ],
+ "erken_gec_delta_ema": -0.235,
+ "son_atak_delta_ema": 0.49,
+ "son_guncelleme": "2026-07-13-elazig-8",
+ "gecmis_dolduruldu": true
+}

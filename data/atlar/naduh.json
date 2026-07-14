@@ -1,0 +1,19 @@
+{
+ "ad": "NADUH",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-01-28-antalya-8-backfill",
+  "2025-03-21-antalya-7-backfill",
+  "2025-06-03-kocaeli-5-backfill",
+  "2025-06-17-kocaeli-1-backfill",
+  "2025-07-03-kocaeli-5-backfill",
+  "2025-07-17-kocaeli-2-backfill",
+  "2025-07-22-kocaeli-2-backfill",
+  "2025-08-12-kocaeli-5-backfill",
+  "2026-07-13-elazig-4"
+ ],
+ "erken_gec_delta_ema": -0.046,
+ "son_guncelleme": "2026-07-13-elazig-4",
+ "son_atak_delta_ema": -0.946,
+ "gecmis_dolduruldu": true
+}

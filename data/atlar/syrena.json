@@ -1,0 +1,22 @@
+{
+ "ad": "SYRENA",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-04-18-istanbul-4-backfill",
+  "2025-05-09-istanbul-8-backfill",
+  "2025-08-24-istanbul-4-backfill",
+  "2025-09-06-istanbul-2-backfill",
+  "2025-12-10-istanbul-4-backfill",
+  "2025-12-27-istanbul-9-backfill",
+  "2026-03-28-adana-5-backfill",
+  "2026-05-10-adana-8-backfill",
+  "2026-05-31-adana-6-backfill",
+  "2026-06-11-ankara-10-backfill",
+  "2026-07-01-istanbul-5-backfill",
+  "2026-07-13-bursa-10-backfill",
+  "2026-07-13-bursa-10"
+ ],
+ "erken_gec_delta_ema": 0.965,
+ "son_guncelleme": "2026-07-13-bursa-10",
+ "gecmis_dolduruldu": true
+}

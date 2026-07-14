@@ -1,0 +1,17 @@
+{
+ "ad": "TELGRAF",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-08-27-elazig-4-backfill",
+  "2025-11-05-elazig-7-backfill",
+  "2025-11-26-elazig-3-backfill",
+  "2025-12-07-adana-4-backfill",
+  "2026-06-10-elazig-6-backfill",
+  "2026-07-08-elazig-2-backfill",
+  "2026-07-13-elazig-5-backfill",
+  "2026-07-13-elazig-5"
+ ],
+ "erken_gec_delta_ema": 0.043,
+ "son_guncelleme": "2026-07-13-elazig-5",
+ "gecmis_dolduruldu": true
+}

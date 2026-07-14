@@ -1,0 +1,12 @@
+{
+ "ad": "LUPIN",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-06-05-bursa-9-backfill",
+  "2026-07-13-bursa-1"
+ ],
+ "erken_gec_delta_ema": 4.5,
+ "son_atak_delta_ema": 0.7,
+ "son_guncelleme": "2026-07-13-bursa-1",
+ "gecmis_dolduruldu": true
+}

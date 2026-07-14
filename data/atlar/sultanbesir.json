@@ -1,0 +1,12 @@
+{
+ "ad": "SULTANBEŞİR",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-05-22-bursa-9-backfill",
+  "2026-07-13-bursa-6"
+ ],
+ "erken_gec_delta_ema": 8.95,
+ "son_guncelleme": "2026-07-13-bursa-6",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
+}

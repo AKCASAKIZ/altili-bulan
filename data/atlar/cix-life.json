@@ -1,0 +1,21 @@
+{
+ "ad": "CIX LIFE",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-03-03-bursa-4-backfill",
+  "2025-04-14-bursa-7-backfill",
+  "2025-09-12-bursa-8-backfill",
+  "2025-10-04-izmir-7-backfill",
+  "2025-11-04-kocaeli-7-backfill",
+  "2025-12-23-antalya-1-backfill",
+  "2026-04-10-antalya-2-backfill",
+  "2026-05-15-bursa-4-backfill",
+  "2026-06-16-kocaeli-5-backfill",
+  "2026-07-13-bursa-4-backfill",
+  "2026-07-13-bursa-4"
+ ],
+ "erken_gec_delta_ema": -0.202,
+ "son_atak_delta_ema": -0.211,
+ "son_guncelleme": "2026-07-13-bursa-4",
+ "gecmis_dolduruldu": true
+}

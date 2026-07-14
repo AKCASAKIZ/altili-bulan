@@ -1,0 +1,15 @@
+{
+ "ad": "NURBANU SULTAN",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-06-30-bursa-10-backfill",
+  "2025-09-18-izmir-4-backfill",
+  "2025-09-22-bursa-3-backfill",
+  "2025-11-07-bursa-10-backfill",
+  "2026-07-13-bursa-6"
+ ],
+ "erken_gec_delta_ema": 4.267,
+ "son_atak_delta_ema": 0.14,
+ "son_guncelleme": "2026-07-13-bursa-6",
+ "gecmis_dolduruldu": true
+}

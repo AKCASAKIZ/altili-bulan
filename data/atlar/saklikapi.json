@@ -1,0 +1,13 @@
+{
+ "ad": "SAKLIKAPI",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-12-17-sanliurfa-6-backfill",
+  "2026-04-01-elazig-6-backfill",
+  "2026-07-13-elazig-4"
+ ],
+ "erken_gec_delta_ema": 5.39,
+ "son_atak_delta_ema": 1.09,
+ "son_guncelleme": "2026-07-13-elazig-4",
+ "gecmis_dolduruldu": true
+}

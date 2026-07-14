@@ -1,0 +1,16 @@
+{
+ "ad": "MY CHAKRA",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-11-14-istanbul-1-backfill",
+  "2025-11-24-bursa-1-backfill",
+  "2025-12-08-bursa-3-backfill",
+  "2026-01-05-bursa-1-backfill",
+  "2026-01-23-bursa-5-backfill",
+  "2026-06-19-bursa-4-backfill",
+  "2026-07-13-bursa-9"
+ ],
+ "erken_gec_delta_ema": 1.151,
+ "son_guncelleme": "2026-07-13-bursa-9",
+ "gecmis_dolduruldu": true
+}
