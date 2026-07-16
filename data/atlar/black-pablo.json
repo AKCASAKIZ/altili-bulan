@@ -1,0 +1,21 @@
+{
+ "ad": "BLACK PABLO",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-02-02-adana-5-backfill",
+  "2025-03-25-adana-5-backfill",
+  "2025-07-31-ankara-6-backfill",
+  "2025-08-28-ankara-5-backfill",
+  "2025-11-30-adana-5-backfill",
+  "2026-01-03-adana-6-backfill",
+  "2026-03-28-adana-3-backfill",
+  "2026-04-12-adana-3-backfill",
+  "2026-05-16-ankara-8-backfill",
+  "2026-06-24-istanbul-6-backfill",
+  "2026-07-15-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 3.414,
+ "son_guncelleme": "2026-07-15-istanbul-7",
+ "son_atak_delta_ema": 0.3,
+ "gecmis_dolduruldu": true
+}

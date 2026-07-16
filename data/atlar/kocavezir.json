@@ -1,0 +1,15 @@
+{
+ "ad": "KOCAVEZİR",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-06-27-istanbul-8-backfill",
+  "2025-11-22-istanbul-7-backfill",
+  "2026-01-21-istanbul-7-backfill",
+  "2026-06-25-istanbul-7-backfill",
+  "2026-07-15-istanbul-7"
+ ],
+ "erken_gec_delta_ema": -0.585,
+ "son_atak_delta_ema": -0.69,
+ "son_guncelleme": "2026-07-15-istanbul-7",
+ "gecmis_dolduruldu": true
+}

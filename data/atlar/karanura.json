@@ -1,0 +1,22 @@
+{
+ "ad": "KARANURA",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-04-05-istanbul-6-backfill",
+  "2025-08-20-istanbul-5-backfill",
+  "2025-09-16-ankara-2-backfill",
+  "2025-09-24-istanbul-5-backfill",
+  "2025-10-12-adana-3-backfill",
+  "2025-10-28-adana-4-backfill",
+  "2025-11-16-adana-1-backfill",
+  "2025-12-11-antalya-2-backfill",
+  "2026-05-14-ankara-3-backfill",
+  "2026-05-22-istanbul-8-backfill",
+  "2026-06-02-ankara-5-backfill",
+  "2026-07-15-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 3.353,
+ "son_guncelleme": "2026-07-15-istanbul-4",
+ "son_atak_delta_ema": 1.582,
+ "gecmis_dolduruldu": true
+}

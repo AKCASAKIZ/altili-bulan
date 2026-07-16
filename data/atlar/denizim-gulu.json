@@ -1,0 +1,12 @@
+{
+ "ad": "DENİZİM GÜLÜ",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-07-09-elazig-3-backfill",
+  "2025-07-16-elazig-7-backfill",
+  "2026-07-15-elazig-7"
+ ],
+ "erken_gec_delta_ema": 0.66,
+ "son_guncelleme": "2026-07-15-elazig-7",
+ "gecmis_dolduruldu": true
+}

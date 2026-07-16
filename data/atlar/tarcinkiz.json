@@ -1,6 +1,6 @@
 {
  "ad": "TARÇINKIZ",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-06-05-izmir-10-backfill",
   "2025-06-13-bursa-5-backfill",
@@ -16,10 +16,11 @@
   "2026-05-22-bursa-4-backfill",
   "2026-06-19-istanbul-8-backfill",
   "2026-07-10-bursa-7-backfill",
-  "2026-07-10-bursa-7"
+  "2026-07-10-bursa-7",
+  "2026-07-15-istanbul-4"
  ],
- "erken_gec_delta_ema": 4.875,
- "son_guncelleme": "2026-07-10-bursa-7",
- "son_atak_delta_ema": 0.539,
+ "erken_gec_delta_ema": 3.112,
+ "son_guncelleme": "2026-07-15-istanbul-4",
+ "son_atak_delta_ema": 0.377,
  "gecmis_dolduruldu": true
 }

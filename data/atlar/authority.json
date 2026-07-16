@@ -1,0 +1,12 @@
+{
+ "ad": "AUTHORITY",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2025-06-20-istanbul-7-backfill",
+  "2026-07-15-istanbul-1"
+ ],
+ "erken_gec_delta_ema": 1.2,
+ "son_atak_delta_ema": 2,
+ "son_guncelleme": "2026-07-15-istanbul-1",
+ "gecmis_dolduruldu": true
+}

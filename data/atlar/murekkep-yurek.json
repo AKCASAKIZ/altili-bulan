@@ -1,0 +1,17 @@
+{
+ "ad": "MÜREKKEP YÜREK",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-02-11-antalya-5-backfill",
+  "2025-02-18-antalya-4-backfill",
+  "2025-03-07-antalya-5-backfill",
+  "2025-03-21-antalya-1-backfill",
+  "2025-05-27-ankara-2-backfill",
+  "2025-07-10-ankara-1-backfill",
+  "2026-07-15-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 3.647,
+ "son_guncelleme": "2026-07-15-istanbul-4",
+ "son_atak_delta_ema": 1.862,
+ "gecmis_dolduruldu": true
+}

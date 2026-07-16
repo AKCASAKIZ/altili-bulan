@@ -1,0 +1,11 @@
+{
+ "ad": "RUHİNAZ",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-07-15-elazig-8-backfill",
+  "2026-07-15-elazig-8"
+ ],
+ "erken_gec_delta_ema": 6.0,
+ "son_guncelleme": "2026-07-15-elazig-8",
+ "gecmis_dolduruldu": true
+}

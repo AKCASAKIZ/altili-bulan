@@ -1,0 +1,15 @@
+{
+ "ad": "BALDUR",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-08-11-elazig-2-backfill",
+  "2025-10-28-adana-6-backfill",
+  "2025-12-02-adana-2-backfill",
+  "2026-04-28-elazig-4-backfill",
+  "2026-07-15-elazig-6"
+ ],
+ "erken_gec_delta_ema": -0.858,
+ "son_atak_delta_ema": -2.127,
+ "son_guncelleme": "2026-07-15-elazig-6",
+ "gecmis_dolduruldu": true
+}

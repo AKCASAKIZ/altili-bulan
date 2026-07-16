@@ -1,0 +1,19 @@
+{
+ "ad": "BAYAN ALTIN",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-07-25-istanbul-6-backfill",
+  "2025-08-05-kocaeli-8-backfill",
+  "2025-09-21-istanbul-2-backfill",
+  "2025-11-22-istanbul-6-backfill",
+  "2025-12-15-bursa-5-backfill",
+  "2025-12-27-istanbul-6-backfill",
+  "2026-02-06-bursa-3-backfill",
+  "2026-03-08-izmir-5-backfill",
+  "2026-07-15-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 2.089,
+ "son_atak_delta_ema": 1.028,
+ "son_guncelleme": "2026-07-15-istanbul-4",
+ "gecmis_dolduruldu": true
+}

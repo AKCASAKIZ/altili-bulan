@@ -1,0 +1,22 @@
+{
+ "ad": "UZUN TAY",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-02-14-bursa-3-backfill",
+  "2025-03-16-izmir-9-backfill",
+  "2025-03-30-izmir-8-backfill",
+  "2025-04-06-izmir-3-backfill",
+  "2025-04-19-izmir-4-backfill",
+  "2026-04-12-izmir-8-backfill",
+  "2026-04-18-izmir-4-backfill",
+  "2026-05-16-izmir-2-backfill",
+  "2026-06-08-bursa-9-backfill",
+  "2026-06-19-bursa-9-backfill",
+  "2026-07-15-istanbul-3-backfill",
+  "2026-07-15-istanbul-3"
+ ],
+ "erken_gec_delta_ema": 3.649,
+ "son_atak_delta_ema": 0.431,
+ "son_guncelleme": "2026-07-15-istanbul-3",
+ "gecmis_dolduruldu": true
+}

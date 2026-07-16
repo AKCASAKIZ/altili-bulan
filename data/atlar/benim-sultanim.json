@@ -1,0 +1,23 @@
+{
+ "ad": "BENİM SULTANIM",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-04-12-istanbul-3-backfill",
+  "2025-04-23-istanbul-3-backfill",
+  "2025-05-09-istanbul-2-backfill",
+  "2025-05-29-ankara-2-backfill",
+  "2025-06-21-ankara-7-backfill",
+  "2025-07-25-istanbul-6-backfill",
+  "2025-08-02-ankara-3-backfill",
+  "2025-08-14-ankara-8-backfill",
+  "2025-09-25-ankara-8-backfill",
+  "2025-10-26-istanbul-1-backfill",
+  "2026-05-17-adana-5-backfill",
+  "2026-06-20-ankara-5-backfill",
+  "2026-07-15-istanbul-4"
+ ],
+ "erken_gec_delta_ema": -1.545,
+ "son_guncelleme": "2026-07-15-istanbul-4",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,21 @@
+{
+ "ad": "SALAHİYET",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-12-20-adana-2-backfill",
+  "2026-01-04-adana-4-backfill",
+  "2026-01-25-adana-3-backfill",
+  "2026-03-01-adana-8-backfill",
+  "2026-04-10-antalya-4-backfill",
+  "2026-04-25-ankara-6-backfill",
+  "2026-05-16-ankara-1-backfill",
+  "2026-05-26-ankara-8-backfill",
+  "2026-06-24-istanbul-9-backfill",
+  "2026-07-15-istanbul-2-backfill",
+  "2026-07-15-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 3.315,
+ "son_guncelleme": "2026-07-15-istanbul-2",
+ "son_atak_delta_ema": 0.382,
+ "gecmis_dolduruldu": true
+}

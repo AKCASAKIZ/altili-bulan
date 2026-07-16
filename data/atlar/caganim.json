@@ -1,0 +1,16 @@
+{
+ "ad": "ÇAĞANIM",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-03-01-adana-5-backfill",
+  "2025-03-16-adana-8-backfill",
+  "2025-06-10-ankara-1-backfill",
+  "2025-07-03-ankara-6-backfill",
+  "2025-07-29-kocaeli-6-backfill",
+  "2026-07-15-elazig-6"
+ ],
+ "erken_gec_delta_ema": 2.986,
+ "son_guncelleme": "2026-07-15-elazig-6",
+ "son_atak_delta_ema": 0.9,
+ "gecmis_dolduruldu": true
+}

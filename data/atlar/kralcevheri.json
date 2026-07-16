@@ -1,0 +1,25 @@
+{
+ "ad": "KRALCEVHERİ",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-07-21-elazig-7-backfill",
+  "2025-07-30-elazig-7-backfill",
+  "2025-08-13-elazig-7-backfill",
+  "2025-08-25-elazig-6-backfill",
+  "2025-12-06-adana-9-backfill",
+  "2025-12-24-sanliurfa-6-backfill",
+  "2026-01-05-sanliurfa-6-backfill",
+  "2026-02-25-sanliurfa-6-backfill",
+  "2026-03-04-sanliurfa-6-backfill",
+  "2026-03-11-sanliurfa-4-backfill",
+  "2026-03-25-sanliurfa-5-backfill",
+  "2026-04-20-sanliurfa-4-backfill",
+  "2026-06-08-sanliurfa-5-backfill",
+  "2026-06-24-elazig-5-backfill",
+  "2026-07-15-elazig-4"
+ ],
+ "erken_gec_delta_ema": 1.873,
+ "son_guncelleme": "2026-07-15-elazig-4",
+ "son_atak_delta_ema": 0.637,
+ "gecmis_dolduruldu": true
+}

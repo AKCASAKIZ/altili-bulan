@@ -1,0 +1,23 @@
+{
+ "ad": "OĞUZBEYİ",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-10-01-istanbul-5-backfill",
+  "2025-10-10-bursa-5-backfill",
+  "2025-11-11-kocaeli-4-backfill",
+  "2025-12-05-bursa-2-backfill",
+  "2026-03-04-sanliurfa-8-backfill",
+  "2026-03-11-sanliurfa-5-backfill",
+  "2026-03-23-sanliurfa-9-backfill",
+  "2026-04-01-elazig-3-backfill",
+  "2026-04-13-sanliurfa-2-backfill",
+  "2026-04-22-elazig-5-backfill",
+  "2026-05-18-sanliurfa-5-backfill",
+  "2026-07-06-elazig-5-backfill",
+  "2026-07-15-elazig-4"
+ ],
+ "erken_gec_delta_ema": 2.847,
+ "son_guncelleme": "2026-07-15-elazig-4",
+ "son_atak_delta_ema": -1.077,
+ "gecmis_dolduruldu": true
+}

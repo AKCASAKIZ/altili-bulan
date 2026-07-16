@@ -1,0 +1,24 @@
+{
+ "ad": "DRAGON BLUE",
+ "kosu_sayisi": 14,
+ "islenen_yarislar": [
+  "2025-01-24-antalya-3-backfill",
+  "2025-02-20-antalya-1-backfill",
+  "2025-04-03-antalya-2-backfill",
+  "2025-04-18-bursa-5-backfill",
+  "2025-05-02-bursa-6-backfill",
+  "2025-05-16-bursa-2-backfill",
+  "2025-06-02-bursa-2-backfill",
+  "2025-06-16-bursa-5-backfill",
+  "2026-02-16-bursa-7-backfill",
+  "2026-03-20-izmir-5-backfill",
+  "2026-05-01-bursa-4-backfill",
+  "2026-05-15-bursa-7-backfill",
+  "2026-07-15-istanbul-1-backfill",
+  "2026-07-15-istanbul-1"
+ ],
+ "erken_gec_delta_ema": 1.367,
+ "son_guncelleme": "2026-07-15-istanbul-1",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

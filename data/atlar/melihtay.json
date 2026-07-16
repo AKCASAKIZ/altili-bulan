@@ -1,0 +1,26 @@
+{
+ "ad": "MELİHTAY",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-03-16-izmir-1-backfill",
+  "2025-04-11-izmir-6-backfill",
+  "2025-04-26-izmir-8-backfill",
+  "2025-05-15-izmir-2-backfill",
+  "2025-05-22-izmir-6-backfill",
+  "2025-06-14-izmir-8-backfill",
+  "2025-06-26-izmir-4-backfill",
+  "2025-07-19-izmir-6-backfill",
+  "2025-08-30-izmir-5-backfill",
+  "2025-09-18-izmir-3-backfill",
+  "2025-10-23-izmir-5-backfill",
+  "2025-11-20-izmir-3-backfill",
+  "2025-12-07-izmir-5-backfill",
+  "2026-03-15-izmir-4-backfill",
+  "2026-03-27-izmir-4-backfill",
+  "2026-07-15-elazig-4"
+ ],
+ "erken_gec_delta_ema": 0.63,
+ "son_guncelleme": "2026-07-15-elazig-4",
+ "son_atak_delta_ema": -0.136,
+ "gecmis_dolduruldu": true
+}

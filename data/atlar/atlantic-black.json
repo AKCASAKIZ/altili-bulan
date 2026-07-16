@@ -1,0 +1,16 @@
+{
+ "ad": "ATLANTIC BLACK",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-07-23-elazig-6-backfill",
+  "2025-09-03-elazig-4-backfill",
+  "2025-10-21-adana-6-backfill",
+  "2025-11-09-adana-8-backfill",
+  "2026-04-26-adana-5-backfill",
+  "2026-07-15-elazig-6"
+ ],
+ "erken_gec_delta_ema": -1.126,
+ "son_atak_delta_ema": -1.8,
+ "son_guncelleme": "2026-07-15-elazig-6",
+ "gecmis_dolduruldu": true
+}

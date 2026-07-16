@@ -1,0 +1,15 @@
+{
+ "ad": "JULNAR",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-08-07-kocaeli-8-backfill",
+  "2025-08-27-istanbul-6-backfill",
+  "2025-11-07-bursa-9-backfill",
+  "2025-12-11-antalya-7-backfill",
+  "2026-07-15-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 1.98,
+ "son_guncelleme": "2026-07-15-istanbul-2",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
+}

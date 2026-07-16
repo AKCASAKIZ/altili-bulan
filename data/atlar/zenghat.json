@@ -1,0 +1,13 @@
+{
+ "ad": "ZENGHAT",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-05-18-sanliurfa-3-backfill",
+  "2026-06-01-sanliurfa-2-backfill",
+  "2026-07-15-elazig-5-backfill",
+  "2026-07-15-elazig-5"
+ ],
+ "erken_gec_delta_ema": 2.118,
+ "son_guncelleme": "2026-07-15-elazig-5",
+ "gecmis_dolduruldu": true
+}
