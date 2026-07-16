@@ -1,0 +1,11 @@
+{
+ "ad": "DUM SPIRO SPERO",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-05-22-bursa-3-backfill",
+  "2026-07-16-ankara-7"
+ ],
+ "erken_gec_delta_ema": 0.45,
+ "son_guncelleme": "2026-07-16-ankara-7",
+ "gecmis_dolduruldu": true
+}

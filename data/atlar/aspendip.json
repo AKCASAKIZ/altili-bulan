@@ -1,0 +1,14 @@
+{
+ "ad": "ASPENDİP",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-05-20-ankara-8-backfill",
+  "2025-12-02-adana-4-backfill",
+  "2026-05-05-ankara-5-backfill",
+  "2026-07-16-ankara-6-backfill",
+  "2026-07-16-ankara-6"
+ ],
+ "erken_gec_delta_ema": -0.196,
+ "son_guncelleme": "2026-07-16-ankara-6",
+ "gecmis_dolduruldu": true
+}

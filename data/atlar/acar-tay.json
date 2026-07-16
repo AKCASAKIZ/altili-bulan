@@ -1,0 +1,22 @@
+{
+ "ad": "ACAR TAY",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-08-13-istanbul-8-backfill",
+  "2025-09-28-istanbul-7-backfill",
+  "2025-10-12-istanbul-7-backfill",
+  "2025-10-26-istanbul-3-backfill",
+  "2026-02-07-istanbul-8-backfill",
+  "2026-03-07-istanbul-6-backfill",
+  "2026-03-21-istanbul-4-backfill",
+  "2026-04-26-istanbul-4-backfill",
+  "2026-05-13-istanbul-6-backfill",
+  "2026-05-27-istanbul-6-backfill",
+  "2026-07-16-ankara-1-backfill",
+  "2026-07-16-ankara-1"
+ ],
+ "erken_gec_delta_ema": 2.201,
+ "son_atak_delta_ema": 2.738,
+ "son_guncelleme": "2026-07-16-ankara-1",
+ "gecmis_dolduruldu": true
+}

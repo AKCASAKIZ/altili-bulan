@@ -1,0 +1,14 @@
+{
+ "ad": "BUDABEŞTE GÜLÜ",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2025-04-29-antalya-9-backfill",
+  "2025-05-30-bursa-3-backfill",
+  "2025-12-09-antalya-2-backfill",
+  "2026-07-16-kocaeli-9"
+ ],
+ "erken_gec_delta_ema": 0.191,
+ "son_guncelleme": "2026-07-16-kocaeli-9",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

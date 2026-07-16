@@ -1,0 +1,13 @@
+{
+ "ad": "MADRABAZ YELİ",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-10-09-izmir-6-backfill",
+  "2025-11-30-izmir-10-backfill",
+  "2026-07-16-kocaeli-6"
+ ],
+ "erken_gec_delta_ema": 0.575,
+ "son_guncelleme": "2026-07-16-kocaeli-6",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 1
+}

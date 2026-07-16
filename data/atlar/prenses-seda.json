@@ -1,13 +1,14 @@
 {
  "ad": "PRENSES SEDA",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2025-12-19-bursa-7-backfill",
   "2026-06-12-bursa-5-backfill",
-  "2026-07-10-bursa-5"
+  "2026-07-10-bursa-5",
+  "2026-07-16-kocaeli-6"
  ],
- "erken_gec_delta_ema": 5.165,
- "son_guncelleme": "2026-07-10-bursa-5",
- "son_atak_delta_ema": 4.5,
+ "erken_gec_delta_ema": 4.515,
+ "son_guncelleme": "2026-07-16-kocaeli-6",
+ "son_atak_delta_ema": 3.75,
  "gecmis_dolduruldu": true
 }

@@ -1,12 +1,13 @@
 {
  "ad": "KÜÇÜKAHSEN",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2025-11-25-adana-2-backfill",
-  "2026-07-10-bursa-5"
+  "2026-07-10-bursa-5",
+  "2026-07-16-kocaeli-9"
  ],
- "erken_gec_delta_ema": 2.1,
- "son_guncelleme": "2026-07-10-bursa-5",
+ "erken_gec_delta_ema": 1.17,
+ "son_guncelleme": "2026-07-16-kocaeli-9",
  "gecmis_dolduruldu": true,
  "son_atak_delta_ema": 6
 }

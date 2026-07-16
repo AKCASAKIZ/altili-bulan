@@ -1,11 +1,12 @@
 {
  "ad": "HEAVEN LIGHT",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-10-istanbul-7"
+  "2026-07-10-istanbul-7",
+  "2026-07-16-kocaeli-5"
  ],
  "gecmis_dolduruldu": true,
  "erken_gec_delta_ema": 1.0,
  "son_atak_delta_ema": 4,
- "son_guncelleme": "2026-07-10-istanbul-7"
+ "son_guncelleme": "2026-07-16-kocaeli-5"
 }

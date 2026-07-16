@@ -1,0 +1,25 @@
+{
+ "ad": "BEYLERİNBEYİ",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2026-01-05-bursa-6-backfill",
+  "2026-02-06-bursa-2-backfill",
+  "2026-02-16-bursa-1-backfill",
+  "2026-03-02-bursa-4-backfill",
+  "2026-03-23-bursa-4-backfill",
+  "2026-04-13-bursa-3-backfill",
+  "2026-04-27-bursa-2-backfill",
+  "2026-05-12-kocaeli-5-backfill",
+  "2026-05-19-kocaeli-2-backfill",
+  "2026-05-26-kocaeli-2-backfill",
+  "2026-06-16-kocaeli-1-backfill",
+  "2026-06-23-kocaeli-7-backfill",
+  "2026-06-30-kocaeli-3-backfill",
+  "2026-07-16-kocaeli-3-backfill",
+  "2026-07-16-kocaeli-3"
+ ],
+ "erken_gec_delta_ema": 1.414,
+ "son_guncelleme": "2026-07-16-kocaeli-3",
+ "son_atak_delta_ema": -0.509,
+ "gecmis_dolduruldu": true
+}

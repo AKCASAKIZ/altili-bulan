@@ -1,0 +1,17 @@
+{
+ "ad": "ÇELÇIRN FIRTINASI",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2026-04-18-ankara-3-backfill",
+  "2026-05-02-ankara-7-backfill",
+  "2026-05-09-ankara-2-backfill",
+  "2026-05-23-ankara-3-backfill",
+  "2026-06-04-ankara-3-backfill",
+  "2026-06-26-ankara-7-backfill",
+  "2026-07-16-ankara-7-backfill",
+  "2026-07-16-ankara-7"
+ ],
+ "erken_gec_delta_ema": 0.015,
+ "son_guncelleme": "2026-07-16-ankara-7",
+ "gecmis_dolduruldu": true
+}

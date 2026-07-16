@@ -1,0 +1,15 @@
+{
+ "ad": "HER DAİM",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-04-04-adana-9-backfill",
+  "2026-05-03-adana-4-backfill",
+  "2026-06-16-kocaeli-7-backfill",
+  "2026-07-02-kocaeli-5-backfill",
+  "2026-07-16-ankara-3"
+ ],
+ "erken_gec_delta_ema": -1.879,
+ "son_guncelleme": "2026-07-16-ankara-3",
+ "son_atak_delta_ema": -2.01,
+ "gecmis_dolduruldu": true
+}

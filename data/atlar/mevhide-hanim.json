@@ -1,0 +1,12 @@
+{
+ "ad": "MEVHİDE HANIM",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-04-01-istanbul-4-backfill",
+  "2026-07-16-kocaeli-6"
+ ],
+ "erken_gec_delta_ema": 8.15,
+ "son_guncelleme": "2026-07-16-kocaeli-6",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 1
+}

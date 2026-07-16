@@ -1,0 +1,21 @@
+{
+ "ad": "YAKARİ",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-08-23-ankara-3-backfill",
+  "2025-10-16-ankara-8-backfill",
+  "2025-10-26-adana-7-backfill",
+  "2026-01-04-adana-2-backfill",
+  "2026-01-24-adana-6-backfill",
+  "2026-03-17-adana-2-backfill",
+  "2026-04-12-adana-8-backfill",
+  "2026-04-19-adana-8-backfill",
+  "2026-05-22-istanbul-6-backfill",
+  "2026-07-16-ankara-6-backfill",
+  "2026-07-16-ankara-6"
+ ],
+ "erken_gec_delta_ema": 0.536,
+ "son_guncelleme": "2026-07-16-ankara-6",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

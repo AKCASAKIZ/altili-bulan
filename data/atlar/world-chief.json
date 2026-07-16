@@ -1,0 +1,15 @@
+{
+ "ad": "WORLD CHIEF",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-04-07-adana-8-backfill",
+  "2026-05-07-ankara-5-backfill",
+  "2026-05-23-ankara-7-backfill",
+  "2026-07-16-ankara-2-backfill",
+  "2026-07-16-ankara-2"
+ ],
+ "erken_gec_delta_ema": 2.671,
+ "son_guncelleme": "2026-07-16-ankara-2",
+ "son_atak_delta_ema": 1.02,
+ "gecmis_dolduruldu": true
+}

@@ -1,14 +1,15 @@
 {
  "ad": "EUROFIGHTER",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2026-04-24-bursa-2-backfill",
   "2026-05-05-kocaeli-6-backfill",
   "2026-06-05-bursa-1-backfill",
-  "2026-07-09-kocaeli-6"
+  "2026-07-09-kocaeli-6",
+  "2026-07-16-kocaeli-3"
  ],
- "erken_gec_delta_ema": -0.322,
- "son_guncelleme": "2026-07-09-kocaeli-6",
- "son_atak_delta_ema": 0,
+ "erken_gec_delta_ema": -1.575,
+ "son_guncelleme": "2026-07-16-kocaeli-3",
+ "son_atak_delta_ema": -0.3,
  "gecmis_dolduruldu": true
 }

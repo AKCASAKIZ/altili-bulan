@@ -1,0 +1,18 @@
+{
+ "ad": "RECUERDAME",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-05-10-izmir-5-backfill",
+  "2025-06-16-bursa-4-backfill",
+  "2025-07-18-bursa-9-backfill",
+  "2025-10-03-bursa-7-backfill",
+  "2025-10-31-bursa-7-backfill",
+  "2026-06-01-bursa-7-backfill",
+  "2026-06-19-bursa-1-backfill",
+  "2026-07-16-ankara-6"
+ ],
+ "erken_gec_delta_ema": 0.78,
+ "son_guncelleme": "2026-07-16-ankara-6",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

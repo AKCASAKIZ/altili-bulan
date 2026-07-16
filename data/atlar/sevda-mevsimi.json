@@ -1,0 +1,17 @@
+{
+ "ad": "SEVDA MEVSİMİ",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-05-04-adana-1-backfill",
+  "2025-05-20-antalya-8-backfill",
+  "2025-06-03-ankara-2-backfill",
+  "2025-06-19-ankara-7-backfill",
+  "2025-07-25-istanbul-1-backfill",
+  "2025-08-07-ankara-7-backfill",
+  "2025-08-29-istanbul-2-backfill",
+  "2026-07-16-kocaeli-9"
+ ],
+ "erken_gec_delta_ema": -0.308,
+ "son_guncelleme": "2026-07-16-kocaeli-9",
+ "gecmis_dolduruldu": true
+}
