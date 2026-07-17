@@ -1,14 +1,15 @@
 {
  "ad": "ŞANSIBOLBEY",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2025-11-03-bursa-5-backfill",
   "2026-02-02-bursa-4-backfill",
   "2026-05-25-bursa-6-backfill",
-  "2026-07-12-istanbul-7"
+  "2026-07-12-istanbul-7",
+  "2026-07-17-bursa-6"
  ],
- "erken_gec_delta_ema": 2.254,
- "son_guncelleme": "2026-07-12-istanbul-7",
- "son_atak_delta_ema": 0.42,
+ "erken_gec_delta_ema": 1.728,
+ "son_guncelleme": "2026-07-17-bursa-6",
+ "son_atak_delta_ema": 0.594,
  "gecmis_dolduruldu": true
 }

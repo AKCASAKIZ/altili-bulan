@@ -1,0 +1,25 @@
+{
+ "ad": "CAPE COD",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-01-18-istanbul-2-backfill",
+  "2025-02-12-istanbul-6-backfill",
+  "2025-03-05-istanbul-2-backfill",
+  "2025-04-05-istanbul-3-backfill",
+  "2025-05-11-istanbul-4-backfill",
+  "2025-06-08-istanbul-9-backfill",
+  "2025-06-27-istanbul-7-backfill",
+  "2025-09-03-istanbul-8-backfill",
+  "2025-10-26-istanbul-7-backfill",
+  "2026-01-31-istanbul-9-backfill",
+  "2026-02-21-istanbul-8-backfill",
+  "2026-04-28-kocaeli-6-backfill",
+  "2026-05-20-istanbul-2-backfill",
+  "2026-07-17-istanbul-4-backfill",
+  "2026-07-17-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 2.389,
+ "son_guncelleme": "2026-07-17-istanbul-4",
+ "son_atak_delta_ema": 0.396,
+ "gecmis_dolduruldu": true
+}

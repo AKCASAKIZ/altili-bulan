@@ -1,10 +1,11 @@
 {
  "ad": "HÜKÜMDAR KILICI",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-10-istanbul-8"
+  "2026-07-10-istanbul-8",
+  "2026-07-17-bursa-9"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -6.0,
- "son_guncelleme": "2026-07-10-istanbul-8"
+ "erken_gec_delta_ema": -5.85,
+ "son_guncelleme": "2026-07-17-bursa-9"
 }

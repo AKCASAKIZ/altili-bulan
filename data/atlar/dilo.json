@@ -1,0 +1,12 @@
+{
+ "ad": "DILO",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2025-01-23-izmir-5-backfill",
+  "2026-07-17-bursa-10"
+ ],
+ "erken_gec_delta_ema": 0.9,
+ "son_guncelleme": "2026-07-17-bursa-10",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
+}

@@ -1,0 +1,25 @@
+{
+ "ad": "DAŞ FATİH",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-05-30-istanbul-3-backfill",
+  "2025-06-16-bursa-8-backfill",
+  "2025-06-27-istanbul-5-backfill",
+  "2025-07-27-istanbul-6-backfill",
+  "2025-08-08-istanbul-5-backfill",
+  "2025-08-19-ankara-8-backfill",
+  "2025-08-31-istanbul-7-backfill",
+  "2025-09-21-istanbul-6-backfill",
+  "2025-10-03-istanbul-8-backfill",
+  "2026-02-17-antalya-6-backfill",
+  "2026-04-04-istanbul-4-backfill",
+  "2026-04-24-istanbul-8-backfill",
+  "2026-05-08-istanbul-6-backfill",
+  "2026-07-17-istanbul-10-backfill",
+  "2026-07-17-istanbul-10"
+ ],
+ "erken_gec_delta_ema": 2.233,
+ "son_atak_delta_ema": 0.477,
+ "son_guncelleme": "2026-07-17-istanbul-10",
+ "gecmis_dolduruldu": true
+}

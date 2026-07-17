@@ -1,0 +1,17 @@
+{
+ "ad": "ALYADİGAR",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-08-01-bursa-1-backfill",
+  "2026-04-17-bursa-2-backfill",
+  "2026-04-30-izmir-4-backfill",
+  "2026-05-15-bursa-3-backfill",
+  "2026-06-02-ankara-5-backfill",
+  "2026-07-17-bursa-6-backfill",
+  "2026-07-17-bursa-6"
+ ],
+ "erken_gec_delta_ema": 6.57,
+ "son_atak_delta_ema": 2.959,
+ "son_guncelleme": "2026-07-17-bursa-6",
+ "gecmis_dolduruldu": true
+}

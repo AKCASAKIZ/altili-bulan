@@ -1,0 +1,16 @@
+{
+ "ad": "TURAMUN",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2026-01-10-istanbul-7-backfill",
+  "2026-02-07-istanbul-7-backfill",
+  "2026-02-28-istanbul-2-backfill",
+  "2026-05-13-istanbul-4-backfill",
+  "2026-07-17-istanbul-3-backfill",
+  "2026-07-17-istanbul-3"
+ ],
+ "erken_gec_delta_ema": 3.92,
+ "son_atak_delta_ema": 1.539,
+ "son_guncelleme": "2026-07-17-istanbul-3",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,13 @@
+{
+ "ad": "MEN DAKKA DUKKA",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-03-26-antalya-3-backfill",
+  "2026-04-10-antalya-4-backfill",
+  "2026-07-17-bursa-6"
+ ],
+ "erken_gec_delta_ema": -2.105,
+ "son_atak_delta_ema": -1.5,
+ "son_guncelleme": "2026-07-17-bursa-6",
+ "gecmis_dolduruldu": true
+}

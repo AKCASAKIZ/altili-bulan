@@ -1,10 +1,12 @@
 {
  "ad": "KORGÜN",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-10-istanbul-8"
+  "2026-07-10-istanbul-8",
+  "2026-07-17-istanbul-9"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": 2.0,
- "son_guncelleme": "2026-07-10-istanbul-8"
+ "erken_gec_delta_ema": 3.95,
+ "son_guncelleme": "2026-07-17-istanbul-9",
+ "son_atak_delta_ema": 0
 }

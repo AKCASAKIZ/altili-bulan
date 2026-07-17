@@ -1,0 +1,15 @@
+{
+ "ad": "KIZIM BERİL",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-02-17-bursa-2-backfill",
+  "2025-03-31-bursa-1-backfill",
+  "2025-11-17-bursa-5-backfill",
+  "2026-07-17-bursa-10-backfill",
+  "2026-07-17-bursa-10"
+ ],
+ "erken_gec_delta_ema": 4.31,
+ "son_guncelleme": "2026-07-17-bursa-10",
+ "son_atak_delta_ema": 0.49,
+ "gecmis_dolduruldu": true
+}

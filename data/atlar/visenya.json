@@ -1,0 +1,24 @@
+{
+ "ad": "VISENYA",
+ "kosu_sayisi": 14,
+ "islenen_yarislar": [
+  "2025-03-08-istanbul-7-backfill",
+  "2025-04-18-istanbul-5-backfill",
+  "2025-05-18-istanbul-9-backfill",
+  "2025-06-08-istanbul-9-backfill",
+  "2025-06-29-istanbul-9-backfill",
+  "2025-08-06-istanbul-6-backfill",
+  "2025-09-03-istanbul-7-backfill",
+  "2025-09-19-bursa-7-backfill",
+  "2025-10-18-ankara-7-backfill",
+  "2025-11-09-istanbul-6-backfill",
+  "2026-05-29-istanbul-6-backfill",
+  "2026-06-19-istanbul-6-backfill",
+  "2026-07-17-istanbul-4-backfill",
+  "2026-07-17-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 3.611,
+ "son_atak_delta_ema": 1.661,
+ "son_guncelleme": "2026-07-17-istanbul-4",
+ "gecmis_dolduruldu": true
+}

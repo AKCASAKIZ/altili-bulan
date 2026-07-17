@@ -1,0 +1,11 @@
+{
+ "ad": "PAMİRALP",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-07-17-bursa-1-backfill",
+  "2026-07-17-bursa-1"
+ ],
+ "erken_gec_delta_ema": 10.0,
+ "son_guncelleme": "2026-07-17-bursa-1",
+ "gecmis_dolduruldu": true
+}

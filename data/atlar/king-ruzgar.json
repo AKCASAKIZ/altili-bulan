@@ -1,0 +1,13 @@
+{
+ "ad": "KING RÜZGAR",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-12-30-antalya-4-backfill",
+  "2026-06-07-istanbul-7-backfill",
+  "2026-07-17-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 2.765,
+ "son_guncelleme": "2026-07-17-istanbul-7",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

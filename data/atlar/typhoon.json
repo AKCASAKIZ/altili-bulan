@@ -1,0 +1,26 @@
+{
+ "ad": "TYPHOON",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-10-06-bursa-4-backfill",
+  "2025-10-31-bursa-7-backfill",
+  "2025-11-20-antalya-8-backfill",
+  "2026-01-01-antalya-5-backfill",
+  "2026-01-13-antalya-4-backfill",
+  "2026-01-30-antalya-5-backfill",
+  "2026-02-13-antalya-1-backfill",
+  "2026-03-10-antalya-3-backfill",
+  "2026-03-26-antalya-7-backfill",
+  "2026-04-10-antalya-7-backfill",
+  "2026-04-22-istanbul-3-backfill",
+  "2026-05-15-bursa-8-backfill",
+  "2026-06-08-bursa-7-backfill",
+  "2026-06-29-bursa-3-backfill",
+  "2026-07-17-bursa-3-backfill",
+  "2026-07-17-bursa-3"
+ ],
+ "erken_gec_delta_ema": 0.279,
+ "son_atak_delta_ema": 0.489,
+ "son_guncelleme": "2026-07-17-bursa-3",
+ "gecmis_dolduruldu": true
+}

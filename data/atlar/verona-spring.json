@@ -1,11 +1,12 @@
 {
  "ad": "VERONA SPRING",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-10-bursa-2"
+  "2026-07-10-bursa-2",
+  "2026-07-17-bursa-2"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": 7.5,
+ "erken_gec_delta_ema": 4.8,
  "son_atak_delta_ema": 1,
- "son_guncelleme": "2026-07-10-bursa-2"
+ "son_guncelleme": "2026-07-17-bursa-2"
 }

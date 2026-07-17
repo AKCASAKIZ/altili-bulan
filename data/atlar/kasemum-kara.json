@@ -1,6 +1,6 @@
 {
  "ad": "KAŞEMUM KARA",
- "kosu_sayisi": 8,
+ "kosu_sayisi": 9,
  "islenen_yarislar": [
   "2025-03-18-adana-1-backfill",
   "2025-03-25-adana-7-backfill",
@@ -9,10 +9,11 @@
   "2025-10-25-ankara-4-backfill",
   "2025-11-10-bursa-7-backfill",
   "2026-06-15-bursa-7-backfill",
-  "2026-07-09-kocaeli-7"
+  "2026-07-09-kocaeli-7",
+  "2026-07-17-bursa-7"
  ],
- "erken_gec_delta_ema": 1.156,
+ "erken_gec_delta_ema": 0.359,
  "son_atak_delta_ema": 0.258,
- "son_guncelleme": "2026-07-09-kocaeli-7",
+ "son_guncelleme": "2026-07-17-bursa-7",
  "gecmis_dolduruldu": true
 }

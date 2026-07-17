@@ -1,0 +1,24 @@
+{
+ "ad": "MAGIC SELECTRA",
+ "kosu_sayisi": 14,
+ "islenen_yarislar": [
+  "2025-03-01-istanbul-5-backfill",
+  "2025-04-16-istanbul-8-backfill",
+  "2025-07-25-istanbul-8-backfill",
+  "2025-08-24-istanbul-7-backfill",
+  "2025-09-07-istanbul-2-backfill",
+  "2025-10-19-istanbul-6-backfill",
+  "2025-11-16-istanbul-8-backfill",
+  "2025-11-29-istanbul-5-backfill",
+  "2026-01-28-istanbul-6-backfill",
+  "2026-03-28-istanbul-6-backfill",
+  "2026-05-29-istanbul-6-backfill",
+  "2026-06-19-bursa-6-backfill",
+  "2026-07-17-bursa-8-backfill",
+  "2026-07-17-bursa-8"
+ ],
+ "erken_gec_delta_ema": 0.7,
+ "son_guncelleme": "2026-07-17-bursa-8",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

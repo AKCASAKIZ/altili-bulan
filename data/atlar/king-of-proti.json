@@ -1,0 +1,12 @@
+{
+ "ad": "KING OF PROTI",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-04-04-istanbul-7-backfill",
+  "2026-07-17-bursa-2"
+ ],
+ "erken_gec_delta_ema": 2.4,
+ "son_atak_delta_ema": 0,
+ "son_guncelleme": "2026-07-17-bursa-2",
+ "gecmis_dolduruldu": true
+}

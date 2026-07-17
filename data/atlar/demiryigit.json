@@ -1,0 +1,14 @@
+{
+ "ad": "DEMİRYİĞİT",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2025-08-18-bursa-4-backfill",
+  "2026-06-15-bursa-9-backfill",
+  "2026-07-03-bursa-6-backfill",
+  "2026-07-17-bursa-6"
+ ],
+ "erken_gec_delta_ema": 4.054,
+ "son_guncelleme": "2026-07-17-bursa-6",
+ "son_atak_delta_ema": 1.38,
+ "gecmis_dolduruldu": true
+}

@@ -1,6 +1,6 @@
 {
  "ad": "LA BOMBONERA",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-05-02-bursa-5-backfill",
   "2025-05-16-bursa-8-backfill",
@@ -16,10 +16,11 @@
   "2026-05-07-izmir-7-backfill",
   "2026-05-30-izmir-1-backfill",
   "2026-07-10-bursa-9-backfill",
-  "2026-07-10-bursa-9"
+  "2026-07-10-bursa-9",
+  "2026-07-17-bursa-10"
  ],
- "erken_gec_delta_ema": 1.942,
- "son_atak_delta_ema": 0.638,
- "son_guncelleme": "2026-07-10-bursa-9",
+ "erken_gec_delta_ema": -0.291,
+ "son_atak_delta_ema": 0.447,
+ "son_guncelleme": "2026-07-17-bursa-10",
  "gecmis_dolduruldu": true
 }

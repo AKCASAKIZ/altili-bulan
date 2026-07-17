@@ -1,0 +1,15 @@
+{
+ "ad": "FIRATIN GÜCÜ",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-03-26-istanbul-9-backfill",
+  "2025-05-21-istanbul-2-backfill",
+  "2025-06-06-istanbul-10-backfill",
+  "2025-12-03-istanbul-6-backfill",
+  "2026-07-17-istanbul-10"
+ ],
+ "erken_gec_delta_ema": 3.973,
+ "son_guncelleme": "2026-07-17-istanbul-10",
+ "son_atak_delta_ema": 0.7,
+ "gecmis_dolduruldu": true
+}

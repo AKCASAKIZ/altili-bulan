@@ -1,0 +1,17 @@
+{
+ "ad": "VAELLA",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-12-02-antalya-8-backfill",
+  "2026-02-13-antalya-4-backfill",
+  "2026-06-05-bursa-2-backfill",
+  "2026-06-22-bursa-7-backfill",
+  "2026-06-29-bursa-4-backfill",
+  "2026-07-17-bursa-2-backfill",
+  "2026-07-17-bursa-2"
+ ],
+ "erken_gec_delta_ema": 0.87,
+ "son_guncelleme": "2026-07-17-bursa-2",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

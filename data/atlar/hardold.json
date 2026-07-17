@@ -1,0 +1,23 @@
+{
+ "ad": "HARDOLD",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-02-21-antalya-5-backfill",
+  "2025-03-18-antalya-4-backfill",
+  "2025-04-01-antalya-1-backfill",
+  "2025-04-08-antalya-6-backfill",
+  "2025-05-30-istanbul-6-backfill",
+  "2025-08-27-istanbul-8-backfill",
+  "2026-03-21-istanbul-8-backfill",
+  "2026-05-08-istanbul-3-backfill",
+  "2026-05-18-bursa-4-backfill",
+  "2026-06-23-kocaeli-6-backfill",
+  "2026-07-08-istanbul-2-backfill",
+  "2026-07-17-istanbul-7-backfill",
+  "2026-07-17-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 1.711,
+ "son_guncelleme": "2026-07-17-istanbul-7",
+ "son_atak_delta_ema": -0.147,
+ "gecmis_dolduruldu": true
+}

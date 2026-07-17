@@ -1,6 +1,6 @@
 {
  "ad": "ALMUTANABİY",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-10-12-istanbul-1-backfill",
   "2025-10-24-istanbul-8-backfill",
@@ -16,10 +16,11 @@
   "2026-06-24-istanbul-9-backfill",
   "2026-07-03-bursa-6-backfill",
   "2026-07-10-istanbul-4-backfill",
-  "2026-07-10-istanbul-4"
+  "2026-07-10-istanbul-4",
+  "2026-07-17-bursa-6"
  ],
- "erken_gec_delta_ema": 3.373,
- "son_atak_delta_ema": -0.088,
- "son_guncelleme": "2026-07-10-istanbul-4",
+ "erken_gec_delta_ema": 3.711,
+ "son_atak_delta_ema": 0.838,
+ "son_guncelleme": "2026-07-17-bursa-6",
  "gecmis_dolduruldu": true
 }

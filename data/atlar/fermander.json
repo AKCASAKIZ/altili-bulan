@@ -1,0 +1,19 @@
+{
+ "ad": "FERMANDER",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-01-28-adana-4-backfill",
+  "2025-06-17-ankara-8-backfill",
+  "2025-07-01-ankara-9-backfill",
+  "2025-09-15-bursa-5-backfill",
+  "2025-11-15-ankara-5-backfill",
+  "2026-02-15-adana-3-backfill",
+  "2026-05-30-ankara-6-backfill",
+  "2026-06-21-istanbul-5-backfill",
+  "2026-07-17-istanbul-10"
+ ],
+ "erken_gec_delta_ema": 4.053,
+ "son_guncelleme": "2026-07-17-istanbul-10",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

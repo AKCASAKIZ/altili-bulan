@@ -1,0 +1,15 @@
+{
+ "ad": "ERDEK",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-06-16-bursa-2-backfill",
+  "2026-03-07-istanbul-4-backfill",
+  "2026-03-25-istanbul-8-backfill",
+  "2026-04-24-istanbul-5-backfill",
+  "2026-07-17-istanbul-2-backfill",
+  "2026-07-17-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 0.588,
+ "son_guncelleme": "2026-07-17-istanbul-2",
+ "gecmis_dolduruldu": true
+}
