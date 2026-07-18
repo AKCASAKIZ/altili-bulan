@@ -1,14 +1,15 @@
 {
  "ad": "SERDAREFE",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2025-05-08-izmir-3-backfill",
   "2026-01-01-izmir-6-backfill",
   "2026-02-15-izmir-6-backfill",
-  "2026-07-11-izmir-3"
+  "2026-07-11-izmir-3",
+  "2026-07-18-izmir-2"
  ],
- "erken_gec_delta_ema": -2.7,
+ "erken_gec_delta_ema": -2.64,
  "son_atak_delta_ema": 0.0,
- "son_guncelleme": "2026-07-11-izmir-3",
+ "son_guncelleme": "2026-07-18-izmir-2",
  "gecmis_dolduruldu": true
 }

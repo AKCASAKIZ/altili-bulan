@@ -1,0 +1,16 @@
+{
+ "ad": "FRANKI CHA CHA",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-11-18-adana-3-backfill",
+  "2026-01-17-adana-7-backfill",
+  "2026-02-21-adana-1-backfill",
+  "2026-03-10-adana-2-backfill",
+  "2026-03-24-adana-5-backfill",
+  "2026-07-18-ankara-6"
+ ],
+ "erken_gec_delta_ema": 1.663,
+ "son_guncelleme": "2026-07-18-ankara-6",
+ "son_atak_delta_ema": 0.51,
+ "gecmis_dolduruldu": true
+}

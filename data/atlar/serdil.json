@@ -1,0 +1,18 @@
+{
+ "ad": "ŞERDİL",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-01-28-adana-2-backfill",
+  "2025-02-18-adana-3-backfill",
+  "2025-03-11-adana-4-backfill",
+  "2025-03-23-adana-2-backfill",
+  "2025-04-08-adana-6-backfill",
+  "2025-04-26-ankara-8-backfill",
+  "2025-05-07-istanbul-6-backfill",
+  "2026-07-18-ankara-2"
+ ],
+ "erken_gec_delta_ema": 1.003,
+ "son_atak_delta_ema": 1.987,
+ "son_guncelleme": "2026-07-18-ankara-2",
+ "gecmis_dolduruldu": true
+}

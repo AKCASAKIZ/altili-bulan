@@ -1,0 +1,21 @@
+{
+ "ad": "ZAGROS RÜZGARI",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-10-18-ankara-2-backfill",
+  "2025-11-02-adana-9-backfill",
+  "2025-11-22-adana-8-backfill",
+  "2025-12-07-adana-8-backfill",
+  "2025-12-27-adana-7-backfill",
+  "2026-01-17-adana-2-backfill",
+  "2026-02-03-adana-6-backfill",
+  "2026-03-14-adana-7-backfill",
+  "2026-04-04-adana-6-backfill",
+  "2026-04-24-istanbul-7-backfill",
+  "2026-07-18-ankara-6"
+ ],
+ "erken_gec_delta_ema": 0.905,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-18-ankara-6",
+ "gecmis_dolduruldu": true
+}

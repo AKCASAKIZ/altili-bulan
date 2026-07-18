@@ -1,0 +1,22 @@
+{
+ "ad": "KRAL SULTAN",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-08-04-bursa-6-backfill",
+  "2025-09-06-istanbul-8-backfill",
+  "2025-10-03-bursa-6-backfill",
+  "2026-02-07-istanbul-2-backfill",
+  "2026-02-28-istanbul-3-backfill",
+  "2026-03-18-istanbul-6-backfill",
+  "2026-03-28-istanbul-1-backfill",
+  "2026-06-03-istanbul-1-backfill",
+  "2026-06-26-ankara-6-backfill",
+  "2026-07-02-ankara-7-backfill",
+  "2026-07-18-ankara-7-backfill",
+  "2026-07-18-ankara-7"
+ ],
+ "erken_gec_delta_ema": 1.002,
+ "son_guncelleme": "2026-07-18-ankara-7",
+ "son_atak_delta_ema": 0.299,
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,15 @@
+{
+ "ad": "KING MALKOÇ",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-09-14-adana-5-backfill",
+  "2026-03-31-adana-2-backfill",
+  "2026-05-30-ankara-2-backfill",
+  "2026-07-04-ankara-2-backfill",
+  "2026-07-18-ankara-2"
+ ],
+ "erken_gec_delta_ema": 0.989,
+ "son_atak_delta_ema": -0.45,
+ "son_guncelleme": "2026-07-18-ankara-2",
+ "gecmis_dolduruldu": true
+}

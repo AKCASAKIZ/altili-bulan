@@ -1,0 +1,23 @@
+{
+ "ad": "NAZİKO",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-02-01-adana-3-backfill",
+  "2025-02-08-adana-3-backfill",
+  "2025-03-01-adana-7-backfill",
+  "2025-03-15-adana-2-backfill",
+  "2025-04-24-ankara-4-backfill",
+  "2025-07-10-ankara-8-backfill",
+  "2025-11-18-adana-2-backfill",
+  "2026-01-06-adana-2-backfill",
+  "2026-01-17-adana-4-backfill",
+  "2026-01-27-adana-4-backfill",
+  "2026-02-21-adana-6-backfill",
+  "2026-04-04-adana-3-backfill",
+  "2026-07-18-ankara-3"
+ ],
+ "erken_gec_delta_ema": 1.903,
+ "son_atak_delta_ema": 0.768,
+ "son_guncelleme": "2026-07-18-ankara-3",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,16 @@
+{
+ "ad": "LEGENDARY MAJESTY",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-11-22-istanbul-8-backfill",
+  "2025-12-27-istanbul-3-backfill",
+  "2026-02-04-istanbul-6-backfill",
+  "2026-03-25-istanbul-7-backfill",
+  "2026-06-16-kocaeli-1-backfill",
+  "2026-07-18-ankara-6"
+ ],
+ "erken_gec_delta_ema": 3.303,
+ "son_guncelleme": "2026-07-18-ankara-6",
+ "son_atak_delta_ema": 2.0,
+ "gecmis_dolduruldu": true
+}

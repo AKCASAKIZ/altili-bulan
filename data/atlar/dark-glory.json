@@ -1,0 +1,11 @@
+{
+ "ad": "DARK GLORY",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-07-18-izmir-1-backfill",
+  "2026-07-18-izmir-1"
+ ],
+ "erken_gec_delta_ema": 7.0,
+ "son_guncelleme": "2026-07-18-izmir-1",
+ "gecmis_dolduruldu": true
+}

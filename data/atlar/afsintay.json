@@ -1,15 +1,16 @@
 {
  "ad": "AFŞINTAY",
- "kosu_sayisi": 5,
+ "kosu_sayisi": 6,
  "islenen_yarislar": [
   "2025-05-31-izmir-5-backfill",
   "2025-06-05-izmir-4-backfill",
   "2025-06-25-bursa-5-backfill",
   "2025-12-26-antalya-6-backfill",
-  "2026-07-12-izmir-3"
+  "2026-07-12-izmir-3",
+  "2026-07-18-izmir-2"
  ],
- "erken_gec_delta_ema": 1.35,
+ "erken_gec_delta_ema": 1.245,
  "son_atak_delta_ema": -0.9,
- "son_guncelleme": "2026-07-12-izmir-3",
+ "son_guncelleme": "2026-07-18-izmir-2",
  "gecmis_dolduruldu": true
 }

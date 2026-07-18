@@ -1,0 +1,26 @@
+{
+ "ad": "PROBALA",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-11-01-izmir-5-backfill",
+  "2025-11-17-bursa-2-backfill",
+  "2025-12-05-bursa-7-backfill",
+  "2025-12-19-bursa-2-backfill",
+  "2026-01-04-izmir-5-backfill",
+  "2026-02-04-istanbul-6-backfill",
+  "2026-02-16-bursa-5-backfill",
+  "2026-02-23-bursa-1-backfill",
+  "2026-03-02-bursa-4-backfill",
+  "2026-03-23-bursa-1-backfill",
+  "2026-04-06-bursa-7-backfill",
+  "2026-06-22-bursa-1-backfill",
+  "2026-06-30-kocaeli-3-backfill",
+  "2026-07-06-bursa-2-backfill",
+  "2026-07-18-izmir-3-backfill",
+  "2026-07-18-izmir-3"
+ ],
+ "erken_gec_delta_ema": 2.188,
+ "son_guncelleme": "2026-07-18-izmir-3",
+ "son_atak_delta_ema": 2.21,
+ "gecmis_dolduruldu": true
+}

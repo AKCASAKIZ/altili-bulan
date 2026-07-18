@@ -1,16 +1,17 @@
 {
  "ad": "BABA ÇAKMAK",
- "kosu_sayisi": 6,
+ "kosu_sayisi": 7,
  "islenen_yarislar": [
   "2025-02-10-bursa-4-backfill",
   "2025-03-28-bursa-6-backfill",
   "2025-11-30-izmir-4-backfill",
   "2025-12-04-izmir-4-backfill",
   "2025-12-26-izmir-2-backfill",
-  "2026-07-11-izmir-3"
+  "2026-07-11-izmir-3",
+  "2026-07-18-izmir-2"
  ],
- "erken_gec_delta_ema": 3.369,
+ "erken_gec_delta_ema": 2.658,
  "son_atak_delta_ema": 0.7,
- "son_guncelleme": "2026-07-11-izmir-3",
+ "son_guncelleme": "2026-07-18-izmir-2",
  "gecmis_dolduruldu": true
 }

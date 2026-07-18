@@ -1,6 +1,6 @@
 {
  "ad": "JÖN ROME",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-05-17-izmir-4-backfill",
   "2025-06-07-izmir-3-backfill",
@@ -16,10 +16,11 @@
   "2026-04-25-izmir-7-backfill",
   "2026-05-02-izmir-7-backfill",
   "2026-07-05-izmir-4-backfill",
-  "2026-07-12-izmir-6"
+  "2026-07-12-izmir-6",
+  "2026-07-18-izmir-6"
  ],
- "erken_gec_delta_ema": 2.436,
- "son_guncelleme": "2026-07-12-izmir-6",
- "son_atak_delta_ema": -0.287,
+ "erken_gec_delta_ema": 2.605,
+ "son_guncelleme": "2026-07-18-izmir-6",
+ "son_atak_delta_ema": 0.099,
  "gecmis_dolduruldu": true
 }

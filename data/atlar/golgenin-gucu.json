@@ -1,6 +1,6 @@
 {
  "ad": "GÖLGENİN GÜCÜ",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-03-11-adana-6-backfill",
   "2025-04-01-antalya-5-backfill",
@@ -16,10 +16,11 @@
   "2026-06-07-istanbul-3-backfill",
   "2026-06-18-ankara-4-backfill",
   "2026-07-01-istanbul-7-backfill",
-  "2026-07-11-ankara-6"
+  "2026-07-11-ankara-6",
+  "2026-07-18-ankara-3"
  ],
- "erken_gec_delta_ema": -1.844,
- "son_guncelleme": "2026-07-11-ankara-6",
+ "erken_gec_delta_ema": -1.891,
+ "son_guncelleme": "2026-07-18-ankara-3",
  "son_atak_delta_ema": -0.001,
  "gecmis_dolduruldu": true
 }

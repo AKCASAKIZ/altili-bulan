@@ -1,0 +1,19 @@
+{
+ "ad": "DEDİYDİM",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-01-28-adana-1-backfill",
+  "2025-02-11-adana-1-backfill",
+  "2025-02-22-adana-9-backfill",
+  "2025-07-29-ankara-2-backfill",
+  "2025-08-31-adana-3-backfill",
+  "2025-11-18-adana-7-backfill",
+  "2025-12-30-adana-1-backfill",
+  "2026-03-31-adana-2-backfill",
+  "2026-07-18-izmir-4"
+ ],
+ "erken_gec_delta_ema": 3.328,
+ "son_guncelleme": "2026-07-18-izmir-4",
+ "son_atak_delta_ema": 0.6,
+ "gecmis_dolduruldu": true
+}

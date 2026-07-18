@@ -1,13 +1,14 @@
 {
  "ad": "CÖMERT TAY",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2026-01-02-izmir-2-backfill",
   "2026-06-14-izmir-5-backfill",
-  "2026-07-11-izmir-7"
+  "2026-07-11-izmir-7",
+  "2026-07-18-izmir-2"
  ],
- "erken_gec_delta_ema": -3.06,
+ "erken_gec_delta_ema": -3.342,
  "son_atak_delta_ema": -2.4,
- "son_guncelleme": "2026-07-11-izmir-7",
+ "son_guncelleme": "2026-07-18-izmir-2",
  "gecmis_dolduruldu": true
 }

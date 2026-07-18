@@ -1,0 +1,12 @@
+{
+ "ad": "BATURALP CAN",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-05-22-bursa-3-backfill",
+  "2026-06-05-istanbul-2-backfill",
+  "2026-07-18-ankara-5"
+ ],
+ "erken_gec_delta_ema": 0.345,
+ "son_guncelleme": "2026-07-18-ankara-5",
+ "gecmis_dolduruldu": true
+}

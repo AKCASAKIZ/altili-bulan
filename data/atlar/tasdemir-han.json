@@ -1,0 +1,20 @@
+{
+ "ad": "TAŞDEMİR HAN",
+ "kosu_sayisi": 10,
+ "islenen_yarislar": [
+  "2025-12-26-antalya-5-backfill",
+  "2026-02-03-antalya-1-backfill",
+  "2026-02-10-antalya-1-backfill",
+  "2026-02-26-antalya-2-backfill",
+  "2026-03-12-antalya-3-backfill",
+  "2026-04-02-antalya-1-backfill",
+  "2026-05-28-izmir-2-backfill",
+  "2026-06-13-izmir-1-backfill",
+  "2026-06-28-izmir-1-backfill",
+  "2026-07-18-izmir-3"
+ ],
+ "erken_gec_delta_ema": -1.093,
+ "son_guncelleme": "2026-07-18-izmir-3",
+ "son_atak_delta_ema": -1.591,
+ "gecmis_dolduruldu": true
+}

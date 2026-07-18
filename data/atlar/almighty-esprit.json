@@ -1,0 +1,18 @@
+{
+ "ad": "ALMIGHTY ESPRIT",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-05-30-bursa-2-backfill",
+  "2025-10-20-bursa-4-backfill",
+  "2025-11-21-bursa-2-backfill",
+  "2025-12-05-bursa-7-backfill",
+  "2026-01-25-izmir-8-backfill",
+  "2026-02-19-izmir-6-backfill",
+  "2026-03-05-izmir-6-backfill",
+  "2026-07-18-ankara-6"
+ ],
+ "erken_gec_delta_ema": -0.664,
+ "son_guncelleme": "2026-07-18-ankara-6",
+ "son_atak_delta_ema": -0.857,
+ "gecmis_dolduruldu": true
+}

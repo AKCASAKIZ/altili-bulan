@@ -1,0 +1,19 @@
+{
+ "ad": "ŞIKTURBO",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-03-01-adana-9-backfill",
+  "2025-03-25-adana-6-backfill",
+  "2025-05-30-istanbul-3-backfill",
+  "2026-03-31-antalya-5-backfill",
+  "2026-04-17-istanbul-8-backfill",
+  "2026-05-05-ankara-2-backfill",
+  "2026-06-13-ankara-2-backfill",
+  "2026-07-02-ankara-7-backfill",
+  "2026-07-18-ankara-7"
+ ],
+ "erken_gec_delta_ema": 0.305,
+ "son_atak_delta_ema": -1.231,
+ "son_guncelleme": "2026-07-18-ankara-7",
+ "gecmis_dolduruldu": true
+}
