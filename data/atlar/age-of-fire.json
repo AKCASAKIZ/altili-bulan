@@ -1,11 +1,12 @@
 {
  "ad": "AGE OF FIRE",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-11-izmir-1"
+  "2026-07-11-izmir-1",
+  "2026-07-19-izmir-3"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -1.5,
+ "erken_gec_delta_ema": -1.35,
  "son_atak_delta_ema": 0,
- "son_guncelleme": "2026-07-11-izmir-1"
+ "son_guncelleme": "2026-07-19-izmir-3"
 }

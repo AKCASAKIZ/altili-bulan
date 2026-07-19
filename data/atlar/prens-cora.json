@@ -1,0 +1,23 @@
+{
+ "ad": "PRENS CORA",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-06-09-bursa-6-backfill",
+  "2025-06-23-bursa-2-backfill",
+  "2025-06-30-bursa-6-backfill",
+  "2025-07-06-izmir-7-backfill",
+  "2025-08-03-izmir-5-backfill",
+  "2025-08-15-bursa-7-backfill",
+  "2025-08-27-istanbul-5-backfill",
+  "2025-09-19-bursa-4-backfill",
+  "2025-10-03-bursa-4-backfill",
+  "2025-11-05-istanbul-1-backfill",
+  "2026-06-08-bursa-9-backfill",
+  "2026-07-01-istanbul-1-backfill",
+  "2026-07-19-istanbul-1"
+ ],
+ "erken_gec_delta_ema": 2.899,
+ "son_atak_delta_ema": 1.559,
+ "son_guncelleme": "2026-07-19-istanbul-1",
+ "gecmis_dolduruldu": true
+}

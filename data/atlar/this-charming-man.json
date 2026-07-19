@@ -1,0 +1,13 @@
+{
+ "ad": "THIS CHARMING MAN",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-04-08-istanbul-2-backfill",
+  "2026-05-01-istanbul-9-backfill",
+  "2026-07-19-istanbul-6"
+ ],
+ "erken_gec_delta_ema": 3.47,
+ "son_guncelleme": "2026-07-19-istanbul-6",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
+}

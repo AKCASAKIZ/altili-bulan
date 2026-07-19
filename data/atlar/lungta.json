@@ -1,0 +1,13 @@
+{
+ "ad": "LUNGTA",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-05-21-izmir-3-backfill",
+  "2026-06-14-izmir-2-backfill",
+  "2026-07-19-izmir-1-backfill",
+  "2026-07-19-izmir-1"
+ ],
+ "erken_gec_delta_ema": 0.416,
+ "son_guncelleme": "2026-07-19-izmir-1",
+ "gecmis_dolduruldu": true
+}

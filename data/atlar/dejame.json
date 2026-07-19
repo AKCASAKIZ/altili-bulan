@@ -1,0 +1,15 @@
+{
+ "ad": "DEJAME",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-04-27-adana-7-backfill",
+  "2025-06-15-adana-7-backfill",
+  "2025-07-17-ankara-7-backfill",
+  "2026-07-03-istanbul-3-backfill",
+  "2026-07-19-istanbul-6"
+ ],
+ "erken_gec_delta_ema": 1.378,
+ "son_guncelleme": "2026-07-19-istanbul-6",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

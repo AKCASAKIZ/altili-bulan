@@ -1,10 +1,12 @@
 {
  "ad": "KING OF THE FIELD",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-12-istanbul-3"
+  "2026-07-12-istanbul-3",
+  "2026-07-19-istanbul-6"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -2.0,
- "son_guncelleme": "2026-07-12-istanbul-3"
+ "erken_gec_delta_ema": -3.5,
+ "son_guncelleme": "2026-07-19-istanbul-6",
+ "son_atak_delta_ema": 0
 }

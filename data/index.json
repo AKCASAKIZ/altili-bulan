@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-19 07:38 UTC",
+ "updated": "2026-07-19 22:06 UTC",
  "days": {
   "2026-07-04": [
    {
@@ -175,6 +175,16 @@
    {
     "slug": "karma",
     "name": "Karma"
+   }
+  ],
+  "2026-07-20": [
+   {
+    "slug": "bursa",
+    "name": "Bursa"
+   },
+   {
+    "slug": "elazig",
+    "name": "Elazığ"
    }
   ]
  }

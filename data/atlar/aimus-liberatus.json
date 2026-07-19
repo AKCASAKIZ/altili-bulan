@@ -1,0 +1,21 @@
+{
+ "ad": "AIMUS LIBERATUS",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-08-01-istanbul-1-backfill",
+  "2025-08-20-istanbul-4-backfill",
+  "2025-09-06-istanbul-2-backfill",
+  "2025-09-21-istanbul-3-backfill",
+  "2025-10-12-istanbul-4-backfill",
+  "2025-10-30-ankara-7-backfill",
+  "2026-03-31-antalya-6-backfill",
+  "2026-05-10-istanbul-8-backfill",
+  "2026-06-10-istanbul-5-backfill",
+  "2026-07-19-istanbul-8-backfill",
+  "2026-07-19-istanbul-8"
+ ],
+ "erken_gec_delta_ema": 1.416,
+ "son_guncelleme": "2026-07-19-istanbul-8",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

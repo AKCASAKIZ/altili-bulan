@@ -1,0 +1,25 @@
+{
+ "ad": "MISTER PROTEO",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-05-05-bursa-2-backfill",
+  "2025-05-21-istanbul-7-backfill",
+  "2025-06-16-bursa-9-backfill",
+  "2025-08-20-istanbul-1-backfill",
+  "2025-09-10-istanbul-1-backfill",
+  "2025-10-12-istanbul-7-backfill",
+  "2025-10-29-istanbul-4-backfill",
+  "2025-11-14-istanbul-7-backfill",
+  "2026-01-10-istanbul-5-backfill",
+  "2026-05-08-istanbul-3-backfill",
+  "2026-05-27-istanbul-8-backfill",
+  "2026-06-12-istanbul-6-backfill",
+  "2026-07-05-istanbul-8-backfill",
+  "2026-07-19-istanbul-7-backfill",
+  "2026-07-19-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 2.761,
+ "son_atak_delta_ema": 2.717,
+ "son_guncelleme": "2026-07-19-istanbul-7",
+ "gecmis_dolduruldu": true
+}

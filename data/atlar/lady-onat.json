@@ -1,0 +1,12 @@
+{
+ "ad": "LADY ONAT",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-06-04-kocaeli-1-backfill",
+  "2026-06-25-bursa-7-backfill",
+  "2026-07-19-izmir-7"
+ ],
+ "erken_gec_delta_ema": -0.41,
+ "son_guncelleme": "2026-07-19-izmir-7",
+ "gecmis_dolduruldu": true
+}

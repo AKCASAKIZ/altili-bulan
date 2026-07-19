@@ -1,0 +1,22 @@
+{
+ "ad": "MORIARTY",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-07-22-ankara-9-backfill",
+  "2025-08-10-istanbul-5-backfill",
+  "2025-11-25-antalya-4-backfill",
+  "2025-12-26-antalya-1-backfill",
+  "2026-02-04-istanbul-6-backfill",
+  "2026-02-24-antalya-1-backfill",
+  "2026-03-13-antalya-2-backfill",
+  "2026-04-09-izmir-6-backfill",
+  "2026-05-16-izmir-6-backfill",
+  "2026-06-28-izmir-5-backfill",
+  "2026-07-19-izmir-2-backfill",
+  "2026-07-19-izmir-2"
+ ],
+ "erken_gec_delta_ema": 0.769,
+ "son_guncelleme": "2026-07-19-izmir-2",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

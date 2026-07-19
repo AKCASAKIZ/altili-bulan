@@ -1,0 +1,22 @@
+{
+ "ad": "RACING RAPTURE",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-07-25-istanbul-2-backfill",
+  "2025-08-20-istanbul-2-backfill",
+  "2025-08-27-istanbul-1-backfill",
+  "2025-09-28-istanbul-7-backfill",
+  "2025-10-08-istanbul-1-backfill",
+  "2025-11-09-istanbul-2-backfill",
+  "2025-12-17-istanbul-2-backfill",
+  "2025-12-31-istanbul-1-backfill",
+  "2026-01-21-istanbul-4-backfill",
+  "2026-06-19-istanbul-1-backfill",
+  "2026-07-08-istanbul-1-backfill",
+  "2026-07-19-istanbul-7"
+ ],
+ "erken_gec_delta_ema": -1.301,
+ "son_atak_delta_ema": -1.415,
+ "son_guncelleme": "2026-07-19-istanbul-7",
+ "gecmis_dolduruldu": true
+}

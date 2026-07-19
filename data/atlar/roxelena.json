@@ -1,0 +1,16 @@
+{
+ "ad": "ROXELENA",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-02-20-izmir-2-backfill",
+  "2025-03-30-izmir-4-backfill",
+  "2025-04-19-izmir-7-backfill",
+  "2025-05-29-izmir-7-backfill",
+  "2025-06-28-izmir-5-backfill",
+  "2026-07-19-izmir-7"
+ ],
+ "erken_gec_delta_ema": 3.168,
+ "son_guncelleme": "2026-07-19-izmir-7",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

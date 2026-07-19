@@ -1,0 +1,23 @@
+{
+ "ad": "TOROS GÜZELİ",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-03-02-izmir-1-backfill",
+  "2025-03-21-izmir-8-backfill",
+  "2025-04-10-izmir-8-backfill",
+  "2025-05-17-izmir-3-backfill",
+  "2025-07-26-izmir-2-backfill",
+  "2025-12-11-izmir-6-backfill",
+  "2026-02-20-bursa-2-backfill",
+  "2026-03-05-izmir-1-backfill",
+  "2026-03-23-bursa-3-backfill",
+  "2026-04-05-izmir-3-backfill",
+  "2026-04-16-izmir-6-backfill",
+  "2026-04-27-bursa-6-backfill",
+  "2026-07-19-izmir-7"
+ ],
+ "erken_gec_delta_ema": -1.284,
+ "son_guncelleme": "2026-07-19-izmir-7",
+ "son_atak_delta_ema": -0.684,
+ "gecmis_dolduruldu": true
+}

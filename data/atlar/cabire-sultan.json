@@ -1,0 +1,20 @@
+{
+ "ad": "CABİRE SULTAN",
+ "kosu_sayisi": 10,
+ "islenen_yarislar": [
+  "2025-05-18-istanbul-1-backfill",
+  "2025-06-06-istanbul-7-backfill",
+  "2025-06-22-istanbul-6-backfill",
+  "2025-08-08-istanbul-10-backfill",
+  "2025-09-05-bursa-6-backfill",
+  "2026-05-08-istanbul-9-backfill",
+  "2026-07-01-istanbul-9-backfill",
+  "2026-07-08-istanbul-4-backfill",
+  "2026-07-19-istanbul-3-backfill",
+  "2026-07-19-istanbul-3"
+ ],
+ "erken_gec_delta_ema": 2.873,
+ "son_guncelleme": "2026-07-19-istanbul-3",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

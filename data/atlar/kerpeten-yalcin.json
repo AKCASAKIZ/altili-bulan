@@ -1,0 +1,17 @@
+{
+ "ad": "KERPETEN YALÇIN",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-08-26-ankara-10-backfill",
+  "2025-10-25-ankara-1-backfill",
+  "2025-11-02-adana-1-backfill",
+  "2026-04-26-adana-4-backfill",
+  "2026-05-24-adana-5-backfill",
+  "2026-07-19-istanbul-4-backfill",
+  "2026-07-19-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 5.484,
+ "son_guncelleme": "2026-07-19-istanbul-4",
+ "son_atak_delta_ema": 0.804,
+ "gecmis_dolduruldu": true
+}

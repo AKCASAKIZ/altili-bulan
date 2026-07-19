@@ -1,16 +1,17 @@
 {
  "ad": "HAZBALIK",
- "kosu_sayisi": 6,
+ "kosu_sayisi": 7,
  "islenen_yarislar": [
   "2025-08-15-bursa-7-backfill",
   "2025-09-15-bursa-1-backfill",
   "2025-10-10-istanbul-1-backfill",
   "2025-10-17-bursa-10-backfill",
   "2025-11-10-bursa-5-backfill",
-  "2026-07-10-bursa-7"
+  "2026-07-10-bursa-7",
+  "2026-07-19-istanbul-1"
  ],
- "erken_gec_delta_ema": 0.91,
- "son_atak_delta_ema": 0.609,
- "son_guncelleme": "2026-07-10-bursa-7",
+ "erken_gec_delta_ema": 0.187,
+ "son_atak_delta_ema": 0.726,
+ "son_guncelleme": "2026-07-19-istanbul-1",
  "gecmis_dolduruldu": true
 }

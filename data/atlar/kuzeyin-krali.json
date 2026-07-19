@@ -1,0 +1,18 @@
+{
+ "ad": "KUZEYİN KRALI",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-11-23-izmir-8-backfill",
+  "2025-12-07-izmir-2-backfill",
+  "2026-01-09-izmir-7-backfill",
+  "2026-01-29-izmir-1-backfill",
+  "2026-02-12-izmir-5-backfill",
+  "2026-02-27-izmir-2-backfill",
+  "2026-03-13-izmir-5-backfill",
+  "2026-07-19-izmir-2"
+ ],
+ "erken_gec_delta_ema": 0.86,
+ "son_guncelleme": "2026-07-19-izmir-2",
+ "son_atak_delta_ema": 0.3,
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,26 @@
+{
+ "ad": "SOĞUKDAĞ",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-07-04-bursa-6-backfill",
+  "2025-07-21-bursa-4-backfill",
+  "2025-08-06-istanbul-2-backfill",
+  "2025-09-01-bursa-2-backfill",
+  "2025-09-14-adana-7-backfill",
+  "2025-10-02-ankara-5-backfill",
+  "2025-10-23-ankara-7-backfill",
+  "2025-11-08-ankara-4-backfill",
+  "2026-04-30-izmir-5-backfill",
+  "2026-05-16-ankara-1-backfill",
+  "2026-06-05-bursa-5-backfill",
+  "2026-06-20-ankara-8-backfill",
+  "2026-06-27-ankara-3-backfill",
+  "2026-07-08-istanbul-4-backfill",
+  "2026-07-19-istanbul-4-backfill",
+  "2026-07-19-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-19-istanbul-4",
+ "son_atak_delta_ema": -0.171,
+ "gecmis_dolduruldu": true
+}

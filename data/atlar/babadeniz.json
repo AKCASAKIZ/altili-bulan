@@ -1,0 +1,25 @@
+{
+ "ad": "BABADENİZ",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-05-08-ankara-7-backfill",
+  "2025-05-13-ankara-5-backfill",
+  "2025-05-20-ankara-7-backfill",
+  "2025-05-27-ankara-2-backfill",
+  "2025-06-14-ankara-2-backfill",
+  "2025-06-26-ankara-2-backfill",
+  "2025-07-10-ankara-1-backfill",
+  "2025-08-05-ankara-4-backfill",
+  "2025-08-14-ankara-5-backfill",
+  "2025-08-21-ankara-1-backfill",
+  "2025-10-18-ankara-4-backfill",
+  "2025-11-05-istanbul-5-backfill",
+  "2026-04-18-ankara-5-backfill",
+  "2026-05-19-ankara-9-backfill",
+  "2026-07-19-istanbul-1"
+ ],
+ "erken_gec_delta_ema": -1.469,
+ "son_guncelleme": "2026-07-19-istanbul-1",
+ "son_atak_delta_ema": -1.803,
+ "gecmis_dolduruldu": true
+}

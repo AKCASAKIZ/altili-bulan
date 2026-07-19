@@ -1,0 +1,26 @@
+{
+ "ad": "KATI ZAMANI",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-04-12-adana-6-backfill",
+  "2025-05-12-bursa-7-backfill",
+  "2025-06-05-ankara-6-backfill",
+  "2025-06-20-bursa-8-backfill",
+  "2025-07-01-kocaeli-6-backfill",
+  "2025-07-09-istanbul-6-backfill",
+  "2025-09-07-istanbul-6-backfill",
+  "2026-01-13-adana-5-backfill",
+  "2026-01-31-adana-8-backfill",
+  "2026-02-08-adana-6-backfill",
+  "2026-03-01-izmir-6-backfill",
+  "2026-03-28-adana-7-backfill",
+  "2026-05-11-bursa-7-backfill",
+  "2026-06-09-ankara-6-backfill",
+  "2026-07-19-izmir-5-backfill",
+  "2026-07-19-izmir-5"
+ ],
+ "erken_gec_delta_ema": 0.103,
+ "son_atak_delta_ema": 0.017,
+ "son_guncelleme": "2026-07-19-izmir-5",
+ "gecmis_dolduruldu": true
+}

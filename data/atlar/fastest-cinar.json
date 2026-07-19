@@ -1,0 +1,15 @@
+{
+ "ad": "FASTEST ÇINAR",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-03-11-adana-7-backfill",
+  "2025-04-01-adana-7-backfill",
+  "2025-07-03-ankara-4-backfill",
+  "2025-09-29-sanliurfa-8-backfill",
+  "2026-07-19-izmir-7-backfill",
+  "2026-07-19-izmir-7"
+ ],
+ "erken_gec_delta_ema": 0.948,
+ "son_guncelleme": "2026-07-19-izmir-7",
+ "gecmis_dolduruldu": true
+}

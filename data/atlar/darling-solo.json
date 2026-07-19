@@ -1,0 +1,11 @@
+{
+ "ad": "DARLING SOLO",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-07-19-istanbul-2-backfill",
+  "2026-07-19-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-19-istanbul-2",
+ "gecmis_dolduruldu": true
+}

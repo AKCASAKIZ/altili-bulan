@@ -1,0 +1,22 @@
+{
+ "ad": "SİSU",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-05-25-istanbul-9-backfill",
+  "2025-11-16-istanbul-3-backfill",
+  "2025-12-06-istanbul-8-backfill",
+  "2025-12-20-istanbul-4-backfill",
+  "2026-01-03-istanbul-2-backfill",
+  "2026-01-31-istanbul-7-backfill",
+  "2026-02-15-izmir-1-backfill",
+  "2026-05-30-izmir-7-backfill",
+  "2026-06-13-izmir-2-backfill",
+  "2026-07-05-izmir-7-backfill",
+  "2026-07-19-izmir-6-backfill",
+  "2026-07-19-izmir-6"
+ ],
+ "erken_gec_delta_ema": 2.728,
+ "son_guncelleme": "2026-07-19-izmir-6",
+ "son_atak_delta_ema": 0.595,
+ "gecmis_dolduruldu": true
+}
