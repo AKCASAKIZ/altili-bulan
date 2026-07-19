@@ -23,7 +23,7 @@
      "sahip": "ENGİN BEKİROĞULLARI",
      "antrenor": "İB.B.OĞULLARI",
      "st": "3",
-     "agf": "",
+     "agf": "%22.33(2)",
      "h": "89",
      "son6": "Ç1-S1Ç6S1Ç1Ç0"
     },
@@ -38,7 +38,7 @@
      "sahip": "DENİZ KURTEL",
      "antrenor": "H.YÜZBAŞI",
      "st": "1",
-     "agf": "",
+     "agf": "%19.02(3)",
      "h": "98",
      "son6": "Ç6-S1Ç2Ç3Ç4Ç0"
     },
@@ -53,7 +53,7 @@
      "sahip": "HÜSEYİN KAAN MÜJDECİ",
      "antrenor": "C.ŞİMŞEK",
      "st": "5 - DS",
-     "agf": "",
+     "agf": "%16.48(5)",
      "h": "89",
      "son6": "S4Ç1Ç4Ç6Ç0Ç7"
     },
@@ -68,7 +68,7 @@
      "sahip": "ALİ UÇAK",
      "antrenor": "V.YILDIRIM",
      "st": "2",
-     "agf": "",
+     "agf": "%16.97(4)",
      "h": "96",
      "son6": "K3K1K3K1Ç9Ç0"
     },
@@ -83,7 +83,7 @@
      "sahip": "LALE M. ATMAN",
      "antrenor": "M.E.AVCI",
      "st": "4",
-     "agf": "",
+     "agf": "%25.21(1)",
      "h": "90",
      "son6": "Ç0-S2S1S1S5S3"
     },
@@ -98,7 +98,7 @@
      "sahip": "DUYGU FATURA",
      "antrenor": "E.USLU",
      "st": "5",
-     "agf": "",
+     "agf": "%7.05(5)",
      "h": "",
      "son6": "Ç5"
     },
@@ -113,7 +113,7 @@
      "sahip": "SELÇUK ACAR",
      "antrenor": "H.HARMANBAŞI",
      "st": "2",
-     "agf": "",
+     "agf": "%59.68(1)",
      "h": "60",
      "son6": "Ç3Ç2Ç1Ç2Ç3"
     },
@@ -128,7 +128,7 @@
      "sahip": "GÜLİZAR YANIK",
      "antrenor": "H.SUNKAR",
      "st": "3",
-     "agf": "",
+     "agf": "%10.22(3)",
      "h": "53",
      "son6": "S5K2K1Ç1Ç2"
     },
@@ -143,7 +143,7 @@
      "sahip": "OGÜN ATEŞ",
      "antrenor": "Y.DEMİRKIRAN",
      "st": "1",
-     "agf": "",
+     "agf": "%8.95(4)",
      "h": "42",
      "son6": "Ç6Ç6Ç1Ç3"
     },
@@ -158,7 +158,7 @@
      "sahip": "MEHMET ALİ KATI",
      "antrenor": "H.SUNKAR",
      "st": "4",
-     "agf": "",
+     "agf": "%14.1(2)",
      "h": "48",
      "son6": "S4Ç2K3Ç2Ç4Ç8"
     },
@@ -173,7 +173,7 @@
      "sahip": "ERHAN KAVÇİN",
      "antrenor": "A.TEMİZER",
      "st": "2",
-     "agf": "",
+     "agf": "%8.24(6)",
      "h": "",
      "son6": ""
     },
@@ -188,7 +188,7 @@
      "sahip": "MEHMET ÖZKAN",
      "antrenor": "Ö.GÜNELİ",
      "st": "9",
-     "agf": "",
+     "agf": "%0.77(12)",
      "h": "",
      "son6": ""
     },
@@ -203,7 +203,7 @@
      "sahip": "MİKAİL ALTIN",
      "antrenor": "M.ALTIN",
      "st": "6",
-     "agf": "",
+     "agf": "%8.42(5)",
      "h": "",
      "son6": ""
     },
@@ -218,7 +218,7 @@
      "sahip": "UFUK KURTLAR",
      "antrenor": "M.AKKILIÇ",
      "st": "12",
-     "agf": "",
+     "agf": "%0.6(13)",
      "h": "",
      "son6": ""
     },
@@ -233,7 +233,7 @@
      "sahip": "AYŞE TORKAK",
      "antrenor": "S.ÇİFTÇİ",
      "st": "7",
-     "agf": "",
+     "agf": "%1.13(9)",
      "h": "",
      "son6": ""
     },
@@ -248,7 +248,7 @@
      "sahip": "MURAT YAYIK",
      "antrenor": "Y.BAYSAL",
      "st": "5",
-     "agf": "",
+     "agf": "%8.76(4)",
      "h": "",
      "son6": ""
     },
@@ -263,7 +263,7 @@
      "sahip": "MEHMET DİLBER",
      "antrenor": "SER.DOĞAN",
      "st": "4",
-     "agf": "",
+     "agf": "%16.82(3)",
      "h": "",
      "son6": ""
     },
@@ -278,7 +278,7 @@
      "sahip": "ENDER COŞGUNSU",
      "antrenor": "GÜV.GÖKÇE",
      "st": "13",
-     "agf": "",
+     "agf": "%0.88(11)",
      "h": "",
      "son6": ""
     },
@@ -293,7 +293,7 @@
      "sahip": "RAMAZAN BAĞ",
      "antrenor": "R.KILIÇ",
      "st": "1",
-     "agf": "",
+     "agf": "%0.98(10)",
      "h": "",
      "son6": ""
     },
@@ -308,7 +308,7 @@
      "sahip": "ONUR KARADENİZ",
      "antrenor": "MAH.BAYKARA",
      "st": "3",
-     "agf": "",
+     "agf": "%1.89(7)",
      "h": "",
      "son6": ""
     },
@@ -323,7 +323,7 @@
      "sahip": "İSMAİL ARCA",
      "antrenor": "B.İLVAN",
      "st": "8",
-     "agf": "",
+     "agf": "%25.33(1)",
      "h": "",
      "son6": ""
     },
@@ -338,7 +338,7 @@
      "sahip": "BAHATTİN AKGÜN",
      "antrenor": "B.TURGUL",
      "st": "11",
-     "agf": "",
+     "agf": "%24.92(2)",
      "h": "",
      "son6": ""
     },
@@ -353,7 +353,7 @@
      "sahip": "ÖZNUR AYDOĞDİ",
      "antrenor": "S.AYDOĞDİ",
      "st": "10",
-     "agf": "",
+     "agf": "%1.27(8)",
      "h": "",
      "son6": ""
     },
@@ -368,7 +368,7 @@
      "sahip": "FATMA RANA ATAŞ ÇALIK",
      "antrenor": "Y.ARSLANCA",
      "st": "2",
-     "agf": "",
+     "agf": "%85.44(1)",
      "h": "49",
      "son6": "Ç7K1K1"
     },
@@ -383,7 +383,7 @@
      "sahip": "İLHAN SÖNMEZ",
      "antrenor": "B.AKTAŞ",
      "st": "6",
-     "agf": "",
+     "agf": "%2.35(3)",
      "h": "40",
      "son6": "K4K2K1"
     },
@@ -398,7 +398,7 @@
      "sahip": "BARIŞ ERDUMAN",
      "antrenor": "B.GÜL",
      "st": "4",
-     "agf": "",
+     "agf": "%10(2)",
      "h": "45",
      "son6": "K1K2"
     },
@@ -413,7 +413,7 @@
      "sahip": "GÖKHAN USLU",
      "antrenor": "M.A.PAKEL",
      "st": "1",
-     "agf": "",
+     "agf": "%0.74(5)",
      "h": "",
      "son6": "K5K4"
     },
@@ -428,7 +428,7 @@
      "sahip": "NİHAT DERİN",
      "antrenor": "O.AKTAŞ",
      "st": "5",
-     "agf": "",
+     "agf": "%1.32(4)",
      "h": "30",
      "son6": "K4K2K4"
     },
@@ -443,7 +443,7 @@
      "sahip": "İSHAK FELHAN",
      "antrenor": "V.ÖNDER",
      "st": "3",
-     "agf": "",
+     "agf": "%0.15(6)",
      "h": "10",
      "son6": "Ç8K9K7K9"
     },
@@ -458,7 +458,7 @@
      "sahip": "ENGİN ATEŞLER",
      "antrenor": "M.BULUT",
      "st": "8 - DS",
-     "agf": "",
+     "agf": "%25.79(2)",
      "h": "54",
      "son6": "K3K1K3K2K4K3"
     },
@@ -473,7 +473,7 @@
      "sahip": "FUAT OCAKOĞLU",
      "antrenor": "Ş.ÖZDENİZ",
      "st": "4",
-     "agf": "",
+     "agf": "%25.98(1)",
      "h": "53",
      "son6": "K1K4K1K2"
     },
@@ -488,7 +488,7 @@
      "sahip": "SONER SOYAD",
      "antrenor": "T.SOYAD",
      "st": "7",
-     "agf": "",
+     "agf": "%7.26(5)",
      "h": "48",
      "son6": "K1K1K3K3K3K5"
     },
@@ -503,7 +503,7 @@
      "sahip": "DUYGU FATURA",
      "antrenor": "Z.KURT",
      "st": "2",
-     "agf": "",
+     "agf": "%1.32(7)",
      "h": "47",
      "son6": "K4K3K4K2Ç8K4"
     },
@@ -518,7 +518,7 @@
      "sahip": "A.FERHAT KÜÇÜKER",
      "antrenor": "E.AYHAN",
      "st": "1",
-     "agf": "",
+     "agf": "%1.15(8)",
      "h": "39",
      "son6": "K6Ç9K3K0K5K6"
     },
@@ -533,7 +533,7 @@
      "sahip": "NURTEN ERDÖLEK",
      "antrenor": "N.GÖNÜLTAŞ",
      "st": "6",
-     "agf": "",
+     "agf": "%6.91(6)",
      "h": "41",
      "son6": "K2K1-K3"
     },
@@ -548,7 +548,7 @@
      "sahip": "EDA KAMBER",
      "antrenor": "M.A.PAKEL",
      "st": "5",
-     "agf": "",
+     "agf": "%23.95(3)",
      "h": "40",
      "son6": "K2K2K1"
     },
@@ -563,7 +563,7 @@
      "sahip": "ERKAN BAL",
      "antrenor": "E.ATEŞ",
      "st": "3",
-     "agf": "",
+     "agf": "%7.63(4)",
      "h": "39",
      "son6": "K8-K5K3K3K1"
     },
@@ -578,7 +578,7 @@
      "sahip": "AYŞEGÜL HAYMANA",
      "antrenor": "SEY.GÖKÇE",
      "st": "2",
-     "agf": "",
+     "agf": "%1.58(5)",
      "h": "89",
      "son6": "K1K1K3K7K1K2"
     },
@@ -593,7 +593,7 @@
      "sahip": "ULAŞ GÖKÇE",
      "antrenor": "SEY.GÖKÇE",
      "st": "6",
-     "agf": "",
+     "agf": "%26.57(3)",
      "h": "91",
      "son6": "K8-K1K8K1K1K3"
     },
@@ -608,7 +608,7 @@
      "sahip": "KAYHAN ALTINÖZ",
      "antrenor": "İ.ALTINÖZ",
      "st": "8",
-     "agf": "",
+     "agf": "%2.25(4)",
      "h": "99",
      "son6": "K1K6K6K1K4K6"
     },
@@ -623,7 +623,7 @@
      "sahip": "GÜRHAN Ş. ÖZBELGE",
      "antrenor": "Ş.ÖZDENİZ",
      "st": "7",
-     "agf": "",
+     "agf": "%1.56(6)",
      "h": "80",
      "son6": "K6K4K2K2K4K2"
     },
@@ -638,7 +638,7 @@
      "sahip": "SELMAN ERDEMİRCİ",
      "antrenor": "FAH.CEYLAN",
      "st": "5",
-     "agf": "",
+     "agf": "%28.89(2)",
      "h": "90",
      "son6": "K5K4K2K3K5K1"
     },
@@ -653,7 +653,7 @@
      "sahip": "MAHSUM EROL",
      "antrenor": "S.C.GÖZÜNGÜ",
      "st": "3",
-     "agf": "",
+     "agf": "%0.73(9)",
      "h": "97",
      "son6": "Ç3Ç4S5Ç9S6-K8"
     },
@@ -668,7 +668,7 @@
      "sahip": "OĞUZHAN ÖZŞAHİN",
      "antrenor": "SEY.DEMİR",
      "st": "4",
-     "agf": "",
+     "agf": "%36.78(1)",
      "h": "91",
      "son6": "K3K3K2K1-K7K1"
     },
@@ -683,7 +683,7 @@
      "sahip": "ERAY KOKTAY",
      "antrenor": "S.YANIK",
      "st": "9 - DS",
-     "agf": "",
+     "agf": "%0.76(8)",
      "h": "87",
      "son6": "K3K2K4K2K1-K0"
     },
@@ -698,7 +698,7 @@
      "sahip": "RECEP DİKKULE",
      "antrenor": "Y.AKKILIÇ",
      "st": "1",
-     "agf": "",
+     "agf": "%0.87(7)",
      "h": "87",
      "son6": "K4K5-K5K1Ç4Ç5"
     }
