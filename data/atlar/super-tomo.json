@@ -1,6 +1,6 @@
 {
  "ad": "SUPER TOMO",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2025-07-11-istanbul-3-backfill",
   "2025-07-20-istanbul-7-backfill",
@@ -17,10 +17,11 @@
   "2026-04-01-istanbul-5-backfill",
   "2026-04-10-antalya-7-backfill",
   "2026-04-24-istanbul-7-backfill",
-  "2026-07-11-ankara-7"
+  "2026-07-11-ankara-7",
+  "2026-07-20-bursa-8"
  ],
- "erken_gec_delta_ema": 2.828,
- "son_guncelleme": "2026-07-11-ankara-7",
- "son_atak_delta_ema": 0.441,
+ "erken_gec_delta_ema": 2.43,
+ "son_guncelleme": "2026-07-20-bursa-8",
+ "son_atak_delta_ema": 1.209,
  "gecmis_dolduruldu": true
 }

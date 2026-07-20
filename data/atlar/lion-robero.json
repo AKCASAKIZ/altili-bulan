@@ -1,0 +1,18 @@
+{
+ "ad": "LION ROBERO",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-06-01-adana-7-backfill",
+  "2025-09-28-adana-7-backfill",
+  "2026-02-18-sanliurfa-8-backfill",
+  "2026-02-23-sanliurfa-4-backfill",
+  "2026-03-31-adana-2-backfill",
+  "2026-04-08-elazig-5-backfill",
+  "2026-04-20-sanliurfa-3-backfill",
+  "2026-07-20-elazig-8"
+ ],
+ "erken_gec_delta_ema": 5.115,
+ "son_guncelleme": "2026-07-20-elazig-8",
+ "son_atak_delta_ema": -0.49,
+ "gecmis_dolduruldu": true
+}

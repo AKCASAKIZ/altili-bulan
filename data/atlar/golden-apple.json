@@ -1,16 +1,17 @@
 {
  "ad": "GOLDEN APPLE",
- "kosu_sayisi": 6,
+ "kosu_sayisi": 7,
  "islenen_yarislar": [
   "2025-06-16-bursa-3-backfill",
   "2025-06-30-bursa-3-backfill",
   "2025-07-12-izmir-3-backfill",
   "2025-07-25-bursa-9-backfill",
   "2025-08-01-bursa-3-backfill",
-  "2026-07-13-bursa-10"
+  "2026-07-13-bursa-10",
+  "2026-07-20-bursa-9"
  ],
- "erken_gec_delta_ema": 4.67,
- "son_guncelleme": "2026-07-13-bursa-10",
- "son_atak_delta_ema": 0.42,
+ "erken_gec_delta_ema": 2.819,
+ "son_guncelleme": "2026-07-20-bursa-9",
+ "son_atak_delta_ema": -0.306,
  "gecmis_dolduruldu": true
 }

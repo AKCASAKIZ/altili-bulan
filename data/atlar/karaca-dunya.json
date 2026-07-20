@@ -1,6 +1,6 @@
 {
  "ad": "KARACA DÜNYA",
- "kosu_sayisi": 8,
+ "kosu_sayisi": 9,
  "islenen_yarislar": [
   "2025-07-16-elazig-9-backfill",
   "2025-08-05-ankara-9-backfill",
@@ -9,10 +9,11 @@
   "2025-12-10-sanliurfa-2-backfill",
   "2026-03-18-sanliurfa-7-backfill",
   "2026-04-20-sanliurfa-8-backfill",
-  "2026-07-15-elazig-7"
+  "2026-07-15-elazig-7",
+  "2026-07-20-elazig-5"
  ],
- "erken_gec_delta_ema": 4.507,
- "son_guncelleme": "2026-07-15-elazig-7",
- "son_atak_delta_ema": -0.147,
+ "erken_gec_delta_ema": 2.855,
+ "son_guncelleme": "2026-07-20-elazig-5",
+ "son_atak_delta_ema": -0.103,
  "gecmis_dolduruldu": true
 }

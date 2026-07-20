@@ -1,6 +1,6 @@
 {
  "ad": "ŞİFNE EFESİ",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-04-26-izmir-7-backfill",
   "2025-11-06-izmir-4-backfill",
@@ -16,10 +16,11 @@
   "2026-06-14-izmir-3-backfill",
   "2026-06-28-izmir-2-backfill",
   "2026-07-12-izmir-3-backfill",
-  "2026-07-12-izmir-3"
+  "2026-07-12-izmir-3",
+  "2026-07-20-bursa-10"
  ],
- "erken_gec_delta_ema": 0.829,
- "son_guncelleme": "2026-07-12-izmir-3",
+ "erken_gec_delta_ema": -0.02,
+ "son_guncelleme": "2026-07-20-bursa-10",
  "son_atak_delta_ema": -0.21,
  "gecmis_dolduruldu": true
 }

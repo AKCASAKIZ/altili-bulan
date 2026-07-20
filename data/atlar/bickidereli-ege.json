@@ -1,6 +1,6 @@
 {
  "ad": "BIÇKIDERELİ EGE",
- "kosu_sayisi": 7,
+ "kosu_sayisi": 8,
  "islenen_yarislar": [
   "2025-04-25-bursa-9-backfill",
   "2025-05-16-bursa-2-backfill",
@@ -8,10 +8,11 @@
   "2025-06-30-bursa-5-backfill",
   "2025-10-25-izmir-5-backfill",
   "2025-11-14-bursa-7-backfill",
-  "2026-07-14-kocaeli-7"
+  "2026-07-14-kocaeli-7",
+  "2026-07-20-bursa-3"
  ],
- "erken_gec_delta_ema": 2.005,
- "son_guncelleme": "2026-07-14-kocaeli-7",
- "son_atak_delta_ema": 0,
+ "erken_gec_delta_ema": 1.703,
+ "son_guncelleme": "2026-07-20-bursa-3",
+ "son_atak_delta_ema": -1.2,
  "gecmis_dolduruldu": true
 }

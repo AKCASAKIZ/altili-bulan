@@ -1,0 +1,22 @@
+{
+ "ad": "GÖZE ÇARPAN",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-07-09-elazig-4-backfill",
+  "2025-07-16-elazig-6-backfill",
+  "2025-07-21-elazig-4-backfill",
+  "2025-07-28-elazig-7-backfill",
+  "2025-11-11-kocaeli-5-backfill",
+  "2025-12-20-istanbul-3-backfill",
+  "2026-01-03-istanbul-5-backfill",
+  "2026-05-04-sanliurfa-5-backfill",
+  "2026-06-01-sanliurfa-3-backfill",
+  "2026-07-06-elazig-4-backfill",
+  "2026-07-20-elazig-5-backfill",
+  "2026-07-20-elazig-5"
+ ],
+ "erken_gec_delta_ema": 3.807,
+ "son_atak_delta_ema": 2.411,
+ "son_guncelleme": "2026-07-20-elazig-5",
+ "gecmis_dolduruldu": true
+}

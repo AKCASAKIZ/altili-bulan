@@ -1,10 +1,11 @@
 {
  "ad": "LA PERLE RARE",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-09-ankara-2"
+  "2026-07-09-ankara-2",
+  "2026-07-20-bursa-5"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": 2.0,
- "son_guncelleme": "2026-07-09-ankara-2"
+ "erken_gec_delta_ema": 3.35,
+ "son_guncelleme": "2026-07-20-bursa-5"
 }

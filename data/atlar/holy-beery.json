@@ -1,11 +1,12 @@
 {
  "ad": "HOLY BEERY",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-12-istanbul-1"
+  "2026-07-12-istanbul-1",
+  "2026-07-20-bursa-9"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -2.5,
- "son_atak_delta_ema": -1,
- "son_guncelleme": "2026-07-12-istanbul-1"
+ "erken_gec_delta_ema": -1.3,
+ "son_atak_delta_ema": -0.1,
+ "son_guncelleme": "2026-07-20-bursa-9"
 }

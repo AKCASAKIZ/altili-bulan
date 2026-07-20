@@ -1,0 +1,14 @@
+{
+ "ad": "KING OF LINGO",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-04-15-elazig-4-backfill",
+  "2026-05-20-elazig-1-backfill",
+  "2026-06-24-elazig-2-backfill",
+  "2026-07-20-elazig-2-backfill",
+  "2026-07-20-elazig-2"
+ ],
+ "erken_gec_delta_ema": 0.453,
+ "son_guncelleme": "2026-07-20-elazig-2",
+ "gecmis_dolduruldu": true
+}

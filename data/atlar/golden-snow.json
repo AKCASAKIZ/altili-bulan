@@ -1,0 +1,12 @@
+{
+ "ad": "GOLDEN SNOW",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2025-10-23-ankara-3-backfill",
+  "2026-07-20-bursa-9"
+ ],
+ "erken_gec_delta_ema": 3.7,
+ "son_atak_delta_ema": 2.1,
+ "son_guncelleme": "2026-07-20-bursa-9",
+ "gecmis_dolduruldu": true
+}

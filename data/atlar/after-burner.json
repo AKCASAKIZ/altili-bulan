@@ -1,0 +1,18 @@
+{
+ "ad": "AFTER BURNER",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2026-02-01-adana-2-backfill",
+  "2026-02-22-adana-7-backfill",
+  "2026-03-22-adana-7-backfill",
+  "2026-05-02-ankara-1-backfill",
+  "2026-05-19-ankara-4-backfill",
+  "2026-06-06-ankara-1-backfill",
+  "2026-07-20-bursa-3-backfill",
+  "2026-07-20-bursa-3"
+ ],
+ "erken_gec_delta_ema": -0.207,
+ "son_atak_delta_ema": -0.87,
+ "son_guncelleme": "2026-07-20-bursa-3",
+ "gecmis_dolduruldu": true
+}

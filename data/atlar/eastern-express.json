@@ -1,0 +1,15 @@
+{
+ "ad": "EASTERN EXPRESS",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-03-23-izmir-7-backfill",
+  "2025-07-12-izmir-3-backfill",
+  "2025-07-26-izmir-9-backfill",
+  "2025-08-10-izmir-2-backfill",
+  "2026-07-20-bursa-3"
+ ],
+ "erken_gec_delta_ema": -0.029,
+ "son_atak_delta_ema": -2.1,
+ "son_guncelleme": "2026-07-20-bursa-3",
+ "gecmis_dolduruldu": true
+}

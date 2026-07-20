@@ -1,0 +1,17 @@
+{
+ "ad": "VAN KALESİ",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2026-01-21-sanliurfa-2-backfill",
+  "2026-04-07-adana-2-backfill",
+  "2026-04-29-elazig-1-backfill",
+  "2026-05-13-elazig-6-backfill",
+  "2026-05-20-elazig-5-backfill",
+  "2026-07-06-elazig-2-backfill",
+  "2026-07-20-elazig-6"
+ ],
+ "erken_gec_delta_ema": 1.045,
+ "son_atak_delta_ema": 0.492,
+ "son_guncelleme": "2026-07-20-elazig-6",
+ "gecmis_dolduruldu": true
+}

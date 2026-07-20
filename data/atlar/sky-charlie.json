@@ -1,0 +1,11 @@
+{
+ "ad": "SKY CHARLIE",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-01-27-antalya-1-backfill",
+  "2026-07-20-bursa-2"
+ ],
+ "erken_gec_delta_ema": 3.1,
+ "son_guncelleme": "2026-07-20-bursa-2",
+ "gecmis_dolduruldu": true
+}

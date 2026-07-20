@@ -1,0 +1,20 @@
+{
+ "ad": "HIZLI KEREM",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-04-14-bursa-1-backfill",
+  "2025-05-16-bursa-7-backfill",
+  "2025-06-02-bursa-4-backfill",
+  "2025-06-13-bursa-2-backfill",
+  "2025-07-14-bursa-6-backfill",
+  "2025-08-22-bursa-6-backfill",
+  "2025-09-19-bursa-6-backfill",
+  "2025-10-03-bursa-6-backfill",
+  "2026-05-01-bursa-6-backfill",
+  "2026-06-19-bursa-9-backfill",
+  "2026-07-20-bursa-7"
+ ],
+ "erken_gec_delta_ema": 1.605,
+ "son_guncelleme": "2026-07-20-bursa-7",
+ "gecmis_dolduruldu": true
+}

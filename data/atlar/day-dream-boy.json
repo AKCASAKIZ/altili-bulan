@@ -1,0 +1,14 @@
+{
+ "ad": "DAY DREAM BOY",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-06-22-elazig-4-backfill",
+  "2026-07-06-elazig-3-backfill",
+  "2026-07-20-bursa-6-backfill",
+  "2026-07-20-bursa-6"
+ ],
+ "erken_gec_delta_ema": 2.386,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-20-bursa-6",
+ "gecmis_dolduruldu": true
+}

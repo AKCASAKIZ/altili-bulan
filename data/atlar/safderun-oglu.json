@@ -1,0 +1,16 @@
+{
+ "ad": "SAFDERUN OĞLU",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-04-07-bursa-4-backfill",
+  "2025-04-28-bursa-5-backfill",
+  "2025-06-17-kocaeli-10-backfill",
+  "2025-07-10-kocaeli-2-backfill",
+  "2026-01-06-antalya-7-backfill",
+  "2026-07-20-bursa-10"
+ ],
+ "erken_gec_delta_ema": 0.733,
+ "son_atak_delta_ema": 0.21,
+ "son_guncelleme": "2026-07-20-bursa-10",
+ "gecmis_dolduruldu": true
+}

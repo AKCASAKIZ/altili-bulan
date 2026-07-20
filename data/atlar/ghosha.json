@@ -1,0 +1,13 @@
+{
+ "ad": "GHOSHA",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-05-06-elazig-2-backfill",
+  "2026-05-31-adana-3-backfill",
+  "2026-07-20-elazig-2-backfill",
+  "2026-07-20-elazig-2"
+ ],
+ "erken_gec_delta_ema": 0.073,
+ "son_guncelleme": "2026-07-20-elazig-2",
+ "gecmis_dolduruldu": true
+}

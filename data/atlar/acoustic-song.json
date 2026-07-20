@@ -1,0 +1,14 @@
+{
+ "ad": "ACOUSTIC SONG",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-06-05-bursa-2-backfill",
+  "2026-06-29-bursa-3-backfill",
+  "2026-07-20-bursa-3-backfill",
+  "2026-07-20-bursa-3"
+ ],
+ "erken_gec_delta_ema": 4.729,
+ "son_atak_delta_ema": 3.873,
+ "son_guncelleme": "2026-07-20-bursa-3",
+ "gecmis_dolduruldu": true
+}

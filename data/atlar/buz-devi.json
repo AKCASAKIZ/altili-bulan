@@ -1,0 +1,23 @@
+{
+ "ad": "BUZ DEVİ",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-04-02-istanbul-8-backfill",
+  "2025-04-09-istanbul-1-backfill",
+  "2025-04-20-istanbul-4-backfill",
+  "2025-05-23-istanbul-10-backfill",
+  "2025-07-20-istanbul-2-backfill",
+  "2025-07-27-istanbul-1-backfill",
+  "2025-08-20-istanbul-9-backfill",
+  "2025-09-03-istanbul-2-backfill",
+  "2025-10-19-istanbul-2-backfill",
+  "2025-10-26-istanbul-10-backfill",
+  "2025-11-02-istanbul-10-backfill",
+  "2025-11-09-istanbul-1-backfill",
+  "2026-07-20-bursa-10"
+ ],
+ "erken_gec_delta_ema": 0.407,
+ "son_guncelleme": "2026-07-20-bursa-10",
+ "son_atak_delta_ema": 2.736,
+ "gecmis_dolduruldu": true
+}

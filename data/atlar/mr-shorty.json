@@ -1,0 +1,12 @@
+{
+ "ad": "MR SHORTY",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2025-05-24-izmir-10-backfill",
+  "2026-07-20-bursa-9"
+ ],
+ "erken_gec_delta_ema": -2.2,
+ "son_guncelleme": "2026-07-20-bursa-9",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": -13
+}

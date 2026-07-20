@@ -1,0 +1,14 @@
+{
+ "ad": "ROYALGUARD",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-04-27-sanliurfa-5-backfill",
+  "2026-06-08-sanliurfa-3-backfill",
+  "2026-07-06-elazig-2-backfill",
+  "2026-07-20-elazig-6"
+ ],
+ "erken_gec_delta_ema": -1.758,
+ "son_guncelleme": "2026-07-20-elazig-6",
+ "son_atak_delta_ema": -0.81,
+ "gecmis_dolduruldu": true
+}

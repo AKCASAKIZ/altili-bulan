@@ -1,0 +1,20 @@
+{
+ "ad": "GO BEAUTY",
+ "kosu_sayisi": 10,
+ "islenen_yarislar": [
+  "2025-05-02-bursa-5-backfill",
+  "2025-05-12-bursa-2-backfill",
+  "2025-06-20-bursa-7-backfill",
+  "2025-06-30-bursa-5-backfill",
+  "2025-07-19-izmir-3-backfill",
+  "2025-09-05-bursa-2-backfill",
+  "2025-10-24-bursa-7-backfill",
+  "2025-11-10-bursa-3-backfill",
+  "2026-04-13-bursa-8-backfill",
+  "2026-07-20-bursa-3"
+ ],
+ "erken_gec_delta_ema": 3.53,
+ "son_atak_delta_ema": -0.615,
+ "son_guncelleme": "2026-07-20-bursa-3",
+ "gecmis_dolduruldu": true
+}
