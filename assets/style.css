@@ -12,7 +12,6 @@
   --gold: #b8860b;
   --gold-soft: #fdf3d7;
   --danger: #b3392f;
-  --heat: #ee8322; /* kazanma olasılığı ısı skalası — favori tam turuncu, gerisi beyaza solar */
   --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.05);
   --radius: 12px;
 }
@@ -29,7 +28,6 @@
   --gold: #e0b13e;
   --gold-soft: #33290f;
   --danger: #e0645a;
-  --heat: #b95f13; /* koyu temada yanık turuncu — açık metin üzerinde okunur kalsın */
   --shadow: 0 1px 3px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.25);
 }
 * { box-sizing: border-box; }
@@ -153,7 +151,6 @@ tbody tr:hover { background: var(--surface2); }
 }
 tbody tr:hover .sticky-col { background: var(--surface2); }
 .score-table td.total { font-weight: 700; font-size: 14px; color: var(--accent-text); text-align: right; }
-.win-pct { display: block; font-size: 10px; font-weight: 600; color: var(--text-dim); }
 .rank-badge {
   display: inline-block; min-width: 24px; text-align: center;
   border-radius: 6px; padding: 2px 6px; font-weight: 700; font-size: 12px;
@@ -209,6 +206,38 @@ tr.top-row .sticky-col { background: var(--gold-soft); }
   display: flex; gap: 24px; flex-wrap: wrap;
 }
 .kupon-summary b { color: var(--accent-text); font-size: 18px; }
+.kupon-summary { align-items: flex-start; }
+
+/* Altılı blok işareti + öneri rozeti */
+.kupon-leg.in-altili { border-left: 3px solid var(--gold); }
+.kupon-leg-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.kupon-leg-head h4 { margin: 0 0 8px; }
+.altili-toggles { display: flex; gap: 6px; flex-shrink: 0; }
+.altili-tag {
+  font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+  border-radius: 20px; padding: 3px 12px; border: 1px solid var(--border);
+  background: var(--surface2); color: var(--text-dim); white-space: nowrap; opacity: .65;
+}
+.altili-tag:hover { opacity: 1; }
+.altili-tag.alt1.on { background: var(--gold-soft); color: var(--gold); border-color: var(--gold); opacity: 1; }
+.altili-tag.alt2.on { background: var(--accent-soft); color: var(--accent-text); border-color: var(--accent); opacity: 1; }
+.rec-badge { font-size: 12px; color: var(--text-dim); margin: 0 0 8px; }
+.rec-badge b { color: var(--gold); }
+.rec-reason { font-style: italic; }
+.horse-pick.recommended:not(.picked) { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
+
+/* Dikey bilet (kupon özeti) */
+.ticket {
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 10px;
+  padding: 10px 12px; min-width: 240px; flex: 0 1 auto;
+}
+.ticket-head { font-weight: 700; font-size: 14px; margin-bottom: 6px; color: var(--gold); }
+.ticket-table { width: 100%; box-shadow: none; border: none; background: none; }
+.ticket-table td { padding: 3px 6px; border-bottom: 1px solid var(--border); font-size: 13px; white-space: nowrap; }
+.ticket-table tr:last-child td { border-bottom: none; }
+.tk-picks { font-weight: 600; color: var(--text); letter-spacing: .5px; }
+.ticket-foot { margin-top: 8px; font-size: 12px; color: var(--text-dim); }
+.ticket-foot b { color: var(--accent-text); }
 
 /* Cards */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
