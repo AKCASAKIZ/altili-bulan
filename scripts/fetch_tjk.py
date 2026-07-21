@@ -248,7 +248,10 @@ def fetch_gecmis(names: list, out_dir, slug: str, yil_geri: int = 2, max_satir: 
         m = re.search(r"QueryParameter_AtId=(\d+)", b.decode("utf-8", "replace"))
         if not m:
             continue
-        b = http_get(f"https://www.tjk.org/TR/YarisSever/Query/ConnectedPage/AtKosuBilgileri?QueryParameter_AtId={m.group(1)}&QueryParameter_Sira=1&QueryParameter_YIL=-1")
+        # NOT: QueryParameter_Sira=1 geçmişi hatalı biçimde 2-3 koşuya kırpıyordu
+        # (bkz. BOĞAZİÇİ BEYİ: 16 koşu var, Sira=1 ile 2 dönüyordu). Kaldırınca
+        # tüm kariyer aynı sütun düzeniyle gelir; tarih filtresi zaten 2 yıla sınırlar.
+        b = http_get(f"https://www.tjk.org/TR/YarisSever/Query/ConnectedPage/AtKosuBilgileri?QueryParameter_AtId={m.group(1)}&QueryParameter_YIL=-1")
         time.sleep(0.2)
         if not b:
             continue
