@@ -234,9 +234,12 @@ def fetch_idman_son800(names: list, out_dir, slug: str) -> None:
         print(f"  + son800-{slug}.json ({len(son8)} at)")
 
 
-def fetch_gecmis(names: list, out_dir, slug: str) -> None:
-    """Her atin son 8 kosusunu (AtKosuBilgileri) ceker."""
+def fetch_gecmis(names: list, out_dir, slug: str, yil_geri: int = 2, max_satir: int = 40) -> None:
+    """Her atin son ~2 yillik kosularini (AtKosuBilgileri) ceker.
+    AtKosuBilgileri zaten TUM yillari (YIL=-1) dondurur; ekstra istek yok,
+    sadece son `yil_geri` yila kadar (guvenlik sinir: max_satir) ayristirilir."""
     out = {}
+    esik = datetime.now() - timedelta(days=yil_geri * 365 + 1)
     for name in sorted(set(n for n in names if n)):
         b = http_get("https://www.tjk.org/TR/YarisSever/Query/Data/AtIstatistikleri?QueryParameter_AtAdi=" + urllib.parse.quote(name))
         time.sleep(0.2)
@@ -252,11 +255,17 @@ def fetch_gecmis(names: list, out_dir, slug: str) -> None:
         rows = []
         for c in _tablo_satirlari(b.decode("utf-8", "replace")):
             if len(c) >= 18 and re.match(r"\d{2}\.\d{2}\.\d{4}", c[0]):
+                # 2 yildan eski kosuya gelince dur (satirlar yeniden eskiye sirali)
+                try:
+                    if datetime.strptime(c[0][:10], "%d.%m.%Y") < esik:
+                        break
+                except Exception:
+                    pass
                 rows.append({"t": c[0], "sehir": c[1], "mesafe": c[2], "pist": c[3],
                              "poz": c[4], "kilo": c[6], "ekipman": c[7], "jokey": c[8],
                              "ganyan": c[10], "cins": c[13], "hp": c[16], "ikr": c[17]})
-            if len(rows) >= 8:
-                break
+                if len(rows) >= max_satir:
+                    break
         if rows:
             out[name] = rows
     if out:
