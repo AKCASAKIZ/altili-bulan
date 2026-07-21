@@ -692,3 +692,90 @@ function slugAt(ad) {
   }
   btn.onclick = tamOtomatik;
 })();
+
+
+/* ===== 📜 At Geçmişi görüntüleyici =====
+ * data/{gün}/gecmis-{şehir}.json'daki her atın son ~2 yıllık koşularını
+ * (fetch_tjk.py fetch_gecmis) tablo olarak gösterir. Anahtar = temizle(ad). */
+(function () {
+  const AB = window.AB;
+  if (!AB) return;
+
+  const tabBtn = document.createElement("button");
+  tabBtn.className = "tab";
+  tabBtn.dataset.tab = "gecmis";
+  tabBtn.textContent = "📜 Geçmiş";
+  document.getElementById("mainTabs").insertBefore(tabBtn, document.querySelector('[data-tab="ayarlar"]'));
+
+  const pane = document.createElement("section");
+  pane.id = "tab-gecmis";
+  pane.className = "tab-pane";
+  pane.innerHTML = `
+    <div class="toolbar">
+      <select id="gecmisAt" style="min-width:280px"></select>
+      <span class="hint" id="gecmisInfo">Bir at seçin — son ~2 yıllık koşuları listelenir.</span>
+    </div>
+    <div id="gecmisView"></div>`;
+  document.querySelector("main").appendChild(pane);
+
+  let cache = null, cacheKey = null;
+  async function loadGecmis() {
+    const key = `${AB.state.day}/${AB.state.city}`;
+    if (cacheKey === key && cache !== null) return cache;
+    cache = await fetch(`data/${AB.state.day}/gecmis-${AB.state.city}.json`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    cacheKey = key;
+    return cache;
+  }
+
+  function fillHorseSelect() {
+    const sel = document.getElementById("gecmisAt");
+    sel.innerHTML = "";
+    if (!AB.state.legs || !AB.state.legs.length) {
+      sel.innerHTML = `<option value="">Önce Puanlama sekmesinden programı yükleyin</option>`;
+      return;
+    }
+    for (const leg of AB.state.legs) {
+      const og = document.createElement("optgroup");
+      og.label = `${leg.raceNo}. Koşu`;
+      for (const h of leg.horses) {
+        const o = document.createElement("option");
+        o.value = h.ad;
+        o.textContent = `${h.no}. ${h.ad}`;
+        og.appendChild(o);
+      }
+      sel.appendChild(og);
+    }
+  }
+
+  async function render() {
+    const sel = document.getElementById("gecmisAt");
+    const info = document.getElementById("gecmisInfo");
+    const view = document.getElementById("gecmisView");
+    const ad = sel.value;
+    if (!ad) { view.innerHTML = ""; return; }
+    info.textContent = "Yükleniyor…";
+    const g = await loadGecmis();
+    if (!g) { info.textContent = "⚠️ Bu gün/hipodrom için geçmiş verisi (gecmis-*.json) henüz yok."; view.innerHTML = ""; return; }
+    const rows = g[temizle(ad)] || g[ad] || null;
+    if (!rows || !rows.length) { info.textContent = `${ad} için geçmiş koşu bulunamadı (yeni koşan olabilir).`; view.innerHTML = ""; return; }
+    const yil = `${(rows[rows.length - 1].t || "").slice(6)}–${(rows[0].t || "").slice(6)}`;
+    info.textContent = `${ad} — ${rows.length} koşu (yeni → eski)`;
+    let html = `<div class="race-card"><header><h3>📜 ${AB.esc(ad)}</h3><span class="race-tags">${rows.length} koşu · ${AB.esc(yil)}</span></header>
+      <div class="table-wrap"><table><thead><tr>
+      <th>Tarih</th><th>Şehir</th><th>Mesafe</th><th>Pist</th><th>Poz</th><th>Kilo</th><th>Jokey</th><th>Ganyan</th><th>HP</th><th>İkramiye</th><th>Ekipman</th><th>Cins</th>
+      </tr></thead><tbody>`;
+    for (const r of rows) {
+      html += `<tr><td>${AB.esc(r.t || "")}</td><td>${AB.esc(r.sehir || "")}</td><td>${AB.esc(r.mesafe || "")}</td><td>${AB.esc(r.pist || "")}</td><td>${AB.esc(r.poz || "")}</td><td>${AB.esc(r.kilo || "")}</td><td>${AB.esc(r.jokey || "")}</td><td>${AB.esc(r.ganyan || "")}</td><td>${AB.esc(r.hp || "")}</td><td>${AB.esc(r.ikr || "")}</td><td>${AB.esc(r.ekipman || "")}</td><td>${AB.esc(r.cins || "")}</td></tr>`;
+    }
+    view.innerHTML = html + `</tbody></table></div></div>`;
+  }
+
+  tabBtn.onclick = () => {
+    document.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", x === tabBtn));
+    document.querySelectorAll(".tab-pane").forEach((p) => p.classList.toggle("active", p.id === "tab-gecmis"));
+    fillHorseSelect();
+    render();
+  };
+  document.getElementById("gecmisAt").onchange = render;
+})();
