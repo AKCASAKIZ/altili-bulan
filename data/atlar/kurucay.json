@@ -1,16 +1,17 @@
 {
  "ad": "KURUÇAY",
- "kosu_sayisi": 6,
+ "kosu_sayisi": 7,
  "islenen_yarislar": [
   "2025-09-05-izmir-6-backfill",
   "2025-11-28-izmir-1-backfill",
   "2026-03-30-bursa-8-backfill",
   "2026-04-20-bursa-8-backfill",
   "2026-06-27-ankara-1-backfill",
-  "2026-07-16-kocaeli-6"
+  "2026-07-16-kocaeli-6",
+  "2026-07-21-ankara-4"
  ],
- "erken_gec_delta_ema": 2.64,
- "son_atak_delta_ema": 2.19,
- "son_guncelleme": "2026-07-16-kocaeli-6",
+ "erken_gec_delta_ema": 2.298,
+ "son_atak_delta_ema": 2.133,
+ "son_guncelleme": "2026-07-21-ankara-4",
  "gecmis_dolduruldu": true
 }

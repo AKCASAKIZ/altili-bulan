@@ -1,0 +1,26 @@
+{
+ "ad": "ŞİMŞEKKIRAN",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-10-18-izmir-8-backfill",
+  "2025-10-25-izmir-9-backfill",
+  "2025-11-07-istanbul-8-backfill",
+  "2025-11-23-izmir-2-backfill",
+  "2025-12-14-izmir-6-backfill",
+  "2026-01-02-antalya-5-backfill",
+  "2026-01-23-izmir-4-backfill",
+  "2026-01-29-izmir-4-backfill",
+  "2026-03-02-bursa-5-backfill",
+  "2026-03-26-izmir-5-backfill",
+  "2026-04-05-izmir-4-backfill",
+  "2026-04-10-izmir-7-backfill",
+  "2026-05-02-izmir-7-backfill",
+  "2026-06-19-bursa-7-backfill",
+  "2026-06-30-kocaeli-6-backfill",
+  "2026-07-21-ankara-6"
+ ],
+ "erken_gec_delta_ema": 0.754,
+ "son_guncelleme": "2026-07-21-ankara-6",
+ "son_atak_delta_ema": 0.42,
+ "gecmis_dolduruldu": true
+}

@@ -1,6 +1,6 @@
 {
  "ad": "YES GRASYAS",
- "kosu_sayisi": 8,
+ "kosu_sayisi": 9,
  "islenen_yarislar": [
   "2025-03-02-adana-3-backfill",
   "2025-12-13-adana-8-backfill",
@@ -9,10 +9,11 @@
   "2026-02-24-adana-2-backfill",
   "2026-03-10-adana-6-backfill",
   "2026-05-30-ankara-4-backfill",
-  "2026-07-10-istanbul-6"
+  "2026-07-10-istanbul-6",
+  "2026-07-21-ankara-7"
  ],
- "erken_gec_delta_ema": 0.267,
- "son_guncelleme": "2026-07-10-istanbul-6",
+ "erken_gec_delta_ema": 0.037,
+ "son_guncelleme": "2026-07-21-ankara-7",
  "son_atak_delta_ema": 0.0,
  "gecmis_dolduruldu": true
 }

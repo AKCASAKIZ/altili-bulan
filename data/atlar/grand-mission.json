@@ -1,0 +1,24 @@
+{
+ "ad": "GRAND MISSION",
+ "kosu_sayisi": 14,
+ "islenen_yarislar": [
+  "2025-10-07-kocaeli-4-backfill",
+  "2025-10-31-bursa-6-backfill",
+  "2025-11-07-bursa-7-backfill",
+  "2026-01-19-bursa-5-backfill",
+  "2026-01-26-bursa-5-backfill",
+  "2026-02-06-bursa-4-backfill",
+  "2026-02-16-bursa-2-backfill",
+  "2026-02-23-bursa-5-backfill",
+  "2026-03-06-bursa-7-backfill",
+  "2026-04-13-bursa-2-backfill",
+  "2026-05-04-bursa-7-backfill",
+  "2026-06-02-kocaeli-7-backfill",
+  "2026-06-16-kocaeli-5-backfill",
+  "2026-07-21-kocaeli-1"
+ ],
+ "erken_gec_delta_ema": 2.515,
+ "son_atak_delta_ema": 0.294,
+ "son_guncelleme": "2026-07-21-kocaeli-1",
+ "gecmis_dolduruldu": true
+}

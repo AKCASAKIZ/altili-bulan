@@ -1,6 +1,6 @@
 {
  "ad": "RÜZGARSU",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-07-08-kocaeli-5-backfill",
   "2025-07-26-izmir-1-backfill",
@@ -16,10 +16,11 @@
   "2026-05-28-ankara-3-backfill",
   "2026-06-02-kocaeli-9-backfill",
   "2026-07-07-kocaeli-8-backfill",
-  "2026-07-14-kocaeli-9"
+  "2026-07-14-kocaeli-9",
+  "2026-07-21-ankara-4"
  ],
- "erken_gec_delta_ema": 0.828,
- "son_guncelleme": "2026-07-14-kocaeli-9",
- "son_atak_delta_ema": -0.053,
+ "erken_gec_delta_ema": 1.03,
+ "son_guncelleme": "2026-07-21-ankara-4",
+ "son_atak_delta_ema": 0.863,
  "gecmis_dolduruldu": true
 }

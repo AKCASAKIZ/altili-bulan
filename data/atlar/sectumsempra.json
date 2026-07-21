@@ -1,0 +1,11 @@
+{
+ "ad": "SECTUMSEMPRA",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2025-08-31-adana-1-backfill",
+  "2026-07-21-ankara-3"
+ ],
+ "erken_gec_delta_ema": 1.7,
+ "son_guncelleme": "2026-07-21-ankara-3",
+ "gecmis_dolduruldu": true
+}

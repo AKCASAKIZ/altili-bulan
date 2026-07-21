@@ -1,0 +1,20 @@
+{
+ "ad": "HENNAS SPOON",
+ "kosu_sayisi": 10,
+ "islenen_yarislar": [
+  "2025-08-07-ankara-1-backfill",
+  "2025-08-21-ankara-3-backfill",
+  "2025-09-14-istanbul-8-backfill",
+  "2025-10-08-istanbul-5-backfill",
+  "2025-11-05-istanbul-7-backfill",
+  "2026-05-19-ankara-6-backfill",
+  "2026-06-06-ankara-7-backfill",
+  "2026-06-17-istanbul-8-backfill",
+  "2026-07-21-ankara-8-backfill",
+  "2026-07-21-ankara-8"
+ ],
+ "erken_gec_delta_ema": 1.249,
+ "son_guncelleme": "2026-07-21-ankara-8",
+ "son_atak_delta_ema": 0.871,
+ "gecmis_dolduruldu": true
+}

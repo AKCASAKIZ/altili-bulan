@@ -1,0 +1,20 @@
+{
+ "ad": "BY TÜRE",
+ "kosu_sayisi": 10,
+ "islenen_yarislar": [
+  "2025-01-26-izmir-3-backfill",
+  "2025-02-06-izmir-3-backfill",
+  "2025-04-03-izmir-1-backfill",
+  "2025-04-30-istanbul-2-backfill",
+  "2025-12-31-istanbul-5-backfill",
+  "2026-01-12-bursa-4-backfill",
+  "2026-03-18-istanbul-2-backfill",
+  "2026-04-06-bursa-4-backfill",
+  "2026-07-21-kocaeli-1-backfill",
+  "2026-07-21-kocaeli-1"
+ ],
+ "erken_gec_delta_ema": -0.358,
+ "son_atak_delta_ema": -0.206,
+ "son_guncelleme": "2026-07-21-kocaeli-1",
+ "gecmis_dolduruldu": true
+}

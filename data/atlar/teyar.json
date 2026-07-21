@@ -1,16 +1,17 @@
 {
  "ad": "TEYAR",
- "kosu_sayisi": 6,
+ "kosu_sayisi": 7,
  "islenen_yarislar": [
   "2025-06-04-istanbul-9-backfill",
   "2026-01-12-adana-4-backfill",
   "2026-03-24-adana-1-backfill",
   "2026-05-21-ankara-4-backfill",
   "2026-06-26-ankara-5-backfill",
-  "2026-07-09-ankara-3"
+  "2026-07-09-ankara-3",
+  "2026-07-21-ankara-6"
  ],
- "erken_gec_delta_ema": 0.447,
- "son_guncelleme": "2026-07-09-ankara-3",
- "son_atak_delta_ema": 2,
+ "erken_gec_delta_ema": 0.013,
+ "son_guncelleme": "2026-07-21-ankara-6",
+ "son_atak_delta_ema": 1.4,
  "gecmis_dolduruldu": true
 }

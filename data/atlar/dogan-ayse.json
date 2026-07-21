@@ -1,0 +1,25 @@
+{
+ "ad": "DOĞAN AYŞE",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-01-25-adana-10-backfill",
+  "2025-02-08-adana-8-backfill",
+  "2025-02-25-adana-4-backfill",
+  "2025-04-08-adana-8-backfill",
+  "2025-04-26-ankara-1-backfill",
+  "2025-05-13-ankara-9-backfill",
+  "2025-06-24-ankara-2-backfill",
+  "2025-07-01-ankara-4-backfill",
+  "2025-07-10-ankara-2-backfill",
+  "2025-07-22-ankara-4-backfill",
+  "2025-07-31-ankara-9-backfill",
+  "2025-09-04-ankara-3-backfill",
+  "2026-05-23-ankara-4-backfill",
+  "2026-06-06-ankara-2-backfill",
+  "2026-07-21-ankara-8"
+ ],
+ "erken_gec_delta_ema": 1.683,
+ "son_guncelleme": "2026-07-21-ankara-8",
+ "son_atak_delta_ema": 0.469,
+ "gecmis_dolduruldu": true
+}

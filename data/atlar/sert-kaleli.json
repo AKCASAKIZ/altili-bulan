@@ -1,6 +1,6 @@
 {
  "ad": "SERT KALELİ",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-08-14-kocaeli-9-backfill",
   "2025-08-25-bursa-2-backfill",
@@ -16,10 +16,11 @@
   "2026-05-12-ankara-6-backfill",
   "2026-05-30-ankara-9-backfill",
   "2026-07-09-ankara-6-backfill",
-  "2026-07-09-ankara-6"
+  "2026-07-09-ankara-6",
+  "2026-07-21-ankara-6"
  ],
- "erken_gec_delta_ema": 1.01,
- "son_atak_delta_ema": 0.147,
- "son_guncelleme": "2026-07-09-ankara-6",
+ "erken_gec_delta_ema": 1.607,
+ "son_atak_delta_ema": 0.103,
+ "son_guncelleme": "2026-07-21-ankara-6",
  "gecmis_dolduruldu": true
 }

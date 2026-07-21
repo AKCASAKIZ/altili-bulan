@@ -1,0 +1,21 @@
+{
+ "ad": "AFTER YOU",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-01-25-adana-2-backfill",
+  "2025-02-22-adana-8-backfill",
+  "2025-03-01-adana-2-backfill",
+  "2025-05-04-adana-9-backfill",
+  "2025-11-16-adana-3-backfill",
+  "2025-11-27-antalya-3-backfill",
+  "2026-05-10-adana-7-backfill",
+  "2026-05-30-ankara-2-backfill",
+  "2026-07-04-ankara-2-backfill",
+  "2026-07-21-kocaeli-1-backfill",
+  "2026-07-21-kocaeli-1"
+ ],
+ "erken_gec_delta_ema": 2.73,
+ "son_atak_delta_ema": 2.815,
+ "son_guncelleme": "2026-07-21-kocaeli-1",
+ "gecmis_dolduruldu": true
+}

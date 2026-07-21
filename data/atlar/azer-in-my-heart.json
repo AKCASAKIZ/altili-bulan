@@ -1,0 +1,26 @@
+{
+ "ad": "AZER IN MY HEART",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-08-26-ankara-1-backfill",
+  "2025-09-23-ankara-7-backfill",
+  "2025-10-02-ankara-9-backfill",
+  "2025-10-21-kocaeli-3-backfill",
+  "2025-11-01-ankara-8-backfill",
+  "2025-12-06-adana-7-backfill",
+  "2026-01-24-adana-3-backfill",
+  "2026-02-03-adana-2-backfill",
+  "2026-02-17-adana-5-backfill",
+  "2026-03-23-adana-2-backfill",
+  "2026-04-07-adana-6-backfill",
+  "2026-05-05-ankara-3-backfill",
+  "2026-06-20-ankara-3-backfill",
+  "2026-06-30-kocaeli-6-backfill",
+  "2026-07-21-ankara-6-backfill",
+  "2026-07-21-ankara-6"
+ ],
+ "erken_gec_delta_ema": -1.581,
+ "son_guncelleme": "2026-07-21-ankara-6",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

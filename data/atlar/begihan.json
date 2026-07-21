@@ -1,0 +1,11 @@
+{
+ "ad": "BEGİHAN",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-07-07-kocaeli-7-backfill",
+  "2026-07-21-kocaeli-5"
+ ],
+ "erken_gec_delta_ema": 3.7,
+ "son_guncelleme": "2026-07-21-kocaeli-5",
+ "gecmis_dolduruldu": true
+}

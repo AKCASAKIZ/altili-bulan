@@ -1,0 +1,26 @@
+{
+ "ad": "IRMAK SU",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-11-02-adana-3-backfill",
+  "2025-11-13-ankara-7-backfill",
+  "2025-11-30-adana-2-backfill",
+  "2025-12-18-antalya-5-backfill",
+  "2025-12-30-adana-3-backfill",
+  "2026-01-12-adana-7-backfill",
+  "2026-01-17-adana-4-backfill",
+  "2026-02-21-adana-6-backfill",
+  "2026-03-29-adana-3-backfill",
+  "2026-04-10-antalya-5-backfill",
+  "2026-05-05-ankara-3-backfill",
+  "2026-05-16-ankara-7-backfill",
+  "2026-06-06-ankara-5-backfill",
+  "2026-06-21-istanbul-7-backfill",
+  "2026-06-30-ankara-8-backfill",
+  "2026-07-21-ankara-1"
+ ],
+ "erken_gec_delta_ema": 2.749,
+ "son_atak_delta_ema": 1.088,
+ "son_guncelleme": "2026-07-21-ankara-1",
+ "gecmis_dolduruldu": true
+}

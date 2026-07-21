@@ -1,14 +1,15 @@
 {
  "ad": "YENERSULTAN",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2025-10-05-adana-1-backfill",
   "2025-10-14-adana-4-backfill",
   "2025-11-09-adana-7-backfill",
-  "2026-07-14-ankara-7"
+  "2026-07-14-ankara-7",
+  "2026-07-21-ankara-1"
  ],
- "erken_gec_delta_ema": 1.649,
- "son_atak_delta_ema": 1,
- "son_guncelleme": "2026-07-14-ankara-7",
+ "erken_gec_delta_ema": -0.046,
+ "son_atak_delta_ema": -0.2,
+ "son_guncelleme": "2026-07-21-ankara-1",
  "gecmis_dolduruldu": true
 }

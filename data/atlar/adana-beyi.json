@@ -1,0 +1,17 @@
+{
+ "ad": "ADANA BEYİ",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-06-04-istanbul-5-backfill",
+  "2025-07-15-ankara-8-backfill",
+  "2025-11-04-adana-8-backfill",
+  "2025-12-06-adana-7-backfill",
+  "2025-12-20-adana-6-backfill",
+  "2026-01-17-adana-6-backfill",
+  "2026-07-21-ankara-6"
+ ],
+ "erken_gec_delta_ema": 4.25,
+ "son_guncelleme": "2026-07-21-ankara-6",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

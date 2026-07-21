@@ -1,0 +1,15 @@
+{
+ "ad": "HAVACI",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2026-01-10-adana-5-backfill",
+  "2026-01-27-adana-1-backfill",
+  "2026-03-31-adana-1-backfill",
+  "2026-04-23-ankara-5-backfill",
+  "2026-07-21-ankara-3-backfill",
+  "2026-07-21-ankara-3"
+ ],
+ "erken_gec_delta_ema": 0.415,
+ "son_guncelleme": "2026-07-21-ankara-3",
+ "gecmis_dolduruldu": true
+}

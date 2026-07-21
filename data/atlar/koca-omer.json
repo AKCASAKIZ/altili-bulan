@@ -1,10 +1,11 @@
 {
  "ad": "KOCA ÖMER",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-09-kocaeli-8"
+  "2026-07-09-kocaeli-8",
+  "2026-07-21-kocaeli-3"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": 3.5,
- "son_guncelleme": "2026-07-09-kocaeli-8"
+ "erken_gec_delta_ema": 3.05,
+ "son_guncelleme": "2026-07-21-kocaeli-3"
 }

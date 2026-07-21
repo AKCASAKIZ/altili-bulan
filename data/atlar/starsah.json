@@ -1,0 +1,16 @@
+{
+ "ad": "STARŞAH",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2026-04-13-sanliurfa-7-backfill",
+  "2026-05-04-sanliurfa-7-backfill",
+  "2026-05-18-sanliurfa-6-backfill",
+  "2026-06-08-sanliurfa-1-backfill",
+  "2026-06-24-istanbul-3-backfill",
+  "2026-07-21-kocaeli-5-backfill",
+  "2026-07-21-kocaeli-5"
+ ],
+ "erken_gec_delta_ema": 2.887,
+ "son_guncelleme": "2026-07-21-kocaeli-5",
+ "gecmis_dolduruldu": true
+}
