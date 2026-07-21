@@ -42,6 +42,7 @@ function slugAt(ad) {
   pane.innerHTML = `
     <div class="toolbar">
       <select id="dergiSelect" style="min-width:220px"><option>PDF listesi yükleniyor…</option></select>
+      <button id="btnDergiLabel" class="btn btn-ghost" title="Her PDF'in 1. sayfasını okuyup listeyi şehir+tarih olarak etiketler (biraz sürebilir)">🏷️ Şehir+tarih etiketle</button>
       <div class="toolbar-right">
         <button id="btnDergiParse" class="btn">📖 PDF'i oku</button>
         <button id="btnDergiApply" class="btn btn-accent">⚡ Puanlamaya uygula (B6+B11)</button>
@@ -57,24 +58,59 @@ function slugAt(ad) {
     document.querySelectorAll(".tab-pane").forEach((p) => p.classList.toggle("active", p.id === "tab-dergi"));
   };
 
-  let current = null; // ayrıştırılmış dergi verisi
+  let current = null;   // ayrıştırılmış dergi verisi
+  let foundPdfs = [];   // {name, url, sha}
 
-  /* ---- repo PDF listesi ---- */
+  const trTarih = (iso) => {
+    if (!iso) return "";
+    const [y, m, d] = iso.split("-");
+    return `${d}.${m}.${y}`;
+  };
+
+  /* ---- repo PDF listesi (önce dosya adları) ---- */
   async function listPdfs() {
     const sel = document.getElementById("dergiSelect");
-    const found = [];
+    foundPdfs = [];
     for (const path of ["", "dergi"]) {
       try {
         const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, { cache: "no-store" });
         if (!r.ok) continue;
         for (const f of await r.json()) {
-          if (f.type === "file" && /\.pdf$/i.test(f.name)) found.push({ name: f.name, url: f.download_url });
+          if (f.type === "file" && /\.pdf$/i.test(f.name)) foundPdfs.push({ name: f.name, url: f.download_url, sha: f.sha });
         }
       } catch {}
     }
-    sel.innerHTML = found.length
-      ? found.map((f) => `<option value="${AB.esc(f.url)}">${AB.esc(f.name)}</option>`).join("")
+    sel.innerHTML = foundPdfs.length
+      ? foundPdfs.map((f, i) => `<option value="${AB.esc(f.url)}" data-ix="${i}">${AB.esc(pdfLabelCache(f) || f.name)}</option>`).join("")
       : `<option value="">PDF bulunamadı — repoya yükleyin</option>`;
+  }
+
+  // her PDF'in 1. sayfasını okuyup "Şehir — gg.aa.yyyy (dosya.pdf)" etiketi
+  // üretir; sonuç localStorage'da sha ile cache'lenir (tekrar okunmaz).
+  function pdfLabelCache(f) { return AB.LS.get(`ab2:pdflabel:${f.sha || f.name}`, null); }
+  async function pdfLabel(f) {
+    const cached = pdfLabelCache(f);
+    if (cached) return cached;
+    try {
+      const doc = await openPdf(f.url);
+      const d = parseDergi(await extractColumns(doc));
+      if (d.city || d.date) {
+        const label = `${d.city || "?"} — ${trTarih(d.date) || "?"}  (${f.name})`;
+        AB.LS.set(`ab2:pdflabel:${f.sha || f.name}`, label);
+        return label;
+      }
+    } catch {}
+    return f.name;
+  }
+  async function enrichLabels() {
+    const sel = document.getElementById("dergiSelect");
+    for (let i = 0; i < foundPdfs.length; i++) {
+      const opt = sel.querySelector(`option[data-ix="${i}"]`);
+      if (!opt || pdfLabelCache(foundPdfs[i])) continue;
+      opt.textContent = foundPdfs[i].name + " — okunuyor…";
+      const label = await pdfLabel(foundPdfs[i]); // sırayla: worker'ı boğmamak için
+      if (opt) opt.textContent = label;
+    }
   }
 
   /* ---- pdf.js ile açma ---- */
@@ -348,6 +384,14 @@ function slugAt(ad) {
       const atSayisi = Object.keys(current.gecmis).length;
       AB.LS.set(`ab2:dergi:${current.date}:${AB.slugify(current.city || "")}`, current);
       document.getElementById("dergiInfo").textContent = `✅ Okundu: ${current.city} ${current.date} — ${Object.keys(current.races).length} koşu, ${Object.keys(current.tahmin).length} tahmin satırı, ${current.banko.length} banko, ${atSayisi} at için geçmiş performans.`;
+      // okunan PDF'in şehir+tarih etiketini kalıcı cache'le ve listede güncelle
+      const fMatch = foundPdfs.find((x) => x.url === url);
+      if (fMatch && (current.city || current.date)) {
+        const label = `${current.city || "?"} — ${trTarih(current.date) || "?"}  (${fMatch.name})`;
+        AB.LS.set(`ab2:pdflabel:${fMatch.sha || fMatch.name}`, label);
+        const opt = document.querySelector(`#dergiSelect option[data-ix="${foundPdfs.indexOf(fMatch)}"]`);
+        if (opt) opt.textContent = label;
+      }
       render();
     } catch (e) {
       document.getElementById("dergiInfo").textContent = "❌ PDF okunamadı: " + e.message;
@@ -355,6 +399,11 @@ function slugAt(ad) {
   };
   document.getElementById("btnDergiApply").onclick = apply;
   document.getElementById("btnDergiGecmis").onclick = applyGecmis;
+  document.getElementById("btnDergiLabel").onclick = async () => {
+    const b = document.getElementById("btnDergiLabel");
+    b.disabled = true; const t = b.textContent; b.textContent = "🏷️ Etiketleniyor…";
+    try { await enrichLabels(); } finally { b.textContent = t; b.disabled = false; }
+  };
 
   listPdfs();
   render();
@@ -535,6 +584,7 @@ function slugAt(ad) {
       }
 
       let dolu = 0;
+      let acbToplam = 0, acbYeter = 0; // accurace kapsamı: toplam at, ≥3 koşulu profil
       const yaz = (h, k, v) => { if (v != null && h.scores[k] == null) { h.scores[k] = v; dolu++; } };
       const rank5 = (list, key, asc) => {
         list.filter((x) => x.v != null).sort((a, b) => asc ? a.v - b.v : b.v - a.v)
@@ -596,8 +646,11 @@ function slugAt(ad) {
         // B9: pace senaryosu ("koşturalım") — accurace koşu-karakter profillerinden.
         // erken_gec_delta_ema: negatif = önde koşan (öncü/kaçak), pozitif = kapanışçı.
         const stiller = leg.horses.map((h) => {
+          acbToplam++;
           const p = atProf[slugAt(h.ad)];
-          const d = p && (p.kosu_sayisi || 0) >= 3 ? p.erken_gec_delta_ema : null;
+          const yeter = p && (p.kosu_sayisi || 0) >= 3;
+          if (yeter) acbYeter++;
+          const d = yeter ? p.erken_gec_delta_ema : null;
           return { h, stil: d == null ? null : d <= -0.8 ? "oncu" : d >= 0.8 ? "kapanis" : "tempo" };
         });
         const oncuSayisi = stiller.filter((x) => x.stil === "oncu").length;
@@ -625,10 +678,13 @@ function slugAt(ad) {
         rank5(b5, "B5", false);
         rank5(b14, "B14", false);
       }
+      let b9Dolu = 0;
+      for (const leg of AB.state.legs) for (const h of leg.horses) if (h.scores.B9 != null) b9Dolu++;
+      const profBulunan = Object.keys(atProf).length;
       AB.saveSession();
       AB.renderAll();
       btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
-      alert(`✅ ${dolu} puan hücresi ${H.gunSayisi} günlük sonuç arşivinden dolduruldu.\n(A1-A3 sahip, B16-B18 antrenör, C1/C3 jokey, B1 ikramiye, B5, B6 tahmini derece, B9 pace, B12, B14, B15)\nElle girdiğiniz puanların ÜZERİNE YAZILMADI. Arşiv büyüdükçe isabet artar.`);
+      alert(`✅ ${dolu} puan hücresi ${H.gunSayisi} günlük sonuç arşivinden dolduruldu.\n(A1-A3 sahip, B16-B18 antrenör, C1/C3 jokey, B1 ikramiye, B5, B6 tahmini derece, B9 pace, B12, B14, B15)\n\n🏇 Accurace (B9 pace): ${profBulunan} atta profil bulundu, ${acbYeter}/${acbToplam} atta ≥3 koşuluk yeterli veri → ${b9Dolu} ayakta B9 dolduruldu.${acbYeter < acbToplam * 0.3 ? "\n⚠️ Accurace verisi henüz sığ; kapsam her günle artıyor." : ""}\n\nElle girdiğiniz puanların ÜZERİNE YAZILMADI. Arşiv büyüdükçe isabet artar.`);
     } catch (e) {
       btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
       alert("Hata: " + e.message);
