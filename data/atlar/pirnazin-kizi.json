@@ -1,0 +1,14 @@
+{
+ "ad": "PİRNAZIN KIZI",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-05-10-adana-3-backfill",
+  "2026-05-18-sanliurfa-1-backfill",
+  "2026-06-01-sanliurfa-2-backfill",
+  "2026-07-22-elazig-5-backfill",
+  "2026-07-22-elazig-5"
+ ],
+ "erken_gec_delta_ema": -0.958,
+ "son_guncelleme": "2026-07-22-elazig-5",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,15 @@
+{
+ "ad": "LEGANDARY WARRIOR",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-07-01-ankara-1-backfill",
+  "2026-06-10-elazig-7-backfill",
+  "2026-06-17-elazig-5-backfill",
+  "2026-07-22-elazig-1-backfill",
+  "2026-07-22-elazig-1"
+ ],
+ "erken_gec_delta_ema": 4.59,
+ "son_guncelleme": "2026-07-22-elazig-1",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

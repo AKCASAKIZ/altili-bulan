@@ -1,0 +1,15 @@
+{
+ "ad": "DAMPERLİ",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-12-01-bursa-3-backfill",
+  "2026-06-03-istanbul-8-backfill",
+  "2026-06-17-istanbul-1-backfill",
+  "2026-07-05-istanbul-3-backfill",
+  "2026-07-22-istanbul-4"
+ ],
+ "erken_gec_delta_ema": -0.823,
+ "son_guncelleme": "2026-07-22-istanbul-4",
+ "son_atak_delta_ema": -0.39,
+ "gecmis_dolduruldu": true
+}

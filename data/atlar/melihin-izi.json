@@ -1,0 +1,12 @@
+{
+ "ad": "MELİHİN İZİ",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-07-01-elazig-4-backfill",
+  "2026-07-22-elazig-6"
+ ],
+ "erken_gec_delta_ema": -0.75,
+ "son_atak_delta_ema": -1.2,
+ "son_guncelleme": "2026-07-22-elazig-6",
+ "gecmis_dolduruldu": true
+}

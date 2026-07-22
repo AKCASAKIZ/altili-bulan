@@ -1,0 +1,18 @@
+{
+ "ad": "KİNG İHSAN",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-06-29-adana-1-backfill",
+  "2025-12-08-sanliurfa-9-backfill",
+  "2026-01-07-sanliurfa-1-backfill",
+  "2026-01-14-sanliurfa-5-backfill",
+  "2026-03-16-sanliurfa-8-backfill",
+  "2026-03-25-sanliurfa-8-backfill",
+  "2026-07-22-elazig-4-backfill",
+  "2026-07-22-elazig-4"
+ ],
+ "erken_gec_delta_ema": 0.655,
+ "son_guncelleme": "2026-07-22-elazig-4",
+ "son_atak_delta_ema": -1,
+ "gecmis_dolduruldu": true
+}

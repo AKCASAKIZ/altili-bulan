@@ -1,0 +1,14 @@
+{
+ "ad": "THOTH",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2025-08-27-istanbul-6-backfill",
+  "2026-03-14-istanbul-1-backfill",
+  "2026-05-06-istanbul-9-backfill",
+  "2026-07-22-istanbul-3"
+ ],
+ "erken_gec_delta_ema": 3.409,
+ "son_guncelleme": "2026-07-22-istanbul-3",
+ "son_atak_delta_ema": 0.33,
+ "gecmis_dolduruldu": true
+}

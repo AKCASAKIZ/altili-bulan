@@ -1,0 +1,13 @@
+{
+ "ad": "VERAGORN",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-08-21-ankara-9-backfill",
+  "2025-08-28-ankara-9-backfill",
+  "2026-07-22-istanbul-6"
+ ],
+ "erken_gec_delta_ema": 1.91,
+ "son_guncelleme": "2026-07-22-istanbul-6",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
+}

@@ -1,12 +1,13 @@
 {
  "ad": "ESRİN HATUN",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2026-06-02-kocaeli-4-backfill",
   "2026-07-09-kocaeli-1-backfill",
-  "2026-07-09-kocaeli-1"
+  "2026-07-09-kocaeli-1",
+  "2026-07-22-istanbul-2"
  ],
- "erken_gec_delta_ema": 0.725,
- "son_guncelleme": "2026-07-09-kocaeli-1",
+ "erken_gec_delta_ema": -0.093,
+ "son_guncelleme": "2026-07-22-istanbul-2",
  "gecmis_dolduruldu": true
 }

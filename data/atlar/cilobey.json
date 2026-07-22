@@ -1,0 +1,18 @@
+{
+ "ad": "ÇİLOBEY",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-05-11-adana-2-backfill",
+  "2025-07-23-elazig-5-backfill",
+  "2025-08-13-elazig-7-backfill",
+  "2025-08-20-elazig-4-backfill",
+  "2025-09-03-elazig-9-backfill",
+  "2026-04-29-elazig-5-backfill",
+  "2026-07-22-elazig-6-backfill",
+  "2026-07-22-elazig-6"
+ ],
+ "erken_gec_delta_ema": 2.752,
+ "son_atak_delta_ema": 0.692,
+ "son_guncelleme": "2026-07-22-elazig-6",
+ "gecmis_dolduruldu": true
+}

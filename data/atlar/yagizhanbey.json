@@ -1,16 +1,17 @@
 {
  "ad": "YAĞIZHANBEY",
- "kosu_sayisi": 6,
+ "kosu_sayisi": 7,
  "islenen_yarislar": [
   "2025-06-18-istanbul-1-backfill",
   "2025-08-20-istanbul-9-backfill",
   "2025-08-29-bursa-10-backfill",
   "2025-12-06-istanbul-2-backfill",
   "2026-04-17-istanbul-2-backfill",
-  "2026-07-12-istanbul-7"
+  "2026-07-12-istanbul-7",
+  "2026-07-22-istanbul-3"
  ],
- "erken_gec_delta_ema": 3.026,
- "son_atak_delta_ema": 0.945,
- "son_guncelleme": "2026-07-12-istanbul-7",
+ "erken_gec_delta_ema": 2.418,
+ "son_atak_delta_ema": 0.061,
+ "son_guncelleme": "2026-07-22-istanbul-3",
  "gecmis_dolduruldu": true
 }

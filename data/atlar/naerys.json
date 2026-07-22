@@ -1,0 +1,13 @@
+{
+ "ad": "NAERYS",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-03-03-antalya-6-backfill",
+  "2026-04-10-antalya-1-backfill",
+  "2026-07-22-istanbul-6"
+ ],
+ "erken_gec_delta_ema": -0.61,
+ "son_guncelleme": "2026-07-22-istanbul-6",
+ "son_atak_delta_ema": -0.9,
+ "gecmis_dolduruldu": true
+}

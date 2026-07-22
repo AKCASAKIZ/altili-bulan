@@ -1,0 +1,15 @@
+{
+ "ad": "BERMEDEE",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-09-17-elazig-1-backfill",
+  "2026-01-03-sanliurfa-4-backfill",
+  "2026-02-16-sanliurfa-5-backfill",
+  "2026-03-23-sanliurfa-4-backfill",
+  "2026-07-22-elazig-1"
+ ],
+ "erken_gec_delta_ema": 2.477,
+ "son_atak_delta_ema": 0.823,
+ "son_guncelleme": "2026-07-22-elazig-1",
+ "gecmis_dolduruldu": true
+}

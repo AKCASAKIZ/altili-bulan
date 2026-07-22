@@ -1,6 +1,6 @@
 {
  "ad": "GÖKSAGUN",
- "kosu_sayisi": 12,
+ "kosu_sayisi": 13,
  "islenen_yarislar": [
   "2025-07-02-istanbul-2-backfill",
   "2025-10-24-istanbul-9-backfill",
@@ -13,10 +13,11 @@
   "2026-03-18-istanbul-1-backfill",
   "2026-04-28-kocaeli-7-backfill",
   "2026-06-17-istanbul-3-backfill",
-  "2026-07-10-istanbul-4"
+  "2026-07-10-istanbul-4",
+  "2026-07-22-istanbul-8"
  ],
- "erken_gec_delta_ema": -1.788,
- "son_guncelleme": "2026-07-10-istanbul-4",
- "son_atak_delta_ema": -1.11,
+ "erken_gec_delta_ema": -1.252,
+ "son_guncelleme": "2026-07-22-istanbul-8",
+ "son_atak_delta_ema": -0.777,
  "gecmis_dolduruldu": true
 }

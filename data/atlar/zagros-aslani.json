@@ -1,0 +1,21 @@
+{
+ "ad": "ZAGROS ASLANI",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-01-24-izmir-5-backfill",
+  "2025-02-03-bursa-4-backfill",
+  "2025-02-24-bursa-6-backfill",
+  "2025-03-03-bursa-5-backfill",
+  "2025-03-27-izmir-6-backfill",
+  "2025-04-21-bursa-7-backfill",
+  "2025-05-12-bursa-7-backfill",
+  "2025-06-20-bursa-8-backfill",
+  "2025-06-30-bursa-7-backfill",
+  "2025-07-22-ankara-6-backfill",
+  "2026-07-22-elazig-6"
+ ],
+ "erken_gec_delta_ema": -0.491,
+ "son_atak_delta_ema": 0.551,
+ "son_guncelleme": "2026-07-22-elazig-6",
+ "gecmis_dolduruldu": true
+}

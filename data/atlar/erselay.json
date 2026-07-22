@@ -1,0 +1,18 @@
+{
+ "ad": "ERSELAY",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-05-15-ankara-2-backfill",
+  "2025-08-06-istanbul-3-backfill",
+  "2025-09-26-istanbul-1-backfill",
+  "2025-10-05-adana-4-backfill",
+  "2025-11-06-ankara-1-backfill",
+  "2025-12-10-istanbul-1-backfill",
+  "2026-07-22-istanbul-3-backfill",
+  "2026-07-22-istanbul-3"
+ ],
+ "erken_gec_delta_ema": 2.084,
+ "son_atak_delta_ema": 2.005,
+ "son_guncelleme": "2026-07-22-istanbul-3",
+ "gecmis_dolduruldu": true
+}

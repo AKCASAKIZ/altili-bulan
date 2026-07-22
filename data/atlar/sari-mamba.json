@@ -1,0 +1,15 @@
+{
+ "ad": "SARI MAMBA",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-02-04-adana-8-backfill",
+  "2025-08-16-ankara-5-backfill",
+  "2025-10-05-adana-9-backfill",
+  "2025-10-21-adana-4-backfill",
+  "2026-07-22-elazig-4"
+ ],
+ "erken_gec_delta_ema": 0.507,
+ "son_guncelleme": "2026-07-22-elazig-4",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

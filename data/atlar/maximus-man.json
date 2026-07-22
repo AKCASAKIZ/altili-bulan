@@ -1,0 +1,21 @@
+{
+ "ad": "MAXIMUS MAN",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2026-01-10-adana-5-backfill",
+  "2026-02-01-adana-1-backfill",
+  "2026-02-08-adana-2-backfill",
+  "2026-03-01-adana-3-backfill",
+  "2026-03-16-adana-7-backfill",
+  "2026-03-22-adana-2-backfill",
+  "2026-04-12-adana-8-backfill",
+  "2026-04-19-adana-2-backfill",
+  "2026-05-24-adana-1-backfill",
+  "2026-06-16-ankara-3-backfill",
+  "2026-07-22-istanbul-1"
+ ],
+ "erken_gec_delta_ema": -1.254,
+ "son_guncelleme": "2026-07-22-istanbul-1",
+ "son_atak_delta_ema": -0.49,
+ "gecmis_dolduruldu": true
+}

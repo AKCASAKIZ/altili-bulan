@@ -1,0 +1,14 @@
+{
+ "ad": "KRAL OSIMHEN",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-07-23-istanbul-8-backfill",
+  "2025-11-22-istanbul-8-backfill",
+  "2026-04-08-istanbul-1-backfill",
+  "2026-05-08-istanbul-1-backfill",
+  "2026-07-22-istanbul-1"
+ ],
+ "erken_gec_delta_ema": 1.431,
+ "son_guncelleme": "2026-07-22-istanbul-1",
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,16 @@
+{
+ "ad": "KNOW WORTH",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-06-11-istanbul-3-backfill",
+  "2025-06-21-ankara-3-backfill",
+  "2025-08-27-istanbul-9-backfill",
+  "2025-09-17-istanbul-8-backfill",
+  "2025-10-24-istanbul-7-backfill",
+  "2026-07-22-elazig-1"
+ ],
+ "erken_gec_delta_ema": -2.546,
+ "son_guncelleme": "2026-07-22-elazig-1",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

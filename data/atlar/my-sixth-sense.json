@@ -1,0 +1,15 @@
+{
+ "ad": "MY SİXTH SENSE",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-04-08-adana-8-backfill",
+  "2025-10-13-sanliurfa-9-backfill",
+  "2025-12-13-adana-8-backfill",
+  "2026-01-07-sanliurfa-1-backfill",
+  "2026-07-22-elazig-4"
+ ],
+ "erken_gec_delta_ema": 1.71,
+ "son_guncelleme": "2026-07-22-elazig-4",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

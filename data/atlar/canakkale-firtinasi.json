@@ -1,0 +1,13 @@
+{
+ "ad": "ÇANAKKALE FIRTINASI",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-05-15-istanbul-8-backfill",
+  "2026-07-04-ankara-7-backfill",
+  "2026-07-22-istanbul-2-backfill",
+  "2026-07-22-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 0.769,
+ "son_guncelleme": "2026-07-22-istanbul-2",
+ "gecmis_dolduruldu": true
+}

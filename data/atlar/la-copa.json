@@ -1,0 +1,26 @@
+{
+ "ad": "LA COPA",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-04-27-adana-7-backfill",
+  "2025-05-18-adana-1-backfill",
+  "2025-05-25-adana-3-backfill",
+  "2025-06-13-istanbul-2-backfill",
+  "2025-06-21-izmir-4-backfill",
+  "2025-09-17-istanbul-3-backfill",
+  "2026-02-28-adana-1-backfill",
+  "2026-03-17-adana-1-backfill",
+  "2026-04-05-adana-3-backfill",
+  "2026-04-26-istanbul-1-backfill",
+  "2026-05-05-kocaeli-3-backfill",
+  "2026-05-29-istanbul-3-backfill",
+  "2026-06-19-istanbul-2-backfill",
+  "2026-07-03-istanbul-9-backfill",
+  "2026-07-22-istanbul-1-backfill",
+  "2026-07-22-istanbul-1"
+ ],
+ "erken_gec_delta_ema": 2.384,
+ "son_guncelleme": "2026-07-22-istanbul-1",
+ "son_atak_delta_ema": 0.433,
+ "gecmis_dolduruldu": true
+}

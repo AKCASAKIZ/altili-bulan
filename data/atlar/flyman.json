@@ -1,11 +1,12 @@
 {
  "ad": "FLYMAN",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-15-istanbul-2"
+  "2026-07-15-istanbul-2",
+  "2026-07-22-istanbul-8"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -2.5,
- "son_atak_delta_ema": 0,
- "son_guncelleme": "2026-07-15-istanbul-2"
+ "erken_gec_delta_ema": -2.8,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-22-istanbul-8"
 }

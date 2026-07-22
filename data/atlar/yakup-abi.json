@@ -1,14 +1,15 @@
 {
  "ad": "YAKUP ABİ",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2025-05-19-bursa-9-backfill",
   "2025-06-09-bursa-8-backfill",
   "2025-10-21-adana-9-backfill",
-  "2026-07-10-bursa-5"
+  "2026-07-10-bursa-5",
+  "2026-07-22-istanbul-3"
  ],
- "erken_gec_delta_ema": 1.67,
- "son_guncelleme": "2026-07-10-bursa-5",
+ "erken_gec_delta_ema": 0.869,
+ "son_guncelleme": "2026-07-22-istanbul-3",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": -4
+ "son_atak_delta_ema": -3.4
 }

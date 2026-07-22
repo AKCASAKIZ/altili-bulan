@@ -1,0 +1,21 @@
+{
+ "ad": "DEVRİALEM",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-05-06-ankara-6-backfill",
+  "2025-06-07-ankara-5-backfill",
+  "2025-07-01-ankara-8-backfill",
+  "2025-09-22-sanliurfa-7-backfill",
+  "2025-11-24-sanliurfa-2-backfill",
+  "2025-11-29-adana-3-backfill",
+  "2025-12-08-sanliurfa-7-backfill",
+  "2025-12-14-adana-3-backfill",
+  "2026-03-16-sanliurfa-4-backfill",
+  "2026-06-22-elazig-7-backfill",
+  "2026-07-22-elazig-6"
+ ],
+ "erken_gec_delta_ema": 1.15,
+ "son_guncelleme": "2026-07-22-elazig-6",
+ "son_atak_delta_ema": -0.044,
+ "gecmis_dolduruldu": true
+}

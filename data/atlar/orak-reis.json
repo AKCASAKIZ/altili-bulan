@@ -1,0 +1,18 @@
+{
+ "ad": "ORAK REİS",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-07-23-elazig-4-backfill",
+  "2025-09-17-elazig-6-backfill",
+  "2025-09-24-elazig-1-backfill",
+  "2025-10-15-elazig-2-backfill",
+  "2026-01-21-sanliurfa-8-backfill",
+  "2026-02-09-sanliurfa-3-backfill",
+  "2026-02-16-sanliurfa-5-backfill",
+  "2026-07-22-elazig-1"
+ ],
+ "erken_gec_delta_ema": 2.577,
+ "son_guncelleme": "2026-07-22-elazig-1",
+ "son_atak_delta_ema": 0.67,
+ "gecmis_dolduruldu": true
+}

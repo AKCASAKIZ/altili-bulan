@@ -1,0 +1,16 @@
+{
+ "ad": "MİR EMRE",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2026-03-08-adana-2-backfill",
+  "2026-05-30-ankara-5-backfill",
+  "2026-06-14-istanbul-9-backfill",
+  "2026-07-03-istanbul-8-backfill",
+  "2026-07-22-istanbul-4-backfill",
+  "2026-07-22-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 4.813,
+ "son_atak_delta_ema": 0.948,
+ "son_guncelleme": "2026-07-22-istanbul-4",
+ "gecmis_dolduruldu": true
+}

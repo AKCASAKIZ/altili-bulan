@@ -1,0 +1,22 @@
+{
+ "ad": "STAR RUNNER",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-06-15-istanbul-2-backfill",
+  "2025-07-18-istanbul-7-backfill",
+  "2025-08-29-istanbul-7-backfill",
+  "2025-11-02-istanbul-7-backfill",
+  "2026-02-14-istanbul-4-backfill",
+  "2026-03-14-istanbul-3-backfill",
+  "2026-04-17-istanbul-4-backfill",
+  "2026-05-17-istanbul-9-backfill",
+  "2026-06-07-istanbul-9-backfill",
+  "2026-06-28-istanbul-9-backfill",
+  "2026-07-22-istanbul-6-backfill",
+  "2026-07-22-istanbul-6"
+ ],
+ "erken_gec_delta_ema": 2.993,
+ "son_guncelleme": "2026-07-22-istanbul-6",
+ "son_atak_delta_ema": 2.888,
+ "gecmis_dolduruldu": true
+}

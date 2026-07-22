@@ -1,0 +1,13 @@
+{
+ "ad": "YALNIZ BABA",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-09-04-ankara-8-backfill",
+  "2025-09-27-ankara-3-backfill",
+  "2026-07-22-elazig-8"
+ ],
+ "erken_gec_delta_ema": 0.605,
+ "son_atak_delta_ema": 1.4,
+ "son_guncelleme": "2026-07-22-elazig-8",
+ "gecmis_dolduruldu": true
+}

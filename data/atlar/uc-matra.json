@@ -1,0 +1,13 @@
+{
+ "ad": "ÜÇ MATRA",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2025-08-27-elazig-5-backfill",
+  "2025-09-17-elazig-5-backfill",
+  "2025-11-24-bursa-8-backfill",
+  "2026-07-22-elazig-4"
+ ],
+ "erken_gec_delta_ema": -0.71,
+ "son_guncelleme": "2026-07-22-elazig-4",
+ "gecmis_dolduruldu": true
+}

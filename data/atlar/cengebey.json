@@ -1,0 +1,17 @@
+{
+ "ad": "CENGEBEY",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-08-19-kocaeli-9-backfill",
+  "2025-10-21-adana-2-backfill",
+  "2025-11-02-adana-4-backfill",
+  "2025-11-09-adana-6-backfill",
+  "2025-12-20-adana-4-backfill",
+  "2026-06-01-sanliurfa-3-backfill",
+  "2026-07-22-elazig-8"
+ ],
+ "erken_gec_delta_ema": 2.963,
+ "son_guncelleme": "2026-07-22-elazig-8",
+ "son_atak_delta_ema": 0.074,
+ "gecmis_dolduruldu": true
+}

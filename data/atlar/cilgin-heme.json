@@ -1,0 +1,26 @@
+{
+ "ad": "ÇILGIN HEME",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-09-29-sanliurfa-3-backfill",
+  "2025-10-08-elazig-7-backfill",
+  "2025-11-10-sanliurfa-5-backfill",
+  "2025-11-26-elazig-2-backfill",
+  "2025-12-24-sanliurfa-1-backfill",
+  "2026-01-07-sanliurfa-6-backfill",
+  "2026-01-21-sanliurfa-6-backfill",
+  "2026-02-02-sanliurfa-3-backfill",
+  "2026-02-18-sanliurfa-3-backfill",
+  "2026-03-02-sanliurfa-2-backfill",
+  "2026-03-09-sanliurfa-2-backfill",
+  "2026-03-18-sanliurfa-3-backfill",
+  "2026-03-25-sanliurfa-4-backfill",
+  "2026-05-25-sanliurfa-8-backfill",
+  "2026-07-22-elazig-3-backfill",
+  "2026-07-22-elazig-3"
+ ],
+ "erken_gec_delta_ema": 2.055,
+ "son_atak_delta_ema": 0.962,
+ "son_guncelleme": "2026-07-22-elazig-3",
+ "gecmis_dolduruldu": true
+}
