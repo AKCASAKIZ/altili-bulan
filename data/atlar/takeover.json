@@ -1,0 +1,14 @@
+{
+ "ad": "TAKEOVER",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-03-19-antalya-1-backfill",
+  "2026-04-07-antalya-3-backfill",
+  "2026-07-23-ankara-3-backfill",
+  "2026-07-23-ankara-3"
+ ],
+ "erken_gec_delta_ema": 0.0,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-23-ankara-3",
+ "gecmis_dolduruldu": true
+}

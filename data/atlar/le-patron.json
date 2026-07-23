@@ -1,0 +1,15 @@
+{
+ "ad": "LE PATRON",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-04-17-ankara-2-backfill",
+  "2025-04-27-adana-3-backfill",
+  "2025-08-19-kocaeli-5-backfill",
+  "2025-09-03-istanbul-5-backfill",
+  "2026-07-23-kocaeli-8"
+ ],
+ "erken_gec_delta_ema": 0.054,
+ "son_atak_delta_ema": 1.81,
+ "son_guncelleme": "2026-07-23-kocaeli-8",
+ "gecmis_dolduruldu": true
+}

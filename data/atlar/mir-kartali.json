@@ -1,14 +1,15 @@
 {
  "ad": "MİR KARTALI",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2025-09-02-ankara-1-backfill",
   "2025-09-25-ankara-4-backfill",
   "2025-10-07-adana-4-backfill",
-  "2026-07-09-ankara-8"
+  "2026-07-09-ankara-8",
+  "2026-07-23-ankara-4"
  ],
- "erken_gec_delta_ema": 2.535,
- "son_atak_delta_ema": 3.066,
- "son_guncelleme": "2026-07-09-ankara-8",
+ "erken_gec_delta_ema": 1.625,
+ "son_atak_delta_ema": 2.146,
+ "son_guncelleme": "2026-07-23-ankara-4",
  "gecmis_dolduruldu": true
 }

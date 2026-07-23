@@ -1,6 +1,6 @@
 {
  "ad": "GÜRAYHAN",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-05-10-ankara-4-backfill",
   "2025-05-22-ankara-2-backfill",
@@ -16,10 +16,11 @@
   "2026-02-14-adana-6-backfill",
   "2026-03-22-adana-6-backfill",
   "2026-07-17-bursa-7-backfill",
-  "2026-07-17-bursa-7"
+  "2026-07-17-bursa-7",
+  "2026-07-23-kocaeli-6"
  ],
- "erken_gec_delta_ema": 0.972,
+ "erken_gec_delta_ema": 0.38,
  "son_atak_delta_ema": 0.0,
- "son_guncelleme": "2026-07-17-bursa-7",
+ "son_guncelleme": "2026-07-23-kocaeli-6",
  "gecmis_dolduruldu": true
 }

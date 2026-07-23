@@ -1,6 +1,6 @@
 {
  "ad": "ASIL OĞUL",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2025-08-28-kocaeli-1-backfill",
   "2025-09-12-bursa-5-backfill",
@@ -17,10 +17,11 @@
   "2026-05-25-bursa-6-backfill",
   "2026-06-06-izmir-4-backfill",
   "2026-06-25-bursa-5-backfill",
-  "2026-07-14-kocaeli-9"
+  "2026-07-14-kocaeli-9",
+  "2026-07-23-kocaeli-8"
  ],
- "erken_gec_delta_ema": 3.006,
- "son_atak_delta_ema": -0.048,
- "son_guncelleme": "2026-07-14-kocaeli-9",
+ "erken_gec_delta_ema": 2.254,
+ "son_atak_delta_ema": -0.334,
+ "son_guncelleme": "2026-07-23-kocaeli-8",
  "gecmis_dolduruldu": true
 }

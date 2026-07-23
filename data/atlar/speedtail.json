@@ -1,0 +1,25 @@
+{
+ "ad": "SPEEDTAIL",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-12-09-antalya-1-backfill",
+  "2025-12-24-istanbul-2-backfill",
+  "2026-01-08-antalya-2-backfill",
+  "2026-01-22-antalya-1-backfill",
+  "2026-02-12-antalya-6-backfill",
+  "2026-02-24-antalya-7-backfill",
+  "2026-03-17-antalya-5-backfill",
+  "2026-04-02-antalya-3-backfill",
+  "2026-04-09-antalya-3-backfill",
+  "2026-04-19-adana-8-backfill",
+  "2026-05-12-ankara-1-backfill",
+  "2026-06-02-ankara-7-backfill",
+  "2026-06-09-kocaeli-1-backfill",
+  "2026-06-18-ankara-6-backfill",
+  "2026-07-23-kocaeli-7"
+ ],
+ "erken_gec_delta_ema": -2.162,
+ "son_guncelleme": "2026-07-23-kocaeli-7",
+ "son_atak_delta_ema": -0.98,
+ "gecmis_dolduruldu": true
+}

@@ -1,0 +1,13 @@
+{
+ "ad": "GÜLLÜ BAHÇE",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-01-18-adana-1-backfill",
+  "2026-01-25-adana-6-backfill",
+  "2026-07-23-ankara-1"
+ ],
+ "erken_gec_delta_ema": -0.995,
+ "son_guncelleme": "2026-07-23-ankara-1",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
+}

@@ -1,6 +1,6 @@
 {
  "ad": "ALÜNLÜHAT",
- "kosu_sayisi": 11,
+ "kosu_sayisi": 12,
  "islenen_yarislar": [
   "2025-05-01-ankara-2-backfill",
   "2025-05-14-istanbul-3-backfill",
@@ -12,10 +12,11 @@
   "2026-03-30-sanliurfa-6-backfill",
   "2026-07-09-ankara-8-backfill",
   "2026-07-09-ankara-8",
-  "2026-07-14-ankara-9"
+  "2026-07-14-ankara-9",
+  "2026-07-23-ankara-4"
  ],
- "erken_gec_delta_ema": -0.503,
- "son_guncelleme": "2026-07-14-ankara-9",
- "son_atak_delta_ema": -0.657,
+ "erken_gec_delta_ema": -0.502,
+ "son_guncelleme": "2026-07-23-ankara-4",
+ "son_atak_delta_ema": -0.76,
  "gecmis_dolduruldu": true
 }

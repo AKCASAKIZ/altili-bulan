@@ -1,0 +1,13 @@
+{
+ "ad": "PRENSES BELBUS",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-12-28-adana-1-backfill",
+  "2026-06-09-ankara-8-backfill",
+  "2026-07-23-ankara-5"
+ ],
+ "erken_gec_delta_ema": 1.415,
+ "son_guncelleme": "2026-07-23-ankara-5",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": -1
+}

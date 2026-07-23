@@ -1,0 +1,14 @@
+{
+ "ad": "LIVE YOUR FREEDOM",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-02-14-istanbul-7-backfill",
+  "2026-06-12-istanbul-3-backfill",
+  "2026-07-23-kocaeli-7-backfill",
+  "2026-07-23-kocaeli-7"
+ ],
+ "erken_gec_delta_ema": 1.892,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-23-kocaeli-7",
+ "gecmis_dolduruldu": true
+}

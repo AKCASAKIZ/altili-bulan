@@ -1,15 +1,16 @@
 {
  "ad": "TILO GIRL",
- "kosu_sayisi": 5,
+ "kosu_sayisi": 6,
  "islenen_yarislar": [
   "2025-10-27-bursa-1-backfill",
   "2026-02-02-bursa-5-backfill",
   "2026-06-04-kocaeli-3-backfill",
   "2026-06-25-bursa-1-backfill",
-  "2026-07-12-istanbul-4"
+  "2026-07-12-istanbul-4",
+  "2026-07-23-kocaeli-4"
  ],
- "erken_gec_delta_ema": -1.838,
- "son_atak_delta_ema": -0.49,
- "son_guncelleme": "2026-07-12-istanbul-4",
+ "erken_gec_delta_ema": -1.737,
+ "son_atak_delta_ema": -0.343,
+ "son_guncelleme": "2026-07-23-kocaeli-4",
  "gecmis_dolduruldu": true
 }

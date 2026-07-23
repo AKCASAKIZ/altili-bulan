@@ -1,0 +1,13 @@
+{
+ "ad": "WOLF BROTHERS",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-04-23-ankara-9-backfill",
+  "2026-05-21-ankara-5-backfill",
+  "2026-07-23-ankara-3"
+ ],
+ "erken_gec_delta_ema": 4.95,
+ "son_atak_delta_ema": -0.3,
+ "son_guncelleme": "2026-07-23-ankara-3",
+ "gecmis_dolduruldu": true
+}

@@ -1,13 +1,14 @@
 {
  "ad": "EL ALACRAN",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2025-08-29-bursa-4-backfill",
   "2026-01-30-antalya-6-backfill",
-  "2026-07-10-bursa-8"
+  "2026-07-10-bursa-8",
+  "2026-07-23-kocaeli-4"
  ],
- "erken_gec_delta_ema": 0.805,
- "son_guncelleme": "2026-07-10-bursa-8",
+ "erken_gec_delta_ema": 1.313,
+ "son_guncelleme": "2026-07-23-kocaeli-4",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": 0
+ "son_atak_delta_ema": -0.3
 }

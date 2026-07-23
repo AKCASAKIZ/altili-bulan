@@ -1,6 +1,6 @@
 {
  "ad": "BABA DOÇKA",
- "kosu_sayisi": 9,
+ "kosu_sayisi": 10,
  "islenen_yarislar": [
   "2026-02-28-adana-2-backfill",
   "2026-03-23-adana-1-backfill",
@@ -10,10 +10,11 @@
   "2026-05-28-ankara-5-backfill",
   "2026-06-23-ankara-3-backfill",
   "2026-07-11-ankara-4-backfill",
-  "2026-07-11-ankara-4"
+  "2026-07-11-ankara-4",
+  "2026-07-23-kocaeli-3"
  ],
- "erken_gec_delta_ema": 1.051,
- "son_guncelleme": "2026-07-11-ankara-4",
+ "erken_gec_delta_ema": 1.336,
+ "son_guncelleme": "2026-07-23-kocaeli-3",
  "son_atak_delta_ema": 0.0,
  "gecmis_dolduruldu": true
 }

@@ -1,0 +1,14 @@
+{
+ "ad": "HAYDİ SEVDA",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-04-24-istanbul-4-backfill",
+  "2026-05-27-istanbul-5-backfill",
+  "2026-06-24-istanbul-3-backfill",
+  "2026-07-23-kocaeli-1-backfill",
+  "2026-07-23-kocaeli-1"
+ ],
+ "erken_gec_delta_ema": 0.029,
+ "son_guncelleme": "2026-07-23-kocaeli-1",
+ "gecmis_dolduruldu": true
+}

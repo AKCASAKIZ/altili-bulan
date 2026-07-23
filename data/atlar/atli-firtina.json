@@ -1,15 +1,16 @@
 {
  "ad": "ATLI FIRTINA",
- "kosu_sayisi": 5,
+ "kosu_sayisi": 6,
  "islenen_yarislar": [
   "2025-11-11-adana-5-backfill",
   "2026-06-02-ankara-4-backfill",
   "2026-06-09-ankara-4-backfill",
   "2026-06-27-ankara-3-backfill",
-  "2026-07-09-ankara-8"
+  "2026-07-09-ankara-8",
+  "2026-07-23-ankara-4"
  ],
- "erken_gec_delta_ema": 3.843,
- "son_guncelleme": "2026-07-09-ankara-8",
- "son_atak_delta_ema": 1.569,
+ "erken_gec_delta_ema": 2.99,
+ "son_guncelleme": "2026-07-23-ankara-4",
+ "son_atak_delta_ema": 1.398,
  "gecmis_dolduruldu": true
 }

@@ -1,0 +1,16 @@
+{
+ "ad": "DOĞAN KARDEŞLER",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-02-01-adana-6-backfill",
+  "2025-03-01-adana-6-backfill",
+  "2025-03-25-adana-6-backfill",
+  "2025-06-28-ankara-6-backfill",
+  "2025-12-03-istanbul-5-backfill",
+  "2026-07-23-kocaeli-6"
+ ],
+ "erken_gec_delta_ema": -1.236,
+ "son_guncelleme": "2026-07-23-kocaeli-6",
+ "son_atak_delta_ema": -0.49,
+ "gecmis_dolduruldu": true
+}

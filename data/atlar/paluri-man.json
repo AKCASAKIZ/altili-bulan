@@ -1,0 +1,16 @@
+{
+ "ad": "PALURİ MAN",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-03-09-adana-9-backfill",
+  "2025-05-22-ankara-1-backfill",
+  "2025-08-16-ankara-10-backfill",
+  "2025-11-09-adana-9-backfill",
+  "2026-06-06-ankara-1-backfill",
+  "2026-07-23-ankara-7"
+ ],
+ "erken_gec_delta_ema": 0.582,
+ "son_atak_delta_ema": 0.075,
+ "son_guncelleme": "2026-07-23-ankara-7",
+ "gecmis_dolduruldu": true
+}

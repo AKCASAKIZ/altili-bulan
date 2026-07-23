@@ -1,12 +1,13 @@
 {
  "ad": "SEHERYELİ",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2025-12-09-adana-1-backfill",
-  "2026-07-16-kocaeli-6"
+  "2026-07-16-kocaeli-6",
+  "2026-07-23-kocaeli-8"
  ],
- "erken_gec_delta_ema": 4.0,
- "son_atak_delta_ema": 1.7,
- "son_guncelleme": "2026-07-16-kocaeli-6",
+ "erken_gec_delta_ema": 2.8,
+ "son_atak_delta_ema": 1.49,
+ "son_guncelleme": "2026-07-23-kocaeli-8",
  "gecmis_dolduruldu": true
 }

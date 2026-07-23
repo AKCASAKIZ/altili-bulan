@@ -1,0 +1,19 @@
+{
+ "ad": "NOBLE STORM",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-10-30-ankara-5-backfill",
+  "2025-11-25-antalya-6-backfill",
+  "2026-03-31-antalya-1-backfill",
+  "2026-04-21-kocaeli-1-backfill",
+  "2026-04-30-ankara-3-backfill",
+  "2026-05-09-ankara-3-backfill",
+  "2026-05-23-ankara-7-backfill",
+  "2026-07-23-kocaeli-3-backfill",
+  "2026-07-23-kocaeli-3"
+ ],
+ "erken_gec_delta_ema": 1.007,
+ "son_guncelleme": "2026-07-23-kocaeli-3",
+ "son_atak_delta_ema": 0.49,
+ "gecmis_dolduruldu": true
+}

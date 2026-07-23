@@ -1,15 +1,16 @@
 {
  "ad": "DENİZ SAVAŞI",
- "kosu_sayisi": 5,
+ "kosu_sayisi": 6,
  "islenen_yarislar": [
   "2025-07-19-ankara-9-backfill",
   "2026-06-02-ankara-4-backfill",
   "2026-06-19-istanbul-4-backfill",
   "2026-06-27-ankara-3-backfill",
-  "2026-07-09-ankara-8"
+  "2026-07-09-ankara-8",
+  "2026-07-23-ankara-4"
  ],
- "erken_gec_delta_ema": 1.275,
- "son_guncelleme": "2026-07-09-ankara-8",
- "son_atak_delta_ema": -0.09,
+ "erken_gec_delta_ema": 1.492,
+ "son_guncelleme": "2026-07-23-ankara-4",
+ "son_atak_delta_ema": 0.237,
  "gecmis_dolduruldu": true
 }

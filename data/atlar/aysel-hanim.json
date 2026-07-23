@@ -1,0 +1,14 @@
+{
+ "ad": "AYSEL HANIM",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-04-13-sanliurfa-3-backfill",
+  "2026-05-19-kocaeli-3-backfill",
+  "2026-06-02-kocaeli-8-backfill",
+  "2026-06-18-kocaeli-1-backfill",
+  "2026-07-23-kocaeli-1"
+ ],
+ "erken_gec_delta_ema": -0.915,
+ "son_guncelleme": "2026-07-23-kocaeli-1",
+ "gecmis_dolduruldu": true
+}
