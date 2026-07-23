@@ -1,0 +1,54 @@
+name: Arşiv backfill (derin geçmiş)
+
+# Elle tetiklenir: Actions → "Arşiv backfill (derin geçmiş)" → Run workflow.
+# Varsayılan aralık: TJK CSV arşivinin başlangıcı (2021-08-25) → mevcut arşivimizin
+# başladığı 2024-07 öncesi. Var olan günler tekrar indirilmez; yarıda kalırsa
+# tekrar çalıştırarak kaldığı yerden devam eder.
+on:
+  workflow_dispatch:
+    inputs:
+      baslangic:
+        description: "Başlangıç tarihi (YYYY-MM-DD)"
+        required: false
+        default: "2021-08-25"
+      bitis:
+        description: "Bitiş tarihi (YYYY-MM-DD)"
+        required: false
+        default: "2024-07-31"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gunluk-veri
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+
+      - name: Arşivi indir
+        run: python3 scripts/backfill_arsiv.py "${{ inputs.baslangic }}" "${{ inputs.bitis }}"
+
+      - name: İstatistikleri üret
+        run: python3 scripts/build_stats.py
+
+      - name: Değişiklikleri işle
+        run: |
+          git config user.name "altili-bulan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/arsiv/
+          if git diff --cached --quiet; then
+            echo "Yeni veri yok."
+          else
+            git commit -m "Arşiv backfill: ${{ inputs.baslangic }} → ${{ inputs.bitis }}"
+            for i in 1 2 3; do
+              if git push; then break; fi
+              echo "Push reddedildi, rebase edip yeniden deneniyor ($i/3)…"
+              git pull --rebase origin main
+            done
+          fi
