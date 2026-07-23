@@ -33,6 +33,7 @@ const ANGLES = [
   { k: "E1", name: "Jokey kazanma % (arşiv)", pct: 3.00, desc: "2 yıllık sonuç arşivinden jokeyin gerçek kazanma yüzdesi. Koşudaki en yüksek 5 jokey: 100,70,50,30,10." },
   { k: "E2", name: "Antrenör kazanma % (arşiv)", pct: 2.00, desc: "2 yıllık sonuç arşivinden antrenörün gerçek kazanma yüzdesi. Koşudaki en yüksek 5: 100,70,50,30,10." },
   { k: "E3", name: "Kulvar avantajı (arşiv)", pct: 3.00, desc: "Hipodrom + pist + mesafe kırılımında start kulvarının 2 yıllık gerçek kazanma oranı. En avantajlı 5 kulvardaki atlar: 100,70,50,30,10." },
+  { k: "F1", name: "Uzman tahminleri", pct: 5.00, desc: "Takip edilen tahmincilerin favori/plase/sürpriz işaretleri (F=100, P=60, S=30; işaretleyen tahmincilerin ortalaması). Puanlama sekmesindeki 🎩 Uzman panelinden girilir." },
 ];
 const PRESET6 = ["A3", "B1", "B2", "B3", "B6", "B13"];
 const RANK5 = [100, 70, 50, 30, 10];
@@ -1336,3 +1337,140 @@ function formatIdmanSon(rows) {
 
 /* ===== dergi.js entegrasyonu için dışa açılan kancalar ===== */
 window.AB = { state, ANGLES, RANK5, saveSession, renderAll, renderScoreTable, rankedHorses, slugify, esc, LS };
+
+/* ==================== F1: UZMAN TAHMİNLERİ ====================
+ * Tahminci listesi tutulur (ör. Ferdi Akıncı, Final, Ferhat Pusa); YouTube/dergi
+ * yorumunu izlerken ayak ayak F(avori)/P(lase)/S(ürpriz) işaretlenir → F1 puanı
+ * işaretleyen tahmincilerin ortalamasıdır. Karne: kayıtlı işaretler yayınlanmış
+ * sonuçlarla karşılaştırılıp tahminci başına isabet yüzdesi gösterilir. */
+(() => {
+  const DEF_UZMAN = ["Ferdi Akıncı", "Final", "Ferhat Pusa"];
+  const uzmanlar = () => LS.get("ab2:uzmanlar", DEF_UZMAN);
+  const FPS_PUAN = { F: 100, P: 60, S: 30 };
+  let secili = uzmanlar()[0] || null;
+
+  const pane = document.getElementById("tab-puanlama");
+  if (!pane) return;
+  const box = document.createElement("div");
+  box.id = "uzmanPanel";
+  box.innerHTML = `<details style="margin-top:14px">
+    <summary style="cursor:pointer"><b>🎩 Uzman tahminleri (F1)</b> — tahminci seç, atları F/P/S işaretle</summary>
+    <div class="toolbar" id="uzmanBar" style="flex-wrap:wrap;gap:6px;margin:8px 0"></div>
+    <div id="uzmanMarks"></div>
+    <div class="toolbar" style="margin-top:8px">
+      <button class="btn" id="btnUzmanKarne">📋 Karne (isabet geçmişi)</button>
+      <span class="hint">F=favori (kazanma), P=plase, S=sürpriz (ilk 3) olarak puanlanır.</span>
+    </div>
+    <div id="uzmanKarne"></div>
+  </details>`;
+  pane.appendChild(box);
+
+  function renderBar() {
+    const bar = box.querySelector("#uzmanBar");
+    const list = uzmanlar();
+    if (secili && !list.includes(secili)) secili = list[0] || null;
+    bar.innerHTML = list.map((u) =>
+      `<button class="btn ${u === secili ? "btn-accent" : "btn-ghost"}" data-uz="${esc(u)}">${esc(u)}
+         <span data-uzdel="${esc(u)}" title="Tahminciyi sil" style="margin-left:4px;opacity:.6">✕</span></button>`).join("") +
+      `<input id="uzmanYeni" placeholder="Yeni tahminci…" style="width:140px">
+       <button class="btn btn-ghost" id="uzmanEkle">+ Ekle</button>`;
+    bar.querySelectorAll("[data-uz]").forEach((b) => (b.onclick = (e) => {
+      const del = e.target.dataset?.uzdel;
+      if (del) {
+        if (!confirm(`"${del}" silinsin mi? (işaretleri kalır, puanlamaya girmez)`)) return;
+        LS.set("ab2:uzmanlar", uzmanlar().filter((x) => x !== del));
+      } else secili = b.dataset.uz;
+      renderBar(); renderMarks();
+    }));
+    bar.querySelector("#uzmanEkle").onclick = () => {
+      const ad = bar.querySelector("#uzmanYeni").value.trim();
+      if (!ad) return;
+      const list2 = uzmanlar();
+      if (!list2.includes(ad)) LS.set("ab2:uzmanlar", [...list2, ad]);
+      secili = ad; renderBar(); renderMarks();
+    };
+  }
+
+  function hesaplaF1(leg) {
+    const list = uzmanlar();
+    const isaretleyen = list.filter((u) => leg.horses.some((h) => h.uzman?.[u]));
+    leg.horses.forEach((h) => {
+      if (!isaretleyen.length) { delete h.scores.F1; return; }
+      const t = isaretleyen.reduce((s, u) => s + (FPS_PUAN[h.uzman?.[u]] || 0), 0);
+      const v = Math.round(t / isaretleyen.length);
+      if (v) h.scores.F1 = v; else delete h.scores.F1;
+    });
+  }
+
+  function renderMarks() {
+    const el = box.querySelector("#uzmanMarks");
+    const leg = state.legs[state.activeLeg];
+    if (!leg || !secili) { el.innerHTML = `<p class="hint">Ayak yüklü değil ya da tahminci seçili değil.</p>`; return; }
+    el.innerHTML = `<table class="score-table"><thead><tr><th>At</th><th colspan="3">${esc(secili)} işareti</th></tr></thead><tbody>` +
+      leg.horses.map((h, i) => {
+        const m = h.uzman?.[secili] || "";
+        const btn = (k, lbl) =>
+          `<td><button class="btn ${m === k ? "btn-accent" : "btn-ghost"}" data-fps="${k}" data-h="${i}">${lbl}</button></td>`;
+        return `<tr><td>${h.no}. ${esc(h.ad)}</td>${btn("F", "Favori")}${btn("P", "Plase")}${btn("S", "Sürpriz")}</tr>`;
+      }).join("") + "</tbody></table>";
+    el.querySelectorAll("[data-fps]").forEach((b) => (b.onclick = () => {
+      const h = leg.horses[+b.dataset.h];
+      h.uzman = h.uzman || {};
+      // aynı işarete tekrar basınca temizle
+      if (h.uzman[secili] === b.dataset.fps) delete h.uzman[secili];
+      else h.uzman[secili] = b.dataset.fps;
+      hesaplaF1(leg); saveSession(); renderScoreTable();
+    }));
+  }
+
+  /* --- Karne: kayıtlı tüm oturumlardaki işaretler × yayınlanmış sonuçlar --- */
+  async function karne() {
+    const out = box.querySelector("#uzmanKarne");
+    out.innerHTML = `<p class="hint">Hesaplanıyor…</p>`;
+    const list = uzmanlar();
+    const stats = {}; // ad → {F:[n,isabet], P:[n,isabet], S:[n,isabet]}
+    const sonCache = {};
+    for (const k of Object.keys(localStorage)) {
+      if (!k.startsWith("ab2:session:")) continue;
+      const [, , day, city] = k.split(":");
+      const s = LS.get(k, null);
+      if (!s?.legs?.length || !s.legs.some((l) => (l.horses || []).some((h) => h.uzman))) continue;
+      const ck = `${day}|${city}`;
+      if (!(ck in sonCache)) sonCache[ck] = await tryFetch(`data/${day}/sonuclar-${city}.json`);
+      const res = sonCache[ck];
+      if (!res?.races) continue;
+      for (const leg of s.legs) {
+        const race = res.races.find((r) => r.no === leg.raceNo);
+        if (!race?.horses?.length) continue;
+        const bitis = {}; // at no → bitiş sırası (sonuçta atlar bitiş sırasıyla)
+        race.horses.forEach((h, ix) => { bitis[String(h.no)] = ix + 1; });
+        for (const h of leg.horses || []) {
+          if (!h.uzman) continue;
+          const sira = bitis[String(h.no)];
+          if (!sira) continue; // koşmamış
+          for (const u of list) {
+            const mk = h.uzman[u];
+            if (!mk) continue;
+            const st = stats[u] || (stats[u] = { F: [0, 0], P: [0, 0], S: [0, 0] });
+            st[mk][0]++;
+            if (mk === "F" ? sira === 1 : sira <= 3) st[mk][1]++;
+          }
+        }
+      }
+    }
+    const adlar = Object.keys(stats);
+    if (!adlar.length) { out.innerHTML = `<p class="hint">Henüz sonuçlanmış işaret yok — tahmin işaretle, akşam sonuçlar gelince karne oluşur.</p>`; return; }
+    const pct = (a) => (a[0] ? `%${Math.round((a[1] / a[0]) * 100)} <span class="hint">(${a[1]}/${a[0]})</span>` : "–");
+    out.innerHTML = `<table class="score-table"><thead><tr><th>Tahminci</th><th>Favori→1.</th><th>Plase→ilk3</th><th>Sürpriz→ilk3</th></tr></thead><tbody>` +
+      adlar.map((u) => `<tr><td>${esc(u)}</td><td>${pct(stats[u].F)}</td><td>${pct(stats[u].P)}</td><td>${pct(stats[u].S)}</td></tr>`).join("") +
+      "</tbody></table>";
+  }
+  box.querySelector("#btnUzmanKarne").onclick = karne;
+
+  // puanlama tablosu her çizildiğinde uzman panelini de tazele (ayak değişimini yakalar)
+  const eskiRender = renderScoreTable;
+  const yeniRender = function () { eskiRender.apply(this, arguments); renderBar(); renderMarks(); };
+  renderScoreTable = yeniRender;
+  window.AB.renderScoreTable = yeniRender;
+  renderBar(); renderMarks();
+})();
