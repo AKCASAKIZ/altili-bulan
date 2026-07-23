@@ -7,8 +7,8 @@ const ANGLES = [
   { k: "A2", name: "Sahibin son koşan atı: derece", pct: 3.20, desc: "At sahibinin son koşan atı 1. ise 100, 2. ise 60, 3. ise 20." },
   { k: "A3", name: "Sahibin son koşan atı: kaç gün önce", pct: 2.80, desc: "≤10 gün: 100, ≤20 gün: 60, ≤30 gün: 20." },
   { k: "B1", name: "Purse drop (ikramiye düşüşü)", pct: 6.20, desc: "Son koşusu şimdikinden çok daha yüksek ikramiyeliyse 100, az farkla yüksekse 60, aynıysa 20." },
-  { k: "B2", name: "Distance switch (mesafe uygunluğu)", pct: 3.10, desc: "Son koşusuna göre daha uygun mesafede koşuyorsa 100/60/20." },
-  { k: "B3", name: "Surface switch (pist uygunluğu)", pct: 4.03, desc: "Daha yatkın olduğu pistte koşuyorsa 100/60/20. Otomatik: arşivdeki son 6 koşunun pist kırılımından (bugünkü pistteki ort. derece vs diğer pistler)." },
+  { k: "B2", name: "Distance switch (mesafe uygunluğu)", pct: 3.10, desc: "Daha uygun mesafede koşuyorsa 100/60/20. Otomatik: 2 yıllık kariyerin mesafe grubu (kısa/orta/uzun) kırılımında bugünkü grubun ilk-3 oranı diğerlerinden iyiyse." },
+  { k: "B3", name: "Surface switch (pist uygunluğu)", pct: 4.03, desc: "Daha yatkın olduğu pistte koşuyorsa 100/60/20. Otomatik: 2 yıllık kariyerin pist kırılımında bugünkü pistin ilk-3 oranı diğerlerinden iyiyse." },
   { k: "B4", name: "Racing cycle (koşu sıklığı)", pct: 3.72, desc: "Aradan dönüş sonrası uygun koşu sırası 100; arasızsa son galibiyetin yakınlığına göre 100/60/20." },
   { k: "B5", name: "Wins (kazanma yüzdesi)", pct: 6.82, desc: "Kazanma yüzdesi en yüksek ilk 5 at: 100,70,50,30,10." },
   { k: "B6", name: "Tahmini derece", pct: 7.44, desc: "En iyi 5 tahmini dereceye sahip atlar: 100,70,50,30,10." },
@@ -469,20 +469,33 @@ async function scoreLeg(leg, ctx) {
         else if (Math.abs(rec.ikr - simdikiIkr) <= simdikiIkr * 0.02) h.scores.B1 = 20;
       }
 
-      // B3 Pist uygunluğu: son 6 koşunun pist kırılımı — bugünkü pistteki ortalama derecesi
-      // diğer pistlerdekinden iyiyse yatkın kabul edilir (eski stats.json'da pist alanı yoksa atlanır)
-      if (simdikiPist && rec.son6.some((x) => x[3])) {
+      // B2/B3 Mesafe & pist uygunluğu: 2 yıllık kariyer kırılımı (rec.mg / rec.pk) —
+      // bugünkü kategorideki ilk-3 oranı diğer kategorilerden belirgin iyiyse yatkın kabul edilir
+      const kirilimPuan = (tbl, buKey) => {
+        if (!tbl || !buKey || !tbl[buKey]) return;
+        const [nT, iT] = tbl[buKey];
+        let nD = 0, iD = 0;
+        for (const k in tbl) if (k !== buKey) { nD += tbl[k][0]; iD += tbl[k][1]; }
+        if (nT >= 3 && nD >= 2) {
+          const fark = iT / nT - iD / nD; // bugünkü kategorideki ilk-3 oranı farkı
+          return fark >= 0.25 ? 100 : fark >= 0.1 ? 60 : fark > 0 ? 20 : 0;
+        }
+        if (nT >= 4 && !nD) return iT / nT >= 0.5 ? 60 : 20; // hep bu kategoride koşmuş
+      };
+      const b2 = kirilimPuan(rec.mg, mesafeGrubu(leg.mesafe));
+      if (b2 !== undefined) h.scores.B2 = b2;
+      let b3 = kirilimPuan(rec.pk, simdikiPist);
+      if (b3 === undefined && simdikiPist && rec.son6.some((x) => x[3])) {
+        // yedek: kariyer kırılımı yoksa/yetersizse son 6 koşunun ort. derece kıyası
         const ayni = rec.son6.filter((x) => x[3] === simdikiPist).map((x) => x[1]);
         const diger = rec.son6.filter((x) => x[3] && x[3] !== simdikiPist).map((x) => x[1]);
         const ort = (a) => a.reduce((p, c) => p + c, 0) / a.length;
         if (ayni.length && diger.length) {
           const fark = ort(diger) - ort(ayni); // pozitifse bugünkü pistte daha iyi koşuyor
-          h.scores.B3 = fark >= 2 ? 100 : fark >= 1 ? 60 : fark > 0 ? 20 : 0;
-        } else if (ayni.length >= 3) {
-          // bilinen tüm koşuları zaten bu pistte: alışık olduğu pist, ortalaması iyiyse hafif artı
-          h.scores.B3 = ort(ayni) <= 3 ? 60 : 20;
+          b3 = fark >= 2 ? 100 : fark >= 1 ? 60 : fark > 0 ? 20 : 0;
         }
       }
+      if (b3 !== undefined) h.scores.B3 = b3;
 
       // B4 Racing cycle: son 6 koşu tarihlerindeki ara (layoff) düzeni
       const tarihler = rec.son6.map((x) => x[0]);
