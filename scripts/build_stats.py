@@ -12,8 +12,9 @@ kullanabileceği özet istatistikleri üretir → data/arsiv/stats.json
   antrenor90 : aynı yapı, antrenörler için                (B16)
   sahip_son  : sahibin son koşan atı → [tarih, sıra]      (A2, A3)
   antrenor_son: antrenörün son koşan atı → [tarih, sıra]  (B17, B18)
-  at         : at (temiz ad) → geçmiş özeti               (B1,B3,B4,B5,B10,B11,B12,B14,B15)
-               {n, w, kafa, bomba, ikr, mes, kilo, ekip, son6:[[tarih,sıra,ganyan,pist]…]}
+  at         : at (temiz ad) → geçmiş özeti               (B1,B2,B3,B4,B5,B10,B11,B12,B14,B15)
+               {n, w, kafa, bomba, ikr, mes, kilo, ekip, son6:[[tarih,sıra,ganyan,pist]…],
+                pk: pist → [koşu, ilk3], mg: mesafe_grubu → [koşu, ilk3]}  (kariyer kırılımı, B2/B3)
 
 Kullanım: python scripts/build_stats.py
 """
@@ -112,7 +113,8 @@ def main() -> None:
                 for r in g["kosular"]:
                     kosu_sayisi += 1
                     pist = (r.get("pist") or "?").split()[0]
-                    key = f"{sehir}|{pist}|{mesafe_grubu(r.get('mesafe'))}"
+                    mgrubu = mesafe_grubu(r.get("mesafe"))
+                    key = f"{sehir}|{pist}|{mgrubu}"
                     cell = kulvar.setdefault(key, {})
                     ikr = sayi(r.get("ikramiye"))
                     mes = sayi(r.get("mesafe"))
@@ -149,9 +151,14 @@ def main() -> None:
                         rec = at.setdefault(adx, {
                             "n": 0, "w": 0, "kafa": 0, "bomba": 0,
                             "ikr": None, "mes": None, "kilo": None,
-                            "ekip": "", "son6": []})
+                            "ekip": "", "son6": [], "pk": {}, "mg": {}})
                         rec["n"] += 1
                         rec["w"] += win
+                        # kariyer kırılımı: pist ve mesafe grubu → [koşu, ilk3] (B2/B3)
+                        for tbl, kk in ((rec["pk"], pist), (rec["mg"], mgrubu)):
+                            c = tbl.setdefault(kk, [0, 0])
+                            c[0] += 1
+                            c[1] += top3
                         gany = sayi(h.get("ganyan"))
                         if win and h.get("fark") and KAFA_RE.search(h["fark"]):
                             rec["kafa"] += 1
