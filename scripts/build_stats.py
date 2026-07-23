@@ -12,8 +12,8 @@ kullanabileceği özet istatistikleri üretir → data/arsiv/stats.json
   antrenor90 : aynı yapı, antrenörler için                (B16)
   sahip_son  : sahibin son koşan atı → [tarih, sıra]      (A2, A3)
   antrenor_son: antrenörün son koşan atı → [tarih, sıra]  (B17, B18)
-  at         : at (temiz ad) → geçmiş özeti               (B1,B4,B5,B10,B11,B12,B14,B15)
-               {n, w, kafa, bomba, ikr, mes, kilo, ekip, son6:[[tarih,sıra,ganyan]…]}
+  at         : at (temiz ad) → geçmiş özeti               (B1,B3,B4,B5,B10,B11,B12,B14,B15)
+               {n, w, kafa, bomba, ikr, mes, kilo, ekip, son6:[[tarih,sıra,ganyan,pist]…]}
 
 Kullanım: python scripts/build_stats.py
 """
@@ -161,7 +161,7 @@ def main() -> None:
                         rec["mes"] = mes
                         rec["kilo"] = kilo_sayi(h.get("kilo"))
                         rec["ekip"] = ekip
-                        rec["son6"].append([gunint(iso), h["sira"], gany or 0])
+                        rec["son6"].append([gunint(iso), h["sira"], gany or 0, pist])
                         if len(rec["son6"]) > 6:
                             rec["son6"] = rec["son6"][-6:]
 
