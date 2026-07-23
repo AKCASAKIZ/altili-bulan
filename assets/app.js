@@ -8,7 +8,7 @@ const ANGLES = [
   { k: "A3", name: "Sahibin son koşan atı: kaç gün önce", pct: 2.80, desc: "≤10 gün: 100, ≤20 gün: 60, ≤30 gün: 20." },
   { k: "B1", name: "Purse drop (ikramiye düşüşü)", pct: 6.20, desc: "Son koşusu şimdikinden çok daha yüksek ikramiyeliyse 100, az farkla yüksekse 60, aynıysa 20." },
   { k: "B2", name: "Distance switch (mesafe uygunluğu)", pct: 3.10, desc: "Son koşusuna göre daha uygun mesafede koşuyorsa 100/60/20." },
-  { k: "B3", name: "Surface switch (pist uygunluğu)", pct: 4.03, desc: "Daha yatkın olduğu pistte koşuyorsa 100/60/20." },
+  { k: "B3", name: "Surface switch (pist uygunluğu)", pct: 4.03, desc: "Daha yatkın olduğu pistte koşuyorsa 100/60/20. Otomatik: arşivdeki son 6 koşunun pist kırılımından (bugünkü pistteki ort. derece vs diğer pistler)." },
   { k: "B4", name: "Racing cycle (koşu sıklığı)", pct: 3.72, desc: "Aradan dönüş sonrası uygun koşu sırası 100; arasızsa son galibiyetin yakınlığına göre 100/60/20." },
   { k: "B5", name: "Wins (kazanma yüzdesi)", pct: 6.82, desc: "Kazanma yüzdesi en yüksek ilk 5 at: 100,70,50,30,10." },
   { k: "B6", name: "Tahmini derece", pct: 7.44, desc: "En iyi 5 tahmini dereceye sahip atlar: 100,70,50,30,10." },
@@ -451,6 +451,7 @@ async function scoreLeg(leg, ctx) {
     });
     const simdikiIkr = sayiTR(leg.ikramiye);
     const simdikiMes = sayiTR(leg.mesafe);
+    const simdikiPist = (leg.pist || "").trim().split(/\s+/)[0];
     const agfSirali = hs.map((h, i) => ({ a: parseAgf(h.meta?.agf), i }))
       .filter((x) => x.a != null).sort((x, y) => y.a - x.a);
     const agfIlk4 = new Set(agfSirali.slice(0, 4).map((x) => x.i));
@@ -460,10 +461,27 @@ async function scoreLeg(leg, ctx) {
       if (!rec || !rec.son6?.length) return;
 
       // B1 Purse drop: son koşusunun ikramiyesi şimdikinden yüksekse (kılavuzun güncel paraya uyarlaması: ≥%25 fark → 100)
-      if (rec.ikr && simdikiIkr) {
+      // Tazelik şartı: son koşusu 90 günden eskiyse sinyal anlamsız — puan verilmez
+      const sonKosuGun = gunFarki(rec.son6[rec.son6.length - 1][0]);
+      if (rec.ikr && simdikiIkr && sonKosuGun <= 90) {
         if (rec.ikr >= simdikiIkr * 1.25) h.scores.B1 = 100;
         else if (rec.ikr > simdikiIkr * 1.02) h.scores.B1 = 60;
         else if (Math.abs(rec.ikr - simdikiIkr) <= simdikiIkr * 0.02) h.scores.B1 = 20;
+      }
+
+      // B3 Pist uygunluğu: son 6 koşunun pist kırılımı — bugünkü pistteki ortalama derecesi
+      // diğer pistlerdekinden iyiyse yatkın kabul edilir (eski stats.json'da pist alanı yoksa atlanır)
+      if (simdikiPist && rec.son6.some((x) => x[3])) {
+        const ayni = rec.son6.filter((x) => x[3] === simdikiPist).map((x) => x[1]);
+        const diger = rec.son6.filter((x) => x[3] && x[3] !== simdikiPist).map((x) => x[1]);
+        const ort = (a) => a.reduce((p, c) => p + c, 0) / a.length;
+        if (ayni.length && diger.length) {
+          const fark = ort(diger) - ort(ayni); // pozitifse bugünkü pistte daha iyi koşuyor
+          h.scores.B3 = fark >= 2 ? 100 : fark >= 1 ? 60 : fark > 0 ? 20 : 0;
+        } else if (ayni.length >= 3) {
+          // bilinen tüm koşuları zaten bu pistte: alışık olduğu pist, ortalaması iyiyse hafif artı
+          h.scores.B3 = ort(ayni) <= 3 ? 60 : 20;
+        }
       }
 
       // B4 Racing cycle: son 6 koşu tarihlerindeki ara (layoff) düzeni
