@@ -116,6 +116,7 @@ function bindUI() {
   $("#unitPrice").onchange = renderKuponSummary;
   $("#btnRunBacktest").onclick = runBacktest;
   $("#btnSuggestCoefs").onclick = suggestCoefs;
+  $("#btnGazetePdf").onclick = buildGazete;
 }
 
 /* ==================== VERİ YÜKLEME ==================== */
@@ -769,6 +770,91 @@ async function renderTagm() {
     cards.push(tagmRaceCard(r, leg));
   }
   el.innerHTML = cards.join("");
+}
+
+/* ==================== GAZETE (yazdırılabilir / PDF — tam düzen) ====================
+   TAGM = kendi yarış dergimiz. Bu, tüm koşuları puanlanmış tam gazete düzeninde
+   ekranda gizli #gazeteRoot'a basar ve window.print() ile tarayıcının "PDF olarak
+   kaydet" akışını açar. Harici kütüphane yok, çevrimdışı çalışır. */
+async function buildGazete() {
+  if (!state.program) return alert("Bu gün/hipodrom için program verisi yok.");
+  const btn = $("#btnGazetePdf");
+  if (btn) { btn.disabled = true; btn.textContent = "⏳ Hazırlanıyor…"; }
+  try {
+    const sehir = aktifSehirAdi() || state.city || "";
+    const parts = [];
+    for (const r of state.program.races) {
+      const leg = {
+        raceNo: r.no, saat: r.saat, grup: r.grup, mesafe: r.mesafe, pist: r.pist, tur: r.tur, ikramiye: r.ikramiye,
+        horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
+          no: h.no, ad: h.ad, scores: {},
+          meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, h: h.h, jokey: h.jokey, kilo: h.kilo, baba: h.baba, anne: h.anne, sahip: h.sahip, antrenor: h.antrenor, st: h.st, yas: h.yas },
+        })),
+      };
+      await scoreLeg(leg);
+      parts.push(gazeteRace(r, leg));
+    }
+    const doc = `<div class="gz-doc">
+      <div class="gz-head">
+        <div class="gz-title">🏇 TAGM Yarış Gazetesi</div>
+        <div class="gz-sub">${esc(sehir)} · ${esc(trDate(state.day) || state.day || "")} · ${state.program.races.length} koşu</div>
+        <div class="gz-note">Kendi puanlama motorumuzla üretildi — TJK Yarış Gazetesi'nden bağımsız. Sorumlu oynayın.</div>
+      </div>
+      ${parts.join("")}
+    </div>`;
+    $("#gazeteRoot").innerHTML = doc;
+    window.print();
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = "🖨️ Gazete PDF"; }
+  }
+}
+
+function gazeteRace(r, leg) {
+  const ranked = rankedHorses(leg);
+  const vm = valueMap(leg);
+  const { probOf } = legProbs(leg);
+  const puanli = ranked.filter((x) => x.score > 0);
+  const fav = puanli[0];
+  const ilk4 = puanli.slice(0, 4).map((x) => x.h.no).join("-");
+  let rows = "";
+  ranked.forEach(({ h, score }, ix) => {
+    const rank = ix + 1;
+    const soy = [h.meta.baba, h.meta.anne].filter(Boolean).join(" — ");
+    const kunye = [
+      h.meta.yas ? esc(h.meta.yas) : "",
+      soy ? esc(soy) : "",
+      h.meta.sahip ? "Sah: " + esc(h.meta.sahip) : "",
+      h.meta.antrenor ? "Ant: " + esc(h.meta.antrenor) : "",
+      h.meta.eniyi ? "En iyi: " + esc(h.meta.eniyi) : "",
+    ].filter(Boolean).join(" · ");
+    const galop = esc(formatIdmanSon(state.idman?.[temizle(h.ad)]) || "");
+    const v = vm.get(h.no);
+    const agf = v && v.agf != null ? `%${(v.agf * 100).toFixed(1)}${v.value ? " 💎" : ""}` : esc(h.meta.agf || "");
+    rows += `<tr class="${rank <= 4 && score > 0 ? "gz-top" : ""}">
+      <td class="gz-rank">${score > 0 ? rank : "–"}</td>
+      <td class="gz-no">${h.no}</td>
+      <td class="gz-at"><b>${esc(h.ad)}</b>${kunye ? `<div class="gz-kunye">${kunye}</div>` : ""}</td>
+      <td>${esc(h.meta.jokey || "")}<div class="gz-kunye">${esc(h.meta.kilo || "")} kg</div></td>
+      <td class="gz-c">${agf}</td>
+      <td class="gz-c">${esc(h.meta.h || "")}</td>
+      <td class="gz-c">${esc(h.meta.son6 || "")}</td>
+      <td class="gz-c">${esc(h.meta.kgs || "")}</td>
+      <td>${esc(h.meta.karakter || "")}${galop ? `<div class="gz-kunye">${galop}</div>` : ""}</td>
+      <td class="gz-puan">${score > 0 ? score.toFixed(1) : "–"}${score > 0 ? `<div class="gz-kunye">%${(probOf(score) * 100).toFixed(0)}</div>` : ""}</td>
+    </tr>`;
+  });
+  const favTxt = fav ? `TAGM favorisi: <b>${fav.h.no} ${esc(fav.h.ad)}</b> (%${(probOf(fav.score) * 100).toFixed(0)})` : "TAGM favorisi: —";
+  return `<section class="gz-race">
+    <div class="gz-rhead">
+      <span class="gz-rno">${r.no}. Koşu</span> <span class="gz-rtime">${esc(r.saat || "")}</span>
+      <span class="gz-rtags">${esc(r.grup || "")} · ${esc(r.mesafe || "")} ${esc(r.pist || "")} · ${esc(r.tur || "")}${r.ikramiye ? " · 1.lik: " + esc(r.ikramiye) : ""}</span>
+    </div>
+    <div class="gz-summary">${favTxt}${ilk4 ? ` · İlk 4 sıra: <b>${ilk4}</b>` : ""}</div>
+    <table class="gz-table">
+      <thead><tr><th>Sıra</th><th>No</th><th>At / Künye</th><th>Jokey / Kilo</th><th>AGF</th><th>H</th><th>Son 6</th><th>KGS</th><th>Karakter / Galop</th><th>Puan</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </section>`;
 }
 
 /* ==================== TAGM vs Dergi tahmin kaydı & karşılaştırma ==================== */
