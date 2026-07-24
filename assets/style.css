@@ -268,3 +268,41 @@ footer a { color: var(--accent-text); }
   .tabs { padding: 6px 10px 0; }
   .tab { padding: 8px 9px; font-size: 13px; }
 }
+
+/* ==================== GAZETE (yazdır / PDF) ==================== */
+/* Ekranda gizli; yalnızca baskıda (window.print) görünür. */
+#gazeteRoot { display: none; }
+
+@media print {
+  @page { size: A4 portrait; margin: 10mm; }
+  html, body { background: #fff !important; }
+  /* body'nin doğrudan çocuklarından yalnızca gazete görünsün */
+  body > *:not(#gazeteRoot) { display: none !important; }
+  #gazeteRoot { display: block !important; color: #000; font: 11px/1.35 -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+  .gz-head { text-align: center; border-bottom: 2px solid #000; padding-bottom: 6px; margin-bottom: 10px; }
+  .gz-title { font-size: 20px; font-weight: 800; letter-spacing: .3px; }
+  .gz-sub { font-size: 13px; font-weight: 700; margin-top: 2px; }
+  .gz-note { font-size: 9px; color: #444; margin-top: 2px; }
+
+  .gz-race { break-inside: avoid; page-break-inside: avoid; margin-bottom: 12px; }
+  .gz-rhead { border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 2px; }
+  .gz-rno { font-size: 14px; font-weight: 800; }
+  .gz-rtime { font-weight: 700; margin-left: 4px; }
+  .gz-rtags { font-size: 10px; color: #333; margin-left: 6px; }
+  .gz-summary { font-size: 10.5px; margin: 2px 0 4px; }
+
+  .gz-table { width: 100%; border-collapse: collapse; }
+  .gz-table th { background: #eee; border: 1px solid #999; padding: 2px 4px; text-align: left; font-size: 9.5px; text-transform: uppercase; letter-spacing: .2px; }
+  .gz-table td { border: 1px solid #ccc; padding: 2px 4px; vertical-align: top; }
+  .gz-table tr.gz-top td { background: #f4f4f4; }
+  .gz-rank { text-align: center; font-weight: 800; width: 26px; }
+  .gz-no { text-align: center; width: 22px; }
+  .gz-c { text-align: center; white-space: nowrap; }
+  .gz-puan { text-align: right; font-weight: 700; white-space: nowrap; }
+  .gz-at b { font-size: 11.5px; }
+  .gz-kunye { font-size: 8.5px; color: #555; line-height: 1.2; }
+
+  /* baskıda arka plan/renk korunsun */
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
