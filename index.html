@@ -83,6 +83,10 @@
 
   <!-- TAGM -->
   <section id="tab-tagm" class="tab-pane">
+    <div class="toolbar">
+      <button id="btnGazetePdf" class="btn btn-accent">🖨️ Gazete PDF</button>
+      <span class="hint">Tüm koşuları tam gazete düzeninde açar; tarayıcının yazdır penceresinden <b>“PDF olarak kaydet”</b> seçin.</span>
+    </div>
     <p class="hint">🗞️ <b>TAGM</b> — TJK'nın Yarış Gazetesi'nden bağımsız, kendi programımız+puanlama motorumuz+Accurace koşu-karakteri verimizden otomatik üretilen kendi yarış dergimiz. Her koşuda atlar hesaplanan puana göre sıralanır.</p>
     <div id="tagmView"></div>
   </section>
@@ -145,6 +149,9 @@
 <footer>
   <p>Altılı Bulan v2 — kişisel kullanım için puanlama aracı. Veriler <a href="https://www.tjk.org" target="_blank" rel="noopener">TJK</a>'nın açık CSV raporlarından alınır. Sorumlu oynayın.</p>
 </footer>
+
+<!-- Gazete PDF çıktısı: ekranda gizli, yalnızca yazdırmada görünür (bkz. style.css @media print) -->
+<div id="gazeteRoot"></div>
 
 <script src="assets/app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
