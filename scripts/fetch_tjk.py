@@ -207,31 +207,63 @@ def fetch_kisi_listeleri() -> None:
             print(f"  + istatistik/{tip}-{yil}.json ({len(out)})")
 
 
-def fetch_idman_son800(names: list, out_dir, slug: str) -> None:
+def fetch_idman_son800(names: list, out_dir, slug: str,
+                       idman_atla: bool = False, son800_atla: bool = False) -> None:
     """Program atlarinin idman galoplarini ve son 800 derecelerini ceker."""
     idman, son8 = {}, {}
     for name in sorted(set(n for n in names if n)):
-        b = http_get("https://www.tjk.org/TR/YarisSever/Query/Data/IdmanIstatistikleri?QueryParameter_ATADI=" + urllib.parse.quote(name))
-        time.sleep(0.2)
+        b = None if idman_atla else http_get("https://www.tjk.org/TR/YarisSever/Query/Data/IdmanIstatistikleri?QueryParameter_ATADI=" + urllib.parse.quote(name))
+        if not idman_atla:
+            time.sleep(0.2)
         if b:
             rows = [c for c in _tablo_satirlari(b.decode("utf-8", "replace"))
                     if len(c) >= 17 and at_adi_temizle(c[0]) == name]
             if rows:
                 idman[name] = [{"t": r[12], "m1400": r[4], "m1200": r[5], "m1000": r[6],
                                 "m800": r[7], "durum": r[11], "tur": r[16]} for r in rows[:6]]
-        b = http_get("https://www.tjk.org/TR/YarisSever/Query/Data/Son800Ist?QueryParameter_AtAdi=" + urllib.parse.quote(name))
-        time.sleep(0.2)
+        # NOT: Bu sorgu adi TURKCE karakterleriyle bekler (ASCII'ye katlanmis ad
+        # "veri bulunmamaktadir" dondurur).
+        b = None if son800_atla else http_get("https://www.tjk.org/TR/YarisSever/Query/Data/Son800Ist?QueryParameter_AtAdi=" + urllib.parse.quote(name))
+        if not son800_atla:
+            time.sleep(0.2)
         if b:
+            # Sutunlar: 0 yil, 1 sehir, 2 pist, 3 pist durumu, 4 mesafe, 5 kilo,
+            # 6 AT ISMI, 7 irk, 8 atin kendi son-800 derecesi,
+            # 9 son 800'e ILK GIREN atin derecesi, 10 kosu cinsi.
+            # (At adi 6. sutunda; eskiden 0. sutun -yil- ile karsilastirildigi icin
+            #  bu dosya hic olusmuyordu. Sorgu ayrica Turkce karakterli tam adi ister.)
             rows = [c for c in _tablo_satirlari(b.decode("utf-8", "replace"))
-                    if c and at_adi_temizle(c[0]) == name]
+                    if len(c) >= 11 and at_adi_temizle(c[6]) == name]
             if rows:
-                son8[name] = rows[:6]
+                son8[name] = [{"yil": r[0], "sehir": r[1], "pist": r[2], "durum": r[3],
+                               "mesafe": r[4], "kilo": r[5], "son800": r[8],
+                               "ilk_giren": r[9], "sart": r[10]} for r in rows[:12]]
     if idman:
         (out_dir / f"idman-{slug}.json").write_text(json.dumps(idman, ensure_ascii=False), encoding="utf-8")
         print(f"  + idman-{slug}.json ({len(idman)} at)")
     if son8:
         (out_dir / f"son800-{slug}.json").write_text(json.dumps(son8, ensure_ascii=False), encoding="utf-8")
         print(f"  + son800-{slug}.json ({len(son8)} at)")
+
+
+def gecmis_sig_mi(path) -> bool:
+    """Eski cekici at basina SON 8 kosuyla siniril dosyalar uretiyordu; yenisi
+    ~2 yili (max_satir=40) getiriyor. Kalabalik bir kadroda hicbir atin 8'den
+    fazla kosusu yoksa VE at basina ortalama 6'nin altindaysa dosya eski
+    surumdendir; yeniden cekilsin.
+
+    (Repodaki 44 dosyaya karsi dogrulandi: eski gunlerde enfazla=8 / ortalama
+    3-4, 21 Tem sonrasi enfazla=40 / ortalama 20+ — ayrim net.)"""
+    try:
+        d = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return True
+    if not isinstance(d, dict) or len(d) < 10:
+        return False  # kucuk kadroda karar veremeyiz; dokunma
+    listeler = [len(v) for v in d.values() if isinstance(v, list)]
+    if not listeler:
+        return True
+    return max(listeler) <= 8 and (sum(listeler) / len(listeler)) < 6
 
 
 def fetch_gecmis(names: list, out_dir, slug: str, yil_geri: int = 2, max_satir: int = 40) -> None:
@@ -318,11 +350,20 @@ def fetch_day(date: datetime) -> int:
                         print(f"  + atistatistik ({len(stats)} at)")
                         written += 1
                 idman_dosya = out_dir / f"idman-{slugify(city)}.json"
-                if not idman_dosya.exists():
+                son800_dosya = out_dir / f"son800-{slugify(city)}.json"
+                # Ikisi ayri ayri kontrol edilir: idman dosyasi varken son800'un da
+                # var sayilmasi, son800 sorgusu duzeltildikten sonra mevcut gunlerde
+                # dosyanin hic olusmamasina yol aciyordu.
+                if not idman_dosya.exists() or not son800_dosya.exists():
                     names2 = [at_adi_temizle(h.get("ad", ""))
                               for r in data["races"] for r_h in [r["horses"]] for h in r_h]
-                    fetch_idman_son800(names2, out_dir, slugify(city))
+                    fetch_idman_son800(names2, out_dir, slugify(city),
+                                       idman_atla=idman_dosya.exists(),
+                                       son800_atla=son800_dosya.exists())
                 gecmis_dosya = out_dir / f"gecmis-{slugify(city)}.json"
+                if gecmis_dosya.exists() and gecmis_sig_mi(gecmis_dosya):
+                    print(f"  ! {gecmis_dosya.name} sig (eski cekici) — yeniden cekiliyor")
+                    gecmis_dosya.unlink()
                 if not gecmis_dosya.exists():
                     names3 = [at_adi_temizle(h.get("ad", ""))
                               for r in data["races"] for h in r["horses"]]
