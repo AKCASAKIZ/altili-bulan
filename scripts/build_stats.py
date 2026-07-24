@@ -13,7 +13,8 @@ kullanabileceği özet istatistikleri üretir → data/arsiv/stats.json
   sahip_son  : sahibin son koşan atı → [tarih, sıra]      (A2, A3)
   antrenor_son: antrenörün son koşan atı → [tarih, sıra]  (B17, B18)
   at         : at (temiz ad) → geçmiş özeti               (B1,B2,B3,B4,B5,B10,B11,B12,B14,B15)
-               {n, w, kafa, bomba, ikr, mes, kilo, ekip, son6:[[tarih,sıra,ganyan,pist]…],
+               {n, w, kafa, bomba, ikr, mes, kilo, ekip,
+                son6:[[tarih,sıra,ganyan,pist,rakip_hp_ort,agf_sıra]…],   (son ikisi G1)
                 pk: pist → [koşu, ilk3], mg: mesafe_grubu → [koşu, ilk3]}  (kariyer kırılımı, B2/B3)
 
 Kullanım: python scripts/build_stats.py
@@ -80,6 +81,12 @@ def gunint(iso: str) -> int:
     return int(iso.replace("-", ""))
 
 
+def agf_sira(s: str) -> int | None:
+    """'%2.84(7)' → 7 (o koşudaki AGF sıralaması). Alan yoksa None."""
+    mm = re.search(r"\((\d+)\)", s or "")
+    return int(mm.group(1)) if mm else None
+
+
 def esikler(puanlar: list[float]) -> list[float]:
     """A1/B16 için 'üst sıra' (100p) ve 'orta sıra' (60p) puan eşikleri."""
     if not puanlar:
@@ -120,6 +127,11 @@ def main() -> None:
                     mes = sayi(r.get("mesafe"))
                     kostu = [h for h in r["atlar"]
                              if h.get("derece") not in (None, "Koşmaz")]
+                    # G1 (sınıf düşüşü) için koşunun kadro handikap toplamı: her at
+                    # kendi hariç rakiplerinin ortalamasını görebilsin. "agf" alanı
+                    # arşive sonradan eklendi; eski aylarda None kalır (G1 v1'e düşer).
+                    hpler = [v for v in (sayi(h.get("h")) for h in kostu) if v]
+                    hp_toplam, hp_n = sum(hpler), len(hpler)
                     for h in kostu:
                         win = 1 if h["sira"] == 1 else 0
                         top3 = 1 if h["sira"] <= 3 else 0
@@ -168,7 +180,15 @@ def main() -> None:
                         rec["mes"] = mes
                         rec["kilo"] = kilo_sayi(h.get("kilo"))
                         rec["ekip"] = ekip
-                        rec["son6"].append([gunint(iso), h["sira"], gany or 0, pist])
+                        oz_hp = sayi(h.get("h"))
+                        if hp_n > 1 and oz_hp:
+                            rakip_hp = round((hp_toplam - oz_hp) / (hp_n - 1), 1)
+                        elif hp_n:
+                            rakip_hp = round(hp_toplam / hp_n, 1)
+                        else:
+                            rakip_hp = None
+                        rec["son6"].append([gunint(iso), h["sira"], gany or 0, pist,
+                                            rakip_hp, agf_sira(h.get("agf"))])
                         if len(rec["son6"]) > 6:
                             rec["son6"] = rec["son6"][-6:]
 
