@@ -798,7 +798,7 @@ async function buildGazete() {
       <div class="gz-head">
         <div class="gz-title">🏇 TAGM Yarış Gazetesi</div>
         <div class="gz-sub">${esc(sehir)} · ${esc(trDate(state.day) || state.day || "")} · ${state.program.races.length} koşu</div>
-        <div class="gz-note">Kendi puanlama motorumuzla üretildi — TJK Yarış Gazetesi'nden bağımsız. Sorumlu oynayın.</div>
+        <div class="gz-note">Kendi puanlama motorumuzla üretildi — TJK Yarış Gazetesi'nden bağımsız. Önc.% = atın bir önceki koşusundaki ganyandan örtük olasılık; Önc.HP = bir önceki koşusundaki handikap. Sorumlu oynayın.</div>
       </div>
       ${parts.join("")}
     </div>`;
@@ -807,6 +807,16 @@ async function buildGazete() {
   } finally {
     if (btn) { btn.disabled = false; btn.textContent = "🖨️ Gazete PDF"; }
   }
+}
+
+/* Atın puanlanan günden önceki en yakın koşusu (gecmis kaydı) — G1 ve gazete "Önc." sütunları için */
+function oncekiKosu(ad, day, gecmis) {
+  const recs = (gecmis !== undefined ? gecmis : state.gecmis)?.[temizle(ad)];
+  if (!recs || !recs.length) return null;
+  const dayIso = String(day || state.day || "9999");
+  return recs.map((r) => ({ r, iso: ddmmyyyyToIso(r.t) }))
+    .filter((x) => x.iso && x.iso < dayIso)
+    .sort((a, b) => (a.iso < b.iso ? 1 : -1))[0]?.r || null;
 }
 
 function gazeteRace(r, leg) {
@@ -820,26 +830,26 @@ function gazeteRace(r, leg) {
   ranked.forEach(({ h, score }, ix) => {
     const rank = ix + 1;
     const soy = [h.meta.baba, h.meta.anne].filter(Boolean).join(" — ");
-    const kunye = [
-      h.meta.yas ? esc(h.meta.yas) : "",
-      soy ? esc(soy) : "",
-      h.meta.sahip ? "Sah: " + esc(h.meta.sahip) : "",
-      h.meta.antrenor ? "Ant: " + esc(h.meta.antrenor) : "",
-      h.meta.eniyi ? "En iyi: " + esc(h.meta.eniyi) : "",
-    ].filter(Boolean).join(" · ");
-    const galop = esc(formatIdmanSon(state.idman?.[temizle(h.ad)]) || "");
+    const kunye = [h.meta.yas ? esc(h.meta.yas) : "", soy ? esc(soy) : ""].filter(Boolean).join(" · ");
     const v = vm.get(h.no);
     const agf = v && v.agf != null ? `%${(v.agf * 100).toFixed(1)}${v.value ? " 💎" : ""}` : esc(h.meta.agf || "");
+    // önceki koşu: ganyandan örtük % + handikap (hp)
+    const onc = oncekiKosu(h.ad);
+    const oncG = onc ? parseGanyan(onc.ganyan) : null;
+    const oncPct = oncG ? `%${(100 / oncG).toFixed(1)}` : "";
+    const oncHp = onc && isFinite(parseFloat(onc.hp)) ? esc(String(onc.hp)) : "";
     rows += `<tr class="${rank <= 4 && score > 0 ? "gz-top" : ""}">
       <td class="gz-rank">${score > 0 ? rank : "–"}</td>
       <td class="gz-no">${h.no}</td>
       <td class="gz-at"><b>${esc(h.ad)}</b>${kunye ? `<div class="gz-kunye">${kunye}</div>` : ""}</td>
       <td>${esc(h.meta.jokey || "")}<div class="gz-kunye">${esc(h.meta.kilo || "")} kg</div></td>
+      <td>${esc(h.meta.sahip || "")}</td>
+      <td>${esc(h.meta.antrenor || "")}</td>
+      <td class="gz-c">${esc(h.meta.st || "")}</td>
+      <td class="gz-c">${esc(h.meta.eniyi || "")}</td>
       <td class="gz-c">${agf}</td>
-      <td class="gz-c">${esc(h.meta.h || "")}</td>
-      <td class="gz-c">${esc(h.meta.son6 || "")}</td>
-      <td class="gz-c">${esc(h.meta.kgs || "")}</td>
-      <td>${esc(h.meta.karakter || "")}${galop ? `<div class="gz-kunye">${galop}</div>` : ""}</td>
+      <td class="gz-c">${oncPct}</td>
+      <td class="gz-c">${oncHp}</td>
       <td class="gz-puan">${score > 0 ? score.toFixed(1) : "–"}${score > 0 ? `<div class="gz-kunye">%${(probOf(score) * 100).toFixed(0)}</div>` : ""}</td>
     </tr>`;
   });
@@ -851,7 +861,7 @@ function gazeteRace(r, leg) {
     </div>
     <div class="gz-summary">${favTxt}${ilk4 ? ` · İlk 4 sıra: <b>${ilk4}</b>` : ""}</div>
     <table class="gz-table">
-      <thead><tr><th>Sıra</th><th>No</th><th>At / Künye</th><th>Jokey / Kilo</th><th>AGF</th><th>H</th><th>Son 6</th><th>KGS</th><th>Karakter / Galop</th><th>Puan</th></tr></thead>
+      <thead><tr><th>Sıra</th><th>No</th><th>At / Künye</th><th>Jokey / Kilo</th><th>Sahip</th><th>Antrenör</th><th>St</th><th>En iyi</th><th>AGF</th><th>Önc.%</th><th>Önc.HP</th><th>Puan</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
   </section>`;
