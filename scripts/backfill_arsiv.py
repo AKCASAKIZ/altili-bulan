@@ -34,8 +34,10 @@ spec.loader.exec_module(fetch_tjk)
 CITIES = ["İstanbul", "Ankara", "İzmir", "Adana", "Bursa",
           "Kocaeli", "Şanlıurfa", "Elazığ", "Diyarbakır", "Antalya"]
 
+# "agf" G1 icin sart: gecmis bir kosunun AGF siralamasi baska hicbir kaynakta yok
+# (gecmis-*.json atin kendi kariyerini tutar, rakipleri ve AGF'yi tutmaz).
 KEEP_HORSE = ("no", "ad", "yas", "kilo", "jokey", "sahip", "antrenor",
-              "st", "h", "derece", "ganyan", "fark")
+              "st", "agf", "h", "derece", "ganyan", "fark")
 
 
 def curl_get(url: str) -> bytes | None:
@@ -79,13 +81,30 @@ def load_month(path: Path) -> dict:
     return {}
 
 
+def eski_semali(gunler) -> bool:
+    """agf alani eklenmeden once yazilmis gun kayitlarini tespit eder; boyle
+    gunler yeniden indirilir. Kosusu olmayan gunler (bos liste) dokunulmaz."""
+    atlar = [a for g in (gunler or []) for k in g.get("kosular", []) for a in k.get("atlar", [])]
+    if not atlar:
+        return False
+    return not any("agf" in a for a in atlar)
+
+
 def main() -> None:
-    if len(sys.argv) == 3:
-        start = datetime.strptime(sys.argv[1], "%Y-%m-%d")
-        end = datetime.strptime(sys.argv[2], "%Y-%m-%d")
+    dun = datetime.now() - timedelta(days=1)
+    args = [a for a in sys.argv[1:] if a.strip()]
+    if len(args) == 2:
+        start = datetime.strptime(args[0], "%Y-%m-%d")
+        end = datetime.strptime(args[1], "%Y-%m-%d")
     else:
-        end = datetime.now() - timedelta(days=1)
+        end = dun
         start = end - timedelta(days=729)
+    # Gelecek tarihler icin CSV yok; bos yere 404 istegi atma.
+    end = min(end, dun)
+    if start > end:
+        print("Baslangic bitisten sonra; yapilacak is yok.", flush=True)
+        return
+    print(f"Aralik: {start:%Y-%m-%d} → {end:%Y-%m-%d}", flush=True)
 
     ARSIV.mkdir(parents=True, exist_ok=True)
     month_cache: dict[str, dict] = {}
@@ -111,7 +130,8 @@ def main() -> None:
         ay = d.strftime("%Y-%m")
         if ay not in month_cache:
             month_cache[ay] = load_month(ARSIV / f"{ay}.json")
-        if d.strftime("%Y-%m-%d") not in month_cache[ay]:
+        iso = d.strftime("%Y-%m-%d")
+        if iso not in month_cache[ay] or eski_semali(month_cache[ay][iso]):
             days.append(d)
         d += timedelta(days=1)
 
