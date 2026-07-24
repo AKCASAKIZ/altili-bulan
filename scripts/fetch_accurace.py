@@ -136,12 +136,22 @@ def pozisyon_deltalari(horse_table: dict) -> dict | None:
 
     erken = [p for p in (near(400), near(800)) if p is not None]
     gec = [p for p in (near(finish - 200), by_dist[finish]) if p is not None]
-    p1600 = near(1600)
     if not erken or not gec:
         return None
     erken_poz = sum(erken) / len(erken)
     gec_poz = sum(gec) / len(gec)
-    son_atak = (p1600 - by_dist[finish]) if p1600 is not None else None
+    # Son atak: bitişten ~600m önceki sıra ile bitiş sırası farkı (pozitif = finişte
+    # sıra kazandı). Sabit 1600m referansı kullanılmaz; TR koşularının çoğu 1200-1400m
+    # olduğu için o referans neredeyse hiç oluşmuyordu.
+    son_atak = None
+    for geri in (600, 500, 400):
+        hedef = finish - geri
+        if hedef <= 0:
+            continue
+        p = near(hedef)
+        if p is not None:
+            son_atak = p - by_dist[finish]
+            break
     return {
         "erken_gec_delta": round(erken_poz - gec_poz, 2),
         "son_atak_delta": son_atak,
@@ -157,6 +167,16 @@ def guncelle_at_profili(canonical_name: str, race_key: str, deltalar: dict) -> N
         profil = {"ad": canonical_name, "kosu_sayisi": 0, "islenen_yarislar": []}
 
     if race_key in profil.get("islenen_yarislar", []):
+        # Bu koşu daha önce işlenmiş; ama profilde hiç oluşmamış bir metrik varsa
+        # (ör. eski sürümde üretilemeyen son_atak_delta) onu tohumla — koşu
+        # sayısını artırmadan, çift sayım olmadan.
+        eksik = {a: deltalar[a] for a in ("erken_gec_delta", "son_atak_delta")
+                 if deltalar.get(a) is not None and profil.get(f"{a}_ema") is None}
+        if not eksik:
+            return
+        for alan, deger in eksik.items():
+            profil[f"{alan}_ema"] = deger
+        path.write_text(json.dumps(profil, ensure_ascii=False, indent=1), encoding="utf-8")
         return
 
     n = profil.get("kosu_sayisi", 0)
@@ -176,6 +196,13 @@ def guncelle_at_profili(canonical_name: str, race_key: str, deltalar: dict) -> N
 
 BACKFILL_MAX_YARIS = 15
 BACKFILL_MAX_KOSU_NO = 10
+
+# Profil şeması sürümü. 2 = son_atak_delta bitişe göreli hesaplanıyor (1'de sabit
+# 1600m referansı yüzünden neredeyse hiç üretilemiyordu). Sürüm 1'de doldurulmuş
+# profiller, koşu başına kotayla yavaşça yeniden taranıp eksik metriği kazanır.
+PROFIL_SURUM = 2
+YENIDEN_BACKFILL_KOTA = 8
+_yeniden_backfill_kalan = YENIDEN_BACKFILL_KOTA
 
 
 def _tablo_satirlari(html: str) -> list:
@@ -229,8 +256,21 @@ def backfill_at_gecmisi(canonical_name: str) -> None:
     profil = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {
         "ad": canonical_name, "kosu_sayisi": 0, "islenen_yarislar": [],
     }
-    if profil.get("gecmis_dolduruldu"):
+    global _yeniden_backfill_kalan
+    surum = profil.get("gecmis_surum", 1 if profil.get("gecmis_dolduruldu") else 0)
+    if surum >= PROFIL_SURUM:
         return
+    if surum > 0:
+        # Eski sürümde zaten dolduruldu: sadece eksik metrik için yeniden tara.
+        # Her çalışmada birkaç at ile sınırlı tut, aksi halde yüzlerce at × 15 yarış
+        # istek patlaması olur.
+        if profil.get("son_atak_delta_ema") is not None:
+            profil["gecmis_surum"] = PROFIL_SURUM
+            path.write_text(json.dumps(profil, ensure_ascii=False, indent=1), encoding="utf-8")
+            return
+        if _yeniden_backfill_kalan <= 0:
+            return
+        _yeniden_backfill_kalan -= 1
 
     at_id = tjk_at_id(canonical_name)
     if not at_id:
@@ -258,6 +298,7 @@ def backfill_at_gecmisi(canonical_name: str) -> None:
 
     profil = json.loads(path.read_text(encoding="utf-8")) if path.exists() else profil
     profil["gecmis_dolduruldu"] = True
+    profil["gecmis_surum"] = PROFIL_SURUM
     path.write_text(json.dumps(profil, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
