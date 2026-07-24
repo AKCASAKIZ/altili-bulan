@@ -34,6 +34,7 @@ const ANGLES = [
   { k: "E2", name: "Antrenör kazanma % (arşiv)", pct: 2.00, desc: "2 yıllık sonuç arşivinden antrenörün gerçek kazanma yüzdesi. Koşudaki en yüksek 5: 100,70,50,30,10." },
   { k: "E3", name: "Kulvar avantajı (arşiv)", pct: 3.00, desc: "Hipodrom + pist + mesafe kırılımında start kulvarının 2 yıllık gerçek kazanma oranı. En avantajlı 5 kulvardaki atlar: 100,70,50,30,10." },
   { k: "F1", name: "Uzman tahminleri", pct: 5.00, desc: "Takip edilen tahmincilerin favori/plase/sürpriz işaretleri (F=100, P=60, S=30; işaretleyen tahmincilerin ortalaması). Puanlama sekmesindeki 🎩 Uzman panelinden girilir." },
+  { k: "G1", name: "Sınıf düşüşü + geçen koşu favorisi", pct: 4.00, desc: "Atın bir önceki koşusunun handikabı (hp) bugünkü kadronun ortalama handikabından yüksekse (daha zorlu sınıftan iniyor) VE önceki koşusunda ganyanı ≤4,0 (piyasa favorisiydi) ise 100, aksi halde 0. NOT: veri kısıtı — 'rakiplerin handikap ortalaması' yerine atın kendi hp'si, 'AGF ilk-3' yerine ganyan eşiği kullanılan geçici (proxy) sürüm." },
 ];
 const PRESET6 = ["A3", "B1", "B2", "B3", "B6", "B13"];
 const RANK5 = [100, 70, 50, 30, 10];
@@ -154,7 +155,7 @@ function fillCitySelect() {
 }
 
 async function loadDayData() {
-  state.program = null; state.results = null; state.idman = null;
+  state.program = null; state.results = null; state.idman = null; state.gecmis = null;
   // önce localStorage'daki CSV yüklemeleri
   const upKeyP = `ab2:csv:${state.day}:${state.city}:program`;
   const upKeyS = `ab2:csv:${state.day}:${state.city}:sonuclar`;
@@ -165,6 +166,8 @@ async function loadDayData() {
   if (!state.results) state.results = await tryFetch(`data/${state.day}/sonuclar-${state.city}.json`);
   // TJK'nın günlük idman/galop sorgusundan çekilen veri (GitHub Actions ile her sabah güncellenir)
   state.idman = await tryFetch(`data/${state.day}/idman-${state.city}.json`);
+  // atların geçmiş koşu geçmişi (ganyan/hp) — G1 kriteri için (yoksa null, G1 puanlanmaz)
+  state.gecmis = await tryFetch(`data/${state.day}/gecmis-${state.city}.json`);
   restoreSession();
   renderAll();
 }
@@ -193,7 +196,7 @@ function loadLegsFromProgram() {
     raceNo: r.no, saat: r.saat, tur: r.tur, grup: r.grup, mesafe: r.mesafe, pist: r.pist, ikramiye: r.ikramiye,
     horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
       no: h.no, ad: h.ad, scores: {},
-      meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, jokey: h.jokey, kilo: h.kilo, sahip: h.sahip, antrenor: h.antrenor, st: h.st },
+      meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, h: h.h, jokey: h.jokey, kilo: h.kilo, sahip: h.sahip, antrenor: h.antrenor, st: h.st },
     })),
   }));
   state.picks = state.legs.map(() => []);
@@ -328,6 +331,33 @@ async function scoreLeg(leg, ctx) {
     if (isNaN(g)) return;
     h.scores.B8 = g <= 7 ? 100 : g <= 10 ? 80 : g <= 15 ? 50 : g <= 21 ? 20 : 0;
   });
+
+  // G1: Sınıf düşüşü + geçen koşu favorisi (proxy — ANGLES açıklamasına bakınız)
+  // Backtest'te ctx verilir ama gecmis ayrıca geçilmezse G1 atlanır (gelecek/yanlış gün verisi sızmasın).
+  const gecmis = ctx ? (ctx.gecmis ?? null) : state.gecmis;
+  if (gecmis) {
+    const dayIso = String(day);
+    const hVals = hs.map((h) => parseFloat(h.meta?.h)).filter((v) => isFinite(v));
+    const ortH = hVals.length ? hVals.reduce((a, b) => a + b, 0) / hVals.length : null; // bugünkü kadronun ortalama handikabı
+    if (ortH != null) {
+      hs.forEach((h) => {
+        const recs = gecmis[temizle(h.ad)];
+        if (!recs || !recs.length) return;
+        // puanlanan günden önceki en yakın koşu = "bir önceki koşu"
+        const onceki = recs
+          .map((r) => ({ r, iso: ddmmyyyyToIso(r.t) }))
+          .filter((x) => x.iso && x.iso < dayIso)
+          .sort((a, b) => (a.iso < b.iso ? 1 : -1))[0]?.r;
+        if (!onceki) return;
+        const oncekiHp = parseFloat(onceki.hp);
+        const oncekiGanyan = parseGanyan(onceki.ganyan);
+        if (!isFinite(oncekiHp) || oncekiGanyan == null) return;
+        const sinifDususu = oncekiHp > ortH;      // (proxy) önceki hp bugünkü kadro ortalamasından yüksek
+        const gecenFavori = oncekiGanyan <= 4.0;  // (proxy) önceki koşuda piyasa favorisiydi
+        h.scores.G1 = sinifDususu && gecenFavori ? 100 : 0;
+      });
+    }
+  }
 
   // Son 6 koşu dizisini ayrıştır: "Ç7K2Ç5K2" → [7,2,5,2] (0 → 10 kabul edilir)
   const parseSon6 = (s) => (s || "").match(/\d/g)?.map((d) => (+d === 0 ? 10 : +d)) || [];
@@ -730,7 +760,7 @@ async function renderTagm() {
     const leg = {
       horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
         no: h.no, ad: h.ad, scores: {},
-        meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, jokey: h.jokey, kilo: h.kilo, baba: h.baba, anne: h.anne },
+        meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, h: h.h, jokey: h.jokey, kilo: h.kilo, baba: h.baba, anne: h.anne },
       })),
     };
     await scoreLeg(leg);
@@ -1042,10 +1072,11 @@ async function collectBacktest(onProgress) {
   const days = Object.entries(state.index?.days || {}).sort();
   for (const [day, cities] of days) {
     for (const c of cities) {
-      const [program, sonuclar, idman] = await Promise.all([
+      const [program, sonuclar, idman, gecmis] = await Promise.all([
         tryFetch(`data/${day}/program-${c.slug}.json`),
         tryFetch(`data/${day}/sonuclar-${c.slug}.json`),
         tryFetch(`data/${day}/idman-${c.slug}.json`),
+        tryFetch(`data/${day}/gecmis-${c.slug}.json`),
       ]);
       if (!program || !sonuclar) continue;
       onProgress?.(`${trDate(day)} ${c.name}…`);
@@ -1062,10 +1093,10 @@ async function collectBacktest(onProgress) {
           pist: r.pist, mesafe: r.mesafe, ikramiye: r.ikramiye,
           horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
             no: h.no, ad: h.ad, scores: {},
-            meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, jokey: h.jokey, antrenor: h.antrenor, sahip: h.sahip, kilo: h.kilo, st: h.st },
+            meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, h: h.h, jokey: h.jokey, antrenor: h.antrenor, sahip: h.sahip, kilo: h.kilo, st: h.st },
           })),
         };
-        await scoreLeg(leg, { idman, day, city: c.name });
+        await scoreLeg(leg, { idman, day, city: c.name, gecmis });
         const ranked = rankedHorses(leg).filter((x) => x.score > 0);
         if (ranked.length < 2) continue;
         if (!leg.horses.some((h) => temizle(h.ad) === kazananAd)) continue; // kazanan programda bulunamadıysa atla
