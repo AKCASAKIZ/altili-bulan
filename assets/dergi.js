@@ -477,6 +477,39 @@ function slugAt(ad) {
     return prof;
   }
 
+  // B9 yedek sinyali: TJK "Son 800" sorgusu (son800-{city}.json).
+  // Her kayıtta atın kendi son-800 derecesi + o koşuda son 800'e İLK GİREN atın
+  // derecesi var. İkisi eşitse at son 800'e lider girmiştir (öncü); fark büyüdükçe
+  // at, tempoyu yapan atın finişinden o kadar hızlı kapatmıştır (kapanışçı).
+  async function loadSon800() {
+    const s = await fetch(`data/${AB.state.day}/son800-${AB.state.city}.json`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    if (!s) return null;
+    const sn = (t) => {
+      const m = /^(\d+)[.:](\d{1,2})[.:](\d{1,2})$/.exec(String(t || "").trim());
+      return m ? +m[1] * 60 + +m[2] + +m[3] / 100 : null;
+    };
+    const out = {};
+    for (const [ad, kayitlar] of Object.entries(s)) {
+      const farklar = [];
+      let oncu = 0;
+      for (const k of kayitlar || []) {
+        const a = sn(k.son800), b = sn(k.ilk_giren);
+        if (a == null || b == null) continue;
+        farklar.push(b - a);          // pozitif = tempocudan hızlı kapattı
+        if (Math.abs(b - a) < 0.02) oncu++; // eşit = son 800'e lider girdi
+      }
+      if (farklar.length) {
+        out[temizle(ad)] = {
+          n: farklar.length,
+          oncuOran: oncu / farklar.length,
+          ortFark: farklar.reduce((x, y) => x + y, 0) / farklar.length,
+        };
+      }
+    }
+    return out;
+  }
+
   // B6 tahmini derece: gecmis-{city}.json'daki bitiriş sürelerinden (derece)
   // mesafe+pist bazlı "par süre" çıkarır, her atın par'a göre reytingini bulur,
   // bugünkü mesafe/pist için tahmini süreyi hesaplar (düşük = hızlı = iyi).
@@ -567,6 +600,7 @@ function slugAt(ad) {
       const H = await loadHistory();
       const atProf = await loadAtProfilleri(AB.state.legs);
       const tahmin = await loadTahminiDerece();
+      const s800 = await loadSon800();
       const bugun = AB.state.day;
       // kariyer istatistikleri (TJK At İstatistikleri'nden, günlük çekilir)
       const kariyer = await fetch(`data/${AB.state.day}/atistatistik-${AB.state.city}.json`, { cache: "no-store" })
@@ -584,7 +618,8 @@ function slugAt(ad) {
       }
 
       let dolu = 0;
-      let acbToplam = 0, acbYeter = 0; // accurace kapsamı: toplam at, ≥3 koşulu profil
+      let acbToplam = 0, acbYeter = 0, acbAtak = 0; // accurace kapsamı: toplam at, ≥3 koşulu profil, son-atak metriği olan
+      let s800Stil = 0; // accurace yerine TJK Son-800'den stil çıkarılan at sayısı
       const yaz = (h, k, v) => { if (v != null && h.scores[k] == null) { h.scores[k] = v; dolu++; } };
       const rank5 = (list, key, asc) => {
         list.filter((x) => x.v != null).sort((a, b) => asc ? a.v - b.v : b.v - a.v)
@@ -651,18 +686,44 @@ function slugAt(ad) {
           const yeter = p && (p.kosu_sayisi || 0) >= 3;
           if (yeter) acbYeter++;
           const d = yeter ? p.erken_gec_delta_ema : null;
-          return { h, stil: d == null ? null : d <= -0.8 ? "oncu" : d >= 0.8 ? "kapanis" : "tempo" };
+          // son_atak_delta_ema: bitişten ~600m önceki sıra − bitiş sırası.
+          // Pozitif = finişte sıra kazanıyor (gerçek atak), negatif = sönüyor.
+          const sa = yeter && typeof p.son_atak_delta_ema === "number" ? p.son_atak_delta_ema : null;
+          if (sa != null) acbAtak++;
+          let stil = d == null ? null : d <= -0.8 ? "oncu" : d >= 0.8 ? "kapanis" : "tempo";
+          if (stil == null && s800) {
+            // Accurace profili yoksa TJK Son-800 kayıtlarından stil çıkar.
+            const q = s800[temizle(h.ad)];
+            if (q && q.n >= 2) {
+              stil = q.oncuOran >= 0.5 ? "oncu" : q.ortFark >= 0.8 ? "kapanis" : "tempo";
+              s800Stil++;
+            }
+          }
+          return { h, sa, stil };
         });
         const oncuSayisi = stiller.filter((x) => x.stil === "oncu").length;
         for (const x of stiller) {
+          let v = null;
           if (x.stil === "oncu") {
             // Önü boş kaçak avantajlı; başka öncü rakip arttıkça tempo kızışır.
             const diger = oncuSayisi - 1;
-            yaz(x.h, "B9", diger === 0 ? 100 : diger === 1 ? 60 : null);
+            v = diger === 0 ? 100 : diger === 1 ? 60 : null;
+            // Finişte belirgin sönen kaçak, önü boş olsa bile kırılgan.
+            if (v != null && x.sa != null && x.sa <= -2) v = v === 100 ? 60 : null;
           } else if (x.stil === "kapanis") {
             // Kızışan tempo (çok öncü) kapanışçının lehine çöker.
-            yaz(x.h, "B9", oncuSayisi >= 3 ? 100 : oncuSayisi >= 2 ? 60 : null);
+            v = oncuSayisi >= 3 ? 100 : oncuSayisi >= 2 ? 60 : null;
+            if (x.sa != null) {
+              // Son 600m'de gerçekten sıra kazanan kapanışçı bir kademe yukarı,
+              // atağı olmayan "sadece geriden gelen" bir kademe aşağı.
+              if (x.sa >= 2) v = v === 60 ? 100 : v == null && oncuSayisi >= 1 ? 30 : v;
+              else if (x.sa < 0.5) v = v === 100 ? 60 : null;
+            }
+          } else if (x.stil === "tempo" && x.sa != null && x.sa >= 2 && oncuSayisi >= 2) {
+            // Ortadan koşup finişi güçlü olan at, kızışan tempoda avantajlı.
+            v = 60;
           }
+          yaz(x.h, "B9", v);
         }
         // B6: tahmini derece — dergiden gelmişse (bir at bile doluysa) dokunma, yoksa hesapla.
         if (tahmin && !leg.horses.some((h) => h.scores.B6 != null)) {
@@ -684,7 +745,7 @@ function slugAt(ad) {
       AB.saveSession();
       AB.renderAll();
       btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
-      alert(`✅ ${dolu} puan hücresi ${H.gunSayisi} günlük sonuç arşivinden dolduruldu.\n(A1-A3 sahip, B16-B18 antrenör, C1/C3 jokey, B1 ikramiye, B5, B6 tahmini derece, B9 pace, B12, B14, B15)\n\n🏇 Accurace (B9 pace): ${profBulunan} atta profil bulundu, ${acbYeter}/${acbToplam} atta ≥3 koşuluk yeterli veri → ${b9Dolu} ayakta B9 dolduruldu.${acbYeter < acbToplam * 0.3 ? "\n⚠️ Accurace verisi henüz sığ; kapsam her günle artıyor." : ""}\n\nElle girdiğiniz puanların ÜZERİNE YAZILMADI. Arşiv büyüdükçe isabet artar.`);
+      alert(`✅ ${dolu} puan hücresi ${H.gunSayisi} günlük sonuç arşivinden dolduruldu.\n(A1-A3 sahip, B16-B18 antrenör, C1/C3 jokey, B1 ikramiye, B5, B6 tahmini derece, B9 pace, B12, B14, B15)\n\n🏇 Accurace (B9 pace): ${profBulunan} atta profil bulundu, ${acbYeter}/${acbToplam} atta ≥3 koşuluk yeterli veri (${acbAtak} atta son-atak metriği), ${s800Stil} atta TJK Son-800 yedeği → ${b9Dolu} ayakta B9 dolduruldu.${acbYeter < acbToplam * 0.3 ? "\n⚠️ Accurace verisi henüz sığ; kapsam her günle artıyor." : ""}\n\nElle girdiğiniz puanların ÜZERİNE YAZILMADI. Arşiv büyüdükçe isabet artar.`);
     } catch (e) {
       btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
       alert("Hata: " + e.message);
