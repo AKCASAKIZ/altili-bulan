@@ -1,6 +1,6 @@
 {
  "ad": "LORD OF YILDIZER",
- "kosu_sayisi": 10,
+ "kosu_sayisi": 11,
  "islenen_yarislar": [
   "2025-02-24-bursa-5-backfill",
   "2025-03-17-bursa-6-backfill",
@@ -11,10 +11,11 @@
   "2025-05-23-bursa-6-backfill",
   "2025-06-13-bursa-6-backfill",
   "2026-07-09-kocaeli-9-backfill",
-  "2026-07-09-kocaeli-9"
+  "2026-07-09-kocaeli-9",
+  "2026-07-24-bursa-7"
  ],
- "erken_gec_delta_ema": 3.124,
- "son_guncelleme": "2026-07-09-kocaeli-9",
+ "erken_gec_delta_ema": 3.387,
+ "son_guncelleme": "2026-07-24-bursa-7",
  "son_atak_delta_ema": 0.3,
  "gecmis_dolduruldu": true
 }

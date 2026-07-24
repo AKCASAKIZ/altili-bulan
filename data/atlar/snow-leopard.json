@@ -1,6 +1,6 @@
 {
  "ad": "SNOW LEOPARD",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-06-19-ankara-9-backfill",
   "2025-06-28-ankara-7-backfill",
@@ -16,10 +16,11 @@
   "2026-04-15-istanbul-6-backfill",
   "2026-05-01-istanbul-7-backfill",
   "2026-07-16-ankara-6-backfill",
-  "2026-07-16-ankara-6"
+  "2026-07-16-ankara-6",
+  "2026-07-24-istanbul-8"
  ],
- "erken_gec_delta_ema": 1.67,
- "son_guncelleme": "2026-07-16-ankara-6",
+ "erken_gec_delta_ema": 0.869,
+ "son_guncelleme": "2026-07-24-istanbul-8",
  "son_atak_delta_ema": 0.0,
  "gecmis_dolduruldu": true
 }

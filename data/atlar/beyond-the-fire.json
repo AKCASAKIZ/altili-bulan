@@ -1,0 +1,18 @@
+{
+ "ad": "BEYOND THE FIRE",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-07-07-bursa-1-backfill",
+  "2025-09-05-bursa-3-backfill",
+  "2025-10-17-bursa-6-backfill",
+  "2025-11-07-bursa-8-backfill",
+  "2026-01-09-bursa-5-backfill",
+  "2026-04-17-bursa-8-backfill",
+  "2026-05-18-bursa-6-backfill",
+  "2026-07-24-bursa-11"
+ ],
+ "erken_gec_delta_ema": 1.985,
+ "son_guncelleme": "2026-07-24-bursa-11",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

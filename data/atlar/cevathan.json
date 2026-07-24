@@ -1,0 +1,11 @@
+{
+ "ad": "CEVATHAN",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2025-05-16-istanbul-3-backfill",
+  "2026-07-24-bursa-6"
+ ],
+ "erken_gec_delta_ema": 0.3,
+ "son_guncelleme": "2026-07-24-bursa-6",
+ "gecmis_dolduruldu": true
+}

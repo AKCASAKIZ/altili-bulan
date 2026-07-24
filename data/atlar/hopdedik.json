@@ -1,0 +1,21 @@
+{
+ "ad": "HOPDEDİK",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-06-05-ankara-8-backfill",
+  "2025-08-02-ankara-10-backfill",
+  "2025-09-02-ankara-8-backfill",
+  "2025-10-23-ankara-7-backfill",
+  "2025-11-01-ankara-8-backfill",
+  "2025-12-02-antalya-6-backfill",
+  "2026-04-16-ankara-4-backfill",
+  "2026-04-30-ankara-8-backfill",
+  "2026-06-26-ankara-6-backfill",
+  "2026-07-24-bursa-6-backfill",
+  "2026-07-24-bursa-6"
+ ],
+ "erken_gec_delta_ema": 4.883,
+ "son_guncelleme": "2026-07-24-bursa-6",
+ "son_atak_delta_ema": 0.72,
+ "gecmis_dolduruldu": true
+}

@@ -1,13 +1,14 @@
 {
  "ad": "YEŞİLKÖYLÜ",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2025-08-17-istanbul-10-backfill",
   "2026-05-03-istanbul-4-backfill",
-  "2026-07-12-istanbul-7"
+  "2026-07-12-istanbul-7",
+  "2026-07-24-istanbul-10"
  ],
- "erken_gec_delta_ema": 2.65,
+ "erken_gec_delta_ema": 4.255,
  "son_atak_delta_ema": 0.0,
- "son_guncelleme": "2026-07-12-istanbul-7",
+ "son_guncelleme": "2026-07-24-istanbul-10",
  "gecmis_dolduruldu": true
 }

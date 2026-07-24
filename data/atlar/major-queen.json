@@ -1,0 +1,16 @@
+{
+ "ad": "MAJOR QUEEN",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-08-03-izmir-2-backfill",
+  "2025-08-24-izmir-1-backfill",
+  "2025-11-13-izmir-6-backfill",
+  "2026-03-08-izmir-2-backfill",
+  "2026-04-25-izmir-6-backfill",
+  "2026-07-24-bursa-11"
+ ],
+ "erken_gec_delta_ema": 0.475,
+ "son_guncelleme": "2026-07-24-bursa-11",
+ "son_atak_delta_ema": 0,
+ "gecmis_dolduruldu": true
+}

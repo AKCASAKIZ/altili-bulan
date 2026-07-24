@@ -1,0 +1,17 @@
+{
+ "ad": "SANCAKALAN",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-05-27-ankara-3-backfill",
+  "2025-08-02-ankara-4-backfill",
+  "2025-08-29-bursa-10-backfill",
+  "2025-10-26-istanbul-10-backfill",
+  "2025-11-09-istanbul-1-backfill",
+  "2026-04-17-bursa-2-backfill",
+  "2026-07-24-bursa-10"
+ ],
+ "erken_gec_delta_ema": 0.178,
+ "son_guncelleme": "2026-07-24-bursa-10",
+ "son_atak_delta_ema": 0.0,
+ "gecmis_dolduruldu": true
+}

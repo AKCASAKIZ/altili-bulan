@@ -1,0 +1,25 @@
+{
+ "ad": "MÜKREMİN",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-05-02-bursa-9-backfill",
+  "2025-05-12-bursa-3-backfill",
+  "2025-05-23-bursa-9-backfill",
+  "2025-05-30-bursa-9-backfill",
+  "2025-06-20-bursa-1-backfill",
+  "2025-06-26-izmir-4-backfill",
+  "2025-07-04-bursa-3-backfill",
+  "2025-07-20-izmir-2-backfill",
+  "2025-08-06-istanbul-3-backfill",
+  "2025-09-04-izmir-2-backfill",
+  "2025-09-28-adana-4-backfill",
+  "2025-10-07-adana-1-backfill",
+  "2025-10-12-adana-3-backfill",
+  "2026-06-19-bursa-9-backfill",
+  "2026-07-24-bursa-10"
+ ],
+ "erken_gec_delta_ema": 4.656,
+ "son_atak_delta_ema": 1.491,
+ "son_guncelleme": "2026-07-24-bursa-10",
+ "gecmis_dolduruldu": true
+}

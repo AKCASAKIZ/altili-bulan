@@ -1,6 +1,6 @@
 {
  "ad": "PLATFORM",
- "kosu_sayisi": 9,
+ "kosu_sayisi": 10,
  "islenen_yarislar": [
   "2025-04-17-ankara-7-backfill",
   "2025-04-24-ankara-2-backfill",
@@ -10,10 +10,11 @@
   "2025-06-22-istanbul-5-backfill",
   "2025-08-27-istanbul-7-backfill",
   "2026-05-08-istanbul-6-backfill",
-  "2026-07-18-ankara-7"
+  "2026-07-18-ankara-7",
+  "2026-07-24-istanbul-3"
  ],
- "erken_gec_delta_ema": 3.025,
+ "erken_gec_delta_ema": 2.717,
  "son_atak_delta_ema": 1.578,
- "son_guncelleme": "2026-07-18-ankara-7",
+ "son_guncelleme": "2026-07-24-istanbul-3",
  "gecmis_dolduruldu": true
 }

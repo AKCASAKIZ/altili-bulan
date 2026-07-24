@@ -1,0 +1,11 @@
+{
+ "ad": "YÜKSEK CAZİBE",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-05-22-istanbul-7-backfill",
+  "2026-07-24-bursa-5"
+ ],
+ "erken_gec_delta_ema": 3.95,
+ "son_guncelleme": "2026-07-24-bursa-5",
+ "gecmis_dolduruldu": true
+}
