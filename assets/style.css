@@ -274,7 +274,7 @@ footer a { color: var(--accent-text); }
 #gazeteRoot { display: none; }
 
 @media print {
-  @page { size: A4 portrait; margin: 10mm; }
+  @page { size: A4 landscape; margin: 8mm; }
   html, body { background: #fff !important; }
   /* body'nin doğrudan çocuklarından yalnızca gazete görünsün */
   body > *:not(#gazeteRoot) { display: none !important; }
