@@ -1,6 +1,6 @@
 {
  "ad": "ESİNİN KIZI",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-05-08-ankara-7-backfill",
   "2025-05-24-ankara-9-backfill",
@@ -16,10 +16,12 @@
   "2026-05-01-istanbul-3-backfill",
   "2026-05-10-istanbul-1-backfill",
   "2026-05-17-adana-5-backfill",
-  "2026-07-10-bursa-7"
+  "2026-07-10-bursa-7",
+  "2026-07-25-ankara-4"
  ],
- "erken_gec_delta_ema": -1.581,
- "son_guncelleme": "2026-07-10-bursa-7",
- "son_atak_delta_ema": 0.0,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -1.257,
+ "son_guncelleme": "2026-07-25-ankara-4",
+ "son_atak_delta_ema": -0.3,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

@@ -1,6 +1,6 @@
 {
  "ad": "KIVILCIM ATEŞİ",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2026-01-01-izmir-3-backfill",
   "2026-01-09-izmir-2-backfill",
@@ -17,10 +17,12 @@
   "2026-05-30-izmir-6-backfill",
   "2026-07-05-izmir-4-backfill",
   "2026-07-12-izmir-6-backfill",
-  "2026-07-12-izmir-6"
+  "2026-07-12-izmir-6",
+  "2026-07-25-izmir-2"
  ],
- "erken_gec_delta_ema": 1.526,
- "son_guncelleme": "2026-07-12-izmir-6",
- "son_atak_delta_ema": 2.331,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.118,
+ "son_guncelleme": "2026-07-25-izmir-2",
+ "son_atak_delta_ema": 2.832,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

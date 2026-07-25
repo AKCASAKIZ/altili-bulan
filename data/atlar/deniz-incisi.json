@@ -1,0 +1,13 @@
+{
+ "ad": "DENİZ İNCİSİ",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2025-12-31-istanbul-8-backfill",
+  "2026-07-25-ankara-1"
+ ],
+ "erken_gec_delta_ema": 1.6,
+ "son_atak_delta_ema": 2.0,
+ "son_guncelleme": "2026-07-25-ankara-1",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

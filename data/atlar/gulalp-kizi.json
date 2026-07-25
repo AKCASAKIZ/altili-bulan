@@ -1,6 +1,6 @@
 {
  "ad": "GÜLALP KIZI",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2026-01-19-bursa-4-backfill",
   "2026-01-29-antalya-3-backfill",
@@ -17,10 +17,12 @@
   "2026-06-25-istanbul-3-backfill",
   "2026-07-05-istanbul-10-backfill",
   "2026-07-12-istanbul-2-backfill",
-  "2026-07-12-istanbul-2"
+  "2026-07-12-istanbul-2",
+  "2026-07-25-ankara-1"
  ],
- "erken_gec_delta_ema": 3.205,
- "son_guncelleme": "2026-07-12-istanbul-2",
- "son_atak_delta_ema": 1.308,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.543,
+ "son_guncelleme": "2026-07-25-ankara-1",
+ "son_atak_delta_ema": 1.216,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

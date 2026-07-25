@@ -1,14 +1,16 @@
 {
  "ad": "EL LORD",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2025-10-18-ankara-5-backfill",
   "2026-05-12-ankara-7-backfill",
   "2026-06-13-ankara-1-backfill",
-  "2026-07-16-ankara-1"
+  "2026-07-16-ankara-1",
+  "2026-07-25-ankara-6"
  ],
- "erken_gec_delta_ema": 2.367,
- "son_atak_delta_ema": 1.071,
- "son_guncelleme": "2026-07-16-ankara-1",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.707,
+ "son_atak_delta_ema": 1.65,
+ "son_guncelleme": "2026-07-25-ankara-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

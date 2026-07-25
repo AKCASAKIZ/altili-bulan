@@ -1,0 +1,23 @@
+{
+ "ad": "TEMPESTA MIA",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-05-18-adana-4-backfill",
+  "2025-07-11-bursa-4-backfill",
+  "2025-08-11-bursa-3-backfill",
+  "2025-08-29-bursa-2-backfill",
+  "2025-09-14-adana-3-backfill",
+  "2025-10-05-adana-3-backfill",
+  "2025-10-12-adana-10-backfill",
+  "2025-10-19-adana-2-backfill",
+  "2025-11-02-adana-7-backfill",
+  "2025-11-09-adana-8-backfill",
+  "2026-07-25-ankara-3-backfill",
+  "2026-07-25-ankara-3"
+ ],
+ "erken_gec_delta_ema": 2.504,
+ "son_atak_delta_ema": 3.558,
+ "son_guncelleme": "2026-07-25-ankara-3",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

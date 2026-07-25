@@ -1,0 +1,17 @@
+{
+ "ad": "HUMAN TORCH",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-11-23-izmir-1-backfill",
+  "2025-12-25-izmir-4-backfill",
+  "2026-01-16-izmir-2-backfill",
+  "2026-06-07-izmir-5-backfill",
+  "2026-07-25-izmir-5-backfill",
+  "2026-07-25-izmir-5"
+ ],
+ "erken_gec_delta_ema": 0.823,
+ "son_atak_delta_ema": 0.76,
+ "son_guncelleme": "2026-07-25-izmir-5",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}
