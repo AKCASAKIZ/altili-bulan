@@ -35,6 +35,7 @@ const ANGLES = [
   { k: "E3", name: "Kulvar avantajı (arşiv)", pct: 3.00, desc: "Hipodrom + pist + mesafe kırılımında start kulvarının 2 yıllık gerçek kazanma oranı. En avantajlı 5 kulvardaki atlar: 100,70,50,30,10." },
   { k: "F1", name: "Uzman tahminleri", pct: 5.00, desc: "Takip edilen tahmincilerin favori/plase/sürpriz işaretleri (F=100, P=60, S=30; işaretleyen tahmincilerin ortalaması). Puanlama sekmesindeki 🎩 Uzman panelinden girilir." },
   { k: "G1", name: "Sınıf düşüşü + geçen koşu favorisi", pct: 4.00, desc: "Atın bir önceki koşusundaki RAKİPLERİNİN handikap ortalaması bugünkü kadronun ortalama handikabından yüksekse (daha zorlu sınıftan iniyor) VE o koşuda AGF sıralamasında ilk 3'te ise 100, aksi halde 0. Veri arşivden (stats.json son6) gelir; arşivde bulunmayan atlarda atın kendi hp'si + ganyan ≤4,0 proxy'sine düşülür." },
+  { k: "G2", name: "Kazanan profiline yakınlık (şart)", pct: 4.00, desc: "Aynı şartta (ırk · yaş · koşu cinsi · mesafe · pist) geçmişte KAZANAN atların profiline yakınlık. Arşivden (data/arsiv/sartlar.json) kazananların kilo / kulvar / yaş / AGF-ganyan yüzdelikleri çıkarılır; atın her özelliği tipik bandın (q25–q75) içindeyse tam, geniş bandın (q10–q90) içindeyse yarım sayılır. Ortalama yakınlık ≥0.85 → 100, ≥0.60 → 80, ≥0.35 → 60, altı 0. Bugünkü kadroda herkeste aynı olan özellik (ör. tek yaşlı koşuda yaş) ayırt edici olmadığı için hesaba katılmaz." },
 ];
 const PRESET6 = ["A3", "B1", "B2", "B3", "B6", "B13"];
 const RANK5 = [100, 70, 50, 30, 10];
@@ -204,7 +205,7 @@ function tazeleMeta() {
              || race.horses.find((x) => temizle(x.ad) === key);
       if (!p) continue;
       h.meta = h.meta || {};
-      const yeni = { kgs: p.kgs, son6: p.son6, eniyi: p.eniyi, agf: p.agf, h: p.h, jokey: p.jokey, kilo: p.kilo, sahip: p.sahip, antrenor: p.antrenor, st: p.st };
+      const yeni = { kgs: p.kgs, son6: p.son6, eniyi: p.eniyi, agf: p.agf, h: p.h, jokey: p.jokey, kilo: p.kilo, sahip: p.sahip, antrenor: p.antrenor, st: p.st, yas: p.yas };
       for (const [k, v] of Object.entries(yeni)) if (h.meta[k] == null && v != null && v !== "") h.meta[k] = v;
     }
   }
@@ -218,7 +219,7 @@ function loadLegsFromProgram() {
     raceNo: r.no, saat: r.saat, tur: r.tur, grup: r.grup, mesafe: r.mesafe, pist: r.pist, ikramiye: r.ikramiye,
     horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
       no: h.no, ad: h.ad, scores: {},
-      meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, h: h.h, jokey: h.jokey, kilo: h.kilo, sahip: h.sahip, antrenor: h.antrenor, st: h.st },
+      meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, h: h.h, jokey: h.jokey, kilo: h.kilo, sahip: h.sahip, antrenor: h.antrenor, st: h.st, yas: h.yas },
     })),
   }));
   state.picks = state.legs.map(() => []);
@@ -448,6 +449,20 @@ async function scoreLeg(leg, ctx) {
       const oncekiGanyan = parseGanyan(onceki.ganyan);
       if (!isFinite(oncekiHp) || oncekiGanyan == null) return;
       h.scores.G1 = oncekiHp > ortH && oncekiGanyan <= 4.0 ? 100 : 0;
+    });
+  }
+
+  // G2: aynı şartta geçmişte kazanan atların profiline yakınlık.
+  // Backtest'te (ctx) ATLANIR: şart bantları tüm arşivden — yani geçmişe dönük
+  // puanlanan günün geleceğinden de — hesaplandığı için sonuç sızardı.
+  if (!ctx && state.sartlar === undefined) state.sartlar = await tryFetch("data/arsiv/sartlar.json");
+  const sart = ctx ? null : sartBul(leg, state.sartlar);
+  if (sart) {
+    const dayInt2 = parseInt(String(day).replace(/-/g, ""), 10);
+    const ozellikler = sartOzellikleri(hs, sart, stats, dayInt2);
+    hs.forEach((h, i) => {
+      const p = sartPuani(ozellikler[i]);
+      if (p != null) h.scores.G2 = p;
     });
   }
 
@@ -700,6 +715,98 @@ function karakterEtiketi(profil) {
   if (sa != null && sa >= 2) return "Tempocu";
   return "Dengeli";
 }
+/* ==================== G2: KOŞU ŞARTI / KAZANAN PROFİLİ ====================
+ * scripts/build_sartlar.py arşivdeki her koşu şartı için KAZANAN atların
+ * kilo / kulvar / yaş / ganyan / AGF yüzdeliklerini (q10,q25,q50,q75,q90)
+ * data/arsiv/sartlar.json'a yazar. Buradaki fonksiyonlar bugünkü koşunun
+ * şartını aynı anahtar mantığıyla bulup atları o profile göre puanlar.
+ * ÖNEMLİ: sonuç CSV'sinde "At No" kolonu bitiş sırasını tutuyor; atın gerçek
+ * numarası/kulvarı `st` alanıdır — "kaçıncı at" ile "kulvar" tek özelliktir. */
+const SART_YETER = 12;   // bu kadar örneği olan en dar anahtar tercih edilir
+
+function sartSayi(v) {
+  const m = /(\d+(?:[.,]\d+)?)/.exec(String(v ?? ""));
+  return m ? parseFloat(m[1].replace(",", ".")) : null;
+}
+function sartAnahtarlari(leg) {
+  const g = leg.grup || "", t = (leg.tur || "").toUpperCase();
+  const irk = /arap/i.test(g) ? "Arap" : "İngiliz";
+  const ym = /^\s*(\d+)\s*(ve\s+Yukar[ıi])?/i.exec(g);
+  const yas = ym ? (ym[2] ? ym[1] + "+" : ym[1] + "y") : "?";
+  let cins = "?";
+  for (const [ara, ad] of [["MAIDEN", "Maiden"], ["HANDIKAP", "Handikap"], ["HANDİKAP", "Handikap"],
+                           ["ŞARTLI", "Şartlı"], ["SARTLI", "Şartlı"], ["SATIŞ", "Satış"],
+                           ["SATIS", "Satış"], ["KV", "KV"], ["DENEME", "Deneme"], ["GRUP", "Grup"]]) {
+    if (t.includes(ara)) { cins = ad; break; }
+  }
+  if (cins === "?") {
+    const ilk = (t.split("/")[0].trim().split(/\s+/)[0] || "?");
+    cins = ilk.charAt(0) + ilk.slice(1).toLowerCase();
+  }
+  const cinsD = cins + (/di[şs]i/i.test(leg.tur || "") ? "-D" : "");
+  const mv = sartSayi(leg.mesafe);
+  const m = mv ? String(Math.round(mv)) : "?";
+  const mg = mesafeGrubu(leg.mesafe);
+  const p = (leg.pist || "").trim().split(/\s+/)[0] || "?";
+  return [`${irk}|${yas}|${cinsD}|${m}|${p}`, `${irk}|${cins}|${m}|${p}`,
+          `${irk}|${cins}|${mg}|${p}`, `${irk}|${mg}|${p}`];
+}
+function sartBul(leg, sartlar) {
+  if (!sartlar?.anahtar) return null;
+  const ks = sartAnahtarlari(leg);
+  for (const k of ks) { const r = sartlar.anahtar[k]; if (r && r.n >= SART_YETER) return { k, r }; }
+  for (const k of ks) { const r = sartlar.anahtar[k]; if (r) return { k, r }; }
+  return null;
+}
+/* bant = [q10,q25,q50,q75,q90] → tipik bantta 1, geniş bantta 0.5, dışında 0 */
+function sartYakinlik(v, bant) {
+  if (v == null || !bant) return null;
+  if (v >= bant[1] && v <= bant[3]) return 1;
+  if (v >= bant[0] && v <= bant[4]) return 0.5;
+  return 0;
+}
+/* Bugünkü kadronun her atı için [{ad, deger, v}] özellik listesi.
+ * Kadrodaki herkeste aynı olan özellik ayırt edici değildir (ör. "4 Yaşlı
+ * Araplar" koşusunda yaş) ve hesaba katılmaz. */
+function sartOzellikleri(hs, sart, stats, dayInt) {
+  const r = sart.r;
+  // Ganyan ekseni: kadronun yarısından çoğunda AGF varsa AGF% ↔ AGF% kıyası
+  // yapılır (aynı birim). Yoksa atın ÖNCEKİ koşusundaki ganyan ↔ ganyan bandı.
+  const agfSayisi = hs.filter((h) => sartSayi(h.meta?.agf) != null).length;
+  const agfModu = r.agf && agfSayisi >= hs.length / 2;
+  const oncekiGanyan = (h) => {
+    const s6 = stats?.at?.[temizle(h.ad)]?.son6;
+    if (!Array.isArray(s6)) return null;
+    const o = s6.filter((x) => x[0] < dayInt).sort((a, b) => b[0] - a[0])[0];
+    return o ? sartSayi(o[2]) : null;
+  };
+  const eksenler = [
+    { ad: "kilo", bant: r.kilo, deger: (h) => sartSayi(h.meta?.kilo) },
+    { ad: "kulvar", bant: r.st, deger: (h) => sartSayi(h.meta?.st) ?? sartSayi(h.no) },
+    { ad: "yaş", bant: r.yas, deger: (h) => sartSayi(h.meta?.yas) },
+    agfModu
+      ? { ad: "AGF", bant: r.agf, deger: (h) => sartSayi(h.meta?.agf) }
+      : { ad: "ganyan", bant: r.ganyan, deger: oncekiGanyan },
+  ];
+  return hs.map((h) => {
+    const out = [];
+    for (const e of eksenler) {
+      if (!e.bant) continue;
+      const degerler = hs.map(e.deger).filter((v) => v != null);
+      if (new Set(degerler).size < 2) continue;      // ayırt etmiyor
+      const d = e.deger(h);
+      const v = sartYakinlik(d, e.bant);
+      if (v != null) out.push({ ad: e.ad, deger: d, v });
+    }
+    return out;
+  });
+}
+function sartPuani(parcalar) {
+  if (!parcalar || parcalar.length < 2) return null;
+  const oran = parcalar.reduce((t, x) => t + x.v, 0) / parcalar.length;
+  return oran >= 0.85 ? 100 : oran >= 0.6 ? 80 : oran >= 0.35 ? 60 : 0;
+}
+
 function assignRank5(hs, values, key, asc) {
   const idx = values.map((v, i) => ({ v, i }))
     .filter((x) => x.v !== Infinity && x.v !== -1 && x.v !== null)
@@ -1522,7 +1629,7 @@ function formatIdmanSon(rows) {
 
 
 /* ===== dergi.js entegrasyonu için dışa açılan kancalar ===== */
-window.AB = { state, ANGLES, RANK5, saveSession, renderAll, renderScoreTable, rankedHorses, slugify, esc, LS, scoreLeg, temizle };
+window.AB = { state, ANGLES, RANK5, saveSession, renderAll, renderScoreTable, rankedHorses, slugify, esc, LS, scoreLeg, temizle, sartBul, sartOzellikleri, sartPuani, tryFetch };
 
 /* ==================== F1: UZMAN TAHMİNLERİ ====================
  * Tahminci listesi tutulur (ör. Ferdi Akıncı, Final, Ferhat Pusa); YouTube/dergi
