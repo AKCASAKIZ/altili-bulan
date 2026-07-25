@@ -739,13 +739,37 @@ function slugAt(ad) {
         rank5(b5, "B5", false);
         rank5(b14, "B14", false);
       }
+      // app.js'in kendi otomatik puanlayıcısı (B2, B3, B7, B8, B13, D1, D2, E1-E3, G1)
+      // yalnız "⚡ Otomatik puanla" ile ve SADECE aktif ayağa uygulanıyordu; bu yüzden
+      // G1 gibi kriterler tam otomatikte hiç dolmuyordu. Artık tüm ayaklara uygulanır.
+      // Arşiv motorundan SONRA çalışır ki ortak kriterlerde (B5/B6) arşiv sürümü kalsın;
+      // zaten dolu (elle girilmiş ya da yukarıda hesaplanmış) hücreler korunur.
+      let appDolu = 0;
+      if (typeof AB.scoreLeg === "function") {
+        btn.textContent = "⏳ Kriterler hesaplanıyor…";
+        for (const leg of AB.state.legs) {
+          const onceki = leg.horses.map((h) => ({ ...h.scores }));
+          try { await AB.scoreLeg(leg); } catch (e) { console.warn("scoreLeg", leg.raceNo, e); }
+          leg.horses.forEach((h, i) => {
+            const eski = onceki[i];
+            for (const k of Object.keys(h.scores)) {
+              if (eski[k] != null) h.scores[k] = eski[k]; // önceki değer kazanır
+              else appDolu++;
+            }
+            for (const k of Object.keys(eski)) if (h.scores[k] == null) h.scores[k] = eski[k];
+          });
+        }
+      }
+      let g1Dolu = 0;
+      for (const leg of AB.state.legs) for (const h of leg.horses) if (h.scores.G1 != null) g1Dolu++;
+
       let b9Dolu = 0;
       for (const leg of AB.state.legs) for (const h of leg.horses) if (h.scores.B9 != null) b9Dolu++;
       const profBulunan = Object.keys(atProf).length;
       AB.saveSession();
       AB.renderAll();
       btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
-      alert(`✅ ${dolu} puan hücresi ${H.gunSayisi} günlük sonuç arşivinden dolduruldu.\n(A1-A3 sahip, B16-B18 antrenör, C1/C3 jokey, B1 ikramiye, B5, B6 tahmini derece, B9 pace, B12, B14, B15)\n\n🏇 Accurace (B9 pace): ${profBulunan} atta profil bulundu, ${acbYeter}/${acbToplam} atta ≥3 koşuluk yeterli veri (${acbAtak} atta son-atak metriği), ${s800Stil} atta TJK Son-800 yedeği → ${b9Dolu} ayakta B9 dolduruldu.${acbYeter < acbToplam * 0.3 ? "\n⚠️ Accurace verisi henüz sığ; kapsam her günle artıyor." : ""}\n\nElle girdiğiniz puanların ÜZERİNE YAZILMADI. Arşiv büyüdükçe isabet artar.`);
+      alert(`✅ ${dolu} puan hücresi ${H.gunSayisi} günlük sonuç arşivinden dolduruldu.\n(A1-A3 sahip, B16-B18 antrenör, C1/C3 jokey, B1 ikramiye, B5, B6 tahmini derece, B9 pace, B12, B14, B15)\n\n📐 Program/arşiv kriterleri (B2, B3, B7, B8, B13, D1, D2, E1-E3, G1): ${appDolu} hücre — G1 (sınıf düşüşü) ${g1Dolu} atta hesaplandı.\n\n🏇 Accurace (B9 pace): ${profBulunan} atta profil bulundu, ${acbYeter}/${acbToplam} atta ≥3 koşuluk yeterli veri (${acbAtak} atta son-atak metriği), ${s800Stil} atta TJK Son-800 yedeği → ${b9Dolu} ayakta B9 dolduruldu.${acbYeter < acbToplam * 0.3 ? "\n⚠️ Accurace verisi henüz sığ; kapsam her günle artıyor." : ""}\n\nElle girdiğiniz puanların ÜZERİNE YAZILMADI. Arşiv büyüdükçe isabet artar.`);
     } catch (e) {
       btn.textContent = "🤖 Tam otomatik (tüm ayaklar)";
       alert("Hata: " + e.message);
