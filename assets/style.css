@@ -264,6 +264,21 @@ tr.top-row .sticky-col { background: var(--gold-soft); }
   text-align: center; color: var(--text-dim); padding: 48px 20px; font-size: 14px;
   background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius);
 }
+/* Program değişikliği uyarı şeridi (assets/degisiklik.js) */
+.deg-serit {
+  background: color-mix(in srgb, #e8a33d 16%, var(--surface));
+  border: 1px solid color-mix(in srgb, #e8a33d 55%, var(--border));
+  border-left: 4px solid #e8a33d;
+  border-radius: var(--radius); padding: 12px 14px; margin-bottom: 14px;
+}
+.deg-serit .deg-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.deg-serit .deg-head b { font-size: 15px; }
+.deg-serit .deg-head #degKapat { margin-left: auto; padding: 2px 9px; }
+.deg-liste { margin: 8px 0 4px; padding-left: 20px; font-size: 13px; line-height: 1.7; }
+.deg-liste li::marker { color: #e8a33d; }
+.deg-ozet { margin: 6px 0 0; font-size: 13px; color: var(--accent-text); font-weight: 600; }
+.deg-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+
 .hit { background: var(--accent-soft); color: var(--accent-text); font-weight: 700; border-radius: 6px; padding: 1px 7px; }
 .miss { background: var(--surface2); color: var(--text-dim); border-radius: 6px; padding: 1px 7px; }
 
