@@ -38,6 +38,7 @@ jobs:
         run: |
           python3 scripts/backfill_arsiv.py "$(date -u -d '7 days ago' +%Y-%m-%d)" "$(date -u -d 'yesterday' +%Y-%m-%d)"
           python3 scripts/build_stats.py
+          python3 scripts/build_sartlar.py
 
       - name: Değişiklikleri işle
         run: |
