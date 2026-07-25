@@ -1,0 +1,484 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "pist",
+   "alan": "pist",
+   "eski": "Çim",
+   "yeni": "Kum",
+   "metin": "1. Koşu: Pist Çim → Kum",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "mesafe",
+   "alan": "mesafe",
+   "eski": "1900m",
+   "yeni": "2000m",
+   "metin": "1. Koşu: Mesafe 1900m → 2000m",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "1. Koşu: DİLMAKIZ (5) kilo 53 → 53 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52,5",
+   "yeni": "52,5 +2.00",
+   "metin": "1. Koşu: KUZGUNİ YEŞİL (6) kilo 52,5 → 52,5 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "1. Koşu: BURÇİGİN (7) kilo 52 → 52 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "GÜZEL HUYLUM DB SKG SK",
+   "yeni": "GÜZEL HUYLUM DB SKG SK (Koşmaz)",
+   "metin": "1. Koşu: GÜZEL HUYLUM (8) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "1. Koşu: DENİZ İNCİSİ (9) kilo 52 → 52 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "pist",
+   "alan": "pist",
+   "eski": "Çim",
+   "yeni": "Kum",
+   "metin": "2. Koşu: Pist Çim → Kum",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.30",
+   "metin": "2. Koşu: IRONHOOF (2) kilo 58 → 58 +0.30",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.70",
+   "metin": "2. Koşu: MIDNIGHT MIRAGE (3) kilo 58 → 58 +0.70",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "2. Koşu: TARCAN BABA (7) kilo 56 → 56 +1.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.50",
+   "metin": "2. Koşu: EARTHQUAKE (8) kilo 55 → 55 +1.50",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "FRÜHLİNG DB SK",
+   "yeni": "FRÜHLİNG DB SK (Koşmaz)",
+   "metin": "2. Koşu: FRÜHLİNG (9) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "KARLOVASİ DB SK",
+   "yeni": "KARLOVASİ DB SK (Koşmaz)",
+   "metin": "2. Koşu: KARLOVASİ (10) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.00",
+   "metin": "2. Koşu: THAT BEATS ALL (11) kilo 55 → 55 +1.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.30",
+   "metin": "2. Koşu: VEN CONMİGO (12) kilo 54 → 54 +0.30",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "2. Koşu: JOYOUS GIRL (13) kilo 52 → 52 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "pist",
+   "alan": "pist",
+   "eski": "Çim",
+   "yeni": "Kum",
+   "metin": "3. Koşu: Pist Çim → Kum",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "MAHALL KG DB SK",
+   "yeni": "MAHALL KG DB SK (Koşmaz)",
+   "metin": "3. Koşu: MAHALL (1) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "GRAND RAPIDS DB SK",
+   "yeni": "GRAND RAPIDS DB SK (Koşmaz)",
+   "metin": "3. Koşu: GRAND RAPIDS (5) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "3. Koşu: MİA STAR (6) kilo 52 → 52 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.10",
+   "metin": "3. Koşu: TEMPESTA MIA (7) kilo 56 → 56 +0.10",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.80",
+   "metin": "3. Koşu: ÜNLÜ BOMBA (8) kilo 56 → 56 +0.80",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "3. Koşu: SERAHİRA (9) kilo 55 → 55 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "pist",
+   "alan": "pist",
+   "eski": "Çim",
+   "yeni": "Kum",
+   "metin": "4. Koşu: Pist Çim → Kum",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "BABADENİZ KG DB SK",
+   "yeni": "BABADENİZ KG DB SK (Koşmaz)",
+   "metin": "4. Koşu: BABADENİZ (1) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "BERAY SULTAN KG K",
+   "yeni": "BERAY SULTAN KG K (Koşmaz)",
+   "metin": "4. Koşu: BERAY SULTAN (6) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +0.60",
+   "metin": "4. Koşu: CESURSOY (7) kilo 55,5 → 55,5 +0.60",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +2.00",
+   "metin": "4. Koşu: NEVŞEHİR BEYİ (8) kilo 55,5 → 55,5 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "4. Koşu: KASIRGA BEY (9) kilo 52 → 52 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "KATICESUR KG DB SK GKR",
+   "yeni": "KATICESUR KG DB SK GKR (Koşmaz)",
+   "metin": "4. Koşu: KATICESUR (10) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.80",
+   "metin": "5. Koşu: ANATOLIAN HERO (3) kilo 55 → 55 +0.80",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.00",
+   "metin": "5. Koşu: HAVASUPAI (4) kilo 55 → 55 +1.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "5. Koşu: STAR WIZARD (5) kilo 55 → 55 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +0.90",
+   "metin": "6. Koşu: ŞERDİL (4) kilo 56,5 → 56,5 +0.90",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "6. Koşu: BABİLİ (5) kilo 56 → 56 +1.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.40",
+   "metin": "6. Koşu: GOLDEN DRAGON (6) kilo 56 → 56 +0.40",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "pist",
+   "alan": "pist",
+   "eski": "Çim",
+   "yeni": "Kum",
+   "metin": "7. Koşu: Pist Çim → Kum",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "mesafe",
+   "alan": "mesafe",
+   "eski": "1900m",
+   "yeni": "2000m",
+   "metin": "7. Koşu: Mesafe 1900m → 2000m",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.20",
+   "metin": "7. Koşu: MORİ PAŞA (3) kilo 54 → 54 +0.20",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "TIME CHANGER KG DB SK",
+   "yeni": "TIME CHANGER KG DB SK (Koşmaz)",
+   "metin": "7. Koşu: TIME CHANGER (6) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "7. Koşu: GREAT ANGEL (9) kilo 52 → 52 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "LACCARETHA DB SK",
+   "yeni": "LACCARETHA DB SK (Koşmaz)",
+   "metin": "7. Koşu: LACCARETHA (10) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.30",
+   "metin": "7. Koşu: MANNARA (11) kilo 56 → 56 +1.30",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.10",
+   "metin": "7. Koşu: MAXIMAND (12) kilo 56 → 56 +0.10",
+   "ts": "2026-07-25 15:59 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-25 15:59 UTC",
+ "sehir": "Ankara",
+ "etkilenen": {
+  "1": [
+   "B13",
+   "B2",
+   "B3",
+   "B5",
+   "B6",
+   "B9",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "2": [
+   "B13",
+   "B2",
+   "B3",
+   "B5",
+   "B6",
+   "B9",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "3": [
+   "B13",
+   "B2",
+   "B3",
+   "B5",
+   "B6",
+   "B9",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "4": [
+   "B13",
+   "B2",
+   "B3",
+   "B5",
+   "B6",
+   "B9",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "7": [
+   "B13",
+   "B2",
+   "B3",
+   "B5",
+   "B6",
+   "B9",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}

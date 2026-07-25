@@ -9,8 +9,8 @@
    "tur": "Handikap 15/DHÖ/Dişi /H1",
    "grup": "4 Yaşlı Araplar",
    "kilo": "kg",
-   "mesafe": "1900m",
-   "pist": "Çim",
+   "mesafe": "2000m",
+   "pist": "Kum",
    "horses": [
     {
      "no": 1,
@@ -28,7 +28,7 @@
      "son6": "K4Ç6Ç3S3Ç2Ç1",
      "kgs": "13",
      "s20": "20",
-     "eniyi": "2:09.00"
+     "eniyi": ""
     },
     {
      "no": 2,
@@ -46,7 +46,7 @@
      "son6": "K1Ç5Ç3K8Ç0K6",
      "kgs": "16",
      "s20": "15",
-     "eniyi": "2:14.17"
+     "eniyi": ""
     },
     {
      "no": 3,
@@ -64,7 +64,7 @@
      "son6": "Ç1Ç2Ç9Ç0Ç9Ç4",
      "kgs": "15",
      "s20": "15",
-     "eniyi": "2:08.93"
+     "eniyi": ""
     },
     {
      "no": 4,
@@ -82,7 +82,7 @@
      "son6": "Ç0Ç0Ç4S1Ç7Ç4",
      "kgs": "8",
      "s20": "18",
-     "eniyi": "2:16.36"
+     "eniyi": ""
     },
     {
      "no": 5,
@@ -90,7 +90,7 @@
      "yas": "4y k k",
      "baba": "TEK YÜREK",
      "anne": "İÇİMSU",
-     "kilo": "53",
+     "kilo": "53 +2.00",
      "jokey": "H.ÇİZİK",
      "sahip": "EMİN ÇELİK",
      "antrenor": "M.DEMİROL",
@@ -108,7 +108,7 @@
      "yas": "4y k k",
      "baba": "BERKSOY",
      "anne": "ŞENFERAH",
-     "kilo": "52,5",
+     "kilo": "52,5 +2.00",
      "jokey": "F.ÇETİNBAŞ",
      "sahip": "SUPHİYE İLERİ",
      "antrenor": "C.KATI",
@@ -118,7 +118,7 @@
      "son6": "Ç7Ç5Ç4Ç3Ç7Ç2",
      "kgs": "18",
      "s20": "16",
-     "eniyi": "2:09.87"
+     "eniyi": ""
     },
     {
      "no": 7,
@@ -126,7 +126,7 @@
      "yas": "4y a k",
      "baba": "BURUKMERT",
      "anne": "BURUK SHOOW",
-     "kilo": "52",
+     "kilo": "52 +2.00",
      "jokey": "MÜS.ÇELİK",
      "sahip": "ERSİN KÖROĞLU",
      "antrenor": "C.KATI",
@@ -136,11 +136,11 @@
      "son6": "S0K9Ç4Ç4Ç5Ç6",
      "kgs": "28",
      "s20": "13",
-     "eniyi": "2:08.13"
+     "eniyi": ""
     },
     {
      "no": 8,
-     "ad": "GÜZEL HUYLUM DB SKG SK",
+     "ad": "GÜZEL HUYLUM DB SKG SK (Koşmaz)",
      "yas": "4y k k",
      "baba": "ANKA",
      "anne": "OYUN BİLEN",
@@ -162,7 +162,7 @@
      "yas": "4y k k",
      "baba": "DENİZİM",
      "anne": "KAHRAMANKIZ",
-     "kilo": "52",
+     "kilo": "52 +2.00",
      "jokey": "E.ATLAMAZ AP",
      "sahip": "HASAN AKBULUT",
      "antrenor": "M.Y.AKKEYİK",
@@ -184,7 +184,7 @@
    "grup": "3 Yaşlı İngilizler",
    "kilo": "58.00kg",
    "mesafe": "1400m",
-   "pist": "Çim",
+   "pist": "Kum",
    "horses": [
     {
      "no": 1,
@@ -197,12 +197,12 @@
      "sahip": "SEMRA AKSU",
      "antrenor": "Y.UÇAR",
      "st": "9",
-     "agf": "%5.84(5)",
+     "agf": "%7.61(5)",
      "h": "55",
      "son6": "S4K0Ç3Ç2Ç8Ç8",
      "kgs": "14",
      "s20": "14",
-     "eniyi": "1:24.70"
+     "eniyi": "1:34.03"
     },
     {
      "no": 2,
@@ -210,17 +210,17 @@
      "yas": "3y a  e",
      "baba": "VOODOO SONG (USA)",
      "anne": "WOLF OF WIND",
-     "kilo": "58",
+     "kilo": "58 +0.30",
      "jokey": "F.R.BEBEK",
      "sahip": "MANSUR SEVİM",
      "antrenor": "G.KÖSE",
      "st": "8",
-     "agf": "%2.38(6)",
+     "agf": "%3.74(4)",
      "h": "49",
      "son6": "Ç2K5-S6Ç0Ç0Ç0",
      "kgs": "76",
      "s20": "12",
-     "eniyi": "1:25.61"
+     "eniyi": "1:33.40"
     },
     {
      "no": 3,
@@ -228,17 +228,17 @@
      "yas": "3y d  e",
      "baba": "EPAULETTE (AUS)",
      "anne": "CONQUEST RAZOR (USA)",
-     "kilo": "58",
+     "kilo": "58 +0.70",
      "jokey": "B.KILINÇ",
      "sahip": "MÜZEYYEN KARABULUT",
      "antrenor": "BUR.ARSLAN",
      "st": "4",
-     "agf": "%4.15(8)",
+     "agf": "%6.42(7)",
      "h": "39",
      "son6": "Ç5Ç0Ç2Ç1Ç7Ç0",
      "kgs": "14",
      "s20": "18",
-     "eniyi": ""
+     "eniyi": "1:31.75"
     },
     {
      "no": 4,
@@ -251,12 +251,12 @@
      "sahip": "GÜLİZAR YANIK",
      "antrenor": "M.DOLAK",
      "st": "11",
-     "agf": "%2.41(10)",
+     "agf": "%7.45(6)",
      "h": "48",
      "son6": "K5S0Ç7Ç9K9K6",
      "kgs": "14",
      "s20": "12",
-     "eniyi": "1:29.25"
+     "eniyi": "1:27.86"
     },
     {
      "no": 5,
@@ -269,12 +269,12 @@
      "sahip": "SEMİH DİLBER",
      "antrenor": "SER.DOĞAN",
      "st": "10",
-     "agf": "%16.3(3)",
+     "agf": "%12.54(3)",
      "h": "54",
      "son6": "Ç3Ç7-Ç5Ç8Ç5Ç5",
      "kgs": "14",
      "s20": "15",
-     "eniyi": "1:23.78"
+     "eniyi": ""
     },
     {
      "no": 6,
@@ -287,12 +287,12 @@
      "sahip": "SELİM KAYA",
      "antrenor": "HÜS.KAYA",
      "st": "5",
-     "agf": "%23.56(1)",
+     "agf": "%23.34(1)",
      "h": "61",
      "son6": "Ç4Ç5Ç1Ç2Ç2Ç9",
      "kgs": "11",
      "s20": "18",
-     "eniyi": ""
+     "eniyi": "1:28.70"
     },
     {
      "no": 7,
@@ -300,17 +300,17 @@
      "yas": "3y d  e",
      "baba": "TIZWAY (USA)",
      "anne": "MANICOURT",
-     "kilo": "56",
+     "kilo": "56 +1.00",
      "jokey": "E.ÇANKAYA",
      "sahip": "RUKEN ATAŞ",
      "antrenor": "H.ATAŞ",
      "st": "13 - DS",
-     "agf": "%14.72(4)",
+     "agf": "%16.36(2)",
      "h": "54",
      "son6": "S6S5Ç4S7Ç7Ç5",
      "kgs": "21",
      "s20": "14",
-     "eniyi": "1:26.82"
+     "eniyi": ""
     },
     {
      "no": 8,
@@ -318,21 +318,21 @@
      "yas": "3y a  e",
      "baba": "SADLER'S JOY (USA)",
      "anne": "DREAMING OF STELLA (IRE)",
-     "kilo": "55",
+     "kilo": "55 +1.50",
      "jokey": "M.G.ARSLAN",
      "sahip": "MAHMUT SEVİM",
      "antrenor": "R.TAŞDELEN",
      "st": "7",
-     "agf": "%3.43(6)",
+     "agf": "%7.18(4)",
      "h": "34",
      "son6": "Ç0Ç5Ç9Ç0Ç4K5",
      "kgs": "9",
      "s20": "14",
-     "eniyi": "1:25.39"
+     "eniyi": "1:30.67"
     },
     {
      "no": 9,
-     "ad": "FRÜHLİNG DB SK",
+     "ad": "FRÜHLİNG DB SK (Koşmaz)",
      "yas": "3y d  d",
      "baba": "HERE TO FLY",
      "anne": "HELGALEIN",
@@ -341,16 +341,16 @@
      "sahip": "MEHMET ÇELİK",
      "antrenor": "M.DAŞ",
      "st": "3",
-     "agf": "%2.91(9)",
+     "agf": "%0.37(12)",
      "h": "42",
      "son6": "Ç8Ç3-K7K7Ç8Ç0",
      "kgs": "44",
      "s20": "12",
-     "eniyi": "1:26.40"
+     "eniyi": ""
     },
     {
      "no": 10,
-     "ad": "KARLOVASİ DB SK",
+     "ad": "KARLOVASİ DB SK (Koşmaz)",
      "yas": "3y d  d",
      "baba": "KLIMT (USA)",
      "anne": "KARLIOVA",
@@ -359,12 +359,12 @@
      "sahip": "A.SEDA ÖZBELGE",
      "antrenor": "İ.TEMEL",
      "st": "1",
-     "agf": "%17.46(2)",
+     "agf": "%1.62(11)",
      "h": "36",
      "son6": "Ç7S2Ç3Ç2Ç0Ç3",
      "kgs": "18",
      "s20": "16",
-     "eniyi": "1:24.82"
+     "eniyi": ""
     },
     {
      "no": 11,
@@ -372,17 +372,17 @@
      "yas": "3y d  e",
      "baba": "AIR VICE MARSHAL (USA)",
      "anne": "TOMESCU (AUS)",
-     "kilo": "55",
+     "kilo": "55 +1.00",
      "jokey": "U.TEMUR",
      "sahip": "ÖZLEM TEKİNALP",
      "antrenor": "M.TEKİNALP",
      "st": "2",
-     "agf": "%1.29(11)",
+     "agf": "%5.4(9)",
      "h": "33",
      "son6": "K3K2K3K8K4K0",
      "kgs": "33",
      "s20": "15",
-     "eniyi": ""
+     "eniyi": "1:32.73"
     },
     {
      "no": 12,
@@ -390,17 +390,17 @@
      "yas": "3y d  d",
      "baba": "MYBOYCHARLIE (IRE)",
      "anne": "GLEN",
-     "kilo": "54",
+     "kilo": "54 +0.30",
      "jokey": "E.ATLAMAZ AP",
      "sahip": "SEMİH KATI",
      "antrenor": "M.DOLAK",
      "st": "6",
-     "agf": "%1.25(12)",
+     "agf": "%2.45(10)",
      "h": "37",
      "son6": "Ç9Ç0Ç6Ç5Ç5K7",
      "kgs": "18",
      "s20": "13",
-     "eniyi": ""
+     "eniyi": "1:31.66"
     },
     {
      "no": 13,
@@ -408,12 +408,12 @@
      "yas": "3y d  d",
      "baba": "SADLER'S JOY (USA)",
      "anne": "BUNGA BUNGA",
-     "kilo": "52",
+     "kilo": "52 +2.00",
      "jokey": "M.T.COŞKUN AP",
      "sahip": "BÜLENT ÇİZMECİ",
      "antrenor": "E.ACER",
      "st": "12",
-     "agf": "%4.31(7)",
+     "agf": "%5.53(8)",
      "h": "35",
      "son6": "K0K7Ç0Ç0Ç9Ç5",
      "kgs": "11",
@@ -430,11 +430,11 @@
    "grup": "3 ve Yukarı İngilizler",
    "kilo": "55.00kg",
    "mesafe": "1200m",
-   "pist": "Çim",
+   "pist": "Kum",
    "horses": [
     {
      "no": 1,
-     "ad": "MAHALL KG DB SK",
+     "ad": "MAHALL KG DB SK (Koşmaz)",
      "yas": "5y d k",
      "baba": "MYBOYCHARLIE (IRE)",
      "anne": "KILL BILL",
@@ -443,12 +443,12 @@
      "sahip": "AHMET İSTANBULLU",
      "antrenor": "O.GİRİŞKİN",
      "st": "5",
-     "agf": "%25.77(1)",
+     "agf": "%3.69(8)",
      "h": "84",
      "son6": "Ç5Ç4Ç3Ç7Ç1Ç4",
      "kgs": "18",
      "s20": "19",
-     "eniyi": "1:11.67"
+     "eniyi": ""
     },
     {
      "no": 2,
@@ -461,12 +461,12 @@
      "sahip": "MUSA KİP",
      "antrenor": "R.ATLI",
      "st": "6",
-     "agf": "%18.16(3)",
+     "agf": "%19.53(3)",
      "h": "95",
      "son6": "Ç4Ç6Ç2Ç1Ç3Ç4",
      "kgs": "16",
      "s20": "18",
-     "eniyi": "1:10.55"
+     "eniyi": "1:13.51"
     },
     {
      "no": 3,
@@ -479,12 +479,12 @@
      "sahip": "MEHMET BEŞERLER",
      "antrenor": "AR.KILIÇ",
      "st": "3",
-     "agf": "%17.66(4)",
+     "agf": "%35.66(1)",
      "h": "87",
      "son6": "Ç8Ç6Ç1K2Ç3Ç3",
      "kgs": "16",
      "s20": "17",
-     "eniyi": "1:12.47"
+     "eniyi": "1:15.82"
     },
     {
      "no": 4,
@@ -497,16 +497,16 @@
      "sahip": "EYYÜP AYDINLIKTA",
      "antrenor": "AR.KILIÇ",
      "st": "4",
-     "agf": "%1.3(8)",
+     "agf": "%2.61(7)",
      "h": "70",
      "son6": "S8S0K0S8S4S0",
      "kgs": "126",
      "s20": "14",
-     "eniyi": ""
+     "eniyi": "1:17.25"
     },
     {
      "no": 5,
-     "ad": "GRAND RAPIDS DB SK",
+     "ad": "GRAND RAPIDS DB SK (Koşmaz)",
      "yas": "4y d k",
      "baba": "VICTOIRE PISA (JPN)",
      "anne": "DUBLIN",
@@ -515,12 +515,12 @@
      "sahip": "HAYRETTİN KARAMAZI",
      "antrenor": "EN.KARATAŞ",
      "st": "2",
-     "agf": "%12.36(5)",
+     "agf": "%0.99(9)",
      "h": "86",
      "son6": "Ç1Ç2Ç5Ç8Ç2-Ç5",
      "kgs": "140",
      "s20": "16",
-     "eniyi": "1:12.51"
+     "eniyi": ""
     },
     {
      "no": 6,
@@ -528,17 +528,17 @@
      "yas": "4y d k",
      "baba": "KLUGER (JPN)",
      "anne": "SONG BIRD",
-     "kilo": "52",
+     "kilo": "52 +2.00",
      "jokey": "E.ATLAMAZ AP",
      "sahip": "AYTEN FİDAN",
      "antrenor": "İ.KÖROĞLU",
      "st": "7",
-     "agf": "%1.46(7)",
+     "agf": "%5.76(4)",
      "h": "69",
      "son6": "K1-K4K6K6K8Ç9",
      "kgs": "86",
      "s20": "15",
-     "eniyi": "1:10.90"
+     "eniyi": "1:17.21"
     },
     {
      "no": 7,
@@ -546,17 +546,17 @@
      "yas": "6y d k",
      "baba": "THREE VALLEYS (USA)",
      "anne": "BYE BYE FUJI (USA)",
-     "kilo": "56",
+     "kilo": "56 +0.10",
      "jokey": "F.S.M.SANSAR",
      "sahip": "MEHMET DİNDAR",
      "antrenor": "H.HATUNOĞLU",
      "st": "1",
-     "agf": "%1.89(6)",
+     "agf": "%2.95(5)",
      "h": "75",
      "son6": "Ç4Ç6Ç6K0K7-Ç0",
      "kgs": "140",
      "s20": "14",
-     "eniyi": "1:09.76"
+     "eniyi": "1:16.20"
     },
     {
      "no": 8,
@@ -564,17 +564,17 @@
      "yas": "4y d k",
      "baba": "KANEKO",
      "anne": "SARIŞIN BOMBA",
-     "kilo": "56",
+     "kilo": "56 +0.80",
      "jokey": "M.A.AKGÖBEK",
      "sahip": "NADİRE ÜNLÜ",
      "antrenor": "S.KAN",
      "st": "8",
-     "agf": "%0.87(9)",
+     "agf": "%2.95(6)",
      "h": "47",
      "son6": "Ç5S3S0-S9S0S9",
      "kgs": "144",
      "s20": "12",
-     "eniyi": ""
+     "eniyi": "1:20.98"
     },
     {
      "no": 9,
@@ -582,17 +582,17 @@
      "yas": "3y a  d",
      "baba": "KLIMT (USA)",
      "anne": "PRINCESS IZABEL",
-     "kilo": "55",
+     "kilo": "55 +2.00",
      "jokey": "SAL.ÇELİK",
      "sahip": "HALUK CANÇEKER",
      "antrenor": "İ.KÖROĞLU",
      "st": "9",
-     "agf": "%20.52(2)",
+     "agf": "%25.86(2)",
      "h": "73",
      "son6": "K2K4K7Ç5Ç1Ç2",
      "kgs": "17",
      "s20": "19",
-     "eniyi": "1:12.05"
+     "eniyi": ""
     }
    ],
    "ikramiye": "595.000 TL"
@@ -604,11 +604,11 @@
    "grup": "4 ve Yukarı Araplar",
    "kilo": "kg",
    "mesafe": "1400m",
-   "pist": "Çim",
+   "pist": "Kum",
    "horses": [
     {
      "no": 1,
-     "ad": "BABADENİZ KG DB SK",
+     "ad": "BABADENİZ KG DB SK (Koşmaz)",
      "yas": "5y a  a",
      "baba": "KAYAYÜREKLİ",
      "anne": "CESİKA",
@@ -617,12 +617,12 @@
      "sahip": "MEHMET DİLBER",
      "antrenor": "SER.DOĞAN",
      "st": "7",
-     "agf": "%2.27(10)",
+     "agf": "%0.22(10)",
      "h": "88",
      "son6": "K0Ç1Ç7Ç4Ç5Ç9",
      "kgs": "6",
      "s20": "16",
-     "eniyi": "1:32.01"
+     "eniyi": "1:52.61"
     },
     {
      "no": 2,
@@ -635,12 +635,12 @@
      "sahip": "AHMET MİZAN",
      "antrenor": "AL.ÇİZİK",
      "st": "9",
-     "agf": "%21.52(1)",
+     "agf": "%22.27(1)",
      "h": "85",
      "son6": "Ç6Ç1Ç5Ç1Ç7Ç5",
      "kgs": "17",
      "s20": "18",
-     "eniyi": "1:30.92"
+     "eniyi": "1:38.51"
     },
     {
      "no": 3,
@@ -653,12 +653,12 @@
      "sahip": "NUSRET DOĞAN",
      "antrenor": "M.A.CANPOLATLI",
      "st": "1",
-     "agf": "%3.48(7)",
+     "agf": "%5.59(7)",
      "h": "83",
      "son6": "Ç0Ç7Ç5Ç6Ç4Ç8",
      "kgs": "23",
      "s20": "10",
-     "eniyi": "1:31.99"
+     "eniyi": "1:40.33"
     },
     {
      "no": 4,
@@ -671,12 +671,12 @@
      "sahip": "SEMİH KATI",
      "antrenor": "M.DOLAK",
      "st": "2",
-     "agf": "%3.05(8)",
+     "agf": "%6.44(6)",
      "h": "79",
      "son6": "Ç5Ç7Ç6Ç0Ç0Ç6",
      "kgs": "15",
      "s20": "10",
-     "eniyi": "1:31.17"
+     "eniyi": "1:41.92"
     },
     {
      "no": 5,
@@ -689,16 +689,16 @@
      "sahip": "İMAM KATI",
      "antrenor": "C.KATI",
      "st": "4",
-     "agf": "%18.35(2)",
+     "agf": "%18.71(3)",
      "h": "78",
      "son6": "Ç3Ç4Ç4Ç1Ç4Ç5",
      "kgs": "7",
      "s20": "18",
-     "eniyi": "1:31.79"
+     "eniyi": "1:41.04"
     },
     {
      "no": 6,
-     "ad": "BERAY SULTAN KG K",
+     "ad": "BERAY SULTAN KG K (Koşmaz)",
      "yas": "4y d k",
      "baba": "MİNİFHAT OĞLU",
      "anne": "BERAYCAN",
@@ -707,12 +707,12 @@
      "sahip": "BÜLENT TOYDEMİR",
      "antrenor": "M.DEMİROL",
      "st": "6",
-     "agf": "%15.07(3)",
+     "agf": "%2.15(8)",
      "h": "76",
      "son6": "Ç7Ç7Ç6Ç9Ç2Ç3",
      "kgs": "13",
      "s20": "11",
-     "eniyi": "1:32.45"
+     "eniyi": ""
     },
     {
      "no": 7,
@@ -720,17 +720,17 @@
      "yas": "4y k  a",
      "baba": "GÜRSU",
      "anne": "YÜCELEN",
-     "kilo": "55,5",
+     "kilo": "55,5 +0.60",
      "jokey": "M.S.ÇELİK",
      "sahip": "SEMA ULAŞ",
      "antrenor": "C.DEMİR",
      "st": "3",
-     "agf": "%13.62(5)",
+     "agf": "%15.26(4)",
      "h": "76",
      "son6": "Ç8K2Ç1Ç3Ç3Ç9",
      "kgs": "20",
      "s20": "17",
-     "eniyi": "1:33.76"
+     "eniyi": ""
     },
     {
      "no": 8,
@@ -738,17 +738,17 @@
      "yas": "4y a  a",
      "baba": "TURBO",
      "anne": "BELMACIK",
-     "kilo": "55,5",
+     "kilo": "55,5 +2.00",
      "jokey": "V.DEMİR",
      "sahip": "M.VEHBİ KARAHAN AYAS",
      "antrenor": "Y.MİSDİK",
      "st": "10 - DS",
-     "agf": "%14.05(4)",
+     "agf": "%18.99(2)",
      "h": "76",
      "son6": "K7Ç3Ç2Ç1Ç2Ç1",
      "kgs": "16",
      "s20": "20",
-     "eniyi": "1:34.01"
+     "eniyi": "1:38.03"
     },
     {
      "no": 9,
@@ -756,21 +756,21 @@
      "yas": "4y k  a",
      "baba": "UÇANBEY",
      "anne": "KIZIMİREM",
-     "kilo": "52",
+     "kilo": "52 +2.00",
      "jokey": "MÜS.ÇELİK",
      "sahip": "C.TAHİR BURHANLIOĞLU",
      "antrenor": "S.KAN",
      "st": "5",
-     "agf": "%5.84(6)",
+     "agf": "%9.99(5)",
      "h": "61",
      "son6": "Ç4Ç1Ç1Ç3Ç9Ç6",
      "kgs": "29",
      "s20": "17",
-     "eniyi": "1:33.27"
+     "eniyi": "1:40.08"
     },
     {
      "no": 10,
-     "ad": "KATICESUR KG DB SK GKR",
+     "ad": "KATICESUR KG DB SK GKR (Koşmaz)",
      "yas": "4y k  a",
      "baba": "SAKARBAŞI",
      "anne": "MAYISYAĞMURU",
@@ -779,12 +779,12 @@
      "sahip": "MÜSLÜM KATI",
      "antrenor": "C.KATI",
      "st": "8",
-     "agf": "%2.75(9)",
+     "agf": "%0.39(9)",
      "h": "57",
      "son6": "Ç8Ç5Ç5Ç6Ç8Ç5",
      "kgs": "11",
      "s20": "11",
-     "eniyi": "1:33.22"
+     "eniyi": ""
     }
    ],
    "ikramiye": "835.000 TL"
@@ -809,7 +809,7 @@
      "sahip": "İSHAK ŞAHİN",
      "antrenor": "M.DOLAK",
      "st": "2",
-     "agf": "%4.63(3)",
+     "agf": "%6.19(3)",
      "h": "51",
      "son6": "K2K2Ç4K1K1Ç4",
      "kgs": "8",
@@ -827,7 +827,7 @@
      "sahip": "SEMİH KATI",
      "antrenor": "M.DOLAK",
      "st": "1",
-     "agf": "%30.32(2)",
+     "agf": "%28.94(2)",
      "h": "55",
      "son6": "K2K1K1K2K2",
      "kgs": "18",
@@ -840,12 +840,12 @@
      "yas": "2y d  e",
      "baba": "HAKEEM (USA)",
      "anne": "TURUVALI HELEN",
-     "kilo": "55",
+     "kilo": "55 +0.80",
      "jokey": "M.S.ÇELİK",
      "sahip": "YÜKSEL GÖKTÜRK",
      "antrenor": "İS.TEKİNALP",
      "st": "5 - DS",
-     "agf": "%61.32(1)",
+     "agf": "%60.17(1)",
      "h": "56",
      "son6": "K1K1",
      "kgs": "35",
@@ -858,12 +858,12 @@
      "yas": "2y d  e",
      "baba": "BODEMEISTER (USA)",
      "anne": "HOLD UP",
-     "kilo": "55",
+     "kilo": "55 +1.00",
      "jokey": "M.A.AKGÖBEK",
      "sahip": "GÜLİZAR YANIK",
      "antrenor": "M.DOLAK",
      "st": "3",
-     "agf": "%1.63(5)",
+     "agf": "%2.64(4)",
      "h": "48",
      "son6": "K1S2K4K3Ç3",
      "kgs": "8",
@@ -876,12 +876,12 @@
      "yas": "2y d  e",
      "baba": "PRESSING (IRE)",
      "anne": "STAR LUXOR",
-     "kilo": "55",
+     "kilo": "55 +2.00",
      "jokey": "SAL.ÇELİK",
      "sahip": "İBRAHİM HAKKI BOYRAZ",
      "antrenor": "M.DEMİROL",
      "st": "4",
-     "agf": "%2.09(4)",
+     "agf": "%2.05(5)",
      "h": "40",
      "son6": "Ç4Ç1",
      "kgs": "69",
@@ -911,7 +911,7 @@
      "sahip": "BEKİR AKYAVUZ",
      "antrenor": "E.AKYAVUZ",
      "st": "3",
-     "agf": "%12.84(2)",
+     "agf": "%16.41(2)",
      "h": "89",
      "son6": "Ç3Ç6K1K1K3Ç3",
      "kgs": "9",
@@ -929,7 +929,7 @@
      "sahip": "GIYASETTİN ŞEN",
      "antrenor": "T.ATEŞ",
      "st": "2",
-     "agf": "%3.59(4)",
+     "agf": "%4.71(4)",
      "h": "85",
      "son6": "K5K2K3K3K5K8",
      "kgs": "25",
@@ -947,7 +947,7 @@
      "sahip": "EMRAH AGUN",
      "antrenor": "İB.B.OĞULLARI",
      "st": "6 - DS",
-     "agf": "%7.04(3)",
+     "agf": "%9.63(3)",
      "h": "95",
      "son6": "S1K1K3S2S5S8",
      "kgs": "322",
@@ -960,12 +960,12 @@
      "yas": "5y d  a",
      "baba": "ABJAR ACADEMY",
      "anne": "FAIRY TALE",
-     "kilo": "56,5",
+     "kilo": "56,5 +0.90",
      "jokey": "M.AKYAVUZ",
      "sahip": "F.SEDAT DAĞYUDAN",
      "antrenor": "M.KORKMAZ",
      "st": "5 - DS",
-     "agf": "%1.97(5)",
+     "agf": "%2.17(5)",
      "h": "71",
      "son6": "S8-K6K8K6K0K5",
      "kgs": "7",
@@ -978,12 +978,12 @@
      "yas": "4y d  g",
      "baba": "SMART ROBIN (JPN)",
      "anne": "FROM THE SINOPE",
-     "kilo": "56",
+     "kilo": "56 +1.00",
      "jokey": "SAL.ÇELİK",
      "sahip": "SEHER ETİ",
      "antrenor": "A.ÇIKMAN",
      "st": "4",
-     "agf": "%0.69(6)",
+     "agf": "%0.82(6)",
      "h": "36",
      "son6": "K2-K9S7S3Ç7Ç9",
      "kgs": "14",
@@ -996,12 +996,12 @@
      "yas": "4y a  a",
      "baba": "RUN AWAY AND HIDE (USA)",
      "anne": "LİLA HATUN",
-     "kilo": "56",
+     "kilo": "56 +0.40",
      "jokey": "A.KURŞUN",
      "sahip": "TALİP ÖZTÜRK",
      "antrenor": "İB.B.OĞULLARI",
      "st": "1",
-     "agf": "%73.86(1)",
+     "agf": "%66.26(1)",
      "h": "94",
      "son6": "K1K1K1K3-K4K1",
      "kgs": "106",
@@ -1010,7 +1010,7 @@
     }
    ],
    "ikramiye": "595.000 TL",
-   "odemeler": "6. ÇİFTE Bu koşudan başlar GANYAN SIRALI İKİLİ SABİT GANYAN SABİT SIRALI İKİLİ SABİT İLK 2 SABİT İLK 3"
+   "odemeler": "6. ÇİFTE Bu koşudan başlar GANYAN SIRALI İKİLİ"
   },
   {
    "no": 7,
@@ -1018,8 +1018,8 @@
    "tur": "Maiden",
    "grup": "3 Yaşlı İngilizler",
    "kilo": "58.00kg",
-   "mesafe": "1900m",
-   "pist": "Çim",
+   "mesafe": "2000m",
+   "pist": "Kum",
    "horses": [
     {
      "no": 1,
@@ -1032,12 +1032,12 @@
      "sahip": "BAŞAK MİLLİ",
      "antrenor": "S.GÜRKAN",
      "st": "4",
-     "agf": "%2.92(10)",
+     "agf": "%3.46(8)",
      "h": "12",
      "son6": "Ç6Ç7-Ç9",
      "kgs": "28",
      "s20": "17",
-     "eniyi": "1:58.57"
+     "eniyi": ""
     },
     {
      "no": 2,
@@ -1050,7 +1050,7 @@
      "sahip": "İSA YÜKSEL",
      "antrenor": "KAD.BALTACI",
      "st": "12",
-     "agf": "%15.18(2)",
+     "agf": "%16.5(3)",
      "h": "28",
      "son6": "Ç8K8K6-K3Ç6Ç3",
      "kgs": "18",
@@ -1063,17 +1063,17 @@
      "yas": "3y d  e",
      "baba": "HASAFET",
      "anne": "MANLIKOVA (IRE)",
-     "kilo": "54",
+     "kilo": "54 +0.20",
      "jokey": "M.T.COŞKUN AP",
      "sahip": "AHMET KILIÇCIOĞLU",
      "antrenor": "Y.MİSDİK",
      "st": "5",
-     "agf": "%0.6(14)",
+     "agf": "%0.94(12)",
      "h": "8",
      "son6": "K8-K6K9Ç0Ç8K7",
      "kgs": "32",
      "s20": "13",
-     "eniyi": "2:03.49"
+     "eniyi": ""
     },
     {
      "no": 4,
@@ -1086,7 +1086,7 @@
      "sahip": "CEM KAAN PARSAK",
      "antrenor": "KAD.BALTACI",
      "st": "15 - DS",
-     "agf": "%9.6(4)",
+     "agf": "%19.3(2)",
      "h": "",
      "son6": "K4",
      "kgs": "32",
@@ -1104,7 +1104,7 @@
      "sahip": "BEYHAN HADİOĞLU",
      "antrenor": "İ.KÖROĞLU",
      "st": "8",
-     "agf": "%26.33(1)",
+     "agf": "%22.22(1)",
      "h": "37",
      "son6": "Ç8Ç9S3S2K4",
      "kgs": "9",
@@ -1113,7 +1113,7 @@
     },
     {
      "no": 6,
-     "ad": "TIME CHANGER KG DB SK",
+     "ad": "TIME CHANGER KG DB SK (Koşmaz)",
      "yas": "3y d  e",
      "baba": "BATTLEGROUND (USA)",
      "anne": "OLINDA",
@@ -1122,12 +1122,12 @@
      "sahip": "MURAT CAVCAV",
      "antrenor": "S.GÜRKAN",
      "st": "11",
-     "agf": "%12.58(3)",
+     "agf": "%2.94(15)",
      "h": "26",
      "son6": "K7-K7Ç4Ç4Ç4Ç4",
      "kgs": "28",
      "s20": "17",
-     "eniyi": "1:57.95"
+     "eniyi": ""
     },
     {
      "no": 7,
@@ -1140,7 +1140,7 @@
      "sahip": "BARAN D. CEMİLOĞLU",
      "antrenor": "Ö.F.TAN",
      "st": "10",
-     "agf": "%7.36(6)",
+     "agf": "%6.94(4)",
      "h": "37",
      "son6": "S2S2S2Ç5S6S8",
      "kgs": "30",
@@ -1158,7 +1158,7 @@
      "sahip": "HAKKI BAY",
      "antrenor": "M.İPEK",
      "st": "1",
-     "agf": "%0.47(15)",
+     "agf": "%0.7(13)",
      "h": "8",
      "son6": "S9S0S0S8Ç7Ç9",
      "kgs": "18",
@@ -1171,12 +1171,12 @@
      "yas": "3y a  d",
      "baba": "PERFECT STORM",
      "anne": "GENÇ ANGEL",
-     "kilo": "52",
+     "kilo": "52 +2.00",
      "jokey": "E.ATLAMAZ AP",
      "sahip": "SERKAN ALTUNBAŞ",
      "antrenor": "S.ALTUNBAŞ",
      "st": "14",
-     "agf": "%0.78(13)",
+     "agf": "%1.01(11)",
      "h": "25",
      "son6": "S5S6S9S4Ç7K9",
      "kgs": "62",
@@ -1185,7 +1185,7 @@
     },
     {
      "no": 10,
-     "ad": "LACCARETHA DB SK",
+     "ad": "LACCARETHA DB SK (Koşmaz)",
      "yas": "3y a  d",
      "baba": "LACCARIO (GER)",
      "anne": "ARETHA (FR)",
@@ -1194,12 +1194,12 @@
      "sahip": "HİKMET ÖYLÜ",
      "antrenor": "İ.KÖROĞLU",
      "st": "9",
-     "agf": "%8.8(5)",
+     "agf": "%6.59(14)",
      "h": "27",
      "son6": "Ç7Ç8Ç8Ç5Ç3Ç6",
      "kgs": "16",
      "s20": "12",
-     "eniyi": "1:57.46"
+     "eniyi": ""
     },
     {
      "no": 11,
@@ -1207,12 +1207,12 @@
      "yas": "3y d  d",
      "baba": "AUTHORIZED (IRE)",
      "anne": "GOLD BIHAR",
-     "kilo": "56",
+     "kilo": "56 +1.30",
      "jokey": "M.AKYAVUZ",
      "sahip": "BÜLENT TAŞÇI",
      "antrenor": "Ş.AYDEMİR",
      "st": "7",
-     "agf": "%3.11(9)",
+     "agf": "%4.46(7)",
      "h": "31",
      "son6": "S9-S4S5S2K9",
      "kgs": "11",
@@ -1225,17 +1225,17 @@
      "yas": "3y d  d",
      "baba": "BODEMEISTER (USA)",
      "anne": "KENDULA",
-     "kilo": "56",
+     "kilo": "56 +0.10",
      "jokey": "H.ÇİZİK",
      "sahip": "M.GARİP ELĞAÇ",
      "antrenor": "AR.KILIÇ",
      "st": "6",
-     "agf": "%4.73(7)",
+     "agf": "%6.33(5)",
      "h": "17",
      "son6": "K0K4Ç9Ç6Ç5",
      "kgs": "18",
      "s20": "15",
-     "eniyi": "1:58.05"
+     "eniyi": ""
     },
     {
      "no": 13,
@@ -1248,7 +1248,7 @@
      "sahip": "AHMET GÜZELOCAK",
      "antrenor": "O.BULUT",
      "st": "3",
-     "agf": "%0.84(12)",
+     "agf": "%1.29(10)",
      "h": "17",
      "son6": "Ç5Ç0Ç0Ç6",
      "kgs": "18",
@@ -1266,7 +1266,7 @@
      "sahip": "SABAHADDİN ASLAN",
      "antrenor": "Y.TUNCAY",
      "st": "2",
-     "agf": "%4.37(8)",
+     "agf": "%4.48(6)",
      "h": "30",
      "son6": "K7K6K7K8Ç0Ç2",
      "kgs": "18",
@@ -1284,16 +1284,16 @@
      "sahip": "HALUK CANÇEKER",
      "antrenor": "İ.KÖROĞLU",
      "st": "13",
-     "agf": "%2.34(11)",
+     "agf": "%2.84(9)",
      "h": "31",
      "son6": "K6Ç5Ç3Ç7S5Ç6",
      "kgs": "15",
      "s20": "14",
-     "eniyi": "2:02.60"
+     "eniyi": ""
     }
    ],
    "ikramiye": "600.000 TL",
-   "odemeler": "GANYAN İKİLİ SIRALI İKİLİ PLASE PLASE İKİLİ SIRALI 5 Lİ BAHİS TABELA BAHİS TABELA BAHİS SIRASIZ SABİT GANYAN SABİT İKİLİ SABİT SIRALI İKİLİ SABİT İLK 2 SABİT İLK 3 SABİT İLK 4"
+   "odemeler": "GANYAN İKİLİ SIRALI İKİLİ PLASE PLASE İKİLİ SIRALI 5 Lİ BAHİS TABELA BAHİS TABELA BAHİS SIRASIZ"
   }
  ]
 }

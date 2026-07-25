@@ -1,0 +1,191 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +1.70",
+   "metin": "1. Koşu: ALBAYRAĞIN AKKUŞU (2) kilo 50 → 50 +1.70",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.60",
+   "metin": "1. Koşu: ICE BEAUTY (3) kilo 53 → 53 +0.60",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.40",
+   "metin": "1. Koşu: NIGHTMARE ENEMY (4) kilo 54 → 54 +0.40",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.00",
+   "metin": "1. Koşu: ROLYANA (5) kilo 52 → 52 +1.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "1. Koşu: YOU ARE A RAIN (6) kilo 54 → 54 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "2. Koşu: AFŞINTAY (6) kilo 56 → 56 +1.00",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.80",
+   "metin": "2. Koşu: COŞKUNTAY (9) kilo 54 → 54 +1.80",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.50",
+   "metin": "2. Koşu: SERİNTEPE (10) kilo 52 → 52 +1.50",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +0.80",
+   "metin": "2. Koşu: BORZEMİR (11) kilo 52 → 52 +0.80",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51,5",
+   "yeni": "51,5 +1.40",
+   "metin": "2. Koşu: KISAKÜREK (12) kilo 51,5 → 51,5 +1.40",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "3. Koşu: HASGÖKÇE (6) kilo 57 → 57 +0.10",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "3. Koşu: IŞIKLARLIM (7) kilo 57 → 57 +0.20",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "MY GİRL KG DB SK",
+   "yeni": "MY GİRL KG DB SK (Koşmaz)",
+   "metin": "3. Koşu: MY GİRL (8) KOŞMAZ",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.30",
+   "metin": "4. Koşu: ERDAĞI (5) kilo 56 → 56 +1.30",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.30",
+   "metin": "4. Koşu: EFSANEVİTAY (7) kilo 52 → 52 +1.30",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +0.50",
+   "metin": "4. Koşu: ERENDİZ (8) kilo 51 → 51 +0.50",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.10",
+   "metin": "4. Koşu: LOKUM HÜMA (10) kilo 52 → 52 +1.10",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.70",
+   "metin": "4. Koşu: SELMİNKIZ (11) kilo 53 → 53 +1.70",
+   "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +2.00",
+   "metin": "4. Koşu: ZAFER YILDIZI (12) kilo 50 → 50 +2.00",
+   "ts": "2026-07-25 15:59 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-25 15:59 UTC",
+ "sehir": "İzmir",
+ "etkilenen": {
+  "3": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
