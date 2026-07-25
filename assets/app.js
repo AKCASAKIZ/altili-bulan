@@ -982,13 +982,20 @@ function tagmRaceCard(r, leg) {
 /* ==================== KUPON ==================== */
 // Altılı blokları elle işaretlenir: her ayak Altılı-1 ve/veya Altılı-2'ye
 // ait olabilir (leg.a1 / leg.a2 — 2 altılı çakışabildiği için iki bağımsız
-// bayrak). Hiç işaret yoksa günün SON 6 koşusunu Altılı-1 kabul et.
+// bayrak). Hiç işaret yoksa varsayılan: Altılı-1 = İLK 6 koşu, Altılı-2 = SON 6
+// koşu. 10 koşuluk bir günde bu 1-6 ve 5-10 demektir; 5. ve 6. koşular ORTAK
+// ayak olur (iki kuponda birden yer alır).
 function ensureAltiliDefault() {
   if (state.legs.some((l) => l.a1 || l.a2)) return;
   const n = state.legs.length;
-  const start = n >= 6 ? n - 6 : 0;
-  state.legs.forEach((l, i) => { l.a1 = i >= start; });
+  state.legs.forEach((l, i) => {
+    l.a1 = i < 6;
+    l.a2 = n > 6 && i >= n - 6;
+  });
 }
+/* Bu ayak iki altılıda birden mi? Ortak ayaktaki bir hata İKİ kuponu birden
+   götürdüğü için burada daha geniş oynanır (bkz. legRecommendation). */
+function ortakAyak(leg) { return !!(leg.a1 && leg.a2); }
 function toggleAltili(li, b) {
   const key = "a" + b;
   state.legs[li][key] = !state.legs[li][key];
@@ -1037,6 +1044,9 @@ function legRecommendation(leg) {
     if (kTop - ort >= 3) reasons.push(`lider ${(kTop - ort).toFixed(1)} kg fazla taşıyor`);
   }
   if (arap) reasons.push("Arap koşusu — form genelde korunur");
+  // 7) ortak ayak: bu koşu iki altılıda birden; yanlış tahmin iki kuponu da
+  // götürür, o yüzden bir at geniş tutulur.
+  if (ortakAyak(leg)) { count++; reasons.push("ORTAK AYAK — iki kuponda birden (+1)"); }
 
   count = Math.max(1, Math.min(count, Math.min(6, field)));
   return { count, horses: ranked.slice(0, count).map((x) => x.h.no), reason: reasons.join("; ") };
@@ -1053,11 +1063,12 @@ function renderKupon() {
     const vm = valueMap(leg);
     const { probOf, max } = legProbs(leg);
     const div = document.createElement("div");
-    div.className = "kupon-leg" + (leg.a1 || leg.a2 ? " in-altili" : "");
+    div.className = "kupon-leg" + (leg.a1 || leg.a2 ? " in-altili" : "") + (ortakAyak(leg) ? " ortak-ayak" : "");
     div.innerHTML = `
       <div class="kupon-leg-head">
         <h4>${leg.raceNo}. Koşu <span class="hint">(${leg.saat || ""} · ${leg.mesafe || ""} ${leg.pist || ""}${leg.grup ? " · " + esc(leg.grup) : ""})</span></h4>
         <div class="altili-toggles">
+          ${ortakAyak(leg) ? `<span class="ortak-rozet" title="Bu koşu iki altılıda birden — buradaki hata iki kuponu birden götürür">ORTAK</span>` : ""}
           <button class="altili-tag alt1 ${leg.a1 ? "on" : ""}" title="Altılı-1'e ekle/çıkar">Altılı-1</button>
           <button class="altili-tag alt2 ${leg.a2 ? "on" : ""}" title="Altılı-2'ye ekle/çıkar">Altılı-2</button>
         </div>
