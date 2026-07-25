@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -261,9 +261,27 @@
    "yeni": "52 +1.40",
    "metin": "7. Koşu: MAMBERAMO (18) kilo 52 → 52 +1.40",
    "ts": "2026-07-25 16:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.20",
+   "metin": "7. Koşu: YOU ARE BIG (11) kilo 53 → 53 +0.20",
+   "ts": "2026-07-25 17:58 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.80",
+   "metin": "7. Koşu: OJO TURCO (15) kilo 54 → 54 +1.80",
+   "ts": "2026-07-25 17:58 UTC"
   }
  ],
- "guncelleme": "2026-07-25 16:57 UTC",
+ "guncelleme": "2026-07-25 17:58 UTC",
  "sehir": "İzmir",
  "etkilenen": {
   "3": [

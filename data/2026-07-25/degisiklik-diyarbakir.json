@@ -1,0 +1,17 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.80",
+   "metin": "1. Koşu: TOYPINAR (11) kilo 55 → 55 +0.80",
+   "ts": "2026-07-25 17:58 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-25 17:58 UTC",
+ "sehir": "Diyarbakır",
+ "etkilenen": {}
+}
