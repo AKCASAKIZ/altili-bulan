@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -171,9 +171,99 @@
    "yeni": "50 +2.00",
    "metin": "4. Koşu: ZAFER YILDIZI (12) kilo 50 → 50 +2.00",
    "ts": "2026-07-25 15:59 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.80",
+   "metin": "7. Koşu: AYCOO THUNDER (4) kilo 56 → 56 +0.80",
+   "ts": "2026-07-25 16:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.30",
+   "metin": "7. Koşu: FEEL THE BATTLE (5) kilo 56 → 56 +1.30",
+   "ts": "2026-07-25 16:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.30",
+   "metin": "7. Koşu: IRON TEMPEST (6) kilo 56 → 56 +0.30",
+   "ts": "2026-07-25 16:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.30",
+   "metin": "7. Koşu: NIGHT RUNNER (9) kilo 52 → 52 +1.30",
+   "ts": "2026-07-25 16:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.30",
+   "metin": "7. Koşu: ORION BELT (10) kilo 56 → 56 +0.30",
+   "ts": "2026-07-25 16:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.60",
+   "metin": "7. Koşu: CALL TO WARRIOR (12) kilo 52 → 52 +1.60",
+   "ts": "2026-07-25 16:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "7. Koşu: DARK RİSHA (13) kilo 52 → 52 +2.00",
+   "ts": "2026-07-25 16:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.00",
+   "metin": "7. Koşu: ETERNAL STORM (14) kilo 54 → 54 +1.00",
+   "ts": "2026-07-25 16:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.80",
+   "metin": "7. Koşu: LOVE IN MELİSA (16) kilo 54 → 54 +1.80",
+   "ts": "2026-07-25 16:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.40",
+   "metin": "7. Koşu: MAMBERAMO (18) kilo 52 → 52 +1.40",
+   "ts": "2026-07-25 16:57 UTC"
   }
  ],
- "guncelleme": "2026-07-25 15:59 UTC",
+ "guncelleme": "2026-07-25 16:57 UTC",
  "sehir": "İzmir",
  "etkilenen": {
   "3": [
