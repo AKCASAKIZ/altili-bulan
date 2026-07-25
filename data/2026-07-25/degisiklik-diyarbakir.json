@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -9,9 +9,144 @@
    "yeni": "55 +0.80",
    "metin": "1. Koşu: TOYPINAR (11) kilo 55 → 55 +0.80",
    "ts": "2026-07-25 17:58 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.90",
+   "metin": "2. Koşu: Bİ ANKA (2) kilo 55 → 55 +1.90",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.00",
+   "metin": "2. Koşu: AFRİKA KIZI (3) kilo 55 → 55 +1.00",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.60",
+   "metin": "2. Koşu: ASİL CEMRE (4) kilo 55 → 55 +0.60",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.50",
+   "metin": "2. Koşu: ÇEŞMEBAŞI (5) kilo 55 → 55 +1.50",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.50",
+   "metin": "2. Koşu: ÇİÇEKMAST (6) kilo 55 → 55 +1.50",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.70",
+   "metin": "2. Koşu: KRALİÇE SEZİN (7) kilo 55 → 55 +0.70",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "2. Koşu: NANDAR (8) kilo 55 → 55 +2.00",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "2. Koşu: PRINCESS GIRL (9) kilo 57 → 57 +2.00",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.80",
+   "metin": "2. Koşu: YETİMABLA (10) kilo 57 → 57 +1.80",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.70",
+   "metin": "2. Koşu: EGENİN PRENSESİ (11) kilo 55 → 55 +0.70",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "61",
+   "yeni": "61 +0.20",
+   "metin": "3. Koşu: TEK OZANIM (3) kilo 61 → 61 +0.20",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +1.80",
+   "metin": "3. Koşu: MİRA CETİ (4) kilo 54,5 → 54,5 +1.80",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +0.50",
+   "metin": "3. Koşu: MARDİ GRAS (5) kilo 56,5 → 56,5 +0.50",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +1.70",
+   "metin": "3. Koşu: KING ENSAR (6) kilo 54,5 → 54,5 +1.70",
+   "ts": "2026-07-25 19:09 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "3. Koşu: VOICE OF REASON (7) kilo 52 → 52 +2.00",
+   "ts": "2026-07-25 19:09 UTC"
   }
  ],
- "guncelleme": "2026-07-25 17:58 UTC",
+ "guncelleme": "2026-07-25 19:09 UTC",
  "sehir": "Diyarbakır",
  "etkilenen": {}
 }
