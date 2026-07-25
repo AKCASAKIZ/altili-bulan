@@ -264,6 +264,22 @@ tr.top-row .sticky-col { background: var(--gold-soft); }
   text-align: center; color: var(--text-dim); padding: 48px 20px; font-size: 14px;
   background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius);
 }
+/* "Bu şartta kim kazanmış" paneli (assets/sart.js — G2) */
+.sart-box {
+  margin-top: 16px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 14px;
+}
+.sart-box summary { cursor: pointer; }
+.sart-bant { font-size: 13px; margin: 6px 0 10px; }
+.sart-tablo th, .sart-tablo td { font-size: 12px; white-space: nowrap; }
+.sart-oz {
+  display: inline-block; border-radius: 6px; padding: 1px 7px; margin: 1px 2px;
+  font-size: 11px; border: 1px solid var(--border);
+}
+.sart-tam { background: var(--accent-soft); color: var(--accent-text); font-weight: 700; }
+.sart-yari { background: var(--surface2); color: var(--text); }
+.sart-yok { background: transparent; color: var(--text-dim); opacity: .7; }
+
 /* Program değişikliği uyarı şeridi (assets/degisiklik.js) */
 .deg-serit {
   background: color-mix(in srgb, #e8a33d 16%, var(--surface));
