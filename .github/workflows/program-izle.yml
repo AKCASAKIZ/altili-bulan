@@ -15,8 +15,10 @@ on:
 permissions:
   contents: write
 
+# Grup adı gunluk-veri.yml ile ORTAK: ikisi de data/ altına yazıp push ettiği
+# için aynı anda çalışırlarsa push çakışıyor.
 concurrency:
-  group: program-izle
+  group: veri-yazma
   cancel-in-progress: false
 
 jobs:
@@ -46,6 +48,7 @@ jobs:
             for i in 1 2 3; do
               if git push; then break; fi
               echo "Push reddedildi, rebase edip yeniden deneniyor ($i/3)…"
-              git pull --rebase origin main
+              git fetch origin main
+              git rebase -X theirs origin/main || { git rebase --abort; echo "Rebase çözülemedi; 20 dk sonraki koşu yeniden dener."; exit 1; }
             done
           fi
