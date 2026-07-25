@@ -187,6 +187,27 @@ function restoreSession() {
   state.legs = s?.legs || [];
   state.picks = s?.picks || [];
   state.activeLeg = Math.min(s?.activeLeg || 0, Math.max(0, state.legs.length - 1));
+  tazeleMeta();
+}
+
+/* Eski oturumlar programa sonradan eklenen meta alanlarını içermez (ör. G1 için
+   şart olan handikap `h`) — bu yüzden kriter sessizce atlanır. Kayıtlı puanlara
+   dokunmadan yalnız EKSİK meta alanlarını günün programından tamamlar. */
+function tazeleMeta() {
+  if (!state.program?.races || !state.legs.length) return;
+  for (const leg of state.legs) {
+    const race = state.program.races.find((r) => r.no === leg.raceNo);
+    if (!race?.horses) continue;
+    for (const h of leg.horses) {
+      const key = temizle(h.ad);
+      const p = race.horses.find((x) => String(x.no) === String(h.no) && temizle(x.ad) === key)
+             || race.horses.find((x) => temizle(x.ad) === key);
+      if (!p) continue;
+      h.meta = h.meta || {};
+      const yeni = { kgs: p.kgs, son6: p.son6, eniyi: p.eniyi, agf: p.agf, h: p.h, jokey: p.jokey, kilo: p.kilo, sahip: p.sahip, antrenor: p.antrenor, st: p.st };
+      for (const [k, v] of Object.entries(yeni)) if (h.meta[k] == null && v != null && v !== "") h.meta[k] = v;
+    }
+  }
 }
 
 /* ==================== PUANLAMA ==================== */
@@ -1490,7 +1511,7 @@ function formatIdmanSon(rows) {
 
 
 /* ===== dergi.js entegrasyonu için dışa açılan kancalar ===== */
-window.AB = { state, ANGLES, RANK5, saveSession, renderAll, renderScoreTable, rankedHorses, slugify, esc, LS };
+window.AB = { state, ANGLES, RANK5, saveSession, renderAll, renderScoreTable, rankedHorses, slugify, esc, LS, scoreLeg, temizle };
 
 /* ==================== F1: UZMAN TAHMİNLERİ ====================
  * Tahminci listesi tutulur (ör. Ferdi Akıncı, Final, Ferhat Pusa); YouTube/dergi
