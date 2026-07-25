@@ -11,5 +11,6 @@
  "erken_gec_delta_ema": 4.349,
  "son_atak_delta_ema": 1.537,
  "son_guncelleme": "2026-07-24-bursa-10",
- "gecmis_dolduruldu": true
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

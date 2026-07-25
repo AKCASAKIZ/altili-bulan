@@ -15,5 +15,6 @@
  "erken_gec_delta_ema": 0.366,
  "son_guncelleme": "2026-07-24-istanbul-8",
  "son_atak_delta_ema": -0.3,
- "gecmis_dolduruldu": true
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }
