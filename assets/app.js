@@ -1006,18 +1006,28 @@ function tagmRaceCard(r, leg) {
 // bayrak). Hiç işaret yoksa varsayılan: Altılı-1 = İLK 6 koşu, Altılı-2 = SON 6
 // koşu. 10 koşuluk bir günde bu 1-6 ve 5-10 demektir; 5. ve 6. koşular ORTAK
 // ayak olur (iki kuponda birden yer alır).
+// İki altılı ancak günün koşu sayısı yeterliyse oynanır: her blok 6 ayak
+// olduğundan 9'dan az koşulu günde ikinci altılı diye bir şey yoktur (tek
+// altılı koşulur). Bu günlerde Altılı-2 düğmesi hiç gösterilmez ve eski
+// oturumlardan kalmış a2 işaretleri temizlenir.
+const IKI_ALTILI_MIN = 9;
+function ikiAltiliVar() { return state.legs.length >= IKI_ALTILI_MIN; }
+
 function ensureAltiliDefault() {
-  if (state.legs.some((l) => l.a1 || l.a2)) return;
   const n = state.legs.length;
+  if (!ikiAltiliVar()) state.legs.forEach((l) => { delete l.a2; });
+  if (state.legs.some((l) => l.a1 || l.a2)) return;
   state.legs.forEach((l, i) => {
     l.a1 = i < 6;
-    l.a2 = n > 6 && i >= n - 6;
+    l.a2 = n >= IKI_ALTILI_MIN && i >= n - 6;
   });
 }
 /* Bu ayak iki altılıda birden mi? Ortak ayaktaki bir hata İKİ kuponu birden
    götürdüğü için burada daha geniş oynanır (bkz. legRecommendation). */
 function ortakAyak(leg) { return !!(leg.a1 && leg.a2); }
 function toggleAltili(li, b) {
+  if (b === 2 && !ikiAltiliVar())
+    return alert(`Bu günde ${state.legs.length} koşu var — ikinci altılı için en az ${IKI_ALTILI_MIN} koşu gerekir.`);
   const key = "a" + b;
   state.legs[li][key] = !state.legs[li][key];
   saveSession(); renderKupon();
@@ -1090,13 +1100,14 @@ function renderKupon() {
         <h4>${leg.raceNo}. Koşu <span class="hint">(${leg.saat || ""} · ${leg.mesafe || ""} ${leg.pist || ""}${leg.grup ? " · " + esc(leg.grup) : ""})</span></h4>
         <div class="altili-toggles">
           ${ortakAyak(leg) ? `<span class="ortak-rozet" title="Bu koşu iki altılıda birden — buradaki hata iki kuponu birden götürür">ORTAK</span>` : ""}
-          <button class="altili-tag alt1 ${leg.a1 ? "on" : ""}" title="Altılı-1'e ekle/çıkar">Altılı-1</button>
-          <button class="altili-tag alt2 ${leg.a2 ? "on" : ""}" title="Altılı-2'ye ekle/çıkar">Altılı-2</button>
+          <button class="altili-tag alt1 ${leg.a1 ? "on" : ""}" title="Altılıya ekle/çıkar">${ikiAltiliVar() ? "Altılı-1" : "Altılı"}</button>
+          ${ikiAltiliVar() ? `<button class="altili-tag alt2 ${leg.a2 ? "on" : ""}" title="Altılı-2'ye ekle/çıkar">Altılı-2</button>` : ""}
         </div>
       </div>
       <div class="rec-badge">🎯 Öneri: <b>${rec.count} at</b> — <span class="rec-reason">${esc(rec.reason)}</span></div>`;
     div.querySelector(".alt1").onclick = () => toggleAltili(li, 1);
-    div.querySelector(".alt2").onclick = () => toggleAltili(li, 2);
+    const alt2Btn = div.querySelector(".alt2");
+    if (alt2Btn) alt2Btn.onclick = () => toggleAltili(li, 2);
     const wrap = document.createElement("div");
     wrap.className = "kupon-horses";
     ranked.forEach(({ h, score }, ri) => {
@@ -1135,13 +1146,13 @@ function renderKuponSummary() {
       return `<tr><td>${x.l.raceNo}. Koşu</td><td class="tk-picks">${picks.length ? picks.join(" - ") : '<span class="hint">boş</span>'}</td></tr>`;
     }).join("");
     html += `<div class="ticket">
-      <div class="ticket-head">🎯 ALTILI-${bl} <span class="hint">(${legs.length} ayak)</span></div>
+      <div class="ticket-head">🎯 ${ikiAltiliVar() ? "ALTILI-" + bl : "ALTILI"} <span class="hint">(${legs.length} ayak)</span></div>
       <table class="ticket-table"><tbody>${rows}</tbody></table>
       <div class="ticket-foot">Dolu: <b>${filled.length}/${legs.length}</b> · Kombinasyon: <b>${combo.toLocaleString("tr-TR")}</b> · Tutar: <b>${(combo * price).toLocaleString("tr-TR", { maximumFractionDigits: 2 })} TL</b></div>
     </div>`;
   }
   $("#kuponSummary").innerHTML = html ||
-    `<span class="hint">Henüz Altılı bloğu tanımlı değil. Ayak başlıklarındaki "Altılı-1 / Altılı-2" düğmeleriyle koşuları bloklara ekleyin (bir koşu iki altılıda birden olabilir).</span>`;
+    `<span class="hint">Henüz Altılı bloğu tanımlı değil. Ayak başlıklarındaki ${ikiAltiliVar() ? `"Altılı-1 / Altılı-2" düğmeleriyle koşuları bloklara ekleyin (bir koşu iki altılıda birden olabilir)` : `"Altılı" düğmesiyle 6 koşuyu işaretleyin`}.</span>`;
 }
 
 // "Öneriye göre doldur": her ayağa legRecommendation'ın önerdiği atları yazar.
