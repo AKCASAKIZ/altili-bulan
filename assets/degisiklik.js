@@ -120,7 +120,8 @@
       const mevcut = new Map(leg.horses.map((h) => [+h.no, h]));
       for (const p of guncel) {
         const meta = { kgs: p.kgs, son6: p.son6, eniyi: p.eniyi, agf: p.agf, h: p.h,
-                       jokey: p.jokey, kilo: p.kilo, sahip: p.sahip, antrenor: p.antrenor, st: p.st };
+                       jokey: p.jokey, kilo: p.kilo, sahip: p.sahip, antrenor: p.antrenor,
+                       st: p.st, yas: p.yas };
         const h = mevcut.get(+p.no);
         if (h) { h.ad = p.ad; h.meta = Object.assign(h.meta || {}, meta); }
         else { leg.horses.push({ no: +p.no, ad: p.ad, scores: {}, meta }); eklenen++; }
