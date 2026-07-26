@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -108,9 +108,86 @@
    "yeni": "52 +2.00",
    "metin": "3. Koşu: FEHİMOĞLU (13) kilo 52 → 52 +2.00",
    "ts": "2026-07-26 15:57 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "BAD REFTAR KG K DB",
+   "yeni": "BAD REFTAR KG K DB (Koşmaz)",
+   "metin": "3. Koşu: BAD REFTAR (2) KOŞMAZ",
+   "ts": "2026-07-26 16:58 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "3. Koşu: KING GÖKÇE (10) kilo 52 → 52 +2.00",
+   "ts": "2026-07-26 16:58 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.40",
+   "metin": "3. Koşu: BABA ÇAKMAK (11) kilo 52 → 52 +1.40",
+   "ts": "2026-07-26 16:58 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.50",
+   "metin": "3. Koşu: AYTEKİNBEY (14) kilo 52 → 52 +1.50",
+   "ts": "2026-07-26 16:58 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.80",
+   "metin": "3. Koşu: DEMİRNAL (15) kilo 52 → 52 +1.80",
+   "ts": "2026-07-26 16:58 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "PRINCESS ALEXANDRA KG DB SK",
+   "yeni": "PRINCESS ALEXANDRA KG DB SK (Koşmaz)",
+   "metin": "6. Koşu: PRINCESS ALEXANDRA (9) KOŞMAZ",
+   "ts": "2026-07-26 16:58 UTC"
   }
  ],
- "guncelleme": "2026-07-26 15:57 UTC",
+ "guncelleme": "2026-07-26 16:58 UTC",
  "sehir": "İzmir",
- "etkilenen": {}
+ "etkilenen": {
+  "3": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "6": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
 }
