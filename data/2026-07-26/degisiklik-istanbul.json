@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -72,9 +72,81 @@
    "yeni": "AYBENOVA KG DB SK (Koşmaz)",
    "metin": "10. Koşu: AYBENOVA (12) KOŞMAZ",
    "ts": "2026-07-26 10:46 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "2. Koşu: DEJAME (3) kilo 56 → 56 +1.00",
+   "ts": "2026-07-26 11:57 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.40",
+   "metin": "2. Koşu: TRAİDORA (5) kilo 56 → 56 +0.40",
+   "ts": "2026-07-26 11:57 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.10",
+   "metin": "2. Koşu: RAYMOND BABBITT (6) kilo 54 → 54 +1.10",
+   "ts": "2026-07-26 11:57 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "2. Koşu: BOLD STEPS (7) kilo 52 → 52 +2.00",
+   "ts": "2026-07-26 11:57 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "3. Koşu: INDIANA JONES (4) kilo 52 → 52 +2.00",
+   "ts": "2026-07-26 11:57 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "3. Koşu: ALDANA (5) kilo 53 → 53 +2.00",
+   "ts": "2026-07-26 11:57 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "4. Koşu: EFE KAPTAN (4) kilo 57 → 57 +0.20",
+   "ts": "2026-07-26 11:57 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "4. Koşu: NAZÇEKMEZ (10) kilo 52 → 52 +2.00",
+   "ts": "2026-07-26 11:57 UTC"
   }
  ],
- "guncelleme": "2026-07-26 10:46 UTC",
+ "guncelleme": "2026-07-26 11:57 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "10": [
