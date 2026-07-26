@@ -1,6 +1,6 @@
 {
  "ad": "MİRZA BEY",
- "kosu_sayisi": 9,
+ "kosu_sayisi": 10,
  "islenen_yarislar": [
   "2025-01-28-antalya-3-backfill",
   "2025-02-11-antalya-5-backfill",
@@ -10,10 +10,12 @@
   "2026-02-26-antalya-1-backfill",
   "2026-03-31-antalya-5-backfill",
   "2026-07-15-istanbul-3-backfill",
-  "2026-07-15-istanbul-3"
+  "2026-07-15-istanbul-3",
+  "2026-07-26-istanbul-10"
  ],
- "erken_gec_delta_ema": -0.799,
- "son_atak_delta_ema": 0.0,
- "son_guncelleme": "2026-07-15-istanbul-3",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -2.659,
+ "son_atak_delta_ema": -1.8,
+ "son_guncelleme": "2026-07-26-istanbul-10",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

@@ -1,0 +1,26 @@
+{
+ "ad": "ERİŞMİŞ",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-12-26-antalya-3-backfill",
+  "2026-01-15-antalya-4-backfill",
+  "2026-01-29-antalya-8-backfill",
+  "2026-02-05-antalya-2-backfill",
+  "2026-02-13-antalya-5-backfill",
+  "2026-02-26-antalya-4-backfill",
+  "2026-03-05-antalya-3-backfill",
+  "2026-03-10-antalya-2-backfill",
+  "2026-03-19-antalya-7-backfill",
+  "2026-03-31-antalya-4-backfill",
+  "2026-04-30-ankara-8-backfill",
+  "2026-05-19-ankara-9-backfill",
+  "2026-06-11-ankara-7-backfill",
+  "2026-06-18-ankara-5-backfill",
+  "2026-07-26-istanbul-8"
+ ],
+ "erken_gec_delta_ema": 1.034,
+ "son_atak_delta_ema": 0.81,
+ "son_guncelleme": "2026-07-26-istanbul-8",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

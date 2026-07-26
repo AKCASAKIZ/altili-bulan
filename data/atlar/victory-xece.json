@@ -1,12 +1,14 @@
 {
  "ad": "VICTORY XECE",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2026-06-22-elazig-2-backfill",
   "2026-07-07-kocaeli-3-backfill",
-  "2026-07-17-istanbul-5"
+  "2026-07-17-istanbul-5",
+  "2026-07-26-istanbul-3"
  ],
- "erken_gec_delta_ema": 0.245,
- "son_guncelleme": "2026-07-17-istanbul-5",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 0.322,
+ "son_guncelleme": "2026-07-26-istanbul-3",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
 }

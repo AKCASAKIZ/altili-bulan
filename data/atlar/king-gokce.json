@@ -1,6 +1,6 @@
 {
  "ad": "KING GÖKÇE",
- "kosu_sayisi": 13,
+ "kosu_sayisi": 14,
  "islenen_yarislar": [
   "2025-06-04-istanbul-9-backfill",
   "2025-10-31-istanbul-5-backfill",
@@ -14,10 +14,12 @@
   "2026-05-28-izmir-9-backfill",
   "2026-06-06-izmir-4-backfill",
   "2026-06-25-bursa-5-backfill",
-  "2026-07-12-izmir-3"
+  "2026-07-12-izmir-3",
+  "2026-07-26-izmir-3"
  ],
- "erken_gec_delta_ema": 4.095,
- "son_guncelleme": "2026-07-12-izmir-3",
- "son_atak_delta_ema": 0.0,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 3.166,
+ "son_guncelleme": "2026-07-26-izmir-3",
+ "son_atak_delta_ema": 0.9,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

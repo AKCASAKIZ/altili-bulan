@@ -1,0 +1,26 @@
+{
+ "ad": "BAHİSÇİ",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-12-21-izmir-9-backfill",
+  "2026-01-02-izmir-1-backfill",
+  "2026-01-11-izmir-3-backfill",
+  "2026-01-18-izmir-2-backfill",
+  "2026-01-29-izmir-3-backfill",
+  "2026-02-12-izmir-1-backfill",
+  "2026-02-22-izmir-5-backfill",
+  "2026-03-08-izmir-3-backfill",
+  "2026-03-15-izmir-1-backfill",
+  "2026-04-09-izmir-1-backfill",
+  "2026-05-02-izmir-9-backfill",
+  "2026-05-16-izmir-9-backfill",
+  "2026-06-21-izmir-3-backfill",
+  "2026-07-26-izmir-2-backfill",
+  "2026-07-26-izmir-2"
+ ],
+ "erken_gec_delta_ema": -2.105,
+ "son_atak_delta_ema": -2.582,
+ "son_guncelleme": "2026-07-26-izmir-2",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

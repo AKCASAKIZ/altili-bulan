@@ -1,12 +1,14 @@
 {
  "ad": "CİHANDERE",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2026-07-10-istanbul-3",
-  "2026-07-17-istanbul-6"
+  "2026-07-17-istanbul-6",
+  "2026-07-26-istanbul-1"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -1.75,
- "son_guncelleme": "2026-07-17-istanbul-6",
- "son_atak_delta_ema": 0
+ "erken_gec_delta_ema": -1.525,
+ "son_guncelleme": "2026-07-26-istanbul-1",
+ "son_atak_delta_ema": -0.6,
+ "gecmis_surum": 2
 }

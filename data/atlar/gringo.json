@@ -1,6 +1,6 @@
 {
  "ad": "GRİNGO",
- "kosu_sayisi": 7,
+ "kosu_sayisi": 8,
  "islenen_yarislar": [
   "2025-12-03-istanbul-1-backfill",
   "2026-01-03-istanbul-3-backfill",
@@ -8,10 +8,12 @@
   "2026-06-10-istanbul-1-backfill",
   "2026-06-17-istanbul-3-backfill",
   "2026-07-10-istanbul-4-backfill",
-  "2026-07-10-istanbul-4"
+  "2026-07-10-istanbul-4",
+  "2026-07-26-istanbul-10"
  ],
- "erken_gec_delta_ema": -0.132,
- "son_guncelleme": "2026-07-10-istanbul-4",
- "son_atak_delta_ema": -0.147,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.092,
+ "son_guncelleme": "2026-07-26-istanbul-10",
+ "son_atak_delta_ema": -0.103,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

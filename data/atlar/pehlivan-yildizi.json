@@ -1,0 +1,22 @@
+{
+ "ad": "PEHLİVAN YILDIZI",
+ "kosu_sayisi": 11,
+ "islenen_yarislar": [
+  "2025-02-02-izmir-3-backfill",
+  "2025-02-23-izmir-2-backfill",
+  "2025-03-16-izmir-5-backfill",
+  "2025-04-03-izmir-3-backfill",
+  "2025-05-11-istanbul-4-backfill",
+  "2025-07-14-bursa-8-backfill",
+  "2025-10-19-istanbul-8-backfill",
+  "2026-03-01-izmir-5-backfill",
+  "2026-03-15-izmir-3-backfill",
+  "2026-06-05-bursa-7-backfill",
+  "2026-07-26-istanbul-6"
+ ],
+ "erken_gec_delta_ema": 1.479,
+ "son_atak_delta_ema": 0.49,
+ "son_guncelleme": "2026-07-26-istanbul-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

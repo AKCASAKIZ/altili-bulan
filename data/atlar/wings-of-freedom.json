@@ -1,11 +1,13 @@
 {
  "ad": "WINGS OF FREEDOM",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-18-izmir-4"
+  "2026-07-18-izmir-4",
+  "2026-07-26-izmir-2"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": 4.5,
- "son_atak_delta_ema": 2,
- "son_guncelleme": "2026-07-18-izmir-4"
+ "erken_gec_delta_ema": 3.75,
+ "son_atak_delta_ema": 1.7,
+ "son_guncelleme": "2026-07-26-izmir-2",
+ "gecmis_surum": 2
 }

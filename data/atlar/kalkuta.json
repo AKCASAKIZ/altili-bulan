@@ -1,0 +1,20 @@
+{
+ "ad": "KALKÜTA",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-03-09-adana-1-backfill",
+  "2025-03-20-antalya-1-backfill",
+  "2025-10-12-adana-8-backfill",
+  "2025-10-30-ankara-8-backfill",
+  "2026-03-08-adana-5-backfill",
+  "2026-04-04-adana-5-backfill",
+  "2026-04-25-ankara-5-backfill",
+  "2026-05-29-istanbul-5-backfill",
+  "2026-07-26-istanbul-7"
+ ],
+ "erken_gec_delta_ema": -0.94,
+ "son_atak_delta_ema": -1.113,
+ "son_guncelleme": "2026-07-26-istanbul-7",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

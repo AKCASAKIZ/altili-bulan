@@ -1,6 +1,6 @@
 {
  "ad": "ŞİMŞEK YELELİ",
- "kosu_sayisi": 7,
+ "kosu_sayisi": 8,
  "islenen_yarislar": [
   "2025-07-22-kocaeli-1-backfill",
   "2025-10-22-istanbul-1-backfill",
@@ -8,9 +8,11 @@
   "2026-04-11-istanbul-4-backfill",
   "2026-04-24-istanbul-5-backfill",
   "2026-07-17-istanbul-2-backfill",
-  "2026-07-17-istanbul-2"
+  "2026-07-17-istanbul-2",
+  "2026-07-26-istanbul-9"
  ],
- "erken_gec_delta_ema": 3.304,
- "son_guncelleme": "2026-07-17-istanbul-2",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 3.363,
+ "son_guncelleme": "2026-07-26-istanbul-9",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 4
 }

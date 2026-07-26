@@ -1,0 +1,20 @@
+{
+ "ad": "QUEEN PROTEO",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-01-28-adana-7-backfill",
+  "2025-02-23-adana-3-backfill",
+  "2025-12-18-antalya-6-backfill",
+  "2026-01-20-antalya-2-backfill",
+  "2026-02-12-antalya-7-backfill",
+  "2026-03-05-antalya-6-backfill",
+  "2026-05-17-istanbul-8-backfill",
+  "2026-07-26-istanbul-6-backfill",
+  "2026-07-26-istanbul-6"
+ ],
+ "erken_gec_delta_ema": 2.197,
+ "son_atak_delta_ema": 2.451,
+ "son_guncelleme": "2026-07-26-istanbul-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

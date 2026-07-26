@@ -1,6 +1,6 @@
 {
  "ad": "AYTEKİNBEY",
- "kosu_sayisi": 7,
+ "kosu_sayisi": 8,
  "islenen_yarislar": [
   "2025-08-03-istanbul-3-backfill",
   "2025-08-29-istanbul-4-backfill",
@@ -8,10 +8,12 @@
   "2025-09-19-bursa-6-backfill",
   "2026-06-28-izmir-6-backfill",
   "2026-07-12-izmir-5-backfill",
-  "2026-07-12-izmir-5"
+  "2026-07-12-izmir-5",
+  "2026-07-26-izmir-3"
  ],
- "erken_gec_delta_ema": -1.607,
- "son_guncelleme": "2026-07-12-izmir-5",
- "son_atak_delta_ema": 0,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.825,
+ "son_guncelleme": "2026-07-26-izmir-3",
+ "son_atak_delta_ema": 0.3,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }
