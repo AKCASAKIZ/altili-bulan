@@ -99,7 +99,8 @@
 
   <!-- BACKTEST -->
   <section id="tab-backtest" class="tab-pane">
-    <p class="hint">📈 <b>Backtest</b> — depodaki tüm gün/hipodromlar için otomatik puanlama (B5, B6, B7, B8, B13, D1, D2) geriye dönük çalıştırılır ve yayınlanmış sonuçlarla karşılaştırılır: 1. tercihin kazanma/tabela isabeti, ganyan üzerinden ROI, AGF favorisi kıyası ve 💎 value bahis performansı. "Katsayı öner" düğmesi aynı veriyle koşu-içi lojistik model (conditional logit) eğitip otomatik puanlanan kriterler için katsayı önerir.</p>
+    <p class="hint">📈 <b>Backtest</b> — depodaki tüm gün/hipodromlar için otomatik puanlama (B5, B6, B7, B8, B13, D1, D2) geriye dönük çalıştırılır ve yayınlanmış sonuçlarla karşılaştırılır: 1. tercihin kazanma/tabela isabeti, ganyan üzerinden ROI, AGF favorisi kıyası ve 💎 value bahis performansı. Ayrıca <b>altılı kupon simülasyonu</b>: ayaklar TJK'nın "6'LI GANYAN" ödeme satırından çıkarılır, "autoKupon" politikası ile "her ayakta tek tercih" kıyas çizgisi gerçek altılı ödemeleri üzerinden yan yana ölçülür. "Katsayı öner" düğmesi aynı veriyle koşu-içi lojistik model (conditional logit) eğitip otomatik puanlanan kriterler için katsayı önerir.</p>
+    <p class="hint">🔒 <b>Sızıntı koruması:</b> geriye dönük puanlamada jokey/antrenör/kulvar toplamları ve 90 günlük sahip/antrenör listeleri, arşivin tamamından değil o ayın başı itibariyle bilinenlerden (<code>data/arsiv/stats-ay/</code>) okunur; at geçmişi ve şart bantları da gün filtresinden geçer. Yine de ay içi kalan küçük bir sızıntı payı vardır — sonuçları gerçek getiri garantisi değil, göreli kıyas olarak okuyun.</p>
     <div class="toolbar">
       <button id="btnRunBacktest" class="btn btn-accent">▶ Backtest çalıştır</button>
       <button id="btnSuggestCoefs" class="btn">🧮 Katsayı öner</button>
