@@ -1,5 +1,5 @@
 {
- "surum": 4,
+ "surum": 5,
  "olaylar": [
   {
    "kosu": 1,
@@ -234,9 +234,18 @@
    "yeni": "54 +0.80",
    "metin": "9. Koşu: ZİNAMIN (9) kilo 54 → 54 +0.80",
    "ts": "2026-07-26 14:45 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "10. Koşu: BABA MESUT (13) kilo 52 → 52 +2.00",
+   "ts": "2026-07-26 15:57 UTC"
   }
  ],
- "guncelleme": "2026-07-26 14:45 UTC",
+ "guncelleme": "2026-07-26 15:57 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "10": [
