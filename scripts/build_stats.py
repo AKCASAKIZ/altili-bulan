@@ -17,19 +17,27 @@ kullanabileceği özet istatistikleri üretir → data/arsiv/stats.json
                 son6:[[tarih,sıra,ganyan,pist,rakip_hp_ort,agf_sıra]…],   (son ikisi G1)
                 pk: pist → [koşu, ilk3], mg: mesafe_grubu → [koşu, ilk3]}  (kariyer kırılımı, B2/B3)
 
+Ayrıca data/arsiv/stats-ay/{YYYY-MM}.json: o ayın 1'i itibariyle bilinen
+jokey/antrenor/kulvar/sahip90/antrenor90 tabloları. Backtest geriye dönük bir
+günü puanlarken stats.json'daki (tüm arşivden hesaplı, yani o günün geleceğini
+de gören) karşılıklarının yerine bunları kullanır.
+
 Kullanım: python scripts/build_stats.py
 """
 import json
 import re
+from datetime import datetime, timedelta
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
 ARSIV = BASE / "data" / "arsiv"
+AYLIK = ARSIV / "stats-ay"
 
 MIN_JOKEY = 20     # bu sayının altında koşusu olan jokey/antrenör E1/E2 özetine girmez
 MIN_KULVAR = 30    # kulvar hücresi için minimum start sayısı
 GUN90 = 90         # A1/B16 "başarılı sahip/antrenör" listesinin penceresi (gün)
 BOMBA_GANYAN = 10.0  # bu ganyan ve üstündeki galibiyet "sürpriz" sayılır (B11)
+PUAN = {1: 4, 2: 2, 3: 1}  # A1/B16 ilk-3 puanlaması
 
 # app.js'teki temizle() ile aynı: ekipman eklerini attan ayır
 EKIP_RE = re.compile(
@@ -97,6 +105,44 @@ def esikler(puanlar: list[float]) -> list[float]:
     return [max(ust, 3), max(orta, 2)]
 
 
+def pencere90(ilk3: list, bitis: int) -> tuple[dict, dict]:
+    """`bitis` gününden ÖNCEKİ 90 günün ilk-3 puanları (A1/B16)."""
+    kesim = int((datetime.strptime(str(bitis), "%Y%m%d")
+                 - timedelta(days=GUN90)).strftime("%Y%m%d"))
+    sahip, antr = {}, {}
+    for gi, sah, ant, sira in ilk3:
+        if not (kesim <= gi < bitis):
+            continue
+        if sah:
+            sahip[sah] = sahip.get(sah, 0) + PUAN[sira]
+        if ant:
+            antr[ant] = antr.get(ant, 0) + PUAN[sira]
+    return sahip, antr
+
+
+def sizan_tablolar(jokey: dict, antrenor: dict, kulvar: dict,
+                   ilk3: list, bitis: int) -> dict:
+    """stats.json'un TÜM arşivden hesaplanan — yani geriye dönük puanlamada
+    geleceği gören — tabloları: E1/E2 (jokey/antrenör), E3 (kulvar), A1/B16
+    (90 günlük sahip/antrenör listesi). Burada `bitis` gününe kadar bilinen
+    hâlleriyle üretilir; backtest o günün ayına ait dosyayı yükleyip
+    stats.json'daki karşılıklarının üzerine biner.
+
+    at / sahip_son / antrenor_son burada YOK: onlar istemci tarafında zaten
+    gün filtresinden geçiyor (app.js'teki gecerliSon ve son6 kontrolü)."""
+    sahip90, antrenor90 = pencere90(ilk3, bitis)
+    return {
+        "bitis": bitis,
+        "jokey": {a: v for a, v in jokey.items() if v[0] >= MIN_JOKEY},
+        "antrenor": {a: v for a, v in antrenor.items() if v[0] >= MIN_JOKEY},
+        "kulvar": {k: c for k, c in
+                   (((k, {g: v for g, v in cell.items() if v[0] >= MIN_KULVAR})
+                     for k, cell in kulvar.items())) if c},
+        "sahip90": {"puan": sahip90, "esik": esikler(list(sahip90.values()))},
+        "antrenor90": {"puan": antrenor90, "esik": esikler(list(antrenor90.values()))},
+    }
+
+
 def main() -> None:
     jokey: dict[str, list] = {}
     antrenor: dict[str, list] = {}
@@ -107,8 +153,22 @@ def main() -> None:
     ilk3: list[tuple] = []  # (günint, sahip, antrenör, sıra) — A1/B16 pencere hesabı için
     gun_sayisi, kosu_sayisi, son_gun = 0, 0, 0
 
+    AYLIK.mkdir(parents=True, exist_ok=True)
+    anlik = 0
+
     # kronolojik sırayla gez: "son koşu" alanları en güncel hâlde kalsın
     for f in sorted(ARSIV.glob("20*.json")):
+        # Ayı işlemeden ÖNCE anlık görüntüyü yaz: dosya, o ayın 1'i itibariyle
+        # bilinenleri içerir. Backtest bu aya ait bir günü puanlarken onu kullanır.
+        # Ay içi kalan sızıntı bilinçli olarak kabul ediliyor: gün başına anlık
+        # görüntü üretmek ~30 kat dosya demek, kazancı bu kırıntıyı hak etmiyor.
+        (AYLIK / f.name).write_text(
+            json.dumps(sizan_tablolar(jokey, antrenor, kulvar, ilk3,
+                                      int(f.stem.replace("-", "") + "01")),
+                       ensure_ascii=False, separators=(",", ":")),
+            encoding="utf-8")
+        anlik += 1
+
         month = json.loads(f.read_text(encoding="utf-8"))
         for iso in sorted(month):
             gunler = month[iso]
@@ -192,32 +252,17 @@ def main() -> None:
                         if len(rec["son6"]) > 6:
                             rec["son6"] = rec["son6"][-6:]
 
-    # A1/B16: son 90 günün ilk-3 listeleri (1.→4p, 2.→2p, 3.→1p)
-    from datetime import datetime, timedelta
-    son_dt = datetime.strptime(str(son_gun), "%Y%m%d")
-    kesim = int((son_dt - timedelta(days=GUN90)).strftime("%Y%m%d"))
-    PUAN = {1: 4, 2: 2, 3: 1}
-    sahip90: dict[str, float] = {}
-    antrenor90: dict[str, float] = {}
-    for gi, sah, ant, sira in ilk3:
-        if gi < kesim:
-            continue
-        if sah:
-            sahip90[sah] = sahip90.get(sah, 0) + PUAN[sira]
-        if ant:
-            antrenor90[ant] = antrenor90.get(ant, 0) + PUAN[sira]
+    # Canlı tablolar: arşivin tamamından. Bugünü puanlarken "gelecek" zaten yok,
+    # o yüzden üst sınır son günün ertesi (son gün dahil olsun diye).
+    son_ertesi = int((datetime.strptime(str(son_gun), "%Y%m%d")
+                      + timedelta(days=1)).strftime("%Y%m%d"))
+    canli = sizan_tablolar(jokey, antrenor, kulvar, ilk3, son_ertesi)
 
     out = {
         "meta": {"gun": gun_sayisi, "kosu": kosu_sayisi, "son_gun": son_gun,
                  "min_jokey": MIN_JOKEY, "min_kulvar": MIN_KULVAR,
                  "pencere90": GUN90, "bomba_ganyan": BOMBA_GANYAN},
-        "jokey": {a: v for a, v in jokey.items() if v[0] >= MIN_JOKEY},
-        "antrenor": {a: v for a, v in antrenor.items() if v[0] >= MIN_JOKEY},
-        "kulvar": {k: c for k, c in
-                   (((k, {g: v for g, v in cell.items() if v[0] >= MIN_KULVAR})
-                     for k, cell in kulvar.items())) if c},
-        "sahip90": {"puan": sahip90, "esik": esikler(list(sahip90.values()))},
-        "antrenor90": {"puan": antrenor90, "esik": esikler(list(antrenor90.values()))},
+        **canli,
         "sahip_son": sahip_son,
         "antrenor_son": antrenor_son,
         "at": at,
@@ -229,7 +274,9 @@ def main() -> None:
     print(f"{dest.name}: {gun_sayisi} gün, {kosu_sayisi} koşu, "
           f"{len(out['jokey'])} jokey, {len(out['antrenor'])} antrenör, "
           f"{len(out['kulvar'])} kulvar hücresi, {len(at)} at, "
-          f"{len(sahip90)} sahip (90g), boyut {dest.stat().st_size//1024} KB")
+          f"{len(canli['sahip90']['puan'])} sahip (90g), "
+          f"boyut {dest.stat().st_size//1024} KB")
+    print(f"{AYLIK.name}/: {anlik} aylık anlık görüntü (backtest sızıntı koruması)")
 
 
 if __name__ == "__main__":
