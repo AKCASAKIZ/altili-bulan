@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -144,9 +144,90 @@
    "yeni": "52 +2.00",
    "metin": "4. Koşu: NAZÇEKMEZ (10) kilo 52 → 52 +2.00",
    "ts": "2026-07-26 11:57 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "5. Koşu: ALAZVUR (2) kilo 57 → 57 +0.20",
+   "ts": "2026-07-26 13:19 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "5. Koşu: AFRİKA SULTANI (8) kilo 55 → 55 +2.00",
+   "ts": "2026-07-26 13:19 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "5. Koşu: DOĞAN HANIM (9) kilo 55 → 55 +2.00",
+   "ts": "2026-07-26 13:19 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "5. Koşu: ÜLFET ŞEKERİ (10) kilo 55 → 55 +2.00",
+   "ts": "2026-07-26 13:19 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +1.30",
+   "metin": "6. Koşu: MUĞLALI VARGAS (6) kilo 53,5 → 53,5 +1.30",
+   "ts": "2026-07-26 13:19 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52,5",
+   "yeni": "52,5 +2.00",
+   "metin": "6. Koşu: OHRID INCISI (7) kilo 52,5 → 52,5 +2.00",
+   "ts": "2026-07-26 13:19 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "6. Koşu: SUPER DİVO (8) kilo 52 → 52 +2.00",
+   "ts": "2026-07-26 13:19 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "7. Koşu: CABOOSE (10) kilo 54 → 54 +2.00",
+   "ts": "2026-07-26 13:19 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.20",
+   "metin": "7. Koşu: JOYFUL FOREVER (11) kilo 54 → 54 +0.20",
+   "ts": "2026-07-26 13:19 UTC"
   }
  ],
- "guncelleme": "2026-07-26 11:57 UTC",
+ "guncelleme": "2026-07-26 13:19 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "10": [
