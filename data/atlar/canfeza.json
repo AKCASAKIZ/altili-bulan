@@ -1,14 +1,14 @@
 {
- "ad": "ASEL SULTAN",
+ "ad": "CANFEZA",
  "kosu_sayisi": 3,
  "islenen_yarislar": [
-  "2025-06-05-izmir-1-backfill",
-  "2026-07-11-izmir-7",
+  "2025-10-09-izmir-1-backfill",
+  "2025-11-27-izmir-6-backfill",
   "2026-07-26-izmir-7"
  ],
- "erken_gec_delta_ema": 2.275,
+ "erken_gec_delta_ema": -2.85,
+ "son_atak_delta_ema": 0.0,
  "son_guncelleme": "2026-07-26-izmir-7",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": -1.7,
  "gecmis_surum": 2
 }

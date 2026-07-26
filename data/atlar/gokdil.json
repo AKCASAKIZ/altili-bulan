@@ -1,10 +1,15 @@
 {
  "ad": "GÖKDİL",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
-  "2026-07-12-izmir-5"
+  "2026-07-12-izmir-5",
+  "2025-05-01-izmir-10-backfill",
+  "2025-11-28-izmir-5-backfill",
+  "2026-07-26-izmir-7"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -4.0,
- "son_guncelleme": "2026-07-12-izmir-5"
+ "erken_gec_delta_ema": -6.062,
+ "son_guncelleme": "2026-07-26-izmir-7",
+ "son_atak_delta_ema": -5.09,
+ "gecmis_surum": 2
 }

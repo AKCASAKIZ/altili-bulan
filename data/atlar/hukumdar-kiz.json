@@ -1,12 +1,14 @@
 {
  "ad": "HÜKÜMDAR KIZ",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2025-10-09-izmir-6-backfill",
-  "2026-07-11-izmir-7"
+  "2026-07-11-izmir-7",
+  "2026-07-26-izmir-7"
  ],
- "erken_gec_delta_ema": 5.1,
- "son_guncelleme": "2026-07-11-izmir-7",
+ "erken_gec_delta_ema": 5.07,
+ "son_guncelleme": "2026-07-26-izmir-7",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": 1
+ "son_atak_delta_ema": 1.3,
+ "gecmis_surum": 2
 }
