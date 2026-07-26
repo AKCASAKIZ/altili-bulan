@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 1,
@@ -162,9 +162,180 @@
    "yeni": "PRINCESS ALEXANDRA KG DB SK (Koşmaz)",
    "metin": "6. Koşu: PRINCESS ALEXANDRA (9) KOŞMAZ",
    "ts": "2026-07-26 16:58 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.30",
+   "metin": "4. Koşu: DAISY DUKE (5) kilo 52 → 52 +1.30",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "4. Koşu: HAS SERÇE (6) kilo 53 → 53 +2.00",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.90",
+   "metin": "4. Koşu: NEW ARTİST (7) kilo 54 → 54 +1.90",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.40",
+   "metin": "5. Koşu: LOVE WAY (4) kilo 56 → 56 +1.40",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.50",
+   "metin": "5. Koşu: KHIOS (6) kilo 55 → 55 +0.50",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "6. Koşu: GOLDEN CITY (3) kilo 57 → 57 +0.10",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.40",
+   "metin": "6. Koşu: KAFKASYA GÜLÜ (6) kilo 53 → 53 +0.40",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.30",
+   "metin": "6. Koşu: PASSACAGLIA (7) kilo 53 → 53 +0.30",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.60",
+   "metin": "6. Koşu: TEMPESTA PERA (11) kilo 53 → 53 +0.60",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.40",
+   "metin": "7. Koşu: DİLBERHATUN (4) kilo 54 → 54 +1.40",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.00",
+   "metin": "7. Koşu: EFSUNHATUN (10) kilo 55 → 55 +1.00",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.30",
+   "metin": "7. Koşu: GİZLİ YAKUT (11) kilo 55 → 55 +0.30",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.80",
+   "metin": "7. Koşu: HÜKÜMDAR KIZ (13) kilo 55 → 55 +0.80",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.80",
+   "metin": "7. Koşu: KOLOPHON (14) kilo 52 → 52 +1.80",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +1.70",
+   "metin": "7. Koşu: MİRAY ABLA (15) kilo 51 → 51 +1.70",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +1.40",
+   "metin": "7. Koşu: SEREN RÜZGARI (16) kilo 51 → 51 +1.40",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +0.30",
+   "metin": "7. Koşu: YILDIZ SULTAN (17) kilo 51 → 51 +0.30",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.40",
+   "metin": "7. Koşu: AYBUGA (19) kilo 54 → 54 +0.40",
+   "ts": "2026-07-26 18:51 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +0.10",
+   "metin": "7. Koşu: ASEL SULTAN (20) kilo 51 → 51 +0.10",
+   "ts": "2026-07-26 18:51 UTC"
   }
  ],
- "guncelleme": "2026-07-26 16:58 UTC",
+ "guncelleme": "2026-07-26 18:51 UTC",
  "sehir": "İzmir",
  "etkilenen": {
   "3": [
