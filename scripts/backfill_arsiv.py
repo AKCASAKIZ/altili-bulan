@@ -34,10 +34,19 @@ spec.loader.exec_module(fetch_tjk)
 CITIES = ["İstanbul", "Ankara", "İzmir", "Adana", "Bursa",
           "Kocaeli", "Şanlıurfa", "Elazığ", "Diyarbakır", "Antalya"]
 
+# Gun kaydi sema surumu. Artirilirsa var olan gunler yeniden indirilir
+# (bkz. eski_semali). Surum gecmisi:
+#   1 = ilk hal / sonradan eklenen "agf"
+#   2 = kosu duzeyinde "odemeler", at duzeyinde "baba"/"anne"
+SEMA = 2
+
 # "agf" G1 icin sart: gecmis bir kosunun AGF siralamasi baska hicbir kaynakta yok
 # (gecmis-*.json atin kendi kariyerini tutar, rakipleri ve AGF'yi tutmaz).
-KEEP_HORSE = ("no", "ad", "yas", "kilo", "jokey", "sahip", "antrenor",
-              "st", "agf", "h", "derece", "ganyan", "fark")
+# "baba"/"anne": henuz kriter kullanmiyor, ama sema atlayinca zaten tum arsiv
+# yeniden iniyor — simdi almak ileride ikinci bir tam tarama gerektirmesin.
+# Not: kgs/s20/son6/eniyi sonuc CSV'sinde YOK (program kolonlari), eklenemez.
+KEEP_HORSE = ("no", "ad", "yas", "baba", "anne", "kilo", "jokey", "sahip",
+              "antrenor", "st", "agf", "h", "derece", "ganyan", "fark")
 
 
 def curl_get(url: str) -> bytes | None:
@@ -70,9 +79,12 @@ def slim(parsed: dict, city: str, iso: str) -> dict:
             "no": r.get("no"), "saat": r.get("saat"), "tur": r.get("tur"),
             "grup": r.get("grup"), "mesafe": r.get("mesafe"),
             "pist": r.get("pist"), "ikramiye": r.get("ikramiye"),
+            # Ham odeme satiri: GANYAN / IKILI / UCLU / PLASE / 5'Li / 6'LI GANYAN…
+            # Ayristirilmadan saklanir; tuketici tarafta cozulsun (kayipsiz kalsin).
+            "odemeler": r.get("odemeler"),
             "atlar": horses,
         })
-    return {"tarih": iso, "sehir": city, "kosular": races}
+    return {"tarih": iso, "sehir": city, "kosular": races, "v": SEMA}
 
 
 def load_month(path: Path) -> dict:
@@ -82,12 +94,12 @@ def load_month(path: Path) -> dict:
 
 
 def eski_semali(gunler) -> bool:
-    """agf alani eklenmeden once yazilmis gun kayitlarini tespit eder; boyle
-    gunler yeniden indirilir. Kosusu olmayan gunler (bos liste) dokunulmaz."""
-    atlar = [a for g in (gunler or []) for k in g.get("kosular", []) for a in k.get("atlar", [])]
-    if not atlar:
+    """Guncel semadan eski yazilmis gun kayitlarini tespit eder; boyle gunler
+    yeniden indirilir. Surum damgasi ("v") olmayan kayitlar sema 1'dir.
+    Kosusu olmayan gunler (bos liste) dokunulmaz — yeniden inecek sey yok."""
+    if not gunler:
         return False
-    return not any("agf" in a for a in atlar)
+    return any(g.get("v", 1) < SEMA for g in gunler)
 
 
 def main() -> None:
