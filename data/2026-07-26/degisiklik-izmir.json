@@ -1,0 +1,26 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.00",
+   "metin": "1. Koşu: KING BALDWIN (2) kilo 57 → 57 +1.00",
+   "ts": "2026-07-26 14:45 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "1. Koşu: LILLE HAMMER (5) kilo 53 → 53 +2.00",
+   "ts": "2026-07-26 14:45 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-26 14:45 UTC",
+ "sehir": "İzmir",
+ "etkilenen": {}
+}
