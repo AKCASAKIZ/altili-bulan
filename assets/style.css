@@ -188,6 +188,9 @@ tr.top-row .sticky-col { background: var(--gold-soft); }
 .payout { padding: 10px 16px; font-size: 13px; color: var(--accent-text); background: var(--accent-soft); }
 .pos-1 td { font-weight: 700; }
 .pos-cell { font-weight: 700; }
+/* Backtest ROI: kâr/zarar */
+td.pos { color: var(--accent-text); }
+td.neg { color: var(--danger); }
 
 /* Kupon */
 .kupon-leg {
