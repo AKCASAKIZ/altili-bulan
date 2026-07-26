@@ -343,6 +343,13 @@ async function autoScoreLeg() {
   saveSession();
   renderScoreTable();
 }
+/* Backtest'te ay başı stats anlık görüntüleri — ay başına bir kez indirilir.
+   Değer null ise o ay için dosya yok demektir (tekrar denenmesin). */
+const aylikStats = {};
+const BOS_SIZAN = { jokey: {}, antrenor: {}, kulvar: {},
+                    sahip90: { puan: {}, esik: [999, 999] },
+                    antrenor90: { puan: {}, esik: [999, 999] } };
+
 async function scoreLeg(leg, ctx) {
   const idman = ctx?.idman !== undefined ? ctx.idman : state.idman;
   const day = ctx?.day || state.day;
@@ -409,7 +416,17 @@ async function scoreLeg(leg, ctx) {
 
   // E1/E2/E3: 2 yıllık sonuç arşivinden jokey/antrenör kazanma yüzdesi ve kulvar avantajı
   if (state.stats === undefined) state.stats = await tryFetch("data/arsiv/stats.json");
-  const stats = state.stats;
+  let stats = state.stats;
+  // Backtest'te (ctx) bu tablolar OLDUĞU GİBİ kullanılamaz: jokey/antrenör kariyer
+  // toplamları, kulvar hücreleri ve 90 günlük sahip/antrenör listeleri arşivin
+  // TAMAMINDAN hesaplanıyor — yani puanlanan günün geleceğini de görüyorlar.
+  // build_stats.py'nin ay başı anlık görüntüsüyle değiştir. Görüntü yoksa bu
+  // kriterleri boş bırak: uydurma yerine puansız kalsınlar.
+  if (ctx && stats) {
+    const ay = String(day).slice(0, 7);
+    if (!(ay in aylikStats)) aylikStats[ay] = await tryFetch(`data/arsiv/stats-ay/${ay}.json`);
+    stats = { ...stats, ...(aylikStats[ay] || BOS_SIZAN) };
+  }
 
   // G1: Sınıf düşüşü + geçen koşu favorisi.
   // GERÇEK sürüm (v2): arşivden gelen son6 kaydının 5. elemanı önceki koşunun
@@ -1352,7 +1369,10 @@ async function collectBacktest(onProgress) {
         const tabela = new Set(gelenler.slice(0, 3).map((h) => temizle(h.ad)));
         const ganyan = parseGanyan(gelenler[0].ganyan);
         const leg = {
+          // grup/tur legRecommendation'ın maiden ve Arap kurallarını besliyor —
+          // taşınmazsa o kurallar backtest'te hiç tetiklenmez.
           pist: r.pist, mesafe: r.mesafe, ikramiye: r.ikramiye,
+          grup: r.grup, tur: r.tur,
           horses: r.horses.filter((h) => !/koşmaz/i.test(h.ad)).map((h) => ({
             no: h.no, ad: h.ad, scores: {},
             meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, h: h.h, jokey: h.jokey, antrenor: h.antrenor, sahip: h.sahip, kilo: h.kilo, st: h.st },
@@ -1368,11 +1388,98 @@ async function collectBacktest(onProgress) {
           const a = parseAgf(h.meta.agf);
           if (a != null && a > best) { best = a; agfFav = h; }
         }
-        rows.push({ day, city: c.name, raceNo: r.no, leg, ranked, kazananAd, tabela, ganyan, agfFav });
+        rows.push({ day, city: c.name, raceNo: r.no, leg, ranked, kazananAd, tabela, ganyan, agfFav,
+                    odemeler: res.odemeler });
       }
     }
   }
   return rows;
+}
+
+/* ==================== ALTILI KUPON SİMÜLASYONU ==================== */
+/* "1. 6'LI GANYAN(2,5/5/7/5/9/1) :12.185,75 TL" → [{sira:1, tutar:12185.75}]
+   Altılı, ödeme satırının bulunduğu koşuda BİTER; ayakları o koşu ve öncesindeki
+   5 koşudur. (4 Tem 2026 Ankara ile doğrulandı: K6'daki "1. 6'LI"nin kombinasyonu
+   K1-K6 kazananlarına, K9'daki "2. 6'LI"nınki K4-K9 kazananlarına birebir uyuyor.) */
+function altiliOdeme(odemeler) {
+  const out = [];
+  const re = /(?:(\d+)\.\s*)?6['’]?\s*LI\s+GANYAN\s*\([^)]*\)\s*:?\s*([\d.]+,\d+)/gi;
+  let m;
+  while ((m = re.exec(odemeler || ""))) out.push({ sira: +m[1] || 1, tutar: sayiTR(m[2]) });
+  return out;
+}
+
+/* İki kupon politikasını aynı altılılar üzerinde yan yana ölçer.
+   Maliyet "kolon" cinsinden, dönüş de kolon başına ödeme olduğu için ROI birim
+   fiyattan bağımsız — hangi bahis birimini oynadığın sonucu değiştirmiyor. */
+const ALTILI_POLITIKA = [
+  { k: "auto", ad: "autoKupon — öneriye göre", sec: (r) => legRecommendation(r.leg).horses },
+  { k: "tek", ad: "Tek kolon — her ayakta 1. tercih", sec: (r) => [r.ranked[0].h.no] },
+];
+function altiliRapor(rows) {
+  const gunler = new Map(); // "gün|şehir" → (koşu no → satır)
+  for (const r of rows) {
+    const k = `${r.day}|${r.city}`;
+    if (!gunler.has(k)) gunler.set(k, new Map());
+    gunler.get(k).set(r.raceNo, r);
+  }
+  const sonuc = ALTILI_POLITIKA.map((p) => ({ ...p, n: 0, kazanan: 0, kolon: 0, donus: 0 }));
+  let bulunan = 0, eksik = 0;
+  for (const [, kosular] of gunler) {
+    // 1) günün altılıları — ödeme satırından, varsayım yok
+    const altililar = [];
+    for (const [no, r] of kosular) {
+      for (const od of altiliOdeme(r.odemeler)) {
+        bulunan++;
+        const ayaklar = [];
+        for (let i = no - 5; i <= no; i++) ayaklar.push(kosular.get(i));
+        altililar.push({ od, ayaklar, tam: ayaklar.every(Boolean) && od.tutar != null });
+      }
+    }
+    // 2) ortak ayak bayrakları: legRecommendation kural 7'de bunu okuyor, canlı
+    //    kullanımdaki genişletme davranışı backtest'te de birebir olsun
+    altililar.forEach((a, ix) => a.ayaklar.forEach((r) => { if (r) r.leg["a" + (ix + 1)] = true; }));
+    // 3) değerlendir
+    for (const a of altililar) {
+      if (!a.tam) { eksik++; continue; }
+      for (const p of sonuc) {
+        const secimler = a.ayaklar.map(p.sec);
+        const kombin = secimler.reduce((t, x) => t * x.length, 1);
+        const tuttu = a.ayaklar.every((r, i) => {
+          const kaz = r.leg.horses.find((h) => temizle(h.ad) === r.kazananAd);
+          return kaz && secimler[i].includes(kaz.no);
+        });
+        p.n++; p.kolon += kombin;
+        if (tuttu) { p.kazanan++; p.donus += a.od.tutar; }
+      }
+    }
+  }
+  return { sonuc, bulunan, eksik, degerlendirilen: bulunan - eksik };
+}
+
+function altiliRaporHtml(rows) {
+  const { sonuc, bulunan, eksik, degerlendirilen } = altiliRapor(rows);
+  if (!degerlendirilen) {
+    return `<h3 style="margin-top:24px">🎫 Altılı kupon simülasyonu</h3>
+    <div class="empty-note">Değerlendirilebilir altılı bulunamadı${bulunan ? ` (${bulunan} altılı bulundu, ${eksik} tanesinin ayakları eksik)` : " — sonuç verisinde 6'LI GANYAN ödeme satırı yok"}.</div>`;
+  }
+  const satir = (p) => {
+    const roi = p.kolon ? (p.donus / p.kolon - 1) * 100 : 0;
+    return `<tr>
+      <td>${esc(p.ad)}</td>
+      <td>${p.kazanan}/${p.n} <span class="hint">(%${(p.kazanan / p.n * 100).toFixed(1)})</span></td>
+      <td>${(p.kolon / p.n).toFixed(1)}</td>
+      <td>${p.kolon.toLocaleString("tr-TR")}</td>
+      <td>${p.donus.toLocaleString("tr-TR", { maximumFractionDigits: 0 })}</td>
+      <td class="${roi >= 0 ? "pos" : "neg"}"><b>${roi >= 0 ? "+" : ""}${roi.toFixed(1)}%</b></td>
+    </tr>`;
+  };
+  return `<h3 style="margin-top:24px">🎫 Altılı kupon simülasyonu <span class="hint">(${degerlendirilen} altılı${eksik ? `, ${eksik} tanesi ayak eksikliğinden atlandı` : ""})</span></h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Politika</th><th>İsabet</th><th>Ort. kolon</th><th>Toplam kolon</th><th>Toplam dönüş</th><th>ROI</th></tr></thead>
+    <tbody>${sonuc.map(satir).join("")}</tbody>
+  </table></div>
+  <p class="hint">Maliyet kolon sayısı, dönüş de kolon başına ödeme cinsinden — ROI birim bahis fiyatından bağımsızdır. Ayaklar, TJK'nın "6'LI GANYAN" ödeme satırından türetilir; tahmin edilmez. Ölü yarışta kazanan olarak sonuç listesinin ilk atı sayılır.</p>`;
 }
 
 async function runBacktest() {
@@ -1415,6 +1522,7 @@ async function runBacktest() {
     <div class="card"><h3>👥 AGF favorisi (kıyas)</h3><p><b>${favWin}/${favN}</b> kazandı (%${pct(favWin, favN)})<br>ROI: <b>%${roi(favDonus, favN)}</b></p></div>
     <div class="card"><h3>💎 Value bahisleri</h3><p><b>${valWin}/${valN}</b> kazandı (%${pct(valWin, valN)})<br>ROI: <b>%${roi(valDonus, valN)}</b></p></div>
   </div>`;
+  html += altiliRaporHtml(backtestRows);
   html += `<div class="table-wrap"><table><thead><tr><th>Gün</th><th>Şehir</th><th>Koşu</th><th>1. tercih</th><th>Sonuç</th><th>Kazanan</th><th>Ganyan</th><th>💎</th></tr></thead><tbody>`;
   for (const d of detay) {
     html += `<tr>
@@ -1432,46 +1540,151 @@ async function runBacktest() {
 /* Backtest verisiyle koşu-içi lojistik model eğitir: P(at kazanır) = exp(w·x) / Σ exp(w·x).
    Sadece otomatik puanlanan kriterler öğrenilebilir (diğerlerinin geçmiş puanı yok). */
 const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3"];
-async function suggestCoefs() {
-  const el = $("#coefSuggestView"), st = $("#backtestStatus");
-  if (!backtestRows) { st.textContent = "Önce veri toplanıyor…"; backtestRows = await collectBacktest((t) => (st.textContent = "Veri toplanıyor… " + t)); st.textContent = ""; }
-  const races = [];
-  for (const r of backtestRows) {
-    const winIx = r.leg.horses.findIndex((h) => temizle(h.ad) === r.kazananAd);
-    if (winIx < 0) continue;
-    races.push({ X: r.leg.horses.map((h) => TUNABLE.map((k) => (+h.scores[k] || 0) / 100)), winIx });
+
+/* Bir ağırlık vektörünün koşu başına ortalama log-olabilirliği (0'a yakın = iyi).
+   Rastgele tahminin değeri ln(1/kadro) — ortalama 10 atlı kadroda ≈ -2.30. */
+function logitUyum(races, w) {
+  let t = 0;
+  for (const { X, winIx } of races) {
+    const z = X.map((x) => x.reduce((a, v, j) => a + v * w[j], 0));
+    const mx = Math.max(...z);
+    const ex = z.map((v) => Math.exp(v - mx));
+    t += Math.log(ex[winIx] / ex.reduce((a, b) => a + b, 0));
   }
-  if (races.length < 20) {
-    el.innerHTML = `<div class="empty-note">Katsayı önerisi için en az 20 sonuçlanmış koşu gerekir (şu an ${races.length}). Birkaç gün daha veri biriksin.</div>`;
-    return;
-  }
-  // w başlangıcı: mevcut katsayılar (özellik /100 ölçeklendiği için ×100)
-  const w = TUNABLE.map((k) => state.coefs[k] * 100);
-  const lr = 0.1, l2 = 0.001, iters = 400;
-  for (let it = 0; it < iters; it++) {
-    const grad = new Array(TUNABLE.length).fill(0);
+  return t / races.length;
+}
+
+/* Koşu-içi lojistik modeli gradyan yükselişiyle eğitir.
+   İki ayar da ölçülerek seçildi (scratchpad'de sentetik testler):
+   - Eski sabit 400 tur AZDI: bütün ağırlıklar aynı noktadan başladığı için alakasız
+     kriterler o turda henüz sıfıra inmemiş oluyor, normalize edilince bütçenin
+     yarısına yakınını yiyorlardı (%46).
+   - Ama platoya kadar sürmek de FAZLA: 60-150 koşuluk gerçekçi boyutlarda model
+     aşırı özgüvenli katsayı üretip görülmemiş veride rastgeleden kötü kalıyordu.
+   Çözüm: doğrulama kümesi verilirse ORADA en iyi olan tur seçilir (erken durdurma);
+   verilmezse eski plato ölçütüne düşülür.
+   opt: { dogSet, olcek, sabitTur } — `olcek` ağırlıkları doğrulamada ölçmeden önce
+   uygulanacak hâle çevirir (kullanıcının basacağı düğme onu yazacağı için). */
+async function logitEgit(races, w0, st, etiket, opt = {}) {
+  const { dogSet = null, olcek = (v) => v, sabitTur = 0 } = opt;
+  const w = w0.slice();
+  const lr = 0.1, l2 = 0.001, EPS = 1e-7, SABIR = 500, OLC_ARA = 25;
+  const MAX_ITER = sabitTur || 20000;
+  let onceki = -Infinity, ll = 0, iter = 0;
+  let enIyi = dogSet ? { w: w.slice(), uyum: -Infinity, iter: 0 } : null;
+  for (; iter < MAX_ITER; iter++) {
+    const grad = new Array(w.length).fill(0);
+    ll = 0;
     for (const { X, winIx } of races) {
       const z = X.map((x) => x.reduce((t, v, j) => t + v * w[j], 0));
       const mx = Math.max(...z);
       const ex = z.map((v) => Math.exp(v - mx));
       const S = ex.reduce((a, b) => a + b, 0);
+      ll += Math.log(ex[winIx] / S);
       X.forEach((x, i) => {
         const p = ex[i] / S;
         x.forEach((v, j) => { grad[j] += ((i === winIx ? 1 : 0) - p) * v; });
       });
     }
+    ll /= races.length;
     w.forEach((v, j) => { w[j] = v + lr * (grad[j] / races.length - l2 * v); });
+    if (dogSet && iter % OLC_ARA === 0) {
+      const u = logitUyum(dogSet, olcek(w));
+      if (u > enIyi.uyum) enIyi = { w: w.slice(), uyum: u, iter };
+      else if (iter - enIyi.iter >= SABIR) break; // doğrulama artık iyileşmiyor
+    } else if (!dogSet && !sabitTur && iter > 50 && ll - onceki < EPS) {
+      break;
+    }
+    onceki = ll;
+    // Sayfa donmasın ve kullanıcı ilerlediğini görsün — döngü senkron olduğu için
+    // arada olay döngüsüne dönmezsek düğme tıklanmamış gibi duruyor.
+    if (iter % 250 === 0) {
+      if (st) st.textContent = `${etiket}… ${iter} tur, uyum ${ll.toFixed(4)}`;
+      await new Promise((res) => setTimeout(res));
+    }
   }
-  // negatifleri sıfırla, toplamı mevcut TUNABLE katsayı toplamına ölçekle (genel denge bozulmasın)
-  const pos = w.map((v) => Math.max(0, v));
-  const hedefToplam = TUNABLE.reduce((t, k) => t + state.coefs[k], 0);
-  const posToplam = pos.reduce((a, b) => a + b, 0) || 1;
-  const oneri = {};
-  TUNABLE.forEach((k, j) => { oneri[k] = +((pos[j] / posToplam) * hedefToplam).toFixed(4); });
+  return dogSet ? { w: enIyi.w, uyum: enIyi.uyum, iter: enIyi.iter, ll }
+                : { w, ll, iter };
+}
+async function suggestCoefs() {
+  const el = $("#coefSuggestView"), st = $("#backtestStatus");
+  el.innerHTML = "";
+  // Kapalı kriterler toplam puana hiç girmiyor (bkz. legScore'daki enabled kontrolü);
+  // onlara katsayı öğrenmek de, bütçeden pay vermek de yanıltıcı olur — dışarıda bırak.
+  const aktif = TUNABLE.filter((k) => state.enabled[k]);
+  if (!aktif.length) {
+    el.innerHTML = `<div class="empty-note">Otomatik puanlanan kriterlerin hepsi kapalı — Katsayılar sekmesinden en az birini açın.</div>`;
+    return;
+  }
+  if (!backtestRows) { st.textContent = "Önce veri toplanıyor…"; backtestRows = await collectBacktest((t) => (st.textContent = "Veri toplanıyor… " + t)); st.textContent = ""; }
+  const races = [];
+  for (const r of backtestRows) {
+    const winIx = r.leg.horses.findIndex((h) => temizle(h.ad) === r.kazananAd);
+    if (winIx < 0) continue;
+    races.push({ X: r.leg.horses.map((h) => aktif.map((k) => (+h.scores[k] || 0) / 100)), winIx });
+  }
+  if (races.length < 20) {
+    el.innerHTML = `<div class="empty-note">Katsayı önerisi için en az 20 sonuçlanmış koşu gerekir (şu an ${races.length}). Birkaç gün daha veri biriksin.</div>`;
+    return;
+  }
+  // Başlangıç noktası: mevcut katsayılar (özellik /100 ölçeklendiği için ×100)
+  const w0 = aktif.map((k) => state.coefs[k] * 100);
+  const hedefToplam = aktif.reduce((t, k) => t + state.coefs[k], 0);
+  // Uygulanacak hâle getir: negatifleri sıfırla, toplamı hedefe ölçekle.
+  // Doğrulama da bu hâl üzerinden yapılmalı — kullanıcının basacağı düğme bunu yazıyor.
+  const olcekle = (w) => {
+    const pos = w.map((v) => Math.max(0, v));
+    const tot = pos.reduce((a, b) => a + b, 0) || 1;
+    return pos.map((v) => (v / tot) * hedefToplam);
+  };
 
-  let html = `<h3 style="margin-top:24px">🧮 Önerilen katsayılar <span class="hint">(${races.length} koşudan öğrenildi — yalnız otomatik puanlanan kriterler)</span></h3>
+  // 1) AYRILMIŞ DOĞRULAMA — zaman sırası korunarak ilk %80'de eğit, son %20'de ölç.
+  //    Rastgele bölme değil: gerçek kullanım da geçmişte öğrenip gelecekte oynamak.
+  //    Eğitim uyumunu raporlamak yanıltıcı olurdu — az veride model ezberliyor.
+  const kesim = Math.floor(races.length * 0.8);
+  const test = races.slice(kesim);
+  const olcekW = (w) => olcekle(w).map((v) => v * 100); // doğrulamada ölçülen hâl
+  let dogrulama = null, sabitTur = 0;
+  if (test.length >= 10) {
+    const r = await logitEgit(races.slice(0, kesim), w0, st, "Doğrulama",
+                              { dogSet: test, olcek: olcekW });
+    sabitTur = Math.max(r.iter, 50); // nihai eğitim de burada dursun
+    dogrulama = {
+      n: test.length, tur: r.iter, oneri: r.uyum,
+      mevcut: logitUyum(test, w0),
+      taban: Math.log(1 / (test.reduce((t, r2) => t + r2.X.length, 0) / test.length)),
+    };
+  }
+
+  // 2) Nihai katsayılar TÜM veriyle, doğrulamanın seçtiği tur sayısı kadar eğitilir.
+  //    (Doğrulama yoksa plato ölçütüne düşer — o durumda uyarı gösteriliyor.)
+  const { w, ll, iter } = await logitEgit(races, w0, st, "Eğitim", { sabitTur });
+  st.textContent = "";
+  const olcekli = olcekle(w);
+  const oneri = {};
+  aktif.forEach((k, j) => { oneri[k] = +olcekli[j].toFixed(4); });
+
+  let dogHtml;
+  if (!dogrulama) {
+    dogHtml = `<p class="hint">⚠️ Ayrılmış doğrulama yapılamadı: son %20 dilimde en az 10 koşu gerekiyor. Aşağıdaki katsayılar sınanmadan üretildi — az veride model ezberler, dikkatli uygulayın.</p>`;
+  } else {
+    const d = dogrulama, iyi = d.oneri > d.mevcut;
+    dogHtml = `<p class="hint">🔬 <b>Ayrılmış doğrulama</b> — son ${d.n} koşu eğitimde hiç kullanılmadı, uyum orada ölçüldü ve eğitim ${d.tur}. turda orada en iyi olan noktada durduruldu (0'a yakın daha iyi):</p>
+    <div class="table-wrap"><table><tbody>
+      <tr><td>Mevcut katsayılarınız</td><td><b>${d.mevcut.toFixed(4)}</b></td></tr>
+      <tr><td>Önerilen katsayılar</td><td class="${iyi ? "pos" : "neg"}"><b>${d.oneri.toFixed(4)}</b> ${iyi ? "✅ daha iyi" : "❌ daha kötü"}</td></tr>
+      <tr><td>Rastgele tahmin</td><td>${d.taban.toFixed(4)}</td></tr>
+    </tbody></table></div>
+    ${iyi && d.oneri > d.taban ? "" : `<p class="hint">⚠️ ${d.oneri <= d.taban
+        ? "Öneri rastgele tahminden iyi değil — uygulamayın, veri birikmesini bekleyin."
+        : "Öneri mevcut katsayılarınızı görülmemiş veride geçemedi — uygulamak muhtemelen işe yaramaz."}</p>`}`;
+  }
+
+  let html = `<h3 style="margin-top:24px">🧮 Önerilen katsayılar <span class="hint">(${races.length} koşu · ${iter} tur — yalnız açık ve otomatik puanlanan kriterler)</span></h3>
+  ${dogHtml}
+  <p class="hint">Eğitim uyumu ${ll.toFixed(4)} — bu sayı iyimserdir (model kendi eğitim verisinde ölçülüyor), kararınızı yukarıdaki doğrulama tablosuna göre verin.</p>
   <div class="table-wrap"><table><thead><tr><th>Kod</th><th>Kriter</th><th>Mevcut</th><th>Önerilen</th><th>Değişim</th></tr></thead><tbody>`;
-  for (const k of TUNABLE) {
+  for (const k of aktif) {
     const a = ANGLES.find((x) => x.k === k);
     const cur = state.coefs[k], yeni = oneri[k];
     const yon = yeni > cur * 1.05 ? "🔼" : yeni < cur * 0.95 ? "🔽" : "≈";
@@ -1479,7 +1692,7 @@ async function suggestCoefs() {
   }
   html += `</tbody></table></div>
   <p><button id="btnApplyCoefs" class="btn btn-accent">✔ Önerilen katsayıları uygula</button>
-  <span class="hint">Toplam ölçek korunur: önerilenlerin toplamı, bu kriterlerin mevcut katsayı toplamına (${hedefToplam.toFixed(4)}) eşittir. Katsayılar sekmesinden her zaman varsayılana dönebilirsiniz.</span></p>`;
+  <span class="hint">Toplam ölçek korunur: önerilenlerin toplamı, <b>açık</b> otomatik kriterlerin mevcut katsayı toplamına (${hedefToplam.toFixed(4)}) eşittir; kapalı kriterlere dokunulmaz. Katsayılar sekmesinden her zaman varsayılana dönebilirsiniz.</span></p>`;
   el.innerHTML = html;
   $("#btnApplyCoefs").onclick = () => {
     Object.assign(state.coefs, oneri);
