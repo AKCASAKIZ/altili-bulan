@@ -1,0 +1,92 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "1. Koşu: BOZALAN (1) kilo 57 → 57 +0.10",
+   "ts": "2026-07-26 10:46 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "1. Koşu: DOĞANIN ASLANI (4) kilo 57 → 57 +0.10",
+   "ts": "2026-07-26 10:46 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "1. Koşu: PARLAMA ZAMANI (6) kilo 57 → 57 +0.10",
+   "ts": "2026-07-26 10:46 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.50",
+   "metin": "1. Koşu: ALLER YILDIZI (8) kilo 55 → 55 +0.50",
+   "ts": "2026-07-26 10:46 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "1. Koşu: GÜNKARİ (9) kilo 52 → 52 +2.00",
+   "ts": "2026-07-26 10:46 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.40",
+   "metin": "1. Koşu: ŞAHANIL (10) kilo 55 → 55 +1.40",
+   "ts": "2026-07-26 10:46 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.10",
+   "metin": "1. Koşu: TALTİF (11) kilo 55 → 55 +1.10",
+   "ts": "2026-07-26 10:46 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "AYBENOVA KG DB SK",
+   "yeni": "AYBENOVA KG DB SK (Koşmaz)",
+   "metin": "10. Koşu: AYBENOVA (12) KOŞMAZ",
+   "ts": "2026-07-26 10:46 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-26 10:46 UTC",
+ "sehir": "İstanbul",
+ "etkilenen": {
+  "10": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
