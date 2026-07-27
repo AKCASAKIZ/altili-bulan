@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -396,9 +396,99 @@
    "yeni": "52 +1.70",
    "metin": "7. Koşu: MELONI (14) kilo 52 → 52 +1.70",
    "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.20",
+   "metin": "8. Koşu: OLGUNADAM (6) kilo 57 → 57 +1.20",
+   "ts": "2026-07-27 19:25 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +1.80",
+   "metin": "8. Koşu: SON YAĞIZ (7) kilo 56,5 → 56,5 +1.80",
+   "ts": "2026-07-27 19:25 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.20",
+   "metin": "8. Koşu: CENGEBEY (8) kilo 56 → 56 +0.20",
+   "ts": "2026-07-27 19:25 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +2.00",
+   "metin": "8. Koşu: FISILTIKAYA (9) kilo 55,5 → 55,5 +2.00",
+   "ts": "2026-07-27 19:25 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.10",
+   "metin": "8. Koşu: IRMAK BEYİ (10) kilo 56 → 56 +1.10",
+   "ts": "2026-07-27 19:25 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.80",
+   "metin": "8. Koşu: FERHAT KARDEŞ (11) kilo 55 → 55 +1.80",
+   "ts": "2026-07-27 19:25 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +1.60",
+   "metin": "8. Koşu: QUATRO (12) kilo 53,5 → 53,5 +1.60",
+   "ts": "2026-07-27 19:25 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "8. Koşu: KING PELE (13) kilo 53 → 53 +2.00",
+   "ts": "2026-07-27 19:25 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.40",
+   "metin": "8. Koşu: GECE IŞIĞI (14) kilo 53 → 53 +1.40",
+   "ts": "2026-07-27 19:25 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "8. Koşu: BIÇKIN KRAL (15) kilo 52 → 52 +2.00",
+   "ts": "2026-07-27 19:25 UTC"
   }
  ],
- "guncelleme": "2026-07-27 17:57 UTC",
+ "guncelleme": "2026-07-27 19:25 UTC",
  "sehir": "Elazığ",
  "etkilenen": {
   "6": [
