@@ -1,6 +1,6 @@
 {
  "ad": "SABALENKA",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-06-07-izmir-4-backfill",
   "2025-06-28-izmir-1-backfill",
@@ -16,10 +16,12 @@
   "2026-06-14-izmir-8-backfill",
   "2026-06-20-izmir-8-backfill",
   "2026-07-19-izmir-6-backfill",
-  "2026-07-19-izmir-6"
+  "2026-07-19-izmir-6",
+  "2026-07-27-bursa-5"
  ],
- "erken_gec_delta_ema": -1.366,
- "son_guncelleme": "2026-07-19-izmir-6",
- "son_atak_delta_ema": -1.289,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -3.056,
+ "son_guncelleme": "2026-07-27-bursa-5",
+ "son_atak_delta_ema": -3.302,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

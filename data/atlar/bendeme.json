@@ -1,0 +1,14 @@
+{
+ "ad": "BENDEME",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-03-22-adana-5-backfill",
+  "2025-11-28-izmir-1-backfill",
+  "2026-07-27-bursa-10"
+ ],
+ "erken_gec_delta_ema": 0.89,
+ "son_atak_delta_ema": 2.96,
+ "son_guncelleme": "2026-07-27-bursa-10",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

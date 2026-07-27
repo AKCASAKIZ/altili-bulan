@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-27 08:51 UTC",
+ "updated": "2026-07-27 22:11 UTC",
  "days": {
   "2026-07-04": [
    {
@@ -259,6 +259,16 @@
    {
     "slug": "elazig",
     "name": "Elazığ"
+   }
+  ],
+  "2026-07-28": [
+   {
+    "slug": "ankara",
+    "name": "Ankara"
+   },
+   {
+    "slug": "kocaeli",
+    "name": "Kocaeli"
    }
   ]
  }

@@ -1,0 +1,15 @@
+{
+ "ad": "SIRRIN BEYİ",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-02-18-sanliurfa-1-backfill",
+  "2026-03-30-sanliurfa-7-backfill",
+  "2026-05-18-sanliurfa-8-backfill",
+  "2026-07-27-elazig-4"
+ ],
+ "erken_gec_delta_ema": -0.815,
+ "son_atak_delta_ema": -0.943,
+ "son_guncelleme": "2026-07-27-elazig-4",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

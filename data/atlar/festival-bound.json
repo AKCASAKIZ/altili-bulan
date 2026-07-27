@@ -1,0 +1,13 @@
+{
+ "ad": "FESTIVAL BOUND",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-06-26-kocaeli-1-backfill",
+  "2026-07-27-bursa-5"
+ ],
+ "erken_gec_delta_ema": 2.1,
+ "son_atak_delta_ema": 1.7,
+ "son_guncelleme": "2026-07-27-bursa-5",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

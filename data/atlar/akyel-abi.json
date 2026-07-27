@@ -1,6 +1,6 @@
 {
  "ad": "AKYEL ABİ",
- "kosu_sayisi": 17,
+ "kosu_sayisi": 18,
  "islenen_yarislar": [
   "2025-01-30-izmir-3-backfill",
   "2025-05-10-izmir-6-backfill",
@@ -18,10 +18,12 @@
   "2026-06-25-bursa-5-backfill",
   "2026-07-09-kocaeli-4-backfill",
   "2026-07-09-kocaeli-4",
-  "2026-07-14-kocaeli-9"
+  "2026-07-14-kocaeli-9",
+  "2026-07-27-bursa-10"
  ],
- "erken_gec_delta_ema": 2.692,
- "son_guncelleme": "2026-07-14-kocaeli-9",
- "son_atak_delta_ema": 0.157,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 4.434,
+ "son_guncelleme": "2026-07-27-bursa-10",
+ "son_atak_delta_ema": 2.51,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

@@ -1,6 +1,6 @@
 {
  "ad": "EVERYTHING ALRIGHT",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2025-03-27-izmir-7-backfill",
   "2025-04-11-izmir-4-backfill",
@@ -17,10 +17,12 @@
   "2025-12-26-izmir-4-backfill",
   "2026-01-11-izmir-2-backfill",
   "2026-06-28-izmir-3-backfill",
-  "2026-07-11-izmir-1"
+  "2026-07-11-izmir-1",
+  "2026-07-27-bursa-2"
  ],
- "erken_gec_delta_ema": 2.524,
- "son_atak_delta_ema": 0.72,
- "son_guncelleme": "2026-07-11-izmir-1",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.367,
+ "son_atak_delta_ema": 0.504,
+ "son_guncelleme": "2026-07-27-bursa-2",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

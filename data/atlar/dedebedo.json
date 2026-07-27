@@ -1,13 +1,15 @@
 {
  "ad": "DEDEBEDO",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2026-04-14-elazig-7-backfill",
   "2026-04-29-elazig-3-backfill",
   "2026-06-03-elazig-2-backfill",
-  "2026-07-15-elazig-5"
+  "2026-07-15-elazig-5",
+  "2026-07-27-elazig-2"
  ],
- "erken_gec_delta_ema": 0.847,
- "son_guncelleme": "2026-07-15-elazig-5",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 0.443,
+ "son_guncelleme": "2026-07-27-elazig-2",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
 }

@@ -1,13 +1,15 @@
 {
  "ad": "FALCON OF MUTAFLAR",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2025-02-04-antalya-4-backfill",
   "2026-02-15-adana-7-backfill",
-  "2026-07-11-izmir-1"
+  "2026-07-11-izmir-1",
+  "2026-07-27-bursa-2"
  ],
- "erken_gec_delta_ema": -0.42,
- "son_atak_delta_ema": -0.49,
- "son_guncelleme": "2026-07-11-izmir-1",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.294,
+ "son_atak_delta_ema": -0.343,
+ "son_guncelleme": "2026-07-27-bursa-2",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

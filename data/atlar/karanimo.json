@@ -1,13 +1,15 @@
 {
  "ad": "KARANİMO",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2025-04-09-istanbul-7-backfill",
   "2026-07-10-bursa-5",
-  "2026-07-21-kocaeli-8"
+  "2026-07-21-kocaeli-8",
+  "2026-07-27-bursa-10"
  ],
- "erken_gec_delta_ema": 1.01,
- "son_atak_delta_ema": 0.31,
- "son_guncelleme": "2026-07-21-kocaeli-8",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 1.307,
+ "son_atak_delta_ema": 1.417,
+ "son_guncelleme": "2026-07-27-bursa-10",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

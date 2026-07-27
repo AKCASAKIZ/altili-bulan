@@ -1,0 +1,13 @@
+{
+ "ad": "NALIN SESİ",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-07-27-elazig-6-backfill",
+  "2026-07-27-elazig-6"
+ ],
+ "erken_gec_delta_ema": 0.0,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-07-27-elazig-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

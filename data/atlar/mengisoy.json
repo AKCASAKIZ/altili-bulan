@@ -1,0 +1,15 @@
+{
+ "ad": "MENGİSOY",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2025-08-05-kocaeli-1-backfill",
+  "2025-08-21-kocaeli-6-backfill",
+  "2025-10-07-kocaeli-6-backfill",
+  "2026-07-27-bursa-6"
+ ],
+ "erken_gec_delta_ema": -0.9,
+ "son_atak_delta_ema": -0.9,
+ "son_guncelleme": "2026-07-27-bursa-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}
