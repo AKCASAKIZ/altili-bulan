@@ -1,0 +1,94 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.10",
+   "metin": "1. Koşu: LAMPO NERO (2) kilo 53 → 53 +0.10",
+   "ts": "2026-07-27 10:41 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.40",
+   "metin": "1. Koşu: ŞEVRAN (3) kilo 54 → 54 +1.40",
+   "ts": "2026-07-27 10:41 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.40",
+   "metin": "1. Koşu: CETRION (5) kilo 55 → 55 +1.40",
+   "ts": "2026-07-27 10:41 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.90",
+   "metin": "1. Koşu: KRALİÇE NONİKA (6) kilo 55 → 55 +0.90",
+   "ts": "2026-07-27 10:41 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "LADY ALARA",
+   "yeni": "LADY ALARA (Koşmaz)",
+   "metin": "1. Koşu: LADY ALARA (7) KOŞMAZ",
+   "ts": "2026-07-27 10:41 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +0.60",
+   "metin": "1. Koşu: MY LIFE ELİF (8) kilo 51 → 51 +0.60",
+   "ts": "2026-07-27 10:41 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "SAVAŞÇI BEDİR KG K",
+   "yeni": "SAVAŞÇI BEDİR KG K (Koşmaz)",
+   "metin": "4. Koşu: SAVAŞÇI BEDİR (5) KOŞMAZ",
+   "ts": "2026-07-27 10:41 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-27 10:41 UTC",
+ "sehir": "Bursa",
+ "etkilenen": {
+  "1": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "4": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
