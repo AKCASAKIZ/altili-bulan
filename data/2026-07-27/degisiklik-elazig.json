@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -207,9 +207,198 @@
    "yeni": "HOŞGÜLHAT SKG SK (Koşmaz)",
    "metin": "8. Koşu: HOŞGÜLHAT (4) KOŞMAZ",
    "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "4. Koşu: GREAT HOPES (8) kilo 55 → 55 +2.00",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +2.00",
+   "metin": "4. Koşu: GOLDEN COOGER (9) kilo 54,5 → 54,5 +2.00",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.70",
+   "metin": "4. Koşu: SIRRIN BEYİ (10) kilo 54 → 54 +1.70",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "MANY MORE DB SKG SK",
+   "yeni": "MANY MORE DB SKG SK (Koşmaz)",
+   "metin": "4. Koşu: MANY MORE (11) KOŞMAZ",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "4. Koşu: MAVERICK SHADOW (12) kilo 53 → 53 +2.00",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "4. Koşu: BANDID (13) kilo 52 → 52 +2.00",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.70",
+   "metin": "4. Koşu: UMAR BEY (14) kilo 52 → 52 +1.70",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.20",
+   "metin": "5. Koşu: SECRET ROYAL (14) kilo 55 → 55 +1.20",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.40",
+   "metin": "6. Koşu: I AM FERO (4) kilo 54 → 54 +0.40",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.50",
+   "metin": "6. Koşu: NALIN SESİ (5) kilo 57 → 57 +1.50",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.50",
+   "metin": "6. Koşu: SESİMİ DUYAN VARMI (6) kilo 54 → 54 +0.50",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "6. Koşu: PRENSES FADİLE (8) kilo 57 → 57 +0.10",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.70",
+   "metin": "6. Koşu: ELİFİN IŞIĞI (9) kilo 55 → 55 +1.70",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "6. Koşu: NARLIGÖL (11) kilo 55 → 55 +2.00",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57,5",
+   "yeni": "57,5 +0.40",
+   "metin": "7. Koşu: CRIMENA FIRE (8) kilo 57,5 → 57,5 +0.40",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "7. Koşu: REGAL BELLE (9) kilo 52 → 52 +2.00",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +1.60",
+   "metin": "7. Koşu: DOBRA KIZ (10) kilo 54,5 → 54,5 +1.60",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "7. Koşu: DANCING GRACE (11) kilo 53 → 53 +2.00",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "7. Koşu: GOLDEN SOUL (12) kilo 53 → 53 +2.00",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52,5",
+   "yeni": "52,5 +2.00",
+   "metin": "7. Koşu: LEO MELO (13) kilo 52,5 → 52,5 +2.00",
+   "ts": "2026-07-27 17:57 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.70",
+   "metin": "7. Koşu: MELONI (14) kilo 52 → 52 +1.70",
+   "ts": "2026-07-27 17:57 UTC"
   }
  ],
- "guncelleme": "2026-07-27 16:01 UTC",
+ "guncelleme": "2026-07-27 17:57 UTC",
  "sehir": "Elazığ",
  "etkilenen": {
   "6": [
@@ -224,6 +413,17 @@
    "G1"
   ],
   "8": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "4": [
    "B13",
    "B5",
    "B6",
