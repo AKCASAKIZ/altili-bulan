@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -270,9 +270,117 @@
    "yeni": "52 +0.95",
    "metin": "7. Koşu: DAĞLAROĞLU KIZI (9) kilo 52 → 52 +0.95",
    "ts": "2026-07-27 13:34 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52 +0.95",
+   "yeni": "52 +1.00",
+   "metin": "7. Koşu: DAĞLAROĞLU KIZI (9) kilo 52 +0.95 → 52 +1.00",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.30",
+   "metin": "8. Koşu: ONLY GIRL (5) kilo 55 → 55 +0.30",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "9. Koşu: MOON ASH (6) kilo 55 → 55 +2.00",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.00",
+   "metin": "9. Koşu: QOUNTM CAT (7) kilo 54 → 54 +1.00",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +0.40",
+   "metin": "10. Koşu: MADEİRA (9) kilo 54,5 → 54,5 +0.40",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +0.20",
+   "metin": "10. Koşu: ANADOLUNUN SAZI (10) kilo 51 → 51 +0.20",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +0.80",
+   "metin": "10. Koşu: ÇUKUROVA EFESİ (11) kilo 53,5 → 53,5 +0.80",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.10",
+   "metin": "10. Koşu: MANGA PARBAT (13) kilo 52 → 52 +1.10",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.80",
+   "metin": "10. Koşu: ÇUBUKLU (14) kilo 52 → 52 +1.80",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "AĞA ABDULLAH",
+   "yeni": "AĞA ABDULLAH (Koşmaz)",
+   "metin": "10. Koşu: AĞA ABDULLAH (15) KOŞMAZ",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "10. Koşu: KARANİMO (16) kilo 52 → 52 +2.00",
+   "ts": "2026-07-27 16:01 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "10. Koşu: KÜÇÜKAHSEN (17) kilo 52 → 52 +2.00",
+   "ts": "2026-07-27 16:01 UTC"
   }
  ],
- "guncelleme": "2026-07-27 13:34 UTC",
+ "guncelleme": "2026-07-27 16:01 UTC",
  "sehir": "Bursa",
  "etkilenen": {
   "1": [
@@ -287,6 +395,17 @@
    "G1"
   ],
   "4": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "10": [
    "B13",
    "B5",
    "B6",

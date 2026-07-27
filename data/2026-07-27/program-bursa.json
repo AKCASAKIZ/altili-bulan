@@ -1260,7 +1260,7 @@
      "yas": "4y a k",
      "baba": "BAŞ HÜKÜMDAR",
      "anne": "BAHARESİNTİ",
-     "kilo": "52 +0.95",
+     "kilo": "52 +1.00",
      "jokey": "Y.T.AKKAYA AP",
      "sahip": "ALİ TOYDEMİR",
      "antrenor": "O.DEMİR",
@@ -1362,7 +1362,7 @@
      "yas": "2y d  d",
      "baba": "COOGER",
      "anne": "ZVEJDAM",
-     "kilo": "55",
+     "kilo": "55 +0.30",
      "jokey": "M.M.BİLGİN",
      "sahip": "RECAİ YAVUZ",
      "antrenor": "E.AVCI",
@@ -1482,7 +1482,7 @@
      "yas": "2y k  d",
      "baba": "ULAN BATOR",
      "anne": "KARLA KARIŞIK",
-     "kilo": "55",
+     "kilo": "55 +2.00",
      "jokey": "T.ALICI",
      "sahip": "HALİL TURAN",
      "antrenor": "A.TEMİZER",
@@ -1500,7 +1500,7 @@
      "yas": "2y d  d",
      "baba": "KLIMT (USA)",
      "anne": "QOUNTM GIRL",
-     "kilo": "54",
+     "kilo": "54 +1.00",
      "jokey": "D.KONUK AP",
      "sahip": "SABRİ ALTIN",
      "antrenor": "MUR.ALTIN",
@@ -1532,7 +1532,7 @@
     }
    ],
    "ikramiye": "545.000 TL",
-   "odemeler": "9. ÇİFTE Bu koşudan başlar GANYAN İKİLİ SIRALI İKİLİ ÜÇLÜ BAHİS PLASE SABİT GANYAN SABİT İKİLİ SABİT SIRALI İKİLİ SABİT İLK 2 SABİT İLK 3 SABİT İLK 4"
+   "odemeler": "9. ÇİFTE Bu koşudan başlar GANYAN İKİLİ SIRALI İKİLİ ÜÇLÜ BAHİS PLASE"
   },
   {
    "no": 10,
@@ -1693,7 +1693,7 @@
      "yas": "5y a  a",
      "baba": "ARHANBEY",
      "anne": "TUNCAL HANIM",
-     "kilo": "54,5",
+     "kilo": "54,5 +0.40",
      "jokey": "M.BAĞ AP",
      "sahip": "RAMAZAN BAĞ",
      "antrenor": "R.KILIÇ",
@@ -1711,7 +1711,7 @@
      "yas": "4y a k",
      "baba": "GÜMBÜRGÜMBÜR",
      "anne": "PÜRNEŞE",
-     "kilo": "51",
+     "kilo": "51 +0.20",
      "jokey": "R.YILDIZ AP",
      "sahip": "ERKUT ŞAHİN",
      "antrenor": "U.GÖKÇE",
@@ -1729,7 +1729,7 @@
      "yas": "4y a  a",
      "baba": "BERKSOY",
      "anne": "HABERTAY",
-     "kilo": "53,5",
+     "kilo": "53,5 +0.80",
      "jokey": "MAH.TURAN",
      "sahip": "EYÜP ERDEMİR",
      "antrenor": "Y.AKBULUT",
@@ -1765,7 +1765,7 @@
      "yas": "4y k  a",
      "baba": "BABA MEVLÜT",
      "anne": "GAZEVAN",
-     "kilo": "52",
+     "kilo": "52 +1.10",
      "jokey": "S.ALTAY AP",
      "sahip": "Y.BERKEHAN KELEŞ",
      "antrenor": "A.TEMİZER",
@@ -1783,7 +1783,7 @@
      "yas": "4y a  a",
      "baba": "TAYKUT",
      "anne": "HAZİRANKIZI",
-     "kilo": "52",
+     "kilo": "52 +1.80",
      "jokey": "Y.GÖKÇE AP",
      "sahip": "BARIŞ KARAGÖZ",
      "antrenor": "A.ÖCAL",
@@ -1797,7 +1797,7 @@
     },
     {
      "no": 15,
-     "ad": "AĞA ABDULLAH",
+     "ad": "AĞA ABDULLAH (Koşmaz)",
      "yas": "4y k  a",
      "baba": "FATİH AĞA",
      "anne": "KUTLUAY",
@@ -1819,7 +1819,7 @@
      "yas": "5y d  a",
      "baba": "BABA MEVLÜT",
      "anne": "AKAY",
-     "kilo": "52",
+     "kilo": "52 +2.00",
      "jokey": "C.ALTUN",
      "sahip": "KAAN GÜNEŞ",
      "antrenor": "K.GÜNEŞ",
@@ -1837,7 +1837,7 @@
      "yas": "4y a k",
      "baba": "GÜMBÜRGÜMBÜR",
      "anne": "SAVAKIZI",
-     "kilo": "52",
+     "kilo": "52 +2.00",
      "jokey": "C.PASO",
      "sahip": "MUSTAFA KARATOPRAK",
      "antrenor": "Y.C. KARATOPRAK",
@@ -1869,7 +1869,7 @@
     }
    ],
    "ikramiye": "490.000 TL",
-   "odemeler": "GANYAN İKİLİ SIRALI İKİLİ PLASE PLASE İKİLİ SIRALI 5 Lİ BAHİS TABELA BAHİS TABELA BAHİS SIRASIZ SABİT GANYAN SABİT İKİLİ SABİT SIRALI İKİLİ SABİT İLK 2 SABİT İLK 3 SABİT İLK 4"
+   "odemeler": "GANYAN İKİLİ SIRALI İKİLİ PLASE PLASE İKİLİ SIRALI 5 Lİ BAHİS TABELA BAHİS TABELA BAHİS SIRASIZ"
   }
  ]
 }
