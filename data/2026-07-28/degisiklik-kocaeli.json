@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 7,
@@ -108,9 +108,72 @@
    "yeni": "BOZKARABEYİ KG SK (Koşmaz)",
    "metin": "8. Koşu: BOZKARABEYİ (2) KOŞMAZ",
    "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "4. Koşu: İCRA (7) kilo 57 → 57 +0.40",
+   "ts": "2026-07-28 17:06 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.30",
+   "metin": "4. Koşu: LIBERTA MIA (11) kilo 53 → 53 +1.30",
+   "ts": "2026-07-28 17:06 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "5. Koşu: REKOR TAY (5) kilo 57 → 57 +0.20",
+   "ts": "2026-07-28 17:06 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.00",
+   "metin": "5. Koşu: BEŞPINAR (8) kilo 55 → 55 +1.00",
+   "ts": "2026-07-28 17:06 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +2.00",
+   "metin": "5. Koşu: ÇİRKİN VE GÜZEL (9) kilo 51 → 51 +2.00",
+   "ts": "2026-07-28 17:06 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.30",
+   "metin": "6. Koşu: ROSAS DEL ROSEDAL (8) kilo 55 → 55 +0.30",
+   "ts": "2026-07-28 17:06 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.50",
+   "metin": "6. Koşu: RUZYM (9) kilo 55 → 55 +1.50",
+   "ts": "2026-07-28 17:06 UTC"
   }
  ],
- "guncelleme": "2026-07-28 15:37 UTC",
+ "guncelleme": "2026-07-28 17:06 UTC",
  "sehir": "Kocaeli",
  "etkilenen": {
   "7": [
