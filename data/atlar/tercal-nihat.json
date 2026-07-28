@@ -1,0 +1,14 @@
+{
+ "ad": "TERCAL NİHAT",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-04-04-istanbul-1-backfill",
+  "2026-06-30-ankara-1-backfill",
+  "2026-07-28-ankara-2"
+ ],
+ "erken_gec_delta_ema": 3.945,
+ "son_atak_delta_ema": 3.21,
+ "son_guncelleme": "2026-07-28-ankara-2",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

@@ -1,6 +1,6 @@
 {
  "ad": "KOCAEFE",
- "kosu_sayisi": 9,
+ "kosu_sayisi": 10,
  "islenen_yarislar": [
   "2025-11-09-adana-6-backfill",
   "2025-11-16-adana-1-backfill",
@@ -10,10 +10,12 @@
   "2026-02-01-adana-7-backfill",
   "2026-06-16-ankara-8-backfill",
   "2026-07-14-ankara-7-backfill",
-  "2026-07-14-ankara-7"
+  "2026-07-14-ankara-7",
+  "2026-07-28-ankara-7"
  ],
- "erken_gec_delta_ema": 4.635,
- "son_guncelleme": "2026-07-14-ankara-7",
- "son_atak_delta_ema": 0,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 4.444,
+ "son_guncelleme": "2026-07-28-ankara-7",
+ "son_atak_delta_ema": 1.5,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

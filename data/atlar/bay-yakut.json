@@ -1,0 +1,15 @@
+{
+ "ad": "BAY YAKUT",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2025-02-08-adana-6-backfill",
+  "2025-02-22-adana-7-backfill",
+  "2025-03-11-adana-6-backfill",
+  "2026-07-28-kocaeli-2"
+ ],
+ "erken_gec_delta_ema": -0.518,
+ "son_atak_delta_ema": 0.616,
+ "son_guncelleme": "2026-07-28-kocaeli-2",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

@@ -1,0 +1,23 @@
+{
+ "ad": "PRINCESS DENİZ",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-07-05-ankara-9-backfill",
+  "2025-07-24-ankara-3-backfill",
+  "2025-08-19-ankara-2-backfill",
+  "2025-10-14-adana-9-backfill",
+  "2025-11-25-adana-9-backfill",
+  "2026-02-14-adana-2-backfill",
+  "2026-02-28-adana-1-backfill",
+  "2026-03-28-adana-8-backfill",
+  "2026-04-07-adana-2-backfill",
+  "2026-04-27-bursa-3-backfill",
+  "2026-06-18-ankara-6-backfill",
+  "2026-07-28-kocaeli-6"
+ ],
+ "erken_gec_delta_ema": 1.438,
+ "son_atak_delta_ema": 1.333,
+ "son_guncelleme": "2026-07-28-kocaeli-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

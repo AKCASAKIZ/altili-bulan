@@ -1,0 +1,15 @@
+{
+ "ad": "İCRA",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2025-10-05-adana-2-backfill",
+  "2025-12-28-adana-2-backfill",
+  "2026-04-04-adana-7-backfill",
+  "2026-07-28-kocaeli-4"
+ ],
+ "erken_gec_delta_ema": 2.011,
+ "son_atak_delta_ema": 2.043,
+ "son_guncelleme": "2026-07-28-kocaeli-4",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

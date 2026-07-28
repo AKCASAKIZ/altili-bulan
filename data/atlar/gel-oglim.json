@@ -1,6 +1,6 @@
 {
  "ad": "GEL OGLİM",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2025-04-13-adana-5-backfill",
   "2025-04-20-adana-8-backfill",
@@ -17,10 +17,12 @@
   "2026-05-31-istanbul-9-backfill",
   "2026-06-11-ankara-9-backfill",
   "2026-06-27-ankara-5-backfill",
-  "2026-07-15-istanbul-6"
+  "2026-07-15-istanbul-6",
+  "2026-07-28-ankara-6"
  ],
- "erken_gec_delta_ema": 0.242,
- "son_atak_delta_ema": -0.162,
- "son_guncelleme": "2026-07-15-istanbul-6",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 0.019,
+ "son_atak_delta_ema": -0.413,
+ "son_guncelleme": "2026-07-28-ankara-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }
