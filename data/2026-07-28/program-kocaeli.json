@@ -1152,7 +1152,7 @@
      "yas": "4y d  a",
      "baba": "APPROVE (IRE)",
      "anne": "TAWAFEEG (USA)",
-     "kilo": "52,5",
+     "kilo": "52,5 +1.80",
      "jokey": "MAH.TURAN",
      "sahip": "MAZLUM TURAN",
      "antrenor": "TU.TURAN",
@@ -1170,7 +1170,7 @@
      "yas": "3y d  e",
      "baba": "PAPA CLEM (USA)",
      "anne": "WINŞAH",
-     "kilo": "52",
+     "kilo": "52 +2.00",
      "jokey": "A.ASLAN",
      "sahip": "NİHAT HAS",
      "antrenor": "F.GEZİCİ",
@@ -1188,7 +1188,7 @@
      "yas": "4y a  a",
      "baba": "LION HEART (USA)",
      "anne": "DEMİRSU",
-     "kilo": "52",
+     "kilo": "52 +1.30",
      "jokey": "O.ATMACA",
      "sahip": "CEMİL ÇİZİK",
      "antrenor": "AL.ÇİZİK",
@@ -1206,7 +1206,7 @@
      "yas": "6y d  a",
      "baba": "KING DAVID (USA)",
      "anne": "CRYO STAR",
-     "kilo": "51,5",
+     "kilo": "51,5 +1.70",
      "jokey": "C.PASO",
      "sahip": "METİN SİVRİ",
      "antrenor": "K.KAYALIK",
@@ -1236,7 +1236,7 @@
      "yas": "3y a  e",
      "baba": "KAYAYÜREKLİ",
      "anne": "NAZİREHANIM",
-     "kilo": "53",
+     "kilo": "53 +0.40",
      "jokey": "HA.GÖKÇE AP",
      "sahip": "ADNAN BALKAYA",
      "antrenor": "HÜS.KARABULUT",
@@ -1272,7 +1272,7 @@
      "yas": "3y k  e",
      "baba": "KAFKASEFE",
      "anne": "AYŞE HANIM",
-     "kilo": "53",
+     "kilo": "53 +0.50",
      "jokey": "R.KURT AP",
      "sahip": "N.CEHDİ ADVAN",
      "antrenor": "M.A.CANPOLATLI",
@@ -1290,7 +1290,7 @@
      "yas": "3y k  e",
      "baba": "SİLAH",
      "anne": "KARİNA",
-     "kilo": "54",
+     "kilo": "54 +0.80",
      "jokey": "BERK.GÖKÇE AP",
      "sahip": "SEVİM KARACA",
      "antrenor": "C.GÜNEŞ",
@@ -1326,7 +1326,7 @@
      "yas": "3y k  e",
      "baba": "ANKA",
      "anne": "DAVA",
-     "kilo": "53",
+     "kilo": "53 +1.20",
      "jokey": "E.ATLAMAZ AP",
      "sahip": "MÜSLÜM ŞİMŞEK",
      "antrenor": "SEN.ŞEN",
@@ -1362,7 +1362,7 @@
      "yas": "3y k  d",
      "baba": "YAKUPBEY",
      "anne": "DİYARKIZI",
-     "kilo": "52",
+     "kilo": "52 +1.60",
      "jokey": "R.KETME AP",
      "sahip": "MİKAİL ALTIN",
      "antrenor": "M.ALTIN",
@@ -1412,7 +1412,7 @@
     }
    ],
    "ikramiye": "545.000 TL",
-   "odemeler": "[(1)ASRAL,(5)KARAKUM,] eküridir.8. ÇİFTE Bu koşudan başlar GANYAN İKİLİ SIRALI İKİLİ ÜÇLÜ BAHİS PLASE PLASE İKİLİ SABİT GANYAN SABİT İKİLİ SABİT SIRALI İKİLİ SABİT İLK 2 SABİT İLK 3 SABİT İLK 4"
+   "odemeler": "[(1)ASRAL,(5)KARAKUM,] eküridir.8. ÇİFTE Bu koşudan başlar GANYAN İKİLİ SIRALI İKİLİ ÜÇLÜ BAHİS PLASE PLASE İKİLİ"
   },
   {
    "no": 9,
@@ -1641,7 +1641,7 @@
     }
    ],
    "ikramiye": "400.000 TL",
-   "odemeler": "GANYAN İKİLİ SIRALI İKİLİ PLASE PLASE İKİLİ SIRALI 5 Lİ BAHİS TABELA BAHİS TABELA BAHİS SIRASIZ SABİT GANYAN SABİT İKİLİ SABİT SIRALI İKİLİ SABİT İLK 2 SABİT İLK 3 SABİT İLK 4"
+   "odemeler": "GANYAN İKİLİ SIRALI İKİLİ PLASE PLASE İKİLİ SIRALI 5 Lİ BAHİS TABELA BAHİS TABELA BAHİS SIRASIZ"
   }
  ]
 }

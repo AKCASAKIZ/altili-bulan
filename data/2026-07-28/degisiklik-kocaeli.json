@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 7,
@@ -171,9 +171,90 @@
    "yeni": "55 +1.50",
    "metin": "6. Koşu: RUZYM (9) kilo 55 → 55 +1.50",
    "ts": "2026-07-28 17:06 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52,5",
+   "yeni": "52,5 +1.80",
+   "metin": "7. Koşu: STAR MY BEST (5) kilo 52,5 → 52,5 +1.80",
+   "ts": "2026-07-28 18:48 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "7. Koşu: ROCK FOR EVER (6) kilo 52 → 52 +2.00",
+   "ts": "2026-07-28 18:48 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.30",
+   "metin": "7. Koşu: IRON LION (7) kilo 52 → 52 +1.30",
+   "ts": "2026-07-28 18:48 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51,5",
+   "yeni": "51,5 +1.70",
+   "metin": "7. Koşu: MİKEA (8) kilo 51,5 → 51,5 +1.70",
+   "ts": "2026-07-28 18:48 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.40",
+   "metin": "8. Koşu: ASRAL (1) kilo 53 → 53 +0.40",
+   "ts": "2026-07-28 18:48 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.50",
+   "metin": "8. Koşu: DİYAREFE (3) kilo 53 → 53 +0.50",
+   "ts": "2026-07-28 18:48 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.80",
+   "metin": "8. Koşu: HEVENK (4) kilo 54 → 54 +0.80",
+   "ts": "2026-07-28 18:48 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.20",
+   "metin": "8. Koşu: YALKINOĞLU (6) kilo 53 → 53 +1.20",
+   "ts": "2026-07-28 18:48 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.60",
+   "metin": "8. Koşu: CANGÜR (8) kilo 52 → 52 +1.60",
+   "ts": "2026-07-28 18:48 UTC"
   }
  ],
- "guncelleme": "2026-07-28 17:06 UTC",
+ "guncelleme": "2026-07-28 18:48 UTC",
  "sehir": "Kocaeli",
  "etkilenen": {
   "7": [
