@@ -1,0 +1,29 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 7,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "WHITE WOLF DB SK",
+   "yeni": "WHITE WOLF DB SK (Koşmaz)",
+   "metin": "7. Koşu: WHITE WOLF (3) KOŞMAZ",
+   "ts": "2026-07-28 11:37 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-28 11:37 UTC",
+ "sehir": "Kocaeli",
+ "etkilenen": {
+  "7": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
