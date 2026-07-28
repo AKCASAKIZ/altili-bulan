@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 2,
@@ -108,9 +108,45 @@
    "yeni": "53 +1.60",
    "metin": "4. Koşu: MALCOOBA (9) kilo 53 → 53 +1.60",
    "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.50",
+   "metin": "7. Koşu: DEĞERHAN (8) kilo 56 → 56 +1.50",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "8. Koşu: BENİM SULTANIM (6) kilo 56 → 56 +1.00",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.90",
+   "metin": "8. Koşu: JÜLİDEKIZ (7) kilo 56 → 56 +0.90",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.50",
+   "metin": "8. Koşu: BERAY SULTAN (10) kilo 54 → 54 +1.50",
+   "ts": "2026-07-28 15:37 UTC"
   }
  ],
- "guncelleme": "2026-07-28 13:17 UTC",
+ "guncelleme": "2026-07-28 15:37 UTC",
  "sehir": "Ankara",
  "etkilenen": {}
 }

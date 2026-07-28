@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 7,
@@ -9,12 +9,133 @@
    "yeni": "WHITE WOLF DB SK (Koşmaz)",
    "metin": "7. Koşu: WHITE WOLF (3) KOŞMAZ",
    "ts": "2026-07-28 11:37 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.50",
+   "metin": "1. Koşu: ÇÖL KASIRGASI (4) kilo 53 → 53 +1.50",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "1. Koşu: DÜZGÖRÜN OĞLU (5) kilo 57 → 57 +0.10",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +2.00",
+   "metin": "1. Koşu: AKGÜL HANIM (7) kilo 51 → 51 +2.00",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.60",
+   "metin": "1. Koşu: EFE SULTAN (8) kilo 55 → 55 +0.60",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +0.70",
+   "metin": "1. Koşu: GÖNLÜMDE KUTUP (9) kilo 51 → 51 +0.70",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.70",
+   "metin": "1. Koşu: KUMRUKIZ (10) kilo 55 → 55 +0.70",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "2. Koşu: ODABAŞI (8) kilo 57 → 57 +0.10",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.50",
+   "metin": "2. Koşu: YENERSULTAN (9) kilo 53 → 53 +1.50",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "3. Koşu: BLACK RAPTOR (4) kilo 54 → 54 +2.00",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "İVECEN KG",
+   "yeni": "İVECEN KG (Koşmaz)",
+   "metin": "5. Koşu: İVECEN (10) KOŞMAZ",
+   "ts": "2026-07-28 15:37 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "BOZKARABEYİ KG SK",
+   "yeni": "BOZKARABEYİ KG SK (Koşmaz)",
+   "metin": "8. Koşu: BOZKARABEYİ (2) KOŞMAZ",
+   "ts": "2026-07-28 15:37 UTC"
   }
  ],
- "guncelleme": "2026-07-28 11:37 UTC",
+ "guncelleme": "2026-07-28 15:37 UTC",
  "sehir": "Kocaeli",
  "etkilenen": {
   "7": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "5": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "8": [
    "B13",
    "B5",
    "B6",
