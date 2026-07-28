@@ -1,0 +1,116 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "2. Koşu: TERCAL NİHAT (2) kilo 56 → 56 +1.00",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.30",
+   "metin": "2. Koşu: GREEN EYED MEMO (5) kilo 54 → 54 +1.30",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "2. Koşu: NEURO RUSH (6) kilo 52 → 52 +2.00",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "3. Koşu: ARATŞAH (1) kilo 57 → 57 +0.10",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "3. Koşu: DR NECO (3) kilo 57 → 57 +0.20",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "3. Koşu: SPIDER (7) kilo 57 → 57 +0.20",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.80",
+   "metin": "4. Koşu: ÇAKIR ASLANI (3) kilo 56 → 56 +0.80",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "4. Koşu: FIGHTING MAN (4) kilo 55 → 55 +2.00",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.90",
+   "metin": "4. Koşu: SECRET STORM (6) kilo 55 → 55 +0.90",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.30",
+   "metin": "4. Koşu: SILVER PUNCH (7) kilo 53 → 53 +0.30",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "4. Koşu: LOQUİTA (8) kilo 54 → 54 +2.00",
+   "ts": "2026-07-28 13:17 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.60",
+   "metin": "4. Koşu: MALCOOBA (9) kilo 53 → 53 +1.60",
+   "ts": "2026-07-28 13:17 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-28 13:17 UTC",
+ "sehir": "Ankara",
+ "etkilenen": {}
+}
