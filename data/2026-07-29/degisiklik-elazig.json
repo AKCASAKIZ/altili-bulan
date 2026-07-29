@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -135,9 +135,90 @@
    "yeni": "UÇAN YARİM KG DB GKR (Koşmaz)",
    "metin": "4. Koşu: UÇAN YARİM (10) KOŞMAZ",
    "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.30",
+   "metin": "3. Koşu: BÜYÜK POYRAZ (7) kilo 55 → 55 +0.30",
+   "ts": "2026-07-29 17:07 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.50",
+   "metin": "3. Koşu: YALNIZ TURBO (8) kilo 56 → 56 +1.50",
+   "ts": "2026-07-29 17:07 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "3. Koşu: AL BENZE (9) kilo 55 → 55 +2.00",
+   "ts": "2026-07-29 17:07 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.00",
+   "metin": "3. Koşu: BERRANUR (10) kilo 54 → 54 +1.00",
+   "ts": "2026-07-29 17:07 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "4. Koşu: BIG VICTORY (3) kilo 57 → 57 +0.20",
+   "ts": "2026-07-29 17:07 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.70",
+   "metin": "4. Koşu: DURABLE COLT (4) kilo 57 → 57 +0.70",
+   "ts": "2026-07-29 17:07 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.70",
+   "metin": "4. Koşu: GRAND NEVA (7) kilo 57 → 57 +0.70",
+   "ts": "2026-07-29 17:07 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.40",
+   "metin": "4. Koşu: KRISTAL NACHT (8) kilo 54 → 54 +1.40",
+   "ts": "2026-07-29 17:07 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.00",
+   "metin": "4. Koşu: SECRET GIRL (9) kilo 57 → 57 +1.00",
+   "ts": "2026-07-29 17:07 UTC"
   }
  ],
- "guncelleme": "2026-07-29 15:46 UTC",
+ "guncelleme": "2026-07-29 17:07 UTC",
  "sehir": "Elazığ",
  "etkilenen": {
   "1": [
