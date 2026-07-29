@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -18,9 +18,178 @@
    "yeni": "57 +0.20",
    "metin": "1. Koşu: MY ZEKO (5) kilo 57 → 57 +0.20",
    "ts": "2026-07-29 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58,5",
+   "yeni": "58,5 +0.20",
+   "metin": "2. Koşu: KING OF TIME (3) kilo 58,5 → 58,5 +0.20",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.20",
+   "metin": "3. Koşu: İWOJİMA (7) kilo 55 → 55 +0.20",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "3. Koşu: LAVİN FIRTINASI (8) kilo 55 → 55 +2.00",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +0.30",
+   "metin": "3. Koşu: TUTMAÇ (9) kilo 55,5 → 55,5 +0.30",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +1.00",
+   "metin": "3. Koşu: EL FAMİLİA (12) kilo 53,5 → 53,5 +1.00",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "4. Koşu: HÜKÜMLÜ (3) kilo 57 → 57 +0.40",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "4. Koşu: KEREMNUR (6) kilo 55 → 55 +2.00",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.70",
+   "metin": "4. Koşu: LİSBOA (7) kilo 55 → 55 +0.70",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "4. Koşu: ŞENERHAN (8) kilo 54 → 54 +2.00",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52,5",
+   "yeni": "52,5 +2.00",
+   "metin": "5. Koşu: WHISPER OF VICTORY (5) kilo 52,5 → 52,5 +2.00",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +0.30",
+   "metin": "5. Koşu: ÇOKOMEL KIZ (6) kilo 50 → 50 +0.30",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +0.70",
+   "metin": "5. Koşu: LOST TREASURE (7) kilo 56,5 → 56,5 +0.70",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: BOAZ (8) kilo 52 → 52 +2.00",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: THE WITCHER (9) kilo 52 → 52 +2.00",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: NART THE WOLF (10) kilo 52 → 52 +2.00",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.50",
+   "metin": "5. Koşu: THE BUTCHER (11) kilo 52 → 52 +1.50",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "K.GÖKÇE AP",
+   "metin": "6. Koşu: SHIROKE (1) jokey ER.CANKILIÇ AP → K.GÖKÇE AP",
+   "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "6. Koşu: DIAMOND BROTHERS (2) kilo 57 → 57 +0.20",
+   "ts": "2026-07-29 13:53 UTC"
   }
  ],
- "guncelleme": "2026-07-29 11:47 UTC",
+ "guncelleme": "2026-07-29 13:53 UTC",
  "sehir": "İstanbul",
- "etkilenen": {}
+ "etkilenen": {
+  "6": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ]
+ }
 }
