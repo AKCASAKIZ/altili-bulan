@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 1,
@@ -216,9 +216,81 @@
    "yeni": "57 +1.00",
    "metin": "4. Koşu: SECRET GIRL (9) kilo 57 → 57 +1.00",
    "ts": "2026-07-29 17:07 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +2.00",
+   "metin": "6. Koşu: LUCKY ANGEL (7) kilo 56 → 56 +2.00",
+   "ts": "2026-07-29 18:16 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.00",
+   "metin": "6. Koşu: AFROZY RED LINE (8) kilo 55 → 55 +1.00",
+   "ts": "2026-07-29 18:16 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "6. Koşu: ÇEVİK PRENSES (9) kilo 57 → 57 +2.00",
+   "ts": "2026-07-29 18:16 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "7. Koşu: AMALASUNTA (1) kilo 57 → 57 +0.50",
+   "ts": "2026-07-29 18:16 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "7. Koşu: AŞAN STAR (2) kilo 57 → 57 +0.50",
+   "ts": "2026-07-29 18:16 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.00",
+   "metin": "7. Koşu: EMPRESS GIRL (3) kilo 57 → 57 +1.00",
+   "ts": "2026-07-29 18:16 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "7. Koşu: OTTO MOYE (8) kilo 57 → 57 +2.00",
+   "ts": "2026-07-29 18:16 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.00",
+   "metin": "7. Koşu: RUN FOR HIM (9) kilo 57 → 57 +1.00",
+   "ts": "2026-07-29 18:16 UTC"
   }
  ],
- "guncelleme": "2026-07-29 17:07 UTC",
+ "guncelleme": "2026-07-29 18:16 UTC",
  "sehir": "Elazığ",
  "etkilenen": {
   "1": [
