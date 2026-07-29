@@ -1,6 +1,6 @@
 {
  "ad": "BERRANUR",
- "kosu_sayisi": 10,
+ "kosu_sayisi": 11,
  "islenen_yarislar": [
   "2025-05-19-bursa-1-backfill",
   "2025-06-03-kocaeli-8-backfill",
@@ -11,10 +11,12 @@
   "2026-06-01-sanliurfa-7-backfill",
   "2026-06-24-elazig-3-backfill",
   "2026-07-20-elazig-4-backfill",
-  "2026-07-20-elazig-4"
+  "2026-07-20-elazig-4",
+  "2026-07-29-elazig-3"
  ],
- "erken_gec_delta_ema": 3.936,
- "son_guncelleme": "2026-07-20-elazig-4",
- "son_atak_delta_ema": 1.02,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 3.505,
+ "son_guncelleme": "2026-07-29-elazig-3",
+ "son_atak_delta_ema": -0.186,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

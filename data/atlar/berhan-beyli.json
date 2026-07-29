@@ -1,0 +1,17 @@
+{
+ "ad": "BERHAN BEYLİ",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-06-28-ankara-8-backfill",
+  "2025-12-29-sanliurfa-6-backfill",
+  "2026-02-04-sanliurfa-2-backfill",
+  "2026-04-21-elazig-7-backfill",
+  "2026-04-28-elazig-6-backfill",
+  "2026-07-29-elazig-3"
+ ],
+ "erken_gec_delta_ema": 1.307,
+ "son_atak_delta_ema": 2.431,
+ "son_guncelleme": "2026-07-29-elazig-3",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

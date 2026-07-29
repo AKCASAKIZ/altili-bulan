@@ -1,13 +1,17 @@
 {
  "ad": "ZENGHAT",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 6,
  "islenen_yarislar": [
   "2026-05-18-sanliurfa-3-backfill",
   "2026-06-01-sanliurfa-2-backfill",
   "2026-07-15-elazig-5-backfill",
-  "2026-07-15-elazig-5"
+  "2026-07-15-elazig-5",
+  "2026-07-29-elazig-2-backfill",
+  "2026-07-29-elazig-2"
  ],
- "erken_gec_delta_ema": 2.118,
- "son_guncelleme": "2026-07-15-elazig-5",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 1.038,
+ "son_guncelleme": "2026-07-29-elazig-2",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0.49,
+ "gecmis_surum": 2
 }

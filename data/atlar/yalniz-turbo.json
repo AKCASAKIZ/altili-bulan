@@ -1,0 +1,17 @@
+{
+ "ad": "YALNIZ TURBO",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-04-15-antalya-1-backfill",
+  "2025-04-29-antalya-3-backfill",
+  "2025-05-13-antalya-1-backfill",
+  "2025-06-30-bursa-8-backfill",
+  "2025-08-05-kocaeli-6-backfill",
+  "2026-07-29-elazig-3"
+ ],
+ "erken_gec_delta_ema": 3.031,
+ "son_atak_delta_ema": 4.139,
+ "son_guncelleme": "2026-07-29-elazig-3",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

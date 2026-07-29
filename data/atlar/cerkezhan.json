@@ -1,6 +1,6 @@
 {
  "ad": "ÇERKEZHAN",
- "kosu_sayisi": 10,
+ "kosu_sayisi": 11,
  "islenen_yarislar": [
   "2025-10-09-ankara-2-backfill",
   "2025-12-18-antalya-7-backfill",
@@ -11,10 +11,12 @@
   "2026-05-17-istanbul-7-backfill",
   "2026-06-03-istanbul-1-backfill",
   "2026-07-15-istanbul-5-backfill",
-  "2026-07-15-istanbul-5"
+  "2026-07-15-istanbul-5",
+  "2026-07-29-istanbul-8"
  ],
- "erken_gec_delta_ema": 0.104,
- "son_guncelleme": "2026-07-15-istanbul-5",
- "son_atak_delta_ema": 0.49,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.977,
+ "son_guncelleme": "2026-07-29-istanbul-8",
+ "son_atak_delta_ema": -1.157,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

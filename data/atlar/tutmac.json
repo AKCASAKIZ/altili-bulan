@@ -1,15 +1,17 @@
 {
  "ad": "TUTMAÇ",
- "kosu_sayisi": 5,
+ "kosu_sayisi": 6,
  "islenen_yarislar": [
   "2025-05-26-bursa-8-backfill",
   "2025-06-10-kocaeli-2-backfill",
   "2026-04-14-kocaeli-10-backfill",
   "2026-04-28-kocaeli-7-backfill",
-  "2026-07-21-kocaeli-8"
+  "2026-07-21-kocaeli-8",
+  "2026-07-29-istanbul-3"
  ],
- "erken_gec_delta_ema": -0.608,
- "son_guncelleme": "2026-07-21-kocaeli-8",
- "son_atak_delta_ema": -1.0,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.426,
+ "son_guncelleme": "2026-07-29-istanbul-3",
+ "son_atak_delta_ema": -1.3,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

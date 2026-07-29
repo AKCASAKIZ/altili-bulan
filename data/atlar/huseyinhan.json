@@ -1,14 +1,16 @@
 {
  "ad": "HÜSEYİNHAN",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2025-11-04-adana-9-backfill",
   "2025-11-22-adana-10-backfill",
   "2026-01-10-adana-2-backfill",
-  "2026-07-19-istanbul-4"
+  "2026-07-19-istanbul-4",
+  "2026-07-29-istanbul-7"
  ],
- "erken_gec_delta_ema": 1.291,
- "son_guncelleme": "2026-07-19-istanbul-4",
+ "erken_gec_delta_ema": -0.596,
+ "son_guncelleme": "2026-07-29-istanbul-7",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": 1
+ "son_atak_delta_ema": -0.8,
+ "gecmis_surum": 2
 }

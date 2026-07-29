@@ -1,15 +1,17 @@
 {
  "ad": "KOCA SABRİ",
- "kosu_sayisi": 5,
+ "kosu_sayisi": 6,
  "islenen_yarislar": [
   "2025-11-29-adana-1-backfill",
   "2026-04-14-elazig-3-backfill",
   "2026-04-20-sanliurfa-8-backfill",
   "2026-07-06-elazig-6-backfill",
-  "2026-07-22-elazig-8"
+  "2026-07-22-elazig-8",
+  "2026-07-29-elazig-3"
  ],
- "erken_gec_delta_ema": 1.554,
- "son_guncelleme": "2026-07-22-elazig-8",
- "son_atak_delta_ema": -0.343,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 1.688,
+ "son_guncelleme": "2026-07-29-elazig-3",
+ "son_atak_delta_ema": 0.36,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

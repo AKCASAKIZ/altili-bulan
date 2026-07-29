@@ -1,6 +1,6 @@
 {
  "ad": "SÜKANBEY",
- "kosu_sayisi": 7,
+ "kosu_sayisi": 8,
  "islenen_yarislar": [
   "2025-05-24-ankara-8-backfill",
   "2025-06-17-ankara-10-backfill",
@@ -8,10 +8,12 @@
   "2026-07-09-kocaeli-2-backfill",
   "2026-07-09-kocaeli-2",
   "2026-07-16-ankara-3",
-  "2026-07-21-ankara-1"
+  "2026-07-21-ankara-1",
+  "2026-07-29-istanbul-7"
  ],
- "erken_gec_delta_ema": 0.938,
- "son_guncelleme": "2026-07-21-ankara-1",
- "son_atak_delta_ema": -0.51,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.393,
+ "son_guncelleme": "2026-07-29-istanbul-7",
+ "son_atak_delta_ema": -1.557,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

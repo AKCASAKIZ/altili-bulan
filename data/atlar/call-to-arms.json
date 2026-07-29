@@ -1,0 +1,17 @@
+{
+ "ad": "CALL TO ARMS",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-10-17-istanbul-8-backfill",
+  "2025-11-22-istanbul-8-backfill",
+  "2026-05-10-istanbul-5-backfill",
+  "2026-05-27-istanbul-3-backfill",
+  "2026-07-05-istanbul-3-backfill",
+  "2026-07-29-istanbul-2"
+ ],
+ "erken_gec_delta_ema": -0.858,
+ "son_atak_delta_ema": -1.019,
+ "son_guncelleme": "2026-07-29-istanbul-2",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

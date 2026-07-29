@@ -1,0 +1,19 @@
+{
+ "ad": "ÇEVİK PRENSES",
+ "kosu_sayisi": 8,
+ "islenen_yarislar": [
+  "2025-07-23-elazig-1-backfill",
+  "2025-07-30-elazig-3-backfill",
+  "2025-08-13-elazig-8-backfill",
+  "2025-09-01-elazig-6-backfill",
+  "2026-04-14-elazig-5-backfill",
+  "2026-04-29-elazig-1-backfill",
+  "2026-05-20-elazig-5-backfill",
+  "2026-07-29-elazig-6"
+ ],
+ "erken_gec_delta_ema": -1.869,
+ "son_atak_delta_ema": -2.016,
+ "son_guncelleme": "2026-07-29-elazig-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

@@ -1,0 +1,16 @@
+{
+ "ad": "MY EAGLE",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-05-10-adana-1-backfill",
+  "2026-05-31-adana-2-backfill",
+  "2026-06-19-istanbul-7-backfill",
+  "2026-07-29-istanbul-4-backfill",
+  "2026-07-29-istanbul-4"
+ ],
+ "erken_gec_delta_ema": 1.56,
+ "son_atak_delta_ema": 2.367,
+ "son_guncelleme": "2026-07-29-istanbul-4",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

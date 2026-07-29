@@ -1,0 +1,23 @@
+{
+ "ad": "AFROZY RED LINE",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-06-18-istanbul-2-backfill",
+  "2025-07-03-kocaeli-7-backfill",
+  "2025-07-17-kocaeli-8-backfill",
+  "2025-07-30-istanbul-2-backfill",
+  "2025-08-26-kocaeli-8-backfill",
+  "2025-11-05-elazig-7-backfill",
+  "2025-12-15-sanliurfa-5-backfill",
+  "2025-12-27-adana-7-backfill",
+  "2026-02-15-adana-6-backfill",
+  "2026-02-24-adana-1-backfill",
+  "2026-07-29-elazig-6-backfill",
+  "2026-07-29-elazig-6"
+ ],
+ "erken_gec_delta_ema": 1.059,
+ "son_atak_delta_ema": 0.426,
+ "son_guncelleme": "2026-07-29-elazig-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

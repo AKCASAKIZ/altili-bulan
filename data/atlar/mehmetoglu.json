@@ -1,0 +1,14 @@
+{
+ "ad": "MEHMETOĞLU",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2025-12-09-adana-5-backfill",
+  "2025-12-23-adana-6-backfill",
+  "2026-07-29-istanbul-3"
+ ],
+ "erken_gec_delta_ema": 1.745,
+ "son_atak_delta_ema": 1.09,
+ "son_guncelleme": "2026-07-29-istanbul-3",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}
