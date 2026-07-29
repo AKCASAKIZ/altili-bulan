@@ -1,0 +1,26 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "1. Koşu: BAYHAKAN (3) kilo 57 → 57 +0.40",
+   "ts": "2026-07-29 11:47 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "1. Koşu: MY ZEKO (5) kilo 57 → 57 +0.20",
+   "ts": "2026-07-29 11:47 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-29 11:47 UTC",
+ "sehir": "İstanbul",
+ "etkilenen": {}
+}
