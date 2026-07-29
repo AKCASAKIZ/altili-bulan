@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -18,12 +18,151 @@
    "yeni": "ÖZGÜR ESRA KG K DB GKR (Koşmaz)",
    "metin": "1. Koşu: ÖZGÜR ESRA (7) KOŞMAZ",
    "ts": "2026-07-29 13:53 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "1. Koşu: CEYLAN (1) kilo 57 → 57 +0.50",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.70",
+   "metin": "1. Koşu: MERYEMCAN (6) kilo 57 → 57 +0.70",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "2. Koşu: MERTOLTAY (2) kilo 57 → 57 +0.30",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.60",
+   "metin": "2. Koşu: TELLİ DERELİ (3) kilo 57 → 57 +0.60",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "2. Koşu: EKSEN (5) kilo 57 → 57 +2.00",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.60",
+   "metin": "2. Koşu: FİRİYOZA (6) kilo 55 → 55 +1.60",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.80",
+   "metin": "2. Koşu: HİFANINOĞLU (7) kilo 55 → 55 +0.80",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.80",
+   "metin": "2. Koşu: HUN DAY (8) kilo 55 → 55 +0.80",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "2. Koşu: KİNG BEDİRHAN (9) kilo 55 → 55 +2.00",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "2. Koşu: KRAL LAMİ (10) kilo 54 → 54 +2.00",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.70",
+   "metin": "2. Koşu: MALATYA ÇAPKINI (11) kilo 53 → 53 +1.70",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "ASİHAN KG DB SK",
+   "yeni": "ASİHAN KG DB SK (Koşmaz)",
+   "metin": "3. Koşu: ASİHAN (6) KOŞMAZ",
+   "ts": "2026-07-29 15:46 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "UÇAN YARİM KG DB GKR",
+   "yeni": "UÇAN YARİM KG DB GKR (Koşmaz)",
+   "metin": "4. Koşu: UÇAN YARİM (10) KOŞMAZ",
+   "ts": "2026-07-29 15:46 UTC"
   }
  ],
- "guncelleme": "2026-07-29 13:53 UTC",
+ "guncelleme": "2026-07-29 15:46 UTC",
  "sehir": "Elazığ",
  "etkilenen": {
   "1": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "3": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "4": [
    "B13",
    "B5",
    "B6",
