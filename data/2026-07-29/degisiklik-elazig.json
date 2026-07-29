@@ -1,5 +1,5 @@
 {
- "surum": 4,
+ "surum": 5,
  "olaylar": [
   {
    "kosu": 1,
@@ -288,9 +288,54 @@
    "yeni": "57 +1.00",
    "metin": "7. Koşu: RUN FOR HIM (9) kilo 57 → 57 +1.00",
    "ts": "2026-07-29 18:16 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "8. Koşu: OĞLUMBENİM (8) kilo 57 → 57 +0.50",
+   "ts": "2026-07-29 19:46 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +2.00",
+   "metin": "8. Koşu: YAĞIZALP (12) kilo 56 → 56 +2.00",
+   "ts": "2026-07-29 19:46 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "8. Koşu: MELİHTAY (13) kilo 57 → 57 +2.00",
+   "ts": "2026-07-29 19:46 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.70",
+   "metin": "8. Koşu: MİRŞEŞEN (14) kilo 56 → 56 +0.70",
+   "ts": "2026-07-29 19:46 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "8. Koşu: TUMBUL NAZLI (15) kilo 54 → 54 +2.00",
+   "ts": "2026-07-29 19:46 UTC"
   }
  ],
- "guncelleme": "2026-07-29 18:16 UTC",
+ "guncelleme": "2026-07-29 19:46 UTC",
  "sehir": "Elazığ",
  "etkilenen": {
   "1": [
