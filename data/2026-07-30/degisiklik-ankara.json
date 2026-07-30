@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 2,
@@ -18,9 +18,72 @@
    "yeni": "SON DOONG KG K (Koşmaz)",
    "metin": "3. Koşu: SON DOONG (7) KOŞMAZ",
    "ts": "2026-07-30 09:15 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.70",
+   "metin": "1. Koşu: LEVERO (4) kilo 53 → 53 +1.70",
+   "ts": "2026-07-30 11:22 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.90",
+   "metin": "1. Koşu: FASTEST ÇINAR (5) kilo 56 → 56 +0.90",
+   "ts": "2026-07-30 11:22 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.90",
+   "metin": "1. Koşu: TIWAZ (6) kilo 52 → 52 +1.90",
+   "ts": "2026-07-30 11:22 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51,5",
+   "yeni": "51,5 +2.00",
+   "metin": "1. Koşu: CİRCE KIZI (7) kilo 51,5 → 51,5 +2.00",
+   "ts": "2026-07-30 11:22 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +2.00",
+   "metin": "2. Koşu: KÜÇÜKCEVER (7) kilo 54,5 → 54,5 +2.00",
+   "ts": "2026-07-30 11:22 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "2. Koşu: ALŞUBATHAN (8) kilo 52 → 52 +2.00",
+   "ts": "2026-07-30 11:22 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "2. Koşu: YÜCEOĞUL (9) kilo 52 → 52 +2.00",
+   "ts": "2026-07-30 11:22 UTC"
   }
  ],
- "guncelleme": "2026-07-30 09:15 UTC",
+ "guncelleme": "2026-07-30 11:22 UTC",
  "sehir": "Ankara",
  "etkilenen": {
   "2": [
