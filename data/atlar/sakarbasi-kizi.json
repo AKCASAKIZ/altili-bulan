@@ -1,0 +1,16 @@
+{
+ "ad": "SAKARBAŞI KIZI",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-07-01-ankara-6-backfill",
+  "2025-07-26-ankara-2-backfill",
+  "2025-08-09-ankara-3-backfill",
+  "2025-08-16-ankara-4-backfill",
+  "2026-07-30-ankara-4"
+ ],
+ "erken_gec_delta_ema": -2.166,
+ "son_atak_delta_ema": -1.49,
+ "son_guncelleme": "2026-07-30-ankara-4",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

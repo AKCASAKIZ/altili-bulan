@@ -1,16 +1,18 @@
 {
  "ad": "ESKİ TOPRAK",
- "kosu_sayisi": 6,
+ "kosu_sayisi": 7,
  "islenen_yarislar": [
   "2025-02-21-antalya-4-backfill",
   "2025-12-02-antalya-3-backfill",
   "2025-12-16-antalya-5-backfill",
   "2025-12-30-antalya-3-backfill",
   "2026-01-16-antalya-4-backfill",
-  "2026-07-17-bursa-6"
+  "2026-07-17-bursa-6",
+  "2026-07-30-kocaeli-7"
  ],
- "erken_gec_delta_ema": -0.968,
- "son_atak_delta_ema": -1.675,
- "son_guncelleme": "2026-07-17-bursa-6",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.828,
+ "son_atak_delta_ema": -1.472,
+ "son_guncelleme": "2026-07-30-kocaeli-7",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

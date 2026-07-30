@@ -1,6 +1,6 @@
 {
  "ad": "BİZİMSOY",
- "kosu_sayisi": 9,
+ "kosu_sayisi": 10,
  "islenen_yarislar": [
   "2025-12-01-sanliurfa-9-backfill",
   "2025-12-22-sanliurfa-1-backfill",
@@ -10,10 +10,12 @@
   "2026-04-28-elazig-6-backfill",
   "2026-06-08-sanliurfa-8-backfill",
   "2026-07-14-ankara-9",
-  "2026-07-23-ankara-4"
+  "2026-07-23-ankara-4",
+  "2026-07-30-kocaeli-5"
  ],
- "erken_gec_delta_ema": -2.616,
- "son_guncelleme": "2026-07-23-ankara-4",
+ "erken_gec_delta_ema": -3.331,
+ "son_guncelleme": "2026-07-30-kocaeli-5",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": -7
+ "son_atak_delta_ema": -6.7,
+ "gecmis_surum": 2
 }

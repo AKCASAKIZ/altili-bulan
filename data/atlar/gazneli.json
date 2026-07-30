@@ -1,13 +1,15 @@
 {
  "ad": "GAZNELİ",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2025-11-08-ankara-1-backfill",
   "2026-07-23-ankara-1-backfill",
-  "2026-07-23-ankara-1"
+  "2026-07-23-ankara-1",
+  "2026-07-30-ankara-4"
  ],
- "erken_gec_delta_ema": 4.275,
- "son_atak_delta_ema": 0.0,
- "son_guncelleme": "2026-07-23-ankara-1",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.543,
+ "son_atak_delta_ema": 0.3,
+ "son_guncelleme": "2026-07-30-ankara-4",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

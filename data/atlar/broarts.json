@@ -1,6 +1,6 @@
 {
  "ad": "BROARTS",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2025-04-06-adana-3-backfill",
   "2025-04-26-ankara-7-backfill",
@@ -17,10 +17,12 @@
   "2026-06-11-ankara-8-backfill",
   "2026-06-30-ankara-7-backfill",
   "2026-07-11-ankara-7-backfill",
-  "2026-07-11-ankara-7"
+  "2026-07-11-ankara-7",
+  "2026-07-30-ankara-7"
  ],
- "erken_gec_delta_ema": -1.212,
- "son_atak_delta_ema": -2.38,
- "son_guncelleme": "2026-07-11-ankara-7",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -1.148,
+ "son_atak_delta_ema": -1.966,
+ "son_guncelleme": "2026-07-30-ankara-7",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

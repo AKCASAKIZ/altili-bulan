@@ -1,13 +1,15 @@
 {
  "ad": "GÜMBÜR ŞAH",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2025-09-16-kocaeli-8-backfill",
   "2026-05-26-kocaeli-4-backfill",
-  "2026-07-14-kocaeli-9"
+  "2026-07-14-kocaeli-9",
+  "2026-07-30-kocaeli-5"
  ],
- "erken_gec_delta_ema": 0.48,
- "son_guncelleme": "2026-07-14-kocaeli-9",
- "son_atak_delta_ema": 2.1,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 0.786,
+ "son_guncelleme": "2026-07-30-kocaeli-5",
+ "son_atak_delta_ema": 3.57,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

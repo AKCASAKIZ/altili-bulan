@@ -1,6 +1,6 @@
 {
  "ad": "ERKOÇUM",
- "kosu_sayisi": 11,
+ "kosu_sayisi": 12,
  "islenen_yarislar": [
   "2025-01-21-antalya-2-backfill",
   "2025-02-13-antalya-6-backfill",
@@ -12,10 +12,12 @@
   "2025-11-02-istanbul-1-backfill",
   "2025-11-15-ankara-3-backfill",
   "2026-05-13-istanbul-8-backfill",
-  "2026-07-20-bursa-9"
+  "2026-07-20-bursa-9",
+  "2026-07-30-kocaeli-9"
  ],
- "erken_gec_delta_ema": 4.829,
- "son_atak_delta_ema": 0.323,
- "son_guncelleme": "2026-07-20-bursa-9",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 3.08,
+ "son_atak_delta_ema": -0.074,
+ "son_guncelleme": "2026-07-30-kocaeli-9",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

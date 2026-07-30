@@ -1,0 +1,25 @@
+{
+ "ad": "REYHAN GELİN",
+ "kosu_sayisi": 14,
+ "islenen_yarislar": [
+  "2025-01-26-izmir-7-backfill",
+  "2025-02-07-izmir-3-backfill",
+  "2025-02-14-izmir-4-backfill",
+  "2025-03-06-izmir-3-backfill",
+  "2025-03-16-izmir-8-backfill",
+  "2025-03-23-izmir-2-backfill",
+  "2025-04-04-antalya-4-backfill",
+  "2025-11-28-izmir-1-backfill",
+  "2025-12-21-izmir-1-backfill",
+  "2026-02-15-izmir-6-backfill",
+  "2026-04-05-izmir-8-backfill",
+  "2026-05-14-izmir-7-backfill",
+  "2026-07-05-izmir-5-backfill",
+  "2026-07-30-kocaeli-8"
+ ],
+ "erken_gec_delta_ema": -2.442,
+ "son_atak_delta_ema": -3.416,
+ "son_guncelleme": "2026-07-30-kocaeli-8",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

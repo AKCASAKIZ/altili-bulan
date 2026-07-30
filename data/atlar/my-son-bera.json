@@ -1,0 +1,17 @@
+{
+ "ad": "MY SON BERA",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-12-16-adana-1-backfill",
+  "2026-01-06-adana-1-backfill",
+  "2026-01-27-adana-1-backfill",
+  "2026-03-08-adana-2-backfill",
+  "2026-03-28-adana-9-backfill",
+  "2026-07-30-ankara-6"
+ ],
+ "erken_gec_delta_ema": 0.366,
+ "son_atak_delta_ema": 0.354,
+ "son_guncelleme": "2026-07-30-ankara-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

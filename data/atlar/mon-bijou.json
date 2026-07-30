@@ -1,0 +1,26 @@
+{
+ "ad": "MON BİJOU",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-05-15-ankara-9-backfill",
+  "2025-06-14-ankara-6-backfill",
+  "2025-06-28-ankara-9-backfill",
+  "2025-07-12-ankara-5-backfill",
+  "2025-08-12-ankara-5-backfill",
+  "2025-08-28-ankara-1-backfill",
+  "2025-09-18-ankara-3-backfill",
+  "2025-10-02-ankara-7-backfill",
+  "2025-10-30-ankara-8-backfill",
+  "2025-11-13-ankara-1-backfill",
+  "2026-03-07-adana-5-backfill",
+  "2026-05-31-adana-9-backfill",
+  "2026-06-26-ankara-2-backfill",
+  "2026-07-30-ankara-5-backfill",
+  "2026-07-30-ankara-5"
+ ],
+ "erken_gec_delta_ema": 1.996,
+ "son_atak_delta_ema": 1.197,
+ "son_guncelleme": "2026-07-30-ankara-5",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

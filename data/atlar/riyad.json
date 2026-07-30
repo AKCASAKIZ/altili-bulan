@@ -1,0 +1,20 @@
+{
+ "ad": "RİYAD",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2025-02-12-istanbul-4-backfill",
+  "2025-07-30-istanbul-1-backfill",
+  "2025-08-27-istanbul-3-backfill",
+  "2025-09-06-istanbul-1-backfill",
+  "2025-11-07-istanbul-1-backfill",
+  "2025-11-26-istanbul-9-backfill",
+  "2026-06-16-kocaeli-3-backfill",
+  "2026-07-30-kocaeli-9-backfill",
+  "2026-07-30-kocaeli-9"
+ ],
+ "erken_gec_delta_ema": 5.482,
+ "son_atak_delta_ema": 5.668,
+ "son_guncelleme": "2026-07-30-kocaeli-9",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

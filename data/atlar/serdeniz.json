@@ -1,6 +1,6 @@
 {
  "ad": "SERDENİZ",
- "kosu_sayisi": 12,
+ "kosu_sayisi": 13,
  "islenen_yarislar": [
   "2025-05-11-adana-1-backfill",
   "2025-06-05-ankara-4-backfill",
@@ -13,11 +13,12 @@
   "2026-06-19-istanbul-4-backfill",
   "2026-07-15-istanbul-2-backfill",
   "2026-07-15-istanbul-2",
-  "2026-07-24-istanbul-10"
+  "2026-07-24-istanbul-10",
+  "2026-07-30-ankara-2"
  ],
- "erken_gec_delta_ema": 3.662,
- "son_guncelleme": "2026-07-24-istanbul-10",
- "son_atak_delta_ema": 0.24,
+ "erken_gec_delta_ema": 3.313,
+ "son_guncelleme": "2026-07-30-ankara-2",
+ "son_atak_delta_ema": 1.068,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

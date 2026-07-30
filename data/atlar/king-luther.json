@@ -1,0 +1,15 @@
+{
+ "ad": "KING LUTHER",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-05-26-kocaeli-3-backfill",
+  "2026-07-04-ankara-1-backfill",
+  "2026-07-30-ankara-6-backfill",
+  "2026-07-30-ankara-6"
+ ],
+ "erken_gec_delta_ema": 2.667,
+ "son_atak_delta_ema": 2.824,
+ "son_guncelleme": "2026-07-30-ankara-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

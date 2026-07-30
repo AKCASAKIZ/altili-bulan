@@ -1,11 +1,13 @@
 {
  "ad": "TIWAZ",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2026-01-27-antalya-4-backfill",
-  "2026-07-21-ankara-3"
+  "2026-07-21-ankara-3",
+  "2026-07-30-ankara-1"
  ],
- "erken_gec_delta_ema": -0.75,
- "son_guncelleme": "2026-07-21-ankara-3",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.975,
+ "son_guncelleme": "2026-07-30-ankara-1",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": -3
 }

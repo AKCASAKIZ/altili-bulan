@@ -1,12 +1,14 @@
 {
  "ad": "SILLAGE",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2026-05-14-ankara-4-backfill",
-  "2026-07-14-ankara-5"
+  "2026-07-14-ankara-5",
+  "2026-07-30-ankara-9"
  ],
- "erken_gec_delta_ema": 5.4,
- "son_atak_delta_ema": 0.0,
- "son_guncelleme": "2026-07-14-ankara-5",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 5.58,
+ "son_atak_delta_ema": 2.7,
+ "son_guncelleme": "2026-07-30-ankara-9",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

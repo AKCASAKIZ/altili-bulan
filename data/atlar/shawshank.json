@@ -1,0 +1,20 @@
+{
+ "ad": "SHAWSHANK",
+ "kosu_sayisi": 9,
+ "islenen_yarislar": [
+  "2026-01-22-antalya-2-backfill",
+  "2026-02-03-antalya-5-backfill",
+  "2026-02-26-antalya-7-backfill",
+  "2026-03-13-antalya-2-backfill",
+  "2026-03-24-antalya-7-backfill",
+  "2026-06-05-bursa-3-backfill",
+  "2026-06-23-kocaeli-5-backfill",
+  "2026-07-07-kocaeli-2-backfill",
+  "2026-07-30-ankara-6"
+ ],
+ "erken_gec_delta_ema": 2.559,
+ "son_atak_delta_ema": 3.002,
+ "son_guncelleme": "2026-07-30-ankara-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}
