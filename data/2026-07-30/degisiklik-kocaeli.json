@@ -1,0 +1,59 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "BERK.GÖKÇE AP",
+   "metin": "1. Koşu: HAŞARI (10) jokey ER.CANKILIÇ AP → BERK.GÖKÇE AP",
+   "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "Y.GÖKÇE AP",
+   "metin": "3. Koşu: UÇAN TURBOCU (8) jokey ER.CANKILIÇ AP → Y.GÖKÇE AP",
+   "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "ŞIK LATİFEM K DB",
+   "yeni": "ŞIK LATİFEM K DB (Koşmaz)",
+   "metin": "8. Koşu: ŞIK LATİFEM (10) KOŞMAZ",
+   "ts": "2026-07-30 13:11 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-30 13:11 UTC",
+ "sehir": "Kocaeli",
+ "etkilenen": {
+  "1": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "3": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "8": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}

@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 2,
@@ -81,9 +81,90 @@
    "yeni": "52 +2.00",
    "metin": "2. Koşu: YÜCEOĞUL (9) kilo 52 → 52 +2.00",
    "ts": "2026-07-30 11:22 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "3. Koşu: AFAMIA (1) kilo 57 → 57 +0.30",
+   "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.40",
+   "metin": "3. Koşu: EL NACHO (2) kilo 57 → 57 +1.40",
+   "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.70",
+   "metin": "3. Koşu: ADALINEBOWMAN (4) kilo 55 → 55 +1.70",
+   "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.30",
+   "metin": "3. Koşu: TROPHY GIRL (8) kilo 55 → 55 +0.30",
+   "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "4. Koşu: BÜYÜKATAK (11) kilo 52 → 52 +2.00",
+   "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51,5",
+   "yeni": "51,5 +0.60",
+   "metin": "4. Koşu: ÇÖL KRALİÇESİ (12) kilo 51,5 → 51,5 +0.60",
+   "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "59",
+   "yeni": "59 +0.10",
+   "metin": "5. Koşu: WE ARE THE BEST (4) kilo 59 → 59 +0.10",
+   "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "5. Koşu: TARCAN BABA (8) kilo 54 → 54 +2.00",
+   "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.70",
+   "metin": "5. Koşu: BABİLİ (9) kilo 53 → 53 +1.70",
+   "ts": "2026-07-30 13:11 UTC"
   }
  ],
- "guncelleme": "2026-07-30 11:22 UTC",
+ "guncelleme": "2026-07-30 13:11 UTC",
  "sehir": "Ankara",
  "etkilenen": {
   "2": [
