@@ -1,0 +1,49 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 2,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "DEMİR BARBAR KG DB SK",
+   "yeni": "DEMİR BARBAR KG DB SK (Koşmaz)",
+   "metin": "2. Koşu: DEMİR BARBAR (1) KOŞMAZ",
+   "ts": "2026-07-30 09:15 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "SON DOONG KG K",
+   "yeni": "SON DOONG KG K (Koşmaz)",
+   "metin": "3. Koşu: SON DOONG (7) KOŞMAZ",
+   "ts": "2026-07-30 09:15 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-30 09:15 UTC",
+ "sehir": "Ankara",
+ "etkilenen": {
+  "2": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "3": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
