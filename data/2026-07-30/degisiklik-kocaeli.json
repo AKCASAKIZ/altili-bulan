@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -27,9 +27,261 @@
    "yeni": "ŞIK LATİFEM K DB (Koşmaz)",
    "metin": "8. Koşu: ŞIK LATİFEM (10) KOŞMAZ",
    "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.00",
+   "metin": "1. Koşu: HAÇOVALI (8) kilo 54 → 54 +1.00",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +2.00",
+   "metin": "1. Koşu: BIG RUGGED (9) kilo 54,5 → 54,5 +2.00",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.00",
+   "metin": "1. Koşu: HAŞARI (10) kilo 54 → 54 +1.00",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +0.90",
+   "metin": "1. Koşu: ŞIBLE ŞAVKO (11) kilo 52 → 52 +0.90",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +1.10",
+   "metin": "2. Koşu: UMUTLU TAY (9) kilo 58 → 58 +1.10",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "M.KIYAK AP",
+   "metin": "2. Koşu: CRAZY RIVER (12) jokey ER.CANKILIÇ AP → M.KIYAK AP",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.60",
+   "metin": "2. Koşu: GIPSY THUNDER (13) kilo 56 → 56 +0.60",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.40",
+   "metin": "2. Koşu: ZELİNDA (16) kilo 53 → 53 +0.40",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "3. Koşu: ERYÜREKLİ (3) kilo 54 → 54 +2.00",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "3. Koşu: KRALIN OĞLU (4) kilo 54 → 54 +2.00",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.50",
+   "metin": "3. Koşu: GÜLGÜLAY (5) kilo 52 → 52 +1.50",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +0.90",
+   "metin": "3. Koşu: OKAYGÜN (6) kilo 52 → 52 +0.90",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "3. Koşu: İLKBAHARIM (7) kilo 52 → 52 +2.00",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "M.A.AKGÖBEK",
+   "yeni": "C.PASO",
+   "metin": "3. Koşu: BİLGİN GÜCÜ (9) jokey M.A.AKGÖBEK → C.PASO",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "3. Koşu: BİLGİN GÜCÜ (9) kilo 52 → 52 +2.00",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +1.80",
+   "metin": "3. Koşu: TEYZEOĞLU (10) kilo 50 → 50 +1.80",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "BERK.GÖKÇE AP",
+   "metin": "4. Koşu: NOBLE CREST (2) jokey ER.CANKILIÇ AP → BERK.GÖKÇE AP",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "4. Koşu: MAYBACK (4) kilo 57 → 57 +0.40",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +0.90",
+   "metin": "4. Koşu: NEBULA STAR (5) kilo 52 → 52 +0.90",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "H.ŞİMŞEK",
+   "yeni": "A.ASLAN",
+   "metin": "4. Koşu: YOU ARE GREAT (6) jokey H.ŞİMŞEK → A.ASLAN",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.20",
+   "metin": "4. Koşu: YOU ARE GREAT (6) kilo 54 → 54 +0.20",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "YER TİTRETEN KG K GKR",
+   "yeni": "YER TİTRETEN KG K GKR (Koşmaz)",
+   "metin": "5. Koşu: YER TİTRETEN (13) KOŞMAZ",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "BERK.GÖKÇE AP",
+   "metin": "6. Koşu: CHEF CURRY (4) jokey ER.CANKILIÇ AP → BERK.GÖKÇE AP",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "K.YILMAZ AP",
+   "metin": "7. Koşu: KÖYCÜ BEY (1) jokey ER.CANKILIÇ AP → K.YILMAZ AP",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "DEBDEBE DB SKG SK",
+   "yeni": "DEBDEBE DB SKG SK (Koşmaz)",
+   "metin": "7. Koşu: DEBDEBE (3) KOŞMAZ",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "B.ÇIĞLA AP",
+   "metin": "8. Koşu: NERGİZLİ (5) jokey ER.CANKILIÇ AP → B.ÇIĞLA AP",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "BERK.GÖKÇE AP",
+   "metin": "10. Koşu: GRANDE TEMPESTA (6) jokey ER.CANKILIÇ AP → BERK.GÖKÇE AP",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "H.ŞİMŞEK",
+   "yeni": "C.TEPE",
+   "metin": "10. Koşu: DESTAN DORİNDA (10) jokey H.ŞİMŞEK → C.TEPE",
+   "ts": "2026-07-30 15:24 UTC"
   }
  ],
- "guncelleme": "2026-07-30 13:11 UTC",
+ "guncelleme": "2026-07-30 15:24 UTC",
  "sehir": "Kocaeli",
  "etkilenen": {
   "1": [
@@ -48,12 +300,64 @@
    "B13",
    "B5",
    "B6",
+   "C1",
+   "C2",
+   "C3",
    "D1",
    "D2",
    "E1",
    "E2",
    "E3",
    "G1"
+  ],
+  "2": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "4": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "5": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "6": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "7": [
+   "B13",
+   "B5",
+   "B6",
+   "C1",
+   "C2",
+   "C3",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "10": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
   ]
  }
 }

@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 2,
@@ -162,9 +162,126 @@
    "yeni": "53 +1.70",
    "metin": "5. Koşu: BABİLİ (9) kilo 53 → 53 +1.70",
    "ts": "2026-07-30 13:11 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.20",
+   "metin": "6. Koşu: KING LUTHER (8) kilo 56 → 56 +0.20",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.10",
+   "metin": "6. Koşu: MY SON BERA (9) kilo 56 → 56 +1.10",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.80",
+   "metin": "6. Koşu: RESTAURADORES (10) kilo 54 → 54 +0.80",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.40",
+   "metin": "7. Koşu: RAYMOND REDDINGTON (5) kilo 56 → 56 +0.40",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "8. Koşu: MEYDAN OKU (1) kilo 57 → 57 +0.20",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.50",
+   "metin": "8. Koşu: COSE DELLA VITA (6) kilo 55 → 55 +1.50",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "8. Koşu: LAGIOIA (7) kilo 55 → 55 +2.00",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.30",
+   "metin": "8. Koşu: POTOCHNITSA (9) kilo 55 → 55 +1.30",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "9. Koşu: RUN LOLA RUN (11) kilo 57 → 57 +0.10",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.40",
+   "metin": "9. Koşu: BABY GASSAL (13) kilo 56 → 56 +1.40",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +0.60",
+   "metin": "9. Koşu: KARLOVASİ (14) kilo 55,5 → 55,5 +0.60",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +0.90",
+   "metin": "9. Koşu: KOCA ANA (15) kilo 52 → 52 +0.90",
+   "ts": "2026-07-30 15:24 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.00",
+   "metin": "9. Koşu: BERRYWING (16) kilo 52 → 52 +1.00",
+   "ts": "2026-07-30 15:24 UTC"
   }
  ],
- "guncelleme": "2026-07-30 13:11 UTC",
+ "guncelleme": "2026-07-30 15:24 UTC",
  "sehir": "Ankara",
  "etkilenen": {
   "2": [
