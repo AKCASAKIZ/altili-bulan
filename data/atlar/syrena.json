@@ -21,5 +21,6 @@
  "erken_gec_delta_ema": 0.953,
  "son_guncelleme": "2026-07-30-ankara-9",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": 2
+ "son_atak_delta_ema": 2,
+ "gecmis_surum": 2
 }
