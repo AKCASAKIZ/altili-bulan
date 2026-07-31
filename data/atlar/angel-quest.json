@@ -1,6 +1,6 @@
 {
  "ad": "ANGEL QUEST",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-05-15-ankara-4-backfill",
   "2025-06-13-bursa-8-backfill",
@@ -16,10 +16,12 @@
   "2026-03-26-antalya-8-backfill",
   "2026-06-12-bursa-9-backfill",
   "2026-07-15-istanbul-1-backfill",
-  "2026-07-15-istanbul-1"
+  "2026-07-15-istanbul-1",
+  "2026-07-31-bursa-6"
  ],
- "erken_gec_delta_ema": 0.697,
- "son_guncelleme": "2026-07-15-istanbul-1",
- "son_atak_delta_ema": -0.49,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -1.462,
+ "son_guncelleme": "2026-07-31-bursa-6",
+ "son_atak_delta_ema": -3.343,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

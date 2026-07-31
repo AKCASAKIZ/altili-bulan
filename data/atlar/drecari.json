@@ -1,6 +1,6 @@
 {
  "ad": "DRECARİ",
- "kosu_sayisi": 7,
+ "kosu_sayisi": 8,
  "islenen_yarislar": [
   "2026-02-19-izmir-4-backfill",
   "2026-03-16-bursa-1-backfill",
@@ -8,10 +8,12 @@
   "2026-05-29-bursa-3-backfill",
   "2026-06-12-bursa-7-backfill",
   "2026-07-10-bursa-8-backfill",
-  "2026-07-10-bursa-8"
+  "2026-07-10-bursa-8",
+  "2026-07-31-bursa-3"
  ],
- "erken_gec_delta_ema": 1.0,
- "son_guncelleme": "2026-07-10-bursa-8",
- "son_atak_delta_ema": -0.363,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 1.45,
+ "son_guncelleme": "2026-07-31-bursa-3",
+ "son_atak_delta_ema": 0.346,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

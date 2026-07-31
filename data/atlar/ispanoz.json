@@ -1,6 +1,6 @@
 {
  "ad": "İSPANOZ",
- "kosu_sayisi": 18,
+ "kosu_sayisi": 19,
  "islenen_yarislar": [
   "2025-07-03-ankara-7-backfill",
   "2025-08-08-bursa-4-backfill",
@@ -19,11 +19,12 @@
   "2026-07-09-ankara-7-backfill",
   "2026-07-09-ankara-7",
   "2026-07-17-bursa-10",
-  "2026-07-24-bursa-7"
+  "2026-07-24-bursa-7",
+  "2026-07-31-bursa-7"
  ],
- "erken_gec_delta_ema": -2.722,
- "son_guncelleme": "2026-07-24-bursa-7",
+ "erken_gec_delta_ema": -2.805,
+ "son_guncelleme": "2026-07-31-bursa-7",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": 0,
+ "son_atak_delta_ema": -1.2,
  "gecmis_surum": 2
 }

@@ -1,6 +1,6 @@
 {
  "ad": "HOLA Y CHAO",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-11-07-istanbul-4-backfill",
   "2025-11-20-antalya-8-backfill",
@@ -16,10 +16,12 @@
   "2026-05-29-istanbul-3-backfill",
   "2026-06-14-istanbul-1-backfill",
   "2026-07-10-istanbul-1-backfill",
-  "2026-07-10-istanbul-1"
+  "2026-07-10-istanbul-1",
+  "2026-07-31-istanbul-1"
  ],
- "erken_gec_delta_ema": -1.603,
- "son_guncelleme": "2026-07-10-istanbul-1",
- "son_atak_delta_ema": -1.373,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -1.572,
+ "son_guncelleme": "2026-07-31-istanbul-1",
+ "son_atak_delta_ema": -1.561,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

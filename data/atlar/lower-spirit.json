@@ -1,6 +1,6 @@
 {
  "ad": "LOWER SPIRIT",
- "kosu_sayisi": 11,
+ "kosu_sayisi": 12,
  "islenen_yarislar": [
   "2025-04-16-istanbul-7-backfill",
   "2025-11-02-istanbul-3-backfill",
@@ -12,10 +12,12 @@
   "2026-06-21-istanbul-8-backfill",
   "2026-07-05-istanbul-8-backfill",
   "2026-07-17-istanbul-7-backfill",
-  "2026-07-17-istanbul-7"
+  "2026-07-17-istanbul-7",
+  "2026-07-31-istanbul-6"
  ],
- "erken_gec_delta_ema": -0.232,
- "son_atak_delta_ema": -0.147,
- "son_guncelleme": "2026-07-17-istanbul-7",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.762,
+ "son_atak_delta_ema": -0.703,
+ "son_guncelleme": "2026-07-31-istanbul-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

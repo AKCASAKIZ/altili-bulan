@@ -1,0 +1,16 @@
+{
+ "ad": "DECENT MAN",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-05-04-istanbul-3-backfill",
+  "2025-08-03-istanbul-4-backfill",
+  "2025-08-10-istanbul-8-backfill",
+  "2026-07-31-istanbul-3-backfill",
+  "2026-07-31-istanbul-3"
+ ],
+ "erken_gec_delta_ema": 2.866,
+ "son_atak_delta_ema": 3.137,
+ "son_guncelleme": "2026-07-31-istanbul-3",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

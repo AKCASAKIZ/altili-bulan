@@ -1,6 +1,6 @@
 {
  "ad": "STAIN FREE",
- "kosu_sayisi": 7,
+ "kosu_sayisi": 8,
  "islenen_yarislar": [
   "2025-06-02-bursa-9-backfill",
   "2025-07-21-bursa-9-backfill",
@@ -8,10 +8,12 @@
   "2025-10-15-istanbul-7-backfill",
   "2025-10-20-bursa-9-backfill",
   "2026-07-12-istanbul-1",
-  "2026-07-20-bursa-9"
+  "2026-07-20-bursa-9",
+  "2026-07-31-bursa-6"
  ],
- "erken_gec_delta_ema": 2.141,
- "son_atak_delta_ema": 1.572,
- "son_guncelleme": "2026-07-20-bursa-9",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 1.949,
+ "son_atak_delta_ema": 1.7,
+ "son_guncelleme": "2026-07-31-bursa-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

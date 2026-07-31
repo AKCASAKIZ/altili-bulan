@@ -1,6 +1,6 @@
 {
  "ad": "GILMOUR",
- "kosu_sayisi": 7,
+ "kosu_sayisi": 8,
  "islenen_yarislar": [
   "2026-02-14-istanbul-3-backfill",
   "2026-03-12-antalya-7-backfill",
@@ -8,10 +8,12 @@
   "2026-04-29-istanbul-1-backfill",
   "2026-05-17-istanbul-4-backfill",
   "2026-07-12-istanbul-9-backfill",
-  "2026-07-12-istanbul-9"
+  "2026-07-12-istanbul-9",
+  "2026-07-31-istanbul-1"
  ],
- "erken_gec_delta_ema": 0.878,
- "son_atak_delta_ema": 0.0,
- "son_guncelleme": "2026-07-12-istanbul-9",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 1.215,
+ "son_atak_delta_ema": 0.3,
+ "son_guncelleme": "2026-07-31-istanbul-1",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

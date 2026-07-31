@@ -1,0 +1,23 @@
+{
+ "ad": "BLACKFYRE",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-09-07-istanbul-1-backfill",
+  "2025-10-03-bursa-2-backfill",
+  "2025-10-27-bursa-2-backfill",
+  "2026-03-19-antalya-3-backfill",
+  "2026-04-07-antalya-3-backfill",
+  "2026-04-24-bursa-8-backfill",
+  "2026-05-08-bursa-2-backfill",
+  "2026-05-25-bursa-2-backfill",
+  "2026-06-12-bursa-1-backfill",
+  "2026-06-29-bursa-3-backfill",
+  "2026-07-31-bursa-3-backfill",
+  "2026-07-31-bursa-3"
+ ],
+ "erken_gec_delta_ema": 3.748,
+ "son_atak_delta_ema": 3.416,
+ "son_guncelleme": "2026-07-31-bursa-3",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}
