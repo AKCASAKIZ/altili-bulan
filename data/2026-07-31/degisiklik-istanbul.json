@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -9,12 +9,150 @@
    "yeni": "K.GÖKÇE AP",
    "metin": "1. Koşu: MERCIER (3) jokey ER.CANKILIÇ AP → K.GÖKÇE AP",
    "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.40",
+   "metin": "1. Koşu: GILMOUR (5) kilo 56 → 56 +0.40",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +1.60",
+   "metin": "1. Koşu: MILLENNIUM FALCON (6) kilo 55,5 → 55,5 +1.60",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.80",
+   "metin": "1. Koşu: GLONASS (7) kilo 53 → 53 +0.80",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.40",
+   "metin": "1. Koşu: LADY BEGÜM (8) kilo 53 → 53 +1.40",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.80",
+   "metin": "1. Koşu: MANIFEST (10) kilo 52 → 52 +1.80",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.60",
+   "metin": "2. Koşu: ALADAĞLAR (4) kilo 55 → 55 +1.60",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +2.00",
+   "metin": "2. Koşu: VARGASKAYA (5) kilo 51 → 51 +2.00",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.90",
+   "metin": "2. Koşu: IRMAĞIN GÜLÜ (6) kilo 54 → 54 +1.90",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "2. Koşu: KIZIM BİNDAL (7) kilo 54 → 54 +2.00",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "İSM.YILDIRIM AP",
+   "metin": "3. Koşu: DECENT MAN (6) jokey ER.CANKILIÇ AP → İSM.YILDIRIM AP",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.80",
+   "metin": "3. Koşu: DECENT MAN (6) kilo 54 → 54 +1.80",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "3. Koşu: MAMBA FOREVER (7) kilo 56 → 56 +1.00",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "3. Koşu: POWERFULL LADY (11) kilo 55 → 55 +2.00",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "İSM.YILDIRIM AP",
+   "metin": "4. Koşu: ŞAHİ (8) jokey ER.CANKILIÇ AP → İSM.YILDIRIM AP",
+   "ts": "2026-07-31 15:58 UTC"
   }
  ],
- "guncelleme": "2026-07-31 13:48 UTC",
+ "guncelleme": "2026-07-31 15:58 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "1": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "3": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "4": [
    "C1",
    "C2",
    "C3",

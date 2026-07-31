@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -261,9 +261,171 @@
    "yeni": "E.AKTUĞ",
    "metin": "8. Koşu: SANCAR EFESİ (7) jokey O.ATMACA → E.AKTUĞ",
    "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.20",
+   "metin": "8. Koşu: TERCAN HAN (4) kilo 58 → 58 +0.20",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.60",
+   "metin": "8. Koşu: MEN DAKKA DUKKA (6) kilo 55 → 55 +0.60",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.30",
+   "metin": "8. Koşu: SANCAR EFESİ (7) kilo 54 → 54 +0.30",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "9. Koşu: ZORLU HAYAT (2) kilo 57 → 57 +0.10",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "9. Koşu: ÇENGER (5) kilo 57 → 57 +0.40",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "9. Koşu: GÜL MEVSİMİ (6) kilo 57 → 57 +0.50",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "9. Koşu: GÜMBÜR ATEŞİ (7) kilo 53 → 53 +2.00",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.70",
+   "metin": "9. Koşu: HÜMAPETRA (8) kilo 57 → 57 +0.70",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.70",
+   "metin": "9. Koşu: KUTSELİ (9) kilo 54 → 54 +1.70",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.20",
+   "metin": "9. Koşu: LEYLA REİS (10) kilo 53 → 53 +1.20",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.30",
+   "metin": "9. Koşu: ÖZYAĞMUR (11) kilo 55 → 55 +1.30",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "O.ATMACA",
+   "yeni": "A.İNCİ",
+   "metin": "10. Koşu: KAYAŞAH (5) jokey O.ATMACA → A.İNCİ",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57,5",
+   "yeni": "57,5 +0.40",
+   "metin": "10. Koşu: CÜDA (6) kilo 57,5 → 57,5 +0.40",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.60",
+   "metin": "10. Koşu: DAĞ YONCASI (13) kilo 56 → 56 +0.60",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.50",
+   "metin": "10. Koşu: KIRKPINAR BEYİ (15) kilo 58 → 58 +0.50",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.10",
+   "metin": "10. Koşu: FIRTINADAN DOĞAN (17) kilo 58 → 58 +0.10",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.10",
+   "metin": "10. Koşu: DATCA (18) kilo 58 → 58 +0.10",
+   "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58,5",
+   "yeni": "58,5 +0.10",
+   "metin": "10. Koşu: DAŞ FATİH (20) kilo 58,5 → 58,5 +0.10",
+   "ts": "2026-07-31 15:58 UTC"
   }
  ],
- "guncelleme": "2026-07-31 13:48 UTC",
+ "guncelleme": "2026-07-31 15:58 UTC",
  "sehir": "Bursa",
  "etkilenen": {
   "1": [
@@ -290,6 +452,12 @@
    "E1"
   ],
   "8": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "10": [
    "C1",
    "C2",
    "C3",
