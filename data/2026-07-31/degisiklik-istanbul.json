@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -135,9 +135,117 @@
    "yeni": "İSM.YILDIRIM AP",
    "metin": "4. Koşu: ŞAHİ (8) jokey ER.CANKILIÇ AP → İSM.YILDIRIM AP",
    "ts": "2026-07-31 15:58 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "4. Koşu: ILLEGAL (5) kilo 57 → 57 +0.30",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "4. Koşu: MARCAVELLY SUN (6) kilo 57 → 57 +0.30",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "4. Koşu: SKY OF KHAN (7) kilo 57 → 57 +0.20",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "5. Koşu: METİNCİM (6) kilo 54 → 54 +2.00",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +2.00",
+   "metin": "5. Koşu: ERİŞMİŞ (7) kilo 53,5 → 53,5 +2.00",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +1.20",
+   "metin": "5. Koşu: TUMBULKARAÜZÜM (8) kilo 54,5 → 54,5 +1.20",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: ABDİ BABA (9) kilo 52 → 52 +2.00",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.70",
+   "metin": "5. Koşu: SÖZÜ GEÇER (10) kilo 52 → 52 +1.70",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +0.30",
+   "metin": "6. Koşu: BOLD LION (4) kilo 56,5 → 56,5 +0.30",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "6. Koşu: EL GLADIADOR (5) kilo 52 → 52 +2.00",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.50",
+   "metin": "6. Koşu: HARDOLD (9) kilo 54 → 54 +1.50",
+   "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "ALAYCI KUŞ KG K",
+   "yeni": "ALAYCI KUŞ KG K (Koşmaz)",
+   "metin": "8. Koşu: ALAYCI KUŞ (11) KOŞMAZ",
+   "ts": "2026-07-31 17:39 UTC"
   }
  ],
- "guncelleme": "2026-07-31 15:58 UTC",
+ "guncelleme": "2026-07-31 17:39 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "1": [
@@ -157,6 +265,17 @@
    "C2",
    "C3",
    "E1"
+  ],
+  "8": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
   ]
  }
 }
