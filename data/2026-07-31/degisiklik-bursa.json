@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -81,9 +81,189 @@
    "yeni": "52 +1.80",
    "metin": "3. Koşu: FLY YAZICI (8) kilo 52 → 52 +1.80",
    "ts": "2026-07-31 11:41 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.10",
+   "metin": "4. Koşu: HOLD FAST (5) kilo 54 → 54 +1.10",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.60",
+   "metin": "4. Koşu: ROMANTIC PARADISE (6) kilo 54 → 54 +1.60",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.20",
+   "metin": "4. Koşu: TI VOGLIO BENE (7) kilo 54 → 54 +0.20",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "5. Koşu: İCLAL HANIM (6) kilo 53 → 53 +2.00",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "5. Koşu: İLTER (7) kilo 57 → 57 +0.30",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.00",
+   "metin": "5. Koşu: PRENSES BERRİN (8) kilo 54 → 54 +1.00",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "5. Koşu: ROZA HANIM (9) kilo 57 → 57 +0.20",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "O.ATMACA",
+   "yeni": "MAHS.TURAN",
+   "metin": "5. Koşu: STAR GIRL (10) jokey O.ATMACA → MAHS.TURAN",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.80",
+   "metin": "5. Koşu: STAR GIRL (10) kilo 57 → 57 +1.80",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.00",
+   "metin": "5. Koşu: YAĞMURCUM (15) kilo 53 → 53 +1.00",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "O.ATMACA",
+   "yeni": "M.KEÇECİ",
+   "metin": "6. Koşu: ALPS FIRE (7) jokey O.ATMACA → M.KEÇECİ",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.60",
+   "metin": "6. Koşu: RED SMOKE (9) kilo 54 → 54 +1.60",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "6. Koşu: ZUATANEYO (10) kilo 54 → 54 +2.00",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "6. Koşu: GOLDEN APPLE (11) kilo 54 → 54 +2.00",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52,5",
+   "yeni": "52,5 +2.00",
+   "metin": "6. Koşu: BEBEĞİM OLDUN (13) kilo 52,5 → 52,5 +2.00",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "6. Koşu: GOLDEN SNOW (14) kilo 52 → 52 +2.00",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "6. Koşu: MANTI SISTER (15) kilo 52 → 52 +2.00",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.70",
+   "metin": "6. Koşu: MR SHORTY (16) kilo 52 → 52 +1.70",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.90",
+   "metin": "6. Koşu: HERO WIND (17) kilo 52 → 52 +1.90",
+   "ts": "2026-07-31 13:48 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "O.ATMACA",
+   "yeni": "E.AKTUĞ",
+   "metin": "8. Koşu: SANCAR EFESİ (7) jokey O.ATMACA → E.AKTUĞ",
+   "ts": "2026-07-31 13:48 UTC"
   }
  ],
- "guncelleme": "2026-07-31 11:41 UTC",
+ "guncelleme": "2026-07-31 13:48 UTC",
  "sehir": "Bursa",
  "etkilenen": {
   "1": [
@@ -96,6 +276,24 @@
    "E2",
    "E3",
    "G1"
+  ],
+  "5": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "6": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "8": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
   ]
  }
 }

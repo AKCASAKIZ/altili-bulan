@@ -1,0 +1,24 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "ER.CANKILIÇ AP",
+   "yeni": "K.GÖKÇE AP",
+   "metin": "1. Koşu: MERCIER (3) jokey ER.CANKILIÇ AP → K.GÖKÇE AP",
+   "ts": "2026-07-31 13:48 UTC"
+  }
+ ],
+ "guncelleme": "2026-07-31 13:48 UTC",
+ "sehir": "İstanbul",
+ "etkilenen": {
+  "1": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ]
+ }
+}
