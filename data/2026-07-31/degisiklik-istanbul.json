@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 1,
@@ -243,9 +243,99 @@
    "yeni": "ALAYCI KUŞ KG K (Koşmaz)",
    "metin": "8. Koşu: ALAYCI KUŞ (11) KOŞMAZ",
    "ts": "2026-07-31 17:39 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.20",
+   "metin": "7. Koşu: LUSİA (6) kilo 55 → 55 +1.20",
+   "ts": "2026-07-31 18:58 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.70",
+   "metin": "7. Koşu: NAMSAL (7) kilo 55 → 55 +1.70",
+   "ts": "2026-07-31 18:58 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.00",
+   "metin": "7. Koşu: DİLAN KIZ (8) kilo 53 → 53 +1.00",
+   "ts": "2026-07-31 18:58 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "7. Koşu: SANCAR (9) kilo 55 → 55 +2.00",
+   "ts": "2026-07-31 18:58 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.80",
+   "metin": "7. Koşu: BİGBERK (11) kilo 52 → 52 +1.80",
+   "ts": "2026-07-31 18:58 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "7. Koşu: SARAFİM (12) kilo 55 → 55 +2.00",
+   "ts": "2026-07-31 18:58 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +1.00",
+   "metin": "8. Koşu: SEVTAHA (8) kilo 53,5 → 53,5 +1.00",
+   "ts": "2026-07-31 18:58 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52,5",
+   "yeni": "52,5 +2.00",
+   "metin": "8. Koşu: DERENİMO (9) kilo 52,5 → 52,5 +2.00",
+   "ts": "2026-07-31 18:58 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +0.50",
+   "metin": "8. Koşu: TÜRKÖREN (10) kilo 53,5 → 53,5 +0.50",
+   "ts": "2026-07-31 18:58 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "8. Koşu: SIRTAŞI (12) kilo 52 → 52 +2.00",
+   "ts": "2026-07-31 18:58 UTC"
   }
  ],
- "guncelleme": "2026-07-31 17:39 UTC",
+ "guncelleme": "2026-07-31 18:58 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "1": [
