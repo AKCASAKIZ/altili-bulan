@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 2,
@@ -27,9 +27,81 @@
    "yeni": "HARVEY WALLBANGER K DB (Koşmaz)",
    "metin": "3. Koşu: HARVEY WALLBANGER (7) KOŞMAZ",
    "ts": "2026-08-01 13:03 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +0.50",
+   "metin": "1. Koşu: CÖMERT TAY (8) kilo 55,5 → 55,5 +0.50",
+   "ts": "2026-08-01 14:41 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +1.50",
+   "metin": "1. Koşu: KOÇBAŞI (9) kilo 53,5 → 53,5 +1.50",
+   "ts": "2026-08-01 14:41 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51,5",
+   "yeni": "51,5 +1.70",
+   "metin": "1. Koşu: BAHTI AÇIK (10) kilo 51,5 → 51,5 +1.70",
+   "ts": "2026-08-01 14:41 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "PERGA KG K DB",
+   "yeni": "PERGA KG K DB (Koşmaz)",
+   "metin": "2. Koşu: PERGA (5) KOŞMAZ",
+   "ts": "2026-08-01 14:41 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.30",
+   "metin": "2. Koşu: DEMİRİN KILICI (6) kilo 55 → 55 +1.30",
+   "ts": "2026-08-01 14:41 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.40",
+   "metin": "2. Koşu: EVGENİYA (7) kilo 55 → 55 +1.40",
+   "ts": "2026-08-01 14:41 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.00",
+   "metin": "2. Koşu: KANDAŞ (8) kilo 55 → 55 +1.00",
+   "ts": "2026-08-01 14:41 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +1.30",
+   "metin": "2. Koşu: LOKUM HÜMA (9) kilo 51 → 51 +1.30",
+   "ts": "2026-08-01 14:41 UTC"
   }
  ],
- "guncelleme": "2026-08-01 13:03 UTC",
+ "guncelleme": "2026-08-01 14:41 UTC",
  "sehir": "İzmir",
  "etkilenen": {
   "2": [
