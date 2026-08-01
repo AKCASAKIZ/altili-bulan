@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -63,9 +63,135 @@
    "yeni": "52,5 +2.00",
    "metin": "1. Koşu: LUXUARY (11) kilo 52,5 → 52,5 +2.00",
    "ts": "2026-08-01 17:55 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.10",
+   "metin": "2. Koşu: UMUDUM DENİZ (5) kilo 58 → 58 +0.10",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.50",
+   "metin": "2. Koşu: ARAPÇELİK (7) kilo 56 → 56 +1.50",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "2. Koşu: KAŞIKÇIBEYİ (10) kilo 56 → 56 +1.00",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "2. Koşu: MUFUKCAN (11) kilo 56 → 56 +1.00",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.20",
+   "metin": "2. Koşu: YALNIZ BABA (13) kilo 56 → 56 +1.20",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "2. Koşu: GAYECAN (14) kilo 54 → 54 +2.00",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "2. Koşu: TARGUTAY (15) kilo 56 → 56 +1.00",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.10",
+   "metin": "2. Koşu: HİLVANLIM (16) kilo 56 → 56 +0.10",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.10",
+   "metin": "3. Koşu: LAST SYMPHONY (6) kilo 58 → 58 +0.10",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.30",
+   "metin": "3. Koşu: SARI MAMBA (8) kilo 58 → 58 +0.30",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.10",
+   "metin": "3. Koşu: CALIBRATION (11) kilo 56 → 56 +0.10",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.10",
+   "metin": "3. Koşu: MY IRON (12) kilo 56 → 56 +1.10",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "3. Koşu: NADUH (13) kilo 57 → 57 +2.00",
+   "ts": "2026-08-01 19:01 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.40",
+   "metin": "3. Koşu: TRAP ZONE (14) kilo 53 → 53 +1.40",
+   "ts": "2026-08-01 19:01 UTC"
   }
  ],
- "guncelleme": "2026-08-01 17:55 UTC",
+ "guncelleme": "2026-08-01 19:01 UTC",
  "sehir": "Diyarbakır",
  "etkilenen": {}
 }
