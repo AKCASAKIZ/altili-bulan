@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 2,
@@ -18,9 +18,18 @@
    "yeni": "MÜNÜRTOR K (Koşmaz)",
    "metin": "3. Koşu: MÜNÜRTOR (8) KOŞMAZ",
    "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "HARVEY WALLBANGER K DB",
+   "yeni": "HARVEY WALLBANGER K DB (Koşmaz)",
+   "metin": "3. Koşu: HARVEY WALLBANGER (7) KOŞMAZ",
+   "ts": "2026-08-01 13:03 UTC"
   }
  ],
- "guncelleme": "2026-08-01 11:47 UTC",
+ "guncelleme": "2026-08-01 13:03 UTC",
  "sehir": "İzmir",
  "etkilenen": {
   "2": [
