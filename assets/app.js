@@ -119,6 +119,10 @@ function bindUI() {
   $("#unitPrice").onchange = renderKuponSummary;
   $("#btnRunBacktest").onclick = runBacktest;
   $("#btnSuggestCoefs").onclick = suggestCoefs;
+  // Arşiv backtest'i sonradan eklendi; eski bir index.html önbellekte kalmışsa
+  // bu düğme bulunmaz — tüm bindUI'ı düşürmesin.
+  const btnArsiv = $("#btnRunBacktestArsiv");
+  if (btnArsiv) { btnArsiv.onclick = () => runBacktest(true); renderArsivYillar(); }
   $("#btnGazetePdf").onclick = buildGazete;
 }
 
@@ -414,7 +418,11 @@ async function scoreLeg(leg, ctx) {
   }
 
   // D1/D2: accurace'den türetilmiş koşu-karakteri profilleri (data/atlar/*.json, her at ayrı dosya)
-  const atlar = await Promise.all(hs.map((h) => atProfil(h.ad)));
+  // Arşiv backtest'inde (ctx.profilsiz) atlanır: on binlerce benzersiz at var, her biri
+  // ayrı bir istek demek ve accurace zaten yalnız son dönem atlarını kapsıyor.
+  const atlar = ctx?.profilsiz
+    ? hs.map(() => null)
+    : await Promise.all(hs.map((h) => atProfil(h.ad)));
   hs.forEach((h, i) => { h.meta.karakter = karakterEtiketi(atlar[i]); });
   const sonAtak = hs.map((_, i) => atlar[i]?.son_atak_delta_ema ?? null);
   assignRank5(hs, sonAtak, "D1", false);
@@ -1403,6 +1411,50 @@ async function collectBacktest(onProgress) {
   return rows;
 }
 
+/* Arşivden backtest — scripts/build_backtest.py çıktısı (data/arsiv/backtest/{yıl}.json).
+   Günlük program+sonuç çifti yalnız cron'un başladığı tarihten beri var (~500 koşu);
+   arşiv 2021'den beri ~31.790 koşu tutuyor. Buradaki koşular puanlamaya hazır:
+   kgs/son6/eniyi atın O GÜNE KADARKİ geçmişinden türetildi, geleceği görmüyorlar.
+   Eksikler: idman (B7) ve altılı ödeme satırı — arşiv CSV'sinde yok. */
+async function collectBacktestArsiv(yillar, onProgress) {
+  const rows = [];
+  for (const yil of yillar) {
+    onProgress?.(`${yil} indiriliyor…`);
+    const kosular = await tryFetch(`data/arsiv/backtest/${yil}.json`);
+    if (!kosular) continue;
+    let i = 0;
+    for (const k of kosular) {
+      if (++i % 250 === 0) {
+        onProgress?.(`${yil}: ${i}/${kosular.length} koşu`);
+        await new Promise((r) => setTimeout(r)); // arayüz kilitlenmesin
+      }
+      const gelenler = k.atlar.filter((h) => typeof h.sira === "number").sort((a, b) => a.sira - b.sira);
+      if (gelenler.length < 2) continue;
+      const kazananAd = temizle(gelenler[0].ad);
+      const tabela = new Set(gelenler.slice(0, 3).map((h) => temizle(h.ad)));
+      const leg = {
+        pist: k.pist, mesafe: k.mesafe, ikramiye: k.ikramiye, grup: k.grup, tur: k.tur,
+        horses: k.atlar.map((h) => ({
+          no: h.no, ad: h.ad, scores: {},
+          meta: { kgs: h.kgs, son6: h.son6, eniyi: h.eniyi, agf: h.agf, h: h.h,
+                  jokey: h.jokey, antrenor: h.antrenor, sahip: h.sahip, kilo: h.kilo, st: h.st },
+        })),
+      };
+      await scoreLeg(leg, { day: k.gun, city: k.sehir, gecmis: null, profilsiz: true });
+      const ranked = rankedHorses(leg).filter((x) => x.score > 0);
+      if (ranked.length < 2) continue;
+      let agfFav = null, best = -1;
+      for (const h of leg.horses) {
+        const a = parseAgf(h.meta.agf);
+        if (a != null && a > best) { best = a; agfFav = h; }
+      }
+      rows.push({ day: k.gun, city: k.sehir, raceNo: k.no, leg, ranked, kazananAd, tabela,
+                  ganyan: parseGanyan(gelenler[0].ganyan), agfFav, odemeler: "" });
+    }
+  }
+  return rows;
+}
+
 /* ==================== ALTILI KUPON SİMÜLASYONU ==================== */
 /* "1. 6'LI GANYAN(2,5/5/7/5/9/1) :12.185,75 TL" → [{sira:1, tutar:12185.75}]
    Altılı, ödeme satırının bulunduğu koşuda BİTER; ayakları o koşu ve öncesindeki
@@ -1489,13 +1541,35 @@ function altiliRaporHtml(rows) {
   <p class="hint">Maliyet kolon sayısı, dönüş de kolon başına ödeme cinsinden — ROI birim bahis fiyatından bağımsızdır. Ayaklar, TJK'nın "6'LI GANYAN" ödeme satırından türetilir; tahmin edilmez. Ölü yarışta kazanan olarak sonuç listesinin ilk atı sayılır.</p>`;
 }
 
-async function runBacktest() {
+/* Arşiv yıl kutucukları — build_backtest.py'nin index.json'ından. */
+async function renderArsivYillar() {
+  const el = $("#arsivYillar");
+  if (!el) return;
+  const idx = await tryFetch("data/arsiv/backtest/index.json");
+  if (!idx) { $("#arsivBar").style.display = "none"; return; }
+  const secili = LS.get("ab2:arsivYil", null);
+  el.innerHTML = Object.entries(idx).map(([y, v]) =>
+    `<label class="hint" style="margin-right:.7rem"><input type="checkbox" data-yil="${y}" ${
+      secili ? (secili.includes(y) ? "checked" : "") : (y >= "2025" ? "checked" : "")
+    }> ${y} <span style="opacity:.6">(${v.kosu})</span></label>`).join("");
+  el.onchange = () => LS.set("ab2:arsivYil", secilenYillar());
+}
+const secilenYillar = () =>
+  [...document.querySelectorAll("#arsivYillar input:checked")].map((c) => c.dataset.yil);
+
+async function runBacktest(arsivden = false) {
   const st = $("#backtestStatus"), el = $("#backtestView");
   st.textContent = "Hesaplanıyor…";
   el.innerHTML = "";
-  backtestRows = await collectBacktest((t) => (st.textContent = "Hesaplanıyor… " + t));
+  if (arsivden) {
+    const yillar = secilenYillar();
+    if (!yillar.length) { st.textContent = ""; el.innerHTML = `<div class="empty-note">En az bir yıl seçin.</div>`; return; }
+    backtestRows = await collectBacktestArsiv(yillar, (t) => (st.textContent = "Arşiv: " + t));
+  } else {
+    backtestRows = await collectBacktest((t) => (st.textContent = "Hesaplanıyor… " + t));
+  }
   st.textContent = "";
-  if (!backtestRows.length) { el.innerHTML = `<div class="empty-note">Karşılaştırılacak program+sonuç çifti bulunamadı.</div>`; return; }
+  if (!backtestRows.length) { el.innerHTML = `<div class="empty-note">Karşılaştırılacak koşu bulunamadı.</div>`; return; }
 
   let n = 0, win1 = 0, top3 = 0, roiDonus = 0;
   let favN = 0, favWin = 0, favDonus = 0;
@@ -1530,8 +1604,15 @@ async function runBacktest() {
     <div class="card"><h3>💎 Value bahisleri</h3><p><b>${valWin}/${valN}</b> kazandı (%${pct(valWin, valN)})<br>ROI: <b>%${roi(valDonus, valN)}</b></p></div>
   </div>`;
   html += altiliRaporHtml(backtestRows);
+  // Arşiv backtest'i 10.000+ satır üretebiliyor; hepsini DOM'a basmak sayfayı
+  // kilitliyor ve altındaki katsayı önerisini erişilemez kılıyordu. Son N koşu yeter.
+  const SATIR_SINIR = 500;
+  const gosterilen = detay.length > SATIR_SINIR ? detay.slice(-SATIR_SINIR) : detay;
+  if (gosterilen.length < detay.length) {
+    html += `<p class="hint">Aşağıdaki listede ${detay.length.toLocaleString("tr")} koşunun son ${SATIR_SINIR}'ü gösteriliyor — yukarıdaki oranlar tamamından hesaplandı.</p>`;
+  }
   html += `<div class="table-wrap"><table><thead><tr><th>Gün</th><th>Şehir</th><th>Koşu</th><th>1. tercih</th><th>Sonuç</th><th>Kazanan</th><th>Ganyan</th><th>💎</th></tr></thead><tbody>`;
-  for (const d of detay) {
+  for (const d of gosterilen) {
     html += `<tr>
       <td>${trDate(d.day)}</td><td>${esc(d.city)}</td><td>${d.raceNo}</td>
       <td>${d.pick.h.no}. ${esc(d.pick.h.ad)}</td>
@@ -1576,13 +1657,23 @@ async function logitEgit(races, w0, st, etiket, opt = {}) {
   const { dogSet = null, olcek = (v) => v, sabitTur = 0 } = opt;
   const w = w0.slice();
   const lr = 0.1, l2 = 0.001, EPS = 1e-7, SABIR = 500, OLC_ARA = 25;
-  const MAX_ITER = sabitTur || 20000;
+  // Arşiv backtest'i 10.000+ koşu getirebiliyor. Her turda TÜM koşuları gezmek
+  // o boyutta tarayıcıyı dondurur (20.000 tur × 10.000 koşu). Veri büyükse her
+  // turda rastgele bir alt küme kullan (mini-batch) ve tur sayısını sınırla.
+  const PARTI = 400;
+  const partili = races.length > PARTI;
+  const MAX_ITER = sabitTur || (partili ? 1200 : 20000);
+  // Doğrulama seti de büyük olabilir; her OLC_ARA turda tamamını gezmek pahalı.
+  const dog = dogSet && dogSet.length > 1200 ? dogSet.slice(0, 1200) : dogSet;
   let onceki = -Infinity, ll = 0, iter = 0;
   let enIyi = dogSet ? { w: w.slice(), uyum: -Infinity, iter: 0 } : null;
   for (; iter < MAX_ITER; iter++) {
+    const parti = partili
+      ? Array.from({ length: PARTI }, () => races[(Math.random() * races.length) | 0])
+      : races;
     const grad = new Array(w.length).fill(0);
     ll = 0;
-    for (const { X, winIx } of races) {
+    for (const { X, winIx } of parti) {
       const z = X.map((x) => x.reduce((t, v, j) => t + v * w[j], 0));
       const mx = Math.max(...z);
       const ex = z.map((v) => Math.exp(v - mx));
@@ -1593,19 +1684,19 @@ async function logitEgit(races, w0, st, etiket, opt = {}) {
         x.forEach((v, j) => { grad[j] += ((i === winIx ? 1 : 0) - p) * v; });
       });
     }
-    ll /= races.length;
-    w.forEach((v, j) => { w[j] = v + lr * (grad[j] / races.length - l2 * v); });
-    if (dogSet && iter % OLC_ARA === 0) {
-      const u = logitUyum(dogSet, olcek(w));
+    ll /= parti.length;
+    w.forEach((v, j) => { w[j] = v + lr * (grad[j] / parti.length - l2 * v); });
+    if (dog && iter % OLC_ARA === 0) {
+      const u = logitUyum(dog, olcek(w));
       if (u > enIyi.uyum) enIyi = { w: w.slice(), uyum: u, iter };
       else if (iter - enIyi.iter >= SABIR) break; // doğrulama artık iyileşmiyor
-    } else if (!dogSet && !sabitTur && iter > 50 && ll - onceki < EPS) {
-      break;
+    } else if (!dogSet && !sabitTur && !partili && iter > 50 && ll - onceki < EPS) {
+      break; // parti kullanılırken ll gürültülü olur, plato ölçütü güvenilmez
     }
     onceki = ll;
     // Sayfa donmasın ve kullanıcı ilerlediğini görsün — döngü senkron olduğu için
     // arada olay döngüsüne dönmezsek düğme tıklanmamış gibi duruyor.
-    if (iter % 250 === 0) {
+    if (iter % (partili ? 25 : 250) === 0) {
       if (st) st.textContent = `${etiket}… ${iter} tur, uyum ${ll.toFixed(4)}`;
       await new Promise((res) => setTimeout(res));
     }

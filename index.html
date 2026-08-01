@@ -106,6 +106,12 @@
       <button id="btnSuggestCoefs" class="btn">🧮 Katsayı öner</button>
       <span class="hint" id="backtestStatus"></span>
     </div>
+    <div class="toolbar" id="arsivBar">
+      <b class="hint">🗄️ Arşivden:</b>
+      <span id="arsivYillar" class="hint"></span>
+      <button id="btnRunBacktestArsiv" class="btn">▶ Arşiv backtest'i çalıştır</button>
+    </div>
+    <p class="hint">🗄️ <b>Arşiv backtest'i</b> — günlük program+sonuç çifti yalnız cron'un başladığı tarihten beri var (~500 koşu). Arşiv 2021'den beri <b>~31.790 koşu</b> tutuyor; <code>scripts/build_backtest.py</code> bunları puanlamaya hazır hâle getirir (kgs / son 6 / en iyi derece atın <i>o güne kadarki</i> geçmişinden türetilir, gelecek sızmaz). Katsayı önerisi için asıl kullanılması gereken veri budur. İki fark: arşivde <b>idman kaydı yok</b> (B7 boş kalır) ve <b>altılı ödeme satırı yok</b> (kupon simülasyonu çalışmaz). Koşu-karakteri (D1/D2) da atlanır — on binlerce at için ayrı istek gerekirdi.</p>
     <div id="backtestView"></div>
     <div id="coefSuggestView"></div>
   </section>
