@@ -1,7 +1,8 @@
 /* ===== Altılı Bulan v2 — puanlama motoru ===== */
 "use strict";
 
-/* --- 25 kriter (angle) tanımı — katsayılar kılavuzdaki yüzdelerle tutarlı olacak şekilde düzeltildi (toplam %100) --- */
+/* --- 34 kriter (angle) tanımı. NOT: pct toplamı %132; ağırlıklar mutlak
+     ölçek olarak kullanılıyor, sıralamayı yalnızca göreli büyüklükleri etkiler. --- */
 const ANGLES = [
   { k: "A1", name: "Başarılı at sahibi", pct: 2.00, desc: "İlk 3'e giren atların sahiplerinin listesi. Üst sıradakine 100, ortadakine 60." },
   { k: "A2", name: "Sahibin son koşan atı: derece", pct: 3.20, desc: "At sahibinin son koşan atı 1. ise 100, 2. ise 60, 3. ise 20." },
@@ -36,6 +37,7 @@ const ANGLES = [
   { k: "F1", name: "Uzman tahminleri", pct: 5.00, desc: "Takip edilen tahmincilerin favori/plase/sürpriz işaretleri (F=100, P=60, S=30; işaretleyen tahmincilerin ortalaması). Puanlama sekmesindeki 🎩 Uzman panelinden girilir." },
   { k: "G1", name: "Sınıf düşüşü + geçen koşu favorisi", pct: 4.00, desc: "Atın bir önceki koşusundaki RAKİPLERİNİN handikap ortalaması bugünkü kadronun ortalama handikabından yüksekse (daha zorlu sınıftan iniyor) VE o koşuda AGF sıralamasında ilk 3'te ise 100, aksi halde 0. Veri arşivden (stats.json son6) gelir; arşivde bulunmayan atlarda atın kendi hp'si + ganyan ≤4,0 proxy'sine düşülür." },
   { k: "G2", name: "Kazanan profiline yakınlık (şart)", pct: 4.00, desc: "Aynı şartta (ırk · yaş · koşu cinsi · mesafe · pist) geçmişte KAZANAN atların profiline yakınlık. Arşivden (data/arsiv/sartlar.json) kazananların kilo / kulvar / yaş / AGF-ganyan yüzdelikleri çıkarılır; atın her özelliği tipik bandın (q25–q75) içindeyse tam, geniş bandın (q10–q90) içindeyse yarım sayılır. Ortalama yakınlık ≥0.85 → 100, ≥0.60 → 80, ≥0.35 → 60, altı 0. Bugünkü kadroda herkeste aynı olan özellik (ör. tek yaşlı koşuda yaş) ayırt edici olmadığı için hesaba katılmaz." },
+  { k: "H1", name: "Piyasa desteği (AGF)", pct: 6.00, desc: "Bugünkü AGF (at grubu favorisi) yüzdesi en yüksek 5 at: 100,70,50,30,10. Piyasanın kolektif görüşü — TJK Yarış Gazetesi kesildiği için onun editör tahminlerinin (eski B6/B11 beslemesi) yerini alır. Veri programla birlikte günlük gelir, PDF gerektirmez." },
 ];
 const PRESET6 = ["A3", "B1", "B2", "B3", "B6", "B13"];
 const RANK5 = [100, 70, 50, 30, 10];
@@ -386,6 +388,11 @@ async function scoreLeg(leg, ctx) {
     return m ? +m[1] * 60 + +m[2] + +m[3] / 100 : Infinity;
   });
   assignRank5(hs, times, "B6", true);
+
+  // H1: piyasa desteği — bugünkü AGF yüzdesi en yüksek 5 at. Gazete kesildiği için
+  // editör görüşünün yerini tutan tek dış sinyal bu. AGF'si olmayan at puansız kalır.
+  const agfler = hs.map((h) => parseAgf(h.meta?.agf) || null); // %0 = veri yok sayılır
+  assignRank5(hs, agfler, "H1", false);
 
   // B7: TJK idman sorgusundan son galop — son 7 günde ≥1000 m yapmışsa 100, son 2 günde yapılmışsa puan yok
   if (idman) {
@@ -1539,7 +1546,7 @@ async function runBacktest() {
 /* ==================== KATSAYI ÖNERİSİ (conditional logit) ==================== */
 /* Backtest verisiyle koşu-içi lojistik model eğitir: P(at kazanır) = exp(w·x) / Σ exp(w·x).
    Sadece otomatik puanlanan kriterler öğrenilebilir (diğerlerinin geçmiş puanı yok). */
-const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3"];
+const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3", "H1"];
 
 /* Bir ağırlık vektörünün koşu başına ortalama log-olabilirliği (0'a yakın = iyi).
    Rastgele tahminin değeri ln(1/kadro) — ortalama 10 atlı kadroda ≈ -2.30. */

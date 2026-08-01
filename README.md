@@ -1,6 +1,6 @@
 # 🏇 Altılı Bulan v2
 
-At yarışı için **25 kriterli ağırlıklı puanlama sistemi** — 2000'li yıllardan kalma "altılı bulan" Excel sisteminin modernleştirilmiş hali.
+At yarışı için **34 kriterli ağırlıklı puanlama sistemi** — 2000'li yıllardan kalma "altılı bulan" Excel sisteminin modernleştirilmiş hali.
 
 Üç parçadan oluşur:
 
