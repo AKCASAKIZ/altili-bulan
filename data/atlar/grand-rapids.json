@@ -1,0 +1,16 @@
+{
+ "ad": "GRAND RAPIDS",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-07-12-ankara-5-backfill",
+  "2025-08-18-bursa-5-backfill",
+  "2025-09-13-ankara-5-backfill",
+  "2025-11-04-adana-7-backfill",
+  "2026-08-01-ankara-4"
+ ],
+ "erken_gec_delta_ema": 2.835,
+ "son_atak_delta_ema": 3.939,
+ "son_guncelleme": "2026-08-01-ankara-4",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

@@ -1,10 +1,16 @@
 {
  "ad": "KRAL KARACA",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
-  "2026-07-16-kocaeli-4"
+  "2026-07-16-kocaeli-4",
+  "2026-06-21-izmir-1-backfill",
+  "2026-07-05-izmir-1-backfill",
+  "2026-08-01-izmir-5-backfill",
+  "2026-08-01-izmir-5"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -2.0,
- "son_guncelleme": "2026-07-16-kocaeli-4"
+ "erken_gec_delta_ema": -0.078,
+ "son_guncelleme": "2026-08-01-izmir-5",
+ "son_atak_delta_ema": 0.461,
+ "gecmis_surum": 2
 }

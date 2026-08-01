@@ -1,0 +1,26 @@
+{
+ "ad": "TABİP BEY",
+ "kosu_sayisi": 15,
+ "islenen_yarislar": [
+  "2025-11-08-ankara-1-backfill",
+  "2025-11-27-antalya-4-backfill",
+  "2025-12-26-antalya-3-backfill",
+  "2026-01-02-antalya-5-backfill",
+  "2026-01-12-adana-8-backfill",
+  "2026-02-01-izmir-5-backfill",
+  "2026-02-08-adana-3-backfill",
+  "2026-02-15-adana-8-backfill",
+  "2026-02-22-adana-4-backfill",
+  "2026-03-07-adana-1-backfill",
+  "2026-03-14-adana-2-backfill",
+  "2026-03-24-antalya-2-backfill",
+  "2026-06-26-ankara-5-backfill",
+  "2026-08-01-ankara-1-backfill",
+  "2026-08-01-ankara-1"
+ ],
+ "erken_gec_delta_ema": -1.059,
+ "son_atak_delta_ema": -1.771,
+ "son_guncelleme": "2026-08-01-ankara-1",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

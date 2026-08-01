@@ -1,10 +1,12 @@
 {
  "ad": "HERKÜLBEY",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-18-ankara-4"
+  "2026-07-18-ankara-4",
+  "2026-08-01-ankara-2"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": 3.0,
- "son_guncelleme": "2026-07-18-ankara-4"
+ "erken_gec_delta_ema": 2.7,
+ "son_guncelleme": "2026-08-01-ankara-2",
+ "son_atak_delta_ema": 2
 }

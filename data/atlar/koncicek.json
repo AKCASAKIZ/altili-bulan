@@ -1,12 +1,15 @@
 {
  "ad": "KONÇİÇEK",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2026-06-21-izmir-1-backfill",
   "2026-07-09-kocaeli-1",
-  "2026-07-23-kocaeli-1"
+  "2026-07-23-kocaeli-1",
+  "2026-08-01-izmir-4"
  ],
- "erken_gec_delta_ema": 4.27,
- "son_guncelleme": "2026-07-23-kocaeli-1",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 3.289,
+ "son_guncelleme": "2026-08-01-izmir-4",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 5.5,
+ "gecmis_surum": 2
 }

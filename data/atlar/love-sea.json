@@ -1,0 +1,27 @@
+{
+ "ad": "LOVE SEA",
+ "kosu_sayisi": 16,
+ "islenen_yarislar": [
+  "2025-03-18-adana-4-backfill",
+  "2025-04-19-ankara-10-backfill",
+  "2025-05-17-ankara-6-backfill",
+  "2025-06-07-ankara-7-backfill",
+  "2025-07-12-ankara-5-backfill",
+  "2025-08-06-istanbul-6-backfill",
+  "2025-08-30-ankara-3-backfill",
+  "2025-10-02-ankara-7-backfill",
+  "2025-10-11-ankara-2-backfill",
+  "2025-10-21-adana-6-backfill",
+  "2025-12-06-adana-8-backfill",
+  "2026-05-02-ankara-5-backfill",
+  "2026-06-04-ankara-5-backfill",
+  "2026-06-26-ankara-2-backfill",
+  "2026-07-07-ankara-8-backfill",
+  "2026-08-01-ankara-4"
+ ],
+ "erken_gec_delta_ema": -1.546,
+ "son_atak_delta_ema": -1.718,
+ "son_guncelleme": "2026-08-01-ankara-4",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

@@ -1,0 +1,13 @@
+{
+ "ad": "AMANKIZIM",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-04-23-izmir-2-backfill",
+  "2026-08-01-izmir-4"
+ ],
+ "erken_gec_delta_ema": 0.3,
+ "son_atak_delta_ema": 0.3,
+ "son_guncelleme": "2026-08-01-izmir-4",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

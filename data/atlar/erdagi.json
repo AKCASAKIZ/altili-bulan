@@ -1,13 +1,14 @@
 {
  "ad": "ERDAĞI",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2026-07-12-izmir-8",
-  "2026-07-25-izmir-4"
+  "2026-07-25-izmir-4",
+  "2026-08-01-izmir-5"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -0.55,
- "son_guncelleme": "2026-07-25-izmir-4",
+ "erken_gec_delta_ema": -0.535,
+ "son_guncelleme": "2026-08-01-izmir-5",
  "gecmis_surum": 2,
- "son_atak_delta_ema": 0
+ "son_atak_delta_ema": -0.3
 }

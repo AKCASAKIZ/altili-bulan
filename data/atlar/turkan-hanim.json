@@ -1,6 +1,6 @@
 {
  "ad": "TÜRKAN HANIM",
- "kosu_sayisi": 17,
+ "kosu_sayisi": 18,
  "islenen_yarislar": [
   "2025-11-20-izmir-3-backfill",
   "2025-12-21-izmir-1-backfill",
@@ -18,11 +18,12 @@
   "2026-06-27-izmir-1-backfill",
   "2026-07-12-izmir-3-backfill",
   "2026-07-12-izmir-3",
-  "2026-07-25-izmir-2"
+  "2026-07-25-izmir-2",
+  "2026-08-01-izmir-1"
  ],
- "erken_gec_delta_ema": 2.316,
- "son_atak_delta_ema": 1.741,
- "son_guncelleme": "2026-07-25-izmir-2",
+ "erken_gec_delta_ema": 2.521,
+ "son_atak_delta_ema": 1.819,
+ "son_guncelleme": "2026-08-01-izmir-1",
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

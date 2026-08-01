@@ -1,14 +1,15 @@
 {
  "ad": "ASEL SULTAN",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2025-06-05-izmir-1-backfill",
   "2026-07-11-izmir-7",
-  "2026-07-26-izmir-7"
+  "2026-07-26-izmir-7",
+  "2026-08-01-izmir-8"
  ],
- "erken_gec_delta_ema": 2.275,
- "son_guncelleme": "2026-07-26-izmir-7",
+ "erken_gec_delta_ema": -0.358,
+ "son_guncelleme": "2026-08-01-izmir-8",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": -1.7,
+ "son_atak_delta_ema": -3.29,
  "gecmis_surum": 2
 }

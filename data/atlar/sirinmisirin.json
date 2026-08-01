@@ -1,6 +1,6 @@
 {
  "ad": "ŞİRİNMİŞİRİN",
- "kosu_sayisi": 9,
+ "kosu_sayisi": 10,
  "islenen_yarislar": [
   "2025-01-28-adana-5-backfill",
   "2025-11-02-adana-3-backfill",
@@ -10,10 +10,12 @@
   "2026-01-17-adana-4-backfill",
   "2026-01-27-adana-4-backfill",
   "2026-05-16-ankara-7-backfill",
-  "2026-07-14-ankara-7"
+  "2026-07-14-ankara-7",
+  "2026-08-01-ankara-3"
  ],
- "erken_gec_delta_ema": 1.641,
- "son_guncelleme": "2026-07-14-ankara-7",
- "son_atak_delta_ema": -0.546,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 0.999,
+ "son_guncelleme": "2026-08-01-ankara-3",
+ "son_atak_delta_ema": -0.982,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

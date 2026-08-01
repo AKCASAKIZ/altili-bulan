@@ -1,6 +1,6 @@
 {
  "ad": "CEZZAR BEY",
- "kosu_sayisi": 12,
+ "kosu_sayisi": 13,
  "islenen_yarislar": [
   "2025-09-09-ankara-2-backfill",
   "2025-10-04-ankara-8-backfill",
@@ -13,11 +13,12 @@
   "2026-06-23-ankara-7-backfill",
   "2026-07-07-ankara-5-backfill",
   "2026-07-16-ankara-3",
-  "2026-07-26-istanbul-10"
+  "2026-07-26-istanbul-10",
+  "2026-08-01-ankara-1"
  ],
- "erken_gec_delta_ema": 6.721,
- "son_guncelleme": "2026-07-26-istanbul-10",
- "son_atak_delta_ema": 5.493,
+ "erken_gec_delta_ema": 5.005,
+ "son_guncelleme": "2026-08-01-ankara-1",
+ "son_atak_delta_ema": 4.145,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }
