@@ -1,0 +1,29 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 2,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "YASİN AĞA KG DB SK",
+   "yeni": "YASİN AĞA KG DB SK (Koşmaz)",
+   "metin": "2. Koşu: YASİN AĞA (1) KOŞMAZ",
+   "ts": "2026-08-01 08:55 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-01 08:55 UTC",
+ "sehir": "İzmir",
+ "etkilenen": {
+  "2": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
