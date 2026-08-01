@@ -1,0 +1,71 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +0.60",
+   "metin": "1. Koşu: MİRA CETİ (3) kilo 56,5 → 56,5 +0.60",
+   "ts": "2026-08-01 17:55 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.20",
+   "metin": "1. Koşu: LA LLEVO AL CİELO (4) kilo 55 → 55 +1.20",
+   "ts": "2026-08-01 17:55 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.10",
+   "metin": "1. Koşu: VITA BELLATRIX (5) kilo 55 → 55 +0.10",
+   "ts": "2026-08-01 17:55 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.70",
+   "metin": "1. Koşu: LEO MELO (8) kilo 58 → 58 +0.70",
+   "ts": "2026-08-01 17:55 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.30",
+   "metin": "1. Koşu: PROMISE ME DELIGHT (9) kilo 54 → 54 +0.30",
+   "ts": "2026-08-01 17:55 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +1.20",
+   "metin": "1. Koşu: OKYANUS İNCİSİ (10) kilo 54,5 → 54,5 +1.20",
+   "ts": "2026-08-01 17:55 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52,5",
+   "yeni": "52,5 +2.00",
+   "metin": "1. Koşu: LUXUARY (11) kilo 52,5 → 52,5 +2.00",
+   "ts": "2026-08-01 17:55 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-01 17:55 UTC",
+ "sehir": "Diyarbakır",
+ "etkilenen": {}
+}
