@@ -1,5 +1,5 @@
 {
- "surum": 5,
+ "surum": 6,
  "olaylar": [
   {
    "kosu": 2,
@@ -216,9 +216,90 @@
    "yeni": "M.GÖNÜLTAŞ",
    "metin": "7. Koşu: ADI YAŞASIN (7) jokey M.ÇİÇEK → M.GÖNÜLTAŞ",
    "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "MİREKTAY KG DB SK",
+   "yeni": "MİREKTAY KG DB SK (Koşmaz)",
+   "metin": "5. Koşu: MİREKTAY (3) KOŞMAZ",
+   "ts": "2026-08-01 16:54 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "60",
+   "yeni": "60 +0.10",
+   "metin": "6. Koşu: GROUND SPEED (2) kilo 60 → 60 +0.10",
+   "ts": "2026-08-01 16:54 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.20",
+   "metin": "6. Koşu: AGE OF FIRE (6) kilo 56 → 56 +0.20",
+   "ts": "2026-08-01 16:54 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.20",
+   "metin": "6. Koşu: ZAGANOS (8) kilo 56 → 56 +0.20",
+   "ts": "2026-08-01 16:54 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.00",
+   "metin": "7. Koşu: SELÇUKZADE (5) kilo 53 → 53 +1.00",
+   "ts": "2026-08-01 16:54 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +0.20",
+   "metin": "7. Koşu: EFSANEVİTAY (8) kilo 51 → 51 +0.20",
+   "ts": "2026-08-01 16:54 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.20",
+   "metin": "7. Koşu: ELMAS GÖZLÜM (9) kilo 54 → 54 +1.20",
+   "ts": "2026-08-01 16:54 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.10",
+   "metin": "7. Koşu: HATUN DİDEM (10) kilo 55 → 55 +1.10",
+   "ts": "2026-08-01 16:54 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.20",
+   "metin": "7. Koşu: YİĞİT NUR (11) kilo 55 → 55 +1.20",
+   "ts": "2026-08-01 16:54 UTC"
   }
  ],
- "guncelleme": "2026-08-01 15:55 UTC",
+ "guncelleme": "2026-08-01 16:54 UTC",
  "sehir": "İzmir",
  "etkilenen": {
   "2": [
@@ -254,6 +335,17 @@
    "C2",
    "C3",
    "E1"
+  ],
+  "5": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
   ]
  }
 }
