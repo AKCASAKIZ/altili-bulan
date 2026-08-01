@@ -1,5 +1,5 @@
 {
- "surum": 4,
+ "surum": 5,
  "olaylar": [
   {
    "kosu": 2,
@@ -99,9 +99,126 @@
    "yeni": "51 +1.30",
    "metin": "2. Koşu: LOKUM HÜMA (9) kilo 51 → 51 +1.30",
    "ts": "2026-08-01 14:41 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.60",
+   "metin": "4. Koşu: İLDA SULTAN (2) kilo 55 → 55 +1.60",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "4. Koşu: BİBAHANIM (4) kilo 57 → 57 +0.20",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.60",
+   "metin": "4. Koşu: ESRİN HATUN (5) kilo 53 → 53 +0.60",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "M.ÇİÇEK",
+   "yeni": "M.KEÇECİ",
+   "metin": "4. Koşu: LATİFE SULTAN (7) jokey M.ÇİÇEK → M.KEÇECİ",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "4. Koşu: RÜZGAR İZİ (8) kilo 57 → 57 +0.40",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "4. Koşu: ULU CİHAN (9) kilo 57 → 57 +0.40",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "5. Koşu: KUZEYİN POYRAZI (2) kilo 57 → 57 +0.40",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.00",
+   "metin": "5. Koşu: MİREKTAY (3) kilo 53 → 53 +1.00",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.10",
+   "metin": "5. Koşu: MİRMET (4) kilo 54 → 54 +1.10",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.90",
+   "metin": "5. Koşu: AYANA (6) kilo 55 → 55 +0.90",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +0.60",
+   "metin": "5. Koşu: ERENDİZ (7) kilo 51 → 51 +0.60",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +2.00",
+   "metin": "5. Koşu: MRS MALİBU (9) kilo 51 → 51 +2.00",
+   "ts": "2026-08-01 15:55 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "M.ÇİÇEK",
+   "yeni": "M.GÖNÜLTAŞ",
+   "metin": "7. Koşu: ADI YAŞASIN (7) jokey M.ÇİÇEK → M.GÖNÜLTAŞ",
+   "ts": "2026-08-01 15:55 UTC"
   }
  ],
- "guncelleme": "2026-08-01 14:41 UTC",
+ "guncelleme": "2026-08-01 15:55 UTC",
  "sehir": "İzmir",
  "etkilenen": {
   "2": [
@@ -125,6 +242,18 @@
    "E2",
    "E3",
    "G1"
+  ],
+  "4": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
+  ],
+  "7": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
   ]
  }
 }
