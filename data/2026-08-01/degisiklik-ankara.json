@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -45,9 +45,117 @@
    "yeni": "52 +0.60",
    "metin": "1. Koşu: BÜYÜKSULTAN (10) kilo 52 → 52 +0.60",
    "ts": "2026-08-01 10:29 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.20",
+   "metin": "2. Koşu: ATAERİ (3) kilo 57 → 57 +1.20",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.10",
+   "metin": "2. Koşu: SEVERBEY (5) kilo 53 → 53 +1.10",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "2. Koşu: GÜNŞİRAY (7) kilo 52 → 52 +2.00",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.30",
+   "metin": "2. Koşu: GÜZEL ELAM (8) kilo 55 → 55 +1.30",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.80",
+   "metin": "2. Koşu: HAREM GÜZELİ (9) kilo 55 → 55 +0.80",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.70",
+   "metin": "2. Koşu: KARA ALEV (10) kilo 53 → 53 +1.70",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +1.20",
+   "metin": "2. Koşu: ÖZERKIZ (11) kilo 51 → 51 +1.20",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "60",
+   "yeni": "60 +0.10",
+   "metin": "3. Koşu: ŞİRİNMİŞİRİN (5) kilo 60 → 60 +0.10",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +2.00",
+   "metin": "3. Koşu: ARZUDAR (9) kilo 53,5 → 53,5 +2.00",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +2.00",
+   "metin": "4. Koşu: FINALE DUTY (8) kilo 56 → 56 +2.00",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.30",
+   "metin": "4. Koşu: FORLORN (9) kilo 56 → 56 +1.30",
+   "ts": "2026-08-01 11:47 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.50",
+   "metin": "4. Koşu: KOCAHANIM (11) kilo 56 → 56 +0.50",
+   "ts": "2026-08-01 11:47 UTC"
   }
  ],
- "guncelleme": "2026-08-01 10:29 UTC",
+ "guncelleme": "2026-08-01 11:47 UTC",
  "sehir": "Ankara",
  "etkilenen": {}
 }
