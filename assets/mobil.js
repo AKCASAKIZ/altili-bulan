@@ -116,6 +116,26 @@
     nav.querySelector(".mnav-daha").classList.toggle("aktif", !sabitte);
   }
 
+  /* --- Kupon özeti çekmecesi ---
+   * Dikey telefonda iki altılının bileti ekranın tamamını kaplıyordu. CSS onu
+   * sola gizliyor; buradaki tutamak açıp kapatıyor. Yatayda tutamak gizli,
+   * bilet zaten sol sütunda duruyor (bkz. style.css).
+   */
+  const ozet = document.getElementById("kuponSummary");
+  if (ozet) {
+    const tut = document.createElement("button");
+    tut.className = "kupon-tut";
+    tut.type = "button";
+    tut.textContent = "BİLET";
+    tut.setAttribute("aria-label", "Kupon biletini aç/kapat");
+    tut.addEventListener("click", () => {
+      const acik = ozet.classList.toggle("acik");
+      tut.classList.toggle("acik", acik);
+      tut.setAttribute("aria-expanded", acik ? "true" : "false");
+    });
+    ozet.parentNode.insertBefore(tut, ozet);
+  }
+
   sheet.querySelector(".msheet-arka").addEventListener("click", kapat);
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") kapat();

@@ -310,9 +310,12 @@ footer a { color: var(--accent-text); }
  * (assets/mobil.js). Ölçüm: 390px'te şerit üç satıra yayılıp başlıkla birlikte
  * ekranın ~%30'unu içerik görünmeden yiyordu.
  */
-.mnav, .msheet { display: none; }
+.mnav, .msheet, .kupon-tut { display: none; }
 
-@media (max-width: 720px) {
+/* Kırılım noktası yalnız genişliğe bakamaz: telefon yatay çevrilince viewport
+   ~844px oluyor ve "max-width:720px" düşüyor — yani yatayda masaüstü düzenine,
+   11 sekmelik şeride geri dönülüyordu. Kısa ve yatay ekran da mobil sayılır. */
+@media (max-width: 720px), (orientation: landscape) and (max-height: 520px) {
   body { padding-bottom: calc(62px + env(safe-area-inset-bottom)); }
   main { padding: 12px 10px 24px; }
 
@@ -403,6 +406,59 @@ footer a { color: var(--accent-text); }
     mask-image: linear-gradient(to right, #000 calc(100% - 22px), transparent);
   }
   .score-table .sticky-col { position: sticky; left: 0; z-index: 2; background: var(--surface); }
+}
+
+/* ===== Kupon özeti (iki altılının bileti) =====
+ * Masaüstünde altta yapışkan bir şerit. Telefonda dikeyken iki bilet alt alta
+ * düşüp ekranın tamamını kaplıyordu — ayakları seçerken bileti göremiyorsun,
+ * bileti görürken ayakları. Çözüm: dikeyde soldan açılan çekmece, yatayda
+ * kalıcı sol sütun. Yatay zaten geniş, bilet ayakların yanında durabiliyor.
+ */
+@media (max-width: 720px) and (orientation: portrait) {
+  #kuponSummary {
+    position: fixed; z-index: 36;
+    left: 0; top: 52px; bottom: calc(62px + env(safe-area-inset-bottom));
+    width: min(86vw, 330px);
+    margin: 0; border-left: 0; border-radius: 0 14px 14px 0;
+    flex-direction: column; gap: 12px; flex-wrap: nowrap;
+    overflow-y: auto; overscroll-behavior: contain;
+    transform: translateX(-101%);          /* 101%: kenardaki gölge de sızmasın */
+    transition: transform .22s ease;
+  }
+  #kuponSummary.acik { transform: translateX(0); }
+  #kuponSummary .ticket { min-width: 0; width: 100%; }
+
+  /* Tutamak — çekmecenin kapalıyken tek görünen parçası */
+  .kupon-tut {
+    display: flex; align-items: center; justify-content: center;
+    position: fixed; z-index: 37; left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 26px; height: 92px; padding: 0;
+    border: 1px solid var(--border); border-left: 0;
+    border-radius: 0 10px 10px 0;
+    background: var(--surface); color: var(--gold);
+    box-shadow: var(--shadow); cursor: pointer;
+    font: inherit; font-size: 11px; font-weight: 700; letter-spacing: .08em;
+    writing-mode: vertical-rl; text-orientation: mixed;
+  }
+  .kupon-tut.acik { left: min(86vw, 330px); }
+  .kupon-tut { transition: left .22s ease; }
+}
+
+/* Yatay telefon: bilet hep görünür, sol sütunda; ayaklar sağda kalır. */
+@media (orientation: landscape) and (max-height: 520px) {
+  #tab-kupon.active { padding-left: 252px; }
+  #kuponSummary {
+    position: fixed; z-index: 20;
+    left: 0; top: 52px; bottom: calc(56px + env(safe-area-inset-bottom));
+    width: 240px; margin: 0;
+    border-left: 0; border-radius: 0 12px 12px 0;
+    flex-direction: column; gap: 10px; flex-wrap: nowrap;
+    overflow-y: auto; overscroll-behavior: contain;
+    transform: none;                        /* dikeydeki çekmece konumunu ez */
+  }
+  #kuponSummary .ticket { min-width: 0; width: 100%; }
+  .kupon-tut { display: none; }             /* yatayda tutamağa gerek yok */
 }
 
 /* ==================== GAZETE (yazdır / PDF) ==================== */
