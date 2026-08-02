@@ -1,5 +1,5 @@
 {
- "surum": 4,
+ "surum": 5,
  "olaylar": [
   {
    "kosu": 3,
@@ -153,9 +153,81 @@
    "yeni": "57 +0.30",
    "metin": "6. Koşu: TOM RAIDER (14) kilo 57 → 57 +0.30",
    "ts": "2026-08-02 13:15 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "7. Koşu: ALTINBORA (2) kilo 57 → 57 +0.50",
+   "ts": "2026-08-02 14:43 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "7. Koşu: PARSIBEY (11) kilo 57 → 57 +0.50",
+   "ts": "2026-08-02 14:43 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "7. Koşu: TEMRE (17) kilo 55 → 55 +2.00",
+   "ts": "2026-08-02 14:43 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +2.00",
+   "metin": "8. Koşu: FIRE OF TYGAR (9) kilo 55,5 → 55,5 +2.00",
+   "ts": "2026-08-02 14:43 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.70",
+   "metin": "9. Koşu: HARUN REİS (3) kilo 57 → 57 +0.70",
+   "ts": "2026-08-02 14:43 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.60",
+   "metin": "9. Koşu: HAWK (4) kilo 57 → 57 +0.60",
+   "ts": "2026-08-02 14:43 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "9. Koşu: MY LITTLE BOY (6) kilo 57 → 57 +0.50",
+   "ts": "2026-08-02 14:43 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "9. Koşu: YURIBOYKA (10) kilo 57 → 57 +0.50",
+   "ts": "2026-08-02 14:43 UTC"
   }
  ],
- "guncelleme": "2026-08-02 13:15 UTC",
+ "guncelleme": "2026-08-02 14:43 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "3": [
