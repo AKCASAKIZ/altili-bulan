@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -45,9 +45,54 @@
    "yeni": "55 +1.30",
    "metin": "2. Koşu: FAHRİ BABA (9) kilo 55 → 55 +1.30",
    "ts": "2026-08-02 15:55 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "3. Koşu: EXODUS (2) kilo 57 → 57 +0.30",
+   "ts": "2026-08-02 16:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.40",
+   "metin": "3. Koşu: FRAMEZ (3) kilo 53 → 53 +0.40",
+   "ts": "2026-08-02 16:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "3. Koşu: WHITE DYNASTY (6) kilo 57 → 57 +0.10",
+   "ts": "2026-08-02 16:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.30",
+   "metin": "3. Koşu: ICE BEAUTY (8) kilo 53 → 53 +0.30",
+   "ts": "2026-08-02 16:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.30",
+   "metin": "3. Koşu: NEVER SAY NO (9) kilo 55 → 55 +1.30",
+   "ts": "2026-08-02 16:53 UTC"
   }
  ],
- "guncelleme": "2026-08-02 15:55 UTC",
+ "guncelleme": "2026-08-02 16:53 UTC",
  "sehir": "İzmir",
  "etkilenen": {}
 }
