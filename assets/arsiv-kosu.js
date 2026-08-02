@@ -37,7 +37,13 @@
   async function ay(anahtar) {
     if (anahtar in aylar) return aylar[anahtar];
     $("akInfo").textContent = "Arşiv okunuyor…";
-    aylar[anahtar] = await fetch(`data/arsiv/${anahtar}.json`, { cache: "force-cache" })
+    /* "no-cache" ŞART. Ay dosyaları değişiyor (backfill_numara.py at
+       numaralarını sonradan dolduruyor). Sunucu Cache-Control göndermediği
+       için tarayıcı sezgisel tazelik uygulayıp eski kopyayı doğrulamadan
+       sunuyor ve "No" sütunu boş kalıyordu — "force-cache" ile de, varsayılanla
+       da. "no-cache" her seferinde koşullu istek atar, değişmemişse 304 döner
+       (ucuz). Bellekteki `aylar` sözlüğü zaten oturum içinde tekrar indirmez. */
+    aylar[anahtar] = await fetch(`data/arsiv/${anahtar}.json`, { cache: "no-cache" })
       .then((r) => (r.ok ? r.json() : null))
       .catch(() => null);
     return aylar[anahtar];
@@ -104,17 +110,24 @@
       (a, b) => ((a.sira ?? 99) - (b.sira ?? 99))
     );
 
+    /* At numarası ancak `nv` işaretli şehir-günlerinde gerçek. İşaretsiz günde
+       `no` hâlâ sonuç CSV'sinden gelen bitiş sırasının kopyası — onu numara
+       diye göstermek yanlış bilgi olur, "–" basılır.
+       (scripts/backfill_numara.py program CSV'sinden doldurup nv=1 yazıyor.) */
+    const numarali = h.nv === 1;
+
     let html = `<div class="race-card"><header>
       <h3>🔎 ${AB.esc(h.sehir || "")} — ${k.no}. Koşu</h3>
       <span class="race-tags">${kunye}</span></header>
       <div class="table-wrap"><table><thead><tr>
-      <th>Sıra</th><th>St</th><th>At</th><th>Yaş</th><th>Kilo</th><th>Jokey</th>
+      <th>Sıra</th><th>No</th><th>St</th><th>At</th><th>Yaş</th><th>Kilo</th><th>Jokey</th>
       <th>Antrenör</th><th>Derece</th><th>Ganyan</th><th>Fark</th><th>AGF</th>
       </tr></thead><tbody>`;
     for (const a of atlar) {
       const ilk3 = a.sira && a.sira <= 3 ? ' class="ak-derece"' : "";
       html += `<tr${ilk3}>` +
         `<td><b>${AB.esc(String(a.sira ?? "-"))}</b></td>` +
+        `<td>${numarali ? AB.esc(String(a.no ?? "")) : "–"}</td>` +
         `<td>${AB.esc(String(a.st ?? ""))}</td>` +
         `<td>${AB.esc(a.ad || "")}</td>` +
         `<td>${AB.esc(a.yas || "")}</td>` +
@@ -126,11 +139,10 @@
         `<td>${AB.esc(a.fark || "")}</td>` +
         `<td>${AB.esc(a.agf || "")}</td></tr>`;
     }
-    // "No" sütunu bilerek YOK: arşivdeki `no` alanı atın numarası değil, bitiş
-    // sırasının kopyası (6.360 koşuda istisnasız no === sira). Gerçek kulvar
-    // bilgisi `st` alanında, o yüzden tabloda St var, No yok.
     html += `</tbody></table></div>
-      <p class="hint">Kaynak: TJK günlük sonuç CSV arşivi. <b>St</b> = start (kulvar) numarası.</p>
+      <p class="hint">Kaynak: TJK günlük sonuç CSV arşivi. <b>No</b> = atın yarış
+      numarası (altılıda oynanan), <b>St</b> = start (kulvar) numarası.
+      ${numarali ? "" : "Bu günün numaraları henüz program CSV'sinden doldurulmadı."}</p>
       </div>`;
     view.innerHTML = html;
   }
