@@ -37,7 +37,26 @@ ARSIV = Path(sys.argv[1]) if len(sys.argv) > 1 else BASE / "data" / "arsiv"
 CIKTI = ARSIV / "sartlar.json"
 
 MIN_ORNEK = 5      # bu sayidan az kazanani olan anahtar yazilmaz
-ORNEK_SAYI = 6     # anahtar basina saklanan son kazanan ornegi
+ORNEK_SAYI = 10    # anahtar basina saklanan son kazanan ornegi
+
+# TJK at adinin sonuna TAKI kodlarini ekliyor: "ROOCKET OF RUNNER KG DB SK".
+# Ayri bir alan YOK, isimden ayiklamak zorundayiz.
+# DIKKAT: genel bir "sondaki buyuk harfli kisa kelimeler" kurali KULLANILAMAZ —
+# arsivde BEY / KIZI / TAY / OF / THE / STAR gibi gercek isim kelimeleri de
+# ayni desene uyuyor ve at adini kirpardi. Bu yuzden BEYAZ LISTE:
+TAKI_KODLARI = {"K", "KG", "DB", "SK", "SKG", "GKR", "ÖG", "SGKR"}
+
+
+def taki_ayikla(ad: str) -> tuple[str, list[str]]:
+    """'DAMPERLİ KG K' -> ('DAMPERLİ', ['KG','K']). Sadece sondan, beyaz listeden."""
+    if not ad:
+        return "", []
+    # "(Koşmaz)" gibi parantezli ekler once ayrilir, takidan sonra geri eklenmez
+    parcalar = ad.split()
+    taki: list[str] = []
+    while parcalar and parcalar[-1] in TAKI_KODLARI:
+        taki.insert(0, parcalar.pop())
+    return " ".join(parcalar), taki
 
 
 def sayi(v) -> float | None:
@@ -149,8 +168,10 @@ def main() -> None:
                     if not kazanan or re.search(r"ko[sş]maz", kazanan.get("ad", ""), re.I):
                         continue
                     kosu_sayisi += 1
+                    kaz_ad, kaz_taki = taki_ayikla(kazanan.get("ad", ""))
                     ornek = {
-                        "t": tarih, "s": sehir, "ad": kazanan.get("ad", ""),
+                        "t": tarih, "s": sehir, "ad": kaz_ad,
+                        "taki": kaz_taki,
                         "st": kazanan.get("st"), "yas": kazanan.get("yas"),
                         "kilo": kazanan.get("kilo"), "ganyan": kazanan.get("ganyan"),
                         "agf": kazanan.get("agf"), "jokey": kazanan.get("jokey"),
@@ -158,7 +179,15 @@ def main() -> None:
                     }
                     for k in anahtarlar(kosu):
                         b = kova.setdefault(k, {"kilo": [], "st": [], "yas": [],
-                                                "ganyan": [], "agf": [], "ornek": []})
+                                                "ganyan": [], "agf": [], "ornek": [],
+                                                "taki": {}, "takisiz": 0})
+                        # Takı dağılımı: bu şartta kazananların kaçı neyi takmış.
+                        # Bir at birden çok takı taşıyabilir, her kod ayrı sayılır.
+                        if kaz_taki:
+                            for kod in kaz_taki:
+                                b["taki"][kod] = b["taki"].get(kod, 0) + 1
+                        else:
+                            b["takisiz"] += 1
                         b["kilo"].append(sayi(kazanan.get("kilo")))
                         b["st"].append(sayi(kazanan.get("st")))
                         b["yas"].append(sayi(kazanan.get("yas")))
@@ -178,6 +207,11 @@ def main() -> None:
             bnt = bant(b[alan])
             if bnt:
                 kayit[alan] = bnt
+        # takı dağılımı: {"KG": 412, ...} + takısız kazanan sayısı
+        if b["taki"]:
+            kayit["taki"] = dict(sorted(b["taki"].items(), key=lambda x: -x[1]))
+        if b["takisiz"]:
+            kayit["takisiz"] = b["takisiz"]
         # ornekler: en yeni tarihliler (arsiv zaten tarih sirali islendi)
         kayit["ornek"] = b["ornek"][-ORNEK_SAYI:][::-1]
         cikti[k] = kayit

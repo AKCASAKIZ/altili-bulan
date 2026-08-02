@@ -881,11 +881,67 @@ function renderProgram() {
   const el = $("#programView");
   if (!state.program) { el.innerHTML = `<div class="empty-note">Bu gün/hipodrom için program verisi yok.</div>`; return; }
   el.innerHTML = state.program.races.map((r) => raceCard(r, false)).join("");
+  sartBolumleriDoldur(el, state.program.races);
 }
 function renderResults() {
   const el = $("#resultsView");
   if (!state.results) { el.innerHTML = `<div class="empty-note">Bu gün/hipodrom için sonuç verisi henüz yok. Sonuçlar koşular bittikten sonra GitHub Actions ile otomatik çekilir.</div>`; return; }
   el.innerHTML = state.results.races.map((r) => raceCard(r, true)).join("");
+  sartBolumleriDoldur(el, state.results.races);
+}
+
+/* ==================== "BU ŞARTTA KİM KAZANMIŞ" ====================
+ * Kaynak: data/arsiv/sartlar.json (scripts/build_sartlar.py) — G2 kriterinin
+ * kullandığı dosyanın ta kendisi. Orada zaten hesaplanan kazanan profilini
+ * burada GÖRÜNÜR kılıyoruz, ayrıca takı dağılımını ekliyoruz.
+ * Dosya ~3 MB; senkron render'ı bekletmemek için kartlar çizildikten sonra
+ * yer tutucular arkadan doldurulur. */
+async function sartBolumleriDoldur(kok, races) {
+  const yuvalar = kok.querySelectorAll(".sart-kazanan[data-race]");
+  if (!yuvalar.length || !races) return;
+  if (state.sartlar === undefined) state.sartlar = await tryFetch("data/arsiv/sartlar.json");
+  if (!state.sartlar) return;
+  yuvalar.forEach((el) => {
+    const r = races.find((x) => String(x.no) === el.dataset.race);
+    if (r) el.innerHTML = sartKazananHTML(r);
+  });
+}
+
+function sartKazananHTML(r) {
+  const s = sartBul(r, state.sartlar);
+  const rec = s?.r;
+  const ornek = rec?.ornek || [];
+  if (!ornek.length) return "";
+
+  const dag = rec.taki || {};
+  const paylar = Object.entries(dag)
+    .map(([kod, c]) => `<span class="taki-pay"><span class="taki-kod">${esc(kod)}</span>%${Math.round((c / rec.n) * 100)}</span>`)
+    .join("");
+  const takisiz = rec.takisiz
+    ? `<span class="taki-pay hint">takısız %${Math.round((rec.takisiz / rec.n) * 100)}</span>` : "";
+
+  const satir = ornek.map((o) => `<tr>
+      <td>${esc(trDate(o.t))}</td><td>${esc(o.s || "")}</td>
+      <td>${esc(o.ad || "")}</td>
+      <td class="taki-cell">${takiHTML(o.taki)}</td>
+      <td>${esc(o.st ?? "")}</td><td>${esc(o.kilo ?? "")}</td>
+      <td>${esc(o.jokey || "")}</td><td>${esc(o.ganyan ?? "")}</td>
+      <td>${esc(o.agf ?? "")}</td><td>${esc(o.kadro ?? "")}</td>
+    </tr>`).join("");
+
+  return `<details class="sart-detay">
+    <summary>Bu şartta kim kazanmış? <span class="hint">${rec.n} kazanan · ${esc(s.k)}</span></summary>
+    <div class="sart-govde">
+      <div class="taki-dagilim">Kazananların takısı: ${paylar}${takisiz}</div>
+      <div class="table-wrap"><table class="sart-tablo"><thead><tr>
+        <th>Tarih</th><th>Şehir</th><th>Kazanan</th><th>Takı</th><th>Kulvar</th>
+        <th>Kilo</th><th>Jokey</th><th>Ganyan</th><th>AGF</th><th>Kadro</th>
+      </tr></thead><tbody>${satir}</tbody></table></div>
+      <div class="hint sart-not">Şart eşleşmesi ırk · yaş · koşu cinsi · mesafe · pist üzerinden yapılır;
+        yeterli örnek yoksa daha genişine düşülür (başlıktaki anahtar hangi seviyede eşleştiğini gösterir).
+        Yüzdeler ${rec.n} kazananın tamamı üzerinden, tablo son ${ornek.length} kazanan.</div>
+    </div>
+  </details>`;
 }
 function raceCard(r, isResult) {
   const legIx = state.legs.findIndex((l) => l.raceNo === r.no);
@@ -908,8 +964,10 @@ function raceCard(r, isResult) {
       posCell = `<td class="pos-cell">${kosmaz ? "—" : pos}${mark}</td>`;
     }
     const soy = [h.baba, h.anne].filter(Boolean).join(" — ");
+    const t = takiAyikla(h.ad);
     rows += `<tr class="${pos === 1 ? "pos-1" : ""}">${posCell}
-      <td>${h.no}</td><td>${esc(h.ad)} ${picked ? '<span class="hit">kuponda</span>' : ""}${soy ? `<br><span class="hint" style="font-size:11px">${esc(soy)}</span>` : ""}</td>
+      <td>${h.no}</td><td>${esc(t.ad)} ${picked ? '<span class="hit">kuponda</span>' : ""}${soy ? `<br><span class="hint" style="font-size:11px">${esc(soy)}</span>` : ""}</td>
+      <td class="taki-cell">${takiHTML(t.taki)}</td>
       <td>${esc(h.jokey || "")}</td><td>${esc(h.kilo || "")}</td>
       ${isResult
         ? `<td>${esc(h.derece || "")}</td><td>${esc(h.ganyan || "")}</td><td>${esc(h.fark || "")}</td>`
@@ -917,13 +975,14 @@ function raceCard(r, isResult) {
     </tr>`;
   });
   const head = isResult
-    ? `<th>Sıra</th><th>No</th><th>At</th><th>Jokey</th><th>Kilo</th><th>Derece</th><th>Ganyan</th><th>Fark</th>`
-    : `<th>No</th><th>At</th><th>Jokey</th><th>Kilo</th><th>Son 6</th><th>KGS</th><th>AGF</th><th>En iyi</th><th>Son Galop</th>`;
+    ? `<th>Sıra</th><th>No</th><th>At</th><th>Takı</th><th>Jokey</th><th>Kilo</th><th>Derece</th><th>Ganyan</th><th>Fark</th>`
+    : `<th>No</th><th>At</th><th>Takı</th><th>Jokey</th><th>Kilo</th><th>Son 6</th><th>KGS</th><th>AGF</th><th>En iyi</th><th>Son Galop</th>`;
   return `<div class="race-card">
     <header><h3>${r.no}. Koşu — ${r.saat || ""}</h3>
     <span class="race-tags">${esc(r.grup || "")} · ${esc(r.mesafe || "")} ${esc(r.pist || "")} · ${esc(r.tur || "")} ${r.ikramiye ? "· 1.lik: " + esc(r.ikramiye) : ""}</span></header>
     <div class="table-wrap"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>
     ${r.odemeler ? `<div class="payout">💰 ${esc(r.odemeler)}</div>` : ""}
+    <div class="sart-kazanan" data-race="${r.no}"></div>
   </div>`;
 }
 
@@ -1910,6 +1969,33 @@ function renderAll() {
   if ($("#tab-kupon").classList.contains("active")) renderKupon();
 }
 function esc(s) { return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+
+/* TAKI: TJK ayrı bir alan vermiyor, at adının SONUNA ekliyor —
+ * "DAMPERLİ KG K" → ad "DAMPERLİ", takı [KG, K].
+ * Beyaz liste ZORUNLU: arşivde BEY / KIZI / TAY / OF / THE / STAR gibi gerçek
+ * isim kelimeleri de "sonda kısa büyük harfli kelime" desenine uyuyor; genel
+ * bir regex bunları takı sanıp at adını kırpar.
+ * scripts/build_sartlar.py içindeki taki_ayikla() ile aynı listeyi kullanır —
+ * biri değişirse diğeri de değişmeli. */
+const TAKI_KODLARI = new Set(["K", "KG", "DB", "SK", "SKG", "GKR", "ÖG", "SGKR"]);
+function takiAyikla(ad) {
+  const s = String(ad ?? "").trim();
+  if (!s) return { ad: "", taki: [] };
+  // "(Koşmaz)" gibi parantezli ek en sonda durur, takı ondan ÖNCE gelir
+  const par = /\s*(\([^)]*\))\s*$/.exec(s);
+  const govde = par ? s.slice(0, par.index) : s;
+  const parcalar = govde.trim().split(/\s+/).filter(Boolean);
+  const taki = [];
+  while (parcalar.length > 1 && TAKI_KODLARI.has(parcalar[parcalar.length - 1])) {
+    taki.unshift(parcalar.pop());
+  }
+  return { ad: parcalar.join(" ") + (par ? " " + par[1] : ""), taki };
+}
+function takiHTML(taki) {
+  return taki && taki.length
+    ? taki.map((t) => `<span class="taki-kod">${esc(t)}</span>`).join("")
+    : `<span class="hint">—</span>`;
+}
 function trDate(iso) {
   const [y, m, d] = iso.split("-");
   const ay = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"][+m - 1];
@@ -1940,7 +2026,7 @@ function formatIdmanSon(rows) {
 
 
 /* ===== dergi.js entegrasyonu için dışa açılan kancalar ===== */
-window.AB = { state, ANGLES, RANK5, saveSession, renderAll, renderScoreTable, rankedHorses, slugify, esc, LS, scoreLeg, temizle, sartBul, sartOzellikleri, sartPuani, tryFetch };
+window.AB = { state, ANGLES, RANK5, saveSession, renderAll, renderScoreTable, rankedHorses, slugify, esc, LS, scoreLeg, temizle, sartBul, sartOzellikleri, sartPuani, tryFetch, takiAyikla, takiHTML };
 
 /* ==================== F1: UZMAN TAHMİNLERİ ====================
  * Tahminci listesi tutulur (ör. Ferdi Akıncı, Final, Ferhat Pusa); YouTube/dergi

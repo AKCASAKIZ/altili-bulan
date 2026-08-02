@@ -36,9 +36,15 @@
 
     const kazananlar = (r.ornek || []).map((o) => `
       <tr><td>${AB.esc(o.t)}</td><td>${AB.esc(o.s || "")}</td><td><b>${AB.esc(o.ad)}</b></td>
+          <td class="taki-cell">${AB.takiHTML(o.taki)}</td>
           <td>${AB.esc(String(o.st ?? "—"))}</td><td>${AB.esc(o.kilo || "—")}</td>
           <td>${AB.esc((o.yas || "").split(" ")[0] || "—")}</td><td>${AB.esc(o.ganyan || "—")}</td>
           <td>${AB.esc(o.agf || "—")}</td><td>${AB.esc(o.jokey || "")}</td></tr>`).join("");
+
+    // Takı dağılımı: bu şartta kazananların kaçı hangi takıyla kazanmış
+    const takiPaylari = Object.entries(r.taki || {})
+      .map(([kod, c]) => `<span class="taki-pay"><span class="taki-kod">${AB.esc(kod)}</span>%${Math.round((c / r.n) * 100)}</span>`)
+      .join("") + (r.takisiz ? `<span class="taki-pay hint">takısız %${Math.round((r.takisiz / r.n) * 100)}</span>` : "");
 
     const atlar = leg.horses.map((h, i) => {
       const p = AB.sartPuani(ozellikler[i]);
@@ -52,8 +58,9 @@
       <p class="hint">Eşleşen şart: <b>${AB.esc(irk)}</b> · ${AB.esc(kalan.join(" · "))} — arşivde <b>${r.n}</b> koşu.</p>
       <p class="sart-bant">Tipik kazanan → kilo <b>${bantMetin(r.kilo, " kg")}</b> · kulvar <b>${bantMetin(r.st)}</b>
          · yaş <b>${bantMetin(r.yas)}</b> · ganyan <b>${bantMetin(r.ganyan)}</b>${r.agf ? ` · AGF <b>${bantMetin(r.agf, "%")}</b>` : ""}</p>
+      ${takiPaylari ? `<div class="taki-dagilim">Kazananların takısı: ${takiPaylari}</div>` : ""}
       <div class="table-wrap"><table class="score-table sart-tablo">
-        <thead><tr><th>Tarih</th><th>Şehir</th><th>Kazanan</th><th>Kulvar</th><th>Kilo</th><th>Yaş</th><th>Ganyan</th><th>AGF</th><th>Jokey</th></tr></thead>
+        <thead><tr><th>Tarih</th><th>Şehir</th><th>Kazanan</th><th>Takı</th><th>Kulvar</th><th>Kilo</th><th>Yaş</th><th>Ganyan</th><th>AGF</th><th>Jokey</th></tr></thead>
         <tbody>${kazananlar}</tbody></table></div>
       <p class="hint" style="margin-top:10px">Bugünkü kadronun bu profile yakınlığı (G2):</p>
       <div class="table-wrap"><table class="score-table sart-tablo">
