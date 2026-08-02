@@ -1,0 +1,29 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "NEVACAN KG DB SK",
+   "yeni": "NEVACAN KG DB SK (Koşmaz)",
+   "metin": "3. Koşu: NEVACAN (4) KOŞMAZ",
+   "ts": "2026-08-02 08:57 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-02 08:57 UTC",
+ "sehir": "İstanbul",
+ "etkilenen": {
+  "3": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
