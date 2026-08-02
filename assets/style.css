@@ -526,3 +526,13 @@ footer a { color: var(--accent-text); }
 .sart-tablo { font-size: 12px; }
 .sart-tablo th, .sart-tablo td { padding: 5px 7px; }
 .sart-not { margin-top: 6px; font-size: 11px; line-height: 1.45; }
+
+/* Arşivden geçmiş koşu sorgulama (assets/arsiv-kosu.js) */
+.arsiv-kosu .toolbar label { display: flex; align-items: center; gap: 6px; }
+.arsiv-kosu input[type="date"], .arsiv-kosu select {
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: 8px; padding: 7px 9px; font: inherit;
+}
+.arsiv-ayrac { border: 0; border-top: 1px solid var(--border); margin: 22px 0 18px; }
+tr.ak-derece td { background: var(--accent-soft); }
+tr.ak-derece td:first-child { color: var(--accent-text); }

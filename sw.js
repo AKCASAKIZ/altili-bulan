@@ -8,6 +8,7 @@ const SHELL = [
   './assets/app.js',
   './assets/dergi.js',
   './assets/mobil.js',
+  './assets/arsiv-kosu.js',
   './assets/icons/icon-192.png',
   './assets/icons/icon-512.png'
 ];
