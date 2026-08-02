@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 1,
@@ -153,9 +153,45 @@
    "yeni": "52,5 +0.70",
    "metin": "6. Koşu: DARK RİSHA (8) kilo 52,5 → 52,5 +0.70",
    "ts": "2026-08-02 17:56 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +2.00",
+   "metin": "7. Koşu: AFŞINTAY (1) kilo 56 → 56 +2.00",
+   "ts": "2026-08-02 19:05 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.20",
+   "metin": "7. Koşu: DEMİRNAL (2) kilo 56 → 56 +0.20",
+   "ts": "2026-08-02 19:05 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "7. Koşu: AKGOBAK (8) kilo 57 → 57 +0.30",
+   "ts": "2026-08-02 19:05 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +0.90",
+   "metin": "7. Koşu: KIVIRCIK MEMET (10) kilo 52 → 52 +0.90",
+   "ts": "2026-08-02 19:05 UTC"
   }
  ],
- "guncelleme": "2026-08-02 17:56 UTC",
+ "guncelleme": "2026-08-02 19:05 UTC",
  "sehir": "İzmir",
  "etkilenen": {}
 }
