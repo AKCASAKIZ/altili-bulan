@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 3,
@@ -63,9 +63,99 @@
    "yeni": "55 +2.00",
    "metin": "4. Koşu: YOLDERE GÜZELİ (11) kilo 55 → 55 +2.00",
    "ts": "2026-08-02 11:56 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.50",
+   "metin": "5. Koşu: FOR FREEDOM (4) kilo 56 → 56 +0.50",
+   "ts": "2026-08-02 13:15 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +1.70",
+   "metin": "5. Koşu: ANOTHER MOMENT (5) kilo 51 → 51 +1.70",
+   "ts": "2026-08-02 13:15 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "5. Koşu: DARKROK (6) kilo 53 → 53 +2.00",
+   "ts": "2026-08-02 13:15 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: CRACKAJACK (7) kilo 52 → 52 +2.00",
+   "ts": "2026-08-02 13:15 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: PEVRUL (8) kilo 52 → 52 +2.00",
+   "ts": "2026-08-02 13:15 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: DEEP OF ANCESTOR (9) kilo 52 → 52 +2.00",
+   "ts": "2026-08-02 13:15 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: MAGGIE (10) kilo 52 → 52 +2.00",
+   "ts": "2026-08-02 13:15 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "6. Koşu: GÜVENİKA (6) kilo 57 → 57 +0.50",
+   "ts": "2026-08-02 13:15 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "6. Koşu: HIDDEN ISLAND (7) kilo 57 → 57 +0.20",
+   "ts": "2026-08-02 13:15 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "6. Koşu: TOM RAIDER (14) kilo 57 → 57 +0.30",
+   "ts": "2026-08-02 13:15 UTC"
   }
  ],
- "guncelleme": "2026-08-02 11:56 UTC",
+ "guncelleme": "2026-08-02 13:15 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "3": [
