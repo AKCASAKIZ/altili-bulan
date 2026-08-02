@@ -1,0 +1,16 @@
+{
+ "ad": "KING CEMİL",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-05-08-istanbul-2-backfill",
+  "2026-05-29-istanbul-2-backfill",
+  "2026-06-21-istanbul-3-backfill",
+  "2026-07-19-istanbul-9-backfill",
+  "2026-08-02-istanbul-9"
+ ],
+ "erken_gec_delta_ema": -0.093,
+ "son_atak_delta_ema": -0.783,
+ "son_guncelleme": "2026-08-02-istanbul-9",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

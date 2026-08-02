@@ -1,0 +1,18 @@
+{
+ "ad": "KRAL AYVALIK",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-09-25-izmir-5-backfill",
+  "2025-10-16-izmir-8-backfill",
+  "2025-11-08-izmir-6-backfill",
+  "2025-11-15-izmir-2-backfill",
+  "2026-05-23-izmir-1-backfill",
+  "2026-08-02-izmir-5-backfill",
+  "2026-08-02-izmir-5"
+ ],
+ "erken_gec_delta_ema": 2.514,
+ "son_atak_delta_ema": 3.74,
+ "son_guncelleme": "2026-08-02-izmir-5",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

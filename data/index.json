@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-02 07:43 UTC",
+ "updated": "2026-08-02 22:09 UTC",
  "days": {
   "2026-07-04": [
    {
@@ -323,6 +323,16 @@
    {
     "slug": "izmir",
     "name": "İzmir"
+   }
+  ],
+  "2026-08-03": [
+   {
+    "slug": "bursa",
+    "name": "Bursa"
+   },
+   {
+    "slug": "elazig",
+    "name": "Elazığ"
    }
   ]
  }

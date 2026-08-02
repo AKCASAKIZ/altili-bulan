@@ -1,0 +1,15 @@
+{
+ "ad": "HÜRTAYFA",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-04-16-ankara-8-backfill",
+  "2026-06-23-ankara-8-backfill",
+  "2026-07-03-istanbul-6-backfill",
+  "2026-08-02-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 5.356,
+ "son_atak_delta_ema": 5.917,
+ "son_guncelleme": "2026-08-02-istanbul-7",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

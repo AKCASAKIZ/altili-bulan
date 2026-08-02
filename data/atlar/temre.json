@@ -1,11 +1,13 @@
 {
  "ad": "TEMRE",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2026-06-15-bursa-4-backfill",
-  "2026-07-12-istanbul-5"
+  "2026-07-12-istanbul-5",
+  "2026-08-02-istanbul-7"
  ],
- "erken_gec_delta_ema": 0.7,
- "son_guncelleme": "2026-07-12-istanbul-5",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -3.41,
+ "son_guncelleme": "2026-08-02-istanbul-7",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": -13
 }

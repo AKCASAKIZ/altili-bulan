@@ -1,13 +1,15 @@
 {
  "ad": "SANAE",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2026-06-14-istanbul-8-backfill",
   "2026-06-30-kocaeli-7-backfill",
   "2026-07-17-istanbul-5-backfill",
-  "2026-07-17-istanbul-5"
+  "2026-07-17-istanbul-5",
+  "2026-08-02-istanbul-6"
  ],
- "erken_gec_delta_ema": 1.941,
- "son_guncelleme": "2026-07-17-istanbul-5",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 0.459,
+ "son_guncelleme": "2026-08-02-istanbul-6",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": -5
 }

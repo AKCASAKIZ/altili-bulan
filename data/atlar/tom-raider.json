@@ -1,15 +1,17 @@
 {
  "ad": "TOM RAIDER",
- "kosu_sayisi": 6,
+ "kosu_sayisi": 7,
  "islenen_yarislar": [
   "2026-05-09-ankara-8-backfill",
   "2026-05-26-ankara-7-backfill",
   "2026-06-20-ankara-4-backfill",
   "2026-07-07-ankara-3-backfill",
   "2026-07-16-ankara-7-backfill",
-  "2026-07-16-ankara-7"
+  "2026-07-16-ankara-7",
+  "2026-08-02-istanbul-6"
  ],
- "erken_gec_delta_ema": -0.139,
- "son_guncelleme": "2026-07-16-ankara-7",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -2.347,
+ "son_guncelleme": "2026-08-02-istanbul-6",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": -8
 }

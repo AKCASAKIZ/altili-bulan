@@ -1,12 +1,13 @@
 {
  "ad": "ALBAYRAĞIN AKKUŞU",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-25-izmir-1"
+  "2026-07-25-izmir-1",
+  "2026-08-02-izmir-1"
  ],
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2,
- "erken_gec_delta_ema": -1.0,
- "son_atak_delta_ema": -1,
- "son_guncelleme": "2026-07-25-izmir-1"
+ "erken_gec_delta_ema": -1.15,
+ "son_atak_delta_ema": -0.7,
+ "son_guncelleme": "2026-08-02-izmir-1"
 }

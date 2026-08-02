@@ -1,0 +1,13 @@
+{
+ "ad": "KRALİÇE BADE",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-06-17-istanbul-4-backfill",
+  "2026-08-02-istanbul-6"
+ ],
+ "erken_gec_delta_ema": 1.1,
+ "son_atak_delta_ema": 2.7,
+ "son_guncelleme": "2026-08-02-istanbul-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

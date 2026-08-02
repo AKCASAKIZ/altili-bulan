@@ -1,0 +1,15 @@
+{
+ "ad": "PHANTOM STRIKE",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2025-09-11-izmir-3-backfill",
+  "2026-04-18-izmir-5-backfill",
+  "2026-08-02-izmir-5-backfill",
+  "2026-08-02-izmir-5"
+ ],
+ "erken_gec_delta_ema": -1.461,
+ "son_atak_delta_ema": -1.51,
+ "son_guncelleme": "2026-08-02-izmir-5",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

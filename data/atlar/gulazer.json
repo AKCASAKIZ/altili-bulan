@@ -1,11 +1,13 @@
 {
  "ad": "GULAZER",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-18-izmir-4"
+  "2026-07-18-izmir-4",
+  "2026-08-02-izmir-5"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": 7.0,
- "son_atak_delta_ema": 0,
- "son_guncelleme": "2026-07-18-izmir-4"
+ "erken_gec_delta_ema": 5.65,
+ "son_atak_delta_ema": 0.6,
+ "son_guncelleme": "2026-08-02-izmir-5",
+ "gecmis_surum": 2
 }

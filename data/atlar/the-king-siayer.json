@@ -1,6 +1,6 @@
 {
  "ad": "THE KING SIAYER",
- "kosu_sayisi": 8,
+ "kosu_sayisi": 9,
  "islenen_yarislar": [
   "2025-02-06-antalya-5-backfill",
   "2025-06-28-ankara-5-backfill",
@@ -9,10 +9,12 @@
   "2025-08-17-istanbul-7-backfill",
   "2025-09-07-istanbul-7-backfill",
   "2026-07-17-bursa-8-backfill",
-  "2026-07-17-bursa-8"
+  "2026-07-17-bursa-8",
+  "2026-08-02-istanbul-8"
  ],
- "erken_gec_delta_ema": 3.125,
- "son_atak_delta_ema": 0.672,
- "son_guncelleme": "2026-07-17-bursa-8",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 3.087,
+ "son_atak_delta_ema": 1.37,
+ "son_guncelleme": "2026-08-02-istanbul-8",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

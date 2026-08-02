@@ -1,0 +1,16 @@
+{
+ "ad": "AZİZ DOSTUM",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-04-15-istanbul-2-backfill",
+  "2026-05-20-istanbul-7-backfill",
+  "2026-06-09-ankara-7-backfill",
+  "2026-07-03-istanbul-6-backfill",
+  "2026-08-02-istanbul-7"
+ ],
+ "erken_gec_delta_ema": 3.239,
+ "son_atak_delta_ema": 4.437,
+ "son_guncelleme": "2026-08-02-istanbul-7",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

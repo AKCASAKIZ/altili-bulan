@@ -1,15 +1,16 @@
 {
  "ad": "KASIRGA BEY",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2025-11-01-ankara-1-backfill",
   "2026-05-19-ankara-5-backfill",
   "2026-05-26-ankara-8-backfill",
-  "2026-07-25-ankara-4"
+  "2026-07-25-ankara-4",
+  "2026-08-02-istanbul-1"
  ],
- "erken_gec_delta_ema": 5.765,
- "son_atak_delta_ema": 6.066,
- "son_guncelleme": "2026-07-25-ankara-4",
+ "erken_gec_delta_ema": 4.635,
+ "son_atak_delta_ema": 4.846,
+ "son_guncelleme": "2026-08-02-istanbul-1",
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

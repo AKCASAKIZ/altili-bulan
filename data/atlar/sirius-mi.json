@@ -1,0 +1,16 @@
+{
+ "ad": "SIRIUS MI",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2026-05-09-izmir-8-backfill",
+  "2026-05-23-izmir-3-backfill",
+  "2026-06-21-izmir-2-backfill",
+  "2026-08-02-izmir-1-backfill",
+  "2026-08-02-izmir-1"
+ ],
+ "erken_gec_delta_ema": 0.0,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-08-02-izmir-1",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

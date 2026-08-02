@@ -1,6 +1,6 @@
 {
  "ad": "SADIK AĞANIN OĞLU",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-07-31-kocaeli-3-backfill",
   "2025-08-15-istanbul-3-backfill",
@@ -16,10 +16,12 @@
   "2026-02-19-antalya-4-backfill",
   "2026-04-10-izmir-7-backfill",
   "2026-06-19-bursa-7-backfill",
-  "2026-07-15-istanbul-5"
+  "2026-07-15-istanbul-5",
+  "2026-08-02-izmir-4"
  ],
- "erken_gec_delta_ema": 1.691,
- "son_guncelleme": "2026-07-15-istanbul-5",
- "son_atak_delta_ema": -0.3,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.616,
+ "son_guncelleme": "2026-08-02-izmir-4",
+ "son_atak_delta_ema": -2.01,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

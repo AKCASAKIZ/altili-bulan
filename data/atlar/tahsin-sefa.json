@@ -1,6 +1,6 @@
 {
  "ad": "TAHSİN SEFA",
- "kosu_sayisi": 12,
+ "kosu_sayisi": 13,
  "islenen_yarislar": [
   "2025-07-06-istanbul-5-backfill",
   "2025-07-27-istanbul-10-backfill",
@@ -13,10 +13,12 @@
   "2026-05-14-izmir-3-backfill",
   "2026-06-28-izmir-2-backfill",
   "2026-07-19-izmir-5-backfill",
-  "2026-07-19-izmir-5"
+  "2026-07-19-izmir-5",
+  "2026-08-02-izmir-4"
  ],
- "erken_gec_delta_ema": 0.891,
- "son_guncelleme": "2026-07-19-izmir-5",
- "son_atak_delta_ema": 0.0,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 1.074,
+ "son_guncelleme": "2026-08-02-izmir-4",
+ "son_atak_delta_ema": 0.3,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

@@ -1,0 +1,13 @@
+{
+ "ad": "SERİ UFUK",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-06-13-izmir-8-backfill",
+  "2026-08-02-izmir-2"
+ ],
+ "erken_gec_delta_ema": 1.65,
+ "son_atak_delta_ema": 2.3,
+ "son_guncelleme": "2026-08-02-izmir-2",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}
