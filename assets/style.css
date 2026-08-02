@@ -304,11 +304,105 @@ td.neg { color: var(--danger); }
 footer { padding: 20px 22px 30px; text-align: center; color: var(--text-dim); font-size: 12px; }
 footer a { color: var(--accent-text); }
 
+/* ==================== MOBİL ====================
+ * Masaüstünde hiçbir şey değişmez; aşağısı yalnızca dar ekranda devreye girer.
+ * Üstteki sekme şeridi gizlenir, yerine ekranın altında sabit çubuk gelir
+ * (assets/mobil.js). Ölçüm: 390px'te şerit üç satıra yayılıp başlıkla birlikte
+ * ekranın ~%30'unu içerik görünmeden yiyordu.
+ */
+.mnav, .msheet { display: none; }
+
 @media (max-width: 720px) {
-  main { padding: 14px 10px 60px; }
-  .topbar { padding: 10px 12px; }
-  .tabs { padding: 6px 10px 0; }
-  .tab { padding: 8px 9px; font-size: 13px; }
+  body { padding-bottom: calc(62px + env(safe-area-inset-bottom)); }
+  main { padding: 12px 10px 24px; }
+
+  /* --- başlık: tek satır, yapışkan --- */
+  .topbar {
+    position: sticky; top: 0; z-index: 30;
+    padding: 8px 12px calc(8px + env(safe-area-inset-top)) 12px;
+    gap: 8px; flex-wrap: nowrap;
+  }
+  .brand { gap: 8px; min-width: 0; }
+  .brand-icon { font-size: 22px; }
+  .brand h1 { font-size: 16px; white-space: nowrap; }
+  .brand .ver { display: none; }
+  .subtitle { display: none; }       /* mobilde yer kaplıyor, bilgi vermiyor */
+  .topbar-controls { gap: 6px; flex-shrink: 0; }
+  .topbar-controls select {
+    max-width: 108px; font-size: 13px; padding: 7px 6px;
+    text-overflow: ellipsis;
+  }
+
+  /* --- üst şerit mobilde yok, alt çubuk devrede --- */
+  .tabs { display: none; }
+  .mnav {
+    display: flex; position: fixed; z-index: 40;
+    left: 0; right: 0; bottom: 0;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -2px 12px rgba(0,0,0,.10);
+  }
+  .mnav-oge {
+    flex: 1; min-width: 0;
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    padding: 7px 2px 6px;
+    background: none; border: 0; cursor: pointer;
+    color: var(--text-dim); font: inherit; font-size: 10.5px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mnav-ikon { font-size: 19px; line-height: 1; }
+  .mnav-ad {
+    max-width: 100%; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap;
+  }
+  .mnav-oge.aktif { color: var(--accent-text); font-weight: 700; }
+  .mnav-oge.aktif .mnav-ikon { transform: translateY(-1px); }
+
+  /* --- "Daha fazla" sayfası --- */
+  /* :not([hidden]) şart: düz ".msheet{display:block}" yazılırsa sınıf seçici
+     tarayıcının [hidden]{display:none} kuralını ezer ve sayfa açılışta açık gelir. */
+  .msheet:not([hidden]) { display: block; }
+  .msheet { position: fixed; inset: 0; z-index: 50; }
+  .msheet-arka { position: absolute; inset: 0; background: rgba(0,0,0,.45); }
+  .msheet-panel {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: var(--surface);
+    border-radius: 16px 16px 0 0;
+    padding: 8px 12px calc(14px + 62px + env(safe-area-inset-bottom));
+    box-shadow: var(--shadow);
+    max-height: 72vh; overflow-y: auto;
+  }
+  .msheet-tut {
+    width: 38px; height: 4px; border-radius: 4px;
+    background: var(--border); margin: 4px auto 10px;
+  }
+  .msheet-liste { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .msheet-oge {
+    display: flex; align-items: center; gap: 9px;
+    padding: 13px 12px; min-height: 48px;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; cursor: pointer;
+    color: var(--text); font: inherit; font-size: 14px; text-align: left;
+  }
+  .msheet-ikon { font-size: 17px; }
+  body.msheet-acik { overflow: hidden; }
+
+  /* --- dokunma hedefleri: 44px altına düşmesin --- */
+  .btn, .icon-btn, .topbar-controls select { min-height: 40px; }
+  .toolbar { gap: 8px; }
+  .toolbar-right { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+  .toolbar-right .btn { width: 100%; justify-content: center; text-align: center; }
+
+  /* --- geniş tablolar: kaydırılabilir olduğu görünsün --- */
+  .table-wrap {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    /* sağ kenarda solma: daha fazla kolon olduğunun tek işareti */
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 22px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 22px), transparent);
+  }
+  .score-table .sticky-col { position: sticky; left: 0; z-index: 2; background: var(--surface); }
 }
 
 /* ==================== GAZETE (yazdır / PDF) ==================== */
