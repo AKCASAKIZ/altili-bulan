@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 3,
@@ -9,9 +9,18 @@
    "yeni": "NEVACAN KG DB SK (Koşmaz)",
    "metin": "3. Koşu: NEVACAN (4) KOŞMAZ",
    "ts": "2026-08-02 08:57 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.90",
+   "metin": "1. Koşu: BABA ZAMAN (12) kilo 56 → 56 +1.90",
+   "ts": "2026-08-02 10:40 UTC"
   }
  ],
- "guncelleme": "2026-08-02 08:57 UTC",
+ "guncelleme": "2026-08-02 10:40 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "3": [
