@@ -1,5 +1,5 @@
 {
- "surum": 5,
+ "surum": 6,
  "olaylar": [
   {
    "kosu": 3,
@@ -225,9 +225,45 @@
    "yeni": "57 +0.50",
    "metin": "9. Koşu: YURIBOYKA (10) kilo 57 → 57 +0.50",
    "ts": "2026-08-02 14:43 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "10. Koşu: MEVLÜT BABAM (6) kilo 57 → 57 +0.50",
+   "ts": "2026-08-02 15:55 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "10. Koşu: O BİR KARACA (7) kilo 57 → 57 +0.20",
+   "ts": "2026-08-02 15:55 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "10. Koşu: RULER STONE (8) kilo 57 → 57 +0.40",
+   "ts": "2026-08-02 15:55 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "10. Koşu: TAŞKARA (10) kilo 57 → 57 +0.30",
+   "ts": "2026-08-02 15:55 UTC"
   }
  ],
- "guncelleme": "2026-08-02 14:43 UTC",
+ "guncelleme": "2026-08-02 15:55 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "3": [
