@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 3,
@@ -18,9 +18,54 @@
    "yeni": "56 +1.90",
    "metin": "1. Koşu: BABA ZAMAN (12) kilo 56 → 56 +1.90",
    "ts": "2026-08-02 10:40 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.60",
+   "metin": "2. Koşu: YÜREK ŞAH (10) kilo 57 → 57 +0.60",
+   "ts": "2026-08-02 11:56 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "4. Koşu: AYYILDIZLAR BEYİ (1) kilo 57 → 57 +0.20",
+   "ts": "2026-08-02 11:56 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "4. Koşu: ÇELİKBERKE (5) kilo 57 → 57 +0.30",
+   "ts": "2026-08-02 11:56 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "4. Koşu: DEV ASİ (7) kilo 57 → 57 +0.30",
+   "ts": "2026-08-02 11:56 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "4. Koşu: YOLDERE GÜZELİ (11) kilo 55 → 55 +2.00",
+   "ts": "2026-08-02 11:56 UTC"
   }
  ],
- "guncelleme": "2026-08-02 10:40 UTC",
+ "guncelleme": "2026-08-02 11:56 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "3": [
