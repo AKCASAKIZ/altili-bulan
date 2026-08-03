@@ -40,7 +40,7 @@ const ANGLES = [
   { k: "F3", name: "Galop jokeyi = koşu jokeyi", pct: 5.00, desc: "Atın galopunu yaptıran jokey bugün onu koşuyorsa 50 puan, değilse 0. Birincil kaynak Bülten Galop verisi — karşılaştırma jokey ID'si üzerinden yapılır. O veri yoksa TJK idman sorgusunun \"İ. Jokeyi\" sütununa düşülür ve isim (soyad + baş harf) eşleştirilir." },
   { k: "F4", name: "Ham galop puanı (GP)", pct: 25.00, desc: "liderform Bülten Galop'taki GP değerinin kendisi — merdivene çevrilmeden, koşan her ata kendi puanı. Katsayı 0.25 olduğu için toplam puana doğrudan GP×0.25 katkı yapar (GP tipik olarak 0–120 arası, yani ~0–30 puan). F2 aynı veriyi yalnızca ilk 4 at için sıralamaya çevirir; F4 tüm kadroyu ve puanlar arasındaki gerçek farkı yansıtır. GP verisi olmayan atta puan hesaba katılmaz. Arşiv backtest'inde galop bülteni bulunmadığı için F2/F3 gibi F4 de kapalı geçer." },
   { k: "G1", name: "Sınıf düşüşü + geçen koşu favorisi", pct: 4.00, desc: "Atın bir önceki koşusundaki RAKİPLERİNİN handikap ortalaması bugünkü kadronun ortalama handikabından yüksekse (daha zorlu sınıftan iniyor) VE o koşuda AGF sıralamasında ilk 3'te ise 100, aksi halde 0. Veri arşivden (stats.json son6) gelir; arşivde bulunmayan atlarda atın kendi hp'si + ganyan ≤4,0 proxy'sine düşülür." },
-  { k: "G2", name: "Kazanan profiline yakınlık (şart)", pct: 4.00, desc: "Aynı şartta (ırk · yaş · koşu cinsi · mesafe · pist) geçmişte KAZANAN atların profiline yakınlık. Arşivden (data/arsiv/sartlar.json) kazananların kilo / kulvar / yaş / AGF-ganyan yüzdelikleri çıkarılır; atın her özelliği tipik bandın (q25–q75) içindeyse tam, geniş bandın (q10–q90) içindeyse yarım sayılır. Ortalama yakınlık ≥0.85 → 100, ≥0.60 → 80, ≥0.35 → 60, altı 0. Bugünkü kadroda herkeste aynı olan özellik (ör. tek yaşlı koşuda yaş) ayırt edici olmadığı için hesaba katılmaz." },
+  { k: "G2", name: "Kazanan profiline yakınlık (şart)", pct: 4.00, desc: "Aynı şartta (ırk · yaş · koşu cinsi · mesafe · pist) geçmişte KAZANAN atların profiline kaç kriterde uyduğu. Arşivden (data/arsiv/sartlar.json) kazananların kilo / kulvar / yaş / ganyan / AGF yüzdelikleri ve takı dağılımı çıkarılır — en çok 6 kriter. Bir kriter ancak atın değeri kazananların TİPİK bandındaysa (q25–q75; takıda: taşıdığı takının payı, o şartta en yaygın takının payının ≥%80'i) sağlanmış sayılır. Sağlanan kriter sayısı ≥5 → 100, 4 → 80, 3 → 60, 2 → 50, altı 0. Bugünkü kadroda herkeste aynı olan özellik (ör. tek yaşlı koşuda yaş) ayırt edici olmadığı için hesaba katılmaz; verisi olmayan kriter o at için hiç ölçülmez." },
   { k: "H1", name: "Piyasa desteği (AGF)", pct: 6.00, desc: "Bugünkü AGF (at grubu favorisi) yüzdesi en yüksek 5 at: 100,70,50,30,10. Piyasanın kolektif görüşü — TJK Yarış Gazetesi kesildiği için onun editör tahminlerinin (eski B6/B11 beslemesi) yerini alır. Veri programla birlikte günlük gelir, PDF gerektirmez." },
 ];
 const PRESET6 = ["A3", "B1", "B2", "B3", "B6", "B13"];
@@ -843,43 +843,81 @@ function sartYakinlik(v, bant) {
 /* Bugünkü kadronun her atı için [{ad, deger, v}] özellik listesi.
  * Kadrodaki herkeste aynı olan özellik ayırt edici değildir (ör. "4 Yaşlı
  * Araplar" koşusunda yaş) ve hesaba katılmaz. */
+/* Takı ekseni: sayısal bant yok, kazananların takı DAĞILIMI var
+ * ({"SK":42,"DB":39,...} + takisiz sayısı, n kazanan üzerinden). Atın taşıdığı
+ * takılardan en yaygın olanının kazananlar arasındaki payı ölçü alınır; takısız
+ * atta "takisiz" payı kullanılır.
+ *
+ * Eşik MUTLAK yüzde olamaz: bir at birden çok takı taşıyabildiği için paylar
+ * çakışır ve ham %33 eşiği kadronun ~%94'ünü geçiriyordu — herkese bedava puan.
+ * Bu yüzden pay, o şartta EN YAYGIN takının payına göre normalize edilir:
+ * atın payı en yaygının %80'ine ulaşıyorsa tipik, %50'sine ulaşıyorsa geniş. */
+function sartTakiOrani(h, r) {
+  const n = r.n || 0;
+  if (!n) return null;
+  const paylar = Object.values(r.taki || {}).concat(r.takisiz || 0);
+  const enYaygin = Math.max(0, ...paylar);
+  if (!enYaygin) return null;
+  const t = takiAyikla(h.ad).taki;
+  const kendi = t.length ? Math.max(...t.map((x) => r.taki?.[x] || 0)) : (r.takisiz || 0);
+  return kendi / enYaygin;
+}
 function sartOzellikleri(hs, sart, stats, dayInt) {
   const r = sart.r;
-  // Ganyan ekseni: kadronun yarısından çoğunda AGF varsa AGF% ↔ AGF% kıyası
-  // yapılır (aynı birim). Yoksa atın ÖNCEKİ koşusundaki ganyan ↔ ganyan bandı.
+  // AGF ekseni ancak kadronun yarısından çoğunda AGF varsa anlamlı (aynı birim
+  // kıyası); ganyan ekseni atın ÖNCEKİ koşusundaki ganyanı kullanır.
   const agfSayisi = hs.filter((h) => sartSayi(h.meta?.agf) != null).length;
-  const agfModu = r.agf && agfSayisi >= hs.length / 2;
+  const agfVar = r.agf && agfSayisi >= hs.length / 2;
   const oncekiGanyan = (h) => {
     const s6 = stats?.at?.[temizle(h.ad)]?.son6;
     if (!Array.isArray(s6)) return null;
     const o = s6.filter((x) => x[0] < dayInt).sort((a, b) => b[0] - a[0])[0];
     return o ? sartSayi(o[2]) : null;
   };
+  const bantli = (ad, bant, deger) => bant && {
+    ad, deger, yakinlik: (h) => sartYakinlik(deger(h), bant), goster: (h) => deger(h),
+  };
   const eksenler = [
-    { ad: "kilo", bant: r.kilo, deger: (h) => sartSayi(h.meta?.kilo) },
-    { ad: "kulvar", bant: r.st, deger: (h) => sartSayi(h.meta?.st) ?? sartSayi(h.no) },
-    { ad: "yaş", bant: r.yas, deger: (h) => sartSayi(h.meta?.yas) },
-    agfModu
-      ? { ad: "AGF", bant: r.agf, deger: (h) => sartSayi(h.meta?.agf) }
-      : { ad: "ganyan", bant: r.ganyan, deger: oncekiGanyan },
-  ];
+    bantli("kilo", r.kilo, (h) => sartSayi(h.meta?.kilo)),
+    bantli("kulvar", r.st, (h) => sartSayi(h.meta?.st) ?? sartSayi(h.no)),
+    bantli("yaş", r.yas, (h) => sartSayi(h.meta?.yas)),
+    bantli("ganyan", r.ganyan, oncekiGanyan),
+    agfVar && bantli("AGF", r.agf, (h) => sartSayi(h.meta?.agf)),
+    r.taki && {
+      ad: "takı",
+      deger: (h) => sartTakiOrani(h, r),
+      yakinlik: (h) => {
+        const o = sartTakiOrani(h, r);
+        return o == null ? null : o >= 0.8 ? 1 : o >= 0.5 ? 0.5 : 0;
+      },
+      goster: (h) => {
+        const o = sartTakiOrani(h, r);
+        if (o == null) return null;
+        const t = takiAyikla(h.ad).taki;
+        return `${t.length ? t.join("+") : "takısız"} ${o.toFixed(2)}×`;
+      },
+    },
+  ].filter(Boolean);
   return hs.map((h) => {
     const out = [];
     for (const e of eksenler) {
-      if (!e.bant) continue;
       const degerler = hs.map(e.deger).filter((v) => v != null);
       if (new Set(degerler).size < 2) continue;      // ayırt etmiyor
-      const d = e.deger(h);
-      const v = sartYakinlik(d, e.bant);
-      if (v != null) out.push({ ad: e.ad, deger: d, v });
+      const v = e.yakinlik(h);
+      if (v != null) out.push({ ad: e.ad, deger: e.goster(h), v });
     }
     return out;
   });
 }
+/* Puan artık ORTALAMA yakınlık değil, SAĞLANAN KRİTER SAYISI: atın kaç ekseni
+ * kazananların tipik bandında (q25–q75) tutturduğu sayılır. Geniş bant (0.5)
+ * sayılmaz — eşiği seçici tutmak için. En çok 6 eksen olabilir (kilo, kulvar,
+ * yaş, ganyan, AGF, takı); verisi eksik atta ölçülebilen eksen sayısı düşer,
+ * o at doğal olarak üst basamaklara çıkamaz. */
 function sartPuani(parcalar) {
   if (!parcalar || parcalar.length < 2) return null;
-  const oran = parcalar.reduce((t, x) => t + x.v, 0) / parcalar.length;
-  return oran >= 0.85 ? 100 : oran >= 0.6 ? 80 : oran >= 0.35 ? 60 : 0;
+  const tutan = parcalar.filter((x) => x.v === 1).length;
+  return tutan >= 5 ? 100 : tutan === 4 ? 80 : tutan === 3 ? 60 : tutan === 2 ? 50 : 0;
 }
 
 /* merdiven varsayılan olarak RANK5 (5 at); F2 gibi 4 basamaklı kriterler kendi
