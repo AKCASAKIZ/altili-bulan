@@ -1029,6 +1029,7 @@ function raceCard(r, isResult) {
     <div class="table-wrap"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>
     ${r.odemeler ? `<div class="payout">💰 ${esc(r.odemeler)}</div>` : ""}
     <div class="sart-kazanan" data-race="${r.no}"></div>
+    ${isResult ? "" : `<div class="ses-kutu" data-ses-race="${r.no}"></div>`}
   </div>`;
 }
 
@@ -2095,7 +2096,7 @@ function formatIdmanSon(rows) {
 
 
 /* ===== dergi.js entegrasyonu için dışa açılan kancalar ===== */
-window.AB = { state, ANGLES, RANK5, saveSession, renderAll, renderScoreTable, rankedHorses, slugify, esc, LS, scoreLeg, temizle, sartBul, sartOzellikleri, sartPuani, tryFetch, takiAyikla, takiHTML };
+window.AB = { state, ANGLES, RANK5, saveSession, renderAll, renderScoreTable, rankedHorses, slugify, esc, LS, scoreLeg, temizle, sartBul, sartOzellikleri, sartPuani, tryFetch, takiAyikla, takiHTML, computeScore, legProbs, legRecommendation };
 
 /* ==================== F1: UZMAN TAHMİNLERİ ====================
  * Tahminci listesi tutulur (ör. Ferdi Akıncı, Final, Ferhat Pusa); YouTube/dergi

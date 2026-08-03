@@ -7,6 +7,7 @@ const SHELL = [
   './assets/style.css',
   './assets/app.js',
   './assets/dergi.js',
+  './assets/ses.js',
   './assets/mobil.js',
   './assets/arsiv-kosu.js',
   './assets/icons/icon-192.png',

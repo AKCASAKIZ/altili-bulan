@@ -186,6 +186,12 @@ tr.top-row .sticky-col { background: var(--gold-soft); }
 .race-card .race-tags { font-size: 12px; color: var(--text-dim); }
 .race-card .table-wrap { border: none; border-radius: 0; box-shadow: none; }
 .payout { padding: 10px 16px; font-size: 13px; color: var(--accent-text); background: var(--accent-soft); }
+/* Sesli koşu yorumu (ses.js) */
+.ses-kutu > .hint { padding: 8px 16px 12px; margin: 0; }
+.ses-yorum { padding: 10px 16px 14px; border-top: 1px solid var(--border, rgba(128,128,128,.25)); }
+.ses-yorum button { font-size: 13px; padding: 5px 12px; margin-right: 6px; cursor: pointer; }
+.ses-yorum .ses-durum { font-size: 12px; }
+.ses-metin { margin: 8px 0 0; font-size: 13px; line-height: 1.5; color: var(--text-dim); }
 .pos-1 td { font-weight: 700; }
 .pos-cell { font-weight: 700; }
 /* Backtest ROI: kâr/zarar */
