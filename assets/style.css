@@ -191,6 +191,7 @@ tr.top-row .sticky-col { background: var(--gold-soft); }
 .ses-yorum { padding: 10px 16px 14px; border-top: 1px solid var(--border, rgba(128,128,128,.25)); }
 .ses-yorum button { font-size: 13px; padding: 5px 12px; margin-right: 6px; cursor: pointer; }
 .ses-yorum .ses-durum { font-size: 12px; }
+.ses-yorum .ses-secim { font-size: 12px; max-width: 46vw; margin-right: 6px; vertical-align: middle; }
 .ses-metin { margin: 8px 0 0; font-size: 13px; line-height: 1.5; color: var(--text-dim); }
 .pos-1 td { font-weight: 700; }
 .pos-cell { font-weight: 700; }

@@ -14,11 +14,35 @@
   const AB = window.AB;
   if (!AB) return;
 
-  /* --- Türkçe ses seçimi. Sesler bazı tarayıcılarda gecikmeli yüklenir,
-       o yüzden konuşma anında yeniden bakılır. --- */
-  function trSes() {
-    const v = speechSynthesis.getVoices() || [];
-    return v.find((x) => /^tr(-|_|$)/i.test(x.lang)) || null;
+  /* --- Ses seçimi ---
+   * Mobilde asıl tuzak: sayfa açılır açılmaz getVoices() BOŞ dizi döner,
+   * ses listesi ancak "voiceschanged" olayından sonra dolar. O yüzden ilk
+   * dinlemede Türkçe ses bulunamıyor, tarayıcı varsayılan (İngilizce) sesle
+   * Türkçe metni okuyordu. Çözüm: listeyi sayfa açılışında ve voiceschanged
+   * her tetiklendiğinde tazelemek, konuşma anında da bir kez daha bakmak.
+   * Ayrıca lang etiketleri cihazdan cihaza değişiyor (tr-TR, tr_TR, sadece
+   * "tr", bazı Android sürümlerinde boş lang + "Turkish" adı), hepsi taranır. */
+  let sesler = [];
+  function seslerTazele() {
+    const v = speechSynthesis.getVoices();
+    if (v && v.length) sesler = v;
+    return sesler;
+  }
+  seslerTazele();
+  speechSynthesis.addEventListener?.("voiceschanged", seslerTazele);
+  // iOS'ta liste bazen yalnızca ilk speak() denemesinden sonra doluyor
+  window.addEventListener("load", () => { seslerTazele(); setTimeout(seslerTazele, 1000); });
+
+  const TR = (x) => /^tr\b|^tr[-_]/i.test(x.lang || "") || /turkish|türk/i.test(x.name || "");
+  function trSesler() { return seslerTazele().filter(TR); }
+
+  /* Kullanıcı elle bir ses seçtiyse o kazanır (otomatik seçimin yanıldığı
+     cihazlar için kaçış kapısı); seçim localStorage'da saklanır. */
+  const SECIM = "ab2:sesAdi";
+  function seciliSes() {
+    const hepsi = seslerTazele();
+    const ad = AB.LS.get(SECIM, null);
+    return (ad && hepsi.find((v) => v.name === ad)) || trSesler()[0] || null;
   }
 
   /* Uzun metin tek seferde verilince bazı tarayıcılar ortadan kesiyor;
@@ -27,17 +51,42 @@
      başlayan yeni bir cümle gelmesi şartı aranır. */
   function konus(metin, durumEl) {
     speechSynthesis.cancel();
-    const ses = trSes();
+    const ses = seciliSes();
     const parcalar = sesIcin(metin).split(/(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ])/).filter(Boolean);
     parcalar.forEach((p, i) => {
       const u = new SpeechSynthesisUtterance(p);
-      u.lang = "tr-TR";
+      u.lang = ses?.lang || "tr-TR";
       if (ses) u.voice = ses;
       u.rate = 1.0;
       if (i === parcalar.length - 1) u.onend = () => { if (durumEl) durumEl.textContent = ""; };
       speechSynthesis.speak(u);
     });
-    if (durumEl) durumEl.textContent = ses ? "okunuyor…" : "okunuyor… (cihazda Türkçe ses yok, aksan bozuk olabilir)";
+    if (durumEl) {
+      durumEl.textContent = ses
+        ? `okunuyor… (${ses.name})`
+        : "okunuyor… ⚠️ cihazda Türkçe ses bulunamadı — İngilizce sesle okunur";
+    }
+    // Ses listesi konuşma başladıktan sonra dolduysa (iOS) düğmedeki seçim
+    // kutusunu tazele ki kullanıcı bir dahakine doğru sesi seçebilsin.
+    if (!ses) setTimeout(() => { seslerTazele(); sesSecimleriniTazele(); }, 800);
+  }
+
+  /* Ses seçim kutusu: Türkçe sesler üstte, sonra ayraç, sonra diğerleri.
+     Tek ses varsa gizli kalır — gereksiz kalabalık yapmasın. */
+  function sesSecenekleriHTML() {
+    const hepsi = seslerTazele();
+    const tr = hepsi.filter(TR), digerleri = hepsi.filter((v) => !TR(v));
+    const secili = seciliSes()?.name;
+    const opt = (v) => `<option value="${AB.esc(v.name)}"${v.name === secili ? " selected" : ""}>${AB.esc(v.name)} (${AB.esc(v.lang || "?")})</option>`;
+    return tr.map(opt).join("") +
+      (tr.length && digerleri.length ? `<option disabled>──────</option>` : "") +
+      digerleri.map(opt).join("");
+  }
+  function sesSecimleriniTazele() {
+    document.querySelectorAll(".ses-secim").forEach((sel) => {
+      sel.innerHTML = sesSecenekleriHTML();
+      sel.hidden = seslerTazele().length < 2;
+    });
   }
 
   /* --- sayı/metin yardımcıları --- */
@@ -143,11 +192,16 @@
         <div class="ses-yorum">
           <button class="ses-btn" type="button">🔊 Dinle</button>
           <button class="ses-dur" type="button" hidden>⏹ Durdur</button>
+          <select class="ses-secim" title="Okuyucu ses" hidden></select>
           <span class="ses-durum hint"></span>
           <p class="ses-metin">${AB.esc(metin)}</p>
         </div>`;
       const durum = box.querySelector(".ses-durum");
       const dur = box.querySelector(".ses-dur");
+      const sel = box.querySelector(".ses-secim");
+      sel.innerHTML = sesSecenekleriHTML();
+      sel.hidden = seslerTazele().length < 2;
+      sel.onchange = () => { AB.LS.set(SECIM, sel.value); sesSecimleriniTazele(); };
       box.querySelector(".ses-btn").onclick = () => { dur.hidden = false; konus(metin, durum); };
       dur.onclick = () => { speechSynthesis.cancel(); durum.textContent = ""; dur.hidden = true; };
     });
@@ -162,6 +216,8 @@
     if (!kok) return false;
     new MutationObserver(() => doldur()).observe(kok, { childList: true, subtree: true });
     doldur();
+    // ses listesi geç dolduğunda seçim kutuları da tazelensin
+    speechSynthesis.addEventListener?.("voiceschanged", sesSecimleriniTazele);
     return true;
   };
   if (!gozle()) window.addEventListener("load", gozle);
