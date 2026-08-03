@@ -1,5 +1,5 @@
 /* Altılı Bulan service worker — ağ öncelikli, çevrimdışında önbelleğe düşer. */
-const CACHE = 'altili-bulan-v2';
+const CACHE = 'altili-bulan-v3';
 const SHELL = [
   './',
   './index.html',
