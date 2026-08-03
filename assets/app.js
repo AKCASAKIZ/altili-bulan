@@ -1,8 +1,9 @@
 /* ===== Altılı Bulan v2 — puanlama motoru ===== */
 "use strict";
 
-/* --- 34 kriter (angle) tanımı. NOT: pct toplamı %132; ağırlıklar mutlak
-     ölçek olarak kullanılıyor, sıralamayı yalnızca göreli büyüklükleri etkiler. --- */
+/* --- 37 kriter (angle) tanımı. NOT: pct toplamı %167; ağırlıklar mutlak
+     ölçek olarak kullanılıyor, sıralamayı yalnızca göreli büyüklükleri etkiler.
+     F4 istisna: puanı 0-100 merdiveni değil ham GP (0-120), katsayısı 0.25. --- */
 const ANGLES = [
   { k: "A1", name: "Başarılı at sahibi", pct: 2.00, desc: "İlk 3'e giren atların sahiplerinin listesi. Üst sıradakine 100, ortadakine 60." },
   { k: "A2", name: "Sahibin son koşan atı: derece", pct: 3.20, desc: "At sahibinin son koşan atı 1. ise 100, 2. ise 60, 3. ise 20." },
@@ -37,6 +38,7 @@ const ANGLES = [
   { k: "F1", name: "Uzman tahminleri", pct: 5.00, desc: "Takip edilen tahmincilerin favori/plase/sürpriz işaretleri (F=100, P=60, S=30; işaretleyen tahmincilerin ortalaması). Puanlama sekmesindeki 🎩 Uzman panelinden girilir." },
   { k: "F2", name: "Galop bülteni (ilk 4)", pct: 5.00, desc: "liderform Bülten Galop sekmesinin galop puanına (GP) göre koşunun ilk 4 atı: 1. (favori) 100, 2. 70, 3. 50, 4. 30. Günlük olarak otomatik çekilir (data/{gün}/galop-{şehir}.json). Puanlama sekmesindeki 🏇 panelinden elle işaretleme yapılırsa o ayakta otomatik sıra devre dışı kalır." },
   { k: "F3", name: "Galop jokeyi = koşu jokeyi", pct: 5.00, desc: "Atın galopunu yaptıran jokey bugün onu koşuyorsa 50 puan, değilse 0. Birincil kaynak Bülten Galop verisi — karşılaştırma jokey ID'si üzerinden yapılır. O veri yoksa TJK idman sorgusunun \"İ. Jokeyi\" sütununa düşülür ve isim (soyad + baş harf) eşleştirilir." },
+  { k: "F4", name: "Ham galop puanı (GP)", pct: 25.00, desc: "liderform Bülten Galop'taki GP değerinin kendisi — merdivene çevrilmeden, koşan her ata kendi puanı. Katsayı 0.25 olduğu için toplam puana doğrudan GP×0.25 katkı yapar (GP tipik olarak 0–120 arası, yani ~0–30 puan). F2 aynı veriyi yalnızca ilk 4 at için sıralamaya çevirir; F4 tüm kadroyu ve puanlar arasındaki gerçek farkı yansıtır. GP verisi olmayan atta puan hesaba katılmaz. Arşiv backtest'inde galop bülteni bulunmadığı için F2/F3 gibi F4 de kapalı geçer." },
   { k: "G1", name: "Sınıf düşüşü + geçen koşu favorisi", pct: 4.00, desc: "Atın bir önceki koşusundaki RAKİPLERİNİN handikap ortalaması bugünkü kadronun ortalama handikabından yüksekse (daha zorlu sınıftan iniyor) VE o koşuda AGF sıralamasında ilk 3'te ise 100, aksi halde 0. Veri arşivden (stats.json son6) gelir; arşivde bulunmayan atlarda atın kendi hp'si + ganyan ≤4,0 proxy'sine düşülür." },
   { k: "G2", name: "Kazanan profiline yakınlık (şart)", pct: 4.00, desc: "Aynı şartta (ırk · yaş · koşu cinsi · mesafe · pist) geçmişte KAZANAN atların profiline yakınlık. Arşivden (data/arsiv/sartlar.json) kazananların kilo / kulvar / yaş / AGF-ganyan yüzdelikleri çıkarılır; atın her özelliği tipik bandın (q25–q75) içindeyse tam, geniş bandın (q10–q90) içindeyse yarım sayılır. Ortalama yakınlık ≥0.85 → 100, ≥0.60 → 80, ≥0.35 → 60, altı 0. Bugünkü kadroda herkeste aynı olan özellik (ör. tek yaşlı koşuda yaş) ayırt edici olmadığı için hesaba katılmaz." },
   { k: "H1", name: "Piyasa desteği (AGF)", pct: 6.00, desc: "Bugünkü AGF (at grubu favorisi) yüzdesi en yüksek 5 at: 100,70,50,30,10. Piyasanın kolektif görüşü — TJK Yarış Gazetesi kesildiği için onun editör tahminlerinin (eski B6/B11 beslemesi) yerini alır. Veri programla birlikte günlük gelir, PDF gerektirmez." },
@@ -437,10 +439,12 @@ async function scoreLeg(leg, ctx) {
     }
   }
 
-  // F2 + F3: liderform "Bülten Galop" verisi (varsa birincil kaynak).
+  // F2 + F3 + F4: liderform "Bülten Galop" verisi (varsa birincil kaynak).
   // F2 = galop puanına (GP) göre ilk 4 at: 100/70/50/30.
   // F3 = galop jokeyi ile koşu jokeyi aynıysa 50. Karşılaştırma jokey ID'si
   //      üzerinden yapılmış olarak gelir, isim eşleştirmesine gerek yok.
+  // F4 = ham GP değerinin kendisi (0-100 ölçeğine çekilmez); katsayısı 0.25
+  //      olduğu için toplam puana doğrudan GP×0.25 olarak girer.
   if (galopKosu) {
     const byNo = new Map(galopKosu.map((g) => [String(g.no), g]));
     const gp = hs.map((h) => {
@@ -449,9 +453,10 @@ async function scoreLeg(leg, ctx) {
     });
     // elle işaretlenmiş ayakta otomatik F2 devreye girmez (kullanıcı kararı üstün)
     if (!hs.some((h) => +h.galopSira)) assignRank5(hs, gp, "F2", false, [100, 70, 50, 30]);
-    hs.forEach((h) => {
+    hs.forEach((h, i) => {
       const g = byNo.get(String(h.no));
       if (g) h.scores.F3 = g.ayni ? 50 : 0;
+      if (gp[i] != null) h.scores.F4 = gp[i]; else delete h.scores.F4;
     });
   }
 
@@ -1727,7 +1732,7 @@ async function runBacktest(arsivden = false) {
 /* ==================== KATSAYI ÖNERİSİ (conditional logit) ==================== */
 /* Backtest verisiyle koşu-içi lojistik model eğitir: P(at kazanır) = exp(w·x) / Σ exp(w·x).
    Sadece otomatik puanlanan kriterler öğrenilebilir (diğerlerinin geçmiş puanı yok). */
-const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3", "F2", "F3", "H1"];
+const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3", "F2", "F3", "F4", "H1"];
 
 /* Bir ağırlık vektörünün koşu başına ortalama log-olabilirliği (0'a yakın = iyi).
    Rastgele tahminin değeri ln(1/kadro) — ortalama 10 atlı kadroda ≈ -2.30. */
