@@ -11,5 +11,6 @@
  "erken_gec_delta_ema": 0.459,
  "son_guncelleme": "2026-08-02-istanbul-6",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": -5
+ "son_atak_delta_ema": -5,
+ "gecmis_surum": 2
 }
