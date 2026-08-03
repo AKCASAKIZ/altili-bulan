@@ -34,6 +34,10 @@ ARSIV = BASE / "data" / "arsiv"
 AYLIK = ARSIV / "stats-ay"
 
 MIN_JOKEY = 20     # bu sayının altında koşusu olan jokey/antrenör E1/E2 özetine girmez
+MIN_BEKLENTI = 25  # jokey beklenti tablosu için minimum ölçülebilir biniş (E4/E5)
+FAV_SIRA = 1       # AGF sıralamasında bu ve üstü "favoriye binmek" sayılır
+SUR_SIRA = 5       # AGF sıralamasında bu ve altı "sürprize binmek" sayılır
+BEKLENTI_MIN_KADRO = 6  # bu kadar attan az koşuda favori/sürpriz ayrımı anlamsız
 MIN_KULVAR = 30    # kulvar hücresi için minimum start sayısı
 GUN90 = 90         # A1/B16 "başarılı sahip/antrenör" listesinin penceresi (gün)
 BOMBA_GANYAN = 10.0  # bu ganyan ve üstündeki galibiyet "sürpriz" sayılır (B11)
@@ -121,7 +125,8 @@ def pencere90(ilk3: list, bitis: int) -> tuple[dict, dict]:
 
 
 def sizan_tablolar(jokey: dict, antrenor: dict, kulvar: dict,
-                   ilk3: list, bitis: int) -> dict:
+                   ilk3: list, bitis: int, jbek: dict = None,
+                   jbaz: list = None) -> dict:
     """stats.json'un TÜM arşivden hesaplanan — yani geriye dönük puanlamada
     geleceği gören — tabloları: E1/E2 (jokey/antrenör), E3 (kulvar), A1/B16
     (90 günlük sahip/antrenör listesi). Burada `bitis` gününe kadar bilinen
@@ -131,8 +136,16 @@ def sizan_tablolar(jokey: dict, antrenor: dict, kulvar: dict,
     at / sahip_son / antrenor_son burada YOK: onlar istemci tarafında zaten
     gün filtresinden geçiyor (app.js'teki gecerliSon ve son6 kontrolü)."""
     sahip90, antrenor90 = pencere90(ilk3, bitis)
+    jbek = jbek or {}
+    jbaz = jbaz or [0, 0, 0, 0]
     return {
         "bitis": bitis,
+        # E4/E5: jokeyin piyasa beklentisine göre performansı.
+        # ad → [favori_biniş, favori_galibiyet, sürpriz_biniş, sürpriz_galibiyet]
+        "jokey_beklenti": {a: v for a, v in jbek.items()
+                           if v[0] + v[2] >= MIN_BEKLENTI},
+        # aynı sırayla tüm jokeylerin toplamı — beklenen oranın paydası
+        "beklenti_baz": jbaz,
         "jokey": {a: v for a, v in jokey.items() if v[0] >= MIN_JOKEY},
         "antrenor": {a: v for a, v in antrenor.items() if v[0] >= MIN_JOKEY},
         "kulvar": {k: c for k, c in
@@ -145,6 +158,8 @@ def sizan_tablolar(jokey: dict, antrenor: dict, kulvar: dict,
 
 def main() -> None:
     jokey: dict[str, list] = {}
+    jbek: dict[str, list] = {}   # E4/E5: [fav_biniş, fav_galibiyet, sür_biniş, sür_galibiyet]
+    jbaz: list[int] = [0, 0, 0, 0]
     antrenor: dict[str, list] = {}
     kulvar: dict[str, dict] = {}
     sahip_son: dict[str, list] = {}
@@ -164,7 +179,8 @@ def main() -> None:
         # görüntü üretmek ~30 kat dosya demek, kazancı bu kırıntıyı hak etmiyor.
         (AYLIK / f.name).write_text(
             json.dumps(sizan_tablolar(jokey, antrenor, kulvar, ilk3,
-                                      int(f.stem.replace("-", "") + "01")),
+                                      int(f.stem.replace("-", "") + "01"),
+                                      jbek, jbaz),
                        ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8")
         anlik += 1
@@ -195,6 +211,21 @@ def main() -> None:
                     for h in kostu:
                         win = 1 if h["sira"] == 1 else 0
                         top3 = 1 if h["sira"] <= 3 else 0
+
+                        # E4/E5: jokey piyasa beklentisine paralel mi?
+                        # Favoriye binip kazanamamak ile sürprize binip kazanmak
+                        # ayrı ayrı sayılır; kıyas ölçütü tüm jokeylerin aynı
+                        # roldeki ortalaması (beklenti_baz).
+                        asira = agf_sira(h.get("agf"))
+                        jad = h.get("jokey")
+                        if jad and asira and len(kostu) >= BEKLENTI_MIN_KADRO:
+                            rol = 0 if asira <= FAV_SIRA else 2 if asira >= SUR_SIRA else None
+                            if rol is not None:
+                                jrec = jbek.setdefault(jad, [0, 0, 0, 0])
+                                jrec[rol] += 1
+                                jrec[rol + 1] += win
+                                jbaz[rol] += 1
+                                jbaz[rol + 1] += win
                         for tbl, ad in ((jokey, h.get("jokey")),
                                         (antrenor, h.get("antrenor"))):
                             if ad:
@@ -256,7 +287,7 @@ def main() -> None:
     # o yüzden üst sınır son günün ertesi (son gün dahil olsun diye).
     son_ertesi = int((datetime.strptime(str(son_gun), "%Y%m%d")
                       + timedelta(days=1)).strftime("%Y%m%d"))
-    canli = sizan_tablolar(jokey, antrenor, kulvar, ilk3, son_ertesi)
+    canli = sizan_tablolar(jokey, antrenor, kulvar, ilk3, son_ertesi, jbek, jbaz)
 
     out = {
         "meta": {"gun": gun_sayisi, "kosu": kosu_sayisi, "son_gun": son_gun,

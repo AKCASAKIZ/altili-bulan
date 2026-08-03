@@ -1,7 +1,7 @@
 /* ===== Altılı Bulan v2 — puanlama motoru ===== */
 "use strict";
 
-/* --- 37 kriter (angle) tanımı. NOT: pct toplamı %167; ağırlıklar mutlak
+/* --- 39 kriter (angle) tanımı. NOT: pct toplamı %173; ağırlıklar mutlak
      ölçek olarak kullanılıyor, sıralamayı yalnızca göreli büyüklükleri etkiler.
      F4 istisna: puanı 0-100 merdiveni değil ham GP (0-120), katsayısı 0.25. --- */
 const ANGLES = [
@@ -35,6 +35,8 @@ const ANGLES = [
   { k: "E1", name: "Jokey kazanma % (arşiv)", pct: 3.00, desc: "2 yıllık sonuç arşivinden jokeyin gerçek kazanma yüzdesi. Koşudaki en yüksek 5 jokey: 100,70,50,30,10." },
   { k: "E2", name: "Antrenör kazanma % (arşiv)", pct: 2.00, desc: "2 yıllık sonuç arşivinden antrenörün gerçek kazanma yüzdesi. Koşudaki en yüksek 5: 100,70,50,30,10." },
   { k: "E3", name: "Kulvar avantajı (arşiv)", pct: 3.00, desc: "Hipodrom + pist + mesafe kırılımında start kulvarının 2 yıllık gerçek kazanma oranı. En avantajlı 5 kulvardaki atlar: 100,70,50,30,10." },
+  { k: "E4", name: "Jokey favori güvenilirliği (arşiv)", pct: 3.00, desc: "YALNIZCA bugünün AGF favorisi (1. sıra) olan atlarda işler. Arşivde jokeyin favoriye bindiği koşularda kazanma oranı, tüm jokeylerin favoriyle kazanma ortalamasına (%32) bölünür. Endeks ≥1.10 → 100, ≥1.00 → 70, ≥0.90 → 40, altı 0. Az binişi olan jokeyin endeksi Bayes büzmesiyle ortalamaya çekilir (25 binişlik önyargı), yoksa 3 binişte 0 galibiyet 'güvenilmez' gibi görünürdü. Ölçtüğü şey niyet değil, sonucun piyasa beklentisinden sapmasıdır." },
+  { k: "E5", name: "Jokey sürpriz eğilimi (arşiv)", pct: 3.00, desc: "YALNIZCA AGF sıralamasında 5. ve gerisindeki atlarda işler. Arşivde jokeyin sürprize bindiği koşularda kazanma oranı, tüm jokeylerin aynı roldeki ortalamasına (%3,8) bölünür. Endeks ≥1.40 → 100, ≥1.15 → 70, ≥0.90 → 40, altı 0. Yüksek endeks 'az şansla iş çıkaran' jokey demektir — bomba arayan kuponda değerlidir." },
   { k: "F1", name: "Uzman tahminleri", pct: 5.00, desc: "Takip edilen tahmincilerin favori/plase/sürpriz işaretleri (F=100, P=60, S=30; işaretleyen tahmincilerin ortalaması). Puanlama sekmesindeki 🎩 Uzman panelinden girilir." },
   { k: "F2", name: "Galop bülteni (ilk 4)", pct: 5.00, desc: "liderform Bülten Galop sekmesinin galop puanına (GP) göre koşunun ilk 4 atı: 1. (favori) 100, 2. 70, 3. 50, 4. 30. Günlük olarak otomatik çekilir (data/{gün}/galop-{şehir}.json). Puanlama sekmesindeki 🏇 panelinden elle işaretleme yapılırsa o ayakta otomatik sıra devre dışı kalır." },
   { k: "F3", name: "Galop jokeyi = koşu jokeyi", pct: 5.00, desc: "Atın galopunu yaptıran jokey bugün onu koşuyorsa 50 puan, değilse 0. Birincil kaynak Bülten Galop verisi — karşılaştırma jokey ID'si üzerinden yapılır. O veri yoksa TJK idman sorgusunun \"İ. Jokeyi\" sütununa düşülür ve isim (soyad + baş harf) eşleştirilir." },
@@ -561,6 +563,41 @@ async function scoreLeg(leg, ctx) {
       assignRank5(hs, gw, "E3", false);
     }
 
+    /* --- E4 / E5: jokey piyasa beklentisine paralel mi? ---
+     * Arşivden (build_stats.py) her jokeyin FAVORİYE binerken ve SÜRPRİZE
+     * binerken kazanma sayıları gelir; ölçü, tüm jokeylerin aynı roldeki
+     * ortalaması (beklenti_baz). Endeks 1.00 = beklendiği kadar.
+     *
+     * Küçük örneklem yanıltmasın diye Bayes büzmesi: az binişi olan jokeyin
+     * endeksi ortalamaya çekilir (K biniş kadar "ortalama jokey" önyargısı).
+     * Kriterler yalnızca atın BUGÜNKÜ rolünde işler — favori olmayan atta E4,
+     * sürpriz olmayan atta E5 hiç yazılmaz, yoksa rolsüz atları cezalandırırdı.
+     *
+     * NOT: bu tablo jokeyin niyetini değil, sonucun beklentiden sapmasını
+     * ölçer. Düşük endeks kötü şans da olabilir; yüksek sürpriz endeksi iyi
+     * bir "az şansla iş çıkaran" jokey de olabilir. */
+    const jb = stats.jokey_beklenti, jz = stats.beklenti_baz;
+    if (jb && jz?.[0] && jz?.[2]) {
+      const K = 25;                                   // büzme gücü (biniş cinsinden)
+      const bazFav = jz[1] / jz[0], bazSur = jz[3] / jz[2];
+      const endeks = (ad, rol, baz) => {
+        const v = jb[(ad || "").trim()];
+        if (!v || !v[rol]) return null;
+        return ((v[rol + 1] + K * baz) / (v[rol] + K)) / baz;
+      };
+      hs.forEach((h) => {
+        const sira = agfSiraNo(h.meta?.agf);
+        if (sira === 1) {
+          const e = endeks(h.meta?.jokey, 0, bazFav);
+          if (e != null) h.scores.E4 = e >= 1.10 ? 100 : e >= 1.00 ? 70 : e >= 0.90 ? 40 : 0;
+        }
+        if (sira && sira >= 5) {
+          const e = endeks(h.meta?.jokey, 2, bazSur);
+          if (e != null) h.scores.E5 = e >= 1.40 ? 100 : e >= 1.15 ? 70 : e >= 0.90 ? 40 : 0;
+        }
+      });
+    }
+
     /* --- AGM kılavuzu kriterleri, arşiv istatistikleriyle otomatik --- */
     const dayInt = +String(day).replace(/-/g, "");
     const gunFarki = (gi) => Math.round((new Date(day) - new Date(String(gi).replace(/(\d{4})(\d{2})(\d{2})/, "$1-$2-$3"))) / 86400000);
@@ -799,6 +836,11 @@ function karakterEtiketi(profil) {
  * numarası/kulvarı `st` alanıdır — "kaçıncı at" ile "kulvar" tek özelliktir. */
 const SART_YETER = 12;   // bu kadar örneği olan en dar anahtar tercih edilir
 
+/* "%28.4(1)" → 1 : atın bugünkü AGF sıralaması (piyasadaki yeri). */
+function agfSiraNo(agf) {
+  const m = /\((\d+)\)/.exec(String(agf ?? ""));
+  return m ? +m[1] : null;
+}
 function sartSayi(v) {
   const m = /(\d+(?:[.,]\d+)?)/.exec(String(v ?? ""));
   return m ? parseFloat(m[1].replace(",", ".")) : null;
@@ -1771,7 +1813,7 @@ async function runBacktest(arsivden = false) {
 /* ==================== KATSAYI ÖNERİSİ (conditional logit) ==================== */
 /* Backtest verisiyle koşu-içi lojistik model eğitir: P(at kazanır) = exp(w·x) / Σ exp(w·x).
    Sadece otomatik puanlanan kriterler öğrenilebilir (diğerlerinin geçmiş puanı yok). */
-const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3", "F2", "F3", "F4", "H1"];
+const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3", "E4", "E5", "F2", "F3", "F4", "H1"];
 
 /* Bir ağırlık vektörünün koşu başına ortalama log-olabilirliği (0'a yakın = iyi).
    Rastgele tahminin değeri ln(1/kadro) — ortalama 10 atlı kadroda ≈ -2.30. */
