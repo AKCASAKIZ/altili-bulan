@@ -1007,7 +1007,7 @@ function raceCard(r, isResult) {
     const soy = [h.baba, h.anne].filter(Boolean).join(" — ");
     const t = takiAyikla(h.ad);
     rows += `<tr class="${pos === 1 ? "pos-1" : ""}">${posCell}
-      <td>${h.no}</td><td>${esc(t.ad)} ${picked ? '<span class="hit">kuponda</span>' : ""}${soy ? `<br><span class="hint" style="font-size:11px">${esc(soy)}</span>` : ""}</td>
+      <td>${h.no}</td><td>${esc(h.st || "")}</td><td>${esc(t.ad)} ${picked ? '<span class="hit">kuponda</span>' : ""}${soy ? `<br><span class="hint" style="font-size:11px">${esc(soy)}</span>` : ""}</td>
       <td class="taki-cell">${takiHTML(t.taki)}</td>
       <td>${esc(h.jokey || "")}</td><td>${esc(h.kilo || "")}</td>
       ${isResult
@@ -1016,8 +1016,8 @@ function raceCard(r, isResult) {
     </tr>`;
   });
   const head = isResult
-    ? `<th>Sıra</th><th>No</th><th>At</th><th>Takı</th><th>Jokey</th><th>Kilo</th><th>Derece</th><th>Ganyan</th><th>Fark</th>`
-    : `<th>No</th><th>At</th><th>Takı</th><th>Jokey</th><th>Kilo</th><th>Son 6</th><th>KGS</th><th>AGF</th><th>En iyi</th><th>Son Galop</th>`;
+    ? `<th>Sıra</th><th>No</th><th>KLV</th><th>At</th><th>Takı</th><th>Jokey</th><th>Kilo</th><th>Derece</th><th>Ganyan</th><th>Fark</th>`
+    : `<th>No</th><th>KLV</th><th>At</th><th>Takı</th><th>Jokey</th><th>Kilo</th><th>Son 6</th><th>KGS</th><th>AGF</th><th>En iyi</th><th>Son Galop</th>`;
   return `<div class="race-card">
     <header><h3>${r.no}. Koşu — ${r.saat || ""}</h3>
     <span class="race-tags">${esc(r.grup || "")} · ${esc(r.mesafe || "")} ${esc(r.pist || "")} · ${esc(r.tur || "")} ${r.ikramiye ? "· 1.lik: " + esc(r.ikramiye) : ""}</span></header>
