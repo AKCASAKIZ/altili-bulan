@@ -35,6 +35,8 @@ const ANGLES = [
   { k: "E2", name: "Antrenör kazanma % (arşiv)", pct: 2.00, desc: "2 yıllık sonuç arşivinden antrenörün gerçek kazanma yüzdesi. Koşudaki en yüksek 5: 100,70,50,30,10." },
   { k: "E3", name: "Kulvar avantajı (arşiv)", pct: 3.00, desc: "Hipodrom + pist + mesafe kırılımında start kulvarının 2 yıllık gerçek kazanma oranı. En avantajlı 5 kulvardaki atlar: 100,70,50,30,10." },
   { k: "F1", name: "Uzman tahminleri", pct: 5.00, desc: "Takip edilen tahmincilerin favori/plase/sürpriz işaretleri (F=100, P=60, S=30; işaretleyen tahmincilerin ortalaması). Puanlama sekmesindeki 🎩 Uzman panelinden girilir." },
+  { k: "F2", name: "Galop bülteni (ilk 4)", pct: 5.00, desc: "liderform Bülten Galop sekmesinin galop puanına (GP) göre koşunun ilk 4 atı: 1. (favori) 100, 2. 70, 3. 50, 4. 30. Günlük olarak otomatik çekilir (data/{gün}/galop-{şehir}.json). Puanlama sekmesindeki 🏇 panelinden elle işaretleme yapılırsa o ayakta otomatik sıra devre dışı kalır." },
+  { k: "F3", name: "Galop jokeyi = koşu jokeyi", pct: 5.00, desc: "Atın galopunu yaptıran jokey bugün onu koşuyorsa 50 puan, değilse 0. Birincil kaynak Bülten Galop verisi — karşılaştırma jokey ID'si üzerinden yapılır. O veri yoksa TJK idman sorgusunun \"İ. Jokeyi\" sütununa düşülür ve isim (soyad + baş harf) eşleştirilir." },
   { k: "G1", name: "Sınıf düşüşü + geçen koşu favorisi", pct: 4.00, desc: "Atın bir önceki koşusundaki RAKİPLERİNİN handikap ortalaması bugünkü kadronun ortalama handikabından yüksekse (daha zorlu sınıftan iniyor) VE o koşuda AGF sıralamasında ilk 3'te ise 100, aksi halde 0. Veri arşivden (stats.json son6) gelir; arşivde bulunmayan atlarda atın kendi hp'si + ganyan ≤4,0 proxy'sine düşülür." },
   { k: "G2", name: "Kazanan profiline yakınlık (şart)", pct: 4.00, desc: "Aynı şartta (ırk · yaş · koşu cinsi · mesafe · pist) geçmişte KAZANAN atların profiline yakınlık. Arşivden (data/arsiv/sartlar.json) kazananların kilo / kulvar / yaş / AGF-ganyan yüzdelikleri çıkarılır; atın her özelliği tipik bandın (q25–q75) içindeyse tam, geniş bandın (q10–q90) içindeyse yarım sayılır. Ortalama yakınlık ≥0.85 → 100, ≥0.60 → 80, ≥0.35 → 60, altı 0. Bugünkü kadroda herkeste aynı olan özellik (ör. tek yaşlı koşuda yaş) ayırt edici olmadığı için hesaba katılmaz." },
   { k: "H1", name: "Piyasa desteği (AGF)", pct: 6.00, desc: "Bugünkü AGF (at grubu favorisi) yüzdesi en yüksek 5 at: 100,70,50,30,10. Piyasanın kolektif görüşü — TJK Yarış Gazetesi kesildiği için onun editör tahminlerinin (eski B6/B11 beslemesi) yerini alır. Veri programla birlikte günlük gelir, PDF gerektirmez." },
@@ -45,7 +47,7 @@ const RANK5 = [100, 70, 50, 30, 10];
 /* --- durum --- */
 const state = {
   index: null, day: null, city: null,
-  program: null, results: null, idman: null,
+  program: null, results: null, idman: null, galop: null,
   legs: [], activeLeg: 0, picks: [],
   coefs: {}, enabled: {},
 };
@@ -163,7 +165,7 @@ function fillCitySelect() {
 }
 
 async function loadDayData() {
-  state.program = null; state.results = null; state.idman = null; state.gecmis = null;
+  state.program = null; state.results = null; state.idman = null; state.gecmis = null; state.galop = null;
   // önce localStorage'daki CSV yüklemeleri
   const upKeyP = `ab2:csv:${state.day}:${state.city}:program`;
   const upKeyS = `ab2:csv:${state.day}:${state.city}:sonuclar`;
@@ -174,6 +176,9 @@ async function loadDayData() {
   if (!state.results) state.results = await tryFetch(`data/${state.day}/sonuclar-${state.city}.json`);
   // TJK'nın günlük idman/galop sorgusundan çekilen veri (GitHub Actions ile her sabah güncellenir)
   state.idman = await tryFetch(`data/${state.day}/idman-${state.city}.json`);
+  // liderform "Bülten Galop" sekmesi: koşu başına galop puanı (GP) + galop
+  // jokeyinin koşu jokeyiyle aynı olup olmadığı. F2 ve F3 kriterlerini besler.
+  state.galop = await tryFetch(`data/${state.day}/galop-${state.city}.json`);
   // atların geçmiş koşu geçmişi (ganyan/hp) — G1 kriteri için (yoksa null, G1 puanlanmaz)
   state.gecmis = await tryFetch(`data/${state.day}/gecmis-${state.city}.json`);
   restoreSession();
@@ -358,6 +363,10 @@ const BOS_SIZAN = { jokey: {}, antrenor: {}, kulvar: {},
 
 async function scoreLeg(leg, ctx) {
   const idman = ctx?.idman !== undefined ? ctx.idman : state.idman;
+  // Arşiv backtest'inde galop bülteni yok (site geçmişe dönük veri vermiyor),
+  // o yüzden ctx varsa bu kaynak kapalı kalır ve F2/F3 puansız geçer.
+  const galop = ctx ? (ctx.galop || null) : state.galop;
+  const galopKosu = galop?.[String(leg.raceNo)] || null;
   const day = ctx?.day || state.day;
   const hs = leg.horses;
 
@@ -414,6 +423,35 @@ async function scoreLeg(leg, ctx) {
         else if (gun > 3) h.scores.B7 = gun <= 7 ? 100 : 0;
         break;
       }
+    });
+
+    // F3 (yedek yol): galop bülteni yoksa TJK idmanının "İ. Jokeyi" sütunuyla
+    // karşılaştır. İsim eşleştirmesi ID'den zayıf, o yüzden yalnız yedek.
+    if (!galopKosu) {
+      hs.forEach((h) => {
+        const rows = idman[temizle(h.ad)];
+        const gj = rows?.find((r) => (r.jokey || "").trim())?.jokey;
+        if (!gj) return;
+        h.scores.F3 = jokeyAyniMi(h.meta?.jokey, gj) ? 50 : 0;
+      });
+    }
+  }
+
+  // F2 + F3: liderform "Bülten Galop" verisi (varsa birincil kaynak).
+  // F2 = galop puanına (GP) göre ilk 4 at: 100/70/50/30.
+  // F3 = galop jokeyi ile koşu jokeyi aynıysa 50. Karşılaştırma jokey ID'si
+  //      üzerinden yapılmış olarak gelir, isim eşleştirmesine gerek yok.
+  if (galopKosu) {
+    const byNo = new Map(galopKosu.map((g) => [String(g.no), g]));
+    const gp = hs.map((h) => {
+      const g = byNo.get(String(h.no));
+      return g && typeof g.gp === "number" ? g.gp : null;
+    });
+    // elle işaretlenmiş ayakta otomatik F2 devreye girmez (kullanıcı kararı üstün)
+    if (!hs.some((h) => +h.galopSira)) assignRank5(hs, gp, "F2", false, [100, 70, 50, 30]);
+    hs.forEach((h) => {
+      const g = byNo.get(String(h.no));
+      if (g) h.scores.F3 = g.ayni ? 50 : 0;
     });
   }
 
@@ -839,11 +877,14 @@ function sartPuani(parcalar) {
   return oran >= 0.85 ? 100 : oran >= 0.6 ? 80 : oran >= 0.35 ? 60 : 0;
 }
 
-function assignRank5(hs, values, key, asc) {
+/* merdiven varsayılan olarak RANK5 (5 at); F2 gibi 4 basamaklı kriterler kendi
+   merdivenini geçirir. Merdivenin uzunluğu kaç atın puanlanacağını da belirler. */
+function assignRank5(hs, values, key, asc, merdiven) {
+  const puanlar = merdiven || RANK5;
   const idx = values.map((v, i) => ({ v, i }))
     .filter((x) => x.v !== Infinity && x.v !== -1 && x.v !== null)
     .sort((a, b) => (asc ? a.v - b.v : b.v - a.v));
-  idx.slice(0, 5).forEach((x, r) => { hs[x.i].scores[key] = RANK5[r]; });
+  idx.slice(0, puanlar.length).forEach((x, r) => { hs[x.i].scores[key] = puanlar[r]; });
 }
 
 /* ==================== KATSAYILAR ==================== */
@@ -1686,7 +1727,7 @@ async function runBacktest(arsivden = false) {
 /* ==================== KATSAYI ÖNERİSİ (conditional logit) ==================== */
 /* Backtest verisiyle koşu-içi lojistik model eğitir: P(at kazanır) = exp(w·x) / Σ exp(w·x).
    Sadece otomatik puanlanan kriterler öğrenilebilir (diğerlerinin geçmiş puanı yok). */
-const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3", "H1"];
+const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3", "F2", "F3", "H1"];
 
 /* Bir ağırlık vektörünün koşu başına ortalama log-olabilirliği (0'a yakın = iyi).
    Rastgele tahminin değeri ln(1/kadro) — ortalama 10 atlı kadroda ≈ -2.30. */
@@ -2012,6 +2053,29 @@ function temizle(ad) {
     .replace(/(\s+(SGKR|GDSK|DSGK|GKDSK|SKG|KGD|GKD|DSK|GSK|SGK|GDS|DSG|GKR|KG|DB|SK|GD|GK|DS|KD|GM|BB|ÖG|YP|G|K|D|M|S))+\s*$/g, "")
     .trim().toUpperCase();
 }
+/* F3 için jokey adı eşleştirme.
+   Program jokeyi KISALTMALI gelir ("MEH.TAŞKAYA", "M.B.ÇAKMAK AP"), idman
+   sorgusu ise TAM ad verir ("AZİZ AKDEMİR"). Bu yüzden soyadın birebir tutması
+   ve kısaltılmış ön adların tam adların başlangıcı olması aranır.
+   "AP" (apranti) gibi sondaki sınıf eki atılır. */
+function jokeyParcala(s) {
+  const t = (s || "").toUpperCase().replace(/\s*\b(AP|A)\b\s*$/, "").trim();
+  if (!t) return null;
+  const p = t.split(/[.\s]+/).filter(Boolean);
+  if (!p.length) return null;
+  return { soyad: p[p.length - 1], on: p.slice(0, -1) };
+}
+function jokeyAyniMi(programJokey, idmanJokey) {
+  const a = jokeyParcala(programJokey), b = jokeyParcala(idmanJokey);
+  if (!a || !b || a.soyad !== b.soyad) return false;
+  // Kısaltmalı taraf hangisiyse, onun her parçası diğerinin aynı sıradaki
+  // parçasının başlangıcı olmalı. Ön ad hiç yazılmamışsa soyad eşleşmesi yeter.
+  const n = Math.min(a.on.length, b.on.length);
+  for (let i = 0; i < n; i++) {
+    if (!a.on[i].startsWith(b.on[i]) && !b.on[i].startsWith(a.on[i])) return false;
+  }
+  return true;
+}
 function ddmmyyyyToIso(s) {
   const m = (s || "").match(/(\d{2})\.(\d{2})\.(\d{4})/);
   return m ? `${m[3]}-${m[2]}-${m[1]}` : null;
@@ -2163,4 +2227,70 @@ window.AB = { state, ANGLES, RANK5, saveSession, renderAll, renderScoreTable, ra
   renderScoreTable = yeniRender;
   window.AB.renderScoreTable = yeniRender;
   renderBar(); renderMarks();
+})();
+
+/* ==================== F2: GALOP BÜLTENİ (İLK 4) ====================
+ * Bülten'in Galop sekmesi koşu başına atları galop puanına göre sıralıyor.
+ * O sekme Cloudflare arkasında olduğu için otomatik çekilemiyor; ilk 4 at
+ * elle işaretlenir: 1. sıra favori (100), 2/3/4 plase (70/50/30).
+ * Bir sıra tek ata ait — aynı sırayı başka ata verince eskisinden düşer. */
+(() => {
+  const F2_PUAN = [100, 70, 50, 30];
+
+  const pane = document.getElementById("tab-puanlama");
+  if (!pane) return;
+  const box = document.createElement("div");
+  box.id = "galopPanel";
+  box.innerHTML = `<details style="margin-top:14px">
+    <summary style="cursor:pointer"><b>🏇 Galop bülteni (F2)</b> — otomatik; elle düzeltmek istersen sırala</summary>
+    <div id="galopMarks"></div>
+    <div class="toolbar" style="margin-top:8px">
+      <button class="btn btn-ghost" id="btnGalopSil">Bu ayağın işaretlerini temizle (otomatiğe dön)</button>
+      <span class="hint">1. = favori (100), 2. = 70, 3. = 50, 4. = 30 puan. Hiç işaret yoksa GP'ye göre otomatik sıralanır.</span>
+    </div>
+  </details>`;
+  pane.appendChild(box);
+
+  function hesaplaF2(leg) {
+    leg.horses.forEach((h) => {
+      const s = +h.galopSira;
+      if (s >= 1 && s <= 4) h.scores.F2 = F2_PUAN[s - 1];
+      else delete h.scores.F2;
+    });
+  }
+
+  function renderMarks() {
+    const el = box.querySelector("#galopMarks");
+    const leg = state.legs[state.activeLeg];
+    if (!leg) { el.innerHTML = `<p class="hint">Ayak yüklü değil.</p>`; return; }
+    el.innerHTML = `<table class="score-table"><thead><tr><th>At</th><th colspan="4">Galop sırası</th></tr></thead><tbody>` +
+      leg.horses.map((h, i) => {
+        const cur = +h.galopSira || 0;
+        const btn = (s) =>
+          `<td><button class="btn ${cur === s ? "btn-accent" : "btn-ghost"}" data-gs="${s}" data-h="${i}">${s}.</button></td>`;
+        return `<tr><td>${h.no}. ${esc(h.ad)}</td>${btn(1)}${btn(2)}${btn(3)}${btn(4)}</tr>`;
+      }).join("") + "</tbody></table>";
+    el.querySelectorAll("[data-gs]").forEach((b) => (b.onclick = () => {
+      const s = +b.dataset.gs, h = leg.horses[+b.dataset.h];
+      if (+h.galopSira === s) delete h.galopSira;          // aynı sıraya tekrar basınca temizle
+      else {
+        leg.horses.forEach((x) => { if (+x.galopSira === s) delete x.galopSira; }); // sıra tekil
+        h.galopSira = s;
+      }
+      hesaplaF2(leg); saveSession(); renderScoreTable();
+    }));
+  }
+
+  box.querySelector("#btnGalopSil").onclick = () => {
+    const leg = state.legs[state.activeLeg];
+    if (!leg) return;
+    leg.horses.forEach((h) => delete h.galopSira);
+    hesaplaF2(leg); saveSession(); renderScoreTable();
+  };
+
+  const eskiRender = renderScoreTable;
+  const yeniRender = function () { eskiRender.apply(this, arguments); renderMarks(); };
+  renderScoreTable = yeniRender;
+  window.AB.renderScoreTable = yeniRender;
+  renderMarks();
 })();

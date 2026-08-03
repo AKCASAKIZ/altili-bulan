@@ -219,8 +219,11 @@ def fetch_idman_son800(names: list, out_dir, slug: str,
             rows = [c for c in _tablo_satirlari(b.decode("utf-8", "replace"))
                     if len(c) >= 17 and at_adi_temizle(c[0]) == name]
             if rows:
+                # Sutun 17 = "I. Jokeyi" (idmani yaptiran jokey). F3 kriteri bunu
+                # bugunku kosu jokeyiyle karsilastirir.
                 idman[name] = [{"t": r[12], "m1400": r[4], "m1200": r[5], "m1000": r[6],
-                                "m800": r[7], "durum": r[11], "tur": r[16]} for r in rows[:6]]
+                                "m800": r[7], "durum": r[11], "tur": r[16],
+                                "jokey": r[17] if len(r) > 17 else ""} for r in rows[:6]]
         # NOT: Bu sorgu adi TURKCE karakterleriyle bekler (ASCII'ye katlanmis ad
         # "veri bulunmamaktadir" dondurur).
         b = None if son800_atla else http_get("https://www.tjk.org/TR/YarisSever/Query/Data/Son800Ist?QueryParameter_AtAdi=" + urllib.parse.quote(name))

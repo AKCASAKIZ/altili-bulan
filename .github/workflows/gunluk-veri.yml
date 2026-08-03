@@ -28,6 +28,12 @@ jobs:
       - name: TJK verilerini çek
         run: python3 scripts/fetch_tjk.py
 
+      - name: Galop bültenini çek (liderform)
+        # F2 (galop puanı ilk 4) ve F3 (galop jokeyi = koşu jokeyi) kriterlerini besler.
+        # Dış siteye bağlı; erişilemezse TJK verisinin commit'lenmesini engellemesin.
+        continue-on-error: true
+        run: python3 scripts/fetch_galop.py
+
       - name: Accurace koşu-karakter profillerini güncelle
         # Sonuçlanmış koşuları işler; sabah koşusunda sonuç yoksa sessizce boş geçer.
         # accurace/TJK erişimi başarısız olsa bile TJK verisinin commit'lenmesini engellemesin.
