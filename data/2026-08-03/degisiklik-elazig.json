@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -108,9 +108,171 @@
    "yeni": "BAŞ ALP KG DB (Koşmaz)",
    "metin": "8. Koşu: BAŞ ALP (2) KOŞMAZ",
    "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.10",
+   "metin": "4. Koşu: BLUE BIRD (5) kilo 58 → 58 +0.10",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.30",
+   "metin": "4. Koşu: ETENGÜ (8) kilo 58 → 58 +0.30",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.50",
+   "metin": "4. Koşu: HAS PRENSES (10) kilo 58 → 58 +0.50",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.10",
+   "metin": "4. Koşu: REPEAT ME (12) kilo 58 → 58 +0.10",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.70",
+   "metin": "4. Koşu: VALLEY OF HONOUR (13) kilo 58 → 58 +0.70",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "59",
+   "yeni": "59 +0.20",
+   "metin": "5. Koşu: BEHİÇALP (4) kilo 59 → 59 +0.20",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +0.10",
+   "metin": "5. Koşu: ÇETİNYEL (7) kilo 56,5 → 56,5 +0.10",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "5. Koşu: UÇAN ILGIN (8) kilo 55 → 55 +2.00",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +2.00",
+   "metin": "5. Koşu: RECOHAT (9) kilo 53,5 → 53,5 +2.00",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.50",
+   "metin": "5. Koşu: KESKİN KAAN (10) kilo 53 → 53 +1.50",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.50",
+   "metin": "6. Koşu: BON CHEVAL (10) kilo 56 → 56 +1.50",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "6. Koşu: THE SNAKE PIT (12) kilo 52 → 52 +2.00",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "6. Koşu: MR MASTER (13) kilo 52 → 52 +2.00",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "7. Koşu: BRAVO GÜR (3) kilo 57 → 57 +0.50",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "7. Koşu: GÖKTEKİ YAĞMUR (4) kilo 57 → 57 +0.50",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.20",
+   "metin": "7. Koşu: ASPUWA (5) kilo 55 → 55 +1.20",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.00",
+   "metin": "7. Koşu: LORD OF KİRVE (6) kilo 55 → 55 +1.00",
+   "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "7. Koşu: INFERNO BLAZE (7) kilo 55 → 55 +2.00",
+   "ts": "2026-08-03 18:08 UTC"
   }
  ],
- "guncelleme": "2026-08-03 16:05 UTC",
+ "guncelleme": "2026-08-03 18:08 UTC",
  "sehir": "Elazığ",
  "etkilenen": {
   "6": [
