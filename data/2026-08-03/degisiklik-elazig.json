@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -270,9 +270,36 @@
    "yeni": "55 +2.00",
    "metin": "7. Koşu: INFERNO BLAZE (7) kilo 55 → 55 +2.00",
    "ts": "2026-08-03 18:08 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.50",
+   "metin": "8. Koşu: FISILTIKAYA (11) kilo 56 → 56 +1.50",
+   "ts": "2026-08-03 20:00 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.50",
+   "metin": "8. Koşu: ZULEMA (12) kilo 54 → 54 +0.50",
+   "ts": "2026-08-03 20:00 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.30",
+   "metin": "8. Koşu: ZÜBÜŞ HANIM (13) kilo 55 → 55 +1.30",
+   "ts": "2026-08-03 20:00 UTC"
   }
  ],
- "guncelleme": "2026-08-03 18:08 UTC",
+ "guncelleme": "2026-08-03 20:00 UTC",
  "sehir": "Elazığ",
  "etkilenen": {
   "6": [
