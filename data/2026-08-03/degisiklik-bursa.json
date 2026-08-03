@@ -1,0 +1,29 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 8,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "URASEFE KG K",
+   "yeni": "URASEFE KG K (Koşmaz)",
+   "metin": "8. Koşu: URASEFE (8) KOŞMAZ",
+   "ts": "2026-08-03 10:35 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-03 10:35 UTC",
+ "sehir": "Bursa",
+ "etkilenen": {
+  "8": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
