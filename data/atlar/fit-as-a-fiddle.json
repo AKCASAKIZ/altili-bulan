@@ -1,6 +1,6 @@
 {
  "ad": "FIT AS A FIDDLE",
- "kosu_sayisi": 8,
+ "kosu_sayisi": 9,
  "islenen_yarislar": [
   "2025-05-16-bursa-8-backfill",
   "2025-09-29-bursa-4-backfill",
@@ -9,10 +9,12 @@
   "2025-11-08-izmir-7-backfill",
   "2025-11-27-antalya-6-backfill",
   "2025-12-08-bursa-5-backfill",
-  "2026-07-17-bursa-10"
+  "2026-07-17-bursa-10",
+  "2026-08-03-bursa-9"
  ],
- "erken_gec_delta_ema": 2.712,
- "son_atak_delta_ema": 0.103,
- "son_guncelleme": "2026-07-17-bursa-10",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.348,
+ "son_atak_delta_ema": 0.372,
+ "son_guncelleme": "2026-08-03-bursa-9",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

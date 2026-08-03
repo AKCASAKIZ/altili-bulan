@@ -1,12 +1,13 @@
 {
  "ad": "SEDAT",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-24-istanbul-5"
+  "2026-07-24-istanbul-5",
+  "2026-08-03-bursa-9"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -0.5,
- "son_atak_delta_ema": 1,
- "son_guncelleme": "2026-07-24-istanbul-5",
+ "erken_gec_delta_ema": 0.4,
+ "son_atak_delta_ema": 1.3,
+ "son_guncelleme": "2026-08-03-bursa-9",
  "gecmis_surum": 2
 }

@@ -1,6 +1,6 @@
 {
  "ad": "HANDSOME LAKE",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2025-02-04-adana-1-backfill",
   "2025-02-25-adana-6-backfill",
@@ -17,11 +17,12 @@
   "2025-12-02-adana-6-backfill",
   "2026-01-13-antalya-1-backfill",
   "2026-02-10-adana-7-backfill",
-  "2026-07-24-istanbul-5"
+  "2026-07-24-istanbul-5",
+  "2026-08-03-bursa-9"
  ],
- "erken_gec_delta_ema": -3.238,
- "son_guncelleme": "2026-07-24-istanbul-5",
- "son_atak_delta_ema": -0.223,
+ "erken_gec_delta_ema": -3.167,
+ "son_guncelleme": "2026-08-03-bursa-9",
+ "son_atak_delta_ema": -0.756,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

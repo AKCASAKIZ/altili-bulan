@@ -1,6 +1,6 @@
 {
  "ad": "RİGEL",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-08-22-bursa-4-backfill",
   "2025-08-28-kocaeli-5-backfill",
@@ -16,11 +16,12 @@
   "2026-06-30-kocaeli-8-backfill",
   "2026-07-18-izmir-2-backfill",
   "2026-07-18-izmir-2",
-  "2026-07-26-izmir-3"
+  "2026-07-26-izmir-3",
+  "2026-08-03-bursa-1"
  ],
- "erken_gec_delta_ema": 4.102,
- "son_atak_delta_ema": 1.847,
- "son_guncelleme": "2026-07-26-izmir-3",
+ "erken_gec_delta_ema": 3.921,
+ "son_atak_delta_ema": 1.893,
+ "son_guncelleme": "2026-08-03-bursa-1",
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

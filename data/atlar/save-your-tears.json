@@ -1,6 +1,6 @@
 {
  "ad": "SAVE YOUR TEARS",
- "kosu_sayisi": 11,
+ "kosu_sayisi": 12,
  "islenen_yarislar": [
   "2025-04-19-izmir-2-backfill",
   "2025-06-02-bursa-1-backfill",
@@ -12,11 +12,12 @@
   "2026-05-26-kocaeli-8-backfill",
   "2026-07-09-kocaeli-3",
   "2026-07-17-bursa-2",
-  "2026-07-27-bursa-5"
+  "2026-07-27-bursa-5",
+  "2026-08-03-bursa-5"
  ],
- "erken_gec_delta_ema": 0.13,
- "son_guncelleme": "2026-07-27-bursa-5",
- "son_atak_delta_ema": -0.51,
+ "erken_gec_delta_ema": -0.209,
+ "son_guncelleme": "2026-08-03-bursa-5",
+ "son_atak_delta_ema": -0.357,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

@@ -1,6 +1,6 @@
 {
  "ad": "DİDİ LAZİ",
- "kosu_sayisi": 8,
+ "kosu_sayisi": 9,
  "islenen_yarislar": [
   "2025-04-18-bursa-9-backfill",
   "2025-05-02-bursa-6-backfill",
@@ -9,10 +9,12 @@
   "2025-10-13-bursa-1-backfill",
   "2025-10-27-bursa-3-backfill",
   "2025-11-07-bursa-5-backfill",
-  "2026-07-17-bursa-10"
+  "2026-07-17-bursa-10",
+  "2026-08-03-bursa-9"
  ],
- "erken_gec_delta_ema": 0.841,
- "son_guncelleme": "2026-07-17-bursa-10",
- "son_atak_delta_ema": 0.606,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.239,
+ "son_guncelleme": "2026-08-03-bursa-9",
+ "son_atak_delta_ema": 1.624,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

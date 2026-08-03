@@ -1,0 +1,16 @@
+{
+ "ad": "RHAEGAL",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-09-15-sanliurfa-9-backfill",
+  "2025-12-01-sanliurfa-4-backfill",
+  "2025-12-24-sanliurfa-3-backfill",
+  "2026-01-14-sanliurfa-8-backfill",
+  "2026-08-03-elazig-6"
+ ],
+ "erken_gec_delta_ema": 0.304,
+ "son_atak_delta_ema": 0.403,
+ "son_guncelleme": "2026-08-03-elazig-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

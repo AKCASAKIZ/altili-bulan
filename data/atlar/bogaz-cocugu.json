@@ -1,0 +1,25 @@
+{
+ "ad": "BOĞAZ ÇOCUĞU",
+ "kosu_sayisi": 14,
+ "islenen_yarislar": [
+  "2025-01-24-antalya-6-backfill",
+  "2025-02-11-antalya-2-backfill",
+  "2025-03-07-antalya-4-backfill",
+  "2025-05-31-ankara-7-backfill",
+  "2025-06-30-bursa-7-backfill",
+  "2025-07-19-ankara-7-backfill",
+  "2025-08-28-ankara-6-backfill",
+  "2025-09-21-istanbul-6-backfill",
+  "2025-10-08-istanbul-7-backfill",
+  "2025-11-08-ankara-7-backfill",
+  "2025-12-16-antalya-6-backfill",
+  "2026-06-15-bursa-6-backfill",
+  "2026-06-29-bursa-6-backfill",
+  "2026-08-03-bursa-6"
+ ],
+ "erken_gec_delta_ema": 3.458,
+ "son_atak_delta_ema": 4.165,
+ "son_guncelleme": "2026-08-03-bursa-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

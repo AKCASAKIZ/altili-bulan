@@ -1,6 +1,6 @@
 {
  "ad": "CANASİLİM",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-03-03-bursa-5-backfill",
   "2025-03-14-bursa-5-backfill",
@@ -16,11 +16,12 @@
   "2026-05-04-bursa-6-backfill",
   "2026-07-18-izmir-2-backfill",
   "2026-07-18-izmir-2",
-  "2026-07-28-kocaeli-2"
+  "2026-07-28-kocaeli-2",
+  "2026-08-03-bursa-1"
  ],
- "erken_gec_delta_ema": 1.98,
- "son_guncelleme": "2026-07-28-kocaeli-2",
- "son_atak_delta_ema": 0.598,
+ "erken_gec_delta_ema": 0.936,
+ "son_guncelleme": "2026-08-03-bursa-1",
+ "son_atak_delta_ema": -0.481,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }
