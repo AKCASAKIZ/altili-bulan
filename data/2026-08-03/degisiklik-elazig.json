@@ -1,0 +1,139 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.40",
+   "metin": "1. Koşu: CANDIA (4) kilo 58 → 58 +0.40",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.10",
+   "metin": "1. Koşu: MORRIGAN (11) kilo 58 → 58 +0.10",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "60",
+   "yeni": "60 +0.10",
+   "metin": "2. Koşu: RUHİNAZ (4) kilo 60 → 60 +0.10",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +2.00",
+   "metin": "2. Koşu: ALGHABRA (5) kilo 56 → 56 +2.00",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.50",
+   "metin": "2. Koşu: MAVİ DAMLA (6) kilo 53 → 53 +1.50",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "2. Koşu: NARLIGÖL (7) kilo 54 → 54 +2.00",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.50",
+   "metin": "3. Koşu: EFRUZKIZI (10) kilo 53 → 53 +1.50",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "3. Koşu: KARACA DÜNYA (11) kilo 55 → 55 +2.00",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.80",
+   "metin": "3. Koşu: KİRAZLI (12) kilo 54 → 54 +1.80",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "3. Koşu: BİRÇEKIZ (13) kilo 52 → 52 +2.00",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "DREAM CHASER",
+   "yeni": "DREAM CHASER (Koşmaz)",
+   "metin": "6. Koşu: DREAM CHASER (11) KOŞMAZ",
+   "ts": "2026-08-03 16:05 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "BAŞ ALP KG DB",
+   "yeni": "BAŞ ALP KG DB (Koşmaz)",
+   "metin": "8. Koşu: BAŞ ALP (2) KOŞMAZ",
+   "ts": "2026-08-03 16:05 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-03 16:05 UTC",
+ "sehir": "Elazığ",
+ "etkilenen": {
+  "6": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "8": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}

@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 8,
@@ -216,9 +216,144 @@
    "yeni": "57,5 +0.20",
    "metin": "6. Koşu: TARÇINKIZ (14) kilo 57,5 → 57,5 +0.20",
    "ts": "2026-08-03 13:27 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.70",
+   "metin": "7. Koşu: GREENLIFE (4) kilo 55 → 55 +1.70",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.10",
+   "metin": "7. Koşu: KRALİÇE NONİKA (5) kilo 55 → 55 +1.10",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.30",
+   "metin": "7. Koşu: WOLF WOMEN (6) kilo 55 → 55 +1.30",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.20",
+   "metin": "7. Koşu: PERHAPS (7) kilo 54 → 54 +1.20",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "7. Koşu: TEPEKIZI (8) kilo 54 → 54 +2.00",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.80",
+   "metin": "8. Koşu: ŞAHİNYÜREKLİ (3) kilo 57 → 57 +1.80",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "8. Koşu: ÇERKES ENVER (5) kilo 57 → 57 +0.20",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.90",
+   "metin": "8. Koşu: ALKATRAZ KUŞÇUSU (6) kilo 55 → 55 +0.90",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.90",
+   "metin": "8. Koşu: PAMİRALP (7) kilo 52 → 52 +1.90",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "8. Koşu: ZİRVE BEYİ (9) kilo 55 → 55 +2.00",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "AYDİNÇ KG DB SK SGKR",
+   "yeni": "AYDİNÇ KG DB SK SGKR (Koşmaz)",
+   "metin": "8. Koşu: AYDİNÇ (10) KOŞMAZ",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.70",
+   "metin": "9. Koşu: HANDSOME LAKE (9) kilo 57 → 57 +1.70",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "9. Koşu: SEDAT (10) kilo 57 → 57 +0.40",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.70",
+   "metin": "9. Koşu: ROZERYA (11) kilo 55 → 55 +1.70",
+   "ts": "2026-08-03 16:06 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.10",
+   "metin": "9. Koşu: TYATIR (12) kilo 53 → 53 +1.10",
+   "ts": "2026-08-03 16:06 UTC"
   }
  ],
- "guncelleme": "2026-08-03 13:27 UTC",
+ "guncelleme": "2026-08-03 16:06 UTC",
  "sehir": "Bursa",
  "etkilenen": {
   "8": [
