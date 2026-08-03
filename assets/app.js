@@ -1,7 +1,7 @@
 /* ===== Altılı Bulan v2 — puanlama motoru ===== */
 "use strict";
 
-/* --- 39 kriter (angle) tanımı. NOT: pct toplamı %173; ağırlıklar mutlak
+/* --- 41 kriter (angle) tanımı. NOT: pct toplamı %180; ağırlıklar mutlak
      ölçek olarak kullanılıyor, sıralamayı yalnızca göreli büyüklükleri etkiler.
      F4 istisna: puanı 0-100 merdiveni değil ham GP (0-120), katsayısı 0.25. --- */
 const ANGLES = [
@@ -43,6 +43,8 @@ const ANGLES = [
   { k: "F4", name: "Ham galop puanı (GP)", pct: 25.00, desc: "liderform Bülten Galop'taki GP değerinin kendisi — merdivene çevrilmeden, koşan her ata kendi puanı. Katsayı 0.25 olduğu için toplam puana doğrudan GP×0.25 katkı yapar (GP tipik olarak 0–120 arası, yani ~0–30 puan). F2 aynı veriyi yalnızca ilk 4 at için sıralamaya çevirir; F4 tüm kadroyu ve puanlar arasındaki gerçek farkı yansıtır. GP verisi olmayan atta puan hesaba katılmaz. Arşiv backtest'inde galop bülteni bulunmadığı için F2/F3 gibi F4 de kapalı geçer." },
   { k: "G1", name: "Sınıf düşüşü + geçen koşu favorisi", pct: 4.00, desc: "Atın bir önceki koşusundaki RAKİPLERİNİN handikap ortalaması bugünkü kadronun ortalama handikabından yüksekse (daha zorlu sınıftan iniyor) VE o koşuda AGF sıralamasında ilk 3'te ise 100, aksi halde 0. Veri arşivden (stats.json son6) gelir; arşivde bulunmayan atlarda atın kendi hp'si + ganyan ≤4,0 proxy'sine düşülür." },
   { k: "G2", name: "Kazanan profiline yakınlık (şart)", pct: 4.00, desc: "Aynı şartta (ırk · yaş · koşu cinsi · mesafe · pist) geçmişte KAZANAN atların profiline kaç kriterde uyduğu. Arşivden (data/arsiv/sartlar.json) kazananların kilo / kulvar / yaş / ganyan / AGF yüzdelikleri ve takı dağılımı çıkarılır — en çok 6 kriter. Bir kriter ancak atın değeri kazananların TİPİK bandındaysa (q25–q75; takıda: taşıdığı takının payı, o şartta en yaygın takının payının ≥%80'i) sağlanmış sayılır. Sağlanan kriter sayısı ≥5 → 100, 4 → 80, 3 → 60, 2 → 50, altı 0. Bugünkü kadroda herkeste aynı olan özellik (ör. tek yaşlı koşuda yaş) ayırt edici olmadığı için hesaba katılmaz; verisi olmayan kriter o at için hiç ölçülmez." },
+  { k: "G3", name: "Temiz favori (gizli eküri yok)", pct: 4.00, desc: "YALNIZCA bugünün AGF favorisinde işler. Aynı antrenörün o koşuda başka atı varsa, ya da sahiplerden biriyle aynı soyadlı FARKLI bir sahibin atı varsa (S.KAYA / K.KAYA — 'gizli eküri'), favori şüpheli sayılır. Arşiv: şüpheli favori %25,4 kazanıyor, temiz favori bazı %31,9 — endeks 0,80 (soyad eşleşmesinde 0,76) ve bu her hipodromda benzer. Temiz favori 100; şüpheli favori hipodrom endeksine göre 0/30/60. Aynı KİŞİNİN iki atı zaten açık eküridir, şüpheli sayılmaz." },
+  { k: "G4", name: "Eküri sürprizi (antrenörün diğer atı)", pct: 3.00, desc: "YALNIZCA AGF'de 5. ve gerisindeki, ama aynı antrenörün favorisi de aynı koşuda olan atlarda işler. Arşiv: bu atlar %4,53 kazanıyor, sürpriz bazı %3,78 — endeks 1,20. Favori tarafının aksine bu sinyal hipodroma göre gerçekten değişiyor (Bursa 1,39 · Diyarbakır 1,29 · Şanlıurfa 1,22 · Ankara 1,21 ↔ İstanbul 0,83), o yüzden puan şehir endeksinden okunur: ≥1,35 → 100, ≥1,15 → 70, ≥0,95 → 40, altı 0. İnce veride ülke geneline büzülür." },
   { k: "H1", name: "Piyasa desteği (AGF)", pct: 6.00, desc: "Bugünkü AGF (at grubu favorisi) yüzdesi en yüksek 5 at: 100,70,50,30,10. Piyasanın kolektif görüşü — TJK Yarış Gazetesi kesildiği için onun editör tahminlerinin (eski B6/B11 beslemesi) yerini alır. Veri programla birlikte günlük gelir, PDF gerektirmez." },
 ];
 const PRESET6 = ["A3", "B1", "B2", "B3", "B6", "B13"];
@@ -594,6 +596,65 @@ async function scoreLeg(leg, ctx) {
         if (sira && sira >= 5) {
           const e = endeks(h.meta?.jokey, 2, bazSur);
           if (e != null) h.scores.E5 = e >= 1.40 ? 100 : e >= 1.15 ? 70 : e >= 0.90 ? 40 : 0;
+        }
+      });
+    }
+
+    /* --- G3 / G4: "gizli eküri" ---
+     * Aynı ANTRENÖRÜN koşuda birden çok atı varsa ve biri AGF favorisiyse, o
+     * favori arşivde normal favoriden belirgin az kazanıyor (ülke geneli 0.80);
+     * aynı antrenörün yüksek ganyanlı atı ise beklenenden çok kazanıyor (1.20).
+     * İkinci mekanizma: farklı KİŞİLER ama aynı SOYADLI sahipler (S.KAYA /
+     * K.KAYA) — orada da favori 0.76'ya düşüyor, sürprizde sinyal yok.
+     *
+     * Endeks hipodrom bazında okunur ama ince veride ülke geneline büzülür.
+     * Ölçüm: favori tarafı her hipodromda benzer (0.76–0.91), sürpriz tarafı
+     * şehre göre gerçekten değişiyor (İstanbul 0.83 ↔ Bursa 1.39).
+     * İşaretleme mantığı scripts/build_stats.py `ekuri_isaretle` ile aynı
+     * olmalı — biri değişirse diğeri de değişmeli. */
+    const ek = stats.ekuri;
+    if (ek?.TOPLAM) {
+      const sehirAdi = ctx?.city || aktifSehirAdi();
+      const K = 60;
+      const endeksEk = (rol) => {
+        const t = ek.TOPLAM, c = ek[sehirAdi] || t;
+        if (!c.baz?.[rol] || !t.isaret?.[rol]) return null;
+        const ulkeOran = t.isaret[rol + 1] / t.isaret[rol];
+        const oran = (c.isaret[rol + 1] + K * ulkeOran) / (c.isaret[rol] + K);
+        const baz = c.baz[rol + 1] / c.baz[rol];
+        return baz ? oran / baz : null;
+      };
+      const soyadi = (s) => (s || "").trim().split(/\s+/).pop() || "";
+      const antSay = {}, soyGrup = {};
+      hs.forEach((h) => {
+        const a = (h.meta?.antrenor || "").trim();
+        if (a) (antSay[a] = antSay[a] || []).push(h);
+        const sy = soyadi(h.meta?.sahip);
+        if (sy.length >= 4) (soyGrup[sy] = soyGrup[sy] || []).push(h);
+      });
+      const favoriMi = (h) => agfSiraNo(h.meta?.agf) === 1;
+      const supheli = new Set(), ekuriSurpriz = new Set();
+      Object.values(antSay).forEach((liste) => {
+        if (liste.length < 2 || !liste.some(favoriMi)) return;
+        liste.forEach((h) => {
+          const s = agfSiraNo(h.meta?.agf);
+          if (s === 1) supheli.add(h);
+          else if (s && s >= 5) ekuriSurpriz.add(h);
+        });
+      });
+      Object.values(soyGrup).forEach((liste) => {
+        // aynı kişinin iki atı açık eküri sayılır, "gizli" değil
+        if (liste.length < 2 || new Set(liste.map((h) => h.meta?.sahip)).size < 2) return;
+        liste.forEach((h) => { if (favoriMi(h)) supheli.add(h); });
+      });
+
+      const eFav = endeksEk(0), eSur = endeksEk(2);
+      hs.forEach((h) => {
+        if (favoriMi(h) && eFav != null) {
+          h.scores.G3 = !supheli.has(h) ? 100 : eFav <= 0.85 ? 0 : eFav <= 0.95 ? 30 : 60;
+        }
+        if (ekuriSurpriz.has(h) && eSur != null) {
+          h.scores.G4 = eSur >= 1.35 ? 100 : eSur >= 1.15 ? 70 : eSur >= 0.95 ? 40 : 0;
         }
       });
     }
@@ -1813,7 +1874,7 @@ async function runBacktest(arsivden = false) {
 /* ==================== KATSAYI ÖNERİSİ (conditional logit) ==================== */
 /* Backtest verisiyle koşu-içi lojistik model eğitir: P(at kazanır) = exp(w·x) / Σ exp(w·x).
    Sadece otomatik puanlanan kriterler öğrenilebilir (diğerlerinin geçmiş puanı yok). */
-const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3", "E4", "E5", "F2", "F3", "F4", "H1"];
+const TUNABLE = ["A1", "A2", "A3", "B1", "B4", "B5", "B6", "B7", "B8", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "C4", "D1", "D2", "E1", "E2", "E3", "E4", "E5", "F2", "F3", "F4", "G3", "G4", "H1"];
 
 /* Bir ağırlık vektörünün koşu başına ortalama log-olabilirliği (0'a yakın = iyi).
    Rastgele tahminin değeri ln(1/kadro) — ortalama 10 atlı kadroda ≈ -2.30. */

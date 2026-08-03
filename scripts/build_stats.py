@@ -38,6 +38,7 @@ MIN_BEKLENTI = 25  # jokey beklenti tablosu için minimum ölçülebilir biniş 
 FAV_SIRA = 1       # AGF sıralamasında bu ve üstü "favoriye binmek" sayılır
 SUR_SIRA = 5       # AGF sıralamasında bu ve altı "sürprize binmek" sayılır
 BEKLENTI_MIN_KADRO = 6  # bu kadar attan az koşuda favori/sürpriz ayrımı anlamsız
+MIN_SOYAD = 4      # "gizli eküri" soyad eşleşmesinde en kısa anlamlı soyad
 MIN_KULVAR = 30    # kulvar hücresi için minimum start sayısı
 GUN90 = 90         # A1/B16 "başarılı sahip/antrenör" listesinin penceresi (gün)
 BOMBA_GANYAN = 10.0  # bu ganyan ve üstündeki galibiyet "sürpriz" sayılır (B11)
@@ -99,6 +100,52 @@ def agf_sira(s: str) -> int | None:
     return int(mm.group(1)) if mm else None
 
 
+def soyad(ad: str) -> str:
+    p = (ad or "").strip().split()
+    return p[-1] if p else ""
+
+
+def ekuri_isaretle(kostu: list) -> tuple[set, set]:
+    """G3/G4 — "gizli eküri" şüphesi taşıyan atları işaretler.
+
+    (a) Aynı ANTRENÖRÜN o koşuda birden çok atı varsa ve içlerinden biri AGF
+        favorisiyse: favori "şüpheli", aynı antrenörün AGF'de 5. ve gerisindeki
+        atları "eküri sürprizi" sayılır.
+    (b) Farklı KİŞİLER ama aynı SOYADLI sahipler (S.KAYA / K.KAYA) aynı koşuda
+        at koşturuyorsa, onların favorisi de "şüpheli" sayılır. Ölçümde bu
+        mekanizma yalnızca favori tarafında sinyal veriyor, sürprizde değil.
+
+    Dönen: (şüpheli favori id'leri, eküri sürprizi id'leri)"""
+    ant: dict[str, list] = {}
+    sah: dict[str, list] = {}
+    for h in kostu:
+        if h.get("antrenor"):
+            ant.setdefault(h["antrenor"], []).append(h)
+        s = h.get("sahip")
+        if s and len(soyad(s)) >= MIN_SOYAD:
+            sah.setdefault(soyad(s), []).append(h)
+
+    supheli, surpriz = set(), set()
+    for liste in ant.values():
+        if len(liste) < 2:
+            continue
+        if not any(agf_sira(h.get("agf")) == FAV_SIRA for h in liste):
+            continue
+        for h in liste:
+            s = agf_sira(h.get("agf"))
+            if s == FAV_SIRA:
+                supheli.add(id(h))
+            elif s and s >= SUR_SIRA:
+                surpriz.add(id(h))
+    for liste in sah.values():
+        if len(liste) < 2 or len({h["sahip"] for h in liste}) < 2:
+            continue          # aynı kişinin iki atı zaten açık eküri, "gizli" değil
+        for h in liste:
+            if agf_sira(h.get("agf")) == FAV_SIRA:
+                supheli.add(id(h))
+    return supheli, surpriz
+
+
 def esikler(puanlar: list[float]) -> list[float]:
     """A1/B16 için 'üst sıra' (100p) ve 'orta sıra' (60p) puan eşikleri."""
     if not puanlar:
@@ -126,7 +173,7 @@ def pencere90(ilk3: list, bitis: int) -> tuple[dict, dict]:
 
 def sizan_tablolar(jokey: dict, antrenor: dict, kulvar: dict,
                    ilk3: list, bitis: int, jbek: dict = None,
-                   jbaz: list = None) -> dict:
+                   jbaz: list = None, ekuri: dict = None) -> dict:
     """stats.json'un TÜM arşivden hesaplanan — yani geriye dönük puanlamada
     geleceği gören — tabloları: E1/E2 (jokey/antrenör), E3 (kulvar), A1/B16
     (90 günlük sahip/antrenör listesi). Burada `bitis` gününe kadar bilinen
@@ -146,6 +193,10 @@ def sizan_tablolar(jokey: dict, antrenor: dict, kulvar: dict,
                            if v[0] + v[2] >= MIN_BEKLENTI},
         # aynı sırayla tüm jokeylerin toplamı — beklenen oranın paydası
         "beklenti_baz": jbaz,
+        # G3/G4: şehir → {baz:[favN,favW,surN,surW], isaret:[...]}
+        # baz  = o hipodromun tüm favori/sürpriz atları (payda)
+        # isaret = eküri şüphesi taşıyanlar (pay). "TOPLAM" anahtarı ülke geneli.
+        "ekuri": ekuri or {},
         "jokey": {a: v for a, v in jokey.items() if v[0] >= MIN_JOKEY},
         "antrenor": {a: v for a, v in antrenor.items() if v[0] >= MIN_JOKEY},
         "kulvar": {k: c for k, c in
@@ -160,6 +211,15 @@ def main() -> None:
     jokey: dict[str, list] = {}
     jbek: dict[str, list] = {}   # E4/E5: [fav_biniş, fav_galibiyet, sür_biniş, sür_galibiyet]
     jbaz: list[int] = [0, 0, 0, 0]
+    # G3/G4 eküri tablosu: şehir → {"baz": [...4], "isaret": [...4]}
+    ekuri: dict[str, dict] = {}
+
+    def ek_say(sehir: str, alan: str, rol: int, win: int) -> None:
+        for k in (sehir, "TOPLAM"):
+            c = ekuri.setdefault(k, {"baz": [0, 0, 0, 0], "isaret": [0, 0, 0, 0]})
+            c[alan][rol] += 1
+            c[alan][rol + 1] += win
+
     antrenor: dict[str, list] = {}
     kulvar: dict[str, dict] = {}
     sahip_son: dict[str, list] = {}
@@ -180,7 +240,7 @@ def main() -> None:
         (AYLIK / f.name).write_text(
             json.dumps(sizan_tablolar(jokey, antrenor, kulvar, ilk3,
                                       int(f.stem.replace("-", "") + "01"),
-                                      jbek, jbaz),
+                                      jbek, jbaz, ekuri),
                        ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8")
         anlik += 1
@@ -208,6 +268,19 @@ def main() -> None:
                     # arşive sonradan eklendi; eski aylarda None kalır (G1 v1'e düşer).
                     hpler = [v for v in (sayi(h.get("h")) for h in kostu) if v]
                     hp_toplam, hp_n = sum(hpler), len(hpler)
+
+                    # G3/G4: gizli eküri sayaçları (kadro yeterince büyükse)
+                    if len(kostu) >= BEKLENTI_MIN_KADRO:
+                        supheli, ek_surpriz = ekuri_isaretle(kostu)
+                        for h in kostu:
+                            s = agf_sira(h.get("agf"))
+                            w = 1 if h["sira"] == 1 else 0
+                            rol = 0 if s == FAV_SIRA else 2 if (s and s >= SUR_SIRA) else None
+                            if rol is None:
+                                continue
+                            ek_say(sehir, "baz", rol, w)
+                            if (rol == 0 and id(h) in supheli) or (rol == 2 and id(h) in ek_surpriz):
+                                ek_say(sehir, "isaret", rol, w)
                     for h in kostu:
                         win = 1 if h["sira"] == 1 else 0
                         top3 = 1 if h["sira"] <= 3 else 0
@@ -287,7 +360,7 @@ def main() -> None:
     # o yüzden üst sınır son günün ertesi (son gün dahil olsun diye).
     son_ertesi = int((datetime.strptime(str(son_gun), "%Y%m%d")
                       + timedelta(days=1)).strftime("%Y%m%d"))
-    canli = sizan_tablolar(jokey, antrenor, kulvar, ilk3, son_ertesi, jbek, jbaz)
+    canli = sizan_tablolar(jokey, antrenor, kulvar, ilk3, son_ertesi, jbek, jbaz, ekuri)
 
     out = {
         "meta": {"gun": gun_sayisi, "kosu": kosu_sayisi, "son_gun": son_gun,
