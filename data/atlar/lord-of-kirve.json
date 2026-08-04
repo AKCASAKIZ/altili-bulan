@@ -8,5 +8,6 @@
  "gecmis_dolduruldu": true,
  "erken_gec_delta_ema": 2.15,
  "son_guncelleme": "2026-08-03-elazig-7",
- "son_atak_delta_ema": 3
+ "son_atak_delta_ema": 3,
+ "gecmis_surum": 2
 }
