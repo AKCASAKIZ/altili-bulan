@@ -1,6 +1,6 @@
 {
  "ad": "KATICESUR",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2025-05-01-ankara-6-backfill",
   "2025-06-19-ankara-7-backfill",
@@ -17,11 +17,12 @@
   "2026-06-09-ankara-4-backfill",
   "2026-07-14-ankara-9-backfill",
   "2026-07-14-ankara-9",
-  "2026-07-30-ankara-2"
+  "2026-07-30-ankara-2",
+  "2026-08-04-ankara-1"
  ],
- "erken_gec_delta_ema": 3.937,
- "son_guncelleme": "2026-07-30-ankara-2",
- "son_atak_delta_ema": 0.747,
+ "erken_gec_delta_ema": 3.956,
+ "son_guncelleme": "2026-08-04-ankara-1",
+ "son_atak_delta_ema": 2.023,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

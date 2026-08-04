@@ -1,6 +1,6 @@
 {
  "ad": "ŞEN AKYÜZ",
- "kosu_sayisi": 14,
+ "kosu_sayisi": 15,
  "islenen_yarislar": [
   "2025-02-21-izmir-3-backfill",
   "2025-06-17-kocaeli-6-backfill",
@@ -15,11 +15,12 @@
   "2026-05-15-bursa-4-backfill",
   "2026-05-29-bursa-6-backfill",
   "2026-06-07-izmir-1-backfill",
-  "2026-07-25-ankara-6"
+  "2026-07-25-ankara-6",
+  "2026-08-04-kocaeli-3"
  ],
- "erken_gec_delta_ema": 0.989,
- "son_atak_delta_ema": 0.324,
- "son_guncelleme": "2026-07-25-ankara-6",
+ "erken_gec_delta_ema": 0.542,
+ "son_atak_delta_ema": 0.227,
+ "son_guncelleme": "2026-08-04-kocaeli-3",
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

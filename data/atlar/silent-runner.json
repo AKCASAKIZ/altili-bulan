@@ -1,11 +1,13 @@
 {
  "ad": "SILENT RUNNER",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-23-ankara-5"
+  "2026-07-23-ankara-5",
+  "2026-08-04-ankara-8"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": 2.0,
- "son_atak_delta_ema": 3,
- "son_guncelleme": "2026-07-23-ankara-5"
+ "erken_gec_delta_ema": 1.4,
+ "son_atak_delta_ema": 2.1,
+ "son_guncelleme": "2026-08-04-ankara-8",
+ "gecmis_surum": 2
 }

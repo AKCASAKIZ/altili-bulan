@@ -1,0 +1,13 @@
+{
+ "ad": "TOYGARLI",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-08-04-ankara-7-backfill",
+  "2026-08-04-ankara-7"
+ ],
+ "erken_gec_delta_ema": 0.0,
+ "son_atak_delta_ema": 0.0,
+ "son_guncelleme": "2026-08-04-ankara-7",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

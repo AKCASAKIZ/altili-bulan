@@ -1,0 +1,18 @@
+{
+ "ad": "RÜZGAR NUR",
+ "kosu_sayisi": 7,
+ "islenen_yarislar": [
+  "2025-04-24-izmir-9-backfill",
+  "2025-11-13-izmir-8-backfill",
+  "2026-01-01-izmir-3-backfill",
+  "2026-01-09-izmir-2-backfill",
+  "2026-01-25-izmir-4-backfill",
+  "2026-07-06-bursa-8-backfill",
+  "2026-08-04-kocaeli-9"
+ ],
+ "erken_gec_delta_ema": 0.032,
+ "son_atak_delta_ema": 0.017,
+ "son_guncelleme": "2026-08-04-kocaeli-9",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

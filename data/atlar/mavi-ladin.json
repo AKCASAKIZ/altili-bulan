@@ -1,0 +1,24 @@
+{
+ "ad": "MAVİ LADİN",
+ "kosu_sayisi": 13,
+ "islenen_yarislar": [
+  "2025-11-07-bursa-2-backfill",
+  "2025-11-26-istanbul-1-backfill",
+  "2025-12-19-bursa-4-backfill",
+  "2025-12-29-bursa-7-backfill",
+  "2026-01-26-bursa-3-backfill",
+  "2026-03-09-bursa-8-backfill",
+  "2026-03-26-izmir-7-backfill",
+  "2026-04-14-kocaeli-5-backfill",
+  "2026-04-23-izmir-4-backfill",
+  "2026-05-16-izmir-4-backfill",
+  "2026-05-28-ankara-2-backfill",
+  "2026-06-05-istanbul-8-backfill",
+  "2026-08-04-kocaeli-9"
+ ],
+ "erken_gec_delta_ema": 0.818,
+ "son_atak_delta_ema": 0.549,
+ "son_guncelleme": "2026-08-04-kocaeli-9",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

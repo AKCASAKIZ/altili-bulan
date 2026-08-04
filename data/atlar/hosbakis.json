@@ -1,6 +1,6 @@
 {
  "ad": "HOŞBAKIŞ",
- "kosu_sayisi": 7,
+ "kosu_sayisi": 8,
  "islenen_yarislar": [
   "2026-05-03-istanbul-1-backfill",
   "2026-05-16-ankara-4-backfill",
@@ -8,9 +8,11 @@
   "2026-06-16-ankara-5-backfill",
   "2026-06-26-ankara-9-backfill",
   "2026-07-09-ankara-4-backfill",
-  "2026-07-09-ankara-4"
+  "2026-07-09-ankara-4",
+  "2026-08-04-ankara-6"
  ],
- "erken_gec_delta_ema": 4.19,
- "son_guncelleme": "2026-07-09-ankara-4",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.783,
+ "son_guncelleme": "2026-08-04-ankara-6",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 0
 }

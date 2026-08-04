@@ -1,14 +1,16 @@
 {
  "ad": "ŞANKUT HATUN",
- "kosu_sayisi": 5,
+ "kosu_sayisi": 6,
  "islenen_yarislar": [
   "2025-08-01-bursa-6-backfill",
   "2025-08-25-bursa-2-backfill",
   "2025-10-02-izmir-7-backfill",
   "2026-07-06-bursa-8-backfill",
-  "2026-07-14-kocaeli-8"
+  "2026-07-14-kocaeli-8",
+  "2026-08-04-kocaeli-9"
  ],
- "erken_gec_delta_ema": 2.726,
- "son_guncelleme": "2026-07-14-kocaeli-8",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 3.408,
+ "son_guncelleme": "2026-08-04-kocaeli-9",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 7
 }

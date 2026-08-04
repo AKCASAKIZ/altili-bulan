@@ -1,6 +1,6 @@
 {
  "ad": "BEST ALYA",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2025-10-09-ankara-4-backfill",
   "2025-10-23-ankara-4-backfill",
@@ -17,10 +17,12 @@
   "2026-05-24-adana-4-backfill",
   "2026-06-18-ankara-3-backfill",
   "2026-07-14-ankara-4-backfill",
-  "2026-07-14-ankara-4"
+  "2026-07-14-ankara-4",
+  "2026-08-04-ankara-8"
  ],
- "erken_gec_delta_ema": -1.606,
- "son_atak_delta_ema": -1.65,
- "son_guncelleme": "2026-07-14-ankara-4",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -1.424,
+ "son_atak_delta_ema": -1.455,
+ "son_guncelleme": "2026-08-04-ankara-8",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

@@ -1,6 +1,6 @@
 {
  "ad": "FUNDO",
- "kosu_sayisi": 17,
+ "kosu_sayisi": 18,
  "islenen_yarislar": [
   "2025-02-18-adana-4-backfill",
   "2025-03-04-adana-4-backfill",
@@ -18,10 +18,12 @@
   "2026-05-31-adana-5-backfill",
   "2026-06-30-kocaeli-8-backfill",
   "2026-07-15-istanbul-3",
-  "2026-07-23-kocaeli-8"
+  "2026-07-23-kocaeli-8",
+  "2026-08-04-kocaeli-5"
  ],
- "erken_gec_delta_ema": 1.031,
- "son_guncelleme": "2026-07-23-kocaeli-8",
- "son_atak_delta_ema": 0.3,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 0.722,
+ "son_guncelleme": "2026-08-04-kocaeli-5",
+ "son_atak_delta_ema": 0.21,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

@@ -1,16 +1,17 @@
 {
  "ad": "ÖZERDEM",
- "kosu_sayisi": 5,
+ "kosu_sayisi": 6,
  "islenen_yarislar": [
   "2025-06-08-adana-3-backfill",
   "2025-07-18-istanbul-8-backfill",
   "2026-05-01-bursa-2-backfill",
   "2026-07-17-istanbul-10",
-  "2026-07-24-bursa-10"
+  "2026-07-24-bursa-10",
+  "2026-08-04-ankara-1"
  ],
- "erken_gec_delta_ema": 4.349,
- "son_atak_delta_ema": 1.537,
- "son_guncelleme": "2026-07-24-bursa-10",
+ "erken_gec_delta_ema": 2.444,
+ "son_atak_delta_ema": 0.476,
+ "son_guncelleme": "2026-08-04-ankara-1",
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

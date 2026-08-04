@@ -1,6 +1,6 @@
 {
  "ad": "FISTIK ÇAMI",
- "kosu_sayisi": 11,
+ "kosu_sayisi": 12,
  "islenen_yarislar": [
   "2025-06-06-istanbul-9-backfill",
   "2025-07-11-istanbul-9-backfill",
@@ -12,11 +12,12 @@
   "2026-01-10-istanbul-3-backfill",
   "2026-03-11-istanbul-4-backfill",
   "2026-04-04-istanbul-5-backfill",
-  "2026-07-26-istanbul-9"
+  "2026-07-26-istanbul-9",
+  "2026-08-04-kocaeli-9"
  ],
- "erken_gec_delta_ema": -0.139,
- "son_atak_delta_ema": -0.355,
- "son_guncelleme": "2026-07-26-istanbul-9",
+ "erken_gec_delta_ema": 0.353,
+ "son_atak_delta_ema": 0.052,
+ "son_guncelleme": "2026-08-04-kocaeli-9",
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

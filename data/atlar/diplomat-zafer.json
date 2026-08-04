@@ -1,6 +1,6 @@
 {
  "ad": "DİPLOMAT ZAFER",
- "kosu_sayisi": 11,
+ "kosu_sayisi": 12,
  "islenen_yarislar": [
   "2026-02-19-izmir-1-backfill",
   "2026-02-26-antalya-2-backfill",
@@ -12,10 +12,12 @@
   "2026-06-26-kocaeli-6-backfill",
   "2026-07-06-bursa-5-backfill",
   "2026-07-20-bursa-6-backfill",
-  "2026-07-20-bursa-6"
+  "2026-07-20-bursa-6",
+  "2026-08-04-kocaeli-2"
  ],
- "erken_gec_delta_ema": 0.166,
- "son_guncelleme": "2026-07-20-bursa-6",
- "son_atak_delta_ema": 0.707,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 0.716,
+ "son_guncelleme": "2026-08-04-kocaeli-2",
+ "son_atak_delta_ema": 0.795,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

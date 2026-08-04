@@ -1,14 +1,16 @@
 {
  "ad": "UĞURLU BEBEK",
- "kosu_sayisi": 5,
+ "kosu_sayisi": 6,
  "islenen_yarislar": [
   "2026-05-23-ankara-8-backfill",
   "2026-05-30-ankara-7-backfill",
   "2026-06-13-ankara-6-backfill",
   "2026-07-09-ankara-4",
-  "2026-07-23-ankara-8"
+  "2026-07-23-ankara-8",
+  "2026-08-04-ankara-6"
  ],
- "erken_gec_delta_ema": -0.56,
- "son_guncelleme": "2026-07-23-ankara-8",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.242,
+ "son_guncelleme": "2026-08-04-ankara-6",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": -1
 }
