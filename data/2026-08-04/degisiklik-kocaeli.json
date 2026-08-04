@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -108,9 +108,99 @@
    "yeni": "İLAYTAY KG SK (Koşmaz)",
    "metin": "5. Koşu: İLAYTAY (3) KOŞMAZ",
    "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +2.00",
+   "metin": "5. Koşu: NUMANIM (6) kilo 55,5 → 55,5 +2.00",
+   "ts": "2026-08-04 18:05 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +0.10",
+   "metin": "5. Koşu: SAADINSOYU (7) kilo 54,5 → 54,5 +0.10",
+   "ts": "2026-08-04 18:05 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "E.D.ÖKTEN",
+   "yeni": "HA.GÖKÇE",
+   "metin": "5. Koşu: BABA ENİS (9) jokey E.D.ÖKTEN → HA.GÖKÇE",
+   "ts": "2026-08-04 18:05 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "6. Koşu: BLUE WAVE (7) kilo 52 → 52 +2.00",
+   "ts": "2026-08-04 18:05 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +1.70",
+   "metin": "6. Koşu: QUİEREME (8) kilo 50 → 50 +1.70",
+   "ts": "2026-08-04 18:05 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +1.90",
+   "metin": "6. Koşu: SWISS DANCER (9) kilo 50 → 50 +1.90",
+   "ts": "2026-08-04 18:05 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.00",
+   "metin": "8. Koşu: GUREGH (2) kilo 57 → 57 +1.00",
+   "ts": "2026-08-04 18:05 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "8. Koşu: ASLAN İBO (6) kilo 55 → 55 +2.00",
+   "ts": "2026-08-04 18:05 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.50",
+   "metin": "8. Koşu: PAPETTİ (7) kilo 55 → 55 +1.50",
+   "ts": "2026-08-04 18:05 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "8. Koşu: YÜKENOĞLU (8) kilo 54 → 54 +2.00",
+   "ts": "2026-08-04 18:05 UTC"
   }
  ],
- "guncelleme": "2026-08-04 16:09 UTC",
+ "guncelleme": "2026-08-04 18:05 UTC",
  "sehir": "Kocaeli",
  "etkilenen": {
   "1": [
@@ -128,6 +218,9 @@
    "B13",
    "B5",
    "B6",
+   "C1",
+   "C2",
+   "C3",
    "D1",
    "D2",
    "E1",
