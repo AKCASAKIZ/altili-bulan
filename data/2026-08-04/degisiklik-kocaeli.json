@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -27,9 +27,90 @@
    "yeni": "ROCK IRON DB SK (Koşmaz)",
    "metin": "5. Koşu: ROCK IRON (12) KOŞMAZ",
    "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "1. Koşu: MY BRAVE GIRL (6) kilo 57 → 57 +0.10",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.80",
+   "metin": "1. Koşu: SABIRLI RIBELLA (7) kilo 57 → 57 +0.80",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "1. Koşu: SOLAR DUCHESS (8) kilo 57 → 57 +0.20",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +1.90",
+   "metin": "2. Koşu: KINOWA GIRL (6) kilo 50 → 50 +1.90",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.70",
+   "metin": "3. Koşu: RÜZGAR UĞUR (5) kilo 55 → 55 +1.70",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.20",
+   "metin": "3. Koşu: ALASER (6) kilo 55 → 55 +1.20",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "4. Koşu: BITTERSWEET (1) kilo 57 → 57 +0.50",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "4. Koşu: GOLDEN RHYTHM (3) kilo 57 → 57 +0.20",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "İLAYTAY KG SK",
+   "yeni": "İLAYTAY KG SK (Koşmaz)",
+   "metin": "5. Koşu: İLAYTAY (3) KOŞMAZ",
+   "ts": "2026-08-04 16:09 UTC"
   }
  ],
- "guncelleme": "2026-08-04 13:53 UTC",
+ "guncelleme": "2026-08-04 16:09 UTC",
  "sehir": "Kocaeli",
  "etkilenen": {
   "1": [

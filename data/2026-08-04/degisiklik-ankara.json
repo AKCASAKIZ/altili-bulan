@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -234,9 +234,72 @@
    "yeni": "MY ROSECEM DB SKG SK (Koşmaz)",
    "metin": "8. Koşu: MY ROSECEM (14) KOŞMAZ",
    "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "7. Koşu: OVAM CAN (8) kilo 57 → 57 +0.10",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50,5",
+   "yeni": "50,5 +1.10",
+   "metin": "8. Koşu: FEMALE WARRIOR (8) kilo 50,5 → 50,5 +1.10",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "8. Koşu: HIGH HILLS (9) kilo 52 → 52 +2.00",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +2.00",
+   "metin": "8. Koşu: SILENT RUNNER (10) kilo 51 → 51 +2.00",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "8. Koşu: MALCOOBA (11) kilo 52 → 52 +2.00",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +1.80",
+   "metin": "8. Koşu: SEQUOIA (12) kilo 50 → 50 +1.80",
+   "ts": "2026-08-04 16:09 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "8. Koşu: FASTEST ÇINAR (13) kilo 53 → 53 +2.00",
+   "ts": "2026-08-04 16:09 UTC"
   }
  ],
- "guncelleme": "2026-08-04 13:53 UTC",
+ "guncelleme": "2026-08-04 16:09 UTC",
  "sehir": "Ankara",
  "etkilenen": {
   "2": [
