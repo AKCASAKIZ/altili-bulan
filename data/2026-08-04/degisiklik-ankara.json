@@ -1,0 +1,74 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "1. Koşu: SANCAKALAN (7) kilo 57 → 57 +0.20",
+   "ts": "2026-08-04 11:47 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +0.70",
+   "metin": "1. Koşu: KATICESUR (9) kilo 54,5 → 54,5 +0.70",
+   "ts": "2026-08-04 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.50",
+   "metin": "2. Koşu: EQUAL GOLD (4) kilo 55 → 55 +1.50",
+   "ts": "2026-08-04 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.40",
+   "metin": "2. Koşu: QUEEN ÇINAR (5) kilo 55 → 55 +1.40",
+   "ts": "2026-08-04 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.80",
+   "metin": "2. Koşu: DİREN KAPORTACI (6) kilo 53 → 53 +1.80",
+   "ts": "2026-08-04 11:47 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "STRONG CAT GIRL KG K DB",
+   "yeni": "STRONG CAT GIRL KG K DB (Koşmaz)",
+   "metin": "2. Koşu: STRONG CAT GIRL (7) KOŞMAZ",
+   "ts": "2026-08-04 11:47 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-04 11:47 UTC",
+ "sehir": "Ankara",
+ "etkilenen": {
+  "2": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
