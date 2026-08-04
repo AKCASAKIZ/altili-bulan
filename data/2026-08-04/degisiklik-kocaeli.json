@@ -1,0 +1,58 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "CARITA LINDA SK",
+   "yeni": "CARITA LINDA SK (Koşmaz)",
+   "metin": "1. Koşu: CARITA LINDA (1) KOŞMAZ",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "MUSHU KG K",
+   "yeni": "MUSHU KG K (Koşmaz)",
+   "metin": "1. Koşu: MUSHU (5) KOŞMAZ",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "ROCK IRON DB SK",
+   "yeni": "ROCK IRON DB SK (Koşmaz)",
+   "metin": "5. Koşu: ROCK IRON (12) KOŞMAZ",
+   "ts": "2026-08-04 13:53 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-04 13:53 UTC",
+ "sehir": "Kocaeli",
+ "etkilenen": {
+  "1": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "5": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}

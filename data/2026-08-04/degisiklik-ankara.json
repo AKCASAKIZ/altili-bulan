@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -54,12 +54,214 @@
    "yeni": "STRONG CAT GIRL KG K DB (Koşmaz)",
    "metin": "2. Koşu: STRONG CAT GIRL (7) KOŞMAZ",
    "ts": "2026-08-04 11:47 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "ATLIBİTİRİM SK",
+   "yeni": "ATLIBİTİRİM SK (Koşmaz)",
+   "metin": "3. Koşu: ATLIBİTİRİM (1) KOŞMAZ",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.20",
+   "metin": "3. Koşu: DENİZAĞA (2) kilo 57 → 57 +1.20",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "3. Koşu: KARASERHAN (5) kilo 57 → 57 +0.20",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "3. Koşu: KURT BAKIŞLI (6) kilo 57 → 57 +0.40",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "63",
+   "yeni": "63 +0.30",
+   "metin": "4. Koşu: SİAN (1) kilo 63 → 63 +0.30",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +0.60",
+   "metin": "4. Koşu: ŞEKER ASLAN (5) kilo 56,5 → 56,5 +0.60",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.50",
+   "metin": "4. Koşu: SIEGREICH (8) kilo 52 → 52 +1.50",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "4. Koşu: SIMAZE (9) kilo 52 → 52 +2.00",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.60",
+   "metin": "5. Koşu: KARAMAÇABEY (5) kilo 53 → 53 +1.60",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.40",
+   "metin": "5. Koşu: ÇAPGUR (6) kilo 55 → 55 +0.40",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.30",
+   "metin": "5. Koşu: JOYOUS GIRL (7) kilo 52 → 52 +1.30",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "5. Koşu: SECTUMSEMPRA (8) kilo 53 → 53 +2.00",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.60",
+   "metin": "6. Koşu: ANKARA GÜZELİ (2) kilo 55 → 55 +1.60",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.10",
+   "metin": "6. Koşu: ESENLİ RÜZGARI (3) kilo 55 → 55 +1.10",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.10",
+   "metin": "6. Koşu: TANKIZI (5) kilo 55 → 55 +1.10",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.40",
+   "metin": "6. Koşu: UĞURLU BEBEK (6) kilo 55 → 55 +0.40",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "6. Koşu: ALSAYFA (7) kilo 54 → 54 +2.00",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "6. Koşu: ALUDRA (8) kilo 54 → 54 +2.00",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.60",
+   "metin": "6. Koşu: KÜÇÜK NAİME (9) kilo 54 → 54 +1.60",
+   "ts": "2026-08-04 13:53 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "MY ROSECEM DB SKG SK",
+   "yeni": "MY ROSECEM DB SKG SK (Koşmaz)",
+   "metin": "8. Koşu: MY ROSECEM (14) KOŞMAZ",
+   "ts": "2026-08-04 13:53 UTC"
   }
  ],
- "guncelleme": "2026-08-04 11:47 UTC",
+ "guncelleme": "2026-08-04 13:53 UTC",
  "sehir": "Ankara",
  "etkilenen": {
   "2": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "3": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "8": [
    "B13",
    "B5",
    "B6",
