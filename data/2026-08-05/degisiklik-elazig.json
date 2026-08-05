@@ -1,0 +1,101 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.70",
+   "metin": "1. Koşu: ADALAR (1) kilo 57 → 57 +0.70",
+   "ts": "2026-08-05 15:32 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "1. Koşu: BALTIMORE (4) kilo 57 → 57 +2.00",
+   "ts": "2026-08-05 15:32 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "1. Koşu: BUZLUBADEM (6) kilo 57 → 57 +0.50",
+   "ts": "2026-08-05 15:32 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.70",
+   "metin": "1. Koşu: DEMİRŞİMŞEK KIZI (7) kilo 57 → 57 +0.70",
+   "ts": "2026-08-05 15:32 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "1. Koşu: NEHİRAFRA (10) kilo 57 → 57 +0.10",
+   "ts": "2026-08-05 15:32 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "1. Koşu: TAÇSIZKIZ (12) kilo 57 → 57 +0.50",
+   "ts": "2026-08-05 15:32 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +0.80",
+   "metin": "2. Koşu: TURBOKOLİK (8) kilo 55,5 → 55,5 +0.80",
+   "ts": "2026-08-05 15:32 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "2. Koşu: POWER OF RED (9) kilo 52 → 52 +2.00",
+   "ts": "2026-08-05 15:32 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "NERGİS SULTAN SK",
+   "yeni": "NERGİS SULTAN SK (Koşmaz)",
+   "metin": "8. Koşu: NERGİS SULTAN (9) KOŞMAZ",
+   "ts": "2026-08-05 15:32 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-05 15:32 UTC",
+ "sehir": "Elazığ",
+ "etkilenen": {
+  "8": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}

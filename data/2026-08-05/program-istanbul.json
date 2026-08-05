@@ -1010,7 +1010,7 @@
     },
     {
      "no": 7,
-     "ad": "ŞEKER PİRAYE KG SK",
+     "ad": "ŞEKER PİRAYE KG SK (Koşmaz)",
      "yas": "3y d  d",
      "baba": "MENDIP (USA)",
      "anne": "AWESOME APHRA (USA)",
@@ -1134,7 +1134,7 @@
      "yas": "4y a  a",
      "baba": "UÇANBEY",
      "anne": "ESLEM SULTAN",
-     "kilo": "54",
+     "kilo": "54 +1.60",
      "jokey": "G.ÖZÇELİK",
      "sahip": "AZİZ YILMAZ",
      "antrenor": "C.TURAN",
@@ -1152,7 +1152,7 @@
      "yas": "4y k  a",
      "baba": "MADRABAZ",
      "anne": "İLKADIM",
-     "kilo": "54",
+     "kilo": "54 +2.00",
      "jokey": "A.SÖZEN",
      "sahip": "MEHMET BULANIK",
      "antrenor": "KE.YILMAZ",
@@ -1170,7 +1170,7 @@
      "yas": "4y a  a",
      "baba": "AYABAKAN",
      "anne": "ÖZBAKIR",
-     "kilo": "54",
+     "kilo": "54 +1.00",
      "jokey": "V.ABİŞ",
      "sahip": "BİRKAN BORA AKARSU",
      "antrenor": "MİR.İPEK",
@@ -1254,7 +1254,7 @@
      "yas": "3y a  d",
      "baba": "CANYOLDAŞ",
      "anne": "RİJBİN",
-     "kilo": "55",
+     "kilo": "55 +0.50",
      "jokey": "F.S.M.SANSAR",
      "sahip": "MUHAMMET ÖZTÜRK",
      "antrenor": "H.GÜNEY",
@@ -1272,7 +1272,7 @@
      "yas": "3y a  d",
      "baba": "KAYAYÜREKLİ",
      "anne": "ALTIN SEVDA",
-     "kilo": "55",
+     "kilo": "55 +1.00",
      "jokey": "A.SÖZEN",
      "sahip": "HAYRİ YILDIRIM",
      "antrenor": "HAY.YILDIRIM",
@@ -1308,7 +1308,7 @@
      "yas": "3y k  d",
      "baba": "KAYAYÜREKLİ",
      "anne": "BEYAZ KELEBEK",
-     "kilo": "54",
+     "kilo": "54 +2.00",
      "jokey": "M.KAYA",
      "sahip": "MÜSLÜM ŞEKER",
      "antrenor": "RAM. KAYA",
@@ -1344,7 +1344,7 @@
      "yas": "3y a  d",
      "baba": "MADRABAZ",
      "anne": "HÜRGÖNÜL",
-     "kilo": "53",
+     "kilo": "53 +2.00",
      "jokey": "B.AKÇAY",
      "sahip": "ADNAN TAHAOĞLU",
      "antrenor": "S.KERESTECİ",
@@ -1362,7 +1362,7 @@
      "yas": "3y k  d",
      "baba": "GELİBOLU",
      "anne": "RAZYANA",
-     "kilo": "54",
+     "kilo": "54 +1.80",
      "jokey": "M.S.ÇELİK",
      "sahip": "SABA ÇİL",
      "antrenor": "C.TURAN",
@@ -1376,7 +1376,7 @@
     }
    ],
    "ikramiye": "975.000 TL",
-   "odemeler": "8. ÇİFTE Bu koşudan başlar GANYAN İKİLİ SIRALI İKİLİ ÜÇLÜ BAHİS PLASE SABİT GANYAN SABİT İKİLİ SABİT SIRALI İKİLİ SABİT İLK 2 SABİT İLK 3 SABİT İLK 4"
+   "odemeler": "8. ÇİFTE Bu koşudan başlar GANYAN İKİLİ SIRALI İKİLİ ÜÇLÜ BAHİS PLASE"
   },
   {
    "no": 9,
@@ -1411,7 +1411,7 @@
      "yas": "2y a  d",
      "baba": "SADLER'S JOY (USA)",
      "anne": "FLY WINGS",
-     "kilo": "57",
+     "kilo": "57 +0.30",
      "jokey": "M.G.ARSLAN",
      "sahip": "AYTEKİN ŞEN",
      "antrenor": "M.ÖZYİĞİT",
@@ -1447,7 +1447,7 @@
      "yas": "2y d  d",
      "baba": "CLOTH OF STARS (IRE)",
      "anne": "VICTHUR (IRE)",
-     "kilo": "57",
+     "kilo": "57 +0.90",
      "jokey": "S.BOYRAZ",
      "sahip": "HAYRULLAH DOĞAN",
      "antrenor": "C.TURAN",
@@ -1558,7 +1558,7 @@
      "kilo": "57",
      "jokey": "H.KARATAŞ",
      "sahip": "ERAY KOKTAY",
-     "antrenor": "S.YANIK",
+     "antrenor": "At Sahibi",
      "st": "7",
      "agf": "%32.71(1)",
      "h": "",
@@ -1587,7 +1587,7 @@
     }
    ],
    "ikramiye": "600.000 TL",
-   "odemeler": "GANYAN İKİLİ SIRALI İKİLİ ÜÇLÜ BAHİS PLASE PLASE İKİLİ SABİT GANYAN SABİT İKİLİ SABİT SIRALI İKİLİ SABİT İLK 2 SABİT İLK 3 SABİT İLK 4"
+   "odemeler": "GANYAN İKİLİ SIRALI İKİLİ ÜÇLÜ BAHİS PLASE PLASE İKİLİ"
   }
  ]
 }
