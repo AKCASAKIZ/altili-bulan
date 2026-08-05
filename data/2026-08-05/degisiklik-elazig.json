@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -81,9 +81,162 @@
    "yeni": "NERGİS SULTAN SK (Koşmaz)",
    "metin": "8. Koşu: NERGİS SULTAN (9) KOŞMAZ",
    "ts": "2026-08-05 15:32 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "3. Koşu: JUNIOR CURA (9) kilo 54 → 54 +2.00",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +2.00",
+   "metin": "3. Koşu: SAKLIKAPI (10) kilo 53,5 → 53,5 +2.00",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +1.40",
+   "metin": "3. Koşu: YILAN DERELİ (11) kilo 53,5 → 53,5 +1.40",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.70",
+   "metin": "4. Koşu: ALELADE HEJA (2) kilo 54 → 54 +0.70",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.70",
+   "metin": "4. Koşu: BÜYÜK HATUN (3) kilo 57 → 57 +0.70",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.70",
+   "metin": "4. Koşu: CAN ARAP (4) kilo 54 → 54 +0.70",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "4. Koşu: ÇİĞDEMGELİN (5) kilo 57 → 57 +2.00",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "4. Koşu: EMOŞUN KIZI (6) kilo 57 → 57 +0.30",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "4. Koşu: MISRADA (7) kilo 57 → 57 +0.50",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.60",
+   "metin": "4. Koşu: NALDÖKEN FIRTINASI (8) kilo 57 → 57 +0.60",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +0.50",
+   "metin": "5. Koşu: ENESBERKE (2) kilo 56,5 → 56,5 +0.50",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +2.00",
+   "metin": "5. Koşu: NALIN SESİ (4) kilo 55,5 → 55,5 +2.00",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "5. Koşu: GÜZELBİLGE (6) kilo 54 → 54 +2.00",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "5. Koşu: ŞUBAT BEY (7) kilo 54 → 54 +2.00",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +2.00",
+   "metin": "5. Koşu: GÜNÇİÇEK (8) kilo 53,5 → 53,5 +2.00",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: BİLGİNURKIZI (9) kilo 52 → 52 +2.00",
+   "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: YÜREKOĞLU (10) kilo 52 → 52 +2.00",
+   "ts": "2026-08-05 17:06 UTC"
   }
  ],
- "guncelleme": "2026-08-05 15:32 UTC",
+ "guncelleme": "2026-08-05 17:06 UTC",
  "sehir": "Elazığ",
  "etkilenen": {
   "8": [
