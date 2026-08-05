@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -72,9 +72,144 @@
    "yeni": "55 +2.00",
    "metin": "2. Koşu: KING MUSTAFA (9) kilo 55 → 55 +2.00",
    "ts": "2026-08-05 11:38 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.00",
+   "metin": "3. Koşu: SECRET PATH (5) kilo 56 → 56 +1.00",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53,5",
+   "yeni": "53,5 +2.00",
+   "metin": "3. Koşu: TRAİDORA (6) kilo 53,5 → 53,5 +2.00",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +0.80",
+   "metin": "3. Koşu: THIS CHARMING MAN (7) kilo 54,5 → 54,5 +0.80",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +1.10",
+   "metin": "4. Koşu: TAM TIME (3) kilo 54,5 → 54,5 +1.10",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57,5",
+   "yeni": "57,5 +0.40",
+   "metin": "4. Koşu: CAN SADİ (4) kilo 57,5 → 57,5 +0.40",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.70",
+   "metin": "4. Koşu: START UP (6) kilo 55 → 55 +0.70",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +2.00",
+   "metin": "4. Koşu: ŞAFAKATEŞ (8) kilo 50 → 50 +2.00",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.20",
+   "metin": "4. Koşu: KING OF THE WIN (9) kilo 52 → 52 +1.20",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "4. Koşu: UNREAL ENGINE (10) kilo 52 → 52 +2.00",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.00",
+   "metin": "5. Koşu: EQUALIZER (4) kilo 53 → 53 +1.00",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "5. Koşu: LADY ŞAMPİRA (6) kilo 57 → 57 +0.40",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.20",
+   "metin": "5. Koşu: ROYAL ANGEL (9) kilo 57 → 57 +1.20",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.20",
+   "metin": "6. Koşu: MISFIT (4) kilo 56 → 56 +0.20",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.20",
+   "metin": "6. Koşu: LOQUİTA (6) kilo 54 → 54 +0.20",
+   "ts": "2026-08-05 13:20 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "6. Koşu: ŞEKER PİRAYE (7) kilo 54 → 54 +2.00",
+   "ts": "2026-08-05 13:20 UTC"
   }
  ],
- "guncelleme": "2026-08-05 11:38 UTC",
+ "guncelleme": "2026-08-05 13:20 UTC",
  "sehir": "İstanbul",
  "etkilenen": {}
 }
