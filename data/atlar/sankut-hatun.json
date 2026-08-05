@@ -12,5 +12,6 @@
  "erken_gec_delta_ema": 3.408,
  "son_guncelleme": "2026-08-04-kocaeli-9",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": 7
+ "son_atak_delta_ema": 7,
+ "gecmis_surum": 2
 }
