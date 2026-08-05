@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -234,9 +234,108 @@
    "yeni": "52 +2.00",
    "metin": "5. Koşu: YÜREKOĞLU (10) kilo 52 → 52 +2.00",
    "ts": "2026-08-05 17:06 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +1.40",
+   "metin": "7. Koşu: SMALL BURGAZ (6) kilo 58 → 58 +1.40",
+   "ts": "2026-08-05 18:55 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.40",
+   "metin": "7. Koşu: MERT PAŞA (8) kilo 55 → 55 +1.40",
+   "ts": "2026-08-05 18:55 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "7. Koşu: BARAKHAN (9) kilo 55 → 55 +2.00",
+   "ts": "2026-08-05 18:55 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +2.00",
+   "metin": "7. Koşu: SWORD OF GOLD (10) kilo 56 → 56 +2.00",
+   "ts": "2026-08-05 18:55 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "M.E.DOĞAN",
+   "yeni": "A.AKDEMİR",
+   "metin": "7. Koşu: NAKAH (11) jokey M.E.DOĞAN → A.AKDEMİR",
+   "ts": "2026-08-05 18:55 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.70",
+   "metin": "7. Koşu: NAKAH (11) kilo 54 → 54 +1.70",
+   "ts": "2026-08-05 18:55 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.50",
+   "metin": "7. Koşu: BLOODSHOT (12) kilo 54 → 54 +0.50",
+   "ts": "2026-08-05 18:55 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.10",
+   "metin": "8. Koşu: ALFERDA (3) kilo 54 → 54 +1.10",
+   "ts": "2026-08-05 18:55 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "8. Koşu: ELİFİN IŞIĞI (5) kilo 57 → 57 +0.30",
+   "ts": "2026-08-05 18:55 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "8. Koşu: MİR ATHENA (8) kilo 57 → 57 +2.00",
+   "ts": "2026-08-05 18:55 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.00",
+   "metin": "8. Koşu: SEYYARETAY (10) kilo 57 → 57 +1.00",
+   "ts": "2026-08-05 18:55 UTC"
   }
  ],
- "guncelleme": "2026-08-05 17:06 UTC",
+ "guncelleme": "2026-08-05 18:55 UTC",
  "sehir": "Elazığ",
  "etkilenen": {
   "8": [
@@ -249,6 +348,12 @@
    "E2",
    "E3",
    "G1"
+  ],
+  "7": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
   ]
  }
 }
