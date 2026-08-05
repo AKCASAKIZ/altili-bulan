@@ -1,0 +1,80 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.80",
+   "metin": "1. Koşu: HASHEYBETLİ (3) kilo 56 → 56 +0.80",
+   "ts": "2026-08-05 11:38 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.90",
+   "metin": "1. Koşu: METİNCİM (4) kilo 56 → 56 +0.90",
+   "ts": "2026-08-05 11:38 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "1. Koşu: SAADIN KASIRGASI (5) kilo 57 → 57 +0.50",
+   "ts": "2026-08-05 11:38 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.70",
+   "metin": "1. Koşu: UFKUN ÖTESİ (6) kilo 56 → 56 +0.70",
+   "ts": "2026-08-05 11:38 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "1. Koşu: SURUÇLU MEMO (7) kilo 52 → 52 +2.00",
+   "ts": "2026-08-05 11:38 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +2.00",
+   "metin": "1. Koşu: ÖZGÜNBERK (8) kilo 50 → 50 +2.00",
+   "ts": "2026-08-05 11:38 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.30",
+   "metin": "1. Koşu: GRİNGO (9) kilo 52 → 52 +1.30",
+   "ts": "2026-08-05 11:38 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "2. Koşu: KING MUSTAFA (9) kilo 55 → 55 +2.00",
+   "ts": "2026-08-05 11:38 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-05 11:38 UTC",
+ "sehir": "İstanbul",
+ "etkilenen": {}
+}
