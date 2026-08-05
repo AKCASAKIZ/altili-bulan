@@ -1,6 +1,6 @@
 {
  "ad": "EXTENSIVE",
- "kosu_sayisi": 16,
+ "kosu_sayisi": 17,
  "islenen_yarislar": [
   "2025-07-12-izmir-5-backfill",
   "2025-07-27-izmir-3-backfill",
@@ -17,10 +17,12 @@
   "2026-06-08-bursa-7-backfill",
   "2026-06-29-bursa-2-backfill",
   "2026-07-20-bursa-8-backfill",
-  "2026-07-20-bursa-8"
+  "2026-07-20-bursa-8",
+  "2026-08-05-istanbul-2"
  ],
- "erken_gec_delta_ema": 1.142,
- "son_guncelleme": "2026-07-20-bursa-8",
- "son_atak_delta_ema": 0.47,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.149,
+ "son_guncelleme": "2026-08-05-istanbul-2",
+ "son_atak_delta_ema": 1.529,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

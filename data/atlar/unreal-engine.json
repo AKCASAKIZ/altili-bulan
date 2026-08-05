@@ -1,6 +1,6 @@
 {
  "ad": "UNREAL ENGINE",
- "kosu_sayisi": 11,
+ "kosu_sayisi": 12,
  "islenen_yarislar": [
   "2025-01-21-antalya-6-backfill",
   "2025-02-13-antalya-6-backfill",
@@ -12,10 +12,12 @@
   "2026-05-20-istanbul-6-backfill",
   "2026-07-08-istanbul-1-backfill",
   "2026-07-16-ankara-1-backfill",
-  "2026-07-16-ankara-1"
+  "2026-07-16-ankara-1",
+  "2026-08-05-istanbul-4"
  ],
- "erken_gec_delta_ema": 2.105,
- "son_atak_delta_ema": 1.141,
- "son_guncelleme": "2026-07-16-ankara-1",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.823,
+ "son_atak_delta_ema": 3.199,
+ "son_guncelleme": "2026-08-05-istanbul-4",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

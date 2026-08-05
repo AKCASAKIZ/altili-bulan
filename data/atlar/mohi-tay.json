@@ -1,12 +1,14 @@
 {
  "ad": "MOHİ TAY",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2026-07-13-elazig-2-backfill",
-  "2026-07-13-elazig-2"
+  "2026-07-13-elazig-2",
+  "2026-08-05-elazig-2"
  ],
- "erken_gec_delta_ema": -0.5,
- "son_atak_delta_ema": -1.0,
- "son_guncelleme": "2026-07-13-elazig-2",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.05,
+ "son_atak_delta_ema": -0.7,
+ "son_guncelleme": "2026-08-05-elazig-2",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

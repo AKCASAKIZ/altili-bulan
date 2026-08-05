@@ -1,0 +1,23 @@
+{
+ "ad": "SMALL BURGAZ",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-09-03-elazig-3-backfill",
+  "2025-12-15-sanliurfa-3-backfill",
+  "2025-12-29-sanliurfa-8-backfill",
+  "2026-01-07-sanliurfa-5-backfill",
+  "2026-01-24-adana-6-backfill",
+  "2026-01-31-adana-6-backfill",
+  "2026-02-17-adana-6-backfill",
+  "2026-03-08-adana-8-backfill",
+  "2026-06-29-elazig-2-backfill",
+  "2026-07-06-elazig-2-backfill",
+  "2026-08-05-elazig-7-backfill",
+  "2026-08-05-elazig-7"
+ ],
+ "erken_gec_delta_ema": 0.171,
+ "son_atak_delta_ema": -0.391,
+ "son_guncelleme": "2026-08-05-elazig-7",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

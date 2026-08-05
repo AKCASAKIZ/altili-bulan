@@ -1,6 +1,6 @@
 {
  "ad": "SAADIN KASIRGASI",
- "kosu_sayisi": 17,
+ "kosu_sayisi": 18,
  "islenen_yarislar": [
   "2025-10-02-izmir-5-backfill",
   "2025-10-15-istanbul-4-backfill",
@@ -18,10 +18,12 @@
   "2026-04-16-ankara-5-backfill",
   "2026-05-17-istanbul-2-backfill",
   "2026-07-17-istanbul-10",
-  "2026-07-22-istanbul-5"
+  "2026-07-22-istanbul-5",
+  "2026-08-05-istanbul-1"
  ],
- "erken_gec_delta_ema": 0.412,
- "son_atak_delta_ema": 1.154,
- "son_guncelleme": "2026-07-22-istanbul-5",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.612,
+ "son_atak_delta_ema": 0.808,
+ "son_guncelleme": "2026-08-05-istanbul-1",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

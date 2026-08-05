@@ -1,0 +1,17 @@
+{
+ "ad": "PAYİDAR KAYA",
+ "kosu_sayisi": 6,
+ "islenen_yarislar": [
+  "2025-10-22-elazig-7-backfill",
+  "2025-11-05-elazig-5-backfill",
+  "2026-01-19-sanliurfa-7-backfill",
+  "2026-03-16-sanliurfa-4-backfill",
+  "2026-03-25-sanliurfa-5-backfill",
+  "2026-08-05-elazig-6"
+ ],
+ "erken_gec_delta_ema": 5.127,
+ "son_atak_delta_ema": 2.73,
+ "son_guncelleme": "2026-08-05-elazig-6",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}
