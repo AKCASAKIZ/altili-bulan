@@ -1,0 +1,56 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "1. Koşu: AHVES (1) kilo 57 → 57 +0.30",
+   "ts": "2026-08-06 11:49 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.40",
+   "metin": "1. Koşu: LİKYA KIZI (4) kilo 57 → 57 +0.40",
+   "ts": "2026-08-06 11:49 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "2. Koşu: RADAGIA (5) kilo 57 → 57 +0.20",
+   "ts": "2026-08-06 11:49 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "QUEEN Z KG K DB",
+   "yeni": "QUEEN Z KG K DB (Koşmaz)",
+   "metin": "8. Koşu: QUEEN Z (10) KOŞMAZ",
+   "ts": "2026-08-06 11:49 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-06 11:49 UTC",
+ "sehir": "Ankara",
+ "etkilenen": {
+  "8": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
