@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -36,9 +36,117 @@
    "yeni": "QUEEN Z KG K DB (Koşmaz)",
    "metin": "8. Koşu: QUEEN Z (10) KOŞMAZ",
    "ts": "2026-08-06 11:49 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.90",
+   "metin": "3. Koşu: WHISPER OF VICTORY (5) kilo 54 → 54 +1.90",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "3. Koşu: MAVİ TOPAZ (6) kilo 57 → 57 +0.20",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +1.00",
+   "metin": "3. Koşu: BACK TO GLORY (7) kilo 50 → 50 +1.00",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.20",
+   "metin": "4. Koşu: BAŞARAN TAY (5) kilo 58 → 58 +0.20",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "V.ABİŞ",
+   "yeni": "A.KURŞUN",
+   "metin": "4. Koşu: ABBAS BEY (7) jokey V.ABİŞ → A.KURŞUN",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "4. Koşu: ABBAS BEY (7) kilo 57 → 57 +0.20",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.50",
+   "metin": "4. Koşu: BORDOMAVİ (8) kilo 56 → 56 +0.50",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "5. Koşu: ENFES TAMER (7) kilo 55 → 55 +2.00",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +0.20",
+   "metin": "5. Koşu: GAZNELİ (9) kilo 52 → 52 +0.20",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "5. Koşu: KRAKEN (10) kilo 52 → 52 +2.00",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.40",
+   "metin": "6. Koşu: ROSAS DEL ROSEDAL (7) kilo 55 → 55 +0.40",
+   "ts": "2026-08-06 13:48 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "6. Koşu: MAXIMAND (8) kilo 54 → 54 +2.00",
+   "ts": "2026-08-06 13:48 UTC"
   }
  ],
- "guncelleme": "2026-08-06 11:49 UTC",
+ "guncelleme": "2026-08-06 13:48 UTC",
  "sehir": "Ankara",
  "etkilenen": {
   "8": [
@@ -51,6 +159,12 @@
    "E2",
    "E3",
    "G1"
+  ],
+  "4": [
+   "C1",
+   "C2",
+   "C3",
+   "E1"
   ]
  }
 }

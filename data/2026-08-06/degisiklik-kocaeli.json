@@ -1,0 +1,29 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "DENİZKIZ KG DB",
+   "yeni": "DENİZKIZ KG DB (Koşmaz)",
+   "metin": "1. Koşu: DENİZKIZ (4) KOŞMAZ",
+   "ts": "2026-08-06 13:48 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-06 13:48 UTC",
+ "sehir": "Kocaeli",
+ "etkilenen": {
+  "1": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}
