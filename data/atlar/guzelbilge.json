@@ -10,5 +10,6 @@
  "erken_gec_delta_ema": 5.084,
  "son_guncelleme": "2026-08-05-elazig-5",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": 7
+ "son_atak_delta_ema": 7,
+ "gecmis_surum": 2
 }
