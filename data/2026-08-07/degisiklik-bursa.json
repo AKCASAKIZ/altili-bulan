@@ -1,5 +1,5 @@
 {
- "surum": 4,
+ "surum": 5,
  "olaylar": [
   {
    "kosu": 1,
@@ -333,9 +333,99 @@
    "yeni": "53 +1.40",
    "metin": "8. Koşu: RECUERDAME (7) kilo 53 → 53 +1.40",
    "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 9,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.30",
+   "metin": "9. Koşu: TENACIOUS KHAN (4) kilo 58 → 58 +0.30",
+   "ts": "2026-08-07 15:13 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +0.40",
+   "metin": "10. Koşu: SYRENA (2) kilo 56,5 → 56,5 +0.40",
+   "ts": "2026-08-07 15:13 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57,5",
+   "yeni": "57,5 +0.25",
+   "metin": "10. Koşu: LADY GLORIA (4) kilo 57,5 → 57,5 +0.25",
+   "ts": "2026-08-07 15:13 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +1.15",
+   "metin": "10. Koşu: ERİKDALI (6) kilo 56,5 → 56,5 +1.15",
+   "ts": "2026-08-07 15:13 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +2.00",
+   "metin": "10. Koşu: FESTIVAL BOUND (7) kilo 56,5 → 56,5 +2.00",
+   "ts": "2026-08-07 15:13 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.20",
+   "metin": "10. Koşu: BAHRİYELİ ÇİKOK (9) kilo 56 → 56 +0.20",
+   "ts": "2026-08-07 15:13 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52,5",
+   "yeni": "52,5 +1.00",
+   "metin": "10. Koşu: APOLLON (10) kilo 52,5 → 52,5 +1.00",
+   "ts": "2026-08-07 15:13 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +0.70",
+   "metin": "10. Koşu: MY LIFE FIRE (11) kilo 55,5 → 55,5 +0.70",
+   "ts": "2026-08-07 15:13 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +0.50",
+   "metin": "10. Koşu: NAMASTE (13) kilo 54,5 → 54,5 +0.50",
+   "ts": "2026-08-07 15:13 UTC"
+  },
+  {
+   "kosu": 10,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +1.25",
+   "metin": "10. Koşu: LABELLA CASADORA (14) kilo 50 → 50 +1.25",
+   "ts": "2026-08-07 15:13 UTC"
   }
  ],
- "guncelleme": "2026-08-07 14:19 UTC",
+ "guncelleme": "2026-08-07 15:13 UTC",
  "sehir": "Bursa",
  "etkilenen": {}
 }
