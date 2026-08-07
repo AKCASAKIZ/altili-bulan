@@ -1,0 +1,89 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.90",
+   "metin": "1. Koşu: BAŞIMIN BELASI (1) kilo 53 → 53 +0.90",
+   "ts": "2026-08-07 11:08 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.30",
+   "metin": "1. Koşu: MADAME ADA (7) kilo 55 → 55 +1.30",
+   "ts": "2026-08-07 11:08 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "1. Koşu: QOUNTM CAT (8) kilo 53 → 53 +2.00",
+   "ts": "2026-08-07 11:08 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.30",
+   "metin": "1. Koşu: SOME JEWEL (9) kilo 55 → 55 +0.30",
+   "ts": "2026-08-07 11:08 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "60",
+   "yeni": "60 +0.10",
+   "metin": "2. Koşu: LAMBERHURST (3) kilo 60 → 60 +0.10",
+   "ts": "2026-08-07 11:08 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58",
+   "yeni": "58 +0.50",
+   "metin": "2. Koşu: LEJUR (4) kilo 58 → 58 +0.50",
+   "ts": "2026-08-07 11:08 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "2. Koşu: SUPER CHIRON (5) kilo 55 → 55 +2.00",
+   "ts": "2026-08-07 11:08 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.90",
+   "metin": "2. Koşu: ÇİKOK AĞA (6) kilo 54 → 54 +0.90",
+   "ts": "2026-08-07 11:08 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.25",
+   "metin": "2. Koşu: ULUBEY (9) kilo 56 → 56 +1.25",
+   "ts": "2026-08-07 11:08 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-07 11:08 UTC",
+ "sehir": "Bursa",
+ "etkilenen": {}
+}
