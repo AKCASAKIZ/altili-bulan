@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -144,9 +144,63 @@
    "yeni": "T.YILDIZ",
    "metin": "5. Koşu: ÖZGÜNDEN (12) jokey M.KEÇECİ → T.YILDIZ",
    "ts": "2026-08-07 15:13 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "60",
+   "yeni": "60 +0.30",
+   "metin": "4. Koşu: TERCAN HAN (2) kilo 60 → 60 +0.30",
+   "ts": "2026-08-07 16:10 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +0.90",
+   "metin": "4. Koşu: HIZIRTAY (7) kilo 52 → 52 +0.90",
+   "ts": "2026-08-07 16:10 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.60",
+   "metin": "4. Koşu: BABA MESUT (8) kilo 52 → 52 +1.60",
+   "ts": "2026-08-07 16:10 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "4. Koşu: ÇİFTEHAN (9) kilo 52 → 52 +2.00",
+   "ts": "2026-08-07 16:10 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +1.00",
+   "metin": "4. Koşu: OLGUN VEDAT (12) kilo 55,5 → 55,5 +1.00",
+   "ts": "2026-08-07 16:10 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.00",
+   "metin": "4. Koşu: İLKUTHAN (15) kilo 52 → 52 +1.00",
+   "ts": "2026-08-07 16:10 UTC"
   }
  ],
- "guncelleme": "2026-08-07 15:13 UTC",
+ "guncelleme": "2026-08-07 16:10 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "2": [
