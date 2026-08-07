@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -180,9 +180,72 @@
    "yeni": "52 +1.20",
    "metin": "4. Koşu: GRAVITY OF LOVE (6) kilo 52 → 52 +1.20",
    "ts": "2026-08-07 11:58 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "5. Koşu: DAĞ YONCASI (10) kilo 55 → 55 +2.00",
+   "ts": "2026-08-07 13:10 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.10",
+   "metin": "5. Koşu: DAĞLAROĞLU KIZI (11) kilo 56 → 56 +1.10",
+   "ts": "2026-08-07 13:10 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.40",
+   "metin": "6. Koşu: KABALBEYİ (4) kilo 55 → 55 +0.40",
+   "ts": "2026-08-07 13:10 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +1.30",
+   "metin": "6. Koşu: DEVRİZAMAN (6) kilo 54 → 54 +1.30",
+   "ts": "2026-08-07 13:10 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.40",
+   "metin": "6. Koşu: AFRİKA ATEŞİ (7) kilo 53 → 53 +1.40",
+   "ts": "2026-08-07 13:10 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.60",
+   "metin": "6. Koşu: DEVRAN BEY (8) kilo 53 → 53 +0.60",
+   "ts": "2026-08-07 13:10 UTC"
+  },
+  {
+   "kosu": 6,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "6. Koşu: SAVAŞÇI BEDİR (9) kilo 55 → 55 +2.00",
+   "ts": "2026-08-07 13:10 UTC"
   }
  ],
- "guncelleme": "2026-08-07 11:58 UTC",
+ "guncelleme": "2026-08-07 13:10 UTC",
  "sehir": "Bursa",
  "etkilenen": {}
 }
