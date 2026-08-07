@@ -1,6 +1,6 @@
 {
  "ad": "ODABAŞI",
- "kosu_sayisi": 18,
+ "kosu_sayisi": 19,
  "islenen_yarislar": [
   "2025-04-22-antalya-4-backfill",
   "2025-07-03-kocaeli-9-backfill",
@@ -19,11 +19,12 @@
   "2026-05-03-adana-6-backfill",
   "2026-07-09-kocaeli-4",
   "2026-07-23-kocaeli-8",
-  "2026-07-28-kocaeli-2"
+  "2026-07-28-kocaeli-2",
+  "2026-08-06-kocaeli-4"
  ],
- "erken_gec_delta_ema": 2.138,
- "son_guncelleme": "2026-07-28-kocaeli-2",
- "son_atak_delta_ema": 1.05,
+ "erken_gec_delta_ema": 1.647,
+ "son_guncelleme": "2026-08-06-kocaeli-4",
+ "son_atak_delta_ema": 0.435,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

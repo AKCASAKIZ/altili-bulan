@@ -1,6 +1,6 @@
 {
  "ad": "SMART CHILDREN",
- "kosu_sayisi": 15,
+ "kosu_sayisi": 16,
  "islenen_yarislar": [
   "2025-01-21-adana-4-backfill",
   "2025-02-11-adana-6-backfill",
@@ -16,11 +16,12 @@
   "2026-06-13-ankara-5-backfill",
   "2026-07-09-ankara-7-backfill",
   "2026-07-09-ankara-7",
-  "2026-07-25-ankara-3"
+  "2026-07-25-ankara-3",
+  "2026-08-06-ankara-3"
  ],
- "erken_gec_delta_ema": 0.598,
- "son_guncelleme": "2026-07-25-ankara-3",
- "son_atak_delta_ema": -0.432,
+ "erken_gec_delta_ema": -0.331,
+ "son_guncelleme": "2026-08-06-ankara-3",
+ "son_atak_delta_ema": -1.202,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

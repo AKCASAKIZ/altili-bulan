@@ -1,0 +1,15 @@
+{
+ "ad": "BİNBİR FATİH",
+ "kosu_sayisi": 4,
+ "islenen_yarislar": [
+  "2026-01-15-antalya-2-backfill",
+  "2026-02-05-antalya-2-backfill",
+  "2026-03-24-antalya-2-backfill",
+  "2026-08-06-ankara-5"
+ ],
+ "erken_gec_delta_ema": -1.087,
+ "son_atak_delta_ema": -2.1,
+ "son_guncelleme": "2026-08-06-ankara-5",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

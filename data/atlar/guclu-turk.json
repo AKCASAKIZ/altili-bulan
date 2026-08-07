@@ -1,0 +1,23 @@
+{
+ "ad": "GÜÇLÜ TÜRK",
+ "kosu_sayisi": 12,
+ "islenen_yarislar": [
+  "2025-01-28-adana-6-backfill",
+  "2025-02-11-adana-4-backfill",
+  "2025-04-08-adana-3-backfill",
+  "2025-05-29-ankara-3-backfill",
+  "2025-06-17-ankara-5-backfill",
+  "2025-10-16-ankara-7-backfill",
+  "2025-11-29-adana-4-backfill",
+  "2026-01-03-adana-3-backfill",
+  "2026-01-17-adana-1-backfill",
+  "2026-02-17-adana-4-backfill",
+  "2026-03-24-adana-6-backfill",
+  "2026-08-06-ankara-3"
+ ],
+ "erken_gec_delta_ema": 1.34,
+ "son_atak_delta_ema": 1.608,
+ "son_guncelleme": "2026-08-06-ankara-3",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

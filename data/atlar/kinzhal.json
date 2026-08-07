@@ -1,11 +1,15 @@
 {
  "ad": "KINZHAL",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2026-07-15-istanbul-9-backfill",
-  "2026-07-15-istanbul-9"
+  "2026-07-15-istanbul-9",
+  "2026-08-06-ankara-2-backfill",
+  "2026-08-06-ankara-2"
  ],
  "erken_gec_delta_ema": 2.0,
- "son_guncelleme": "2026-07-15-istanbul-9",
- "gecmis_dolduruldu": true
+ "son_guncelleme": "2026-08-06-ankara-2",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 3.51,
+ "gecmis_surum": 2
 }

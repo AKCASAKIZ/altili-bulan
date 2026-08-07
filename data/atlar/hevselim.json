@@ -1,13 +1,15 @@
 {
  "ad": "HEVSELİM",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2026-06-11-kocaeli-3-backfill",
   "2026-06-18-kocaeli-1-backfill",
   "2026-07-09-kocaeli-1",
-  "2026-07-23-kocaeli-1"
+  "2026-07-23-kocaeli-1",
+  "2026-08-06-ankara-7"
  ],
- "erken_gec_delta_ema": -0.083,
- "son_guncelleme": "2026-07-23-kocaeli-1",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 0.392,
+ "son_guncelleme": "2026-08-06-ankara-7",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": 2
 }

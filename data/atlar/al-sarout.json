@@ -1,6 +1,6 @@
 {
  "ad": "AL SAROUT",
- "kosu_sayisi": 7,
+ "kosu_sayisi": 8,
  "islenen_yarislar": [
   "2025-11-29-istanbul-2-backfill",
   "2025-12-27-istanbul-3-backfill",
@@ -8,10 +8,12 @@
   "2026-06-23-kocaeli-5-backfill",
   "2026-07-07-kocaeli-2-backfill",
   "2026-07-21-kocaeli-2-backfill",
-  "2026-07-21-kocaeli-2"
+  "2026-07-21-kocaeli-2",
+  "2026-08-06-kocaeli-2"
  ],
- "erken_gec_delta_ema": -0.125,
- "son_guncelleme": "2026-07-21-kocaeli-2",
+ "erken_gec_delta_ema": 0.212,
+ "son_guncelleme": "2026-08-06-kocaeli-2",
  "son_atak_delta_ema": 0.0,
- "gecmis_dolduruldu": true
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }
