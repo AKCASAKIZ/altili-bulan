@@ -1,5 +1,5 @@
 {
- "surum": 4,
+ "surum": 5,
  "olaylar": [
   {
    "kosu": 1,
@@ -324,9 +324,81 @@
    "yeni": "52,5 +1.50",
    "metin": "6. Koşu: SAADGIRL (12) kilo 52,5 → 52,5 +1.50",
    "ts": "2026-08-07 17:10 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.70",
+   "metin": "7. Koşu: WHITEWALKERS (2) kilo 54 → 54 +0.70",
+   "ts": "2026-08-07 18:04 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "7. Koşu: EGOISTA (3) kilo 54 → 54 +2.00",
+   "ts": "2026-08-07 18:04 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54,5",
+   "yeni": "54,5 +1.60",
+   "metin": "7. Koşu: SİLÜET (4) kilo 54,5 → 54,5 +1.60",
+   "ts": "2026-08-07 18:04 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "7. Koşu: SECRET OF DRAGON (5) kilo 54 → 54 +2.00",
+   "ts": "2026-08-07 18:04 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +1.20",
+   "metin": "7. Koşu: O BİR VAHŞİ (6) kilo 51 → 51 +1.20",
+   "ts": "2026-08-07 18:04 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "8. Koşu: ARABIAN NIGHTS (1) kilo 57 → 57 +0.20",
+   "ts": "2026-08-07 18:04 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "8. Koşu: DOĞAN HANIM (10) kilo 52 → 52 +2.00",
+   "ts": "2026-08-07 18:04 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.70",
+   "metin": "8. Koşu: MAŞİDE (13) kilo 55 → 55 +1.70",
+   "ts": "2026-08-07 18:04 UTC"
   }
  ],
- "guncelleme": "2026-08-07 17:10 UTC",
+ "guncelleme": "2026-08-07 18:04 UTC",
  "sehir": "İstanbul",
  "etkilenen": {
   "2": [
