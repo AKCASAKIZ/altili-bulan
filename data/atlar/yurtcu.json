@@ -1,14 +1,15 @@
 {
  "ad": "YURTÇU",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2026-05-31-adana-1-backfill",
   "2026-07-30-kocaeli-3-backfill",
-  "2026-07-30-kocaeli-3"
+  "2026-07-30-kocaeli-3",
+  "2026-08-07-istanbul-3"
  ],
- "erken_gec_delta_ema": 2.265,
- "son_atak_delta_ema": 3.49,
- "son_guncelleme": "2026-07-30-kocaeli-3",
+ "erken_gec_delta_ema": 1.735,
+ "son_atak_delta_ema": 2.743,
+ "son_guncelleme": "2026-08-07-istanbul-3",
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

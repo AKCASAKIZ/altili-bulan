@@ -1,15 +1,16 @@
 {
  "ad": "ASALET SAHİBİ",
- "kosu_sayisi": 4,
+ "kosu_sayisi": 5,
  "islenen_yarislar": [
   "2026-06-08-bursa-4-backfill",
   "2026-07-17-bursa-9-backfill",
   "2026-07-17-bursa-9",
-  "2026-07-29-istanbul-4"
+  "2026-07-29-istanbul-4",
+  "2026-08-07-bursa-6"
  ],
- "erken_gec_delta_ema": 3.378,
- "son_guncelleme": "2026-07-29-istanbul-4",
+ "erken_gec_delta_ema": 2.665,
+ "son_guncelleme": "2026-08-07-bursa-6",
  "gecmis_dolduruldu": true,
- "son_atak_delta_ema": -1,
+ "son_atak_delta_ema": -0.4,
  "gecmis_surum": 2
 }

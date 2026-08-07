@@ -1,6 +1,6 @@
 {
  "ad": "NAMSAL",
- "kosu_sayisi": 11,
+ "kosu_sayisi": 12,
  "islenen_yarislar": [
   "2025-01-18-istanbul-3-backfill",
   "2025-01-29-istanbul-8-backfill",
@@ -12,11 +12,12 @@
   "2025-08-17-istanbul-5-backfill",
   "2025-09-24-istanbul-4-backfill",
   "2026-07-15-istanbul-5",
-  "2026-07-31-istanbul-7"
+  "2026-07-31-istanbul-7",
+  "2026-08-07-istanbul-6"
  ],
- "erken_gec_delta_ema": 2.099,
- "son_atak_delta_ema": 0.6,
- "son_guncelleme": "2026-07-31-istanbul-7",
+ "erken_gec_delta_ema": 2.819,
+ "son_atak_delta_ema": 1.62,
+ "son_guncelleme": "2026-08-07-istanbul-6",
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

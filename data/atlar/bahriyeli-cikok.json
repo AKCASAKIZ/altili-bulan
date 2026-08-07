@@ -1,0 +1,13 @@
+{
+ "ad": "BAHRİYELİ ÇİKOK",
+ "kosu_sayisi": 2,
+ "islenen_yarislar": [
+  "2026-08-07-bursa-10-backfill",
+  "2026-08-07-bursa-10"
+ ],
+ "erken_gec_delta_ema": 6.0,
+ "son_atak_delta_ema": 4.0,
+ "son_guncelleme": "2026-08-07-bursa-10",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

@@ -1,6 +1,6 @@
 {
  "ad": "LEJUR",
- "kosu_sayisi": 12,
+ "kosu_sayisi": 13,
  "islenen_yarislar": [
   "2025-01-27-bursa-6-backfill",
   "2025-02-17-bursa-7-backfill",
@@ -13,11 +13,12 @@
   "2026-04-03-bursa-3-backfill",
   "2026-05-01-bursa-3-backfill",
   "2026-07-17-bursa-10",
-  "2026-07-29-istanbul-5"
+  "2026-07-29-istanbul-5",
+  "2026-08-07-bursa-2"
  ],
- "erken_gec_delta_ema": 0.131,
- "son_guncelleme": "2026-07-29-istanbul-5",
- "son_atak_delta_ema": -0.334,
+ "erken_gec_delta_ema": 0.392,
+ "son_guncelleme": "2026-08-07-bursa-2",
+ "son_atak_delta_ema": 0.066,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

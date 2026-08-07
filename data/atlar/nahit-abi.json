@@ -1,11 +1,13 @@
 {
  "ad": "NAHİT ABİ",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2026-07-10-istanbul-8-backfill",
-  "2026-07-10-istanbul-8"
+  "2026-07-10-istanbul-8",
+  "2026-08-07-istanbul-3"
  ],
- "erken_gec_delta_ema": 0.0,
- "son_guncelleme": "2026-07-10-istanbul-8",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -0.15,
+ "son_guncelleme": "2026-08-07-istanbul-3",
+ "gecmis_dolduruldu": true,
+ "son_atak_delta_ema": -1
 }

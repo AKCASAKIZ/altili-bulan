@@ -1,6 +1,6 @@
 {
  "ad": "RECUERDAME",
- "kosu_sayisi": 10,
+ "kosu_sayisi": 11,
  "islenen_yarislar": [
   "2025-05-10-izmir-5-backfill",
   "2025-06-16-bursa-4-backfill",
@@ -11,11 +11,12 @@
   "2026-06-19-bursa-1-backfill",
   "2026-07-16-ankara-6",
   "2026-07-24-bursa-11",
-  "2026-07-31-bursa-4"
+  "2026-07-31-bursa-4",
+  "2026-08-07-bursa-8"
  ],
- "erken_gec_delta_ema": 0.262,
- "son_guncelleme": "2026-07-31-bursa-4",
- "son_atak_delta_ema": -0.6,
+ "erken_gec_delta_ema": -0.267,
+ "son_guncelleme": "2026-08-07-bursa-8",
+ "son_atak_delta_ema": -0.72,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

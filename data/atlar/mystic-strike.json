@@ -1,12 +1,14 @@
 {
  "ad": "MYSTIC STRIKE",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2026-03-20-izmir-6-backfill",
-  "2026-07-20-bursa-2"
+  "2026-07-20-bursa-2",
+  "2026-08-07-bursa-10"
  ],
- "erken_gec_delta_ema": 1.2,
- "son_atak_delta_ema": 0,
- "son_guncelleme": "2026-07-20-bursa-2",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": -1.41,
+ "son_atak_delta_ema": -1.5,
+ "son_guncelleme": "2026-08-07-bursa-10",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

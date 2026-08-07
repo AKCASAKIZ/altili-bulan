@@ -1,6 +1,6 @@
 {
  "ad": "GÜROBASI",
- "kosu_sayisi": 17,
+ "kosu_sayisi": 18,
  "islenen_yarislar": [
   "2025-12-06-istanbul-9-backfill",
   "2025-12-12-antalya-7-backfill",
@@ -18,11 +18,12 @@
   "2026-06-27-izmir-5-backfill",
   "2026-07-24-istanbul-3-backfill",
   "2026-07-24-istanbul-3",
-  "2026-07-29-istanbul-8"
+  "2026-07-29-istanbul-8",
+  "2026-08-07-istanbul-6"
  ],
- "erken_gec_delta_ema": 1.183,
- "son_guncelleme": "2026-07-29-istanbul-8",
- "son_atak_delta_ema": 1.5,
+ "erken_gec_delta_ema": 1.578,
+ "son_guncelleme": "2026-08-07-istanbul-6",
+ "son_atak_delta_ema": 2.25,
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

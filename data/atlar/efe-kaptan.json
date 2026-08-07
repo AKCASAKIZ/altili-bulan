@@ -1,12 +1,13 @@
 {
  "ad": "EFE KAPTAN",
- "kosu_sayisi": 1,
+ "kosu_sayisi": 2,
  "islenen_yarislar": [
-  "2026-07-26-istanbul-4"
+  "2026-07-26-istanbul-4",
+  "2026-08-07-istanbul-2"
  ],
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2,
- "erken_gec_delta_ema": -5.0,
- "son_atak_delta_ema": -6,
- "son_guncelleme": "2026-07-26-istanbul-4"
+ "erken_gec_delta_ema": -3.8,
+ "son_atak_delta_ema": -4.5,
+ "son_guncelleme": "2026-08-07-istanbul-2"
 }

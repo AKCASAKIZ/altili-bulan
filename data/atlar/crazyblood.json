@@ -1,6 +1,6 @@
 {
  "ad": "CRAZYBLOOD",
- "kosu_sayisi": 12,
+ "kosu_sayisi": 13,
  "islenen_yarislar": [
   "2025-02-15-istanbul-2-backfill",
   "2025-03-26-istanbul-1-backfill",
@@ -13,10 +13,12 @@
   "2026-06-14-istanbul-9-backfill",
   "2026-06-21-istanbul-6-backfill",
   "2026-07-15-istanbul-1-backfill",
-  "2026-07-15-istanbul-1"
+  "2026-07-15-istanbul-1",
+  "2026-08-07-istanbul-1"
  ],
- "erken_gec_delta_ema": 1.265,
- "son_atak_delta_ema": -0.084,
- "son_guncelleme": "2026-07-15-istanbul-1",
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 1.335,
+ "son_atak_delta_ema": 0.241,
+ "son_guncelleme": "2026-08-07-istanbul-1",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

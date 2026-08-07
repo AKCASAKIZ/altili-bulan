@@ -1,14 +1,15 @@
 {
  "ad": "İLKUTHAN",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2026-04-01-istanbul-8-backfill",
   "2026-07-12-istanbul-7",
-  "2026-07-29-istanbul-7"
+  "2026-07-29-istanbul-7",
+  "2026-08-07-istanbul-4"
  ],
- "erken_gec_delta_ema": -1.43,
- "son_atak_delta_ema": -1.09,
- "son_guncelleme": "2026-07-29-istanbul-7",
+ "erken_gec_delta_ema": -1.001,
+ "son_atak_delta_ema": -0.763,
+ "son_guncelleme": "2026-08-07-istanbul-4",
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

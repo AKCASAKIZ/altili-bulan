@@ -1,13 +1,14 @@
 {
  "ad": "DAĞLAROĞLU KIZI",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2025-05-01-izmir-10-backfill",
-  "2026-07-27-bursa-7"
+  "2026-07-27-bursa-7",
+  "2026-08-07-bursa-5"
  ],
- "erken_gec_delta_ema": 0.0,
+ "erken_gec_delta_ema": -2.25,
  "son_atak_delta_ema": 0.0,
- "son_guncelleme": "2026-07-27-bursa-7",
+ "son_guncelleme": "2026-08-07-bursa-5",
  "gecmis_dolduruldu": true,
  "gecmis_surum": 2
 }

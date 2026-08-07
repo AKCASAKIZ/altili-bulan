@@ -1,6 +1,6 @@
 {
  "ad": "BLUEMOON",
- "kosu_sayisi": 8,
+ "kosu_sayisi": 9,
  "islenen_yarislar": [
   "2025-04-05-istanbul-6-backfill",
   "2025-05-14-istanbul-5-backfill",
@@ -9,10 +9,12 @@
   "2026-04-15-istanbul-1-backfill",
   "2026-05-13-istanbul-7-backfill",
   "2026-07-15-istanbul-4-backfill",
-  "2026-07-15-istanbul-4"
+  "2026-07-15-istanbul-4",
+  "2026-08-07-istanbul-6"
  ],
- "erken_gec_delta_ema": 3.185,
- "son_guncelleme": "2026-07-15-istanbul-4",
- "son_atak_delta_ema": -0.49,
- "gecmis_dolduruldu": true
+ "erken_gec_delta_ema": 2.529,
+ "son_guncelleme": "2026-08-07-istanbul-6",
+ "son_atak_delta_ema": -0.043,
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
 }

@@ -1,0 +1,16 @@
+{
+ "ad": "ZEHİRBİKE",
+ "kosu_sayisi": 5,
+ "islenen_yarislar": [
+  "2025-01-30-antalya-5-backfill",
+  "2025-02-06-antalya-4-backfill",
+  "2025-03-06-izmir-3-backfill",
+  "2025-03-25-antalya-3-backfill",
+  "2026-08-07-bursa-5"
+ ],
+ "erken_gec_delta_ema": 1.668,
+ "son_atak_delta_ema": 1.414,
+ "son_guncelleme": "2026-08-07-bursa-5",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

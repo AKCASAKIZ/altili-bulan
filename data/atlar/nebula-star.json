@@ -1,13 +1,14 @@
 {
  "ad": "NEBULA STAR",
- "kosu_sayisi": 2,
+ "kosu_sayisi": 3,
  "islenen_yarislar": [
   "2026-07-23-kocaeli-5",
-  "2026-07-30-kocaeli-4"
+  "2026-07-30-kocaeli-4",
+  "2026-08-07-bursa-7"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -2.7,
- "son_guncelleme": "2026-07-30-kocaeli-4",
- "son_atak_delta_ema": -3,
+ "erken_gec_delta_ema": -1.59,
+ "son_guncelleme": "2026-08-07-bursa-7",
+ "son_atak_delta_ema": -2.1,
  "gecmis_surum": 2
 }

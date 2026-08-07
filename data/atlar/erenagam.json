@@ -1,0 +1,14 @@
+{
+ "ad": "ERENAĞAM",
+ "kosu_sayisi": 3,
+ "islenen_yarislar": [
+  "2026-05-15-istanbul-8-backfill",
+  "2026-08-07-istanbul-2-backfill",
+  "2026-08-07-istanbul-2"
+ ],
+ "erken_gec_delta_ema": 1.715,
+ "son_atak_delta_ema": 3.43,
+ "son_guncelleme": "2026-08-07-istanbul-2",
+ "gecmis_dolduruldu": true,
+ "gecmis_surum": 2
+}

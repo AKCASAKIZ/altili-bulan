@@ -1,14 +1,15 @@
 {
  "ad": "ÇEÇAN BEY",
- "kosu_sayisi": 3,
+ "kosu_sayisi": 4,
  "islenen_yarislar": [
   "2026-07-10-istanbul-3",
   "2026-07-17-istanbul-9",
-  "2026-07-26-istanbul-1"
+  "2026-07-26-istanbul-1",
+  "2026-08-07-istanbul-5"
  ],
  "gecmis_dolduruldu": true,
- "erken_gec_delta_ema": -2.03,
- "son_guncelleme": "2026-07-26-istanbul-1",
- "son_atak_delta_ema": -1.2,
+ "erken_gec_delta_ema": -1.571,
+ "son_guncelleme": "2026-08-07-istanbul-5",
+ "son_atak_delta_ema": -0.54,
  "gecmis_surum": 2
 }
