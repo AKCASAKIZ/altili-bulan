@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 1,
@@ -243,9 +243,99 @@
    "yeni": "55 +2.00",
    "metin": "6. Koşu: SAVAŞÇI BEDİR (9) kilo 55 → 55 +2.00",
    "ts": "2026-08-07 13:10 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "7. Koşu: EL NACHO (2) kilo 57 → 57 +0.30",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +0.50",
+   "metin": "7. Koşu: LAMPO NERO (3) kilo 53 → 53 +0.50",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +2.00",
+   "metin": "7. Koşu: ZEALANDIA (5) kilo 53 → 53 +2.00",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.90",
+   "metin": "7. Koşu: QUEEN ERİNÖZ (7) kilo 55 → 55 +0.90",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "7. Koşu: SOMEBODY LOVES YOU (8) kilo 55 → 55 +2.00",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "7. Koşu: TATLI AKYÜZ (9) kilo 55 → 55 +2.00",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.80",
+   "metin": "7. Koşu: THE ROOKIE GIRL (10) kilo 55 → 55 +1.80",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.50",
+   "metin": "8. Koşu: AIBHILIN AGAIN (4) kilo 57 → 57 +1.50",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.10",
+   "metin": "8. Koşu: LOVE WAY (6) kilo 56 → 56 +1.10",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "53",
+   "yeni": "53 +1.40",
+   "metin": "8. Koşu: RECUERDAME (7) kilo 53 → 53 +1.40",
+   "ts": "2026-08-07 14:19 UTC"
   }
  ],
- "guncelleme": "2026-08-07 13:10 UTC",
+ "guncelleme": "2026-08-07 14:19 UTC",
  "sehir": "Bursa",
  "etkilenen": {}
 }

@@ -1,0 +1,35 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55,5",
+   "yeni": "55,5 +0.20",
+   "metin": "1. Koşu: DARK MONEY (6) kilo 55,5 → 55,5 +0.20",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +2.00",
+   "metin": "1. Koşu: DAMPERLİ (7) kilo 51 → 51 +2.00",
+   "ts": "2026-08-07 14:19 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.40",
+   "metin": "1. Koşu: FILIUS VENTUS (8) kilo 52 → 52 +1.40",
+   "ts": "2026-08-07 14:19 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-07 14:19 UTC",
+ "sehir": "İstanbul",
+ "etkilenen": {}
+}
