@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -27,9 +27,66 @@
    "yeni": "51,5 +2.00",
    "metin": "1. Koşu: TEKFORD ACL (9) kilo 51,5 → 51,5 +2.00",
    "ts": "2026-08-08 11:03 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "50",
+   "yeni": "50 +1.80",
+   "metin": "2. Koşu: TIME CHANGER (6) kilo 50 → 50 +1.80",
+   "ts": "2026-08-08 11:45 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "3. Koşu: BERRYBELLA (1) kilo 57 → 57 +0.20",
+   "ts": "2026-08-08 11:45 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.10",
+   "metin": "3. Koşu: CAN BALAM (3) kilo 57 → 57 +0.10",
+   "ts": "2026-08-08 11:45 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.30",
+   "metin": "3. Koşu: PERIWINKLE (8) kilo 57 → 57 +0.30",
+   "ts": "2026-08-08 11:45 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "SARI ÇAMLI KG DB",
+   "yeni": "SARI ÇAMLI KG DB (Koşmaz)",
+   "metin": "5. Koşu: SARI ÇAMLI (8) KOŞMAZ",
+   "ts": "2026-08-08 11:45 UTC"
   }
  ],
- "guncelleme": "2026-08-08 11:03 UTC",
+ "guncelleme": "2026-08-08 11:45 UTC",
  "sehir": "Ankara",
- "etkilenen": {}
+ "etkilenen": {
+  "5": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
 }
