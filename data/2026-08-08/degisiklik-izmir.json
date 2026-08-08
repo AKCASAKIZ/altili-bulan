@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -63,9 +63,27 @@
    "yeni": "51 +2.00",
    "metin": "2. Koşu: PİSA BY PİSANO (5) kilo 51 → 51 +2.00",
    "ts": "2026-08-08 14:11 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.90",
+   "metin": "2. Koşu: DARK GLORY (2) kilo 55 → 55 +0.90",
+   "ts": "2026-08-08 14:51 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.20",
+   "metin": "3. Koşu: VİÇE HANIM (11) kilo 55 → 55 +0.20",
+   "ts": "2026-08-08 14:51 UTC"
   }
  ],
- "guncelleme": "2026-08-08 14:11 UTC",
+ "guncelleme": "2026-08-08 14:51 UTC",
  "sehir": "İzmir",
  "etkilenen": {
   "1": [
