@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 1,
@@ -81,9 +81,99 @@
    "yeni": "55 +0.20",
    "metin": "3. Koşu: VİÇE HANIM (11) kilo 55 → 55 +0.20",
    "ts": "2026-08-08 14:51 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.20",
+   "metin": "3. Koşu: BERATKAN (2) kilo 57 → 57 +0.20",
+   "ts": "2026-08-08 15:22 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "jokey",
+   "alan": "jokey",
+   "eski": "M.M.KARABULUT AP",
+   "yeni": "M.TEKPETEK AP",
+   "metin": "3. Koşu: OTAY (6) jokey M.M.KARABULUT AP → M.TEKPETEK AP",
+   "ts": "2026-08-08 15:22 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.00",
+   "metin": "4. Koşu: SUPERTRAMP (3) kilo 55 → 55 +1.00",
+   "ts": "2026-08-08 15:22 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.20",
+   "metin": "4. Koşu: GECENİN GÜCÜ (5) kilo 56 → 56 +1.20",
+   "ts": "2026-08-08 15:22 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.70",
+   "metin": "4. Koşu: ÇİFTE YÜREKLİ (6) kilo 54 → 54 +0.70",
+   "ts": "2026-08-08 15:22 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.90",
+   "metin": "4. Koşu: ORION BELT (7) kilo 54 → 54 +0.90",
+   "ts": "2026-08-08 15:22 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +2.00",
+   "metin": "4. Koşu: RAYMOND BABBITT (8) kilo 54 → 54 +2.00",
+   "ts": "2026-08-08 15:22 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "48",
+   "yeni": "48 +2.00",
+   "metin": "4. Koşu: MEZAPOTAMYALI FATO (9) kilo 48 → 48 +2.00",
+   "ts": "2026-08-08 15:22 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.00",
+   "metin": "4. Koşu: RAINBOW GLOW (10) kilo 52 → 52 +1.00",
+   "ts": "2026-08-08 15:22 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51",
+   "yeni": "51 +1.80",
+   "metin": "4. Koşu: RUN MY RED (11) kilo 51 → 51 +1.80",
+   "ts": "2026-08-08 15:22 UTC"
   }
  ],
- "guncelleme": "2026-08-08 14:51 UTC",
+ "guncelleme": "2026-08-08 15:22 UTC",
  "sehir": "İzmir",
  "etkilenen": {
   "1": [
@@ -101,6 +191,9 @@
    "B13",
    "B5",
    "B6",
+   "C1",
+   "C2",
+   "C3",
    "D1",
    "D2",
    "E1",
