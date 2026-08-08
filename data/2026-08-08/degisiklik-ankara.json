@@ -1,0 +1,35 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +0.60",
+   "metin": "1. Koşu: KIRKPINAR BEYİ (7) kilo 52 → 52 +0.60",
+   "ts": "2026-08-08 11:03 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +1.50",
+   "metin": "1. Koşu: GÜLLÜ BAHÇE (8) kilo 52 → 52 +1.50",
+   "ts": "2026-08-08 11:03 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "51,5",
+   "yeni": "51,5 +2.00",
+   "metin": "1. Koşu: TEKFORD ACL (9) kilo 51,5 → 51,5 +2.00",
+   "ts": "2026-08-08 11:03 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-08 11:03 UTC",
+ "sehir": "Ankara",
+ "etkilenen": {}
+}
