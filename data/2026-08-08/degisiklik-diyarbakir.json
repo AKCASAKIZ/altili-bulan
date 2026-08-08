@@ -1,0 +1,26 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.40",
+   "metin": "1. Koşu: YETİMABLA (10) kilo 56 → 56 +1.40",
+   "ts": "2026-08-08 18:01 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "1. Koşu: HİSARLI KIZ (11) kilo 52 → 52 +2.00",
+   "ts": "2026-08-08 18:01 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-08 18:01 UTC",
+ "sehir": "Diyarbakır",
+ "etkilenen": {}
+}
