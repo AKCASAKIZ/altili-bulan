@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "olaylar": [
   {
    "kosu": 1,
@@ -72,12 +72,59 @@
    "yeni": "SARI ÇAMLI KG DB (Koşmaz)",
    "metin": "5. Koşu: SARI ÇAMLI (8) KOŞMAZ",
    "ts": "2026-08-08 11:45 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "CAN BALAM K SKG",
+   "yeni": "CAN BALAM K SKG (Koşmaz)",
+   "metin": "3. Koşu: CAN BALAM (3) KOŞMAZ",
+   "ts": "2026-08-08 12:32 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +1.90",
+   "metin": "4. Koşu: FINALE DUTY (3) kilo 57 → 57 +1.90",
+   "ts": "2026-08-08 12:32 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.20",
+   "metin": "4. Koşu: BOLD LION (6) kilo 55 → 55 +1.20",
+   "ts": "2026-08-08 12:32 UTC"
+  },
+  {
+   "kosu": 4,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52,5",
+   "yeni": "52,5 +0.50",
+   "metin": "4. Koşu: KUBAT KASIRGASI (7) kilo 52,5 → 52,5 +0.50",
+   "ts": "2026-08-08 12:32 UTC"
   }
  ],
- "guncelleme": "2026-08-08 11:45 UTC",
+ "guncelleme": "2026-08-08 12:32 UTC",
  "sehir": "Ankara",
  "etkilenen": {
   "5": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "3": [
    "B13",
    "B5",
    "B6",
