@@ -1,5 +1,5 @@
 {
- "surum": 5,
+ "surum": 6,
  "olaylar": [
   {
    "kosu": 1,
@@ -207,9 +207,36 @@
    "yeni": "57 +1.20",
    "metin": "7. Koşu: SÜLEYMAN AĞA (6) kilo 57 → 57 +1.20",
    "ts": "2026-08-08 16:40 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.70",
+   "metin": "7. Koşu: AÇANAY (7) kilo 55 → 55 +1.70",
+   "ts": "2026-08-08 17:22 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56,5",
+   "yeni": "56,5 +0.20",
+   "metin": "8. Koşu: ŞİRO ÇAYI (6) kilo 56,5 → 56,5 +0.20",
+   "ts": "2026-08-08 17:22 UTC"
+  },
+  {
+   "kosu": 8,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "8. Koşu: ONURSÜREN (14) kilo 52 → 52 +2.00",
+   "ts": "2026-08-08 17:22 UTC"
   }
  ],
- "guncelleme": "2026-08-08 16:40 UTC",
+ "guncelleme": "2026-08-08 17:22 UTC",
  "sehir": "İzmir",
  "etkilenen": {
   "1": [
