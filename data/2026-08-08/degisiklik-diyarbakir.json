@@ -1,5 +1,5 @@
 {
- "surum": 1,
+ "surum": 2,
  "olaylar": [
   {
    "kosu": 1,
@@ -18,9 +18,183 @@
    "yeni": "52 +2.00",
    "metin": "1. Koşu: HİSARLI KIZ (11) kilo 52 → 52 +2.00",
    "ts": "2026-08-08 18:01 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "61,5",
+   "yeni": "61,5 +0.10",
+   "metin": "2. Koşu: DÜZCE ASLANI (1) kilo 61,5 → 61,5 +0.10",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "58,5",
+   "yeni": "58,5 +1.00",
+   "metin": "2. Koşu: KINGS POWER (6) kilo 58,5 → 58,5 +1.00",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +1.40",
+   "metin": "2. Koşu: WANG YUEN CHEN (8) kilo 56 → 56 +1.40",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "56",
+   "yeni": "56 +0.50",
+   "metin": "2. Koşu: ZAEDNO (9) kilo 56 → 56 +0.50",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "2. Koşu: ÜNLÜSİMA (11) kilo 55 → 55 +2.00",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "SON OF FEARLESS DB SKG SK",
+   "yeni": "SON OF FEARLESS DB SKG SK (Koşmaz)",
+   "metin": "2. Koşu: SON OF FEARLESS (12) KOŞMAZ",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 2,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "52",
+   "yeni": "52 +2.00",
+   "metin": "2. Koşu: TORUNUM DEVRİM (13) kilo 52 → 52 +2.00",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.50",
+   "metin": "3. Koşu: ADDISON (2) kilo 55 → 55 +0.50",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "3. Koşu: AZİZOĞLUM (3) kilo 57 → 57 +2.00",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +2.00",
+   "metin": "3. Koşu: LION DUBAI (4) kilo 57 → 57 +2.00",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "3. Koşu: PAPA CLAS (5) kilo 55 → 55 +2.00",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "3. Koşu: SECRET GIRL (6) kilo 55 → 55 +2.00",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +2.00",
+   "metin": "3. Koşu: ZEHRA HİRA (7) kilo 55 → 55 +2.00",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.90",
+   "metin": "3. Koşu: AMALASUNTA (8) kilo 54 → 54 +0.90",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.10",
+   "metin": "3. Koşu: KUMSAL STAR (9) kilo 55 → 55 +1.10",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +1.50",
+   "metin": "3. Koşu: MAYBE FOR US (10) kilo 55 → 55 +1.50",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "55",
+   "yeni": "55 +0.80",
+   "metin": "3. Koşu: HELLAHOP KISAS (11) kilo 55 → 55 +0.80",
+   "ts": "2026-08-08 19:00 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "54",
+   "yeni": "54 +0.70",
+   "metin": "3. Koşu: JER (12) kilo 54 → 54 +0.70",
+   "ts": "2026-08-08 19:00 UTC"
   }
  ],
- "guncelleme": "2026-08-08 18:01 UTC",
+ "guncelleme": "2026-08-08 19:00 UTC",
  "sehir": "Diyarbakır",
- "etkilenen": {}
+ "etkilenen": {
+  "2": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
 }
