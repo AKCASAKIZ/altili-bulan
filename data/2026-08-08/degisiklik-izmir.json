@@ -1,0 +1,78 @@
+{
+ "surum": 1,
+ "olaylar": [
+  {
+   "kosu": 1,
+   "tip": "kilo",
+   "alan": "kilo",
+   "eski": "57",
+   "yeni": "57 +0.50",
+   "metin": "1. Koşu: ÇAKIRYELE (2) kilo 57 → 57 +0.50",
+   "ts": "2026-08-08 13:29 UTC"
+  },
+  {
+   "kosu": 1,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "FAİK AMCA KG K",
+   "yeni": "FAİK AMCA KG K (Koşmaz)",
+   "metin": "1. Koşu: FAİK AMCA (4) KOŞMAZ",
+   "ts": "2026-08-08 13:29 UTC"
+  },
+  {
+   "kosu": 3,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "AŞKA DÜŞMAN KG K",
+   "yeni": "AŞKA DÜŞMAN KG K (Koşmaz)",
+   "metin": "3. Koşu: AŞKA DÜŞMAN (8) KOŞMAZ",
+   "ts": "2026-08-08 13:29 UTC"
+  },
+  {
+   "kosu": 7,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "EYVAH FADIL KG K",
+   "yeni": "EYVAH FADIL KG K (Koşmaz)",
+   "metin": "7. Koşu: EYVAH FADIL (3) KOŞMAZ",
+   "ts": "2026-08-08 13:29 UTC"
+  }
+ ],
+ "guncelleme": "2026-08-08 13:29 UTC",
+ "sehir": "İzmir",
+ "etkilenen": {
+  "1": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "3": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ],
+  "7": [
+   "B13",
+   "B5",
+   "B6",
+   "D1",
+   "D2",
+   "E1",
+   "E2",
+   "E3",
+   "G1"
+  ]
+ }
+}

@@ -1,5 +1,5 @@
 {
- "surum": 3,
+ "surum": 4,
  "olaylar": [
   {
    "kosu": 1,
@@ -108,9 +108,18 @@
    "yeni": "52,5 +0.50",
    "metin": "4. Koşu: KUBAT KASIRGASI (7) kilo 52,5 → 52,5 +0.50",
    "ts": "2026-08-08 12:32 UTC"
+  },
+  {
+   "kosu": 5,
+   "tip": "kadro",
+   "alan": "kosmaz",
+   "eski": "DELİ ASMİN",
+   "yeni": "DELİ ASMİN (Koşmaz)",
+   "metin": "5. Koşu: DELİ ASMİN (1) KOŞMAZ",
+   "ts": "2026-08-08 13:29 UTC"
   }
  ],
- "guncelleme": "2026-08-08 12:32 UTC",
+ "guncelleme": "2026-08-08 13:29 UTC",
  "sehir": "Ankara",
  "etkilenen": {
   "5": [
